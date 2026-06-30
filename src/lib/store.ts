@@ -25,17 +25,42 @@ type Row = {
 
 const g = globalThis as unknown as { __frontdeskDb?: Database.Database };
 
-function db(): Database.Database {
-  if (g.__frontdeskDb) return g.__frontdeskDb;
+// Candidate database locations, in order of preference. On a normal host we use
+// ./data; on read-only serverless filesystems (e.g. Vercel) only /tmp is
+// writable; :memory: is the last-resort fallback so the app never crashes.
+function candidatePaths(): string[] {
+  const paths: string[] = [];
+  if (process.env.DATABASE_PATH) paths.push(process.env.DATABASE_PATH);
+  if (!process.env.VERCEL) paths.push(join(process.cwd(), "data", "frontdesk.db"));
+  paths.push("/tmp/frontdesk.db");
+  paths.push(":memory:");
+  return paths;
+}
 
-  const path = process.env.DATABASE_PATH || join(process.cwd(), "data", "frontdesk.db");
+function open(path: string): Database.Database {
   if (path !== ":memory:") {
     const dir = dirname(path);
     if (!existsSync(dir)) mkdirSync(dir, { recursive: true });
   }
-
   const conn = new Database(path);
   conn.pragma("journal_mode = WAL");
+  return conn;
+}
+
+function db(): Database.Database {
+  if (g.__frontdeskDb) return g.__frontdeskDb;
+
+  let conn: Database.Database | undefined;
+  for (const path of candidatePaths()) {
+    try {
+      conn = open(path);
+      break;
+    } catch (err) {
+      console.warn(`[store] could not open ${path}: ${(err as Error).message}`);
+    }
+  }
+  if (!conn) conn = new Database(":memory:");
+
   conn.exec(`
     CREATE TABLE IF NOT EXISTS events (
       seq        INTEGER PRIMARY KEY AUTOINCREMENT,
