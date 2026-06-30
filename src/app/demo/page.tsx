@@ -1,0 +1,38 @@
+import Chat from "@/components/Chat";
+import { SiteFooter, SiteHeader } from "@/components/SiteChrome";
+
+export const metadata = {
+  title: "Live demo · FrontDesk AI",
+};
+
+export default async function DemoPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ vertical?: string }>;
+}) {
+  const { vertical } = await searchParams;
+
+  return (
+    <>
+      <SiteHeader active="demo" />
+      <main className="container-x py-10">
+        <div className="mb-7 max-w-2xl">
+          <p className="eyebrow mb-3">Live demo</p>
+          <h1 className="font-display text-3xl font-semibold tracking-tight sm:text-4xl">
+            Call the front desk.
+          </h1>
+          <p className="mt-3 text-ink/65">
+            Pick a practice and chat exactly like you'd talk to a receptionist on the
+            phone. Anything Robin books or notes appears on the{" "}
+            <a href="/dashboard" className="font-medium text-teal underline-offset-2 hover:underline">
+              staff dashboard
+            </a>{" "}
+            instantly.
+          </p>
+        </div>
+        <Chat initialVertical={vertical} />
+      </main>
+      <SiteFooter />
+    </>
+  );
+}
