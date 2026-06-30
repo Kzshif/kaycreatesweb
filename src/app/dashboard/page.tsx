@@ -2,7 +2,7 @@ import Dashboard from "@/components/Dashboard";
 import { SiteFooter, SiteHeader } from "@/components/SiteChrome";
 
 export const metadata = {
-  title: "Dashboard · FrontDesk AI",
+  title: "Dashboard · kaycreatesweb",
 };
 
 export default function DashboardPage() {

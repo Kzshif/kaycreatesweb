@@ -17,9 +17,9 @@ interface Payload {
 }
 
 const KIND_META: Record<CapturedEvent["kind"], { label: string; icon: string; tone: string }> = {
-  appointment: { label: "Appointment", icon: "📅", tone: "bg-teal/10 text-teal-deep" },
+  appointment: { label: "Appointment", icon: "📅", tone: "bg-cyan/10 text-cyan" },
   message: { label: "Message", icon: "📝", tone: "bg-amber-accent/15 text-amber-accent" },
-  callback: { label: "Callback", icon: "📞", tone: "bg-ink/10 text-ink/70" },
+  callback: { label: "Callback", icon: "📞", tone: "bg-iris/15 text-iris-soft" },
 };
 
 export default function Dashboard() {
@@ -58,10 +58,10 @@ export default function Dashboard() {
       <div className="flex flex-wrap items-end justify-between gap-4">
         <div>
           <p className="eyebrow mb-2">Staff dashboard</p>
-          <h1 className="font-display text-3xl font-semibold tracking-tight sm:text-4xl">
+          <h1 className="font-display text-3xl font-semibold tracking-tight text-white sm:text-4xl">
             Captured by Robin
           </h1>
-          <p className="mt-2 text-sm text-ink/60">
+          <p className="mt-2 text-sm text-slate-400">
             Everything the receptionist handled — appointments, messages, and
             callbacks — in one queue. Updates live.
           </p>
@@ -92,13 +92,13 @@ export default function Dashboard() {
       </div>
 
       {/* Queue */}
-      <div className="card divide-y divide-ink/8 overflow-hidden">
-        {loading && <p className="p-8 text-center text-sm text-ink/50">Loading…</p>}
+      <div className="card divide-y divide-white/8 overflow-hidden">
+        {loading && <p className="p-8 text-center text-sm text-slate-400">Loading…</p>}
         {!loading && events.length === 0 && (
           <div className="p-10 text-center">
-            <p className="text-sm text-ink/60">
+            <p className="text-sm text-slate-400">
               Nothing here yet. Head to the{" "}
-              <Link href="/demo" className="font-medium text-teal underline-offset-2 hover:underline">
+              <Link href="/demo" className="font-medium text-cyan underline-offset-2 hover:underline">
                 demo
               </Link>{" "}
               and book something — it'll show up instantly.
@@ -124,20 +124,20 @@ function Row({ event, onAction }: { event: CapturedEvent; onAction: () => void }
           {meta.icon}
         </span>
         <div>
-          <p className="text-sm font-semibold">{meta.label}</p>
-          <p className="text-xs text-ink/45">
+          <p className="text-sm font-semibold text-white">{meta.label}</p>
+          <p className="text-xs text-slate-500">
             {v.emoji} {v.practice}
           </p>
         </div>
       </div>
 
       <div className="flex-1">
-        <p className="text-sm font-semibold">
-          {event.name} <span className="font-normal text-ink/50">· {event.contact}</span>
+        <p className="text-sm font-semibold text-white">
+          {event.name} <span className="font-normal text-slate-400">· {event.contact}</span>
         </p>
-        <p className="mt-0.5 text-sm text-ink/70">{event.summary}</p>
+        <p className="mt-0.5 text-sm text-slate-300">{event.summary}</p>
         {detailEntries.length > 0 && (
-          <dl className="mt-2 flex flex-wrap gap-x-5 gap-y-1 text-xs text-ink/55">
+          <dl className="mt-2 flex flex-wrap gap-x-5 gap-y-1 text-xs text-slate-400">
             {detailEntries.map(([k, val]) => (
               <div key={k} className="flex gap-1">
                 <dt className="font-semibold capitalize">{k}:</dt>
@@ -149,16 +149,16 @@ function Row({ event, onAction }: { event: CapturedEvent; onAction: () => void }
       </div>
 
       <div className="flex items-center gap-3 sm:flex-col sm:items-end">
-        <span className="text-xs text-ink/40">{timeAgo(event.createdAt)}</span>
+        <span className="text-xs text-slate-500">{timeAgo(event.createdAt)}</span>
         {event.status === "new" ? (
           <button
             onClick={onAction}
-            className="rounded-full border border-teal/40 px-3 py-1 text-xs font-semibold text-teal-deep transition hover:bg-teal hover:text-cream"
+            className="rounded-full border border-cyan/40 px-3 py-1 text-xs font-semibold text-cyan transition hover:bg-cyan hover:text-night"
           >
             Mark actioned
           </button>
         ) : (
-          <span className="text-xs font-medium text-teal">✓ Actioned</span>
+          <span className="text-xs font-medium text-cyan">✓ Actioned</span>
         )}
       </div>
     </div>
@@ -168,10 +168,10 @@ function Row({ event, onAction }: { event: CapturedEvent; onAction: () => void }
 function Stat({ label, value, accent, warn }: { label: string; value?: number; accent?: boolean; warn?: boolean }) {
   return (
     <div className="card p-4">
-      <p className="text-xs font-medium text-ink/50">{label}</p>
+      <p className="text-xs font-medium text-slate-400">{label}</p>
       <p
         className={`mt-1 font-display text-3xl font-semibold ${
-          warn && value ? "text-amber-accent" : accent ? "text-teal" : "text-ink"
+          warn && value ? "text-amber-accent" : accent ? "text-cyan" : "text-white"
         }`}
       >
         {value ?? "—"}
@@ -185,7 +185,9 @@ function FilterChip({ active, onClick, children }: { active: boolean; onClick: (
     <button
       onClick={onClick}
       className={`rounded-full px-3.5 py-1.5 text-sm font-medium transition ${
-        active ? "bg-ink text-cream" : "border border-ink/15 text-ink/65 hover:border-ink/35"
+        active
+          ? "bg-gradient-to-r from-cyan to-iris text-night"
+          : "border border-white/15 text-slate-300 hover:border-white/35"
       }`}
     >
       {children}

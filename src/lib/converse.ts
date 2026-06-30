@@ -1,6 +1,6 @@
 import Anthropic from "@anthropic-ai/sdk";
 import type { Vertical, ChatMessage } from "./types";
-import { MODEL, TOOLS, buildSystemPrompt, runTool } from "./receptionist";
+import { MODEL, TOOLS, cachedSystem, runTool } from "./receptionist";
 import { fallbackReply } from "./fallback";
 
 const MAX_TOOL_ITERATIONS = 6;
@@ -22,7 +22,7 @@ export async function converse(
   }
 
   const client = new Anthropic();
-  const system = buildSystemPrompt(vertical);
+  const system = cachedSystem(vertical);
   const messages: Anthropic.MessageParam[] = history.map((m) => ({
     role: m.role,
     content: m.content,

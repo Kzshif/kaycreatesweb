@@ -1,12 +1,7 @@
 import Anthropic from "@anthropic-ai/sdk";
 import { NextRequest } from "next/server";
 import { getVertical } from "@/lib/verticals";
-import {
-  MODEL,
-  TOOLS,
-  buildSystemPrompt,
-  runTool,
-} from "@/lib/receptionist";
+import { MODEL, TOOLS, cachedSystem, runTool } from "@/lib/receptionist";
 import { fallbackReply } from "@/lib/fallback";
 import type { ChatMessage, StreamEvent } from "@/lib/types";
 
@@ -71,7 +66,7 @@ async function runLive(
   vertical: ReturnType<typeof getVertical>,
 ) {
   const client = new Anthropic();
-  const system = buildSystemPrompt(vertical);
+  const system = cachedSystem(vertical);
 
   const messages: Anthropic.MessageParam[] = history.map((m) => ({
     role: m.role,
