@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-image: radial-gradient(
+    1200px 600px at 80% -10%,
+    rgba(13, 110, 110, 0.08),
+    transparent 60%
+  );
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-semibold transition focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2;
+  }
+
+  .btn-primary {
+    @apply btn bg-teal text-cream hover:bg-teal-deep focus-visible:ring-teal;
+  }
+
+  .btn-ghost {
+    @apply btn border border-ink/15 bg-transparent text-ink hover:border-ink/40;
+  }
+
+  .card {
+    @apply rounded-2xl border border-ink/10 bg-white/70 shadow-[0_1px_0_rgba(15,31,36,0.04),0_18px_40px_-28px_rgba(15,31,36,0.5)] backdrop-blur;
+  }
+
+  .eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.18em] text-teal;
+  }
+}
+
+/* Thin scrollbars inside the chat transcript. */
+.scroll-thin::-webkit-scrollbar {
+  width: 8px;
+}
+.scroll-thin::-webkit-scrollbar-thumb {
+  background: rgba(15, 31, 36, 0.18);
+  border-radius: 999px;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 1; }
+}
+.dot {
+  animation: blink 1.2s infinite;
+}
+.dot:nth-child(2) { animation-delay: 0.2s; }
+.dot:nth-child(3) { animation-delay: 0.4s; }
