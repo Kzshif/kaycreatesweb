@@ -17,6 +17,7 @@ Built with **Next.js (App Router)** and the **Claude API** (`claude-opus-4-8`).
 | **Live receptionist** | `/demo` | Chat with Robin exactly like a phone call. Streams responses token-by-token and uses tools to book, message, and arrange callbacks. |
 | **Staff dashboard** | `/dashboard` | Everything Robin captured — appointments, messages, callbacks — in one live-updating queue you can action. |
 | **Chat API** | `POST /api/chat` | Server-side Claude agentic loop (streaming + tool use), returns newline-delimited JSON events. |
+| **Voice webhooks** | `POST /api/voice`, `POST /api/voice/respond` | Twilio Voice integration — Robin answers a real phone line, transcribes the caller, and speaks back. |
 | **Events API** | `GET/PATCH /api/events` | Reads and actions captured events. |
 
 ### The "vertical" in vertical SaaS
@@ -80,6 +81,32 @@ agentic loop server-side (`src/app/api/chat/route.ts`):
 The browser reads the newline-delimited JSON stream and renders text, tool chips,
 and the streaming cursor in real time (`src/components/Chat.tsx`).
 
+## Answering a real phone line (Twilio)
+
+Robin isn't limited to web chat — point a Twilio number at the voice webhook and
+it answers actual calls. The voice and chat surfaces share the same brain
+(`src/lib/converse.ts`), so bookings made by phone land in the same dashboard.
+
+1. Deploy the app somewhere Twilio can reach, and set `PUBLIC_BASE_URL` plus
+   `TWILIO_AUTH_TOKEN` (the token enables request-signature validation).
+2. In the Twilio console, set the number's **"A call comes in"** webhook to:
+   `POST https://your-app.example.com/api/voice?vertical=dental`
+   (swap `vertical` for `medical`, `physio`, or `vet`).
+
+Flow: `/api/voice` greets the caller and opens a `<Gather input="speech">`; Twilio
+transcribes the caller and POSTs it to `/api/voice/respond`, which runs the
+receptionist, speaks the reply, and listens again until the caller says goodbye.
+Per-call transcripts are kept in memory keyed by Twilio's `CallSid`.
+
+## Data persistence
+
+Captured events are stored in **SQLite** via `better-sqlite3`
+(`src/lib/store.ts`), so they survive restarts. The database lives at
+`./data/frontdesk.db` by default — override with `DATABASE_PATH` (use `:memory:`
+for an ephemeral store). The schema is created and seeded automatically on first
+run. Swap this module for your production database or EHR/PMS integration without
+touching the rest of the app — the exported functions are the only contract.
+
 ## Project structure
 
 ```
@@ -88,20 +115,24 @@ src/
     page.tsx              # marketing landing
     demo/page.tsx         # live receptionist
     dashboard/page.tsx    # staff queue
-    api/chat/route.ts     # streaming Claude + tool-use loop
-    api/events/route.ts   # read / action captured events
-  components/              # Chat, Dashboard, site chrome
+    api/chat/route.ts            # streaming Claude + tool-use loop
+    api/events/route.ts          # read / action captured events
+    api/voice/route.ts           # Twilio: greet the caller
+    api/voice/respond/route.ts   # Twilio: converse + speak the reply
+  components/                     # Chat, Dashboard, site chrome
   lib/
-    receptionist.ts       # system prompt + tools + executor
-    verticals.ts          # per-specialty configuration
-    store.ts              # in-memory capture store (swap for a DB in prod)
-    fallback.ts           # no-key rule-based receptionist
+    receptionist.ts              # system prompt + tools + executor
+    converse.ts                  # non-streaming receptionist (used by voice)
+    verticals.ts                 # per-specialty configuration
+    store.ts                     # SQLite-backed capture store
+    twilio.ts                    # TwiML builders, call state, signature check
+    fallback.ts                  # no-key rule-based receptionist
     types.ts
 ```
 
 ## Notes & next steps
 
-This is a working demo. To take it to production you'd swap the in-memory store
-(`src/lib/store.ts`) for a database, wire the booking tool to a real scheduling
-system / EHR, and connect a telephony provider (e.g. Twilio) so Robin answers an
-actual phone line instead of a web chat.
+A working demo with a persistent store and live phone answering. To take it
+further you'd wire the booking tool to a real scheduling system / EHR, move the
+per-call transcript state into shared storage (Redis) for multi-instance
+deployments, and add authentication to the staff dashboard.
