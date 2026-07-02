@@ -1,8 +1,8 @@
 {
-  "name": "frontdesk-ai",
+  "name": "kaycreatesweb",
   "version": "0.1.0",
   "private": true,
-  "description": "FrontDesk AI — a vertical AI receptionist as a service for dental & medical clinics.",
+  "description": "KayCreatesWeb \u2014 AI chatbots & SEO for any website.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

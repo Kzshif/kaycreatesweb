@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
-import { Fraunces, Plus_Jakarta_Sans } from "next/font/google";
+import { Plus_Jakarta_Sans, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 
-const display = Fraunces({
+const display = Space_Grotesk({
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  style: ["normal", "italic"],
+  weight: ["400", "500", "600", "700"],
   variable: "--font-display",
   display: "swap",
 });
@@ -18,9 +17,9 @@ const sans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "FrontDesk AI — the AI receptionist for clinics",
+  title: "KayCreatesWeb — AI chatbots & SEO for any website",
   description:
-    "FrontDesk AI answers every call, books appointments, and takes messages for dental, medical, physio, and veterinary practices — 24/7.",
+    "KayCreatesWeb gives any business an AI chatbot for their website — answering visitors, capturing leads 24/7 — plus an AI SEO studio that audits pages and writes content that ranks.",
 };
 
 export default function RootLayout({
@@ -28,7 +27,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${display.variable} ${sans.variable}`}>
-      <body className="bg-cream text-ink font-sans antialiased">{children}</body>
+      <body className="bg-paper text-ink font-sans antialiased">{children}</body>
     </html>
   );
 }

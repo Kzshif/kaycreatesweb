@@ -1,73 +1,4 @@
-// Shared types for FrontDesk AI.
-
-export type VerticalId = "dental" | "medical" | "physio" | "vet";
-
-export interface Vertical {
-  id: VerticalId;
-  /** Display name of the example practice. */
-  practice: string;
-  /** Short label for the vertical (e.g. "Dental clinic"). */
-  label: string;
-  tagline: string;
-  /** Services the receptionist can book or quote. */
-  services: string[];
-  hours: string;
-  /** A few canned FAQ answers the receptionist should know. */
-  faq: { q: string; a: string }[];
-  /** Greeting shown at the top of the demo chat. */
-  greeting: string;
-  /** Accent emoji for the UI. */
-  emoji: string;
-}
-
-export type CapturedKind = "appointment" | "message" | "callback";
-
-export type Sentiment = "positive" | "neutral" | "negative";
-
-/** Instant scoring applied to every capture — see lib/triage.ts. */
-export interface Triage {
-  sentiment: Sentiment;
-  /** 1 (routine) … 5 (critical). */
-  urgency: number;
-  /** Short intent label, e.g. "refill", "insurance", "booking". */
-  intent: string;
-}
-
-export interface CapturedEvent {
-  id: string;
-  kind: CapturedKind;
-  vertical: VerticalId;
-  /** Owning practice, or null for the public demo. */
-  practiceId: string | null;
-  createdAt: string; // ISO
-  /** Caller / patient name. */
-  name: string;
-  /** Phone or email. */
-  contact: string;
-  /** Free-form summary the receptionist captured. */
-  summary: string;
-  /** Structured extras depending on kind. */
-  details: Record<string, string>;
-  /** "new" until a human at the practice has actioned it. */
-  status: "new" | "actioned";
-  sentiment: Sentiment;
-  urgency: number;
-  intent: string;
-}
-
-// Wire protocol for the streaming chat endpoint (newline-delimited JSON).
-export type StreamEvent =
-  | { type: "text"; text: string }
-  | { type: "tool"; name: string; label: string; event?: CapturedEvent }
-  | { type: "error"; message: string }
-  | { type: "done"; mode: "live" | "fallback" };
-
-export interface ChatMessage {
-  role: "user" | "assistant";
-  content: string;
-}
-
-// --- SaaS layer -------------------------------------------------------------
+// Shared types for KayCreatesWeb — AI chatbots & SEO for any website.
 
 export interface User {
   id: string;
@@ -76,31 +7,114 @@ export interface User {
   createdAt: string;
 }
 
-export type PlanId = "trial" | "starter" | "practice" | "group";
+export type PlanId = "trial" | "launch" | "grow" | "scale";
 
-export interface Practice {
+/** The tenant: one business / website. */
+export interface Workspace {
   id: string;
   userId: string;
   name: string;
-  vertical: VerticalId;
-  hours: string;
-  services: string[];
-  faq: { q: string; a: string }[];
-  greeting: string;
+  website: string;
+  /** Short description of the business — feeds every AI surface. */
+  about: string;
   plan: PlanId;
   trialEndsAt: string; // ISO
   createdAt: string; // ISO
 }
 
+export type BotGoal = "support" | "leads" | "sales";
+
+/** An embeddable AI chatbot. */
+export interface Bot {
+  id: string;
+  workspaceId: string;
+  /** Public embed key used by the widget script. */
+  publicKey: string;
+  name: string;
+  /** Bot personality: friendly | professional | playful | concise. */
+  tone: string;
+  goal: BotGoal;
+  welcome: string;
+  /** Everything the bot should know: offering, pricing, hours, policies… */
+  knowledge: string;
+  faq: { q: string; a: string }[];
+  /** Widget accent color (hex). */
+  color: string;
+  createdAt: string;
+}
+
+export interface Conversation {
+  id: string;
+  botId: string;
+  workspaceId: string;
+  visitorId: string;
+  /** Trimmed transcript, newest last. */
+  transcript: ChatMessage[];
+  messageCount: number;
+  startedAt: string;
+  lastMessageAt: string;
+}
+
+export interface Lead {
+  id: string;
+  botId: string;
+  workspaceId: string;
+  name: string;
+  email: string;
+  message: string;
+  /** Where it came from, e.g. the bot name or page. */
+  source: string;
+  status: "new" | "contacted";
+  createdAt: string;
+}
+
+// --- SEO Studio ---------------------------------------------------------------
+
+export interface SeoCheck {
+  id: string;
+  label: string;
+  status: "pass" | "warn" | "fail";
+  detail: string;
+}
+
+export interface SeoAudit {
+  id: string;
+  workspaceId: string;
+  url: string;
+  score: number; // 0-100
+  checks: SeoCheck[];
+  /** AI-written prioritized recommendations (or heuristic fallback). */
+  recommendations: string[];
+  /** AI-suggested rewrites. */
+  suggestedTitle: string;
+  suggestedDescription: string;
+  mode: "live" | "fallback";
+  createdAt: string;
+}
+
+// --- Wire protocol --------------------------------------------------------------
+
+export interface ChatMessage {
+  role: "user" | "assistant";
+  content: string;
+}
+
+// Streaming NDJSON events shared by the widget + app chat surfaces.
+export type StreamEvent =
+  | { type: "text"; text: string }
+  | { type: "tool"; name: string; label: string }
+  | { type: "error"; message: string }
+  | { type: "done"; mode: "live" | "fallback" };
+
 export interface Invoice {
   id: string;
-  practiceId: string;
+  workspaceId: string;
   description: string;
   amountCents: number;
   createdAt: string;
 }
 
-/** AI daily briefing produced by /api/insights. */
+/** AI weekly-pulse briefing produced by /api/insights. */
 export interface Briefing {
   headline: string;
   highlights: string[];

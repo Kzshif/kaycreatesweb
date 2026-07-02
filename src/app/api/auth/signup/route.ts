@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createSession, createUser, findUserByEmail, sessionCookie } from "@/lib/auth";
-import { createPractice } from "@/lib/practices";
-import { getVertical } from "@/lib/verticals";
+import { onboardWorkspace } from "@/lib/onboarding";
+import { createWorkspace } from "@/lib/workspaces";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -11,8 +11,8 @@ export async function POST(req: NextRequest) {
     email?: string;
     name?: string;
     password?: string;
-    practiceName?: string;
-    vertical?: string;
+    businessName?: string;
+    website?: string;
   };
   try {
     body = await req.json();
@@ -23,7 +23,7 @@ export async function POST(req: NextRequest) {
   const email = body.email?.trim().toLowerCase() ?? "";
   const name = body.name?.trim() ?? "";
   const password = body.password ?? "";
-  const practiceName = body.practiceName?.trim() ?? "";
+  const businessName = body.businessName?.trim() ?? "";
 
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     return NextResponse.json({ error: "Enter a valid email address." }, { status: 400 });
@@ -34,8 +34,8 @@ export async function POST(req: NextRequest) {
   if (!name) {
     return NextResponse.json({ error: "Tell us your name." }, { status: 400 });
   }
-  if (!practiceName) {
-    return NextResponse.json({ error: "Tell us your practice's name." }, { status: 400 });
+  if (!businessName) {
+    return NextResponse.json({ error: "Tell us your business's name." }, { status: 400 });
   }
   if (findUserByEmail(email)) {
     return NextResponse.json(
@@ -45,10 +45,11 @@ export async function POST(req: NextRequest) {
   }
 
   const user = createUser(email, name, password);
-  const practice = createPractice(user.id, practiceName, getVertical(body.vertical).id);
+  const workspace = createWorkspace(user.id, businessName, body.website ?? "");
+  const bot = onboardWorkspace(workspace);
   const { token, expiresAt } = createSession(user.id);
 
-  const res = NextResponse.json({ user, practice });
+  const res = NextResponse.json({ user, workspace, bot });
   res.cookies.set(sessionCookie(token, expiresAt));
   return res;
 }

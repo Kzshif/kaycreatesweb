@@ -10,6 +10,6 @@ export async function GET(req: NextRequest) {
   if (!tenant) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
   const refresh = req.nextUrl.searchParams.get("refresh") === "1";
-  const briefing = await getBriefing(tenant.practice, refresh);
+  const briefing = await getBriefing(tenant.workspace, refresh);
   return NextResponse.json({ briefing });
 }

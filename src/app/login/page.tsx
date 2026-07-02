@@ -4,7 +4,7 @@ import { AuthPanel } from "@/components/AuthPanel";
 import { getUser } from "@/lib/auth";
 
 export const metadata = {
-  title: "Sign in · FrontDesk AI",
+  title: "Sign in · KayCreatesWeb",
 };
 
 export default async function LoginPage() {
@@ -12,7 +12,7 @@ export default async function LoginPage() {
   return (
     <AuthPanel
       title="Welcome back."
-      subtitle="Sign in to see everything Robin has handled while you were away."
+      subtitle="Sign in to see who your chatbot talked to and what the AI recommends next."
     >
       <LoginForm />
     </AuthPanel>

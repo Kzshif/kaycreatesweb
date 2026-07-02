@@ -5,22 +5,21 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        ink: "#0f1f24",
-        slate: {
-          950: "#0b1418",
+        ink: "#12141d",
+        paper: "#f8f7f3",
+        primary: {
+          DEFAULT: "#3b5bdb",
+          deep: "#2b44ad",
+          light: "#93a5f0",
         },
-        teal: {
-          DEFAULT: "#0d6e6e",
-          deep: "#0a4f4f",
-          light: "#7fd1c7",
+        accent: {
+          DEFAULT: "#e8590c",
+          soft: "#f7b287",
         },
-        amber: {
-          accent: "#e0913a",
-        },
-        cream: "#f6f3ec",
+        mint: "#0ca678",
       },
       fontFamily: {
-        display: ["var(--font-display)", "Georgia", "serif"],
+        display: ["var(--font-display)", "system-ui", "sans-serif"],
         sans: ["var(--font-sans)", "system-ui", "sans-serif"],
       },
     },

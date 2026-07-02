@@ -2,8 +2,6 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { VERTICAL_LIST } from "@/lib/verticals";
-import type { VerticalId } from "@/lib/types";
 
 // Shared login / signup form. On success we hard-navigate so the server
 // layout re-reads the session cookie.
@@ -40,7 +38,7 @@ export function LoginForm() {
           required
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          placeholder="you@yourpractice.com"
+          placeholder="you@yourbusiness.com"
           className="input"
           autoComplete="email"
         />
@@ -61,8 +59,8 @@ export function LoginForm() {
         {busy ? "Signing in…" : "Sign in"}
       </button>
       <p className="text-center text-sm text-ink/60">
-        New to FrontDesk AI?{" "}
-        <Link href="/signup" className="font-semibold text-teal hover:underline">
+        New to KayCreatesWeb?{" "}
+        <Link href="/signup" className="font-semibold text-primary hover:underline">
           Start your free trial
         </Link>
       </p>
@@ -70,12 +68,12 @@ export function LoginForm() {
   );
 }
 
-export function SignupForm({ initialPlan }: { initialPlan?: string }) {
+export function SignupForm() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [practiceName, setPracticeName] = useState("");
-  const [vertical, setVertical] = useState<VerticalId>("dental");
+  const [businessName, setBusinessName] = useState("");
+  const [website, setWebsite] = useState("");
   const [error, setError] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
 
@@ -86,7 +84,7 @@ export function SignupForm({ initialPlan }: { initialPlan?: string }) {
     const res = await fetch("/api/auth/signup", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name, email, password, practiceName, vertical, plan: initialPlan }),
+      body: JSON.stringify({ name, email, password, businessName, website }),
     });
     if (res.ok) {
       window.location.href = "/app";
@@ -105,7 +103,7 @@ export function SignupForm({ initialPlan }: { initialPlan?: string }) {
             required
             value={name}
             onChange={(e) => setName(e.target.value)}
-            placeholder="Dr. Kay Rivera"
+            placeholder="Kay Johnson"
             className="input"
             autoComplete="name"
           />
@@ -116,7 +114,7 @@ export function SignupForm({ initialPlan }: { initialPlan?: string }) {
             required
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            placeholder="you@yourpractice.com"
+            placeholder="you@yourbusiness.com"
             className="input"
             autoComplete="email"
           />
@@ -134,43 +132,36 @@ export function SignupForm({ initialPlan }: { initialPlan?: string }) {
           autoComplete="new-password"
         />
       </Field>
-      <Field label="Practice name">
-        <input
-          required
-          value={practiceName}
-          onChange={(e) => setPracticeName(e.target.value)}
-          placeholder="Brightwater Dental"
-          className="input"
-        />
-      </Field>
-      <Field label="Your specialty">
-        <div className="grid grid-cols-2 gap-2">
-          {VERTICAL_LIST.map((v) => (
-            <button
-              key={v.id}
-              type="button"
-              onClick={() => setVertical(v.id)}
-              className={`flex items-center gap-2 rounded-xl border px-3 py-2.5 text-left text-sm transition ${
-                vertical === v.id
-                  ? "border-teal bg-teal/10 font-semibold text-ink"
-                  : "border-ink/15 bg-white/60 text-ink/70 hover:border-ink/35"
-              }`}
-            >
-              <span className="text-lg">{v.emoji}</span> {v.label}
-            </button>
-          ))}
-        </div>
-      </Field>
+      <div className="grid gap-4 sm:grid-cols-2">
+        <Field label="Business name">
+          <input
+            required
+            value={businessName}
+            onChange={(e) => setBusinessName(e.target.value)}
+            placeholder="Kay's Design Studio"
+            className="input"
+          />
+        </Field>
+        <Field label="Website (optional)">
+          <input
+            value={website}
+            onChange={(e) => setWebsite(e.target.value)}
+            placeholder="yourbusiness.com"
+            className="input"
+            inputMode="url"
+          />
+        </Field>
+      </div>
       {error && <p className="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-700">{error}</p>}
       <button type="submit" disabled={busy} className="btn-primary w-full py-3 disabled:opacity-60">
-        {busy ? "Creating your receptionist…" : "Start my 14-day free trial"}
+        {busy ? "Creating your assistant…" : "Start my 14-day free trial"}
       </button>
       <p className="text-center text-xs text-ink/50">
-        No credit card required. Robin starts answering the moment you sign up.
+        No credit card required. Your chatbot is ready to embed the moment you sign up.
       </p>
       <p className="text-center text-sm text-ink/60">
         Already have an account?{" "}
-        <Link href="/login" className="font-semibold text-teal hover:underline">
+        <Link href="/login" className="font-semibold text-primary hover:underline">
           Sign in
         </Link>
       </p>

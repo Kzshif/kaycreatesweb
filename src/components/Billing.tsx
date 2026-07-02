@@ -8,7 +8,7 @@ interface WirePlan {
   name: string;
   priceMonthly: number;
   tagline: string;
-  conversationLimit: number | null;
+  messageLimit: number | null;
   features: string[];
   highlight?: boolean;
 }
@@ -61,19 +61,19 @@ export default function Billing() {
       <div>
         <p className="eyebrow mb-2">Plan & billing</p>
         <h1 className="font-display text-3xl font-semibold tracking-tight sm:text-4xl">
-          Cheaper than a missed new patient.
+          Pays for itself with one lead.
         </h1>
         {status && (
           <p className="mt-2 text-sm text-ink/60">
             {status.onTrial
               ? status.trialExpired
-                ? "Your free trial has ended — pick a plan to keep Robin answering."
+                ? "Your free trial has ended — pick a plan to keep your chatbot answering."
                 : `You're on the free trial with ${status.trialDaysLeft} day${
                     status.trialDaysLeft === 1 ? "" : "s"
-                  } left. ${status.used} conversation${status.used === 1 ? "" : "s"} used this month.`
+                  } left. ${status.used} chat message${status.used === 1 ? "" : "s"} used this month.`
               : `You're on the ${status.planName} plan — ${status.used}${
                   status.limit ? ` of ${status.limit}` : ""
-                } conversations used this month.`}
+                } chat messages used this month.`}
           </p>
         )}
       </div>
@@ -84,10 +84,10 @@ export default function Billing() {
           return (
             <div
               key={p.id}
-              className={`card flex flex-col p-7 ${p.highlight ? "ring-2 ring-teal" : ""}`}
+              className={`card flex flex-col p-7 ${p.highlight ? "ring-2 ring-primary" : ""}`}
             >
               {p.highlight && (
-                <span className="mb-3 inline-block w-fit rounded-full bg-teal px-3 py-1 text-xs font-semibold text-cream">
+                <span className="mb-3 inline-block w-fit rounded-full bg-primary px-3 py-1 text-xs font-semibold text-paper">
                   Most popular
                 </span>
               )}
@@ -100,7 +100,7 @@ export default function Billing() {
               <ul className="mt-5 flex-1 space-y-2.5 text-sm text-ink/70">
                 {p.features.map((f) => (
                   <li key={f} className="flex gap-2">
-                    <span className="text-teal">✓</span> {f}
+                    <span className="text-primary">✓</span> {f}
                   </li>
                 ))}
               </ul>

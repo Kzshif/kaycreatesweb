@@ -4,22 +4,17 @@ import { AuthPanel } from "@/components/AuthPanel";
 import { getUser } from "@/lib/auth";
 
 export const metadata = {
-  title: "Start free trial · FrontDesk AI",
+  title: "Start free trial · KayCreatesWeb",
 };
 
-export default async function SignupPage({
-  searchParams,
-}: {
-  searchParams: Promise<{ plan?: string }>;
-}) {
+export default async function SignupPage() {
   if (await getUser()) redirect("/app");
-  const { plan } = await searchParams;
   return (
     <AuthPanel
-      title="Hire Robin in two minutes."
-      subtitle="Create your account, pick your specialty, and your AI receptionist starts answering immediately — configured for your practice."
+      title="Give your website superpowers."
+      subtitle="Two minutes to set up: tell us about your business and get an AI chatbot ready to embed, plus the full SEO studio."
     >
-      <SignupForm initialPlan={plan} />
+      <SignupForm />
     </AuthPanel>
   );
 }

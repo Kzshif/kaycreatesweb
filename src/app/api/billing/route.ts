@@ -9,7 +9,7 @@ export const dynamic = "force-dynamic";
 function serializePlans() {
   return PLANS.map((p) => ({
     ...p,
-    conversationLimit: p.conversationLimit === Infinity ? null : p.conversationLimit,
+    messageLimit: p.messageLimit === Infinity ? null : p.messageLimit,
   }));
 }
 
@@ -17,9 +17,9 @@ export async function GET(req: NextRequest) {
   const tenant = tenantFromRequest(req);
   if (!tenant) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   return NextResponse.json({
-    status: planStatus(tenant.practice),
+    status: planStatus(tenant.workspace),
     plans: serializePlans(),
-    invoices: listInvoices(tenant.practice.id),
+    invoices: listInvoices(tenant.workspace.id),
   });
 }
 
@@ -39,8 +39,8 @@ export async function POST(req: NextRequest) {
   const plan = PLANS.find((p) => p.id === body.plan);
   if (!plan) return NextResponse.json({ error: "Unknown plan" }, { status: 400 });
 
-  const invoice = upgrade(tenant.practice, plan.id);
-  const refreshed = { ...tenant.practice, plan: plan.id };
+  const invoice = upgrade(tenant.workspace, plan.id);
+  const refreshed = { ...tenant.workspace, plan: plan.id };
   return NextResponse.json({
     status: planStatus(refreshed),
     invoice,

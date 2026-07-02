@@ -1,101 +1,92 @@
 import Anthropic from "@anthropic-ai/sdk";
-import { MODEL } from "./receptionist";
-import { dailySeries, intentBreakdown, listEvents, stats } from "./store";
-import { urgencyLabel } from "./triage";
-import type { Briefing, CapturedEvent, Practice } from "./types";
+import { MODEL } from "./ai";
+import { dailySeries, listLeads, workspaceStats } from "./convos";
+import { listAudits } from "./seo";
+import type { Briefing, Workspace } from "./types";
 
-// The AI daily briefing: a Claude-written morning summary of what the
-// receptionist handled — what's urgent, what's trending, what to do first.
-// Cached per practice per day; without an API key it degrades to a
-// deterministic briefing built from the same numbers.
+// The AI pulse briefing: a Claude-written summary of how the website's bots
+// and SEO are performing — what's working, who to follow up with, what to fix.
+// Cached per workspace per day; degrades to a deterministic version without a key.
 
-const g = globalThis as unknown as {
-  __fdBriefings?: Map<string, Briefing>;
-};
+const g = globalThis as unknown as { __kcwBriefings?: Map<string, Briefing> };
 
 function cache(): Map<string, Briefing> {
-  if (!g.__fdBriefings) g.__fdBriefings = new Map();
-  return g.__fdBriefings;
+  if (!g.__kcwBriefings) g.__kcwBriefings = new Map();
+  return g.__kcwBriefings;
 }
 
-/** Compact, model-readable snapshot of the practice's recent activity. */
-export function activitySnapshot(practice: Practice) {
-  const s = stats(practice.id);
-  const series = dailySeries(practice.id, 7);
-  const intents = intentBreakdown(practice.id, 7);
-  const open = listEvents({ practiceId: practice.id })
-    .filter((e) => e.status === "new")
-    .slice(0, 15);
-  return { stats: s, last7Days: series, topIntents: intents, openItems: open };
+function snapshot(workspace: Workspace) {
+  return {
+    stats: workspaceStats(workspace.id),
+    last7Days: dailySeries(workspace.id, 7),
+    newLeads: listLeads(workspace.id).filter((l) => l.status === "new").slice(0, 10),
+    latestAudit: listAudits(workspace.id, 1)[0] ?? null,
+  };
 }
 
-function describeEvent(e: CapturedEvent): string {
-  const when = new Date(e.createdAt).toLocaleString("en-US", {
-    weekday: "short",
-    hour: "numeric",
-    minute: "2-digit",
-  });
-  return `- [${e.kind}] ${e.name} (${e.contact}) · ${e.summary} · urgency ${urgencyLabel(e.urgency)} · sentiment ${e.sentiment} · ${when}`;
-}
-
-export async function getBriefing(practice: Practice, refresh = false): Promise<Briefing> {
-  const key = `${practice.id}:${new Date().toISOString().slice(0, 10)}`;
+export async function getBriefing(workspace: Workspace, refresh = false): Promise<Briefing> {
+  const key = `${workspace.id}:${new Date().toISOString().slice(0, 10)}`;
   if (!refresh) {
     const hit = cache().get(key);
     if (hit) return hit;
   }
 
-  const snapshot = activitySnapshot(practice);
+  const snap = snapshot(workspace);
   const briefing = process.env.ANTHROPIC_API_KEY
-    ? await liveBriefing(practice, snapshot).catch(() => fallbackBriefing(snapshot))
-    : fallbackBriefing(snapshot);
+    ? await liveBriefing(workspace, snap).catch(() => fallbackBriefing(snap))
+    : fallbackBriefing(snap);
 
   cache().set(key, briefing);
   return briefing;
 }
 
-async function liveBriefing(
-  practice: Practice,
-  snapshot: ReturnType<typeof activitySnapshot>,
-): Promise<Briefing> {
+async function liveBriefing(workspace: Workspace, snap: ReturnType<typeof snapshot>): Promise<Briefing> {
   const client = new Anthropic();
-  const openList = snapshot.openItems.map(describeEvent).join("\n") || "(none)";
-  const intents = snapshot.topIntents.map((i) => `${i.intent}: ${i.count}`).join(", ") || "(none)";
-  const volume = snapshot.last7Days
-    .map((d) => `${d.day}: ${d.appointment + d.message + d.callback}`)
-    .join(", ");
+  const volume = snap.last7Days.map((d) => `${d.day}: ${d.conversations} chats, ${d.leads} leads`).join("; ");
+  const leads = snap.newLeads
+    .map((l) => `- ${l.name} <${l.email}> · "${l.message.slice(0, 90)}" · ${l.createdAt.slice(0, 10)}`)
+    .join("\n");
 
-  const prompt = `You write the morning front-desk briefing for ${practice.name}, a ${practice.vertical} practice using an AI receptionist.
+  const prompt = `You write the weekly pulse for ${workspace.name}${
+    workspace.website ? ` (${workspace.website})` : ""
+  }, a business using KayCreatesWeb's AI website chatbot + SEO tools.
 
 Data:
-- Totals: ${snapshot.stats.total} handled all-time, ${snapshot.stats.unactioned} awaiting action, ${snapshot.stats.urgent} open urgent items.
-- Volume by day (last 7 days): ${volume}
-- Top caller intents (last 7 days): ${intents}
-- Open items:
-${openList}
+- Totals: ${snap.stats.conversations} chatbot conversations, ${snap.stats.messages} messages, ${snap.stats.leads} leads captured (${snap.stats.newLeads} not yet contacted).
+- Last 7 days: ${volume}
+- Uncontacted leads:
+${leads || "(none)"}
+- Latest SEO audit: ${
+    snap.latestAudit
+      ? `${snap.latestAudit.url} scored ${snap.latestAudit.score}/100 on ${snap.latestAudit.createdAt.slice(0, 10)}`
+      : "none run yet"
+  }
 
-Write a briefing as strict JSON (no markdown, no commentary) with this shape:
-{"headline": "<one energetic sentence summarizing the state of the front desk>",
- "highlights": ["<2-4 short observations grounded in the data — trends, notable callers, patterns>"],
- "actions": ["<2-3 concrete next steps for staff, most urgent first>"]}
+Write it as strict JSON (no markdown):
+{"headline": "<one energetic sentence on how the website is performing>",
+ "highlights": ["<2-4 short observations grounded in the data — trends, notable leads, wins>"],
+ "actions": ["<2-3 concrete next steps, most valuable first — name specific leads to contact, pages to fix>"]}
 
-Be specific: use names, counts, and intents from the data. Never invent data.`;
+Be specific with names and numbers from the data. Never invent data.`;
 
   const res = await client.messages.create({
     model: MODEL,
     max_tokens: 1024,
     messages: [{ role: "user", content: prompt }],
   });
-
   const text = res.content
     .filter((b): b is Anthropic.TextBlock => b.type === "text")
     .map((b) => b.text)
     .join("");
-  const parsed = extractJson(text);
-  if (!parsed) return fallbackBriefing(snapshot);
+  const start = text.indexOf("{");
+  const end = text.lastIndexOf("}");
+  const parsed = JSON.parse(text.slice(start, end + 1)) as Record<string, unknown>;
 
   return {
-    headline: str(parsed.headline, "Your front desk is up to date."),
+    headline:
+      typeof parsed.headline === "string" && parsed.headline.trim()
+        ? parsed.headline.trim()
+        : "Your website assistant is on the job.",
     highlights: strList(parsed.highlights),
     actions: strList(parsed.actions),
     generatedAt: new Date().toISOString(),
@@ -103,34 +94,34 @@ Be specific: use names, counts, and intents from the data. Never invent data.`;
   };
 }
 
-function fallbackBriefing(snapshot: ReturnType<typeof activitySnapshot>): Briefing {
-  const { stats: s, topIntents } = snapshot;
-  const today = snapshot.last7Days[snapshot.last7Days.length - 1];
-  const todayTotal = today ? today.appointment + today.message + today.callback : 0;
-  const urgentFirst = snapshot.openItems.filter((e) => e.urgency >= 4);
+function fallbackBriefing(snap: ReturnType<typeof snapshot>): Briefing {
+  const week = snap.last7Days.reduce(
+    (acc, d) => ({ conversations: acc.conversations + d.conversations, leads: acc.leads + d.leads }),
+    { conversations: 0, leads: 0 },
+  );
 
   const highlights = [
-    `Robin has handled ${s.total} conversations so far — ${s.appointments} bookings, ${s.messages} messages, ${s.callbacks} callbacks.`,
-    `${todayTotal} came in today; ${s.unactioned} item${s.unactioned === 1 ? "" : "s"} still need${s.unactioned === 1 ? "s" : ""} a human touch.`,
+    `Your chatbot handled ${week.conversations} conversation${week.conversations === 1 ? "" : "s"} this week and captured ${week.leads} lead${week.leads === 1 ? "" : "s"}.`,
+    `${snap.stats.newLeads} lead${snap.stats.newLeads === 1 ? "" : "s"} waiting for a reply out of ${snap.stats.leads} total.`,
   ];
-  if (topIntents[0]) {
-    highlights.push(`Most common reason people reach out: ${topIntents[0].intent} (${topIntents[0].count} in the last week).`);
+  if (snap.latestAudit) {
+    highlights.push(`Latest SEO audit: ${snap.latestAudit.score}/100 for ${shortUrl(snap.latestAudit.url)}.`);
   }
 
   const actions: string[] = [];
-  for (const e of urgentFirst.slice(0, 2)) {
-    actions.push(`Call ${e.name} back first — ${e.summary.toLowerCase()} (${e.contact}).`);
+  for (const l of snap.newLeads.slice(0, 2)) {
+    actions.push(`Reply to ${l.name} (${l.email}) — "${l.message.slice(0, 60) || "reached out via the chatbot"}".`);
   }
-  if (s.unactioned > urgentFirst.length) {
-    actions.push(`Work through the remaining ${s.unactioned - Math.min(2, urgentFirst.length)} open inbox items.`);
-  }
-  if (actions.length === 0) actions.push("Inbox is clear — enjoy the quiet while it lasts.");
+  if (!snap.latestAudit) actions.push("Run your first SEO audit in the Studio to find quick ranking wins.");
+  else if (snap.latestAudit.score < 80)
+    actions.push(`Work through the audit fixes for ${shortUrl(snap.latestAudit.url)} — the score has room to climb.`);
+  if (actions.length === 0) actions.push("All caught up — consider publishing a new post with the AI writer.");
 
   return {
     headline:
-      s.urgent > 0
-        ? `${s.urgent} urgent item${s.urgent === 1 ? "" : "s"} need${s.urgent === 1 ? "s" : ""} attention — everything else is under control.`
-        : `All quiet: ${s.unactioned} open item${s.unactioned === 1 ? "" : "s"}, nothing urgent.`,
+      snap.stats.newLeads > 0
+        ? `${snap.stats.newLeads} warm lead${snap.stats.newLeads === 1 ? "" : "s"} waiting — strike while they're interested.`
+        : "All quiet — your assistant is answering and nothing needs you right now.",
     highlights,
     actions,
     generatedAt: new Date().toISOString(),
@@ -138,22 +129,13 @@ function fallbackBriefing(snapshot: ReturnType<typeof activitySnapshot>): Briefi
   };
 }
 
-// --- helpers -----------------------------------------------------------------
-
-function extractJson(text: string): Record<string, unknown> | null {
-  const start = text.indexOf("{");
-  const end = text.lastIndexOf("}");
-  if (start === -1 || end <= start) return null;
+function shortUrl(u: string): string {
   try {
-    const v = JSON.parse(text.slice(start, end + 1));
-    return v && typeof v === "object" ? (v as Record<string, unknown>) : null;
+    const p = new URL(u);
+    return p.host + (p.pathname === "/" ? "" : p.pathname);
   } catch {
-    return null;
+    return u;
   }
-}
-
-function str(v: unknown, fallback: string): string {
-  return typeof v === "string" && v.trim() ? v.trim() : fallback;
 }
 
 function strList(v: unknown): string[] {

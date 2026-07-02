@@ -2,10 +2,10 @@ import { redirect } from "next/navigation";
 import AppShell from "@/components/AppShell";
 import { getUser } from "@/lib/auth";
 import { planStatus } from "@/lib/billing";
-import { getPracticeByUser } from "@/lib/practices";
+import { getWorkspaceByUser } from "@/lib/workspaces";
 
 export const metadata = {
-  title: "Dashboard · FrontDesk AI",
+  title: "Dashboard · KayCreatesWeb",
 };
 
 export const dynamic = "force-dynamic";
@@ -13,10 +13,10 @@ export const dynamic = "force-dynamic";
 export default async function AppLayout({ children }: { children: React.ReactNode }) {
   const user = await getUser();
   if (!user) redirect("/login");
-  const practice = getPracticeByUser(user.id);
-  if (!practice) redirect("/signup");
+  const workspace = getWorkspaceByUser(user.id);
+  if (!workspace) redirect("/signup");
 
-  const status = planStatus(practice);
+  const status = planStatus(workspace);
   const planBadge = status.onTrial
     ? status.trialExpired
       ? "Trial ended — pick a plan"
@@ -24,7 +24,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
     : `${status.planName} plan`;
 
   return (
-    <AppShell user={user} practice={practice} planBadge={planBadge}>
+    <AppShell user={user} workspace={workspace} planBadge={planBadge}>
       {children}
     </AppShell>
   );

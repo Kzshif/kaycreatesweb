@@ -1,13 +1,13 @@
 import type { NextRequest } from "next/server";
 import { getUserFromRequest } from "./auth";
-import { getPracticeByUser } from "./practices";
-import type { Practice, User } from "./types";
+import { getWorkspaceByUser } from "./workspaces";
+import type { User, Workspace } from "./types";
 
-/** Resolves the authenticated user + their practice for API routes. */
-export function tenantFromRequest(req: NextRequest): { user: User; practice: Practice } | null {
+/** Resolves the authenticated user + their workspace for API routes. */
+export function tenantFromRequest(req: NextRequest): { user: User; workspace: Workspace } | null {
   const user = getUserFromRequest(req);
   if (!user) return null;
-  const practice = getPracticeByUser(user.id);
-  if (!practice) return null;
-  return { user, practice };
+  const workspace = getWorkspaceByUser(user.id);
+  if (!workspace) return null;
+  return { user, workspace };
 }

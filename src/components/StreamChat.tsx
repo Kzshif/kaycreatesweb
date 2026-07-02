@@ -3,8 +3,8 @@
 import { useEffect, useRef, useState } from "react";
 import type { StreamEvent } from "@/lib/types";
 
-// Shared streaming chat client for the NDJSON endpoints (/api/chat with
-// scope=practice, /api/copilot). Renders text deltas, tool chips, and the
+// Shared streaming chat client for the NDJSON endpoints (the bot preview
+// against /api/widget/chat). Renders text deltas, tool chips, and the
 // live/fallback mode badge.
 
 interface ToolChip {
@@ -129,7 +129,7 @@ export default function StreamChat({
     <div className="card flex h-[66vh] min-h-[500px] flex-col overflow-hidden">
       <div className="flex items-center justify-between border-b border-ink/10 px-5 py-3.5">
         <div className="flex items-center gap-3">
-          <span className="grid h-9 w-9 place-items-center rounded-full bg-teal text-cream">
+          <span className="grid h-9 w-9 place-items-center rounded-full bg-primary text-paper">
             {persona.emoji}
           </span>
           <div>
@@ -148,7 +148,7 @@ export default function StreamChat({
         ))}
         {busy && turns[turns.length - 1]?.content === "" && (
           <div className="flex justify-start">
-            <div className="rounded-2xl rounded-tl-sm bg-teal/10 px-4 py-3">
+            <div className="rounded-2xl rounded-tl-sm bg-primary/10 px-4 py-3">
               <span className="dot inline-block">•</span>
               <span className="dot inline-block">•</span>
               <span className="dot inline-block">•</span>
@@ -158,9 +158,9 @@ export default function StreamChat({
       </div>
 
       {blocked && (
-        <div className="border-t border-amber-accent/30 bg-amber-accent/10 px-5 py-3 text-sm text-ink/80">
+        <div className="border-t border-accent/30 bg-accent/10 px-5 py-3 text-sm text-ink/80">
           {blocked}{" "}
-          <a href="/app/billing" className="font-semibold text-teal hover:underline">
+          <a href="/app/billing" className="font-semibold text-primary hover:underline">
             View plans →
           </a>
         </div>
@@ -173,7 +173,7 @@ export default function StreamChat({
               key={s}
               onClick={() => send(s)}
               disabled={busy}
-              className="rounded-full border border-ink/15 px-3 py-1.5 text-xs text-ink/70 transition hover:border-teal hover:text-teal disabled:opacity-50"
+              className="rounded-full border border-ink/15 px-3 py-1.5 text-xs text-ink/70 transition hover:border-primary hover:text-primary disabled:opacity-50"
             >
               {s}
             </button>
@@ -192,7 +192,7 @@ export default function StreamChat({
           value={input}
           onChange={(e) => setInput(e.target.value)}
           placeholder={placeholder}
-          className="flex-1 rounded-full border border-ink/15 bg-white px-4 py-2.5 text-sm outline-none focus:border-teal"
+          className="flex-1 rounded-full border border-ink/15 bg-white px-4 py-2.5 text-sm outline-none focus:border-primary"
         />
         <button type="submit" disabled={busy || !input.trim()} className="btn-primary disabled:opacity-50">
           Send
@@ -208,7 +208,7 @@ function Message({ turn }: { turn: Turn }) {
     <div className={`flex flex-col gap-1.5 ${isAssistant ? "items-start" : "items-end"}`}>
       <div
         className={`max-w-[85%] whitespace-pre-wrap rounded-2xl px-4 py-2.5 text-sm leading-relaxed ${
-          isAssistant ? "rounded-tl-sm bg-teal/10 text-ink" : "rounded-tr-sm bg-ink text-cream"
+          isAssistant ? "rounded-tl-sm bg-primary/10 text-ink" : "rounded-tr-sm bg-ink text-paper"
         }`}
       >
         {turn.content || (turn.streaming ? "" : "…")}
@@ -217,7 +217,7 @@ function Message({ turn }: { turn: Turn }) {
       {turn.tools?.map((tool, i) => (
         <div
           key={i}
-          className="flex items-center gap-1.5 rounded-lg bg-amber-accent/15 px-2.5 py-1 text-xs font-medium text-ink/75"
+          className="flex items-center gap-1.5 rounded-lg bg-accent/15 px-2.5 py-1 text-xs font-medium text-ink/75"
         >
           {tool.label}
         </div>
@@ -231,7 +231,7 @@ function ModeBadge({ mode }: { mode: "live" | "fallback" | null }) {
     return (
       <span
         title="ANTHROPIC_API_KEY is not set, so this runs in scripted demo mode."
-        className="rounded-full bg-amber-accent/15 px-2.5 py-1 text-xs font-medium text-amber-accent"
+        className="rounded-full bg-accent/15 px-2.5 py-1 text-xs font-medium text-accent"
       >
         demo mode
       </span>
@@ -239,7 +239,7 @@ function ModeBadge({ mode }: { mode: "live" | "fallback" | null }) {
   }
   if (mode === "live") {
     return (
-      <span className="rounded-full bg-teal/15 px-2.5 py-1 text-xs font-medium text-teal">
+      <span className="rounded-full bg-primary/15 px-2.5 py-1 text-xs font-medium text-primary">
         Claude · live
       </span>
     );
