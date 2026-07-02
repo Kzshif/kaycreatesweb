@@ -12,6 +12,7 @@ const config: Config = {
         teal: {
           DEFAULT: "#0d6e6e",
           deep: "#0a4f4f",
+          light: "#7fd1c7",
         },
         amber: {
           accent: "#e0913a",

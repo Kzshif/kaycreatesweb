@@ -20,18 +20,27 @@ export function SiteHeader({ active }: { active?: "demo" | "dashboard" }) {
         <Logo />
         <nav className="hidden items-center gap-7 text-sm font-medium text-ink/70 md:flex">
           <Link href="/#how" className="hover:text-ink">How it works</Link>
+          <Link href="/#ai" className="hover:text-ink">AI features</Link>
           <Link href="/#verticals" className="hover:text-ink">Verticals</Link>
           <Link href="/#pricing" className="hover:text-ink">Pricing</Link>
           <Link
-            href="/dashboard"
-            className={active === "dashboard" ? "text-ink" : "hover:text-ink"}
+            href="/demo"
+            className={active === "demo" ? "text-ink" : "hover:text-ink"}
           >
-            Dashboard
+            Live demo
           </Link>
         </nav>
-        <Link href="/demo" className="btn-primary">
-          Try the live demo
-        </Link>
+        <div className="flex items-center gap-2.5">
+          <Link
+            href="/login"
+            className="hidden rounded-full px-4 py-2.5 text-sm font-semibold text-ink/70 transition hover:text-ink sm:block"
+          >
+            Sign in
+          </Link>
+          <Link href="/signup" className="btn-primary">
+            Start free trial
+          </Link>
+        </div>
       </div>
     </header>
   );

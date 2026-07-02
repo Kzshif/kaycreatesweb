@@ -55,25 +55,70 @@ const FEATURES = [
 
 const PLANS = [
   {
-    name: "Solo",
+    id: "starter",
+    name: "Starter",
     price: "$149",
     tagline: "Single-provider practice",
-    features: ["1 location", "Up to 400 calls / mo", "Appointments + messages", "Email + dashboard delivery"],
+    features: [
+      "300 conversations / mo",
+      "Web chat + phone answering",
+      "Appointments, messages & callbacks",
+      "AI triage on every call",
+      "Staff inbox & analytics",
+    ],
     highlight: false,
   },
   {
+    id: "practice",
     name: "Practice",
     price: "$399",
     tagline: "Growing multi-provider clinic",
-    features: ["Up to 3 locations", "2,000 calls / mo", "Insurance & FAQ tuning", "Scheduling system handoff", "Priority callback routing"],
+    features: [
+      "1,500 conversations / mo",
+      "Everything in Starter",
+      "AI daily briefing",
+      "Front-desk Copilot",
+      "AI-drafted replies",
+      "Priority support",
+    ],
     highlight: true,
   },
   {
+    id: "group",
     name: "Group",
-    price: "Let's talk",
-    tagline: "DSO / multi-site group",
-    features: ["Unlimited locations", "Custom volume", "EHR / PMS integration", "SSO & audit logs", "Dedicated success manager"],
+    price: "$899",
+    tagline: "Multi-site group / DSO",
+    features: [
+      "Unlimited conversations",
+      "Everything in Practice",
+      "Multiple locations",
+      "EHR / PMS integration support",
+      "Dedicated success manager",
+    ],
     highlight: false,
+  },
+];
+
+const AI_FEATURES = [
+  {
+    icon: "🌅",
+    title: "AI daily briefing",
+    body: "Every morning, Claude reads through everything Robin handled and writes your front desk's game plan: what's urgent, what's trending, who to call first.",
+  },
+  {
+    icon: "🚦",
+    title: "Instant triage",
+    body: "Every call is scored for urgency, sentiment, and intent the moment it's captured. The toothache-at-2am jumps the queue; the billing question waits its turn.",
+  },
+  {
+    icon: "✦",
+    title: "Front-desk Copilot",
+    body: "Ask your data anything — “who should I call back first?”, “are refill requests up this week?” — and get answers with names and numbers, not dashboards.",
+  },
+  {
+    icon: "💬",
+    title: "AI-drafted replies",
+    body: "One click drafts the follow-up text for any inbox item, in your practice's voice, ready to send or tweak.",
   },
 ];
 
@@ -98,11 +143,11 @@ export default function Home() {
             day — so no patient hits voicemail.
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-3">
-            <Link href="/demo" className="btn-primary px-7 py-3.5 text-base">
-              Talk to the receptionist →
+            <Link href="/signup" className="btn-primary px-7 py-3.5 text-base">
+              Start your free trial →
             </Link>
-            <Link href="/dashboard" className="btn-ghost px-7 py-3.5 text-base">
-              See the dashboard
+            <Link href="/demo" className="btn-ghost px-7 py-3.5 text-base">
+              Talk to the receptionist
             </Link>
           </div>
           <dl className="mt-10 grid max-w-md grid-cols-3 gap-6">
@@ -169,6 +214,34 @@ export default function Home() {
         </div>
       </section>
 
+      {/* AI features */}
+      <section id="ai" className="border-y border-ink/10 bg-ink py-16 text-cream">
+        <div className="container-x">
+          <div className="mb-10 max-w-2xl">
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-teal-light">
+              Beyond answering
+            </p>
+            <h2 className="font-display text-3xl font-semibold tracking-tight sm:text-4xl">
+              An AI receptionist that also{" "}
+              <span className="italic text-teal-light">thinks</span> about your day.
+            </h2>
+            <p className="mt-3 text-cream/70">
+              Answering the phone is table stakes. FrontDesk AI turns every conversation into
+              intelligence your team actually uses — powered by Claude.
+            </p>
+          </div>
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {AI_FEATURES.map((f) => (
+              <div key={f.title} className="rounded-2xl border border-white/10 bg-white/5 p-6">
+                <span className="text-2xl">{f.icon}</span>
+                <h3 className="mt-3 font-display text-lg font-semibold">{f.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-cream/65">{f.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Verticals */}
       <section id="verticals" className="border-y border-ink/10 bg-white/50 py-16">
         <div className="container-x">
@@ -232,7 +305,8 @@ export default function Home() {
               Cheaper than a missed new patient.
             </h2>
             <p className="mt-3 text-ink/65">
-              Flat monthly pricing per practice. Cancel anytime. Demo pricing shown.
+              Flat monthly pricing per practice. Every plan starts with a 14-day free trial —
+              no credit card required. Cancel anytime.
             </p>
           </div>
           <div className="grid gap-5 lg:grid-cols-3">
@@ -252,9 +326,7 @@ export default function Home() {
                 <p className="text-sm text-ink/55">{p.tagline}</p>
                 <p className="mt-4 font-display text-4xl font-semibold">
                   {p.price}
-                  {p.price.startsWith("$") && (
-                    <span className="text-base font-normal text-ink/50">/mo</span>
-                  )}
+                  <span className="text-base font-normal text-ink/50">/mo</span>
                 </p>
                 <ul className="mt-5 space-y-2.5 text-sm text-ink/70">
                   {p.features.map((f) => (
@@ -264,10 +336,10 @@ export default function Home() {
                   ))}
                 </ul>
                 <Link
-                  href="/demo"
+                  href={`/signup?plan=${p.id}`}
                   className={`mt-7 ${p.highlight ? "btn-primary" : "btn-ghost"}`}
                 >
-                  {p.price === "Let's talk" ? "Contact sales" : "Start free trial"}
+                  Start free trial
                 </Link>
               </div>
             ))}
@@ -281,21 +353,21 @@ export default function Home() {
           <div className="absolute -right-10 -top-10 h-56 w-56 rounded-full bg-teal/40 blur-3xl" />
           <div className="relative max-w-2xl">
             <h2 className="font-display text-3xl font-semibold tracking-tight sm:text-4xl">
-              Hear it answer a call right now.
+              Your front desk could be answering by tonight.
             </h2>
             <p className="mt-3 text-cream/75">
-              No signup. Pick a specialty, describe what you'd call about, and watch
-              the booking land on the dashboard in real time.
+              Two minutes to sign up. Robin comes pre-configured for your specialty,
+              and the first 14 days are on us — no credit card required.
             </p>
             <div className="mt-7 flex flex-wrap gap-3">
-              <Link href="/demo" className="btn bg-cream text-ink hover:bg-white">
-                Launch the demo →
+              <Link href="/signup" className="btn bg-cream text-ink hover:bg-white">
+                Start your free trial →
               </Link>
               <Link
-                href="/dashboard"
+                href="/demo"
                 className="btn border border-cream/30 text-cream hover:border-cream/70"
               >
-                View the dashboard
+                Try the live demo first
               </Link>
             </div>
           </div>

@@ -2,44 +2,50 @@
 
 **A vertical AI receptionist as a service** for dental, medical, physiotherapy, and
 veterinary practices. "Robin" answers every call, books appointments, takes
-messages, and answers the questions a front desk fields all day — then drops
-everything it captured into a staff dashboard.
+messages, and answers the questions a front desk fields all day — then a layer of
+AI intelligence (triage, daily briefings, a data copilot, drafted replies) turns
+what it captured into your team's game plan.
 
-Built with **Next.js (App Router)** and the **Claude API** (`claude-opus-4-8`).
+Built with **Next.js (App Router)**, **SQLite**, and the **Claude API**
+(`claude-opus-4-8`). No other runtime dependencies.
 
 ---
 
 ## What's in the box
 
+### Public site
+
 | Surface | Route | What it does |
 | --- | --- | --- |
-| **Marketing site** | `/` | Hero, how-it-works, per-vertical breakdown, features, pricing. |
-| **Live receptionist** | `/demo` | Chat with Robin exactly like a phone call. Streams responses token-by-token and uses tools to book, message, and arrange callbacks. |
-| **Staff dashboard** | `/dashboard` | Everything Robin captured — appointments, messages, callbacks — in one live-updating queue you can action. |
-| **Chat API** | `POST /api/chat` | Server-side Claude agentic loop (streaming + tool use), returns newline-delimited JSON events. |
-| **Voice webhooks** | `POST /api/voice`, `POST /api/voice/respond` | Twilio Voice integration — Robin answers a real phone line, transcribes the caller, and speaks back. |
-| **Events API** | `GET/PATCH /api/events` | Reads and actions captured events. |
+| **Marketing site** | `/` | Hero, how-it-works, AI features, per-vertical breakdown, pricing wired to signup. |
+| **Live receptionist demo** | `/demo` | Chat with Robin exactly like a phone call, no signup. Streams responses token-by-token and uses tools to book, message, and arrange callbacks. |
+| **Demo dashboard** | `/dashboard` | The public demo's captured events (tenant data never appears here). |
 
-### The "vertical" in vertical SaaS
+### The SaaS app (`/app`, behind auth)
 
-Each specialty ships pre-configured with the services, scheduling language, hours,
-and FAQs that practice actually handles — see `src/lib/verticals.ts`:
+| Surface | What it does |
+| --- | --- |
+| **Overview** | Stat tiles, conversations-per-day chart, "why people call" intent chart, usage vs. plan — and the **AI daily briefing**: Claude reads your activity and writes what's urgent, what's trending, and what to do first. |
+| **Inbox** | Everything Robin captured for *your* practice, pre-triaged (urgency 1–5, sentiment, intent) and sorted so the critical items float. One click gets an **AI-drafted reply** ready to send. |
+| **Copilot** | A streaming Claude agent with query tools over your own data — "who should I call back first?", "are refill requests trending up?" — answers with names and numbers. |
+| **Test console** | Talk to *your* receptionist (your hours, services, FAQs, greeting). Conversations are metered against your plan. |
+| **Settings** | Teach Robin your practice: name, specialty, hours, services, FAQs, greeting. |
+| **Plan & billing** | Starter $149 / Practice $399 / Group $899, 14-day trial, usage metering with limits enforced in the chat API, invoice history. Billing is simulated — swap `POST /api/billing` for Stripe Checkout in production. |
 
-- 🦷 **Dental** — Brightwater Dental
-- 🩺 **Family medicine** — Cedar Park Family Medicine
-- 🏃 **Physical therapy** — Kinetic Physical Therapy
-- 🐾 **Veterinary** — Maple Street Veterinary
+### API
 
-### What Robin can do
-
-Robin runs a real tool-use loop. Tools live in `src/lib/receptionist.ts`:
-
-- `book_appointment` — collects name, contact, service, and preferred time.
-- `take_message` — captures messages and triages urgency (refills, billing, symptoms).
-- `request_callback` — schedules a staff callback.
-
-It is prompted to **never give clinical advice** — anything clinical becomes a
-high-priority message for a licensed provider.
+| Route | What it does |
+| --- | --- |
+| `POST /api/chat` | Streaming Claude agentic loop (tool use). `scope: "practice"` runs the caller's own configured receptionist, metered + limit-enforced; otherwise the public demo. |
+| `POST /api/copilot` | Streaming Copilot with `query_events` / `get_stats` tools scoped to the tenant. |
+| `GET /api/insights` | Cached-per-day AI briefing (`?refresh=1` to regenerate). |
+| `POST /api/events/suggest` | AI-drafted reply for one inbox item. |
+| `GET /api/analytics` | Daily series, intent breakdown, stats, plan status. |
+| `GET/PATCH /api/events` | Read / action captured events (tenant-scoped with a session, demo otherwise). |
+| `GET/PATCH /api/practice` | Read / update the receptionist configuration. |
+| `GET/POST /api/billing` | Plan status + invoices; simulated plan switch. |
+| `POST /api/auth/signup·login·logout` | Cookie-session auth (scrypt password hashing, no extra deps). |
+| `POST /api/voice`, `/api/voice/respond` | Twilio Voice — Robin answers a real phone line (public demo brain). |
 
 ---
 
@@ -59,80 +65,64 @@ npm run build && npm start
 
 ### API key & "demo mode"
 
-The live receptionist calls Claude (`claude-opus-4-8`) and needs an
-`ANTHROPIC_API_KEY`. **Without a key, the app still works** — it falls back to a
-small rule-based receptionist (`src/lib/fallback.ts`) so you can click through the
-whole product, and the chat header shows a `demo mode` badge. Set the key to get
-the real, fully conversational experience (the badge switches to `Claude · live`).
+All AI surfaces call Claude (`claude-opus-4-8`) and need an `ANTHROPIC_API_KEY`.
+**Without a key, every surface still works** — the receptionist falls back to a
+rule-based responder, the briefing/copilot/replies fall back to deterministic
+data-grounded versions, and the UI shows a `demo mode` badge. Set the key to get
+the real experience (the badge switches to `Claude · live`).
 
----
+### Multi-tenancy & data
 
-## How the chat works
+Sign up (`/signup`) to create a user + practice. Each practice is a tenant:
+captured events, usage, analytics, and AI features are scoped by `practiceId`.
+Rows with a NULL `practiceId` belong to the public demo, so tenant data never
+leaks into unauthenticated surfaces. New practices are seeded with a week of
+sample activity so the dashboard and charts are alive from the first login.
 
-`POST /api/chat` takes the conversation + the selected vertical and runs the
-agentic loop server-side (`src/app/api/chat/route.ts`):
-
-1. Build the practice-specific system prompt.
-2. Stream Claude's reply with `client.messages.stream(...)`, forwarding text deltas.
-3. If Claude calls a tool, execute it (which writes to the store), stream a tool
-   marker to the UI, feed the result back, and continue.
-4. Emit a final `done` event noting whether the turn ran `live` or in `fallback`.
-
-The browser reads the newline-delimited JSON stream and renders text, tool chips,
-and the streaming cursor in real time (`src/components/Chat.tsx`).
+Everything persists in **SQLite** via `better-sqlite3` (`src/lib/db.ts`) at
+`./data/frontdesk.db` (override with `DATABASE_PATH`; `:memory:` for ephemeral).
+Schema is created and migrated automatically.
 
 ## Answering a real phone line (Twilio)
 
-Robin isn't limited to web chat — point a Twilio number at the voice webhook and
-it answers actual calls. The voice and chat surfaces share the same brain
-(`src/lib/converse.ts`), so bookings made by phone land in the same dashboard.
-
-1. Deploy the app somewhere Twilio can reach, and set `PUBLIC_BASE_URL` plus
-   `TWILIO_AUTH_TOKEN` (the token enables request-signature validation).
-2. In the Twilio console, set the number's **"A call comes in"** webhook to:
-   `POST https://your-app.example.com/api/voice?vertical=dental`
-   (swap `vertical` for `medical`, `physio`, or `vet`).
-
-Flow: `/api/voice` greets the caller and opens a `<Gather input="speech">`; Twilio
-transcribes the caller and POSTs it to `/api/voice/respond`, which runs the
-receptionist, speaks the reply, and listens again until the caller says goodbye.
-Per-call transcripts are kept in memory keyed by Twilio's `CallSid`.
-
-## Data persistence
-
-Captured events are stored in **SQLite** via `better-sqlite3`
-(`src/lib/store.ts`), so they survive restarts. The database lives at
-`./data/frontdesk.db` by default — override with `DATABASE_PATH` (use `:memory:`
-for an ephemeral store). The schema is created and seeded automatically on first
-run. Swap this module for your production database or EHR/PMS integration without
-touching the rest of the app — the exported functions are the only contract.
+Point a Twilio number's **"A call comes in"** webhook at
+`POST https://your-app.example.com/api/voice?vertical=dental` and Robin answers
+actual calls — see `src/lib/twilio.ts`. Set `PUBLIC_BASE_URL` and
+`TWILIO_AUTH_TOKEN` (enables request-signature validation).
 
 ## Project structure
 
 ```
 src/
   app/
-    page.tsx              # marketing landing
-    demo/page.tsx         # live receptionist
-    dashboard/page.tsx    # staff queue
-    api/chat/route.ts            # streaming Claude + tool-use loop
-    api/events/route.ts          # read / action captured events
-    api/voice/route.ts           # Twilio: greet the caller
-    api/voice/respond/route.ts   # Twilio: converse + speak the reply
-  components/                     # Chat, Dashboard, site chrome
+    page.tsx                    # marketing landing
+    demo/  dashboard/           # public demo surfaces
+    login/ signup/              # auth pages
+    app/                        # the SaaS app (auth-gated layout)
+      page.tsx                  #   overview: charts + AI briefing
+      inbox/ copilot/ console/ settings/ billing/
+    api/
+      chat/ copilot/ insights/  # streaming + AI endpoints
+      events/ events/suggest/
+      analytics/ practice/ billing/
+      auth/{signup,login,logout}/
+      voice/ voice/respond/     # Twilio
+  components/                   # Charts (hand-rolled SVG), AppShell, Inbox, …
   lib/
-    receptionist.ts              # system prompt + tools + executor
-    converse.ts                  # non-streaming receptionist (used by voice)
-    verticals.ts                 # per-specialty configuration
-    store.ts                     # SQLite-backed capture store
-    twilio.ts                    # TwiML builders, call state, signature check
-    fallback.ts                  # no-key rule-based receptionist
-    types.ts
+    db.ts                       # SQLite handle + schema/migrations
+    auth.ts                     # scrypt + cookie sessions
+    practices.ts                # tenants; practice → receptionist config
+    billing.ts                  # plans, usage metering, simulated invoices
+    triage.ts                   # instant urgency/sentiment/intent scoring
+    insights.ts                 # AI daily briefing (cached, with fallback)
+    receptionist.ts             # system prompt + tools + executor
+    store.ts                    # tenant-scoped capture store + analytics queries
+    converse.ts fallback.ts twilio.ts verticals.ts types.ts
 ```
 
 ## Notes & next steps
 
-A working demo with a persistent store and live phone answering. To take it
-further you'd wire the booking tool to a real scheduling system / EHR, move the
-per-call transcript state into shared storage (Redis) for multi-instance
-deployments, and add authentication to the staff dashboard.
+To take it to production: swap simulated billing for Stripe Checkout + webhooks,
+move SQLite to Postgres, add email (magic-link auth, briefing digests), wire the
+booking tool to a real scheduling system / EHR, and put the per-call Twilio
+transcript state in Redis for multi-instance deployments.

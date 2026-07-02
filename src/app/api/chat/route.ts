@@ -1,14 +1,17 @@
 import Anthropic from "@anthropic-ai/sdk";
 import { NextRequest } from "next/server";
-import { getVertical } from "@/lib/verticals";
+import { planStatus, recordConversation } from "@/lib/billing";
+import { fallbackReply } from "@/lib/fallback";
+import { practiceToVertical } from "@/lib/practices";
 import {
   MODEL,
   TOOLS,
   buildSystemPrompt,
   runTool,
 } from "@/lib/receptionist";
-import { fallbackReply } from "@/lib/fallback";
-import type { ChatMessage, StreamEvent } from "@/lib/types";
+import { tenantFromRequest } from "@/lib/tenant";
+import { getVertical } from "@/lib/verticals";
+import type { ChatMessage, StreamEvent, Vertical } from "@/lib/types";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -20,17 +23,45 @@ function send(controller: ReadableStreamDefaultController, enc: TextEncoder, e: 
 }
 
 export async function POST(req: NextRequest) {
-  let body: { messages?: ChatMessage[]; vertical?: string };
+  let body: { messages?: ChatMessage[]; vertical?: string; scope?: string };
   try {
     body = await req.json();
   } catch {
     return new Response("Bad request", { status: 400 });
   }
 
-  const vertical = getVertical(body.vertical);
+  // scope: "practice" runs the caller's own configured receptionist (authed,
+  // metered against their plan); anything else runs the public demo.
+  let vertical: Vertical;
+  let practiceId: string | null = null;
+  if (body.scope === "practice") {
+    const tenant = tenantFromRequest(req);
+    if (!tenant) return new Response("Unauthorized", { status: 401 });
+    const status = planStatus(tenant.practice);
+    if (status.overLimit) {
+      return Response.json(
+        {
+          error: status.trialExpired
+            ? "Your free trial has ended. Pick a plan to keep Robin answering."
+            : "You've used this month's included conversations. Upgrade to keep Robin answering.",
+        },
+        { status: 402 },
+      );
+    }
+    vertical = practiceToVertical(tenant.practice);
+    practiceId = tenant.practice.id;
+  } else {
+    vertical = getVertical(body.vertical);
+  }
+
   const history: ChatMessage[] = Array.isArray(body.messages) ? body.messages.slice(-20) : [];
   if (history.length === 0 || history[history.length - 1]?.role !== "user") {
     return new Response("Expected a user message", { status: 400 });
+  }
+
+  // Meter once per user turn, at the start of the conversation.
+  if (practiceId && history.filter((m) => m.role === "user").length === 1) {
+    recordConversation(practiceId);
   }
 
   const enc = new TextEncoder();
@@ -40,9 +71,9 @@ export async function POST(req: NextRequest) {
     async start(controller) {
       try {
         if (!hasKey) {
-          await runFallback(controller, enc, history, vertical);
+          await runFallback(controller, enc, history, vertical, practiceId);
         } else {
-          await runLive(controller, enc, history, vertical);
+          await runLive(controller, enc, history, vertical, practiceId);
         }
       } catch (err) {
         const message = err instanceof Error ? err.message : "Unexpected error";
@@ -68,7 +99,8 @@ async function runLive(
   controller: ReadableStreamDefaultController,
   enc: TextEncoder,
   history: ChatMessage[],
-  vertical: ReturnType<typeof getVertical>,
+  vertical: Vertical,
+  practiceId: string | null,
 ) {
   const client = new Anthropic();
   const system = buildSystemPrompt(vertical);
@@ -103,6 +135,7 @@ async function runLive(
         tu.name,
         (tu.input ?? {}) as Record<string, unknown>,
         vertical,
+        practiceId,
       );
       send(controller, enc, { type: "tool", name: tu.name, label, event });
       toolResults.push({ type: "tool_result", tool_use_id: tu.id, content: result });
@@ -119,9 +152,10 @@ async function runFallback(
   controller: ReadableStreamDefaultController,
   enc: TextEncoder,
   history: ChatMessage[],
-  vertical: ReturnType<typeof getVertical>,
+  vertical: Vertical,
+  practiceId: string | null,
 ) {
-  const turn = fallbackReply(history, vertical);
+  const turn = fallbackReply(history, vertical, practiceId);
 
   // The rule-based responder already wrote any captured event to the store
   // inside fallbackReply(); surface a matching tool marker to the UI.

@@ -112,12 +112,14 @@ export function runTool(
   name: string,
   input: ToolInput,
   vertical: Vertical,
+  practiceId: string | null = null,
 ): { result: string; label: string; event: ReturnType<typeof addEvent> } {
   switch (name) {
     case "book_appointment": {
       const event = addEvent({
         kind: "appointment",
         vertical: vertical.id,
+        practiceId,
         name: str(input.name),
         contact: str(input.contact),
         summary: `Booked ${str(input.service, "appointment")}`,
@@ -138,6 +140,7 @@ export function runTool(
       const event = addEvent({
         kind: "message",
         vertical: vertical.id,
+        practiceId,
         name: str(input.name),
         contact: str(input.contact),
         summary: str(input.message).slice(0, 80),
@@ -153,6 +156,7 @@ export function runTool(
       const event = addEvent({
         kind: "callback",
         vertical: vertical.id,
+        practiceId,
         name: str(input.name),
         contact: str(input.contact),
         summary: str(input.reason).slice(0, 80),
@@ -171,6 +175,7 @@ export function runTool(
         event: addEvent({
           kind: "message",
           vertical: vertical.id,
+          practiceId,
           name: "system",
           contact: "—",
           summary: `Unknown tool ${name}`,

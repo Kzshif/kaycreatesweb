@@ -71,7 +71,11 @@ function cleanName(raw?: string): string | undefined {
   return raw.trim();
 }
 
-export function fallbackReply(history: ChatMessage[], vertical: Vertical): FallbackTurn {
+export function fallbackReply(
+  history: ChatMessage[],
+  vertical: Vertical,
+  practiceId: string | null = null,
+): FallbackTurn {
   const { name, contact, text } = collect(history);
   const lower = text;
 
@@ -101,6 +105,7 @@ export function fallbackReply(history: ChatMessage[], vertical: Vertical): Fallb
         "take_message",
         { name, contact, message: history[history.length - 1].content, urgency: "high" },
         vertical,
+        practiceId,
       );
       return {
         text: `I'm so sorry you're dealing with that. I've flagged this as urgent and a provider will call you back as soon as possible. If it's a true emergency please don't wait for us.`,
@@ -121,6 +126,7 @@ export function fallbackReply(history: ChatMessage[], vertical: Vertical): Fallb
         "book_appointment",
         { name, contact, service, preferred_time: "next available", notes: "via web demo" },
         vertical,
+        practiceId,
       );
       return {
         text: `Perfect, ${name.split(" ")[0]} — I've put in a request for ${service.toLowerCase()} and the office will call ${contact} to lock in the exact time. Anything else?`,
@@ -137,6 +143,7 @@ export function fallbackReply(history: ChatMessage[], vertical: Vertical): Fallb
         "take_message",
         { name, contact, message: history[history.length - 1].content, urgency: "normal" },
         vertical,
+        practiceId,
       );
       return {
         text: `Got it — I've passed that along to the team and they'll follow up. Anything else I can do?`,
