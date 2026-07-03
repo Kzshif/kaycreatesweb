@@ -1,5 +1,5 @@
 import Link from "next/link";
-import FlowField from "./FlowField";
+import NeuralField from "./NeuralField";
 import { Logo } from "./SiteChrome";
 
 // Split-screen chrome for the login / signup pages: the Night brand surface on
@@ -18,7 +18,7 @@ export function AuthPanel({
     <div className="grid min-h-screen lg:grid-cols-[1fr_1.1fr]">
       {/* Brand panel */}
       <aside className="relative hidden overflow-hidden bg-night p-10 text-silver lg:flex lg:flex-col lg:justify-between">
-        <FlowField seed={4242} density={90} opacity={0.55} />
+        <NeuralField seed={4242} density={95} opacity={0.7} interactive={false} />
         <div
           className="pointer-events-none absolute inset-0"
           style={{

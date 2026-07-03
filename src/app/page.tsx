@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Script from "next/script";
-import FlowField from "@/components/FlowField";
+import NeuralField from "@/components/NeuralField";
 import { Counter, Reveal } from "@/components/Motion";
 import { SiteFooter, SiteHeader } from "@/components/SiteChrome";
 
@@ -108,13 +108,13 @@ export default function Home() {
 
       {/* ---------------------------------------------------------------- Hero */}
       <section className="relative overflow-hidden">
-        <FlowField className="opacity-90" />
+        <NeuralField opacity={0.95} />
         {/* Vignette so type sits on quiet dark */}
         <div
           className="pointer-events-none absolute inset-0"
           style={{
             background:
-              "radial-gradient(1100px 520px at 50% 18%, rgba(9,11,18,0) 0%, rgba(9,11,18,0.72) 62%, #090b12 100%)",
+              "radial-gradient(1100px 520px at 50% 18%, rgba(9,11,18,0) 0%, rgba(9,11,18,0.55) 62%, #090b12 100%)",
           }}
         />
         <div className="container-x relative grid gap-14 pb-20 pt-40 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:pb-28 lg:pt-48">
@@ -449,12 +449,12 @@ export default function Home() {
 
       {/* ---------------------------------------------------------------- Final CTA */}
       <section className="relative overflow-hidden py-28">
-        <FlowField seed={777} density={90} opacity={0.5} />
+        <NeuralField seed={777} density={80} opacity={0.7} />
         <div
           className="pointer-events-none absolute inset-0"
           style={{
             background:
-              "radial-gradient(900px 460px at 50% 50%, rgba(9,11,18,0.2) 0%, rgba(9,11,18,0.9) 70%, #090b12 100%)",
+              "radial-gradient(900px 460px at 50% 50%, rgba(9,11,18,0.1) 0%, rgba(9,11,18,0.8) 72%, #090b12 100%)",
           }}
         />
         <div className="container-x relative text-center">

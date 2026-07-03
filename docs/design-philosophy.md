@@ -37,9 +37,11 @@ matters most. Everything else is achromatic discipline. Gradients are permitted
 only as atmosphere — aurora light pooling behind glass — never as decoration
 painted onto surfaces.
 
-Motion is evidence of life, not garnish. A field of particles drifts through the
-dark following invisible currents — seeded, deterministic, the same storm every
-time, the way a signature is the same every time. Interface motion is small and
+Motion is evidence of life, not garnish. Behind the work, a constellation of
+nodes drifts slowly through the dark, joined by proximity into a living map — a
+nervous system rendered in thread-thin light, with signals firing along its
+connections as brief cyan sparks. It is seeded and deterministic: the same mind,
+thinking the same way, every time. Interface motion is small and
 physical: things arrive from six pixels away, numbers count up because they were
 just computed, borders brighten because attention arrived. Nothing bounces.
 Nothing spins. The work must feel meticulously crafted — labored over with
