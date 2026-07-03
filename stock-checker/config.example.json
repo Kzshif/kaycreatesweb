@@ -1,0 +1,83 @@
+{
+  "intervalSeconds": 300,
+  "jitterSeconds": 60,
+  "perRequestDelayMs": 2500,
+  "requestTimeoutMs": 15000,
+  "stateFile": "state.json",
+
+  "notify": {
+    "discordWebhookUrl": "",
+    "telegramBotToken": "",
+    "telegramChatId": ""
+  },
+
+  "watches": [
+    {
+      "id": "chaoscards-example",
+      "name": "Chaos Cards — (paste a real product here)",
+      "store": "Chaos Cards (UK online)",
+      "url": "https://www.chaoscards.co.uk/",
+      "enabled": false,
+      "inStockText": ["add to basket", "add to cart"],
+      "outOfStockText": ["out of stock", "sold out", "notify me when available"]
+    },
+    {
+      "id": "magicmadhouse-example",
+      "name": "Magic Madhouse — (paste a real product here)",
+      "store": "Magic Madhouse (UK online)",
+      "url": "https://www.magicmadhouse.co.uk/",
+      "enabled": false,
+      "inStockText": ["add to basket", "add to cart"],
+      "outOfStockText": ["out of stock", "sold out", "pre-order"]
+    },
+    {
+      "id": "amazonuk-example",
+      "name": "Amazon UK — (paste a real product here)",
+      "store": "Amazon UK",
+      "url": "https://www.amazon.co.uk/",
+      "enabled": false,
+      "inStockText": ["add to basket", "buy now", "in stock"],
+      "outOfStockText": [
+        "currently unavailable",
+        "temporarily out of stock",
+        "we don't know when or if this item will be back"
+      ]
+    },
+    {
+      "id": "smyths-example",
+      "name": "Smyths Toys — (paste a real product here)",
+      "store": "Smyths Toys (check Reading / Basingstoke for collect)",
+      "url": "https://www.smythstoys.com/uk/en-gb/",
+      "enabled": false,
+      "inStockText": ["add to trolley", "add to basket", "in stock"],
+      "outOfStockText": ["out of stock", "sold out", "not available"]
+    },
+    {
+      "id": "argos-newbury-example",
+      "name": "Argos — (paste a real product here)",
+      "store": "Argos Newbury (Kennet Centre) — check click & collect",
+      "url": "https://www.argos.co.uk/",
+      "enabled": false,
+      "inStockText": ["add to trolley", "reserve", "available"],
+      "outOfStockText": ["out of stock", "not available", "unavailable"]
+    },
+    {
+      "id": "game-example",
+      "name": "GAME — (paste a real product here)",
+      "store": "GAME (check Reading store for collect)",
+      "url": "https://www.game.co.uk/",
+      "enabled": false,
+      "inStockText": ["add to basket", "in stock"],
+      "outOfStockText": ["out of stock", "sold out", "coming soon"]
+    },
+    {
+      "id": "pokemoncenter-uk-example",
+      "name": "Pokémon Center UK — (paste a real product here)",
+      "store": "Pokémon Center UK (official)",
+      "url": "https://www.pokemoncenter.com/en-gb",
+      "enabled": false,
+      "inStockText": ["add to cart", "add to basket"],
+      "outOfStockText": ["sold out", "out of stock", "coming soon"]
+    }
+  ]
+}
