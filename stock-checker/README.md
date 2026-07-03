@@ -129,12 +129,20 @@ Put it in `telegramChatId`.
 ## Running it around the clock
 
 - **Leave it running** in a terminal (`node checker.mjs`), or
-- **Cron** (single pass every 5 min):
-  ```
-  */5 * * * * cd /path/to/stock-checker && /usr/bin/node checker.mjs --once >> checker.log 2>&1
-  ```
+- **systemd** (Raspberry Pi / any Linux box) — ready-made unit in
+  [`poke-checker.service`](poke-checker.service); install steps are in its
+  header comments. Auto-restarts on crash and on reboot.
+- **Cron** — single pass every 5 minutes; copy the line from
+  [`crontab.example`](crontab.example).
+- **Docker** — [`Dockerfile`](Dockerfile) included, with a
+  `--build-arg WITH_BROWSER=1` variant that bakes in Playwright/Chromium for
+  browser-mode watches. Run commands are in its header comments.
 - **A cheap always-on box** (Raspberry Pi, a £4/mo VPS, or a free-tier host)
   keeps it watching while your laptop is off.
+
+There's also [`CLAUDE-CHAT-PROMPT.md`](CLAUDE-CHAT-PROMPT.md) — a ready-made
+prompt to paste into a claude.ai chat so Claude has full context on this tool
+and can help you tune phrases, edit configs, and debug without re-explaining.
 
 **Be a good citizen.** Defaults poll every ~5 minutes with jitter and space
 requests 2.5s apart. Please don't crank the interval down to seconds — that

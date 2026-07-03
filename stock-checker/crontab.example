@@ -1,0 +1,10 @@
+# Cron alternative — single checker pass every 5 minutes, exits between runs.
+# Simpler than systemd; fine for plain (non-browser) watches. Install with:
+#   crontab -e     (then paste the line below, fixing the path)
+#
+# Logs land in checker.log next to the script.
+
+*/5 * * * * cd /opt/poke-checker && /usr/bin/node checker.mjs --once >> checker.log 2>&1
+
+# Pre-order config on a gentler 10-minute cadence:
+# */10 * * * * cd /opt/poke-checker && /usr/bin/node checker.mjs --once --config preorders.json >> checker.log 2>&1

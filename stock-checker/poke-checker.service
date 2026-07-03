@@ -1,0 +1,30 @@
+# systemd unit — runs the checker 24/7 on any Linux box (Raspberry Pi, VPS).
+#
+# Install:
+#   1. Put the stock-checker folder somewhere stable, e.g. /opt/poke-checker
+#      (with your edited config.json next to checker.mjs).
+#   2. Adjust User= and the paths below if yours differ.
+#   3. sudo cp poke-checker.service /etc/systemd/system/
+#      sudo systemctl daemon-reload
+#      sudo systemctl enable --now poke-checker
+#
+# Watch it:   journalctl -u poke-checker -f
+# Stop it:    sudo systemctl stop poke-checker
+
+[Unit]
+Description=Pokemon stock checker (restock/pre-order alerts)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/opt/poke-checker
+ExecStart=/usr/bin/node /opt/poke-checker/checker.mjs
+# For the pre-order watch with browser rendering instead, use:
+# ExecStart=/usr/bin/node /opt/poke-checker/checker.mjs --config preorders.json --browser
+Restart=always
+RestartSec=30
+
+[Install]
+WantedBy=multi-user.target
