@@ -1,0 +1,67 @@
+{
+  "intervalSeconds": 600,
+  "jitterSeconds": 90,
+  "perRequestDelayMs": 2500,
+  "requestTimeoutMs": 20000,
+  "stateFile": "state.preorders.json",
+
+  "notify": {
+    "discordWebhookUrl": "",
+    "telegramBotToken": "",
+    "telegramChatId": ""
+  },
+
+  "_comment": "Pre-order watcher. Point each watch at a retailer's product/category page for an upcoming set BEFORE it releases. It alerts the moment the page becomes orderable (pre-order / add to basket goes live). mode:'preorder' gives sensible default phrases and 'PRE-ORDER LIVE' alerts, so you can omit inStockText/outOfStockText unless a site needs tuning. Set browser:true for JS-rendered sites (also pass --browser, or run: node checker.mjs --config preorders.json --browser).",
+
+  "watches": [
+    {
+      "id": "chaoscards-preorder",
+      "name": "Chaos Cards — upcoming set pre-order",
+      "store": "Chaos Cards (UK online)",
+      "url": "https://www.chaoscards.co.uk/collectable-card-games/pokemon",
+      "mode": "preorder",
+      "enabled": false
+    },
+    {
+      "id": "magicmadhouse-preorder",
+      "name": "Magic Madhouse — upcoming set pre-order",
+      "store": "Magic Madhouse (UK online)",
+      "url": "https://www.magicmadhouse.co.uk/pokemon",
+      "mode": "preorder",
+      "enabled": false
+    },
+    {
+      "id": "totalcards-preorder",
+      "name": "Total Cards — upcoming set pre-order",
+      "store": "Total Cards (UK online)",
+      "url": "https://www.totalcards.net/collections/pokemon",
+      "mode": "preorder",
+      "enabled": false
+    },
+    {
+      "id": "zatu-preorder",
+      "name": "Zatu Games — upcoming set pre-order",
+      "store": "Zatu Games (UK online)",
+      "url": "https://www.board-game.co.uk/product-category/pokemon/",
+      "mode": "preorder",
+      "enabled": false
+    },
+    {
+      "id": "pokemoncenter-uk-preorder",
+      "name": "Pokémon Center UK — upcoming set pre-order",
+      "store": "Pokémon Center UK (official)",
+      "url": "https://www.pokemoncenter.com/en-gb/category/new-releases",
+      "mode": "preorder",
+      "browser": true,
+      "enabled": false
+    },
+    {
+      "id": "smyths-preorder",
+      "name": "Smyths — upcoming set pre-order",
+      "store": "Smyths Toys (Reading / Basingstoke for collect)",
+      "url": "https://www.smythstoys.com/uk/en-gb/toys/pokemon/",
+      "mode": "preorder",
+      "enabled": false
+    }
+  ]
+}

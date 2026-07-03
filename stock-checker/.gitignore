@@ -2,3 +2,4 @@
 config.json
 # Runtime state (last-known stock status per watch).
 state.json
+node_modules/

@@ -30,6 +30,13 @@ Test a single pass and exit (handy while you tune it, or for cron):
 node checker.mjs --once
 ```
 
+Watch a set's **pre-orders** going live (uses the pre-order preset config):
+
+```bash
+cp preorders.example.json preorders.json   # edit the URLs first
+node checker.mjs --config preorders.json
+```
+
 ---
 
 ## Configuring what to watch
@@ -73,6 +80,27 @@ Before enabling one:
 Using the out-of-stock phrase as the primary signal is the most reliable
 approach, because "Add to basket" markup sometimes exists in the HTML even when
 the button is disabled.
+
+> **Watch for false positives.** The plain (non-browser) mode searches the whole
+> raw HTML, including inside `<script>` blocks. If a page ships "Add to basket"
+> as text in its JavaScript regardless of stock, plain matching can read "in"
+> when it isn't. If a watch alerts wrongly, either tighten the phrases to
+> something only the live button shows, or switch that watch to browser mode
+> (below), which reads the *rendered* page instead of the raw source.
+
+### Pre-order mode
+
+Add `"mode": "preorder"` to a watch (the `preorders.example.json` config does
+this for you). It:
+
+- ships **default phrases** tuned for pre-orders, so you can omit
+  `inStockText`/`outOfStockText` — "coming soon" / "register interest" count as
+  not-yet-live; "pre-order" / "add to basket" count as live;
+- labels alerts **"PRE-ORDER LIVE"** (purple) instead of "IN STOCK".
+
+Point pre-order watches at a retailer's set/category page *before* the release
+date. Pre-ordering is the most reliable **legitimate** way to be first, and this
+mode tells you the instant the button appears.
 
 > **JavaScript-rendered pages.** A few sites (Pokémon Center, some Argos flows)
 > build stock status in the browser with JS, so the raw HTML won't contain the
@@ -137,19 +165,32 @@ and this checker can watch pre-order pages for the "add to basket" going live.
 
 ---
 
-## Sites that need a browser (optional upgrade)
+## Browser mode — for JavaScript-rendered sites
 
-If a retailer renders stock with JavaScript, swap the `fetch` for a headless
-browser. Playwright (already available in many dev setups) works well:
+Some retailers (Pokémon Center, some Argos flows) build stock status in the
+browser with JavaScript, so the raw HTML doesn't contain the phrase and plain
+mode reads `unknown`. For those, use browser rendering, which loads the page in
+headless Chromium and reads the *rendered* text.
+
+One-time install:
 
 ```bash
 npm install playwright
 npx playwright install chromium
 ```
 
-Then the detection step loads the page, waits for the button, and reads the
-rendered text instead of raw HTML. Say the word and I can add a
-`--browser` mode to `checker.mjs` that does this for the watches that need it.
+Then either run everything through the browser:
+
+```bash
+node checker.mjs --browser
+node checker.mjs --config preorders.json --browser
+```
+
+…or flip just the watches that need it by adding `"browser": true` to those
+entries (they'll render in a browser even without the global `--browser` flag —
+`pokemoncenter-uk-preorder` in the example is already set this way). The
+checker launches Chromium once per run and reuses it, so it's cheap even with
+many watches.
 
 ---
 
