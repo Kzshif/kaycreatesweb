@@ -1,6 +1,6 @@
 import Anthropic from "@anthropic-ai/sdk";
 import { NextRequest, NextResponse } from "next/server";
-import { MODEL } from "@/lib/ai";
+import { getModel } from "@/lib/ai";
 import { getLead } from "@/lib/convos";
 import { tenantFromRequest } from "@/lib/tenant";
 import type { Lead, Workspace } from "@/lib/types";
@@ -38,8 +38,9 @@ export async function POST(req: NextRequest) {
 
 async function liveReply(lead: Lead, workspace: Workspace): Promise<string> {
   const client = new Anthropic();
+  const model = await getModel(client);
   const res = await client.messages.create({
-    model: MODEL,
+    model,
     max_tokens: 350,
     system: `You draft short follow-up emails for ${workspace.name}${
       workspace.about ? ` (${workspace.about.slice(0, 300)})` : ""

@@ -1,6 +1,6 @@
 import Anthropic from "@anthropic-ai/sdk";
 import { NextRequest } from "next/server";
-import { MODEL } from "@/lib/ai";
+import { getModel } from "@/lib/ai";
 import { planStatus, recordMessage } from "@/lib/billing";
 import { BOT_TOOLS, buildBotSystemPrompt, fallbackBotReply, getBotByKey, runBotTool } from "@/lib/bots";
 import { logConversation } from "@/lib/convos";
@@ -93,7 +93,19 @@ export async function POST(req: NextRequest) {
         send(controller, enc, { type: "text", text: t });
       };
       try {
-        if (!hasKey) {
+        let useFallback = !hasKey;
+        if (hasKey) {
+          try {
+            await runLive(controller, enc, history, finalBot, finalWorkspace, captureText);
+          } catch (err) {
+            // A visitor should never see an AI failure — degrade to the
+            // rule-based responder unless we already streamed a partial reply.
+            console.error("[widget] live chat failed:", err);
+            if (assistantText.length === 0) useFallback = true;
+            else send(controller, enc, { type: "done", mode: "live" });
+          }
+        }
+        if (useFallback) {
           const turn = fallbackBotReply(history, finalBot, finalWorkspace);
           if (turn.tool) send(controller, enc, { type: "tool", name: "capture_lead", label: turn.tool.label });
           const words = turn.text.split(" ");
@@ -102,8 +114,6 @@ export async function POST(req: NextRequest) {
             await new Promise((r) => setTimeout(r, 16));
           }
           send(controller, enc, { type: "done", mode: "fallback" });
-        } else {
-          await runLive(controller, enc, history, finalBot, finalWorkspace, captureText);
         }
       } catch (err) {
         const message = err instanceof Error ? err.message : "Unexpected error";
@@ -141,6 +151,7 @@ async function runLive(
   captureText: (t: string) => void,
 ) {
   const client = new Anthropic();
+  const model = await getModel(client);
   const system = buildBotSystemPrompt(bot, workspace);
   const messages: Anthropic.MessageParam[] = history.map((m) => ({
     role: m.role,
@@ -149,7 +160,7 @@ async function runLive(
 
   for (let iter = 0; iter < MAX_TOOL_ITERATIONS; iter++) {
     const ms = client.messages.stream({
-      model: MODEL,
+      model,
       max_tokens: 700,
       system,
       tools: BOT_TOOLS,

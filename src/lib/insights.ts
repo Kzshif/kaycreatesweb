@@ -1,5 +1,5 @@
 import Anthropic from "@anthropic-ai/sdk";
-import { MODEL } from "./ai";
+import { getModel } from "./ai";
 import { dailySeries, listLeads, workspaceStats } from "./convos";
 import { listAudits } from "./seo";
 import type { Briefing, Workspace } from "./types";
@@ -42,6 +42,7 @@ export async function getBriefing(workspace: Workspace, refresh = false): Promis
 
 async function liveBriefing(workspace: Workspace, snap: ReturnType<typeof snapshot>): Promise<Briefing> {
   const client = new Anthropic();
+  const model = await getModel(client);
   const volume = snap.last7Days.map((d) => `${d.day}: ${d.conversations} chats, ${d.leads} leads`).join("; ");
   const leads = snap.newLeads
     .map((l) => `- ${l.name} <${l.email}> · "${l.message.slice(0, 90)}" · ${l.createdAt.slice(0, 10)}`)
@@ -70,7 +71,7 @@ Write it as strict JSON (no markdown):
 Be specific with names and numbers from the data. Never invent data.`;
 
   const res = await client.messages.create({
-    model: MODEL,
+    model,
     max_tokens: 1024,
     messages: [{ role: "user", content: prompt }],
   });

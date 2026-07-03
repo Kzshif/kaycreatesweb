@@ -1,6 +1,6 @@
 import Anthropic from "@anthropic-ai/sdk";
 import { NextRequest, NextResponse } from "next/server";
-import { MODEL } from "@/lib/ai";
+import { getModel } from "@/lib/ai";
 import { tenantFromRequest } from "@/lib/tenant";
 import type { StreamEvent, Workspace } from "@/lib/types";
 
@@ -38,8 +38,9 @@ async function generateMeta(workspace: Workspace, topic: string, keywords: strin
   }
   try {
     const client = new Anthropic();
+    const model = await getModel(client);
     const res = await client.messages.create({
-      model: MODEL,
+      model,
       max_tokens: 700,
       messages: [
         {
@@ -104,8 +105,9 @@ async function generatePost(workspace: Workspace, topic: string, keywords: strin
           send(controller, enc, { type: "done", mode: "fallback" });
         } else {
           const client = new Anthropic();
+          const model = await getModel(client);
           const ms = client.messages.stream({
-            model: MODEL,
+            model,
             max_tokens: 3000,
             messages: [
               {

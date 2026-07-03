@@ -1,5 +1,5 @@
 import Anthropic from "@anthropic-ai/sdk";
-import { MODEL } from "./ai";
+import { getModel } from "./ai";
 import { getDb, newId } from "./db";
 import type { SeoAudit, SeoCheck, Workspace } from "./types";
 
@@ -202,6 +202,7 @@ export async function auditPage(workspace: Workspace, url: string): Promise<SeoA
 
 async function aiRecommendations(workspace: Workspace, facts: PageFacts, checks: SeoCheck[]) {
   const client = new Anthropic();
+  const model = await getModel(client);
   const failing = checks.filter((c) => c.status !== "pass").map((c) => `- ${c.label} [${c.status}]: ${c.detail}`).join("\n");
 
   const prompt = `You are an SEO consultant. A business called ${workspace.name}${
@@ -224,7 +225,7 @@ Reply as strict JSON, no markdown:
  "suggestedDescription": "<a rewritten 70-155 char meta description that sells the click>"}`;
 
   const res = await client.messages.create({
-    model: MODEL,
+    model,
     max_tokens: 800,
     messages: [{ role: "user", content: prompt }],
   });
