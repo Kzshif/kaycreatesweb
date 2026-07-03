@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ---------------------------------------------------------------------------
+   Voltage Editorial — see docs/design-philosophy.md
+   Light "Paper" context = the app. Dark "Night" context = marketing surfaces.
+--------------------------------------------------------------------------- */
+
 :root {
   color-scheme: light;
 }
@@ -13,10 +18,10 @@ html {
 body {
   background-image: radial-gradient(
       900px 500px at 85% -5%,
-      rgba(59, 91, 219, 0.09),
+      rgba(59, 91, 219, 0.08),
       transparent 60%
     ),
-    radial-gradient(700px 400px at -10% 30%, rgba(232, 89, 12, 0.05), transparent 55%);
+    radial-gradient(700px 400px at -10% 30%, rgba(232, 89, 12, 0.04), transparent 55%);
 }
 
 @layer components {
@@ -36,12 +41,61 @@ body {
     @apply btn border border-ink/15 bg-transparent text-ink hover:border-ink/40;
   }
 
+  /* Primary CTA on Night surfaces: the live wire. */
+  .btn-volt {
+    @apply btn relative text-night;
+    background: linear-gradient(120deg, #5c7cfa, #22d3ee);
+    box-shadow:
+      0 0 0 1px rgba(92, 124, 250, 0.35),
+      0 8px 32px -8px rgba(76, 110, 245, 0.55);
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
+  }
+  .btn-volt:hover {
+    box-shadow:
+      0 0 0 1px rgba(92, 124, 250, 0.6),
+      0 10px 44px -6px rgba(34, 211, 238, 0.55);
+    transform: translateY(-1px);
+  }
+
+  .btn-night-ghost {
+    @apply btn border border-white/15 text-silver hover:border-white/40 hover:bg-white/5;
+  }
+
   .card {
-    @apply rounded-2xl border border-ink/10 bg-white/75 shadow-[0_1px_0_rgba(18,20,29,0.04),0_18px_40px_-28px_rgba(18,20,29,0.45)] backdrop-blur;
+    @apply rounded-2xl border border-ink/10 bg-white/80 shadow-[0_1px_0_rgba(18,20,29,0.03),0_16px_40px_-24px_rgba(18,20,29,0.35)] backdrop-blur transition-shadow duration-300;
+  }
+  .card-hover {
+    @apply hover:shadow-[0_1px_0_rgba(18,20,29,0.03),0_24px_56px_-24px_rgba(59,91,219,0.35)];
+  }
+
+  /* Charged glass on Night: near-invisible fill, 1px light edge, glow on hover. */
+  .glass {
+    @apply rounded-2xl border border-white/[0.09] bg-white/[0.04] backdrop-blur;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  .glass:hover {
+    border-color: rgba(255, 255, 255, 0.18);
+    box-shadow: 0 24px 64px -32px rgba(76, 110, 245, 0.45);
   }
 
   .eyebrow {
     @apply text-xs font-semibold uppercase tracking-[0.18em] text-primary;
+  }
+  .eyebrow-night {
+    @apply text-xs font-semibold uppercase tracking-[0.22em] text-live;
+  }
+
+  /* The current: gradient text for the one word that matters. */
+  .grad-text {
+    background: linear-gradient(110deg, #5c7cfa 10%, #22d3ee 90%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .serif-accent {
+    @apply font-serif italic;
+    letter-spacing: -0.01em;
   }
 
   .input {
@@ -49,11 +103,63 @@ body {
   }
 
   .side-link {
-    @apply flex items-center gap-3 rounded-xl px-3.5 py-2.5 text-sm font-medium text-paper/70 transition hover:bg-white/10 hover:text-paper;
+    @apply relative flex items-center gap-3 rounded-xl px-3.5 py-2.5 text-sm font-medium text-silver/60 transition hover:bg-white/[0.06] hover:text-silver;
   }
-
   .side-link-active {
-    @apply bg-primary text-paper hover:bg-primary;
+    @apply text-silver;
+    background: linear-gradient(120deg, rgba(76, 110, 245, 0.28), rgba(34, 211, 238, 0.14));
+    box-shadow: inset 0 0 0 1px rgba(92, 124, 250, 0.35);
+  }
+}
+
+/* --- Motion ------------------------------------------------------------- */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1), transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+.reveal.is-in {
+  opacity: 1;
+  transform: none;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.marquee-track {
+  animation: marquee 32s linear infinite;
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+.float-slow {
+  animation: float-slow 7s ease-in-out infinite;
+}
+
+@keyframes pulse-ring {
+  0% { box-shadow: 0 0 0 0 rgba(34, 211, 238, 0.35); }
+  70% { box-shadow: 0 0 0 12px rgba(34, 211, 238, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(34, 211, 238, 0); }
+}
+.pulse-ring {
+  animation: pulse-ring 2.6s ease-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .marquee-track,
+  .float-slow,
+  .pulse-ring {
+    animation: none;
   }
 }
 

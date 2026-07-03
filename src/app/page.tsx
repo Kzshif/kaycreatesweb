@@ -1,71 +1,64 @@
 import Link from "next/link";
 import Script from "next/script";
+import FlowField from "@/components/FlowField";
+import { Counter, Reveal } from "@/components/Motion";
 import { SiteFooter, SiteHeader } from "@/components/SiteChrome";
+
+// The Night surface — Voltage Editorial (docs/design-philosophy.md).
+
+const PLATFORMS = ["WordPress", "Shopify", "Squarespace", "Wix", "Webflow", "Framer", "Custom code"];
 
 const STEPS = [
   {
     n: "01",
     title: "Tell it your business",
-    body: "Paste in what you offer, your prices, your policies — anything a great employee would know. Takes five minutes.",
+    body: "Paste in what you offer, your prices, your policies — anything a great employee would know. Five minutes, no training data required.",
   },
   {
     n: "02",
     title: "Paste one line of code",
-    body: "One script tag on any platform — WordPress, Shopify, Squarespace, Wix, custom. The chat bubble appears instantly.",
+    body: "One script tag on any platform. The chat bubble appears instantly, in your color, speaking in your voice.",
   },
   {
     n: "03",
     title: "Wake up to leads",
-    body: "Your assistant answers visitors 24/7 and captures names and emails into your inbox — with AI-drafted replies ready to send.",
+    body: "It answers visitors 24/7 and captures names and emails into your inbox — with AI-drafted replies ready to send.",
   },
 ];
 
 const CHATBOT_FEATURES = [
   {
-    icon: "🌙",
     title: "Answers 24/7",
     body: "Visitors get instant answers about your services, pricing, and policies — at 2pm or 2am, while you're with customers or asleep.",
   },
   {
-    icon: "★",
     title: "Captures every lead",
-    body: "When a visitor shows interest, the bot warmly collects their name and email. It lands in your inbox before they close the tab.",
+    body: "When a visitor shows interest, it warmly collects their name and email. The lead is in your inbox before they close the tab.",
   },
   {
-    icon: "🎨",
     title: "Sounds like you",
-    body: "Your name, your tone — friendly, professional, playful, or concise — your colors, your goal. It answers only from your business info, never inventing details.",
+    body: "Your name, tone, colors, and goal. It answers only from your business information — it never invents prices or policies.",
   },
   {
-    icon: "✦",
-    title: "AI-drafted follow-ups",
-    body: "One click turns any captured lead into a ready-to-send reply written in your voice.",
+    title: "Drafts the follow-up",
+    body: "One click turns any captured lead into a ready-to-send reply, written in your voice by AI.",
   },
 ];
 
-const SEO_FEATURES = [
-  {
-    icon: "▲",
-    title: "Page audits with a score",
-    body: "Drop in any URL and get a 0–100 score across ten checks — titles, descriptions, headings, content depth, mobile, links.",
-  },
-  {
-    icon: "✦",
-    title: "An AI action plan",
-    body: "Not just red flags: a prioritized to-do list written for your page, plus rewritten titles and meta descriptions ready to paste.",
-  },
-  {
-    icon: "✎",
-    title: "Content that ranks",
-    body: "Generate keywords, metadata, and full blog posts written for your business — not generic filler.",
-  },
-];
+const SEO_CHECKS = [
+  ["Title tag", "pass"],
+  ["Meta description", "pass"],
+  ["H1 heading", "pass"],
+  ["Content depth", "warn"],
+  ["Mobile viewport", "pass"],
+  ["Internal links", "warn"],
+] as const;
 
 const PLANS = [
   {
     id: "launch",
     name: "Launch",
-    price: "$29",
+    price: 29,
     tagline: "One site, getting started",
     features: [
       "1 AI chatbot",
@@ -79,7 +72,7 @@ const PLANS = [
   {
     id: "grow",
     name: "Grow",
-    price: "$79",
+    price: 79,
     tagline: "Serious about turning visitors into customers",
     features: [
       "3 AI chatbots",
@@ -95,7 +88,7 @@ const PLANS = [
   {
     id: "scale",
     name: "Scale",
-    price: "$199",
+    price: 199,
     tagline: "Agencies & multi-site businesses",
     features: [
       "10 AI chatbots",
@@ -110,210 +103,376 @@ const PLANS = [
 
 export default function Home() {
   return (
-    <>
+    <div className="bg-night text-silver">
       <SiteHeader />
 
-      {/* Hero */}
-      <section className="container-x grid gap-12 pb-12 pt-14 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:pt-20">
-        <div>
-          <p className="eyebrow mb-4">AI chatbots + SEO for any website</p>
-          <h1 className="font-display text-4xl font-semibold leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">
-            Your website, finally{" "}
-            <span className="text-primary">working</span> for you.
-          </h1>
-          <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink/70">
-            KayCreatesWeb puts an AI assistant on your site that answers visitors and
-            captures leads around the clock — and an SEO studio that tells you exactly
-            how to get found. Any business, any platform, one script tag.
-          </p>
-          <div className="mt-8 flex flex-wrap items-center gap-3">
-            <Link href="/signup" className="btn-primary px-7 py-3.5 text-base">
-              Start your free trial →
-            </Link>
-            <span className="text-sm text-ink/50">
-              Try the live demo — bottom-right corner of this page ↘
-            </span>
-          </div>
-          <dl className="mt-10 grid max-w-md grid-cols-3 gap-6">
-            {[
-              ["<5 min", "from signup to live on your site"],
-              ["24/7", "answering & lead capture"],
-              ["0–100", "SEO score with an AI action plan"],
-            ].map(([stat, label]) => (
-              <div key={label}>
-                <dt className="font-display text-3xl font-semibold text-primary">{stat}</dt>
-                <dd className="mt-1 text-xs leading-snug text-ink/55">{label}</dd>
-              </div>
-            ))}
-          </dl>
-        </div>
-
-        {/* Hero chat mock */}
-        <div className="card relative overflow-hidden p-6 sm:p-7">
-          <div className="absolute right-0 top-0 h-40 w-40 -translate-y-12 translate-x-12 rounded-full bg-accent/20 blur-2xl" />
-          <div className="mb-5 flex items-center gap-3">
-            <span className="relative grid h-11 w-11 place-items-center rounded-full bg-primary text-paper">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-30" />
-              💬
-            </span>
-            <div>
-              <p className="text-sm font-semibold">Visitor on kaysdesignstudio.com · 11:42 PM</p>
-              <p className="text-xs text-ink/50">Answered instantly</p>
-            </div>
-          </div>
-          <div className="space-y-3 text-sm">
-            <Bubble who="visitor">Do you build websites for restaurants? Rough price?</Bubble>
-            <Bubble who="bot">
-              We do! Restaurant sites with menus and online ordering start at $1,800 and
-              take about 3 weeks. Want me to have Kay send you a detailed quote?
-            </Bubble>
-            <Bubble who="visitor">Yes please — mia@trattoriamia.com</Bubble>
-            <Bubble who="bot">
-              Perfect, Mia! I've passed your details along — you'll hear from Kay first
-              thing tomorrow. 🎉
-            </Bubble>
-          </div>
-          <div className="mt-5 flex items-center gap-2 rounded-xl bg-primary/[0.07] px-3 py-2.5 text-xs font-medium text-primary-deep">
-            <span>★</span> Lead captured · mia@trattoriamia.com · AI reply drafted
-          </div>
-        </div>
-      </section>
-
-      {/* How it works */}
-      <section id="how" className="container-x py-16">
-        <div className="mb-10 max-w-2xl">
-          <p className="eyebrow mb-3">How it works</p>
-          <h2 className="font-display text-3xl font-semibold tracking-tight sm:text-4xl">
-            Live on your site in minutes. Really.
-          </h2>
-        </div>
-        <div className="grid gap-5 md:grid-cols-3">
-          {STEPS.map((s) => (
-            <div key={s.n} className="card p-6">
-              <span className="font-display text-2xl text-accent">{s.n}</span>
-              <h3 className="mt-3 font-display text-xl font-semibold">{s.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-ink/65">{s.body}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Chatbot pillar */}
-      <section id="chatbot" className="border-y border-ink/10 bg-ink py-16 text-paper">
-        <div className="container-x">
-          <div className="mb-10 max-w-2xl">
-            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-primary-light">
-              Pillar one · the chatbot
-            </p>
-            <h2 className="font-display text-3xl font-semibold tracking-tight sm:text-4xl">
-              An employee who never sleeps, on every page.
-            </h2>
-            <p className="mt-3 text-paper/70">
-              38% of visitors leave when they can't find an answer fast. Your assistant
-              answers in under a second — and turns the interested ones into leads.
-            </p>
-          </div>
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {CHATBOT_FEATURES.map((f) => (
-              <div key={f.title} className="rounded-2xl border border-white/10 bg-white/5 p-6">
-                <span className="text-2xl">{f.icon}</span>
-                <h3 className="mt-3 font-display text-lg font-semibold">{f.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-paper/65">{f.body}</p>
-              </div>
-            ))}
-          </div>
-          <p className="mt-8 text-sm text-paper/60">
-            👉 The bubble in the corner of this page <em>is</em> the product — go ask it something.
-          </p>
-        </div>
-      </section>
-
-      {/* SEO pillar */}
-      <section id="seo" className="container-x py-16">
-        <div className="mb-10 flex flex-wrap items-end justify-between gap-4">
-          <div className="max-w-2xl">
-            <p className="eyebrow mb-3">Pillar two · SEO Studio</p>
-            <h2 className="font-display text-3xl font-semibold tracking-tight sm:text-4xl">
-              A chatbot can't help visitors who never arrive.
-            </h2>
-            <p className="mt-3 text-ink/65">
-              The SEO Studio audits your pages the way a consultant would — then writes
-              the fixes and the content for you.
-            </p>
-          </div>
-        </div>
-        <div className="grid gap-5 md:grid-cols-3">
-          {SEO_FEATURES.map((f) => (
-            <div key={f.title} className="card p-6">
-              <span className="text-2xl text-primary">{f.icon}</span>
-              <h3 className="mt-3 font-display text-lg font-semibold">{f.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-ink/65">{f.body}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Pricing */}
-      <section id="pricing" className="border-t border-ink/10 bg-white/50 py-16">
-        <div className="container-x">
-          <div className="mb-10 max-w-2xl">
-            <p className="eyebrow mb-3">Pricing</p>
-            <h2 className="font-display text-3xl font-semibold tracking-tight sm:text-4xl">
-              Pays for itself with one lead.
-            </h2>
-            <p className="mt-3 text-ink/65">
-              Every plan starts with a 14-day free trial — no credit card required. Cancel anytime.
-            </p>
-          </div>
-          <div className="grid gap-5 lg:grid-cols-3">
-            {PLANS.map((p) => (
-              <div key={p.name} className={`card flex flex-col p-7 ${p.highlight ? "ring-2 ring-primary" : ""}`}>
-                {p.highlight && (
-                  <span className="mb-3 inline-block w-fit rounded-full bg-primary px-3 py-1 text-xs font-semibold text-paper">
-                    Most popular
-                  </span>
-                )}
-                <h3 className="font-display text-xl font-semibold">{p.name}</h3>
-                <p className="text-sm text-ink/55">{p.tagline}</p>
-                <p className="mt-4 font-display text-4xl font-semibold">
-                  {p.price}
-                  <span className="text-base font-normal text-ink/50">/mo</span>
-                </p>
-                <ul className="mt-5 flex-1 space-y-2.5 text-sm text-ink/70">
-                  {p.features.map((f) => (
-                    <li key={f} className="flex gap-2">
-                      <span className="text-primary">✓</span> {f}
-                    </li>
-                  ))}
-                </ul>
-                <Link href="/signup" className={`mt-7 ${p.highlight ? "btn-primary" : "btn-ghost"}`}>
-                  Start free trial
+      {/* ---------------------------------------------------------------- Hero */}
+      <section className="relative overflow-hidden">
+        <FlowField className="opacity-90" />
+        {/* Vignette so type sits on quiet dark */}
+        <div
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(1100px 520px at 50% 18%, rgba(9,11,18,0) 0%, rgba(9,11,18,0.72) 62%, #090b12 100%)",
+          }}
+        />
+        <div className="container-x relative grid gap-14 pb-20 pt-40 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:pb-28 lg:pt-48">
+          <div>
+            <Reveal>
+              <p className="eyebrow-night mb-5">AI chatbots + SEO · any website</p>
+            </Reveal>
+            <Reveal delay={80}>
+              <h1 className="font-display text-5xl font-semibold leading-[1.02] tracking-tight sm:text-6xl lg:text-7xl">
+                Your website,
+                <br />
+                finally{" "}
+                <em className="serif-accent grad-text pr-1 text-[1.08em]">working</em>
+                <br />
+                for you.
+              </h1>
+            </Reveal>
+            <Reveal delay={160}>
+              <p className="mt-7 max-w-xl text-lg leading-relaxed text-silver/65">
+                An AI assistant that answers visitors and captures leads around the
+                clock — and an SEO studio that tells you exactly how to get found.
+                One script tag. Any platform.
+              </p>
+            </Reveal>
+            <Reveal delay={240}>
+              <div className="mt-9 flex flex-wrap items-center gap-4">
+                <Link href="/signup" className="btn-volt px-7 py-3.5 text-base">
+                  Start your free trial →
                 </Link>
+                <span className="text-sm text-silver/45">
+                  or try the live demo — bottom-right corner ↘
+                </span>
               </div>
+            </Reveal>
+          </div>
+
+          {/* Hero conversation — charged glass, floating */}
+          <Reveal delay={200}>
+            <div className="glass float-slow relative p-6 sm:p-7">
+              <div className="mb-5 flex items-center gap-3">
+                <span
+                  className="pulse-ring grid h-11 w-11 place-items-center rounded-full text-night"
+                  style={{ background: "linear-gradient(120deg, #5c7cfa, #22d3ee)" }}
+                >
+                  💬
+                </span>
+                <div>
+                  <p className="text-sm font-semibold">Visitor on kaysdesignstudio.com · 11:42 PM</p>
+                  <p className="text-xs text-silver/45">Answered in 0.6s</p>
+                </div>
+              </div>
+              <div className="space-y-3 text-sm">
+                <Bubble who="visitor">Do you build websites for restaurants? Rough price?</Bubble>
+                <Bubble who="bot">
+                  We do! Restaurant sites with menus and online ordering start at $1,800
+                  and take about 3 weeks. Want me to have Kay send you a detailed quote?
+                </Bubble>
+                <Bubble who="visitor">Yes please — mia@trattoriamia.com</Bubble>
+                <Bubble who="bot">
+                  Perfect, Mia! I've passed your details along — you'll hear from Kay
+                  first thing tomorrow. 🎉
+                </Bubble>
+              </div>
+              <div className="mt-5 flex items-center gap-2 rounded-xl border border-live/20 bg-live/[0.07] px-3 py-2.5 text-xs font-medium text-live">
+                <span>★</span> Lead captured · mia@trattoriamia.com · AI reply drafted
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* --------------------------------------------------------- Platform marquee */}
+      <section className="border-y border-white/[0.07] py-5" aria-label="Works with any platform">
+        <div className="relative overflow-hidden">
+          <div className="marquee-track flex w-max items-center gap-12 whitespace-nowrap">
+            {[...PLATFORMS, ...PLATFORMS].map((p, i) => (
+              <span
+                key={i}
+                className="font-display text-sm font-medium uppercase tracking-[0.28em] text-silver/35"
+              >
+                {p}
+              </span>
+            ))}
+          </div>
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-night to-transparent" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-night to-transparent" />
+        </div>
+      </section>
+
+      {/* ------------------------------------------------------------- Stat band */}
+      <section className="container-x grid gap-10 py-20 sm:grid-cols-3">
+        {[
+          { value: 38, suffix: "%", label: "of visitors leave when they can't find an answer fast" },
+          { value: 24, suffix: "/7", label: "answering and lead capture, in your voice" },
+          { value: 5, prefix: "< ", suffix: " min", label: "from signup to live on your website" },
+        ].map((s, i) => (
+          <Reveal key={s.label} delay={i * 100}>
+            <div className="border-l border-white/10 pl-6">
+              <p className="font-display text-5xl font-semibold tracking-tight">
+                <Counter to={s.value} prefix={s.prefix ?? ""} suffix={s.suffix} className="grad-text" />
+              </p>
+              <p className="mt-2 max-w-[26ch] text-sm leading-relaxed text-silver/55">{s.label}</p>
+            </div>
+          </Reveal>
+        ))}
+      </section>
+
+      {/* ------------------------------------------------------------ How it works */}
+      <section id="how" className="container-x pb-24">
+        <Reveal>
+          <p className="eyebrow-night mb-4">How it works</p>
+          <h2 className="max-w-2xl font-display text-4xl font-semibold tracking-tight sm:text-5xl">
+            Live on your site in{" "}
+            <em className="serif-accent grad-text">minutes.</em>
+          </h2>
+        </Reveal>
+        <div className="mt-12 grid gap-5 md:grid-cols-3">
+          {STEPS.map((s, i) => (
+            <Reveal key={s.n} delay={i * 120}>
+              <div className="glass h-full p-7">
+                <span
+                  className="grid h-10 w-10 place-items-center rounded-full font-display text-sm font-bold text-night"
+                  style={{ background: "linear-gradient(120deg, #5c7cfa, #22d3ee)" }}
+                >
+                  {s.n}
+                </span>
+                <h3 className="mt-5 font-display text-xl font-semibold">{s.title}</h3>
+                <p className="mt-2.5 text-sm leading-relaxed text-silver/60">{s.body}</p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
+      {/* ------------------------------------------------------------ Chatbot pillar */}
+      <section id="chatbot" className="relative overflow-hidden border-y border-white/[0.07] py-24">
+        <div
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(800px 400px at 15% 0%, rgba(76,110,245,0.12), transparent 60%)",
+          }}
+        />
+        <div className="container-x relative">
+          <Reveal>
+            <p className="eyebrow-night mb-4">Pillar one · the chatbot</p>
+            <h2 className="max-w-3xl font-display text-4xl font-semibold tracking-tight sm:text-5xl">
+              An employee who{" "}
+              <em className="serif-accent grad-text">never sleeps,</em> on every page.
+            </h2>
+            <p className="mt-4 max-w-2xl text-silver/60">
+              Answering the phone was yesterday's problem. Today your customers are on
+              your website at midnight — and they won't wait for the morning.
+            </p>
+          </Reveal>
+          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {CHATBOT_FEATURES.map((f, i) => (
+              <Reveal key={f.title} delay={i * 100}>
+                <div className="glass h-full p-6">
+                  <span className="grad-text font-display text-2xl font-bold">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <h3 className="mt-4 font-display text-lg font-semibold">{f.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-silver/60">{f.body}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+          <Reveal delay={200}>
+            <p className="mt-10 text-sm text-silver/50">
+              👉 The bubble in the corner of this page <em className="serif-accent text-silver/80">is</em>{" "}
+              the product — go ask it something.
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* --------------------------------------------------------------- SEO pillar */}
+      <section id="seo" className="container-x grid items-center gap-14 py-24 lg:grid-cols-2">
+        <Reveal>
+          <p className="eyebrow-night mb-4">Pillar two · SEO Studio</p>
+          <h2 className="font-display text-4xl font-semibold tracking-tight sm:text-5xl">
+            A chatbot can't help visitors who{" "}
+            <em className="serif-accent grad-text">never arrive.</em>
+          </h2>
+          <p className="mt-4 max-w-xl text-silver/60">
+            The SEO Studio audits any page the way a consultant would — ten checks, a
+            0–100 score, and an AI action plan with rewritten titles and descriptions
+            ready to paste. Then the AI writer produces the content: keywords,
+            metadata, full blog posts, written for your business.
+          </p>
+          <ul className="mt-7 space-y-3 text-sm text-silver/70">
+            {[
+              "0–100 score across ten on-page checks",
+              "Prioritized fixes written for your page, not a generic checklist",
+              "Titles, meta descriptions, keywords & full posts on demand",
+            ].map((li) => (
+              <li key={li} className="flex gap-3">
+                <span className="grad-text font-bold">→</span> {li}
+              </li>
+            ))}
+          </ul>
+        </Reveal>
+
+        {/* Audit mock — charged glass artifact */}
+        <Reveal delay={150}>
+          <div className="glass p-7">
+            <div className="flex items-center gap-6">
+              <div className="relative h-28 w-28 shrink-0">
+                <svg viewBox="0 0 100 100" className="h-full w-full -rotate-90">
+                  <circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.08)" strokeWidth="8" />
+                  <circle
+                    cx="50"
+                    cy="50"
+                    r="40"
+                    fill="none"
+                    stroke="url(#seoGrad)"
+                    strokeWidth="8"
+                    strokeLinecap="round"
+                    strokeDasharray={`${0.86 * 2 * Math.PI * 40} ${2 * Math.PI * 40}`}
+                  />
+                  <defs>
+                    <linearGradient id="seoGrad" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0%" stopColor="#5c7cfa" />
+                      <stop offset="100%" stopColor="#22d3ee" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+                <span className="absolute inset-0 grid place-items-center font-display text-3xl font-bold">
+                  <Counter to={86} />
+                </span>
+              </div>
+              <div>
+                <p className="text-sm font-semibold">kaysdesignstudio.com</p>
+                <p className="text-xs text-silver/45">audited just now</p>
+                <span className="mt-2 inline-block rounded-full border border-live/25 bg-live/10 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-live">
+                  AI action plan · Claude
+                </span>
+              </div>
+            </div>
+            <ul className="mt-6 space-y-2.5">
+              {SEO_CHECKS.map(([label, status]) => (
+                <li key={label} className="flex items-center justify-between text-sm">
+                  <span className="text-silver/70">{label}</span>
+                  <span
+                    className={`rounded-full px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider ${
+                      status === "pass"
+                        ? "bg-live/10 text-live"
+                        : "bg-filament/10 text-filament"
+                    }`}
+                  >
+                    {status}
+                  </span>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-5 border-t border-white/[0.07] pt-4 text-xs leading-relaxed text-silver/50">
+              <span className="grad-text font-semibold">1.</span> Expand the services section to
+              400+ words — your competitors rank with deeper pages. ·{" "}
+              <span className="grad-text font-semibold">2.</span> Add internal links from your
+              three portfolio pages…
+            </p>
+          </div>
+        </Reveal>
+      </section>
+
+      {/* ------------------------------------------------------------------ Pricing */}
+      <section id="pricing" className="relative overflow-hidden border-t border-white/[0.07] py-24">
+        <div
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(900px 500px at 85% 100%, rgba(34,211,238,0.08), transparent 60%)",
+          }}
+        />
+        <div className="container-x relative">
+          <Reveal>
+            <p className="eyebrow-night mb-4">Pricing</p>
+            <h2 className="max-w-2xl font-display text-4xl font-semibold tracking-tight sm:text-5xl">
+              Pays for itself with{" "}
+              <em className="serif-accent grad-text">one lead.</em>
+            </h2>
+            <p className="mt-4 text-silver/60">
+              Every plan starts with a 14-day free trial — no credit card. Cancel anytime.
+            </p>
+          </Reveal>
+          <div className="mt-12 grid gap-5 lg:grid-cols-3">
+            {PLANS.map((p, i) => (
+              <Reveal key={p.id} delay={i * 120}>
+                <div
+                  className={`glass relative h-full p-8 ${p.highlight ? "!border-volt/50" : ""}`}
+                  style={
+                    p.highlight
+                      ? { boxShadow: "0 0 0 1px rgba(76,110,245,0.35), 0 24px 80px -32px rgba(76,110,245,0.5)" }
+                      : undefined
+                  }
+                >
+                  {p.highlight && (
+                    <span
+                      className="absolute -top-3 left-8 rounded-full px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-night"
+                      style={{ background: "linear-gradient(120deg, #5c7cfa, #22d3ee)" }}
+                    >
+                      Most popular
+                    </span>
+                  )}
+                  <h3 className="font-display text-xl font-semibold">{p.name}</h3>
+                  <p className="mt-1 text-sm text-silver/50">{p.tagline}</p>
+                  <p className="mt-6 font-display text-5xl font-semibold tracking-tight">
+                    <span className="align-top text-2xl text-silver/60">$</span>
+                    {p.price}
+                    <span className="font-serif text-lg italic text-silver/45"> / month</span>
+                  </p>
+                  <ul className="mt-7 space-y-3 text-sm text-silver/70">
+                    {p.features.map((f) => (
+                      <li key={f} className="flex gap-2.5">
+                        <span className="grad-text font-bold">✓</span> {f}
+                      </li>
+                    ))}
+                  </ul>
+                  <Link
+                    href="/signup"
+                    className={`${p.highlight ? "btn-volt" : "btn-night-ghost"} mt-8 w-full`}
+                  >
+                    Start free trial
+                  </Link>
+                </div>
+              </Reveal>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="container-x py-20">
-        <div className="card relative overflow-hidden bg-ink p-10 text-paper sm:p-14">
-          <div className="absolute -right-10 -top-10 h-56 w-56 rounded-full bg-primary/40 blur-3xl" />
-          <div className="relative max-w-2xl">
-            <h2 className="font-display text-3xl font-semibold tracking-tight sm:text-4xl">
-              Your next customer is on your site right now.
+      {/* ---------------------------------------------------------------- Final CTA */}
+      <section className="relative overflow-hidden py-28">
+        <FlowField seed={777} density={90} opacity={0.5} />
+        <div
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(900px 460px at 50% 50%, rgba(9,11,18,0.2) 0%, rgba(9,11,18,0.9) 70%, #090b12 100%)",
+          }}
+        />
+        <div className="container-x relative text-center">
+          <Reveal>
+            <h2 className="mx-auto max-w-3xl font-display text-4xl font-semibold tracking-tight sm:text-6xl">
+              Your next customer is on your site{" "}
+              <em className="serif-accent grad-text">right now.</em>
             </h2>
-            <p className="mt-3 text-paper/75">
-              Set up your assistant in five minutes and stop losing the visitors you
-              already paid to attract.
+            <p className="mx-auto mt-5 max-w-xl text-silver/60">
+              Five minutes to set up. Stop losing the visitors you already paid to attract.
             </p>
-            <div className="mt-7 flex flex-wrap gap-3">
-              <Link href="/signup" className="btn bg-paper text-ink hover:bg-white">
+            <div className="mt-9 flex flex-wrap justify-center gap-4">
+              <Link href="/signup" className="btn-volt px-8 py-4 text-base">
                 Start your free trial →
               </Link>
-              <span className="self-center text-sm text-paper/60">or chat with the demo bot ↘</span>
+              <span className="self-center text-sm text-silver/45">or ask the demo bot ↘</span>
             </div>
-          </div>
+          </Reveal>
         </div>
       </section>
 
@@ -321,7 +480,7 @@ export default function Home() {
 
       {/* Dogfood: the landing page runs the actual embeddable widget. */}
       <Script src="/widget.js" data-bot="demo" strategy="lazyOnload" />
-    </>
+    </div>
   );
 }
 
@@ -331,7 +490,9 @@ function Bubble({ who, children }: { who: "visitor" | "bot"; children: React.Rea
     <div className={`flex ${isBot ? "justify-start" : "justify-end"}`}>
       <p
         className={`max-w-[85%] rounded-2xl px-3.5 py-2 leading-snug ${
-          isBot ? "rounded-tl-sm bg-primary/10 text-ink" : "rounded-tr-sm bg-ink text-paper"
+          isBot
+            ? "rounded-tl-sm border border-white/[0.08] bg-white/[0.06] text-silver/90"
+            : "rounded-tr-sm bg-gradient-to-br from-volt-bright to-live text-night"
         }`}
       >
         {children}

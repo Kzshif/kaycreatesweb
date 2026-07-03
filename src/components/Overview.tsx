@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import { ActivityChart, ScoreRing, type DayPoint } from "./Charts";
+import { Counter } from "./Motion";
 import type { Briefing } from "@/lib/types";
 
 interface Analytics {
@@ -130,7 +131,7 @@ export default function Overview({ firstName }: { firstName: string }) {
 
       {/* Chart + side column */}
       <div className="grid gap-5 lg:grid-cols-[1.5fr_1fr]">
-        <section className="card p-6">
+        <section className="card card-hover p-6">
           <div className="mb-4 flex items-center justify-between gap-3">
             <h2 className="font-display text-lg font-semibold">Activity</h2>
             <div className="flex gap-1 text-xs">
@@ -155,7 +156,7 @@ export default function Overview({ firstName }: { firstName: string }) {
         </section>
 
         <div className="space-y-5">
-          <section className="card p-6">
+          <section className="card card-hover p-6">
             <h2 className="mb-3 font-display text-lg font-semibold">SEO health</h2>
             {data?.latestAudit ? (
               <div className="flex items-center gap-4">
@@ -184,7 +185,7 @@ export default function Overview({ firstName }: { firstName: string }) {
             )}
           </section>
 
-          <section className="card p-6">
+          <section className="card card-hover p-6">
             <h2 className="mb-3 font-display text-lg font-semibold">Plan usage</h2>
             {data?.plan && (
               <>
@@ -241,14 +242,14 @@ function Stat({
   warn?: boolean;
 }) {
   return (
-    <div className="card p-4">
+    <div className="card card-hover p-4">
       <p className="text-xs font-medium text-ink/50">{label}</p>
       <p
         className={`mt-1 font-display text-3xl font-semibold ${
           warn ? "text-accent" : accent ? "text-primary" : "text-ink"
         }`}
       >
-        {value ?? "—"}
+        {value === undefined ? "—" : <Counter to={value} />}
       </p>
     </div>
   );
