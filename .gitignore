@@ -23,8 +23,8 @@ yarn-error.log*
 .env
 .env*.local
 
-# sqlite data
-/data
+# netlify
+.netlify
 
 # typescript
 *.tsbuildinfo
