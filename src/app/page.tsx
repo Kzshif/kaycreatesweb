@@ -113,6 +113,12 @@ export default function Home() {
               practices — booking appointments, taking messages and answering the
               questions your team fields all day. So no patient ever hits voicemail.
             </p>
+            <p className="mt-4 max-w-xl text-sm leading-relaxed text-slate-400">
+              In 2026 we built kaycreatesweb here in Newbury, after watching local
+              practices lose new patients to missed calls. We designed Robin around
+              how real front desks actually talk across dental, GP, physio and
+              veterinary clinics — so it sounds like your practice, not a robot.
+            </p>
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <Link href="/demo" className="btn-primary px-7 py-3.5 text-base">
                 Talk to the receptionist →

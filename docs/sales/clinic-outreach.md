@@ -111,3 +111,66 @@ look?
 - **Keep costs tiny while prospecting:** point everyone at the one demo rather
   than spinning up a trial per practice; only stand up a trial for a warm lead.
 - **Follow up once, politely, then stop.** Two touches is plenty.
+
+---
+
+## Per-sector variants
+
+Short, tailored cold emails. Same structure, sector-specific pain point. Swap
+`[brackets]` and paste your `[demo link]`.
+
+### Private GP clinic
+
+**Subject:** After-hours cover for [Practice name]
+
+Hi [First name],
+
+I'm [your name] from kaycreatesweb in Newbury. We've built an AI receptionist for
+private GP clinics — it answers every call 24/7, books consultations, and takes
+repeat-prescription and results-callback requests, flagging anything urgent for a
+GP. It never gives clinical advice; anything clinical becomes a priority message.
+
+30-second demo, no signup: **[demo link]**
+
+Happy to run it free on your after-hours line for two weeks. From £29/month.
+
+Worth a quick call?
+[Your name] · kaycreatesweb · Newbury · [phone]
+
+### Physiotherapy clinic
+
+**Subject:** Stop losing new patients to voicemail, [Practice name]
+
+Hi [First name],
+
+I'm [your name] from kaycreatesweb (Newbury). We've built an AI receptionist for
+physio clinics — it answers every call, books initial assessments and follow-ups,
+and takes messages when you're mid-session with a patient and can't reach the
+phone. Sports-injury and post-op enquiries get captured, not missed.
+
+Have a listen (30 seconds, no signup): **[demo link]**
+
+I'll set it up free on your after-hours line for a fortnight so you can see what it
+catches. From £29/month.
+
+Would [day] suit for 10 minutes?
+[Your name] · kaycreatesweb · Newbury · [phone]
+
+### Veterinary clinic
+
+**Subject:** Never miss a worried pet owner's call
+
+Hi [First name],
+
+I'm [your name] from kaycreatesweb in Newbury. We've built an AI receptionist for
+vet practices — it answers every call day and night, books health checks and
+vaccinations, and triages poorly-pet and emergency calls (owner name, callback
+number, species, symptoms) straight to a nurse, with out-of-hours referral to the
+emergency service.
+
+Hear it handle a call in 30 seconds: **[demo link]**
+
+Happy to trial it free on your after-hours line for two weeks. From £29/month.
+
+Worth a chat?
+[Your name] · kaycreatesweb · Newbury · [phone]
