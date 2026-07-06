@@ -78,9 +78,16 @@ const WIDGET_JS = String.raw`(function () {
     form.onsubmit = function (e) { e.preventDefault(); send(input.value); };
 
     var brand = el("div", "text-align:center;font-size:10px;padding:0 0 8px;background:#fff;color:rgba(0,0,0,.4)", panel);
-    brand.innerHTML = 'Powered by <a href="' + BASE + '" target="_blank" rel="noopener" style="color:inherit;font-weight:600">KayCreatesWeb</a>';
+    brand.innerHTML = 'Powered by <a href="' + BASE + '" target="_blank" rel="noopener" style="color:inherit;font-weight:600">NovaWebStudio</a>';
 
     addMsg("assistant", cfg.welcome);
+
+    // Public API so the host page can open the widget and ask on the visitor's behalf.
+    window.__novaOpen = function () { if (!open) toggle(); };
+    window.__novaAsk = function (text) {
+      if (!open) toggle();
+      setTimeout(function () { send(String(text || "")); }, 150);
+    };
   }
 
   function toggle() {

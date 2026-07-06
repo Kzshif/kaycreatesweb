@@ -50,7 +50,7 @@ async function liveBriefing(workspace: Workspace, snap: ReturnType<typeof snapsh
 
   const prompt = `You write the weekly pulse for ${workspace.name}${
     workspace.website ? ` (${workspace.website})` : ""
-  }, a business using KayCreatesWeb's AI website chatbot + SEO tools.
+  }, a business using NovaWebStudio's AI website chatbot + SEO tools.
 
 Data:
 - Totals: ${snap.stats.conversations} chatbot conversations, ${snap.stats.messages} messages, ${snap.stats.leads} leads captured (${snap.stats.newLeads} not yet contacted).

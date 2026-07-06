@@ -59,7 +59,7 @@ export function LoginForm() {
         {busy ? "Signing in…" : "Sign in"}
       </button>
       <p className="text-center text-sm text-ink/60">
-        New to KayCreatesWeb?{" "}
+        New to NOVA05?{" "}
         <Link href="/signup" className="font-semibold text-primary hover:underline">
           Start your free trial
         </Link>

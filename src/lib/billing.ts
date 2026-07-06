@@ -63,7 +63,7 @@ export const PLANS: Plan[] = [
       "10 AI chatbots",
       "15,000 chat messages / mo",
       "Everything in Grow",
-      "Remove KayCreatesWeb branding",
+      "Remove NOVA05 branding",
       "Priority support",
     ],
   },
@@ -136,7 +136,7 @@ export function upgrade(workspace: Workspace, planId: Plan["id"]): Invoice {
   const invoice: Invoice = {
     id: newId("inv"),
     workspaceId: workspace.id,
-    description: `KayCreatesWeb — ${plan.name} plan (monthly)`,
+    description: `NovaWebStudio — ${plan.name} plan (monthly)`,
     amountCents: plan.priceMonthly * 100,
     createdAt: new Date().toISOString(),
   };

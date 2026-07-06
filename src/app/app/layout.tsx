@@ -5,7 +5,7 @@ import { planStatus } from "@/lib/billing";
 import { getWorkspaceByUser } from "@/lib/workspaces";
 
 export const metadata = {
-  title: "Dashboard · KayCreatesWeb",
+  title: "Dashboard · NOVA05",
 };
 
 export const dynamic = "force-dynamic";

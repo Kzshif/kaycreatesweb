@@ -1,4 +1,4 @@
-# KayCreatesWeb
+# NovaWebStudio (NOVA05)
 
 **AI chatbots & SEO for any website.** Businesses sign up, describe what they do,
 and get two things:
@@ -27,7 +27,7 @@ Built with **Next.js (App Router)**, **SQLite**, and the **Claude API**
 | `GET /api/widget/config` | Public bot appearance (name / welcome / color) — knowledge and internal ids never leave the server. |
 
 The landing page dogfoods the widget with a built-in `demo` bot that sells
-KayCreatesWeb itself.
+NovaWebStudio itself.
 
 ### The app (`/app`, behind auth)
 

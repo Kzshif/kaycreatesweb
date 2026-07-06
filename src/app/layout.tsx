@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Instrument_Serif, Plus_Jakarta_Sans, Space_Grotesk } from "next/font/google";
+import { Instrument_Serif, Plus_Jakarta_Sans, Unbounded } from "next/font/google";
 import "./globals.css";
 
-const display = Space_Grotesk({
+const display = Unbounded({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["300", "400", "500", "600", "700"],
   variable: "--font-display",
   display: "swap",
 });
@@ -25,9 +25,9 @@ const sans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "KayCreatesWeb — AI chatbots & SEO for any website",
+  title: "NovaWebStudio — AI chatbots & SEO for any website",
   description:
-    "KayCreatesWeb gives any business an AI chatbot for their website — answering visitors, capturing leads 24/7 — plus an AI SEO studio that audits pages and writes content that ranks.",
+    "NovaWebStudio gives any business an AI chatbot for their website — answering visitors, capturing leads 24/7 — plus an AI SEO studio that audits pages and writes content that ranks.",
 };
 
 export default function RootLayout({

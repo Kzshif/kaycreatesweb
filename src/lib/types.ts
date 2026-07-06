@@ -1,4 +1,4 @@
-// Shared types for KayCreatesWeb — AI chatbots & SEO for any website.
+// Shared types for NovaWebStudio (NOVA05) — AI chatbots & SEO for any website.
 
 export interface User {
   id: string;

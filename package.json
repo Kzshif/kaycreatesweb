@@ -1,8 +1,8 @@
 {
-  "name": "kaycreatesweb",
+  "name": "novawebstudio",
   "version": "0.1.0",
   "private": true,
-  "description": "KayCreatesWeb \u2014 AI chatbots & SEO for any website.",
+  "description": "NovaWebStudio (NOVA05) \u2014 AI chatbots & SEO for any website.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

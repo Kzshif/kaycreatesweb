@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { NovaMark } from "./SiteChrome";
 import type { User, Workspace } from "@/lib/types";
 
 const NAV = [
@@ -34,29 +35,29 @@ export default function AppShell({
   return (
     <div className="flex min-h-screen">
       {/* Sidebar — the Night surface inside the app */}
-      <aside className="sticky top-0 hidden h-screen w-64 shrink-0 flex-col overflow-hidden bg-night p-4 text-silver md:flex">
+      <aside className="sticky top-0 hidden h-screen w-64 shrink-0 flex-col overflow-hidden bg-space p-4 text-starlight md:flex">
         {/* Quiet aurora at the top of the rail */}
         <div
           className="pointer-events-none absolute inset-x-0 top-0 h-48"
           style={{
-            background: "radial-gradient(320px 180px at 40% 0%, rgba(76,110,245,0.22), transparent 70%)",
+            background: "radial-gradient(320px 180px at 40% 0%, rgba(240,101,149,0.2), transparent 70%)",
           }}
         />
-        <Link href="/app" className="relative flex items-center gap-2.5 px-2 py-3">
-          <span
-            className="grid h-9 w-9 place-items-center rounded-xl font-display text-lg font-bold text-night"
-            style={{ background: "linear-gradient(120deg, #5c7cfa, #22d3ee)" }}
-          >
-            K
-          </span>
-          <span className="font-display text-lg font-semibold tracking-tight">
-            KayCreates<span className="grad-text">Web</span>
+        <Link href="/app" className="relative flex items-center gap-3 px-2 py-3">
+          <NovaMark size={30} />
+          <span className="leading-none">
+            <span className="block font-display text-base font-bold tracking-[0.22em] text-starlight">
+              NOVA
+            </span>
+            <span className="grad-text mt-0.5 block font-display text-[9px] font-semibold tracking-[0.62em]">
+              05
+            </span>
           </span>
         </Link>
 
         <div className="relative mt-2 rounded-xl border border-white/[0.08] bg-white/[0.04] px-3.5 py-3">
           <p className="truncate text-sm font-semibold">{workspace.name}</p>
-          <p className="mt-0.5 text-xs text-silver/45">{planBadge}</p>
+          <p className="mt-0.5 text-xs text-starlight/45">{planBadge}</p>
         </div>
 
         <nav className="relative mt-4 flex-1 space-y-1">
@@ -78,10 +79,10 @@ export default function AppShell({
 
         <div className="relative border-t border-white/10 pt-3">
           <p className="truncate px-2 text-sm">{user.name}</p>
-          <p className="truncate px-2 text-xs text-silver/40">{user.email}</p>
+          <p className="truncate px-2 text-xs text-starlight/40">{user.email}</p>
           <button
             onClick={logout}
-            className="mt-2 w-full rounded-xl px-2 py-2 text-left text-sm text-silver/50 transition hover:bg-white/[0.06] hover:text-silver"
+            className="mt-2 w-full rounded-xl px-2 py-2 text-left text-sm text-starlight/50 transition hover:bg-white/[0.06] hover:text-starlight"
           >
             ← Sign out
           </button>
@@ -91,8 +92,8 @@ export default function AppShell({
       {/* Mobile top bar */}
       <div className="flex min-w-0 flex-1 flex-col">
         <header className="sticky top-0 z-20 flex items-center justify-between gap-2 border-b border-ink/10 bg-paper/90 px-4 py-3 backdrop-blur md:hidden">
-          <Link href="/app" className="font-display text-lg font-semibold">
-            KayCreates<span className="grad-text">Web</span>
+          <Link href="/app" className="flex items-center gap-2 font-display text-base font-bold tracking-[0.2em]">
+            <NovaMark size={24} /> NOVA<span className="grad-text">05</span>
           </Link>
           <nav className="flex gap-1 overflow-x-auto text-xs font-medium">
             {NAV.map((item) => {

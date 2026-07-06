@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 /* ---------------------------------------------------------------------------
-   Voltage Editorial — see docs/design-philosophy.md
-   Light "Paper" context = the app. Dark "Night" context = marketing surfaces.
+   Cosmic Nova — see docs/design-philosophy.md
+   Light "Paper" context = the app. Dark "Deep Space" context = marketing.
 --------------------------------------------------------------------------- */
 
 :root {
@@ -41,24 +41,24 @@ body {
     @apply btn border border-ink/15 bg-transparent text-ink hover:border-ink/40;
   }
 
-  /* Primary CTA on Night surfaces: the live wire. */
-  .btn-volt {
-    @apply btn relative text-night;
-    background: linear-gradient(120deg, #5c7cfa, #22d3ee);
+  /* Primary CTA in Deep Space: the nova burst. */
+  .btn-nova {
+    @apply btn relative text-space;
+    background: linear-gradient(120deg, #ffb454, #f06595);
     box-shadow:
-      0 0 0 1px rgba(92, 124, 250, 0.35),
-      0 8px 32px -8px rgba(76, 110, 245, 0.55);
+      0 0 0 1px rgba(255, 180, 84, 0.4),
+      0 8px 32px -8px rgba(240, 101, 149, 0.55);
     transition: box-shadow 0.3s ease, transform 0.2s ease;
   }
-  .btn-volt:hover {
+  .btn-nova:hover {
     box-shadow:
-      0 0 0 1px rgba(92, 124, 250, 0.6),
-      0 10px 44px -6px rgba(34, 211, 238, 0.55);
+      0 0 0 1px rgba(255, 180, 84, 0.7),
+      0 10px 48px -6px rgba(255, 180, 84, 0.6);
     transform: translateY(-1px);
   }
 
-  .btn-night-ghost {
-    @apply btn border border-white/15 text-silver hover:border-white/40 hover:bg-white/5;
+  .btn-space-ghost {
+    @apply btn border border-white/15 text-starlight hover:border-white/40 hover:bg-white/5;
   }
 
   .card {
@@ -68,26 +68,27 @@ body {
     @apply hover:shadow-[0_1px_0_rgba(18,20,29,0.03),0_24px_56px_-24px_rgba(59,91,219,0.35)];
   }
 
-  /* Charged glass on Night: near-invisible fill, 1px light edge, glow on hover. */
+  /* Void glass in Deep Space: starlit edge, glow arrives with attention. */
   .glass {
-    @apply rounded-2xl border border-white/[0.09] bg-white/[0.04] backdrop-blur;
+    @apply rounded-2xl border border-white/10 bg-white/[0.045] backdrop-blur;
     transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
   }
   .glass:hover {
-    border-color: rgba(255, 255, 255, 0.18);
-    box-shadow: 0 24px 64px -32px rgba(76, 110, 245, 0.45);
+    border-color: rgba(255, 255, 255, 0.22);
+    box-shadow: 0 24px 64px -32px rgba(240, 101, 149, 0.45);
+    transform: translateY(-2px);
   }
 
   .eyebrow {
     @apply text-xs font-semibold uppercase tracking-[0.18em] text-primary;
   }
-  .eyebrow-night {
-    @apply text-xs font-semibold uppercase tracking-[0.22em] text-live;
+  .eyebrow-space {
+    @apply font-display text-[11px] font-medium uppercase tracking-[0.32em] text-stellar;
   }
 
-  /* The current: gradient text for the one word that matters. */
+  /* The nova burst, as text. */
   .grad-text {
-    background: linear-gradient(110deg, #5c7cfa 10%, #22d3ee 90%);
+    background: linear-gradient(110deg, #ffb454 15%, #f06595 85%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -103,26 +104,73 @@ body {
   }
 
   .side-link {
-    @apply relative flex items-center gap-3 rounded-xl px-3.5 py-2.5 text-sm font-medium text-silver/60 transition hover:bg-white/[0.06] hover:text-silver;
+    @apply relative flex items-center gap-3 rounded-xl px-3.5 py-2.5 text-sm font-medium text-starlight/60 transition hover:bg-white/[0.06] hover:text-starlight;
   }
   .side-link-active {
-    @apply text-silver;
-    background: linear-gradient(120deg, rgba(76, 110, 245, 0.28), rgba(34, 211, 238, 0.14));
-    box-shadow: inset 0 0 0 1px rgba(92, 124, 250, 0.35);
+    @apply text-starlight;
+    background: linear-gradient(120deg, rgba(255, 180, 84, 0.22), rgba(240, 101, 149, 0.12));
+    box-shadow: inset 0 0 0 1px rgba(255, 180, 84, 0.35);
   }
 }
 
 /* --- Motion ------------------------------------------------------------- */
 
+/* Sections arrive by zooming up out of the distance. */
 .reveal {
   opacity: 0;
-  transform: translateY(14px);
-  transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1), transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+  transform: translateY(12px) scale(0.96);
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
   transition-delay: var(--reveal-delay, 0ms);
 }
 .reveal.is-in {
   opacity: 1;
   transform: none;
+}
+
+/* Page arrival: the new page scales in from lightspeed. */
+@keyframes warp-arrive {
+  from {
+    opacity: 0;
+    transform: scale(1.06);
+    filter: blur(6px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+  }
+}
+.warp-arrive {
+  animation: warp-arrive 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* The warp overlay wordmark, zooming in from deep space. */
+@keyframes warp-zoom-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.12);
+    filter: blur(10px);
+  }
+  55% {
+    opacity: 1;
+    filter: blur(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.warp-zoom-in {
+  animation: warp-zoom-in 1.4s cubic-bezier(0.19, 1, 0.22, 1) both;
+}
+
+@keyframes fade-out {
+  to { opacity: 0; }
+}
+.fade-out {
+  animation: fade-out 0.45s ease forwards;
 }
 
 @keyframes marquee {
@@ -141,10 +189,18 @@ body {
   animation: float-slow 7s ease-in-out infinite;
 }
 
+@keyframes orbit {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.orbit {
+  animation: orbit var(--orbit-duration, 26s) linear infinite;
+}
+
 @keyframes pulse-ring {
-  0% { box-shadow: 0 0 0 0 rgba(34, 211, 238, 0.35); }
-  70% { box-shadow: 0 0 0 12px rgba(34, 211, 238, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(34, 211, 238, 0); }
+  0% { box-shadow: 0 0 0 0 rgba(255, 180, 84, 0.4); }
+  70% { box-shadow: 0 0 0 12px rgba(255, 180, 84, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 180, 84, 0); }
 }
 .pulse-ring {
   animation: pulse-ring 2.6s ease-out infinite;
@@ -156,8 +212,11 @@ body {
     transform: none;
     transition: none;
   }
+  .warp-arrive,
+  .warp-zoom-in,
   .marquee-track,
   .float-slow,
+  .orbit,
   .pulse-ring {
     animation: none;
   }

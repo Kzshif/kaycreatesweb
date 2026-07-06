@@ -3,7 +3,7 @@ import { randomBytes } from "node:crypto";
 import { dirname, join } from "node:path";
 import Database from "better-sqlite3";
 
-// Shared SQLite handle for the whole platform: users & sessions, workspaces
+// NovaWebStudio — shared SQLite handle for the whole platform: users & sessions, workspaces
 // (tenants), bots, conversations, leads, SEO audits, usage metering, and
 // invoices. Memoised on globalThis so Next.js hot-reloads and concurrent route
 // handlers share one connection.

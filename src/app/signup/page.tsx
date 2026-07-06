@@ -4,7 +4,7 @@ import { AuthPanel } from "@/components/AuthPanel";
 import { getUser } from "@/lib/auth";
 
 export const metadata = {
-  title: "Start free trial · KayCreatesWeb",
+  title: "Start free trial · NOVA05",
 };
 
 export default async function SignupPage() {

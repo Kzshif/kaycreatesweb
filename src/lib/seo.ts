@@ -26,7 +26,7 @@ export interface PageFacts {
 
 export async function fetchPage(url: string): Promise<string> {
   const res = await fetch(url, {
-    headers: { "User-Agent": "KayCreatesWeb-SEO-Audit/1.0 (+https://kaycreatesweb.com)" },
+    headers: { "User-Agent": "NovaWebStudio-SEO-Audit/1.0 (+https://novawebstudio.netlify.app)" },
     redirect: "follow",
     signal: AbortSignal.timeout(12_000),
   });
