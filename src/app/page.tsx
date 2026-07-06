@@ -185,18 +185,30 @@ export default function Home() {
 
       {/* How it works */}
       <section id="how" className="container-x py-20">
-        <div className="mb-10 max-w-2xl">
+        <hr className="hairline reveal mb-16" />
+        <div className="reveal mb-10 max-w-2xl">
           <p className="eyebrow mb-3">How it works</p>
           <h2 className="font-display text-3xl font-semibold tracking-tight text-white sm:text-4xl">
             Live this afternoon. No new phone system.
           </h2>
         </div>
         <div className="grid gap-5 md:grid-cols-3">
-          {STEPS.map((s) => (
-            <div key={s.n} className="card group p-6 transition hover:-translate-y-1 hover:shadow-glow">
+          {STEPS.map((s, i) => (
+            <div
+              key={s.n}
+              className="card lift reveal group relative overflow-hidden p-6 hover:border-cyan/30 hover:shadow-glow"
+            >
+              <span className="absolute right-5 top-4 font-mono text-6xl font-bold text-white/[0.04]">
+                {s.n}
+              </span>
               <span className="font-display text-2xl neon">{s.n}</span>
               <h3 className="mt-3 font-display text-xl font-semibold text-white">{s.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-slate-400">{s.body}</p>
+              {i < STEPS.length - 1 && (
+                <span className="pointer-events-none absolute -right-3 top-1/2 hidden text-cyan/40 md:block">
+                  →
+                </span>
+              )}
             </div>
           ))}
         </div>
@@ -204,7 +216,7 @@ export default function Home() {
 
       {/* Sectors */}
       <section id="verticals" className="container-x py-12">
-        <div className="mb-10 flex flex-wrap items-end justify-between gap-4">
+        <div className="reveal mb-10 flex flex-wrap items-end justify-between gap-4">
           <div className="max-w-2xl">
             <p className="eyebrow mb-3">Built for your sector</p>
             <h2 className="font-display text-3xl font-semibold tracking-tight text-white sm:text-4xl">
@@ -222,7 +234,7 @@ export default function Home() {
             <Link
               key={v.id}
               href={`/demo?vertical=${v.id}`}
-              className="card group p-6 transition hover:-translate-y-1 hover:border-cyan/40 hover:shadow-glow"
+              className="card lift reveal group p-6 hover:border-cyan/40 hover:shadow-glow"
             >
               <span className="text-3xl">{v.emoji}</span>
               <h3 className="mt-3 font-display text-lg font-semibold text-white">{v.label}</h3>
@@ -237,7 +249,8 @@ export default function Home() {
 
       {/* Features bento */}
       <section className="container-x py-16">
-        <div className="mb-10 max-w-2xl">
+        <hr className="hairline reveal mb-16" />
+        <div className="reveal mb-10 max-w-2xl">
           <p className="eyebrow mb-3">What Robin does</p>
           <h2 className="font-display text-3xl font-semibold tracking-tight text-white sm:text-4xl">
             Everything a brilliant front desk does. None of the hold music.
@@ -245,7 +258,7 @@ export default function Home() {
         </div>
         <div className="grid gap-5 lg:grid-cols-3">
           {FEATURES.map((f) => (
-            <div key={f.title} className={`card p-6 ${f.span}`}>
+            <div key={f.title} className={`card lift reveal p-6 hover:border-white/20 ${f.span}`}>
               <span className="text-2xl">{f.icon}</span>
               <h3 className="mt-3 font-display text-lg font-semibold text-white">{f.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-slate-400">{f.body}</p>
@@ -256,7 +269,8 @@ export default function Home() {
 
       {/* Pricing */}
       <section id="pricing" className="container-x py-16">
-        <div className="mb-10 max-w-2xl">
+        <hr className="hairline reveal mb-16" />
+        <div className="reveal mb-10 max-w-2xl">
           <p className="eyebrow mb-3">Pricing</p>
           <h2 className="font-display text-3xl font-semibold tracking-tight text-white sm:text-4xl">
             Less than one missed new patient.
@@ -270,8 +284,8 @@ export default function Home() {
           {PLANS.map((p) => (
             <div
               key={p.name}
-              className={`card relative flex flex-col p-7 ${
-                p.highlight ? "shadow-glow-iris ring-1 ring-iris/50" : ""
+              className={`card lift reveal relative flex flex-col p-7 ${
+                p.highlight ? "shadow-glow-iris ring-1 ring-iris/50" : "hover:border-white/20"
               }`}
             >
               {p.highlight && (
@@ -307,7 +321,7 @@ export default function Home() {
 
       {/* CTA */}
       <section className="container-x py-20">
-        <div className="card relative overflow-hidden p-10 sm:p-14">
+        <div className="card reveal relative overflow-hidden p-10 sm:p-14">
           <div className="pointer-events-none absolute -right-10 -top-16 h-64 w-64 rounded-full bg-iris/30 blur-3xl" />
           <div className="pointer-events-none absolute -left-16 bottom-0 h-56 w-56 rounded-full bg-cyan/20 blur-3xl" />
           <div className="relative max-w-2xl">

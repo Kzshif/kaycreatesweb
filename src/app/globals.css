@@ -133,6 +133,49 @@ body::after {
 }
 .marquee { animation: marquee 28s linear infinite; }
 
+/* Living gradient on the neon headline — slow, not a distracting loop. */
+.neon {
+  background-size: 220% 220%;
+  animation: neon-flow 9s ease-in-out infinite alternate;
+}
+@keyframes neon-flow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+/* Flowy scroll-reveal. Content is fully visible by default; only browsers that
+   support scroll-driven animations get the choreography, so nothing can ever be
+   stuck hidden. Each element animates as it scrolls into view. */
+@keyframes reveal-up {
+  from { opacity: 0; transform: translateY(30px); filter: blur(6px); }
+  to { opacity: 1; transform: none; filter: blur(0); }
+}
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal {
+      animation: reveal-up linear both;
+      animation-timeline: view();
+      animation-range: entry 4% cover 24%;
+    }
+  }
+}
+
+/* Hairline connective divider between big sections for visual flow. */
+.hairline {
+  height: 1px;
+  border: 0;
+  background: linear-gradient(90deg, transparent, rgba(62, 240, 224, 0.35), rgba(139, 123, 255, 0.35), transparent);
+}
+
+/* Card lift + glow follow on hover — one tasteful micro-interaction. */
+.lift {
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+}
+.lift:hover {
+  transform: translateY(-6px);
+}
+
 @media (prefers-reduced-motion: reduce) {
-  body::before, .floaty, .wave-bar, .marquee { animation: none; }
+  body::before, .floaty, .wave-bar, .marquee, .neon { animation: none; }
+  .lift:hover { transform: none; }
 }
