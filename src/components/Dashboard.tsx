@@ -55,7 +55,7 @@ export default function Dashboard() {
 
   return (
     <div className="space-y-6">
-      <div className="flex flex-wrap items-end justify-between gap-4">
+      <div className="reveal flex flex-wrap items-end justify-between gap-4">
         <div>
           <p className="eyebrow mb-2">Staff dashboard</p>
           <h1 className="font-display text-3xl font-semibold tracking-tight text-white sm:text-4xl">
@@ -80,7 +80,7 @@ export default function Dashboard() {
       </div>
 
       {/* Filter */}
-      <div className="flex flex-wrap gap-2">
+      <div className="reveal flex flex-wrap gap-2">
         <FilterChip active={filter === "all"} onClick={() => setFilter("all")}>
           All practices
         </FilterChip>
@@ -92,7 +92,7 @@ export default function Dashboard() {
       </div>
 
       {/* Queue */}
-      <div className="card divide-y divide-white/8 overflow-hidden">
+      <div className="card reveal divide-y divide-white/8 overflow-hidden">
         {loading && <p className="p-8 text-center text-sm text-slate-400">Loading…</p>}
         {!loading && events.length === 0 && (
           <div className="p-10 text-center">
@@ -167,7 +167,7 @@ function Row({ event, onAction }: { event: CapturedEvent; onAction: () => void }
 
 function Stat({ label, value, accent, warn }: { label: string; value?: number; accent?: boolean; warn?: boolean }) {
   return (
-    <div className="card p-4">
+    <div className="card lift reveal p-4">
       <p className="text-xs font-medium text-slate-400">{label}</p>
       <p
         className={`mt-1 font-display text-3xl font-semibold ${

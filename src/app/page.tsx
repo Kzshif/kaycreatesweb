@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { SiteFooter, SiteHeader } from "@/components/SiteChrome";
+import { StructuredData } from "@/components/StructuredData";
 import { VERTICAL_LIST } from "@/lib/verticals";
+import { FAQS } from "@/lib/faq";
 
 const STEPS = [
   {
@@ -86,6 +88,7 @@ const PLANS = [
 export default function Home() {
   return (
     <>
+      <StructuredData />
       <SiteHeader />
 
       {/* Hero */}
@@ -317,6 +320,25 @@ export default function Home() {
         <p className="mt-5 text-center text-xs text-slate-500">
           Prices exclude VAT. Usage on the phone line (Twilio) is billed separately at cost.
         </p>
+      </section>
+
+      {/* FAQ — extractable Q&A (also emitted as FAQPage JSON-LD for AI search) */}
+      <section id="faq" className="container-x py-16">
+        <hr className="hairline reveal mb-16" />
+        <div className="reveal mb-10 max-w-2xl">
+          <p className="eyebrow mb-3">Questions, answered</p>
+          <h2 className="font-display text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+            Everything a practice manager asks first.
+          </h2>
+        </div>
+        <div className="grid gap-4 md:grid-cols-2">
+          {FAQS.map((f) => (
+            <div key={f.q} className="card reveal p-6">
+              <h3 className="font-display text-lg font-semibold text-white">{f.q}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-slate-400">{f.a}</p>
+            </div>
+          ))}
+        </div>
       </section>
 
       {/* CTA */}

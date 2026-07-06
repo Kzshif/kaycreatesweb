@@ -16,7 +16,7 @@ export default async function DemoPage({
     <>
       <SiteHeader active="demo" />
       <main className="container-x py-10">
-        <div className="mb-7 max-w-2xl">
+        <div className="reveal mb-7 max-w-2xl">
           <p className="eyebrow mb-3">Live demo</p>
           <h1 className="font-display text-3xl font-semibold tracking-tight text-white sm:text-4xl">
             Ring the front desk.
