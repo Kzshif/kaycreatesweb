@@ -94,7 +94,7 @@ async function runLive(
     );
     const toolResults: Anthropic.ToolResultBlockParam[] = [];
     for (const tu of toolUses) {
-      const { result, label, event } = runTool(
+      const { result, label, event } = await runTool(
         tu.name,
         (tu.input ?? {}) as Record<string, unknown>,
         vertical,
@@ -116,7 +116,7 @@ async function runFallback(
   history: ChatMessage[],
   vertical: ReturnType<typeof getVertical>,
 ) {
-  const turn = fallbackReply(history, vertical);
+  const turn = await fallbackReply(history, vertical);
 
   // The rule-based responder already wrote any captured event to the store
   // inside fallbackReply(); surface a matching tool marker to the UI.

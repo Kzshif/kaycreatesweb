@@ -1,5 +1,5 @@
 import type Anthropic from "@anthropic-ai/sdk";
-import type { Vertical } from "./types";
+import type { Vertical, CapturedEvent } from "./types";
 import { addEvent } from "./store";
 
 // Model is configurable so you can trade cost for capability without a code
@@ -124,14 +124,14 @@ const str = (v: unknown, fallback = ""): string =>
 
 // Executes a tool call: writes to the store and returns a (result string, label,
 // captured event) so the API route can both feed Claude and stream to the UI.
-export function runTool(
+export async function runTool(
   name: string,
   input: ToolInput,
   vertical: Vertical,
-): { result: string; label: string; event: ReturnType<typeof addEvent> } {
+): Promise<{ result: string; label: string; event: CapturedEvent }> {
   switch (name) {
     case "book_appointment": {
-      const event = addEvent({
+      const event = await addEvent({
         kind: "appointment",
         vertical: vertical.id,
         name: str(input.name),
@@ -151,7 +151,7 @@ export function runTool(
     }
     case "take_message": {
       const urgency = str(input.urgency, "normal");
-      const event = addEvent({
+      const event = await addEvent({
         kind: "message",
         vertical: vertical.id,
         name: str(input.name),
@@ -166,7 +166,7 @@ export function runTool(
       };
     }
     case "request_callback": {
-      const event = addEvent({
+      const event = await addEvent({
         kind: "callback",
         vertical: vertical.id,
         name: str(input.name),
@@ -184,7 +184,7 @@ export function runTool(
       return {
         result: `Unknown tool: ${name}`,
         label: `⚠️ Unknown tool ${name}`,
-        event: addEvent({
+        event: await addEvent({
           kind: "message",
           vertical: vertical.id,
           name: "system",

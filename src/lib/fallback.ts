@@ -71,7 +71,7 @@ function cleanName(raw?: string): string | undefined {
   return raw.trim();
 }
 
-export function fallbackReply(history: ChatMessage[], vertical: Vertical): FallbackTurn {
+export async function fallbackReply(history: ChatMessage[], vertical: Vertical): Promise<FallbackTurn> {
   const { name, contact, text } = collect(history);
   const lower = text;
 
@@ -97,7 +97,7 @@ export function fallbackReply(history: ChatMessage[], vertical: Vertical): Fallb
 
   if (emergency) {
     if (name && contact) {
-      runTool(
+      await runTool(
         "take_message",
         { name, contact, message: history[history.length - 1].content, urgency: "high" },
         vertical,
@@ -117,7 +117,7 @@ export function fallbackReply(history: ChatMessage[], vertical: Vertical): Fallb
       vertical.services.find((s) => lower.includes(s.toLowerCase().split(" ")[0])) ||
       vertical.services[0];
     if (name && contact) {
-      runTool(
+      await runTool(
         "book_appointment",
         { name, contact, service, preferred_time: "next available", notes: "via web demo" },
         vertical,
@@ -133,7 +133,7 @@ export function fallbackReply(history: ChatMessage[], vertical: Vertical): Fallb
 
   if (wantsMessage) {
     if (name && contact) {
-      runTool(
+      await runTool(
         "take_message",
         { name, contact, message: history[history.length - 1].content, urgency: "normal" },
         vertical,
