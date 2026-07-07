@@ -1,0 +1,36 @@
+# NOVA05 (NovaWebStudio)
+
+> NOVA05 gives any business two AI tools for its website: an embeddable AI chatbot that answers visitors 24/7 and captures leads, and an AI SEO studio that audits pages and writes content that ranks. One script tag, works on any platform (WordPress, Shopify, Squarespace, Wix, Webflow, Framer, custom code).
+
+## What it is
+
+- **AI Chatbot** — a chat bubble you add with one `<script>` tag. It answers visitor questions in under a second, in your brand voice, using only your own business information (prices, hours, services, policies). When a visitor is interested it captures their name and email as a lead and can draft the follow-up reply.
+- **AI SEO Studio** — audits any page for a 0–100 score across ten checks, returns a prioritised action plan with rewritten title and meta description, and includes an AI writer for keywords, metadata and full blog posts.
+
+## Who it is for
+
+Small and independent businesses with a website — dentists, salons and clinics, estate agents, gyms and studios, restaurants, accountants, trades, vets — who want to answer customers and capture leads around the clock without hiring.
+
+## Pricing
+
+- Launch — £29/month — 1 chatbot, 500 messages/month
+- Grow — £79/month — 3 chatbots, 3,000 messages/month
+- Scale — £199/month — 10 chatbots, 15,000 messages/month
+- 14-day free trial, no credit card required. Every plan includes the SEO studio.
+
+## Key pages
+
+- Home: https://novawebstudio05.netlify.app/
+- AI Chatbot: https://novawebstudio05.netlify.app/chatbot
+- SEO Studio: https://novawebstudio05.netlify.app/seo
+- Pricing: https://novawebstudio05.netlify.app/pricing
+
+## How it works
+
+1. Sign up and describe your business.
+2. Copy one script tag onto your website.
+3. The chatbot answers visitors and drops leads into your inbox; the SEO studio audits and improves your pages.
+
+## Contact
+
+NovaWebStudio — https://novawebstudio05.netlify.app

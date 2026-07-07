@@ -2,7 +2,10 @@ import { Counter, Reveal } from "@/components/Motion";
 import { WarpLink } from "@/components/Warp";
 
 export const metadata = {
-  title: "The SEO Studio · NOVA05",
+  title: "The SEO Studio",
+  description:
+    "The NOVA05 SEO Studio audits any page for a 0–100 score across ten checks, gives you a Claude-written action plan with rewritten titles and meta descriptions, and an AI writer for keywords, metadata and full blog posts.",
+  alternates: { canonical: "/seo" },
 };
 
 const CHECKS = [

@@ -2,7 +2,10 @@ import Link from "next/link";
 import { Reveal } from "@/components/Motion";
 
 export const metadata = {
-  title: "Pricing · NOVA05",
+  title: "Pricing",
+  description:
+    "Simple NOVA05 pricing: Launch £29, Grow £79, Scale £199 per month, with a 14-day free trial and no credit card required. Every plan includes the AI chatbot, lead capture and the SEO studio.",
+  alternates: { canonical: "/pricing" },
 };
 
 const PLANS = [
@@ -71,9 +74,23 @@ const FAQ = [
   },
 ];
 
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQ.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
+
 export default function PricingPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <section className="container-x pb-16 pt-44 text-center lg:pt-52">
         <Reveal>
           <p className="eyebrow-space mb-6">Pricing</p>

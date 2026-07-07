@@ -2,7 +2,10 @@ import { Reveal } from "@/components/Motion";
 import { WarpLink } from "@/components/Warp";
 
 export const metadata = {
-  title: "The AI Chatbot · NOVA05",
+  title: "The AI Chatbot",
+  description:
+    "The NOVA05 AI chatbot answers your website visitors in under a second — 24/7, in your brand voice, from your own prices, hours and policies — and captures interested visitors as leads with name and email. One script tag, works on any platform.",
+  alternates: { canonical: "/chatbot" },
 };
 
 const FEATURES = [

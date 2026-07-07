@@ -5,7 +5,10 @@ import { WarpLink } from "@/components/Warp";
 // Mission control — the Deep Space home page (docs/design-philosophy.md).
 
 export const metadata = {
-  title: "NOVA05 · AI chatbots & SEO for any website",
+  title: { absolute: "NOVA05 — AI chatbots & SEO for any website" },
+  description:
+    "NOVA05 adds an AI chatbot to any website with one script tag — it answers visitors 24/7 from your own info and captures leads while you sleep — plus an AI SEO studio that audits your pages and rewrites them to rank.",
+  alternates: { canonical: "/" },
 };
 
 const PLATFORMS = ["WordPress", "Shopify", "Squarespace", "Wix", "Webflow", "Framer", "Custom code"];
