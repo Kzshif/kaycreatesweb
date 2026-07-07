@@ -333,7 +333,7 @@ export default function Home() {
                   <span className="text-base font-normal text-slate-500">/mo</span>
                 )}
               </p>
-              <ul className="mt-5 space-y-2.5 text-sm text-slate-300">
+              <ul className="mt-5 grow space-y-2.5 text-sm text-slate-300">
                 {p.features.map((f) => (
                   <li key={f} className="flex gap-2">
                     <span className="text-cyan">✓</span> {f}

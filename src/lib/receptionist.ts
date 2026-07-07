@@ -3,9 +3,10 @@ import type { Vertical, CapturedEvent } from "./types";
 import { addEvent } from "./store";
 
 // Model is configurable so you can trade cost for capability without a code
-// change. Default to Opus 4.8; set RECEPTIONIST_MODEL=claude-haiku-4-5 (cheapest)
-// or claude-sonnet-4-6 (balanced) to cut running costs for a receptionist.
-export const MODEL = process.env.RECEPTIONIST_MODEL || "claude-opus-4-8";
+// change. Default to Haiku 4.5 (cheapest — a few pence per call, which keeps the
+// per-call cost well under the plan price); set RECEPTIONIST_MODEL=claude-sonnet-5
+// (balanced) or claude-opus-4-8 (most capable) if you want to spend more.
+export const MODEL = process.env.RECEPTIONIST_MODEL || "claude-haiku-4-5";
 
 // Wrap the system prompt as a cacheable block. The prompt is large and identical
 // across turns, so prompt caching cuts input cost dramatically (~90% on the
