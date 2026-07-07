@@ -12,6 +12,7 @@
   "dependencies": {
     "@anthropic-ai/sdk": "^0.40.1",
     "@neondatabase/serverless": "^1.1.0",
+    "@netlify/database": "^1.1.0",
     "better-sqlite3": "^12.11.1",
     "next": "^16.2.9",
     "react": "19.0.0",
