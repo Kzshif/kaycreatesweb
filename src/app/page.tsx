@@ -344,12 +344,18 @@ export default function Home() {
                 <a href={CONTACT_HREF} className="btn-ghost mt-7">
                   Contact us
                 </a>
-              ) : (
+              ) : CHECKOUT_URL[p.name] ? (
                 <a
-                  href={CHECKOUT_URL[p.name] ?? "/demo"}
+                  href={CHECKOUT_URL[p.name]}
                   className={`mt-7 ${p.highlight ? "btn-primary" : "btn-ghost"}`}
                 >
                   Start {TRIAL_DAYS}-day free trial
+                </a>
+              ) : (
+                // No checkout link configured yet — send them to the demo and say
+                // so, rather than promising a trial that can't start.
+                <a href="/demo" className={`mt-7 ${p.highlight ? "btn-primary" : "btn-ghost"}`}>
+                  Try the live demo
                 </a>
               )}
             </div>
