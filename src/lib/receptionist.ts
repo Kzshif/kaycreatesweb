@@ -2,7 +2,23 @@ import type Anthropic from "@anthropic-ai/sdk";
 import type { Vertical } from "./types";
 import { addEvent } from "./store";
 
-export const MODEL = "claude-opus-4-8";
+// Model is configurable so you can trade cost for capability without a code
+// change. Default to Opus 4.8; set RECEPTIONIST_MODEL=claude-haiku-4-5 (cheapest)
+// or claude-sonnet-4-6 (balanced) to cut running costs for a receptionist.
+export const MODEL = process.env.RECEPTIONIST_MODEL || "claude-opus-4-8";
+
+// Wrap the system prompt as a cacheable block. The prompt is large and identical
+// across turns, so prompt caching cuts input cost dramatically (~90% on the
+// cached prefix) for multi-turn calls.
+export function cachedSystem(vertical: Vertical) {
+  return [
+    {
+      type: "text" as const,
+      text: buildSystemPrompt(vertical),
+      cache_control: { type: "ephemeral" as const },
+    },
+  ];
+}
 
 // ---------------------------------------------------------------------------
 // System prompt

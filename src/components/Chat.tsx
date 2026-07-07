@@ -17,10 +17,10 @@ interface Turn {
 }
 
 const SUGGESTIONS = [
-  "I'd like to book a cleaning for next week.",
-  "What are your hours and do you take Delta Dental?",
-  "I cracked a tooth and it really hurts.",
-  "Can you take a message for the billing department?",
+  "I'd like to book a check-up for next week.",
+  "What are your hours, and do you take Denplan?",
+  "I've cracked a tooth and it really hurts.",
+  "Can you take a message for the accounts team?",
 ];
 
 export default function Chat({ initialVertical }: { initialVertical?: string }) {
@@ -130,21 +130,21 @@ export default function Chat({ initialVertical }: { initialVertical?: string }) 
               onClick={() => setVerticalId(v.id)}
               className={`flex w-full items-center gap-3 rounded-xl border px-3.5 py-3 text-left text-sm transition ${
                 v.id === verticalId
-                  ? "border-teal bg-teal/10 text-ink"
-                  : "border-ink/10 bg-white/60 text-ink/70 hover:border-ink/30"
+                  ? "border-cyan/50 bg-cyan/10 text-white shadow-glow"
+                  : "border-white/10 bg-white/[0.03] text-slate-300 hover:border-white/25"
               }`}
             >
               <span className="text-xl">{v.emoji}</span>
               <span>
                 <span className="block font-semibold">{v.practice}</span>
-                <span className="block text-xs text-ink/50">{v.label}</span>
+                <span className="block text-xs text-slate-400">{v.label}</span>
               </span>
             </button>
           ))}
         </div>
         <Link
           href="/dashboard"
-          className="block rounded-xl border border-dashed border-teal/40 bg-teal/5 px-3.5 py-3 text-sm font-medium text-teal-deep hover:bg-teal/10"
+          className="block rounded-xl border border-dashed border-cyan/40 bg-cyan/5 px-3.5 py-3 text-sm font-medium text-cyan-soft hover:bg-cyan/10"
         >
           📋 Open the staff dashboard →
         </Link>
@@ -152,15 +152,15 @@ export default function Chat({ initialVertical }: { initialVertical?: string }) 
 
       {/* Chat panel */}
       <div className="card flex h-[68vh] min-h-[520px] flex-col overflow-hidden">
-        <div className="flex items-center justify-between border-b border-ink/10 px-5 py-3.5">
+        <div className="flex items-center justify-between border-b border-white/10 px-5 py-3.5">
           <div className="flex items-center gap-3">
-            <span className="grid h-9 w-9 place-items-center rounded-full bg-teal text-cream">
+            <span className="grid h-9 w-9 place-items-center rounded-full bg-gradient-to-br from-cyan to-iris text-night">
               {vertical.emoji}
             </span>
             <div>
-              <p className="text-sm font-semibold">Robin · {vertical.practice}</p>
-              <p className="flex items-center gap-1.5 text-xs text-ink/50">
-                <span className="h-2 w-2 rounded-full bg-green-500" /> Online
+              <p className="text-sm font-semibold text-white">Robin · {vertical.practice}</p>
+              <p className="flex items-center gap-1.5 text-xs text-slate-400">
+                <span className="h-2 w-2 rounded-full bg-cyan shadow-[0_0_8px_2px_rgba(62,240,224,0.7)]" /> Online
               </p>
             </div>
           </div>
@@ -173,7 +173,7 @@ export default function Chat({ initialVertical }: { initialVertical?: string }) 
           ))}
           {busy && turns[turns.length - 1]?.content === "" && (
             <div className="flex justify-start">
-              <div className="rounded-2xl rounded-tl-sm bg-teal/10 px-4 py-3">
+              <div className="rounded-2xl rounded-tl-sm border border-cyan/20 bg-cyan/10 px-4 py-3 text-cyan">
                 <span className="dot inline-block">•</span>
                 <span className="dot inline-block">•</span>
                 <span className="dot inline-block">•</span>
@@ -183,13 +183,13 @@ export default function Chat({ initialVertical }: { initialVertical?: string }) 
         </div>
 
         {turns.length <= 1 && (
-          <div className="flex flex-wrap gap-2 border-t border-ink/10 px-5 py-3">
+          <div className="flex flex-wrap gap-2 border-t border-white/10 px-5 py-3">
             {SUGGESTIONS.map((s) => (
               <button
                 key={s}
                 onClick={() => send(s)}
                 disabled={busy}
-                className="rounded-full border border-ink/15 px-3 py-1.5 text-xs text-ink/70 transition hover:border-teal hover:text-teal disabled:opacity-50"
+                className="rounded-full border border-white/15 px-3 py-1.5 text-xs text-slate-300 transition hover:border-cyan/50 hover:text-cyan disabled:opacity-50"
               >
                 {s}
               </button>
@@ -202,13 +202,13 @@ export default function Chat({ initialVertical }: { initialVertical?: string }) 
             e.preventDefault();
             send(input);
           }}
-          className="flex items-center gap-2 border-t border-ink/10 px-4 py-3"
+          className="flex items-center gap-2 border-t border-white/10 px-4 py-3"
         >
           <input
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            placeholder="Type as if you're calling the front desk…"
-            className="flex-1 rounded-full border border-ink/15 bg-white px-4 py-2.5 text-sm outline-none focus:border-teal"
+            placeholder="Type as if you're ringing the front desk…"
+            className="flex-1 rounded-full border border-white/15 bg-white/5 px-4 py-2.5 text-sm text-white placeholder:text-slate-500 outline-none focus:border-cyan/60"
           />
           <button type="submit" disabled={busy || !input.trim()} className="btn-primary disabled:opacity-50">
             Send
@@ -225,16 +225,18 @@ function Message({ turn }: { turn: Turn }) {
     <div className={`flex flex-col gap-1.5 ${isRobin ? "items-start" : "items-end"}`}>
       <div
         className={`max-w-[82%] whitespace-pre-wrap rounded-2xl px-4 py-2.5 text-sm leading-relaxed ${
-          isRobin ? "rounded-tl-sm bg-teal/10 text-ink" : "rounded-tr-sm bg-ink text-cream"
+          isRobin
+            ? "rounded-tl-sm border border-cyan/15 bg-cyan/10 text-slate-100"
+            : "rounded-tr-sm bg-white/10 text-white"
         }`}
       >
         {turn.content || (turn.streaming ? "" : "…")}
-        {turn.streaming && <span className="ml-0.5 inline-block animate-pulse">▋</span>}
+        {turn.streaming && <span className="ml-0.5 inline-block animate-pulse text-cyan">▋</span>}
       </div>
       {turn.tools?.map((tool, i) => (
         <div
           key={i}
-          className="flex items-center gap-1.5 rounded-lg bg-amber-accent/15 px-2.5 py-1 text-xs font-medium text-ink/75"
+          className="flex items-center gap-1.5 rounded-lg border border-iris/25 bg-iris/15 px-2.5 py-1 text-xs font-medium text-iris-soft"
         >
           {tool.label}
         </div>
@@ -248,7 +250,7 @@ function ModeBadge({ mode }: { mode: "live" | "fallback" | null }) {
     return (
       <span
         title="ANTHROPIC_API_KEY is not set, so this uses a scripted rule-based receptionist."
-        className="rounded-full bg-amber-accent/15 px-2.5 py-1 text-xs font-medium text-amber-accent"
+        className="rounded-full border border-amber-accent/30 bg-amber-accent/15 px-2.5 py-1 text-xs font-medium text-amber-accent"
       >
         demo mode
       </span>
@@ -256,7 +258,7 @@ function ModeBadge({ mode }: { mode: "live" | "fallback" | null }) {
   }
   if (mode === "live") {
     return (
-      <span className="rounded-full bg-teal/15 px-2.5 py-1 text-xs font-medium text-teal">
+      <span className="rounded-full border border-cyan/30 bg-cyan/15 px-2.5 py-1 text-xs font-medium text-cyan">
         Claude · live
       </span>
     );
