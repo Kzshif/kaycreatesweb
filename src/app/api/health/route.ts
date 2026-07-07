@@ -5,7 +5,7 @@ import { stripeEnabled } from "@/lib/stripe";
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
-// Ops probe: which storage backend is live, and can we reach it?
+// Ops probe: which storage + payments backends are live, and is the db reachable?
 export async function GET() {
   try {
     await q(`SELECT 1 AS ok`);
