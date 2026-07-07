@@ -1,6 +1,6 @@
 import Anthropic from "@anthropic-ai/sdk";
 import { getModel } from "./ai";
-import { getDb, newId } from "./db";
+import { newId, q, run } from "./db";
 import type { SeoAudit, SeoCheck, Workspace } from "./types";
 
 // SEO Studio: fetch a page, run a heuristic audit (no dependencies — regex
@@ -187,16 +187,22 @@ export async function auditPage(workspace: Workspace, url: string): Promise<SeoA
     mode,
     createdAt: new Date().toISOString(),
   };
-  getDb()
-    .prepare(
-      `INSERT INTO seo_audits (id, workspaceId, url, score, checks, recommendations, suggestedTitle, suggestedDescription, mode, createdAt)
-       VALUES (@id, @workspaceId, @url, @score, @checks, @recommendations, @suggestedTitle, @suggestedDescription, @mode, @createdAt)`,
-    )
-    .run({
-      ...audit,
-      checks: JSON.stringify(audit.checks),
-      recommendations: JSON.stringify(audit.recommendations),
-    });
+  await run(
+    `INSERT INTO seo_audits (id, workspaceId, url, score, checks, recommendations, suggestedTitle, suggestedDescription, mode, createdAt)
+     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+    [
+      audit.id,
+      audit.workspaceId,
+      audit.url,
+      audit.score,
+      JSON.stringify(audit.checks),
+      JSON.stringify(audit.recommendations),
+      audit.suggestedTitle,
+      audit.suggestedDescription,
+      audit.mode,
+      audit.createdAt,
+    ],
+  );
   return audit;
 }
 
@@ -250,13 +256,14 @@ Reply as strict JSON, no markdown:
   };
 }
 
-export function listAudits(workspaceId: string, limit = 10): SeoAudit[] {
-  const rows = getDb()
-    .prepare(`SELECT * FROM seo_audits WHERE workspaceId = ? ORDER BY createdAt DESC LIMIT ?`)
-    .all(workspaceId, limit) as (Omit<SeoAudit, "checks" | "recommendations"> & {
+export async function listAudits(workspaceId: string, limit = 10): Promise<SeoAudit[]> {
+  const rows = await q<Omit<SeoAudit, "checks" | "recommendations"> & {
     checks: string;
     recommendations: string;
-  })[];
+  }>(`SELECT * FROM seo_audits WHERE workspaceId = ? ORDER BY createdAt DESC LIMIT ?`, [
+    workspaceId,
+    limit,
+  ]);
   return rows.map((r) => ({
     ...r,
     checks: safeArr(r.checks) as SeoCheck[],

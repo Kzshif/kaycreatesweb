@@ -8,17 +8,17 @@ export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 export async function GET(req: NextRequest) {
-  const tenant = tenantFromRequest(req);
+  const tenant = await tenantFromRequest(req);
   if (!tenant) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-  return NextResponse.json({ bots: listBots(tenant.workspace.id) });
+  return NextResponse.json({ bots: await listBots(tenant.workspace.id) });
 }
 
 export async function POST(req: NextRequest) {
-  const tenant = tenantFromRequest(req);
+  const tenant = await tenantFromRequest(req);
   if (!tenant) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
-  const status = planStatus(tenant.workspace);
-  if (listBots(tenant.workspace.id).length >= status.botLimit) {
+  const status = await planStatus(tenant.workspace);
+  if ((await listBots(tenant.workspace.id)).length >= status.botLimit) {
     return NextResponse.json(
       { error: `Your plan includes ${status.botLimit} bot${status.botLimit === 1 ? "" : "s"} — upgrade to add more.` },
       { status: 402 },
@@ -31,12 +31,12 @@ export async function POST(req: NextRequest) {
   } catch {
     body = {};
   }
-  const bot = createBot(tenant.workspace, sanitize(body));
+  const bot = await createBot(tenant.workspace, sanitize(body));
   return NextResponse.json({ bot });
 }
 
 export async function PATCH(req: NextRequest) {
-  const tenant = tenantFromRequest(req);
+  const tenant = await tenantFromRequest(req);
   if (!tenant) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
   let body: Partial<Bot> & { id?: string };
@@ -47,17 +47,17 @@ export async function PATCH(req: NextRequest) {
   }
   if (!body.id) return NextResponse.json({ error: "Missing bot id" }, { status: 400 });
 
-  const bot = updateBot(body.id, tenant.workspace.id, sanitize(body));
+  const bot = await updateBot(body.id, tenant.workspace.id, sanitize(body));
   if (!bot) return NextResponse.json({ error: "Not found" }, { status: 404 });
   return NextResponse.json({ bot });
 }
 
 export async function DELETE(req: NextRequest) {
-  const tenant = tenantFromRequest(req);
+  const tenant = await tenantFromRequest(req);
   if (!tenant) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   const id = req.nextUrl.searchParams.get("id");
   if (!id) return NextResponse.json({ error: "Missing bot id" }, { status: 400 });
-  if (!deleteBot(id, tenant.workspace.id)) {
+  if (!(await deleteBot(id, tenant.workspace.id))) {
     return NextResponse.json({ error: "Not found" }, { status: 404 });
   }
   return NextResponse.json({ ok: true });

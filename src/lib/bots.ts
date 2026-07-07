@@ -1,6 +1,6 @@
 import type Anthropic from "@anthropic-ai/sdk";
 import { randomBytes } from "node:crypto";
-import { getDb, newId } from "./db";
+import { newId, q, qOne, run } from "./db";
 import { addLead } from "./convos";
 import type { Bot, BotGoal, ChatMessage, Workspace } from "./types";
 
@@ -22,10 +22,10 @@ function toBot(r: Row): Bot {
   return { ...r, faq };
 }
 
-export function createBot(
+export async function createBot(
   workspace: Workspace,
   input: Partial<Pick<Bot, "name" | "tone" | "goal" | "welcome" | "knowledge" | "faq" | "color">> = {},
-): Bot {
+): Promise<Bot> {
   const name = input.name?.trim() || `${workspace.name} Assistant`;
   const bot: Bot = {
     id: newId("bot"),
@@ -40,64 +40,69 @@ export function createBot(
     color: /^#[0-9a-f]{6}$/i.test(input.color ?? "") ? (input.color as string) : "#3b5bdb",
     createdAt: new Date().toISOString(),
   };
-  getDb()
-    .prepare(
-      `INSERT INTO bots (id, workspaceId, publicKey, name, tone, goal, welcome, knowledge, faq, color, createdAt)
-       VALUES (@id, @workspaceId, @publicKey, @name, @tone, @goal, @welcome, @knowledge, @faq, @color, @createdAt)`,
-    )
-    .run({ ...bot, faq: JSON.stringify(bot.faq) });
+  await run(
+    `INSERT INTO bots (id, workspaceId, publicKey, name, tone, goal, welcome, knowledge, faq, color, createdAt)
+     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+    [
+      bot.id,
+      bot.workspaceId,
+      bot.publicKey,
+      bot.name,
+      bot.tone,
+      bot.goal,
+      bot.welcome,
+      bot.knowledge,
+      JSON.stringify(bot.faq),
+      bot.color,
+      bot.createdAt,
+    ],
+  );
   return bot;
 }
 
-export function listBots(workspaceId: string): Bot[] {
-  const rows = getDb()
-    .prepare(`SELECT * FROM bots WHERE workspaceId = ? ORDER BY createdAt`)
-    .all(workspaceId) as Row[];
+export async function listBots(workspaceId: string): Promise<Bot[]> {
+  const rows = await q<Row>(`SELECT * FROM bots WHERE workspaceId = ? ORDER BY createdAt`, [
+    workspaceId,
+  ]);
   return rows.map(toBot);
 }
 
-export function getBot(id: string): Bot | null {
-  const row = getDb().prepare(`SELECT * FROM bots WHERE id = ?`).get(id) as Row | undefined;
+export async function getBot(id: string): Promise<Bot | null> {
+  const row = await qOne<Row>(`SELECT * FROM bots WHERE id = ?`, [id]);
   return row ? toBot(row) : null;
 }
 
-export function getBotByKey(publicKey: string): Bot | null {
-  const row = getDb().prepare(`SELECT * FROM bots WHERE publicKey = ?`).get(publicKey) as
-    | Row
-    | undefined;
+export async function getBotByKey(publicKey: string): Promise<Bot | null> {
+  const row = await qOne<Row>(`SELECT * FROM bots WHERE publicKey = ?`, [publicKey]);
   return row ? toBot(row) : null;
 }
 
-export function updateBot(
+export async function updateBot(
   id: string,
   workspaceId: string,
   patch: Partial<Pick<Bot, "name" | "tone" | "goal" | "welcome" | "knowledge" | "faq" | "color">>,
-): Bot | null {
-  const current = getBot(id);
+): Promise<Bot | null> {
+  const current = await getBot(id);
   if (!current || current.workspaceId !== workspaceId) return null;
   const next = { ...current, ...patch };
-  getDb()
-    .prepare(
-      `UPDATE bots SET name = @name, tone = @tone, goal = @goal, welcome = @welcome,
-       knowledge = @knowledge, faq = @faq, color = @color WHERE id = @id`,
-    )
-    .run({
+  await run(
+    `UPDATE bots SET name = ?, tone = ?, goal = ?, welcome = ?, knowledge = ?, faq = ?, color = ? WHERE id = ?`,
+    [
+      next.name.trim() || current.name,
+      next.tone,
+      next.goal,
+      next.welcome,
+      next.knowledge,
+      JSON.stringify(next.faq),
+      /^#[0-9a-f]{6}$/i.test(next.color) ? next.color : current.color,
       id,
-      name: next.name.trim() || current.name,
-      tone: next.tone,
-      goal: next.goal,
-      welcome: next.welcome,
-      knowledge: next.knowledge,
-      faq: JSON.stringify(next.faq),
-      color: /^#[0-9a-f]{6}$/i.test(next.color) ? next.color : current.color,
-    });
+    ],
+  );
   return getBot(id);
 }
 
-export function deleteBot(id: string, workspaceId: string): boolean {
-  const info = getDb()
-    .prepare(`DELETE FROM bots WHERE id = ? AND workspaceId = ?`)
-    .run(id, workspaceId);
+export async function deleteBot(id: string, workspaceId: string): Promise<boolean> {
+  const info = await run(`DELETE FROM bots WHERE id = ? AND workspaceId = ?`, [id, workspaceId]);
   return info.changes > 0;
 }
 
@@ -161,17 +166,17 @@ export const BOT_TOOLS: Anthropic.Tool[] = [
 const str = (v: unknown, fallback = ""): string =>
   typeof v === "string" && v.trim() ? v.trim() : fallback;
 
-export function runBotTool(
+export async function runBotTool(
   name: string,
   input: Record<string, unknown>,
   bot: Bot,
-): { result: string; label: string } {
+): Promise<{ result: string; label: string }> {
   if (name === "capture_lead") {
     const email = str(input.email);
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       return { result: "That email address looks invalid — ask the visitor to repeat it.", label: "" };
     }
-    addLead({
+    await addLead({
       botId: bot.id,
       workspaceId: bot.workspaceId,
       name: str(input.name, "Website visitor"),
@@ -192,11 +197,11 @@ export function runBotTool(
 const EMAIL_RE = /([a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,})/i;
 const NAME_RE = /\b(?:my name is|i'?m|this is)\s+([a-z][a-z'-]+(?:\s+[a-z][a-z'-]+)?)/i;
 
-export function fallbackBotReply(
+export async function fallbackBotReply(
   history: ChatMessage[],
   bot: Bot,
   workspace: Workspace,
-): { text: string; tool?: { label: string } } {
+): Promise<{ text: string; tool?: { label: string } }> {
   const userText = history
     .filter((m) => m.role === "user")
     .map((m) => m.content)
@@ -205,9 +210,9 @@ export function fallbackBotReply(
 
   // If they've shared an email at any point and we haven't captured it yet, capture.
   const email = userText.match(EMAIL_RE)?.[1];
-  if (email && !alreadyCaptured(bot.id, email)) {
+  if (email && !(await alreadyCaptured(bot.id, email))) {
     const name = userText.match(NAME_RE)?.[1] ?? "Website visitor";
-    addLead({
+    await addLead({
       botId: bot.id,
       workspaceId: bot.workspaceId,
       name,
@@ -250,9 +255,10 @@ export function fallbackBotReply(
   };
 }
 
-function alreadyCaptured(botId: string, email: string): boolean {
-  const row = getDb()
-    .prepare(`SELECT id FROM leads WHERE botId = ? AND email = ?`)
-    .get(botId, email.toLowerCase());
+async function alreadyCaptured(botId: string, email: string): Promise<boolean> {
+  const row = await qOne(`SELECT id FROM leads WHERE botId = ? AND email = ?`, [
+    botId,
+    email.toLowerCase(),
+  ]);
   return !!row;
 }

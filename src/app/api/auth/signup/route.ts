@@ -37,17 +37,17 @@ export async function POST(req: NextRequest) {
   if (!businessName) {
     return NextResponse.json({ error: "Tell us your business's name." }, { status: 400 });
   }
-  if (findUserByEmail(email)) {
+  if (await findUserByEmail(email)) {
     return NextResponse.json(
       { error: "An account with that email already exists — log in instead." },
       { status: 409 },
     );
   }
 
-  const user = createUser(email, name, password);
-  const workspace = createWorkspace(user.id, businessName, body.website ?? "");
-  const bot = onboardWorkspace(workspace);
-  const { token, expiresAt } = createSession(user.id);
+  const user = await createUser(email, name, password);
+  const workspace = await createWorkspace(user.id, businessName, body.website ?? "");
+  const bot = await onboardWorkspace(workspace);
+  const { token, expiresAt } = await createSession(user.id);
 
   const res = NextResponse.json({ user, workspace, bot });
   res.cookies.set(sessionCookie(token, expiresAt));

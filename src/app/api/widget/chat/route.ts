@@ -46,8 +46,8 @@ export async function POST(req: NextRequest) {
     bot = DEMO_BOT;
     workspace = DEMO_WORKSPACE;
   } else {
-    bot = body.botKey ? getBotByKey(body.botKey) : null;
-    workspace = bot ? getWorkspace(bot.workspaceId) : null;
+    bot = body.botKey ? await getBotByKey(body.botKey) : null;
+    workspace = bot ? await getWorkspace(bot.workspaceId) : null;
   }
   if (!bot || !workspace) {
     return new Response("Unknown bot", { status: 404, headers: CORS });
@@ -71,7 +71,7 @@ export async function POST(req: NextRequest) {
 
   // Meter every visitor message against the workspace's plan (demo excluded).
   if (!isDemo) {
-    const status = planStatus(workspace);
+    const status = await planStatus(workspace);
     if (status.overLimit) {
       // Visitor-facing: degrade politely instead of erroring.
       return streamOnce(
@@ -79,7 +79,7 @@ export async function POST(req: NextRequest) {
         `Thanks for your message! Our chat assistant is briefly offline — please email us directly and we'll get right back to you.`,
       );
     }
-    recordMessage(workspace.id);
+    await recordMessage(workspace.id);
   }
 
   const finalBot = bot;
@@ -106,7 +106,7 @@ export async function POST(req: NextRequest) {
           }
         }
         if (useFallback) {
-          const turn = fallbackBotReply(history, finalBot, finalWorkspace);
+          const turn = await fallbackBotReply(history, finalBot, finalWorkspace);
           if (turn.tool) send(controller, enc, { type: "tool", name: "capture_lead", label: turn.tool.label });
           const words = turn.text.split(" ");
           for (let i = 0; i < words.length; i++) {
@@ -121,7 +121,7 @@ export async function POST(req: NextRequest) {
         send(controller, enc, { type: "done", mode: hasKey ? "live" : "fallback" });
       } finally {
         try {
-          logConversation({
+          await logConversation({
             botId: finalBot.id,
             workspaceId: finalWorkspace.id,
             visitorId,
@@ -179,7 +179,7 @@ async function runLive(
     );
     const toolResults: Anthropic.ToolResultBlockParam[] = [];
     for (const tu of toolUses) {
-      const { result, label } = runBotTool(tu.name, (tu.input ?? {}) as Record<string, unknown>, bot);
+      const { result, label } = await runBotTool(tu.name, (tu.input ?? {}) as Record<string, unknown>, bot);
       if (label) send(controller, enc, { type: "tool", name: tu.name, label });
       toolResults.push({ type: "tool_result", tool_use_id: tu.id, content: result });
     }

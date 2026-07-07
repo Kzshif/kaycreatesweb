@@ -78,9 +78,13 @@ shows a `demo mode` badge; with a key it switches to `Claude · live`.
 
 Each signup creates a **workspace** (the tenant). Bots, conversations, leads,
 audits, usage, and invoices are all scoped by `workspaceId`; the widget only
-ever sees a bot's **public key**. Everything persists in SQLite via
-`better-sqlite3` (`src/lib/db.ts`) at `./data/kaycreatesweb.db` (override with
-`DATABASE_PATH`). Schema is created automatically.
+ever sees a bot's **public key**.
+
+**Storage** (`src/lib/db.ts`) has two backends behind one async adapter:
+**Postgres** whenever `NETLIFY_DATABASE_URL` (Netlify DB / Neon) or a
+`postgres://` `DATABASE_URL` is set — the permanent production store — and
+**SQLite** (`better-sqlite3`, `./data/kaycreatesweb.db`) otherwise for local
+dev. Schema is created automatically on first use in both.
 
 ## Project structure
 
@@ -114,6 +118,6 @@ src/
 ## Notes & next steps
 
 To take it to production: swap simulated billing for Stripe Checkout + webhooks,
-move SQLite to Postgres, add website crawling so bots auto-learn from the
+add website crawling so bots auto-learn from the
 customer's site, email notifications for new leads, and rate limiting on the
 public widget endpoints.

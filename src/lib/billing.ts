@@ -1,4 +1,4 @@
-import { getDb, newId } from "./db";
+import { newId, q, qOne, run } from "./db";
 import { setPlan } from "./workspaces";
 import type { Invoice, PlanId, Workspace } from "./types";
 
@@ -77,20 +77,20 @@ function monthKey(d = new Date()): string {
   return d.toISOString().slice(0, 7);
 }
 
-export function getUsage(workspaceId: string): number {
-  const row = getDb()
-    .prepare(`SELECT messages FROM usage WHERE workspaceId = ? AND month = ?`)
-    .get(workspaceId, monthKey()) as { messages: number } | undefined;
-  return row?.messages ?? 0;
+export async function getUsage(workspaceId: string): Promise<number> {
+  const row = await qOne<{ messages: number | string }>(
+    `SELECT messages FROM usage WHERE workspaceId = ? AND month = ?`,
+    [workspaceId, monthKey()],
+  );
+  return Number(row?.messages ?? 0);
 }
 
-export function recordMessage(workspaceId: string) {
-  getDb()
-    .prepare(
-      `INSERT INTO usage (workspaceId, month, messages) VALUES (?, ?, 1)
-       ON CONFLICT(workspaceId, month) DO UPDATE SET messages = messages + 1`,
-    )
-    .run(workspaceId, monthKey());
+export async function recordMessage(workspaceId: string) {
+  await run(
+    `INSERT INTO usage (workspaceId, month, messages) VALUES (?, ?, 1)
+     ON CONFLICT(workspaceId, month) DO UPDATE SET messages = usage.messages + 1`,
+    [workspaceId, monthKey()],
+  );
 }
 
 export interface PlanStatus {
@@ -106,14 +106,14 @@ export interface PlanStatus {
   overLimit: boolean;
 }
 
-export function planStatus(workspace: Workspace): PlanStatus {
+export async function planStatus(workspace: Workspace): Promise<PlanStatus> {
   const onTrial = workspace.plan === "trial";
   const trialDaysLeft = Math.max(
     0,
     Math.ceil((new Date(workspace.trialEndsAt).getTime() - Date.now()) / 86_400_000),
   );
   const plan = getPlan(workspace.plan);
-  const used = getUsage(workspace.id);
+  const used = await getUsage(workspace.id);
   const limit = plan.messageLimit === Infinity ? null : plan.messageLimit;
   return {
     plan: workspace.plan,
@@ -130,9 +130,9 @@ export function planStatus(workspace: Workspace): PlanStatus {
 }
 
 /** Simulated checkout: switches the plan and books an invoice. */
-export function upgrade(workspace: Workspace, planId: Plan["id"]): Invoice {
+export async function upgrade(workspace: Workspace, planId: Plan["id"]): Promise<Invoice> {
   const plan = getPlan(planId);
-  setPlan(workspace.id, planId);
+  await setPlan(workspace.id, planId);
   const invoice: Invoice = {
     id: newId("inv"),
     workspaceId: workspace.id,
@@ -140,17 +140,16 @@ export function upgrade(workspace: Workspace, planId: Plan["id"]): Invoice {
     amountCents: plan.priceMonthly * 100,
     createdAt: new Date().toISOString(),
   };
-  getDb()
-    .prepare(
-      `INSERT INTO invoices (id, workspaceId, description, amountCents, createdAt)
-       VALUES (@id, @workspaceId, @description, @amountCents, @createdAt)`,
-    )
-    .run(invoice);
+  await run(
+    `INSERT INTO invoices (id, workspaceId, description, amountCents, createdAt)
+     VALUES (?, ?, ?, ?, ?)`,
+    [invoice.id, invoice.workspaceId, invoice.description, invoice.amountCents, invoice.createdAt],
+  );
   return invoice;
 }
 
-export function listInvoices(workspaceId: string): Invoice[] {
-  return getDb()
-    .prepare(`SELECT * FROM invoices WHERE workspaceId = ? ORDER BY createdAt DESC`)
-    .all(workspaceId) as Invoice[];
+export async function listInvoices(workspaceId: string): Promise<Invoice[]> {
+  return q<Invoice>(`SELECT * FROM invoices WHERE workspaceId = ? ORDER BY createdAt DESC`, [
+    workspaceId,
+  ]);
 }

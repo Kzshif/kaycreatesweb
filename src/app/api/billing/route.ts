@@ -14,19 +14,19 @@ function serializePlans() {
 }
 
 export async function GET(req: NextRequest) {
-  const tenant = tenantFromRequest(req);
+  const tenant = await tenantFromRequest(req);
   if (!tenant) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-  return NextResponse.json({
-    status: planStatus(tenant.workspace),
-    plans: serializePlans(),
-    invoices: listInvoices(tenant.workspace.id),
-  });
+  const [status, invoices] = await Promise.all([
+    planStatus(tenant.workspace),
+    listInvoices(tenant.workspace.id),
+  ]);
+  return NextResponse.json({ status, plans: serializePlans(), invoices });
 }
 
 // Simulated checkout: switch plans and book an invoice. In production this
 // endpoint would create a Stripe Checkout session instead.
 export async function POST(req: NextRequest) {
-  const tenant = tenantFromRequest(req);
+  const tenant = await tenantFromRequest(req);
   if (!tenant) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
   let body: { plan?: string };
@@ -39,10 +39,10 @@ export async function POST(req: NextRequest) {
   const plan = PLANS.find((p) => p.id === body.plan);
   if (!plan) return NextResponse.json({ error: "Unknown plan" }, { status: 400 });
 
-  const invoice = upgrade(tenant.workspace, plan.id);
+  const invoice = await upgrade(tenant.workspace, plan.id);
   const refreshed = { ...tenant.workspace, plan: plan.id };
   return NextResponse.json({
-    status: planStatus(refreshed),
+    status: await planStatus(refreshed),
     invoice,
   });
 }

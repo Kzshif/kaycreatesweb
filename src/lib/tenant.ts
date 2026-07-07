@@ -4,10 +4,12 @@ import { getWorkspaceByUser } from "./workspaces";
 import type { User, Workspace } from "./types";
 
 /** Resolves the authenticated user + their workspace for API routes. */
-export function tenantFromRequest(req: NextRequest): { user: User; workspace: Workspace } | null {
-  const user = getUserFromRequest(req);
+export async function tenantFromRequest(
+  req: NextRequest,
+): Promise<{ user: User; workspace: Workspace } | null> {
+  const user = await getUserFromRequest(req);
   if (!user) return null;
-  const workspace = getWorkspaceByUser(user.id);
+  const workspace = await getWorkspaceByUser(user.id);
   if (!workspace) return null;
   return { user, workspace };
 }

@@ -15,12 +15,18 @@ function cache(): Map<string, Briefing> {
   return g.__kcwBriefings;
 }
 
-function snapshot(workspace: Workspace) {
+async function snapshot(workspace: Workspace) {
+  const [stats, last7Days, leads, audits] = await Promise.all([
+    workspaceStats(workspace.id),
+    dailySeries(workspace.id, 7),
+    listLeads(workspace.id),
+    listAudits(workspace.id, 1),
+  ]);
   return {
-    stats: workspaceStats(workspace.id),
-    last7Days: dailySeries(workspace.id, 7),
-    newLeads: listLeads(workspace.id).filter((l) => l.status === "new").slice(0, 10),
-    latestAudit: listAudits(workspace.id, 1)[0] ?? null,
+    stats,
+    last7Days,
+    newLeads: leads.filter((l) => l.status === "new").slice(0, 10),
+    latestAudit: audits[0] ?? null,
   };
 }
 
@@ -31,7 +37,7 @@ export async function getBriefing(workspace: Workspace, refresh = false): Promis
     if (hit) return hit;
   }
 
-  const snap = snapshot(workspace);
+  const snap = await snapshot(workspace);
   const briefing = process.env.ANTHROPIC_API_KEY
     ? await liveBriefing(workspace, snap).catch(() => fallbackBriefing(snap))
     : fallbackBriefing(snap);
@@ -40,7 +46,7 @@ export async function getBriefing(workspace: Workspace, refresh = false): Promis
   return briefing;
 }
 
-async function liveBriefing(workspace: Workspace, snap: ReturnType<typeof snapshot>): Promise<Briefing> {
+async function liveBriefing(workspace: Workspace, snap: Awaited<ReturnType<typeof snapshot>>): Promise<Briefing> {
   const client = new Anthropic();
   const model = await getModel(client);
   const volume = snap.last7Days.map((d) => `${d.day}: ${d.conversations} chats, ${d.leads} leads`).join("; ");
@@ -95,7 +101,7 @@ Be specific with names and numbers from the data. Never invent data.`;
   };
 }
 
-function fallbackBriefing(snap: ReturnType<typeof snapshot>): Briefing {
+function fallbackBriefing(snap: Awaited<ReturnType<typeof snapshot>>): Briefing {
   const week = snap.last7Days.reduce(
     (acc, d) => ({ conversations: acc.conversations + d.conversations, leads: acc.leads + d.leads }),
     { conversations: 0, leads: 0 },

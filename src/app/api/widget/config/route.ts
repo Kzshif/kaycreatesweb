@@ -20,7 +20,7 @@ export async function OPTIONS() {
 
 export async function GET(req: NextRequest) {
   const key = req.nextUrl.searchParams.get("bot") ?? "";
-  const bot = key === "demo" ? DEMO_BOT : getBotByKey(key);
+  const bot = key === "demo" ? DEMO_BOT : await getBotByKey(key);
   if (!bot) return new Response("Unknown bot", { status: 404, headers: CORS });
   return Response.json(
     { name: bot.name, welcome: bot.welcome, color: bot.color },

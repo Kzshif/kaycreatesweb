@@ -13,10 +13,10 @@ export const dynamic = "force-dynamic";
 export default async function AppLayout({ children }: { children: React.ReactNode }) {
   const user = await getUser();
   if (!user) redirect("/login");
-  const workspace = getWorkspaceByUser(user.id);
+  const workspace = await getWorkspaceByUser(user.id);
   if (!workspace) redirect("/signup");
 
-  const status = planStatus(workspace);
+  const status = await planStatus(workspace);
   const planBadge = status.onTrial
     ? status.trialExpired
       ? "Trial ended — pick a plan"

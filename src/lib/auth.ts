@@ -1,12 +1,11 @@
 import { randomBytes, scryptSync, timingSafeEqual } from "node:crypto";
 import { cookies } from "next/headers";
 import type { NextRequest } from "next/server";
-import { getDb, newId } from "./db";
+import { newId, q, qOne, run } from "./db";
 import type { User } from "./types";
 
-// Cookie-session auth backed by SQLite. Passwords are hashed with scrypt
-// (Node built-in — no extra dependency); sessions are opaque random tokens in
-// an httpOnly cookie.
+// Cookie-session auth. Passwords are hashed with scrypt (Node built-in — no
+// extra dependency); sessions are opaque random tokens in an httpOnly cookie.
 
 export const SESSION_COOKIE = "fd_session";
 const SESSION_DAYS = 30;
@@ -31,8 +30,7 @@ export function verifyPassword(password: string, stored: string): boolean {
 
 // --- users ------------------------------------------------------------------
 
-export function createUser(email: string, name: string, password: string): User {
-  const db = getDb();
+export async function createUser(email: string, name: string, password: string): Promise<User> {
   const user: UserRow = {
     id: newId("usr"),
     email: email.trim().toLowerCase(),
@@ -40,18 +38,15 @@ export function createUser(email: string, name: string, password: string): User 
     passwordHash: hashPassword(password),
     createdAt: new Date().toISOString(),
   };
-  db.prepare(
-    `INSERT INTO users (id, email, name, passwordHash, createdAt)
-     VALUES (@id, @email, @name, @passwordHash, @createdAt)`,
-  ).run(user);
+  await run(
+    `INSERT INTO users (id, email, name, passwordHash, createdAt) VALUES (?, ?, ?, ?, ?)`,
+    [user.id, user.email, user.name, user.passwordHash, user.createdAt],
+  );
   return publicUser(user);
 }
 
-export function findUserByEmail(email: string): UserRow | null {
-  const row = getDb()
-    .prepare(`SELECT * FROM users WHERE email = ?`)
-    .get(email.trim().toLowerCase()) as UserRow | undefined;
-  return row ?? null;
+export async function findUserByEmail(email: string): Promise<UserRow | null> {
+  return qOne<UserRow>(`SELECT * FROM users WHERE email = ?`, [email.trim().toLowerCase()]);
 }
 
 function publicUser(row: UserRow): User {
@@ -60,38 +55,39 @@ function publicUser(row: UserRow): User {
 
 // --- sessions ---------------------------------------------------------------
 
-export function createSession(userId: string): { token: string; expiresAt: Date } {
+export async function createSession(userId: string): Promise<{ token: string; expiresAt: Date }> {
   const token = randomBytes(32).toString("hex");
   const expiresAt = new Date(Date.now() + SESSION_DAYS * 86_400_000);
-  getDb()
-    .prepare(`INSERT INTO sessions (token, userId, createdAt, expiresAt) VALUES (?, ?, ?, ?)`)
-    .run(token, userId, new Date().toISOString(), expiresAt.toISOString());
+  await run(`INSERT INTO sessions (token, userId, createdAt, expiresAt) VALUES (?, ?, ?, ?)`, [
+    token,
+    userId,
+    new Date().toISOString(),
+    expiresAt.toISOString(),
+  ]);
   return { token, expiresAt };
 }
 
-export function destroySession(token: string) {
-  getDb().prepare(`DELETE FROM sessions WHERE token = ?`).run(token);
+export async function destroySession(token: string) {
+  await run(`DELETE FROM sessions WHERE token = ?`, [token]);
 }
 
-function userForToken(token: string | undefined): User | null {
+async function userForToken(token: string | undefined): Promise<User | null> {
   if (!token) return null;
-  const db = getDb();
-  const session = db.prepare(`SELECT * FROM sessions WHERE token = ?`).get(token) as
-    | { userId: string; expiresAt: string }
-    | undefined;
+  const session = await qOne<{ userId: string; expiresAt: string }>(
+    `SELECT * FROM sessions WHERE token = ?`,
+    [token],
+  );
   if (!session) return null;
   if (new Date(session.expiresAt).getTime() < Date.now()) {
-    destroySession(token);
+    await destroySession(token);
     return null;
   }
-  const row = db.prepare(`SELECT * FROM users WHERE id = ?`).get(session.userId) as
-    | UserRow
-    | undefined;
+  const row = await qOne<UserRow>(`SELECT * FROM users WHERE id = ?`, [session.userId]);
   return row ? publicUser(row) : null;
 }
 
 /** For route handlers — reads the session cookie off the request. */
-export function getUserFromRequest(req: NextRequest): User | null {
+export async function getUserFromRequest(req: NextRequest): Promise<User | null> {
   return userForToken(req.cookies.get(SESSION_COOKIE)?.value);
 }
 

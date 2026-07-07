@@ -11,7 +11,7 @@ export const dynamic = "force-dynamic";
 // AI-drafted follow-up email for a captured lead — ready to send or tweak.
 
 export async function POST(req: NextRequest) {
-  const tenant = tenantFromRequest(req);
+  const tenant = await tenantFromRequest(req);
   if (!tenant) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
   let body: { id?: string };
@@ -21,7 +21,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Bad request" }, { status: 400 });
   }
 
-  const lead = body.id ? getLead(body.id, tenant.workspace.id) : null;
+  const lead = body.id ? await getLead(body.id, tenant.workspace.id) : null;
   if (!lead) return NextResponse.json({ error: "Not found" }, { status: 404 });
 
   if (!process.env.ANTHROPIC_API_KEY) {

@@ -12,12 +12,12 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Bad request" }, { status: 400 });
   }
 
-  const user = body.email ? findUserByEmail(body.email) : null;
+  const user = body.email ? await findUserByEmail(body.email) : null;
   if (!user || !verifyPassword(body.password ?? "", user.passwordHash)) {
     return NextResponse.json({ error: "Wrong email or password." }, { status: 401 });
   }
 
-  const { token, expiresAt } = createSession(user.id);
+  const { token, expiresAt } = await createSession(user.id);
   const res = NextResponse.json({
     user: { id: user.id, email: user.email, name: user.name, createdAt: user.createdAt },
   });

@@ -1,14 +1,14 @@
 import { createBot } from "./bots";
 import { addLead, logConversation } from "./convos";
-import { getDb } from "./db";
+import { run } from "./db";
 import type { Bot, Workspace } from "./types";
 
 // New-workspace onboarding: create the starter bot and seed a week of sample
 // activity so the dashboard, charts, and briefing are alive from first login.
 // Sample rows are clearly marked so they read as examples, not fake customers.
 
-export function onboardWorkspace(workspace: Workspace): Bot {
-  const bot = createBot(workspace, {
+export async function onboardWorkspace(workspace: Workspace): Promise<Bot> {
+  const bot = await createBot(workspace, {
     knowledge: workspace.about,
     faq: [
       {
@@ -17,11 +17,11 @@ export function onboardWorkspace(workspace: Workspace): Bot {
       },
     ],
   });
-  seedSampleActivity(workspace, bot);
+  await seedSampleActivity(workspace, bot);
   return bot;
 }
 
-function seedSampleActivity(workspace: Workspace, bot: Bot) {
+async function seedSampleActivity(workspace: Workspace, bot: Bot) {
   const at = (hoursAgo: number) => new Date(Date.now() - hoursAgo * 3_600_000).toISOString();
 
   const visitors: [string, string, string][] = [
@@ -37,7 +37,7 @@ function seedSampleActivity(workspace: Workspace, bot: Bot) {
     for (let i = 0; i < perDay; i++) {
       const visitorId = `sample_${day}_${i}`;
       const startedAt = at(day * 24 + 3 + i * 4);
-      logConversation({
+      await logConversation({
         botId: bot.id,
         workspaceId: workspace.id,
         visitorId,
@@ -50,14 +50,14 @@ function seedSampleActivity(workspace: Workspace, bot: Bot) {
         ],
       });
       // Backdate the row (logConversation stamps "now").
-      backdate(bot.id, visitorId, startedAt);
+      await backdate(bot.id, visitorId, startedAt);
       v++;
     }
   }
 
   for (let i = 0; i < visitors.length; i++) {
     const [name, email, message] = visitors[i];
-    addLead({
+    await addLead({
       botId: bot.id,
       workspaceId: workspace.id,
       name,
@@ -69,8 +69,9 @@ function seedSampleActivity(workspace: Workspace, bot: Bot) {
   }
 }
 
-function backdate(botId: string, visitorId: string, iso: string) {
-  getDb()
-    .prepare(`UPDATE conversations SET startedAt = ?, lastMessageAt = ? WHERE botId = ? AND visitorId = ?`)
-    .run(iso, iso, botId, visitorId);
+async function backdate(botId: string, visitorId: string, iso: string) {
+  await run(
+    `UPDATE conversations SET startedAt = ?, lastMessageAt = ? WHERE botId = ? AND visitorId = ?`,
+    [iso, iso, botId, visitorId],
+  );
 }

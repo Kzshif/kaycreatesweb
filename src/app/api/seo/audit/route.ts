@@ -6,13 +6,13 @@ export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 export async function GET(req: NextRequest) {
-  const tenant = tenantFromRequest(req);
+  const tenant = await tenantFromRequest(req);
   if (!tenant) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-  return NextResponse.json({ audits: listAudits(tenant.workspace.id, 15) });
+  return NextResponse.json({ audits: await listAudits(tenant.workspace.id, 15) });
 }
 
 export async function POST(req: NextRequest) {
-  const tenant = tenantFromRequest(req);
+  const tenant = await tenantFromRequest(req);
   if (!tenant) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
   let body: { url?: string };

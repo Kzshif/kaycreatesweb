@@ -12,7 +12,7 @@ export const dynamic = "force-dynamic";
 //   kind "post": streaming NDJSON — a full SEO-optimized blog post.
 
 export async function POST(req: NextRequest) {
-  const tenant = tenantFromRequest(req);
+  const tenant = await tenantFromRequest(req);
   if (!tenant) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
   let body: { kind?: string; topic?: string; keywords?: string };

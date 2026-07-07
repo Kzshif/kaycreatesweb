@@ -6,13 +6,13 @@ export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 export async function GET(req: NextRequest) {
-  const tenant = tenantFromRequest(req);
+  const tenant = await tenantFromRequest(req);
   if (!tenant) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   return NextResponse.json({ user: tenant.user, workspace: tenant.workspace });
 }
 
 export async function PATCH(req: NextRequest) {
-  const tenant = tenantFromRequest(req);
+  const tenant = await tenantFromRequest(req);
   if (!tenant) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
   let body: { name?: string; website?: string; about?: string };
@@ -27,6 +27,6 @@ export async function PATCH(req: NextRequest) {
   if (typeof body.website === "string") patch.website = body.website.trim();
   if (typeof body.about === "string") patch.about = body.about.trim().slice(0, 2000);
 
-  const workspace = updateWorkspace(tenant.workspace.id, patch);
+  const workspace = await updateWorkspace(tenant.workspace.id, patch);
   return NextResponse.json({ workspace });
 }

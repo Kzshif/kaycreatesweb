@@ -6,7 +6,7 @@ export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 export async function GET(req: NextRequest) {
-  const tenant = tenantFromRequest(req);
+  const tenant = await tenantFromRequest(req);
   if (!tenant) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-  return NextResponse.json({ conversations: listConversations(tenant.workspace.id, 50) });
+  return NextResponse.json({ conversations: await listConversations(tenant.workspace.id, 50) });
 }

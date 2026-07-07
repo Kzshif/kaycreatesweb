@@ -6,14 +6,14 @@ export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 export async function GET(req: NextRequest) {
-  const tenant = tenantFromRequest(req);
+  const tenant = await tenantFromRequest(req);
   if (!tenant) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-  return NextResponse.json({ leads: listLeads(tenant.workspace.id) });
+  return NextResponse.json({ leads: await listLeads(tenant.workspace.id) });
 }
 
 // Mark a lead as contacted.
 export async function PATCH(req: NextRequest) {
-  const tenant = tenantFromRequest(req);
+  const tenant = await tenantFromRequest(req);
   if (!tenant) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
   let body: { id?: string };
@@ -24,7 +24,7 @@ export async function PATCH(req: NextRequest) {
   }
   if (!body.id) return NextResponse.json({ error: "Missing id" }, { status: 400 });
 
-  const lead = markLeadContacted(body.id, tenant.workspace.id);
+  const lead = await markLeadContacted(body.id, tenant.workspace.id);
   if (!lead) return NextResponse.json({ error: "Not found" }, { status: 404 });
   return NextResponse.json({ lead });
 }

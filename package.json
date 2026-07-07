@@ -2,7 +2,7 @@
   "name": "novawebstudio",
   "version": "0.1.0",
   "private": true,
-  "description": "NovaWebStudio (NOVA05) \u2014 AI chatbots & SEO for any website.",
+  "description": "NovaWebStudio (NOVA05) — AI chatbots & SEO for any website.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.40.1",
+    "@neondatabase/serverless": "^1.1.0",
     "better-sqlite3": "^12.11.1",
     "next": "^16.2.9",
     "react": "19.0.0",

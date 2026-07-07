@@ -1,11 +1,15 @@
-import { getDb, newId } from "./db";
+import { newId, qOne, run } from "./db";
 import type { PlanId, Workspace } from "./types";
 
 // Workspace = the tenant: one business / website.
 
 const TRIAL_DAYS = 14;
 
-export function createWorkspace(userId: string, name: string, website: string): Workspace {
+export async function createWorkspace(
+  userId: string,
+  name: string,
+  website: string,
+): Promise<Workspace> {
   const workspace: Workspace = {
     id: newId("ws"),
     userId,
@@ -16,48 +20,53 @@ export function createWorkspace(userId: string, name: string, website: string): 
     trialEndsAt: new Date(Date.now() + TRIAL_DAYS * 86_400_000).toISOString(),
     createdAt: new Date().toISOString(),
   };
-  getDb()
-    .prepare(
-      `INSERT INTO workspaces (id, userId, name, website, about, plan, trialEndsAt, createdAt)
-       VALUES (@id, @userId, @name, @website, @about, @plan, @trialEndsAt, @createdAt)`,
-    )
-    .run(workspace);
+  await run(
+    `INSERT INTO workspaces (id, userId, name, website, about, plan, trialEndsAt, createdAt)
+     VALUES (?, ?, ?, ?, ?, ?, ?, ?)`,
+    [
+      workspace.id,
+      workspace.userId,
+      workspace.name,
+      workspace.website,
+      workspace.about,
+      workspace.plan,
+      workspace.trialEndsAt,
+      workspace.createdAt,
+    ],
+  );
   return workspace;
 }
 
-export function getWorkspaceByUser(userId: string): Workspace | null {
-  const row = getDb().prepare(`SELECT * FROM workspaces WHERE userId = ?`).get(userId) as
-    | Workspace
-    | undefined;
-  return row ?? null;
+export async function getWorkspaceByUser(userId: string): Promise<Workspace | null> {
+  return qOne<Workspace>(`SELECT * FROM workspaces WHERE userId = ?`, [userId]);
 }
 
-export function getWorkspace(id: string): Workspace | null {
-  const row = getDb().prepare(`SELECT * FROM workspaces WHERE id = ?`).get(id) as
-    | Workspace
-    | undefined;
-  return row ?? null;
+export async function getWorkspace(id: string): Promise<Workspace | null> {
+  return qOne<Workspace>(`SELECT * FROM workspaces WHERE id = ?`, [id]);
 }
 
-export function updateWorkspace(
+export async function updateWorkspace(
   id: string,
   patch: Partial<Pick<Workspace, "name" | "website" | "about">>,
-): Workspace | null {
-  const current = getWorkspace(id);
+): Promise<Workspace | null> {
+  const current = await getWorkspace(id);
   if (!current) return null;
   const next = {
     ...current,
     ...patch,
     website: patch.website !== undefined ? normalizeUrl(patch.website) : current.website,
   };
-  getDb()
-    .prepare(`UPDATE workspaces SET name = @name, website = @website, about = @about WHERE id = @id`)
-    .run({ id, name: next.name, website: next.website, about: next.about });
+  await run(`UPDATE workspaces SET name = ?, website = ?, about = ? WHERE id = ?`, [
+    next.name,
+    next.website,
+    next.about,
+    id,
+  ]);
   return getWorkspace(id);
 }
 
-export function setPlan(id: string, plan: PlanId) {
-  getDb().prepare(`UPDATE workspaces SET plan = ? WHERE id = ?`).run(plan, id);
+export async function setPlan(id: string, plan: PlanId) {
+  await run(`UPDATE workspaces SET plan = ? WHERE id = ?`, [plan, id]);
 }
 
 function normalizeUrl(raw: string): string {
