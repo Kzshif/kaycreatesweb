@@ -1,5 +1,10 @@
 # FrontDesk AI
 
+> **Also in this repo:** [`fivestarlocal/`](fivestarlocal/) — FiveStar Local, a
+> zero-maintenance Google review growth service (static site + playbook) that
+> sells to the same clinic lead list. See
+> [`docs/sales/fivestarlocal-playbook.md`](docs/sales/fivestarlocal-playbook.md).
+
 **A vertical AI receptionist as a service** for dental, medical, physiotherapy, and
 veterinary practices. "Robin" answers every call, books appointments, takes
 messages, and answers the questions a front desk fields all day — then drops

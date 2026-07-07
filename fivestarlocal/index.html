@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%278%27 fill=%27%231e6f50%27/%3E%3Cpath d=%27M16 7l2.6 5.3 5.9.86-4.25 4.14.98 5.85L16 20.4l-5.23 2.75.98-5.85L7.5 13.16l5.9-.86z%27 fill=%27%23fff%27/%3E%3C/svg%3E">
+<title>FiveStar Local · More 5-star Google reviews for your practice</title>
+<meta name="description" content="FiveStar Local is a done-for-you Google review service for UK practices. QR table cards, a friendly review link, and a monthly report. From £39 a month.">
+<style>
+  :root {
+    --bg: #fcfcfb;
+    --surface: #f2f5f2;
+    --ink: #17201b;
+    --muted: #55635b;
+    --accent: #1e6f50;
+    --accent-dark: #175c42;
+    --line: #e2e7e3;
+    --gold: #d9a018;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.5;
+  }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+  a { color: inherit; }
+  h1, h2, h3 { letter-spacing: -0.02em; line-height: 1.15; }
+  .btn {
+    display: inline-block;
+    padding: 13px 22px;
+    border-radius: 10px;
+    background: var(--accent);
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .btn:hover { background: var(--accent-dark); }
+  .btn:active { transform: translateY(1px); }
+  .btn-ghost {
+    display: inline-block;
+    padding: 13px 22px;
+    border-radius: 10px;
+    border: 1px solid #c8d1cb;
+    color: var(--ink);
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+    background: #fff;
+  }
+  .btn-ghost:hover { border-color: var(--ink); }
+  .btn-ghost:active { transform: translateY(1px); }
+
+  /* nav */
+  nav {
+    height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--line);
+  }
+  .brand { display: flex; align-items: center; gap: 9px; font-weight: 700; font-size: 16px; text-decoration: none; }
+  .brand svg { width: 26px; height: 26px; }
+  .nav-links { display: flex; align-items: center; gap: 26px; }
+  .nav-links a { text-decoration: none; font-size: 14px; color: var(--muted); }
+  .nav-links a:hover { color: var(--ink); }
+  .nav-links a.btn { padding: 10px 16px; font-size: 14px; color: #fff; }
+  @media (max-width: 720px) { .nav-links a:not(.btn) { display: none; } }
+
+  /* hero */
+  .hero {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 56px;
+    align-items: center;
+    padding: 72px 0 88px;
+  }
+  @media (max-width: 880px) { .hero { grid-template-columns: 1fr; padding: 48px 0 64px; } }
+  .hero h1 { font-size: clamp(29px, 3.2vw, 38px); margin-bottom: 18px; }
+  .hero h1 em { font-style: normal; color: var(--accent); }
+  .hero p { font-size: 17px; color: var(--muted); max-width: 46ch; margin-bottom: 30px; }
+  .hero .ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+
+  /* live funnel preview (a working miniature of review.html) */
+  .device {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    box-shadow: 0 24px 48px -32px rgba(23, 32, 27, 0.25);
+    padding: 40px 28px;
+    max-width: 360px;
+    margin: 0 auto;
+    text-align: center;
+    min-height: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .device .biz { font-size: 13px; color: var(--muted); margin-bottom: 8px; }
+  .device h3 { font-size: 21px; margin-bottom: 20px; }
+  .device .stars { display: flex; justify-content: center; gap: 6px; margin-bottom: 8px; }
+  .device .stars button {
+    background: none; border: none; cursor: pointer; padding: 4px; line-height: 0; border-radius: 8px;
+  }
+  .device .stars svg { width: 36px; height: 36px; display: block; }
+  .device .stars .shape { fill: none; stroke: #b9c4bd; stroke-width: 1.6; transition: fill .12s ease, stroke .12s ease; }
+  .device .stars button.lit .shape { fill: var(--gold); stroke: var(--gold); }
+  .device .hint { font-size: 12px; color: var(--muted); }
+  .device .after { display: none; }
+  .device.done .before { display: none; }
+  .device.done .after { display: block; }
+  .device .after h3 { margin-bottom: 8px; }
+  .device .after p { font-size: 13.5px; color: var(--muted); margin-bottom: 18px; }
+  .device .after .btn { width: 100%; }
+  .device .replay {
+    margin-top: 16px; background: none; border: none; cursor: pointer;
+    font-size: 12.5px; color: var(--muted); text-decoration: underline; text-underline-offset: 3px;
+  }
+  .device-caption { text-align: center; font-size: 13px; color: var(--muted); margin-top: 14px; }
+
+  /* editorial band */
+  .band { background: var(--surface); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .band-inner { padding: 88px 0; max-width: 760px; }
+  .band h2 { font-size: clamp(26px, 3.4vw, 38px); margin-bottom: 20px; }
+  .band p { font-size: 17px; color: var(--muted); max-width: 62ch; }
+  .band p + p { margin-top: 14px; }
+
+  /* how it works */
+  .how { padding: 96px 0; display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 56px; }
+  @media (max-width: 880px) { .how { grid-template-columns: 1fr; padding: 64px 0; gap: 32px; } }
+  .how h2 { font-size: clamp(26px, 3.4vw, 38px); position: sticky; top: 32px; }
+  @media (max-width: 880px) { .how h2 { position: static; } }
+  .step { padding: 28px 0; }
+  .step + .step { border-top: 1px solid var(--line); }
+  .step h3 { font-size: 19px; margin-bottom: 8px; }
+  .step p { color: var(--muted); font-size: 15.5px; max-width: 56ch; }
+
+  /* what you get: bento */
+  .get { padding: 0 0 96px; }
+  .get h2 { font-size: clamp(26px, 3.4vw, 38px); margin-bottom: 36px; }
+  .bento { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 20px; }
+  @media (max-width: 880px) { .bento { grid-template-columns: 1fr; } }
+  .cell {
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 30px;
+    background: #fff;
+  }
+  .cell h3 { font-size: 18px; margin-bottom: 8px; }
+  .cell p { color: var(--muted); font-size: 15px; max-width: 48ch; }
+  .cell-qr { display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center; }
+  @media (max-width: 560px) { .cell-qr { grid-template-columns: 1fr; } }
+  .cell-qr .qr { width: 120px; height: 120px; }
+  .cell-qr .qr svg { width: 100%; height: 100%; display: block; }
+  .cell-stars { background: linear-gradient(135deg, #f7f3e8, #fdfbf4); }
+  .cell-stars .row { display: flex; gap: 5px; margin-bottom: 16px; }
+  .cell-stars .row svg { width: 22px; height: 22px; fill: var(--gold); }
+  .cell-tint { background: var(--surface); }
+
+  /* pricing */
+  .pricing { background: var(--surface); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 96px 0; }
+  @media (max-width: 880px) { .pricing { padding: 64px 0; } }
+  .pricing h2 { font-size: clamp(26px, 3.4vw, 38px); margin-bottom: 10px; }
+  .pricing .lede { color: var(--muted); margin-bottom: 40px; font-size: 16px; }
+  .plans { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 780px; }
+  @media (max-width: 720px) { .plans { grid-template-columns: 1fr; } }
+  .plan { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 32px; }
+  .plan.featured { border-color: var(--accent); box-shadow: 0 16px 40px -30px rgba(30, 111, 80, 0.5); }
+  .plan h3 { font-size: 17px; margin-bottom: 4px; }
+  .plan .price { font-size: 34px; font-weight: 700; letter-spacing: -0.02em; }
+  .plan .per { font-size: 14px; color: var(--muted); font-weight: 400; }
+  .plan ul { list-style: none; margin: 22px 0 26px; }
+  .plan li { font-size: 14.5px; color: var(--muted); padding: 7px 0 7px 26px; position: relative; }
+  .plan li::before {
+    content: ""; position: absolute; left: 0; top: 13px;
+    width: 14px; height: 8px;
+    border-left: 2px solid var(--accent); border-bottom: 2px solid var(--accent);
+    transform: rotate(-45deg);
+  }
+  .plan .btn, .plan .btn-ghost { width: 100%; text-align: center; }
+
+  /* faq */
+  .faq { padding: 96px 0; max-width: 760px; }
+  @media (max-width: 880px) { .faq { padding: 64px 0; } }
+  .faq h2 { font-size: clamp(26px, 3.4vw, 38px); margin-bottom: 28px; }
+  details { border-top: 1px solid var(--line); }
+  details:last-of-type { border-bottom: 1px solid var(--line); }
+  summary {
+    cursor: pointer; list-style: none; font-weight: 600; font-size: 16px;
+    padding: 20px 32px 20px 0; position: relative;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::after {
+    content: ""; position: absolute; right: 6px; top: 26px;
+    width: 9px; height: 9px;
+    border-right: 2px solid var(--muted); border-bottom: 2px solid var(--muted);
+    transform: rotate(45deg); transition: transform .15s ease;
+  }
+  details[open] summary::after { transform: rotate(225deg); top: 30px; }
+  details p { color: var(--muted); font-size: 15px; padding: 0 0 22px; max-width: 62ch; }
+
+  /* final cta */
+  .final { background: var(--accent); color: #fff; }
+  .final-inner { padding: 80px 0; display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
+  .final h2 { font-size: clamp(26px, 3.4vw, 38px); max-width: 22ch; }
+  .final .btn { background: #fff; color: var(--accent); }
+  .final .btn:hover { background: #eef4f0; }
+
+  footer { padding: 36px 0 48px; }
+  .foot { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 13.5px; color: var(--muted); }
+  .foot a { color: var(--muted); }
+  .foot a:hover { color: var(--ink); }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <nav>
+    <a class="brand" href="#">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#1e6f50"/><path d="M16 7l2.6 5.3 5.9.86-4.25 4.14.98 5.85L16 20.4l-5.23 2.75.98-5.85L7.5 13.16l5.9-.86z" fill="#fff"/></svg>
+      FiveStar Local
+    </a>
+    <div class="nav-links">
+      <a href="#how">How it works</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+      <a class="btn" href="mailto:hello@fivestarlocal.co.uk?subject=Setup%20call">Book a setup call</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div>
+      <h1>Turn happy patients into <em>5-star</em> Google reviews.</h1>
+      <p>A card on your front desk, a link in your messages. We set everything up, you watch the reviews arrive.</p>
+      <div class="ctas">
+        <a class="btn" href="mailto:hello@fivestarlocal.co.uk?subject=Setup%20call">Book a setup call</a>
+        <a class="btn-ghost" href="#how">See how it works</a>
+      </div>
+    </div>
+    <div>
+      <div class="device" id="demo">
+        <div class="before">
+          <p class="biz">Brightwater Dental</p>
+          <h3>How was your visit?</h3>
+          <div class="stars" id="demoStars" role="group" aria-label="Try the demo: rate from 1 to 5 stars"></div>
+          <p class="hint">Tap to rate</p>
+        </div>
+        <div class="after">
+          <h3>Thank you.</h3>
+          <p>It takes 30 seconds and genuinely helps other people find us. Would you share your rating on Google?</p>
+          <span class="btn">Leave a Google review</span>
+          <button type="button" class="replay" id="demoReplay">Watch it again</button>
+        </div>
+      </div>
+      <p class="device-caption">This is the real page your patients see. Try it.</p>
+    </div>
+  </header>
+</div>
+
+<section class="band">
+  <div class="wrap">
+    <div class="band-inner">
+      <h2>Whoever has the best reviews wins the “near me” search.</h2>
+      <p>When someone searches “dentist near me”, Google shows a map with three practices on it. People pick the one with the most recent, most positive reviews. Not the best clinician, the best-reviewed one.</p>
+      <p>Your patients are happy to say nice things about you. They just never get asked at the right moment, in a way that takes less than a minute. That is the whole problem, and it is the whole service.</p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <section class="how" id="how">
+    <h2>How it works</h2>
+    <div>
+      <div class="step">
+        <h3>We set you up</h3>
+        <p>One short call. We create your review link, print your QR table cards, and hand your team a one-line script: “if you were happy today, the card on the desk takes 30 seconds.”</p>
+      </div>
+      <div class="step">
+        <h3>Patients scan and rate</h3>
+        <p>The QR code opens a friendly rating page with your name on it, then passes them straight to Google's review form. No app, no account, no typing a URL.</p>
+      </div>
+      <div class="step">
+        <h3>You climb the map</h3>
+        <p>Every month you get a plain-English report: new reviews, your rating trend, and how you compare with the practices around you. Plus ready-to-send replies for every review that came in.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="get">
+    <h2>What you get</h2>
+    <div class="bento">
+      <div class="cell cell-qr">
+        <div>
+          <h3>QR table cards, printed and posted</h3>
+          <p>Four card-stock table cards for reception, plus the print file so you can run off more whenever you like.</p>
+        </div>
+        <div class="qr" id="sampleQr" aria-hidden="true"></div>
+      </div>
+      <div class="cell cell-stars">
+        <div class="row" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 2.6l2.9 5.9 6.5.95-4.7 4.6 1.1 6.5L12 17.5l-5.8 3.05 1.1-6.5-4.7-4.6 6.5-.95z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2.6l2.9 5.9 6.5.95-4.7 4.6 1.1 6.5L12 17.5l-5.8 3.05 1.1-6.5-4.7-4.6 6.5-.95z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2.6l2.9 5.9 6.5.95-4.7 4.6 1.1 6.5L12 17.5l-5.8 3.05 1.1-6.5-4.7-4.6 6.5-.95z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2.6l2.9 5.9 6.5.95-4.7 4.6 1.1 6.5L12 17.5l-5.8 3.05 1.1-6.5-4.7-4.6 6.5-.95z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2.6l2.9 5.9 6.5.95-4.7 4.6 1.1 6.5L12 17.5l-5.8 3.05 1.1-6.5-4.7-4.6 6.5-.95z"/></svg>
+        </div>
+        <h3>Your own review link</h3>
+        <p>A branded rating page that hands patients to Google in one tap. Drop it into appointment reminders and follow-up texts.</p>
+      </div>
+      <div class="cell cell-tint">
+        <h3>Monthly report</h3>
+        <p>New reviews, rating trend, and where you sit against nearby practices. One page, no jargon.</p>
+      </div>
+      <div class="cell">
+        <h3>Reply templates</h3>
+        <p>A considered reply to every review, good or bad, ready to paste. Replying well is half the trust signal.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<section class="pricing" id="pricing">
+  <div class="wrap">
+    <h2>Pricing</h2>
+    <p class="lede">No contract. Cancel any month. If no new reviews arrive in your first month, that month is free.</p>
+    <div class="plans">
+      <div class="plan">
+        <h3>Starter kit</h3>
+        <p class="price">£149 <span class="per">one-off</span></p>
+        <ul>
+          <li>Review link + rating page set up</li>
+          <li>Four printed QR table cards, posted</li>
+          <li>Print-ready file for more cards</li>
+          <li>Team ask-script and setup guide</li>
+        </ul>
+        <a class="btn-ghost" href="mailto:hello@fivestarlocal.co.uk?subject=Starter%20kit">Order the starter kit</a>
+      </div>
+      <div class="plan featured">
+        <h3>Growth</h3>
+        <p class="price">£39 <span class="per">per month, setup included</span></p>
+        <ul>
+          <li>Everything in the starter kit</li>
+          <li>Monthly report and local comparison</li>
+          <li>Reply templates for every new review</li>
+          <li>Card reprints whenever you need them</li>
+        </ul>
+        <a class="btn" href="mailto:hello@fivestarlocal.co.uk?subject=Growth%20plan">Start on Growth</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <section class="faq" id="faq">
+    <h2>Questions practices ask</h2>
+    <details>
+      <summary>Is this allowed under Google's rules?</summary>
+      <p>Yes. We ask every patient the same way and never filter who gets invited, never pay for reviews, and never write them. That keeps you inside Google's review policies, which is exactly where a healthcare practice needs to be.</p>
+    </details>
+    <details>
+      <summary>Do you write reviews for us?</summary>
+      <p>No, and be wary of anyone who offers to. Fake reviews get filtered, and can get a profile suspended. Real patients write better reviews anyway; our job is making it effortless for them.</p>
+    </details>
+    <details>
+      <summary>What do we have to do day to day?</summary>
+      <p>One sentence at checkout: “if you were happy today, the card on the desk takes 30 seconds.” The cards and the link do the rest. Most practices spend zero extra minutes on it.</p>
+    </details>
+    <details>
+      <summary>What about unhappy patients?</summary>
+      <p>The rating page also offers a private “tell us directly” email option alongside the Google button, so you hear about problems first and can put them right. Everyone still gets the same invitation to review.</p>
+    </details>
+    <details>
+      <summary>How fast do reviews come in?</summary>
+      <p>It depends on your footfall, which is why we do not promise a number. What we do promise: if your first month brings in no new reviews at all, you do not pay for it.</p>
+    </details>
+  </section>
+</div>
+
+<section class="final">
+  <div class="wrap">
+    <div class="final-inner">
+      <h2>Be the practice people pick off the map.</h2>
+      <a class="btn" href="mailto:hello@fivestarlocal.co.uk?subject=Setup%20call">Book a setup call</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <p>FiveStar Local is a nova05 company · Newbury, Berkshire</p>
+    <p><a href="mailto:hello@fivestarlocal.co.uk">hello@fivestarlocal.co.uk</a></p>
+  </div>
+</footer>
+
+<script src="qrcode.js"></script>
+<script>
+(function () {
+  // Hero demo: the same interaction as review.html, miniaturised.
+  var starSvg =
+    '<svg viewBox="0 0 24 24" aria-hidden="true"><path class="shape" d="M12 2.6l2.9 5.9 6.5.95-4.7 4.6 1.1 6.5L12 17.5l-5.8 3.05 1.1-6.5-4.7-4.6 6.5-.95z"/></svg>';
+  var starsEl = document.getElementById("demoStars");
+  for (var i = 1; i <= 5; i++) {
+    var b = document.createElement("button");
+    b.type = "button";
+    b.dataset.value = String(i);
+    b.setAttribute("aria-label", i + (i === 1 ? " star" : " stars"));
+    b.innerHTML = starSvg;
+    starsEl.appendChild(b);
+  }
+  function light(n) {
+    var buttons = starsEl.querySelectorAll("button");
+    for (var j = 0; j < buttons.length; j++) buttons[j].classList.toggle("lit", j < n);
+  }
+  starsEl.addEventListener("mouseover", function (e) {
+    var btn = e.target.closest("button");
+    if (btn) light(Number(btn.dataset.value));
+  });
+  starsEl.addEventListener("mouseleave", function () { light(0); });
+  starsEl.addEventListener("click", function (e) {
+    var btn = e.target.closest("button");
+    if (!btn) return;
+    light(Number(btn.dataset.value));
+    setTimeout(function () {
+      document.getElementById("demo").classList.add("done");
+    }, 250);
+  });
+  document.getElementById("demoReplay").addEventListener("click", function () {
+    light(0);
+    document.getElementById("demo").classList.remove("done");
+  });
+
+  // Live sample QR in the bento cell, pointing at the demo funnel.
+  var qrHolder = document.getElementById("sampleQr");
+  if (qrHolder && typeof qrcode === "function") {
+    var target = location.href.replace(/index\.html.*$|[^\/]*$/, "") +
+      "review.html?b=Brightwater+Dental&g=ChIJdemoPlaceIdSample01";
+    var qr = qrcode(0, "M");
+    qr.addData(target);
+    qr.make();
+    qrHolder.innerHTML = qr.createSvgTag({ scalable: true, margin: 2 });
+  }
+})();
+</script>
+</body>
+</html>

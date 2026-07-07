@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%278%27 fill=%27%231e6f50%27/%3E%3Cpath d=%27M16 7l2.6 5.3 5.9.86-4.25 4.14.98 5.85L16 20.4l-5.23 2.75.98-5.85L7.5 13.16l5.9-.86z%27 fill=%27%23fff%27/%3E%3C/svg%3E">
+<meta name="robots" content="noindex">
+<title>Leave a review</title>
+<style>
+  :root {
+    --bg: #fcfcfb;
+    --ink: #17201b;
+    --muted: #55635b;
+    --accent: #1e6f50;
+    --accent-dark: #175c42;
+    --line: #e2e7e3;
+    --gold: #d9a018;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    min-height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    -webkit-font-smoothing: antialiased;
+  }
+  .card {
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+  }
+  .biz {
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+  h1 {
+    font-size: 26px;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    margin-bottom: 28px;
+  }
+  .stars {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+  .stars button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    line-height: 0;
+    border-radius: 10px;
+  }
+  .stars button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+  .stars svg { width: 44px; height: 44px; display: block; }
+  .stars .shape { fill: none; stroke: #b9c4bd; stroke-width: 1.6; transition: fill .12s ease, stroke .12s ease; }
+  .stars button.lit .shape { fill: var(--gold); stroke: var(--gold); }
+  .stars button:active { transform: scale(0.94); }
+  .hint { font-size: 13px; color: var(--muted); }
+
+  .step2 { display: none; }
+  .step2.show { display: block; }
+  .thanks { font-size: 26px; letter-spacing: -0.02em; margin-bottom: 10px; }
+  .thanks-sub { font-size: 15px; color: var(--muted); line-height: 1.5; margin-bottom: 26px; }
+  .btn {
+    display: inline-block;
+    width: 100%;
+    padding: 15px 20px;
+    border-radius: 10px;
+    background: var(--accent);
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .btn:hover { background: var(--accent-dark); }
+  .btn:active { transform: translateY(1px); }
+  .alt {
+    display: inline-block;
+    margin-top: 18px;
+    font-size: 14px;
+    color: var(--muted);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .alt:hover { color: var(--ink); }
+
+  .setup {
+    text-align: left;
+    max-width: 560px;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  .setup h1 { font-size: 22px; margin-bottom: 14px; }
+  .setup p { color: var(--muted); margin-bottom: 12px; }
+  .setup code {
+    background: #eef2ef;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 2px 6px;
+    font-size: 13px;
+    word-break: break-all;
+  }
+  .setup ul { margin: 0 0 12px 20px; color: var(--muted); }
+  .setup li { margin-bottom: 6px; }
+</style>
+</head>
+<body>
+
+<main class="card" id="app">
+  <div id="step1">
+    <p class="biz" id="bizName"></p>
+    <h1 id="question">How was your visit?</h1>
+    <div class="stars" id="stars" role="group" aria-label="Rate your visit from 1 to 5 stars"></div>
+    <p class="hint">Tap to rate</p>
+  </div>
+
+  <div class="step2" id="step2">
+    <h1 class="thanks">Thank you.</h1>
+    <p class="thanks-sub">It takes 30 seconds and genuinely helps other people find us. Would you share your rating on Google?</p>
+    <a class="btn" id="googleBtn" rel="noopener">Leave a Google review</a>
+    <a class="alt" id="privateLink" hidden>Prefer to tell us directly? Email us instead</a>
+  </div>
+</main>
+
+<script>
+(function () {
+  var params = new URLSearchParams(location.search);
+  var biz = (params.get("b") || "").slice(0, 80);
+  var g = params.get("g") || "";
+  var email = params.get("e") || "";
+
+  // Accept either a Google Place ID or a full review URL on a Google domain.
+  function reviewUrl(value) {
+    if (!value) return null;
+    if (!/^https?:/i.test(value)) {
+      if (!/^[A-Za-z0-9_-]{10,}$/.test(value)) return null;
+      return "https://search.google.com/local/writereview?placeid=" + encodeURIComponent(value);
+    }
+    try {
+      var u = new URL(value);
+      var ok = ["search.google.com", "www.google.com", "google.com", "maps.google.com", "g.page", "maps.app.goo.gl"];
+      if (u.protocol === "https:" && ok.indexOf(u.hostname) !== -1) return u.href;
+    } catch (err) { /* fall through */ }
+    return null;
+  }
+
+  var target = reviewUrl(g);
+
+  if (!target) {
+    document.getElementById("app").className = "setup";
+    document.getElementById("app").innerHTML =
+      '<h1>Review funnel setup</h1>' +
+      '<p>This page is missing its configuration. Build the link like this:</p>' +
+      '<p><code>review.html?b=Practice+Name&g=PLACE_ID</code></p>' +
+      '<ul>' +
+      '<li><strong>b</strong> is the business name shown to the customer.</li>' +
+      '<li><strong>g</strong> is the Google Place ID, or a full <code>https://search.google.com/local/writereview?placeid=...</code> link.</li>' +
+      '<li><strong>e</strong> (optional) is an email address offered for private feedback.</li>' +
+      '</ul>' +
+      '<p>Find a Place ID at Google’s Place ID finder, or copy the review link from the business’s Google profile.</p>';
+    return;
+  }
+
+  if (biz) {
+    document.getElementById("bizName").textContent = biz;
+    document.getElementById("question").textContent = "How was your visit?";
+    document.title = "Leave a review for " + biz;
+  }
+
+  var starSvg =
+    '<svg viewBox="0 0 24 24" aria-hidden="true"><path class="shape" d="M12 2.6l2.9 5.9 6.5.95-4.7 4.6 1.1 6.5L12 17.5l-5.8 3.05 1.1-6.5-4.7-4.6 6.5-.95z"/></svg>';
+
+  var starsEl = document.getElementById("stars");
+  for (var i = 1; i <= 5; i++) {
+    var b = document.createElement("button");
+    b.type = "button";
+    b.dataset.value = String(i);
+    b.setAttribute("aria-label", i + (i === 1 ? " star" : " stars"));
+    b.innerHTML = starSvg;
+    starsEl.appendChild(b);
+  }
+
+  function light(n) {
+    var buttons = starsEl.querySelectorAll("button");
+    for (var j = 0; j < buttons.length; j++) {
+      buttons[j].classList.toggle("lit", j < n);
+    }
+  }
+
+  starsEl.addEventListener("mouseover", function (e) {
+    var btn = e.target.closest("button");
+    if (btn) light(Number(btn.dataset.value));
+  });
+  starsEl.addEventListener("mouseleave", function () { light(0); });
+
+  // Everyone who taps a rating is invited to review on Google, whatever they
+  // chose. Filtering who gets asked ("review gating") is against Google policy.
+  starsEl.addEventListener("click", function (e) {
+    var btn = e.target.closest("button");
+    if (!btn) return;
+    light(Number(btn.dataset.value));
+    var googleBtn = document.getElementById("googleBtn");
+    googleBtn.href = target;
+    if (email && email.indexOf("@") > 0) {
+      var privateLink = document.getElementById("privateLink");
+      privateLink.hidden = false;
+      privateLink.href = "mailto:" + encodeURIComponent(email) +
+        "?subject=" + encodeURIComponent("Feedback" + (biz ? " for " + biz : ""));
+    }
+    setTimeout(function () {
+      document.getElementById("step1").style.display = "none";
+      document.getElementById("step2").classList.add("show");
+    }, 250);
+  });
+})();
+</script>
+</body>
+</html>

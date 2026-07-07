@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%278%27 fill=%27%231e6f50%27/%3E%3Cpath d=%27M16 7l2.6 5.3 5.9.86-4.25 4.14.98 5.85L16 20.4l-5.23 2.75.98-5.85L7.5 13.16l5.9-.86z%27 fill=%27%23fff%27/%3E%3C/svg%3E">
+<meta name="robots" content="noindex">
+<title>FiveStar Local · Card maker</title>
+<style>
+  :root {
+    --bg: #fcfcfb;
+    --ink: #17201b;
+    --muted: #55635b;
+    --accent: #1e6f50;
+    --accent-dark: #175c42;
+    --line: #e2e7e3;
+    --gold: #d9a018;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 1060px; margin: 0 auto; padding: 40px 24px 80px; }
+  h1 { font-size: 26px; letter-spacing: -0.02em; margin-bottom: 6px; }
+  .sub { color: var(--muted); font-size: 15px; margin-bottom: 32px; max-width: 60ch; line-height: 1.5; }
+
+  .panel {
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    gap: 40px;
+    align-items: start;
+  }
+  @media (max-width: 860px) { .panel { grid-template-columns: 1fr; } }
+
+  form { display: grid; gap: 18px; }
+  label { font-size: 13px; font-weight: 600; display: block; margin-bottom: 6px; }
+  .help { font-size: 12px; color: var(--muted); margin-top: 5px; line-height: 1.45; }
+  input[type="text"], select {
+    width: 100%;
+    padding: 11px 12px;
+    font-size: 14px;
+    border: 1px solid #c8d1cb;
+    border-radius: 10px;
+    background: #fff;
+    color: var(--ink);
+  }
+  input:focus-visible, select:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 1px;
+    border-color: var(--accent);
+  }
+  .actions { display: flex; gap: 10px; }
+  button {
+    padding: 12px 18px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    cursor: pointer;
+  }
+  button:active { transform: translateY(1px); }
+  .primary { background: var(--accent); color: #fff; }
+  .primary:hover { background: var(--accent-dark); }
+  .ghost { background: #fff; color: var(--ink); border-color: #c8d1cb; }
+  .ghost:hover { border-color: var(--ink); }
+  .err { color: #9a3324; font-size: 13px; display: none; }
+  .err.show { display: block; }
+
+  /* --- printable sheet --- */
+  .sheet {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 28px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  @media (max-width: 560px) { .sheet { grid-template-columns: 1fr; } }
+  .rcard {
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 26px 22px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    break-inside: avoid;
+  }
+  .rcard .name { font-size: 15px; font-weight: 700; letter-spacing: -0.01em; }
+  .rcard .ask { font-size: 18px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.25; }
+  .rcard .row { display: flex; gap: 4px; }
+  .rcard .row svg { width: 20px; height: 20px; fill: var(--gold); }
+  .rcard .qr { width: 148px; height: 148px; }
+  .rcard .qr svg { width: 100%; height: 100%; display: block; }
+  .rcard .small { font-size: 12px; color: var(--muted); }
+
+  @media print {
+    body { background: #fff; }
+    .wrap { padding: 0; max-width: none; }
+    h1, .sub, form, .actions, .err, .noprint { display: none !important; }
+    .panel { display: block; }
+    .sheet { border: none; border-radius: 0; padding: 10mm; gap: 8mm; }
+    .rcard { border: 1px dashed #bbb; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Card maker</h1>
+  <p class="sub">Fill in the client's details, then print. You get four identical table cards per A4 sheet with a QR code pointing at their review link. Card stock (250gsm) looks best.</p>
+
+  <div class="panel">
+    <form id="form" onsubmit="return false;">
+      <div>
+        <label for="biz">Business name</label>
+        <input type="text" id="biz" placeholder="Brightwater Dental" maxlength="60" autocomplete="off">
+        <p class="help">Printed at the top of each card.</p>
+      </div>
+      <div>
+        <label for="place">Google Place ID or review link</label>
+        <input type="text" id="place" placeholder="ChIJN1t_tDeuEmsR..." autocomplete="off">
+        <p class="help">Paste the Place ID from Google's Place ID finder, or the full “write a review” link from the business's Google profile.</p>
+      </div>
+      <div>
+        <label for="mode">QR code destination</label>
+        <select id="mode">
+          <option value="funnel">Review funnel page (recommended)</option>
+          <option value="direct">Straight to Google's review form</option>
+        </select>
+        <p class="help">The funnel adds a friendly rating screen before handing over to Google, and lets you offer a private feedback email.</p>
+      </div>
+      <div id="emailWrap">
+        <label for="email">Private feedback email (optional)</label>
+        <input type="text" id="email" placeholder="manager@practice.co.uk" autocomplete="off">
+        <p class="help">Shown on the funnel as “prefer to tell us directly?”.</p>
+      </div>
+      <p class="err" id="err">Enter a Google Place ID (letters, digits, - and _) or an https link on a Google domain.</p>
+      <div class="actions">
+        <button type="button" class="primary" id="makeBtn">Generate cards</button>
+        <button type="button" class="ghost" id="printBtn" disabled>Print sheet</button>
+      </div>
+    </form>
+
+    <div class="sheet" id="sheet" aria-live="polite"></div>
+  </div>
+</div>
+
+<script src="qrcode.js"></script>
+<script>
+(function () {
+  function reviewTarget(value) {
+    value = value.trim();
+    if (!value) return null;
+    if (!/^https?:/i.test(value)) {
+      if (!/^[A-Za-z0-9_-]{10,}$/.test(value)) return null;
+      return "https://search.google.com/local/writereview?placeid=" + encodeURIComponent(value);
+    }
+    try {
+      var u = new URL(value);
+      var ok = ["search.google.com", "www.google.com", "google.com", "maps.google.com", "g.page", "maps.app.goo.gl"];
+      if (u.protocol === "https:" && ok.indexOf(u.hostname) !== -1) return u.href;
+    } catch (err) { /* invalid URL */ }
+    return null;
+  }
+
+  var starSvg =
+    '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.95-4.7 4.6 1.1 6.5L12 17.5l-5.8 3.05 1.1-6.5-4.7-4.6 6.5-.95z"/></svg>';
+
+  document.getElementById("mode").addEventListener("change", function () {
+    document.getElementById("emailWrap").style.display =
+      this.value === "funnel" ? "" : "none";
+  });
+
+  document.getElementById("makeBtn").addEventListener("click", function () {
+    var biz = document.getElementById("biz").value.trim();
+    var target = reviewTarget(document.getElementById("place").value);
+    var mode = document.getElementById("mode").value;
+    var email = document.getElementById("email").value.trim();
+    var err = document.getElementById("err");
+
+    if (!target) { err.classList.add("show"); return; }
+    err.classList.remove("show");
+
+    var qrUrl = target;
+    if (mode === "funnel") {
+      var base = location.href.replace(/cards\.html.*$/, "review.html");
+      var q = new URLSearchParams();
+      if (biz) q.set("b", biz);
+      q.set("g", document.getElementById("place").value.trim());
+      if (email) q.set("e", email);
+      qrUrl = base + "?" + q.toString();
+    }
+
+    var qr = qrcode(0, "M");
+    qr.addData(qrUrl);
+    qr.make();
+    var svg = qr.createSvgTag({ scalable: true, margin: 2 });
+
+    var sheet = document.getElementById("sheet");
+    sheet.textContent = "";
+    for (var i = 0; i < 4; i++) {
+      var card = document.createElement("div");
+      card.className = "rcard";
+
+      var name = document.createElement("p");
+      name.className = "name";
+      name.textContent = biz || "Your business";
+      card.appendChild(name);
+
+      var row = document.createElement("div");
+      row.className = "row";
+      row.setAttribute("aria-hidden", "true");
+      row.innerHTML = starSvg + starSvg + starSvg + starSvg + starSvg;
+      card.appendChild(row);
+
+      var ask = document.createElement("p");
+      ask.className = "ask";
+      ask.textContent = "Enjoyed your visit? Leave us a review";
+      card.appendChild(ask);
+
+      var qrBox = document.createElement("div");
+      qrBox.className = "qr";
+      qrBox.innerHTML = svg;
+      card.appendChild(qrBox);
+
+      var small = document.createElement("p");
+      small.className = "small";
+      small.textContent = "Scan with your phone camera. Takes 30 seconds.";
+      card.appendChild(small);
+
+      sheet.appendChild(card);
+    }
+    document.getElementById("printBtn").disabled = false;
+  });
+
+  document.getElementById("printBtn").addEventListener("click", function () {
+    window.print();
+  });
+})();
+</script>
+</body>
+</html>
