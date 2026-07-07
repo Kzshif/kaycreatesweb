@@ -13,7 +13,7 @@ is accurate and on-brand:
 **https://kaycreatesweb-taupe.vercel.app**
 
 Study the product carefully — what it does, the sectors it serves (dental, GP,
-physio, veterinary), the pricing (from £29/month), the tone of voice, and the
+physio, veterinary), the pricing (from £79/month, founding rate £49), the tone of voice, and the
 FAQ. If anything is unclear, make a sensible assumption and note it; don't invent
 statistics or features that aren't on the site.
 

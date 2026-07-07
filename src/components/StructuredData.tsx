@@ -33,7 +33,7 @@ export function StructuredData() {
           "An AI receptionist that answers every call 24/7, books appointments, and takes and triages messages for UK healthcare practices.",
         offers: {
           "@type": "Offer",
-          price: "29",
+          price: "79",
           priceCurrency: "GBP",
           description: "Starter plan, per practice, per month.",
         },

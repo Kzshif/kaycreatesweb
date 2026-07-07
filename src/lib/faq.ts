@@ -7,7 +7,7 @@ export const FAQS: { q: string; a: string }[] = [
   },
   {
     q: "How much does nova05 cost?",
-    a: "nova05 starts at £29 per month per practice on the Starter plan, £79 per month on the Practice plan, with custom pricing for multi-site groups. There are no setup fees and you can cancel anytime. Phone-line usage is billed separately at cost.",
+    a: "nova05 costs £79 per month per practice on the Starter plan and £179 per month on the Practice plan, with custom pricing for multi-site groups. Founding practices — the first ten clinics — lock in £49 (Starter) or £119 (Practice) for their first 12 months. There are no setup fees, every plan starts with a 14-day free trial, and you can cancel anytime. Phone-line usage is billed separately at cost.",
   },
   {
     q: "Which practices is nova05 for?",

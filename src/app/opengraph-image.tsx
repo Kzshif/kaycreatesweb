@@ -48,7 +48,7 @@ export default function OpengraphImage() {
           </div>
           <div style={{ fontSize: 32, color: "#9fb0c9", maxWidth: 880 }}>
             The AI receptionist for UK dental, GP, physio &amp; veterinary practices —
-            answers every call 24/7. From £29/month.
+            answers every call 24/7. From £79/month.
           </div>
         </div>
 

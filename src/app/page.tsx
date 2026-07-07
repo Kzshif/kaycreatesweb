@@ -64,14 +64,14 @@ const FEATURES = [
 const PLANS = [
   {
     name: "Starter",
-    price: "£29",
+    price: "£79",
     tagline: "Single practice finding its feet",
     features: ["1 location", "Up to 300 calls / mo", "Appointments + messages", "Dashboard + email delivery"],
     highlight: false,
   },
   {
     name: "Practice",
-    price: "£79",
+    price: "£179",
     tagline: "Busy or growing practice",
     features: ["Up to 3 locations", "1,500 calls / mo", "Pricing & FAQ tuning", "Priority message routing", "Phone + web chat"],
     highlight: true,
@@ -84,6 +84,20 @@ const PLANS = [
     highlight: false,
   },
 ];
+
+// Stripe Payment Link URLs live in env so you can swap test → live by pasting a
+// new URL into Vercel — never a code edit. Until they're set, the button falls
+// back to the demo so it's never a dead link.
+const CHECKOUT_URL: Record<string, string | undefined> = {
+  Starter: process.env.NEXT_PUBLIC_STRIPE_STARTER_URL,
+  Practice: process.env.NEXT_PUBLIC_STRIPE_PRACTICE_URL,
+};
+const TRIAL_DAYS = 14;
+// Where the "Contact us" (Group) button goes; set NEXT_PUBLIC_CONTACT_EMAIL to
+// turn it into a mailto, otherwise it opens the demo.
+const CONTACT_HREF = process.env.NEXT_PUBLIC_CONTACT_EMAIL
+  ? `mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}?subject=nova05%20Group%20plan`
+  : "/demo";
 
 export default function Home() {
   return (
@@ -286,7 +300,16 @@ export default function Home() {
           </h2>
           <p className="mt-3 text-slate-400">
             Simple monthly pricing per practice, in pounds. No setup fees, cancel
-            anytime. Launch pricing — lock it in early.
+            anytime.
+          </p>
+        </div>
+        <div className="reveal mb-6 flex items-start gap-3 rounded-2xl border border-cyan/30 bg-cyan/5 p-4 text-sm">
+          <span className="text-lg leading-none">🚀</span>
+          <p className="text-slate-300">
+            <span className="font-semibold text-cyan">Founding-practice offer.</span>{" "}
+            The first 10 clinics lock in <span className="font-semibold text-white">£49/mo</span>{" "}
+            (Starter) or <span className="font-semibold text-white">£119/mo</span> (Practice)
+            for 12 months — then your normal rate. Start with a 14-day free trial.
           </p>
         </div>
         <div className="grid gap-5 lg:grid-cols-3">
@@ -310,21 +333,36 @@ export default function Home() {
                   <span className="text-base font-normal text-slate-500">/mo</span>
                 )}
               </p>
-              <ul className="mt-5 space-y-2.5 text-sm text-slate-300">
+              <ul className="mt-5 grow space-y-2.5 text-sm text-slate-300">
                 {p.features.map((f) => (
                   <li key={f} className="flex gap-2">
                     <span className="text-cyan">✓</span> {f}
                   </li>
                 ))}
               </ul>
-              <Link href="/demo" className={`mt-7 ${p.highlight ? "btn-primary" : "btn-ghost"}`}>
-                {p.price === "Let's talk" ? "Contact us" : "Start free trial"}
-              </Link>
+              {p.price === "Let's talk" ? (
+                <a href={CONTACT_HREF} className="btn-ghost mt-7">
+                  Contact us
+                </a>
+              ) : CHECKOUT_URL[p.name] ? (
+                <a
+                  href={CHECKOUT_URL[p.name]}
+                  className={`mt-7 ${p.highlight ? "btn-primary" : "btn-ghost"}`}
+                >
+                  Start {TRIAL_DAYS}-day free trial
+                </a>
+              ) : (
+                // No checkout link configured yet — send them to the demo and say
+                // so, rather than promising a trial that can't start.
+                <a href="/demo" className={`mt-7 ${p.highlight ? "btn-primary" : "btn-ghost"}`}>
+                  Try the live demo
+                </a>
+              )}
             </div>
           ))}
         </div>
         <p className="mt-5 text-center text-xs text-slate-500">
-          Prices exclude VAT. Usage on the phone line (Twilio) is billed separately at cost.
+          {TRIAL_DAYS}-day free trial, card required — cancel anytime. Prices exclude VAT; phone-line usage (Twilio) billed separately at cost.
         </p>
       </section>
 
