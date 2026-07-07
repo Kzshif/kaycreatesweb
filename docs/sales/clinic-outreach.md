@@ -15,7 +15,7 @@ managers are busy.
 - A receptionist that answers every call — for [Practice name]
 - Quick idea for [Practice name]'s front desk
 - 38% of practice calls go unanswered — here's a fix
-- After-hours cover for [Practice name] (from £29/mo)
+- After-hours cover for [Practice name] (from £49/mo)
 
 ---
 
@@ -36,7 +36,7 @@ You can hear it answer a call in 30 seconds here — no signup:
 **[demo link]**
 
 If it's useful, I can set it up on your after-hours line first (lowest risk) for
-a free two-week trial. Pricing is from £29/month after that.
+a free two-week trial. Pricing is from £49/month after that.
 
 Worth a quick chat?
 
@@ -65,7 +65,7 @@ a clinician — so it stays firmly in the front-desk lane.
 Have a listen (30 seconds, no signup): **[demo link]**
 
 Happy to run it free on your after-hours line for two weeks so you can see the
-messages it captures. From £29/month if you keep it, no setup fee, cancel anytime.
+messages it captures. From £49/month if you keep it, no setup fee, cancel anytime.
 
 Would [day] or [day] suit for a 10-minute call?
 
@@ -132,7 +132,7 @@ GP. It never gives clinical advice; anything clinical becomes a priority message
 
 30-second demo, no signup: **[demo link]**
 
-Happy to run it free on your after-hours line for two weeks. From £29/month.
+Happy to run it free on your after-hours line for two weeks. From £49/month.
 
 Worth a quick call?
 [Your name] · nova05 · Newbury · [phone]
@@ -151,7 +151,7 @@ phone. Sports-injury and post-op enquiries get captured, not missed.
 Have a listen (30 seconds, no signup): **[demo link]**
 
 I'll set it up free on your after-hours line for a fortnight so you can see what it
-catches. From £29/month.
+catches. From £49/month.
 
 Would [day] suit for 10 minutes?
 [Your name] · nova05 · Newbury · [phone]
@@ -170,7 +170,7 @@ emergency service.
 
 Hear it handle a call in 30 seconds: **[demo link]**
 
-Happy to trial it free on your after-hours line for two weeks. From £29/month.
+Happy to trial it free on your after-hours line for two weeks. From £49/month.
 
 Worth a chat?
 [Your name] · nova05 · Newbury · [phone]

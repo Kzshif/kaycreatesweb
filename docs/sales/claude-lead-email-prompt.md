@@ -72,7 +72,9 @@ Once a row has a real `practice_name`, `website`, and `notes`, paste this:
 > You're drafting a short B2B cold email on behalf of **Kay** at **kaycreatesweb**
 > (Newbury, UK), introducing **nova05** — an AI receptionist that answers a practice's
 > phone and website chat 24/7, books appointments, takes messages, and hands off
-> anything clinical. Pricing starts at **£29/month**; there's a free trial.
+> anything clinical. Pricing is **£79/month** (Starter), but the first ten
+> founding practices lock in **£49/month for 12 months**; every plan starts with
+> a 14-day free trial.
 >
 > First, open the live demo so your email is accurate:
 > https://kaycreatesweb-taupe.vercel.app/demo

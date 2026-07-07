@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     template: "%s · nova05",
   },
   description:
-    "nova05 is an AI receptionist for UK dental, GP, physiotherapy, and veterinary practices. It answers every call 24/7, books appointments, takes and triages messages, and answers patient questions — from £29/month. Based in Newbury, UK.",
+    "nova05 is an AI receptionist for UK dental, GP, physiotherapy, and veterinary practices. It answers every call 24/7, books appointments, takes and triages messages, and answers patient questions — from £79/month. Based in Newbury, UK.",
   keywords: [
     "AI receptionist",
     "AI receptionist for clinics",
@@ -49,14 +49,14 @@ export const metadata: Metadata = {
     siteName: "nova05",
     title: "nova05 — the AI receptionist for UK clinics",
     description:
-      "Answers every call 24/7, books appointments, and takes messages for dental, GP, physio, and veterinary practices across the UK. From £29/month.",
+      "Answers every call 24/7, books appointments, and takes messages for dental, GP, physio, and veterinary practices across the UK. From £79/month.",
     locale: "en_GB",
   },
   twitter: {
     card: "summary_large_image",
     title: "nova05 — the AI receptionist for UK clinics",
     description:
-      "An AI receptionist that answers every call 24/7 for UK dental, GP, physio, and veterinary practices. From £29/month.",
+      "An AI receptionist that answers every call 24/7 for UK dental, GP, physio, and veterinary practices. From £79/month.",
   },
 };
 

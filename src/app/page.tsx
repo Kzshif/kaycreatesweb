@@ -64,14 +64,14 @@ const FEATURES = [
 const PLANS = [
   {
     name: "Starter",
-    price: "£29",
+    price: "£79",
     tagline: "Single practice finding its feet",
     features: ["1 location", "Up to 300 calls / mo", "Appointments + messages", "Dashboard + email delivery"],
     highlight: false,
   },
   {
     name: "Practice",
-    price: "£79",
+    price: "£179",
     tagline: "Busy or growing practice",
     features: ["Up to 3 locations", "1,500 calls / mo", "Pricing & FAQ tuning", "Priority message routing", "Phone + web chat"],
     highlight: true,
@@ -300,7 +300,16 @@ export default function Home() {
           </h2>
           <p className="mt-3 text-slate-400">
             Simple monthly pricing per practice, in pounds. No setup fees, cancel
-            anytime. Launch pricing — lock it in early.
+            anytime.
+          </p>
+        </div>
+        <div className="reveal mb-6 flex items-start gap-3 rounded-2xl border border-cyan/30 bg-cyan/5 p-4 text-sm">
+          <span className="text-lg leading-none">🚀</span>
+          <p className="text-slate-300">
+            <span className="font-semibold text-cyan">Founding-practice offer.</span>{" "}
+            The first 10 clinics lock in <span className="font-semibold text-white">£49/mo</span>{" "}
+            (Starter) or <span className="font-semibold text-white">£119/mo</span> (Practice)
+            for 12 months — then your normal rate. Start with a 14-day free trial.
           </p>
         </div>
         <div className="grid gap-5 lg:grid-cols-3">

@@ -12,13 +12,18 @@ into Vercel.
 
 ## What I'll create in your **live** Stripe account (once connected)
 
-Two subscription **Payment Links**, each with a card-required free trial:
+List prices on the site are **£79** (Starter) and **£179** (Practice). For the
+launch we run a **founding-practice offer** — the first 10 clinics get 12 months
+at a lower rate — so the live Payment Links charge the founding price:
 
-- **Starter** — £29 / month, 14-day free trial, billed in GBP.
-- **Practice** — £79 / month, 14-day free trial, billed in GBP.
+- **Starter** — £49 / month, 14-day free trial, billed in GBP (founding; list £79).
+- **Practice** — £119 / month, 14-day free trial, billed in GBP (founding; list £179).
 - **Group** — no link; the "Contact us" button emails you.
 
-Each link's after-payment page redirects back to the site.
+Each is a subscription Payment Link with a card-required trial, and its
+after-payment page redirects back to the site. Once the first 10 founding slots
+are gone, create fresh links at the £79 / £179 list prices and swap the two env
+vars — again, no code change.
 
 ## Steps
 
