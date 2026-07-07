@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "kaycreatesweb — the AI receptionist for UK clinics";
+export const alt = "nova05 — the AI receptionist for UK clinics";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -37,9 +37,9 @@ export default function OpengraphImage() {
               fontWeight: 700,
             }}
           >
-            k
+            n
           </div>
-          <div style={{ fontSize: 34, fontWeight: 600 }}>kaycreatesweb</div>
+          <div style={{ fontSize: 34, fontWeight: 600 }}>nova05</div>
         </div>
 
         <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>

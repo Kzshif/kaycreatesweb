@@ -4,10 +4,10 @@ export function Logo({ className = "" }: { className?: string }) {
   return (
     <Link href="/" className={`group flex items-center gap-2.5 ${className}`}>
       <span className="relative grid h-9 w-9 place-items-center rounded-xl bg-gradient-to-br from-cyan to-iris font-display text-lg font-bold text-night shadow-[0_0_22px_-4px_rgba(62,240,224,0.7)]">
-        k
+        n
       </span>
       <span className="font-display text-[1.05rem] font-semibold tracking-tight text-white">
-        kaycreates<span className="neon">web</span>
+        nova<span className="neon">05</span>
       </span>
     </Link>
   );
@@ -43,7 +43,7 @@ export function SiteFooter() {
       <div className="container-x flex flex-col gap-4 py-10 text-sm text-slate-400 sm:flex-row sm:items-center sm:justify-between">
         <Logo />
         <p>
-          © {new Date().getFullYear()} kaycreatesweb · Newbury, UK. Built with the
+          © {new Date().getFullYear()} nova05 · Newbury, UK. Built with the
           Claude API.
         </p>
         <div className="flex gap-5">

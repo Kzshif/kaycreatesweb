@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://kaycreatesweb-reception.netlify.app";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://nova05.vercel.app";
 
 // Explicitly welcome AI answer-engine crawlers (AEO): a blocked bot means that
 // platform can never cite you. See the AEO skill's bot-access matrix.

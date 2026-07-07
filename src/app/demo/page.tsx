@@ -2,7 +2,7 @@ import Chat from "@/components/Chat";
 import { SiteFooter, SiteHeader } from "@/components/SiteChrome";
 
 export const metadata = {
-  title: "Live demo · kaycreatesweb",
+  title: "Live demo · nova05",
 };
 
 export default async function DemoPage({

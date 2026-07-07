@@ -1,6 +1,6 @@
 import { FAQS } from "@/lib/faq";
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://kaycreatesweb-reception.netlify.app";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://nova05.vercel.app";
 
 // JSON-LD structured data for AEO: Organization, Service (with GBP offer), and
 // FAQPage. Answer engines use these to understand and cite the page.
@@ -11,7 +11,7 @@ export function StructuredData() {
       {
         "@type": "Organization",
         "@id": `${SITE_URL}/#org`,
-        name: "kaycreatesweb",
+        name: "nova05",
         url: SITE_URL,
         description:
           "AI receptionist for UK dental, GP, physiotherapy, and veterinary practices.",

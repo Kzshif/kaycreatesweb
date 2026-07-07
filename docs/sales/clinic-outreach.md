@@ -1,4 +1,4 @@
-# kaycreatesweb — clinic outreach kit
+# nova05 — clinic outreach kit
 
 Cold outreach for local UK practices (dental, GP, physio, vet). Swap the
 `[bracketed]` bits and paste your live demo link. Keep it short — practice
@@ -25,7 +25,7 @@ managers are busy.
 
 Hi [First name],
 
-I run kaycreatesweb, a small Newbury company. We've built an **AI receptionist**
+I run nova05, a small Newbury company. We've built an **AI receptionist**
 for dental practices — it answers the phone 24/7, books appointments, and takes
 messages, so calls stop going to voicemail when the front desk is busy or closed.
 
@@ -42,7 +42,7 @@ Worth a quick chat?
 
 Best,
 [Your name]
-kaycreatesweb · Newbury
+nova05 · Newbury
 [phone] · [demo link]
 
 ---
@@ -53,7 +53,7 @@ kaycreatesweb · Newbury
 
 Hi [First name],
 
-I'm [your name] from kaycreatesweb, based in Newbury. We've built an **AI
+I'm [your name] from nova05, based in Newbury. We've built an **AI
 receptionist** for practices like [Practice name] — it answers every call day and
 night, books appointments, and takes and prioritises messages (repeat
 prescriptions, urgent symptoms, billing), then drops everything into a simple
@@ -71,7 +71,7 @@ Would [day] or [day] suit for a 10-minute call?
 
 Best,
 [Your name]
-kaycreatesweb · Newbury · [phone]
+nova05 · Newbury · [phone]
 
 ---
 
@@ -125,7 +125,7 @@ Short, tailored cold emails. Same structure, sector-specific pain point. Swap
 
 Hi [First name],
 
-I'm [your name] from kaycreatesweb in Newbury. We've built an AI receptionist for
+I'm [your name] from nova05 in Newbury. We've built an AI receptionist for
 private GP clinics — it answers every call 24/7, books consultations, and takes
 repeat-prescription and results-callback requests, flagging anything urgent for a
 GP. It never gives clinical advice; anything clinical becomes a priority message.
@@ -135,7 +135,7 @@ GP. It never gives clinical advice; anything clinical becomes a priority message
 Happy to run it free on your after-hours line for two weeks. From £29/month.
 
 Worth a quick call?
-[Your name] · kaycreatesweb · Newbury · [phone]
+[Your name] · nova05 · Newbury · [phone]
 
 ### Physiotherapy clinic
 
@@ -143,7 +143,7 @@ Worth a quick call?
 
 Hi [First name],
 
-I'm [your name] from kaycreatesweb (Newbury). We've built an AI receptionist for
+I'm [your name] from nova05 (Newbury). We've built an AI receptionist for
 physio clinics — it answers every call, books initial assessments and follow-ups,
 and takes messages when you're mid-session with a patient and can't reach the
 phone. Sports-injury and post-op enquiries get captured, not missed.
@@ -154,7 +154,7 @@ I'll set it up free on your after-hours line for a fortnight so you can see what
 catches. From £29/month.
 
 Would [day] suit for 10 minutes?
-[Your name] · kaycreatesweb · Newbury · [phone]
+[Your name] · nova05 · Newbury · [phone]
 
 ### Veterinary clinic
 
@@ -162,7 +162,7 @@ Would [day] suit for 10 minutes?
 
 Hi [First name],
 
-I'm [your name] from kaycreatesweb in Newbury. We've built an AI receptionist for
+I'm [your name] from nova05 in Newbury. We've built an AI receptionist for
 vet practices — it answers every call day and night, books health checks and
 vaccinations, and triages poorly-pet and emergency calls (owner name, callback
 number, species, symptoms) straight to a nurse, with out-of-hours referral to the
@@ -173,4 +173,4 @@ Hear it handle a call in 30 seconds: **[demo link]**
 Happy to trial it free on your after-hours line for two weeks. From £29/month.
 
 Worth a chat?
-[Your name] · kaycreatesweb · Newbury · [phone]
+[Your name] · nova05 · Newbury · [phone]

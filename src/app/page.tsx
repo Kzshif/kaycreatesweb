@@ -8,7 +8,7 @@ const STEPS = [
   {
     n: "01",
     title: "Divert your line",
-    body: "Point your existing phone number or website chat at kaycreatesweb. No new handsets, no installs, no IT project.",
+    body: "Point your existing phone number or website chat at nova05. No new handsets, no installs, no IT project.",
   },
   {
     n: "02",
@@ -109,12 +109,12 @@ export default function Home() {
               <span className="neon">never off the clock.</span>
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-slate-300">
-              kaycreatesweb answers every call for dental, GP, physio and veterinary
+              nova05 answers every call for dental, GP, physio and veterinary
               practices — booking appointments, taking messages and answering the
               questions your team fields all day. So no patient ever hits voicemail.
             </p>
             <p className="mt-4 max-w-xl text-sm leading-relaxed text-slate-400">
-              In 2026 we built kaycreatesweb here in Newbury, after watching local
+              In 2026 we built nova05 here in Newbury, after watching local
               practices lose new patients to missed calls. We designed Robin around
               how real front desks actually talk across dental, GP, physio and
               veterinary clinics — so it sounds like your practice, not a robot.

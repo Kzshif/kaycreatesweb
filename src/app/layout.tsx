@@ -23,16 +23,16 @@ const mono = JetBrains_Mono({
   display: "swap",
 });
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://kaycreatesweb-reception.netlify.app";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://nova05.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "kaycreatesweb — the AI receptionist for UK clinics",
-    template: "%s · kaycreatesweb",
+    default: "nova05 — the AI receptionist for UK clinics",
+    template: "%s · nova05",
   },
   description:
-    "kaycreatesweb is an AI receptionist for UK dental, GP, physiotherapy, and veterinary practices. It answers every call 24/7, books appointments, takes and triages messages, and answers patient questions — from £29/month. Based in Newbury, UK.",
+    "nova05 is an AI receptionist for UK dental, GP, physiotherapy, and veterinary practices. It answers every call 24/7, books appointments, takes and triages messages, and answers patient questions — from £29/month. Based in Newbury, UK.",
   keywords: [
     "AI receptionist",
     "AI receptionist for clinics",
@@ -46,15 +46,15 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: SITE_URL,
-    siteName: "kaycreatesweb",
-    title: "kaycreatesweb — the AI receptionist for UK clinics",
+    siteName: "nova05",
+    title: "nova05 — the AI receptionist for UK clinics",
     description:
       "Answers every call 24/7, books appointments, and takes messages for dental, GP, physio, and veterinary practices across the UK. From £29/month.",
     locale: "en_GB",
   },
   twitter: {
     card: "summary_large_image",
-    title: "kaycreatesweb — the AI receptionist for UK clinics",
+    title: "nova05 — the AI receptionist for UK clinics",
     description:
       "An AI receptionist that answers every call 24/7 for UK dental, GP, physio, and veterinary practices. From £29/month.",
   },
