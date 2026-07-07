@@ -1,6 +1,6 @@
 import { FAQS } from "@/lib/faq";
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://nova05.vercel.app";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://kaycreatesweb-taupe.vercel.app";
 
 // JSON-LD structured data for AEO: Organization, Service (with GBP offer), and
 // FAQPage. Answer engines use these to understand and cite the page.
