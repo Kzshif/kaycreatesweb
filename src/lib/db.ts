@@ -17,6 +17,7 @@ import { dirname, join } from "node:path";
 // camelCase names the app uses.
 
 const PG_URL =
+  process.env.NETLIFY_DB_URL ||
   process.env.NETLIFY_DATABASE_URL ||
   (process.env.DATABASE_URL?.startsWith("postgres") ? process.env.DATABASE_URL : "");
 
