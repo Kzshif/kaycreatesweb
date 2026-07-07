@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { q, usingPostgres } from "@/lib/db";
+import { stripeEnabled } from "@/lib/stripe";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -12,6 +13,7 @@ export async function GET() {
       ok: true,
       db: usingPostgres ? "postgres" : "sqlite",
       persistent: usingPostgres,
+      payments: stripeEnabled() ? "stripe" : "demo",
     });
   } catch (err) {
     return NextResponse.json(
