@@ -18,7 +18,7 @@ export async function converse(
   vertical: Vertical,
 ): Promise<ConverseResult> {
   if (!process.env.ANTHROPIC_API_KEY) {
-    return { text: fallbackReply(history, vertical).text, mode: "fallback" };
+    return { text: (await fallbackReply(history, vertical)).text, mode: "fallback" };
   }
 
   const client = new Anthropic();
@@ -51,7 +51,7 @@ export async function converse(
     for (const tu of res.content.filter(
       (b): b is Anthropic.ToolUseBlock => b.type === "tool_use",
     )) {
-      const { result } = runTool(tu.name, (tu.input ?? {}) as Record<string, unknown>, vertical);
+      const { result } = await runTool(tu.name, (tu.input ?? {}) as Record<string, unknown>, vertical);
       toolResults.push({ type: "tool_result", tool_use_id: tu.id, content: result });
     }
     messages.push({ role: "user", content: toolResults });
