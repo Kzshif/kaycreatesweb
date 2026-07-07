@@ -85,6 +85,20 @@ const PLANS = [
   },
 ];
 
+// Stripe Payment Link URLs live in env so you can swap test → live by pasting a
+// new URL into Vercel — never a code edit. Until they're set, the button falls
+// back to the demo so it's never a dead link.
+const CHECKOUT_URL: Record<string, string | undefined> = {
+  Starter: process.env.NEXT_PUBLIC_STRIPE_STARTER_URL,
+  Practice: process.env.NEXT_PUBLIC_STRIPE_PRACTICE_URL,
+};
+const TRIAL_DAYS = 14;
+// Where the "Contact us" (Group) button goes; set NEXT_PUBLIC_CONTACT_EMAIL to
+// turn it into a mailto, otherwise it opens the demo.
+const CONTACT_HREF = process.env.NEXT_PUBLIC_CONTACT_EMAIL
+  ? `mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}?subject=nova05%20Group%20plan`
+  : "/demo";
+
 export default function Home() {
   return (
     <>
@@ -317,14 +331,23 @@ export default function Home() {
                   </li>
                 ))}
               </ul>
-              <Link href="/demo" className={`mt-7 ${p.highlight ? "btn-primary" : "btn-ghost"}`}>
-                {p.price === "Let's talk" ? "Contact us" : "Start free trial"}
-              </Link>
+              {p.price === "Let's talk" ? (
+                <a href={CONTACT_HREF} className="btn-ghost mt-7">
+                  Contact us
+                </a>
+              ) : (
+                <a
+                  href={CHECKOUT_URL[p.name] ?? "/demo"}
+                  className={`mt-7 ${p.highlight ? "btn-primary" : "btn-ghost"}`}
+                >
+                  Start {TRIAL_DAYS}-day free trial
+                </a>
+              )}
             </div>
           ))}
         </div>
         <p className="mt-5 text-center text-xs text-slate-500">
-          Prices exclude VAT. Usage on the phone line (Twilio) is billed separately at cost.
+          {TRIAL_DAYS}-day free trial, card required — cancel anytime. Prices exclude VAT; phone-line usage (Twilio) billed separately at cost.
         </p>
       </section>
 
