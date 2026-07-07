@@ -30,6 +30,7 @@ export default function Billing() {
   const [status, setStatus] = useState<WireStatus | null>(null);
   const [invoices, setInvoices] = useState<Invoice[]>([]);
   const [busyPlan, setBusyPlan] = useState<string | null>(null);
+  const [stripe, setStripe] = useState(false);
 
   const load = useCallback(async () => {
     const res = await fetch("/api/billing", { cache: "no-store" });
@@ -38,6 +39,7 @@ export default function Billing() {
       setPlans(json.plans);
       setStatus(json.status);
       setInvoices(json.invoices);
+      setStripe(Boolean(json.stripe));
     }
   }, []);
 
@@ -47,11 +49,17 @@ export default function Billing() {
 
   async function choose(planId: string) {
     setBusyPlan(planId);
-    await fetch("/api/billing", {
+    const res = await fetch("/api/billing", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ plan: planId }),
     });
+    const json = await res.json().catch(() => ({}));
+    if (json.checkoutUrl) {
+      // Real payments: hand off to Stripe's hosted checkout.
+      window.location.href = json.checkoutUrl;
+      return;
+    }
     await load();
     setBusyPlan(null);
   }
@@ -153,9 +161,9 @@ export default function Billing() {
       </section>
 
       <p className="text-xs text-ink/40">
-        Demo billing: switching plans books an invoice locally instead of charging a card. Wire{" "}
-        <code className="rounded bg-ink/5 px-1">POST /api/billing</code> to Stripe Checkout for
-        production.
+        {stripe
+          ? "Payments are processed securely by Stripe. Your plan activates automatically after checkout."
+          : "Demo billing: switching plans books an invoice locally instead of charging a card. Connect Stripe payment links to take real payments."}
       </p>
     </div>
   );
