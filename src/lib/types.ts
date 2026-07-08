@@ -20,7 +20,7 @@ export interface Vertical {
   emoji: string;
 }
 
-export type CapturedKind = "appointment" | "message" | "callback";
+export type CapturedKind = "appointment" | "message" | "callback" | "signup";
 
 export interface CapturedEvent {
   id: string;

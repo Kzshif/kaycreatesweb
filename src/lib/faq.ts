@@ -7,7 +7,11 @@ export const FAQS: { q: string; a: string }[] = [
   },
   {
     q: "How much does nova05 cost?",
-    a: "nova05 costs £79 per month per practice on the Starter plan and £179 per month on the Practice plan, with custom pricing for multi-site groups. Founding practices — the first ten clinics — lock in £49 (Starter) or £119 (Practice) for their first 12 months. There are no setup fees, every plan starts with a 14-day free trial, and you can cancel anytime. Phone-line usage is billed separately at cost.",
+    a: "nova05 costs £79 per month per practice on the Starter plan and £179 per month on the Practice plan, with custom pricing for multi-site groups. Founding practices — the first ten clinics — lock in £49 (Starter) or £119 (Practice) for their first 12 months. There are no setup fees and no card is needed to sign up: you register your interest, we build you a personal demo, and you only pay when you decide to go live. Cancel anytime; phone-line usage is billed separately at cost.",
+  },
+  {
+    q: "Does nova05 build websites?",
+    a: "Yes. nova05 designs and builds fast, mobile-friendly websites for UK local businesses — cafés, trades, salons, shops, and B&Bs — including menus, online booking, photo galleries, and click-and-collect ordering. Design, copywriting, and hosting are all handled for one flat price agreed upfront, and every site is ready to add the AI receptionist later.",
   },
   {
     q: "Which practices is nova05 for?",
