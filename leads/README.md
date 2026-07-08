@@ -1,4 +1,30 @@
-# UK Website Leads — 100 verified businesses + 15 hot-demand leads
+# UK Website Leads
+
+## Batch 2 (added 8 July 2026) — 114 new businesses + 6 new hot-demand leads
+
+New regions/sector combos, fully deduped against batch 1. **100 of the 114 have
+verified public emails.** Files: `uk-website-leads-batch2.csv` and
+`uk-hot-demand-leads-batch2.csv`. Segments: Midlands & South trades (20),
+North England hospitality (20 — incl. eleven Lake District/Yorkshire-coast B&Bs
+on dated sites paying OTA commission), South England & Scotland beauty (20),
+North & Midlands services (20), Wales/Scotland/North retail & produce (20),
+UK-wide niche services (14 — MOT garages, kennels/catteries, dance schools,
+party entertainers).
+
+Batch-2 highlights: Badger Hill Butchers York (website now a parking page),
+Lane Head Farm B&B (£109/night, 7 rooms, personal Gmail as public contact,
+OTA clones outranking them), The Sandbeck Whitby (23 rooms on a legacy PHP
+site), Prestatyn Butchers (takes Christmas orders via printable PDF form),
+AK Scaffolding Bristol (a namesake firm owns "their" domain). Hot batch-2
+leads include a ~£1m fulfilment company saying its new site isn't converting,
+and two live Leeds Facebook-group posts asking for a web designer.
+
+Use `claude-outreach-prompt-v2.md` — it links each email to the live /websites
+example page and closes with the free homepage mockup offer.
+
+---
+
+## Batch 1 — 100 verified businesses + 15 hot-demand leads
 
 Compiled 8 July 2026 by parallel research agents sweeping public UK sources
 (Yell, Checkatrade, Cylex, Freeindex, Nextdoor, Facebook pages, tourism
