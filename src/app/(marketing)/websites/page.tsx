@@ -64,23 +64,6 @@ export default function WebsitesPage() {
         </Reveal>
       </section>
 
-      {/* Brand art band — AI-illustrated, exactly what we ship for clients */}
-      <section className="container-x pb-4">
-        <Reveal>
-          <div className="glass overflow-hidden p-2">
-            <img
-              src="/brand/scene.png"
-              alt="Cartoon space scene: a rocket passing a ringed planet with a waving astronaut"
-              loading="lazy"
-              className="max-h-[380px] w-full rounded-xl object-cover"
-            />
-            <p className="px-4 py-3 text-center text-xs text-starlight/45">
-              Illustrated by our AI studio — your site can look like this, or nothing like it.
-            </p>
-          </div>
-        </Reveal>
-      </section>
-
       <section className="border-y border-white/[0.07] py-20">
         <div className="container-x">
           <Reveal>
