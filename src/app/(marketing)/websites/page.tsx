@@ -72,7 +72,7 @@ export default function WebsitesPage() {
               src="/brand/scene.png"
               alt="Cartoon space scene: a rocket passing a ringed planet with a waving astronaut"
               loading="lazy"
-              className="h-auto w-full rounded-xl object-cover"
+              className="max-h-[380px] w-full rounded-xl object-cover"
             />
             <p className="px-4 py-3 text-center text-xs text-starlight/45">
               Illustrated by our AI studio — your site can look like this, or nothing like it.
