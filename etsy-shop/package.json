@@ -1,0 +1,12 @@
+{
+  "name": "kaycreates-etsy-shop",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "generate": "node scripts/generate-artworks.mjs",
+    "export": "node scripts/export-png.mjs"
+  },
+  "dependencies": {
+    "@resvg/resvg-js": "^2.6.2"
+  }
+}
