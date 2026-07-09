@@ -41,40 +41,226 @@ function luminance(hex) {
   return (0.299 * r + 0.587 * g + 0.114 * b) / 255
 }
 
-// ---------- palettes ----------
-const PALETTES = [
-  { name: 'Terracotta Noir', bg: '#c8703f', fg: '#26160e', accent: '#8a4423', soft: '#e0a077' },
-  { name: 'Attic Red', bg: '#211510', fg: '#c8703f', accent: '#e0a077', soft: '#4a2c1c' },
-  { name: 'Papyrus & Lapis', bg: '#e9dcbc', fg: '#2c4661', accent: '#b3502f', soft: '#c9b98e' },
-  { name: 'Nile Gold', bg: '#16324f', fg: '#d8b45a', accent: '#4d84b5', soft: '#24486e' },
-  { name: 'Desert Ochre', bg: '#e4cfa4', fg: '#6e421d', accent: '#b3502f', soft: '#cdb488' },
-  { name: 'Marble Verdigris', bg: '#e7e1d3', fg: '#39685c', accent: '#96a396', soft: '#cfc7b2' },
-  { name: 'Midnight Gold', bg: '#141b25', fg: '#c9a227', accent: '#87681c', soft: '#233142' },
-  { name: 'Olive Grove', bg: '#3d4a33', fg: '#e6ddc4', accent: '#bda15a', soft: '#57674b' },
-  { name: 'Oxblood Cream', bg: '#571f1c', fg: '#e9dabe', accent: '#c98f4e', soft: '#7c3a31' },
-  { name: 'Basalt Bronze', bg: '#2b2f36', fg: '#b3873e', accent: '#8a6a4b', soft: '#3d434d' },
-]
+// ---------- media palettes ----------
+// Four "real media" treatments inspired by physical artworks:
+// fresco (pigment on cracked plaster), oil (canvas), engraving (sepia ink on
+// foxed paper), papyrus (gouache + gold on papyrus fiber).
+const MEDIA_PALETTES = {
+  fresco: [
+    { name: 'Pompeii Terracotta', bg: '#e3d7c0', fg: '#8a4a2c', accent: '#b3702f', soft: '#c9b795' },
+    { name: 'Burnt Sienna', bg: '#ddcfb2', fg: '#6d3a22', accent: '#a4552c', soft: '#c2ac83' },
+    { name: 'Faded Lapis', bg: '#dcd3c2', fg: '#41586a', accent: '#a2542f', soft: '#b6ab95' },
+    { name: 'Olive Plaster', bg: '#e5dcc8', fg: '#5c5c38', accent: '#a8703a', soft: '#c8bda0' },
+    { name: 'Etruscan Red', bg: '#dfcfb1', fg: '#7c3a26', accent: '#4f6273', soft: '#bfa77c' },
+    { name: 'Raw Umber', bg: '#e0d6c5', fg: '#4a4034', accent: '#a65e33', soft: '#bcae97' },
+    { name: 'Ochre Wash', bg: '#e7dbbe', fg: '#875a28', accent: '#b3502f', soft: '#cbb488' },
+    { name: 'Verdigris Fresco', bg: '#e2dbc9', fg: '#4c6b5c', accent: '#a8713c', soft: '#bdb49c' },
+  ],
+  oil: [
+    { name: 'Golden Hour', bg: '#d9b078', fg: '#4a3527', accent: '#c96f35', soft: '#a8865c' },
+    { name: 'Amber Dusk', bg: '#c39468', fg: '#3d2f22', accent: '#dd9a48', soft: '#8f6f4e' },
+    { name: 'Aegean Noon', bg: '#c2b795', fg: '#3f4d51', accent: '#c08348', soft: '#969172' },
+    { name: 'Umber Evening', bg: '#a97f57', fg: '#332822', accent: '#e0a44f', soft: '#7c5f42' },
+    { name: 'Storm Light', bg: '#b0a488', fg: '#3a3a33', accent: '#c9803e', soft: '#847a60' },
+    { name: 'Venetian Rose', bg: '#c9a183', fg: '#4a3129', accent: '#b3502f', soft: '#977257' },
+    { name: 'Twilight Bronze', bg: '#8f7a5e', fg: '#2c2620', accent: '#d9a24f', soft: '#6b5a44' },
+    { name: 'Honeyed Stone', bg: '#d3b487', fg: '#453425', accent: '#bd6b33', soft: '#a48a62' },
+  ],
+  engraving: [
+    { name: 'Sepia Plate', bg: '#ece2cb', fg: '#453521', accent: '#8a5a33', soft: '#b8a483' },
+    { name: 'Bistre Ink', bg: '#e8dcc0', fg: '#3d2f1c', accent: '#96603a', soft: '#b09a75' },
+    { name: 'Iron Gall', bg: '#e5dbc6', fg: '#38322a', accent: '#7c5636', soft: '#a99878' },
+    { name: 'Faded Folio', bg: '#efe6d0', fg: '#524026', accent: '#a06b3d', soft: '#c0ab87' },
+    { name: 'Umber Wash', bg: '#e2d4b4', fg: '#433320', accent: '#8a5a33', soft: '#ab946c' },
+    { name: 'Antique Buff', bg: '#eadfc4', fg: '#493a24', accent: '#935f34', soft: '#b6a17b' },
+    { name: 'Smoked Vellum', bg: '#e0d5bd', fg: '#3a2e1e', accent: '#875732', soft: '#a6926e' },
+    { name: 'Chestnut Line', bg: '#ede3ca', fg: '#4e3b22', accent: '#a4652f', soft: '#bfa87f' },
+  ],
+  papyrus: [
+    { name: 'Nile Lapis', bg: '#d7c096', fg: '#2e2a22', accent: '#2f5575', soft: '#b39d70' },
+    { name: 'Karnak Gold', bg: '#d3ba8c', fg: '#332d23', accent: '#a8792c', soft: '#b09a6c' },
+    { name: 'Terracotta Reed', bg: '#d9c49a', fg: '#2c2820', accent: '#a8502f', soft: '#b8a276' },
+    { name: 'Malachite Reed', bg: '#d5bf94', fg: '#302b22', accent: '#4a7457', soft: '#b19b6e' },
+    { name: 'Sandstone Dawn', bg: '#dcc8a0', fg: '#37301f', accent: '#b3672f', soft: '#bfa87c' },
+    { name: 'Delta Blue', bg: '#d2bd92', fg: '#2b2720', accent: '#3a6483', soft: '#ad976a' },
+    { name: 'Gilded Dusk', bg: '#cfb684', fg: '#2e2818', accent: '#9c7426', soft: '#a99060' },
+    { name: 'Oxide Red', bg: '#d8c298', fg: '#312a1e', accent: '#96422a', soft: '#b49d72' },
+  ],
+}
 
-// ---------- shared drawing helpers ----------
-function specks(r, P, n = 80) {
-  let s = ''
-  for (let i = 0; i < n; i++) {
-    s += `<circle cx="${f1(rnd(r, 40, W - 40))}" cy="${f1(rnd(r, 40, H - 40))}" r="${f1(rnd(r, 1.5, 4.5))}" fill="${P.fg}" opacity="${rnd(r, 0.03, 0.08).toFixed(3)}"/>`
+// ---------- aged-media texture engine ----------
+// Every artwork is rendered as one of four physical media. The recipe:
+//   1. ground: base color + broad tonal drift (+ fiber strips for papyrus)
+//   2. artwork content warped through turbulence displacement so no edge
+//      stays vector-perfect — reads as hand-painted / hand-printed
+//   3. overlays: multiply grain, large-scale mottling, screen "faded pigment"
+//      patches, stains, then medium extras (cracks & chips / canvas weave /
+//      engraving line texture & foxing / fiber sheen & edge shadow)
+
+function textureDefs(uid, seed, medium) {
+  const warpScale = { fresco: 12, oil: 9, engraving: 7, papyrus: 11 }[medium]
+  return `<filter id="${uid}-warp" x="-4%" y="-4%" width="108%" height="108%">` +
+    `<feTurbulence type="fractalNoise" baseFrequency="0.0105" numOctaves="2" seed="${seed}" result="w"/>` +
+    `<feDisplacementMap in="SourceGraphic" in2="w" scale="${warpScale}" xChannelSelector="R" yChannelSelector="G"/>` +
+    `</filter>` +
+    `<filter id="${uid}-grain" x="0%" y="0%" width="100%" height="100%">` +
+    `<feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="2" seed="${seed + 7}"/>` +
+    `<feColorMatrix type="matrix" values="0.33 0.33 0.33 0 0.62  0.33 0.33 0.33 0 0.62  0.33 0.33 0.33 0 0.62  0 0 0 0 1"/>` +
+    `</filter>` +
+    `<filter id="${uid}-mottle" x="0%" y="0%" width="100%" height="100%">` +
+    `<feTurbulence type="fractalNoise" baseFrequency="0.0045" numOctaves="3" seed="${seed + 13}"/>` +
+    `<feColorMatrix type="matrix" values="0.2 0.2 0.2 0 0.78  0.2 0.2 0.2 0 0.78  0.2 0.2 0.2 0 0.78  0 0 0 0 1"/>` +
+    `</filter>` +
+    `<filter id="${uid}-fade" x="0%" y="0%" width="100%" height="100%">` +
+    `<feTurbulence type="fractalNoise" baseFrequency="0.006" numOctaves="2" seed="${seed + 29}"/>` +
+    `<feColorMatrix type="matrix" values="0.3 0.3 0.3 0 -0.08  0.3 0.3 0.3 0 -0.08  0.3 0.3 0.3 0 -0.1  0 0 0 0 1"/>` +
+    `</filter>` +
+    `<filter id="${uid}-blur9"><feGaussianBlur stdDeviation="9"/></filter>` +
+    `<radialGradient id="${uid}-vig" cx="50%" cy="44%" r="78%">` +
+    `<stop offset="52%" stop-color="#241a10" stop-opacity="0"/>` +
+    `<stop offset="100%" stop-color="#241a10" stop-opacity="${medium === 'oil' ? 0.26 : 0.17}"/></radialGradient>` +
+    `<radialGradient id="${uid}-warm" cx="${30 + (seed % 40)}%" cy="30%" r="85%">` +
+    `<stop offset="0%" stop-color="#e8c890" stop-opacity="0.14"/>` +
+    `<stop offset="70%" stop-color="#e8c890" stop-opacity="0"/></radialGradient>`
+}
+
+function ground(uid, P, r, medium) {
+  let s = `<rect width="${W}" height="${H}" fill="${P.bg}"/>`
+  s += `<rect width="${W}" height="${H}" fill="url(#${uid}-warm)"/>`
+  if (medium === 'oil') {
+    // luminous sky wash toward the horizon band
+    s += `<linearGradient id="${uid}-sky" x1="0" y1="0" x2="0" y2="1">` +
+      `<stop offset="0" stop-color="#2e2416" stop-opacity="0.18"/>` +
+      `<stop offset="0.42" stop-color="#fff3d6" stop-opacity="0.22"/>` +
+      `<stop offset="0.62" stop-color="#ffdfa0" stop-opacity="0.3"/>` +
+      `<stop offset="0.8" stop-color="#a86a3a" stop-opacity="0.12"/>` +
+      `<stop offset="1" stop-color="#2e2416" stop-opacity="0.2"/></linearGradient>` +
+      `<rect width="${W}" height="${H}" fill="url(#${uid}-sky)"/>`
+  }
+  if (medium === 'papyrus') {
+    // horizontal + vertical reed strips
+    let x = 0
+    while (x < W) {
+      const w = rnd(r, 26, 60)
+      s += `<rect x="${f1(x)}" width="${f1(w * 0.72)}" height="${H}" fill="#6b4e26" opacity="${rnd(r, 0.03, 0.1).toFixed(3)}"/>`
+      x += w
+    }
+    let y = 0
+    while (y < H) {
+      const h = rnd(r, 20, 48)
+      s += `<rect y="${f1(y)}" width="${W}" height="${f1(h * 0.6)}" fill="#7c5c30" opacity="${rnd(r, 0.02, 0.06).toFixed(3)}"/>`
+      y += h
+    }
+  }
+  if (medium === 'fresco') {
+    // broad plaster trowel sweeps
+    for (let i = 0; i < 7; i++) {
+      const y = rnd(r, 0, H), hh = rnd(r, 120, 420)
+      s += `<rect y="${f1(y)}" width="${W}" height="${f1(hh)}" fill="${i % 2 ? '#ffffff' : '#8a6a40'}" opacity="${rnd(r, 0.02, 0.05).toFixed(3)}" transform="rotate(${f1(rnd(r, -2, 2))} ${W / 2} ${f1(y)})"/>`
+    }
   }
   return s
 }
 
-function paper(uid, P, r) {
-  return `<rect width="${W}" height="${H}" fill="${P.bg}"/>` +
-    `<radialGradient id="${uid}-vig" cx="50%" cy="42%" r="80%">` +
-    `<stop offset="55%" stop-color="#000" stop-opacity="0"/>` +
-    `<stop offset="100%" stop-color="#000" stop-opacity="0.15"/></radialGradient>` +
-    `<rect width="${W}" height="${H}" fill="url(#${uid}-vig)"/>` + specks(r, P)
+function stainBlobs(uid, r, n) {
+  let s = ''
+  for (let i = 0; i < n; i++) {
+    const cx = rnd(r, 150, W - 150), cy = rnd(r, 150, H - 150)
+    const rx = rnd(r, 90, 340), ry = rx * rnd(r, 0.55, 1.1)
+    s += `<ellipse cx="${f1(cx)}" cy="${f1(cy)}" rx="${f1(rx)}" ry="${f1(ry)}" fill="#6b4a22" opacity="${rnd(r, 0.025, 0.07).toFixed(3)}" filter="url(#${uid}-blur9)"/>`
+  }
+  return s
 }
 
-function frame(P) {
-  return `<rect x="100" y="100" width="${W - 200}" height="${H - 200}" fill="none" stroke="${P.fg}" stroke-width="9"/>` +
-    `<rect x="142" y="142" width="${W - 284}" height="${H - 284}" fill="none" stroke="${P.fg}" stroke-width="3" opacity="0.65"/>`
+function crackLines(r, n) {
+  let s = ''
+  for (let i = 0; i < n; i++) {
+    let x = rnd(r, 200, W - 200), y = rnd(r, 200, H - 200)
+    let a = rnd(r, 0, Math.PI * 2)
+    let pts = `${f1(x)},${f1(y)}`
+    const segs = ri(r, 5, 12)
+    for (let k = 0; k < segs; k++) {
+      a += rnd(r, -0.9, 0.9)
+      const step = rnd(r, 50, 150)
+      x += Math.cos(a) * step; y += Math.sin(a) * step
+      pts += ` ${f1(x)},${f1(y)}`
+    }
+    const wgt = rnd(r, 2, 4.5)
+    s += `<polyline points="${pts}" fill="none" stroke="#2e2116" stroke-width="${f1(wgt)}" opacity="${rnd(r, 0.14, 0.3).toFixed(2)}" stroke-linejoin="round"/>`
+    s += `<polyline points="${pts}" fill="none" stroke="#fff8ea" stroke-width="${f1(wgt * 0.7)}" opacity="${rnd(r, 0.08, 0.16).toFixed(2)}" transform="translate(2.5 2.5)" stroke-linejoin="round"/>`
+  }
+  return s
+}
+
+function foxing(r, n) {
+  let s = ''
+  for (let i = 0; i < n; i++) {
+    s += `<circle cx="${f1(rnd(r, 80, W - 80))}" cy="${f1(rnd(r, 80, H - 80))}" r="${f1(rnd(r, 3, 16))}" fill="#8a5a2e" opacity="${rnd(r, 0.04, 0.13).toFixed(3)}"/>`
+  }
+  return s
+}
+
+function mediumOverlays(uid, P, r, medium) {
+  let s = ''
+  // universal aging
+  s += `<rect width="${W}" height="${H}" filter="url(#${uid}-mottle)" style="mix-blend-mode:multiply" opacity="0.5"/>`
+  s += `<rect width="${W}" height="${H}" filter="url(#${uid}-fade)" style="mix-blend-mode:screen" opacity="${medium === 'oil' ? 0.3 : 0.55}"/>`
+  s += `<rect width="${W}" height="${H}" filter="url(#${uid}-grain)" style="mix-blend-mode:multiply" opacity="0.32"/>`
+  s += stainBlobs(uid, r, medium === 'oil' ? 3 : ri(r, 3, 6))
+  if (medium === 'fresco') {
+    s += crackLines(r, ri(r, 6, 10))
+    // chipped plaster patches
+    for (let i = 0; i < ri(r, 3, 7); i++) {
+      s += `<path d="${blobPath(r, rnd(r, 250, W - 250), rnd(r, 250, H - 250), rnd(r, 26, 110), rnd(r, 20, 80), 0.35, 7)}" fill="${P.bg}" opacity="${rnd(r, 0.75, 0.95).toFixed(2)}"/>`
+    }
+  } else if (medium === 'oil') {
+    // canvas weave
+    let weave = ''
+    for (let y = 0; y < H; y += 7) weave += `<rect y="${y}" width="${W}" height="1.6" fill="#2c2013"/>`
+    s += `<g opacity="0.05">${weave}</g>`
+    let weft = ''
+    for (let x = 0; x < W; x += 7) weft += `<rect x="${x}" width="1.6" height="${H}" fill="#fff6e0"/>`
+    s += `<g opacity="0.045">${weft}</g>`
+  } else if (medium === 'engraving') {
+    // engraved line texture + plate mark + foxing
+    let lines = ''
+    for (let y = 3; y < H; y += 8) lines += `<rect y="${y}" width="${W}" height="2" fill="${P.bg}"/>`
+    s += `<g opacity="0.3">${lines}</g>`
+    s += `<rect x="88" y="88" width="${W - 176}" height="${H - 176}" fill="none" stroke="#3a2c1a" stroke-width="4" opacity="0.2"/>`
+    s += `<rect x="94" y="94" width="${W - 188}" height="${H - 188}" fill="none" stroke="#fff6e0" stroke-width="2" opacity="0.25"/>`
+    s += foxing(r, ri(r, 16, 30))
+  } else if (medium === 'papyrus') {
+    // fiber sheen over the paint + frayed edge shadow
+    let x = 0
+    while (x < W) {
+      const w = rnd(r, 30, 70)
+      s += `<rect x="${f1(x)}" width="${f1(w * 0.5)}" height="${H}" fill="#fff2d0" opacity="${rnd(r, 0.015, 0.045).toFixed(3)}"/>`
+      x += w
+    }
+    for (const [gx, gy, gw, gh, dir] of [[0, 0, 90, H, 'r'], [W - 90, 0, 90, H, 'l'], [0, 0, W, 90, 'd'], [0, H - 90, W, 90, 'u']]) {
+      const gid = `${uid}-e${dir}`
+      const coords = dir === 'r' ? 'x1="0" x2="1" y1="0" y2="0"' : dir === 'l' ? 'x1="1" x2="0" y1="0" y2="0"' : dir === 'd' ? 'x1="0" x2="0" y1="0" y2="1"' : 'x1="0" x2="0" y1="1" y2="0"'
+      s += `<linearGradient id="${gid}" ${coords}><stop offset="0" stop-color="#3a2a12" stop-opacity="0.22"/><stop offset="1" stop-color="#3a2a12" stop-opacity="0"/></linearGradient>`
+      s += `<rect x="${gx}" y="${gy}" width="${gw}" height="${gh}" fill="url(#${gid})"/>`
+    }
+    s += foxing(r, ri(r, 8, 16))
+  }
+  s += `<rect width="${W}" height="${H}" fill="url(#${uid}-vig)"/>`
+  return s
+}
+
+function frame(P, medium = 'fresco') {
+  if (medium === 'oil') return '' // full-bleed canvas
+  if (medium === 'engraving') {
+    return `<rect x="130" y="130" width="${W - 260}" height="${H - 260}" fill="none" stroke="${P.fg}" stroke-width="5"/>` +
+      `<rect x="152" y="152" width="${W - 304}" height="${H - 304}" fill="none" stroke="${P.fg}" stroke-width="2.5" opacity="0.8"/>`
+  }
+  if (medium === 'papyrus') {
+    return `<rect x="120" y="120" width="${W - 240}" height="${H - 240}" fill="none" stroke="${P.fg}" stroke-width="6" opacity="0.85"/>`
+  }
+  // fresco: painted pigment band
+  return `<rect x="104" y="104" width="${W - 208}" height="${H - 208}" fill="none" stroke="${P.fg}" stroke-width="16" opacity="0.85"/>` +
+    `<rect x="150" y="150" width="${W - 300}" height="${H - 300}" fill="none" stroke="${P.fg}" stroke-width="4" opacity="0.55"/>`
 }
 
 // --- ornament bands (x, y = top, w, h, color) ---
@@ -1062,140 +1248,140 @@ function artRosette(r, P, uid) {
 // ---------- collection registry ----------
 const COLLECTIONS = [
   {
-    key: 'amphora', name: 'Amphorae of the Aegean', fn: artAmphora, motif: 'Amphora', culture: 'Greek',
+    key: 'amphora', medium: 'fresco', name: 'Amphorae of the Aegean', fn: artAmphora, motif: 'Amphora', culture: 'Greek',
     places: ['Knossos', 'Delphi', 'Olympia', 'Mycenae', 'Thera', 'Rhodes', 'Ithaca', 'Argos', 'Corinth', 'Miletus'],
     kws: ['Greek Vase Print', 'Pottery Wall Art', 'Grecian Urn Poster'],
     tags: ['ancient greek art', 'greek vase print', 'amphora wall art', 'grecian decor', 'terracotta print', 'greek pottery', 'mediterranean art', 'greek key border'],
     blurb: 'A hand-drawn ancient Greek amphora with meander, wave and palmette bands, rendered in the spirit of classical black-figure and red-figure pottery.'
   },
   {
-    key: 'columns', name: 'Pillars of Antiquity', fn: artColumns, motif: 'Column Study', culture: 'Greek',
+    key: 'columns', medium: 'oil', name: 'Pillars of Antiquity', fn: artColumns, motif: 'Column Study', culture: 'Greek',
     places: ['Athens', 'Paestum', 'Sounion', 'Segesta', 'Didyma', 'Bassae', 'Nemea', 'Aegina', 'Selinunte', 'Priene'],
     kws: ['Greek Column Print', 'Doric Ionic Corinthian', 'Architecture Poster'],
     tags: ['greek column art', 'ancient architecture', 'classical decor', 'doric column print', 'ruins wall art', 'academia decor', 'ionic column', 'history teacher gift'],
     blurb: 'Classical column studies — Doric, Ionic and Corinthian orders standing against a rising sun, drawn as minimalist architectural art.'
   },
   {
-    key: 'nile', name: 'Nile Botanicals', fn: artNileFrieze, motif: 'Lotus & Papyrus Frieze', culture: 'Egyptian',
+    key: 'nile', medium: 'papyrus', name: 'Nile Botanicals', fn: artNileFrieze, motif: 'Lotus & Papyrus Frieze', culture: 'Egyptian',
     places: ['Luxor', 'Karnak', 'Memphis', 'Abydos', 'Philae', 'Edfu', 'Dendera', 'Saqqara', 'Aswan', 'Thebes'],
     kws: ['Egyptian Lotus Print', 'Papyrus Wall Art', 'Nile Frieze Poster'],
     tags: ['egyptian wall art', 'lotus flower print', 'papyrus art', 'ancient egypt decor', 'egyptian frieze', 'botanical print', 'nile river art', 'egyptology gift'],
     blurb: 'Repeating registers of lotus blossoms, buds and papyrus umbels, arranged like a temple wall frieze from the banks of the Nile.'
   },
   {
-    key: 'giza', name: 'Giza Horizons', fn: artGiza, motif: 'Pyramid Landscape', culture: 'Egyptian',
+    key: 'giza', medium: 'papyrus', name: 'Giza Horizons', fn: artGiza, motif: 'Pyramid Landscape', culture: 'Egyptian',
     places: ['Giza', 'Dahshur', 'Meidum', 'Abusir', 'Saqqara', 'Hawara', 'Lisht', 'Abu Rawash', 'El Kurru', 'Nuri'],
     kws: ['Pyramid Print', 'Desert Landscape Art', 'Minimalist Egypt Poster'],
     tags: ['pyramid wall art', 'egypt landscape', 'desert print', 'minimalist travel', 'giza poster', 'ancient wonders', 'sun and sand art', 'boho desert decor'],
     blurb: 'A minimalist desert horizon — pyramids catching the light, layered dunes and a heavy ancient sun.'
   },
   {
-    key: 'mosaic', name: 'Roman Mosaics', fn: artMosaic, motif: 'Mosaic Medallion', culture: 'Roman',
+    key: 'mosaic', medium: 'fresco', name: 'Roman Mosaics', fn: artMosaic, motif: 'Mosaic Medallion', culture: 'Roman',
     places: ['Pompeii', 'Ravenna', 'Herculaneum', 'Ostia', 'Antioch', 'Volubilis', 'Aquileia', 'Piazza Armerina', 'Zeugma', 'Paphos'],
     kws: ['Roman Mosaic Print', 'Medallion Wall Art', 'Tile Pattern Poster'],
     tags: ['roman mosaic art', 'mosaic pattern', 'medallion print', 'italian decor', 'ancient rome art', 'tile art print', 'circular wall art', 'classical pattern'],
     blurb: 'A radial mosaic medallion built tessera by tessera, echoing the villa floors of Pompeii and Ravenna.'
   },
   {
-    key: 'spiralstone', name: 'Standing Stones', fn: artSpiralStone, motif: 'Spiral Stone', culture: 'Celtic',
+    key: 'spiralstone', medium: 'engraving', name: 'Standing Stones', fn: artSpiralStone, motif: 'Spiral Stone', culture: 'Celtic',
     places: ['Newgrange', 'Knowth', 'Dowth', 'Gavrinis', 'Loughcrew', 'Tara', 'Carrowkeel', 'Bryn Celli Ddu', 'Fourknocks', 'Sess Kilgreen'],
     kws: ['Celtic Spiral Print', 'Megalith Wall Art', 'Neolithic Poster'],
     tags: ['celtic wall art', 'triple spiral', 'newgrange art', 'megalithic print', 'irish decor', 'neolithic art', 'pagan wall art', 'ancient ireland'],
     blurb: 'A carved megalith alive with triple spirals and chevrons, drawn from the passage tombs of the Boyne Valley.'
   },
   {
-    key: 'script', name: 'Clay & Rune Scripts', fn: artScript, motif: 'Ancient Script', culture: 'Mesopotamian & Norse',
+    key: 'script', medium: 'engraving', name: 'Clay & Rune Scripts', fn: artScript, motif: 'Ancient Script', culture: 'Mesopotamian & Norse',
     places: ['Uruk', 'Nippur', 'Jelling', 'Ur', 'Rok', 'Nineveh', 'Uppsala', 'Lagash', 'Birka', 'Kish'],
     kws: ['Cuneiform Tablet Print', 'Runestone Wall Art', 'Ancient Writing Poster'],
     tags: ['cuneiform art', 'runestone print', 'ancient script', 'mesopotamia art', 'viking rune decor', 'norse wall art', 'history buff gift', 'writing system art'],
     blurb: 'Invented glyphs pressed into clay and carved into stone — a tribute to the world’s first writing systems (decorative, not literal text).'
   },
   {
-    key: 'wreath', name: 'Laurels of Victory', fn: artWreath, motif: 'Laurel Wreath', culture: 'Greek',
+    key: 'wreath', medium: 'fresco', name: 'Laurels of Victory', fn: artWreath, motif: 'Laurel Wreath', culture: 'Greek',
     places: ['Olympia', 'Delphi', 'Nemea', 'Isthmia', 'Marathon', 'Actium', 'Salamis', 'Plataea', 'Thermopylae', 'Chaeronea'],
     kws: ['Laurel Wreath Print', 'Victory Wall Art', 'Olympic Laurels Poster'],
     tags: ['laurel wreath art', 'victory laurels', 'greek wreath print', 'classical emblem', 'olive branch art', 'triumph decor', 'academia wall art', 'graduation gift'],
     blurb: 'The victor’s laurel crown, ringed around a sunburst — the ancient world’s highest honour as a graphic emblem.'
   },
   {
-    key: 'sampler', name: 'Attic Patterns', fn: artSampler, motif: 'Pattern Sampler', culture: 'Greek',
+    key: 'sampler', medium: 'fresco', name: 'Attic Patterns', fn: artSampler, motif: 'Pattern Sampler', culture: 'Greek',
     places: ['Attica', 'Euboea', 'Boeotia', 'Laconia', 'Arcadia', 'Achaea', 'Messenia', 'Elis', 'Phocis', 'Aetolia'],
     kws: ['Greek Pattern Print', 'Meander Wall Art', 'Ornament Sampler Poster'],
     tags: ['greek key pattern', 'meander print', 'pattern sampler', 'geometric wall art', 'ornament print', 'classical borders', 'greek fret art', 'designer wall decor'],
     blurb: 'A stacked sampler of classical ornament — meanders, waves, palmettes, chevrons and checkers — like the border bands of an Attic vase, unrolled.'
   },
   {
-    key: 'labyrinth', name: 'Labyrinths of Crete', fn: artLabyrinth, motif: 'Labyrinth', culture: 'Minoan',
+    key: 'labyrinth', medium: 'engraving', name: 'Labyrinths of Crete', fn: artLabyrinth, motif: 'Labyrinth', culture: 'Minoan',
     places: ['Knossos', 'Phaistos', 'Malia', 'Zakros', 'Gournia', 'Kydonia', 'Archanes', 'Tylissos', 'Palaikastro', 'Kommos'],
     kws: ['Labyrinth Print', 'Minoan Maze Wall Art', 'Meditation Poster'],
     tags: ['labyrinth wall art', 'minoan art', 'maze print', 'meditation decor', 'knossos poster', 'mythology art', 'sacred geometry', 'zen wall art'],
     blurb: 'A winding ceremonial labyrinth of concentric walls and hidden gates — the myth of Knossos as pure geometry.'
   },
   {
-    key: 'ziggurat', name: 'Ziggurats of Sumer', fn: artZiggurat, motif: 'Ziggurat', culture: 'Mesopotamian',
+    key: 'ziggurat', medium: 'oil', name: 'Ziggurats of Sumer', fn: artZiggurat, motif: 'Ziggurat', culture: 'Mesopotamian',
     places: ['Ur', 'Uruk', 'Eridu', 'Babylon', 'Nippur', 'Kish', 'Lagash', 'Sippar', 'Borsippa', 'Assur'],
     kws: ['Ziggurat Print', 'Mesopotamia Wall Art', 'Babylon Poster'],
     tags: ['ziggurat art', 'mesopotamia print', 'babylon wall art', 'sumerian decor', 'ancient temple art', 'stepped pyramid', 'night sky print', 'archaeology gift'],
     blurb: 'A great stepped temple rising under a crescent night sky, stair by stair toward the shrine at its summit.'
   },
   {
-    key: 'starchart', name: 'Ancient Skies', fn: artStarChart, motif: 'Star Chart', culture: 'Hellenistic', dark: true,
+    key: 'starchart', medium: 'engraving', name: 'Ancient Skies', fn: artStarChart, motif: 'Star Chart', culture: 'Hellenistic',
     places: ['Alexandria', 'Rhodes', 'Babylon', 'Nineveh', 'Syene', 'Pergamon', 'Cnidus', 'Samos', 'Chaldea', 'Harran'],
     kws: ['Star Chart Print', 'Astronomy Wall Art', 'Celestial Map Poster'],
     tags: ['star chart art', 'celestial print', 'astronomy decor', 'constellation map', 'night sky art', 'astrolabe print', 'celestial wall art', 'stargazer gift'],
     blurb: 'An astronomer’s ring of ticks and degrees around invented constellations — the night sky as the ancients charted it.'
   },
   {
-    key: 'aqueduct', name: 'Arches of Rome', fn: artAqueduct, motif: 'Aqueduct', culture: 'Roman',
+    key: 'aqueduct', medium: 'oil', name: 'Arches of Rome', fn: artAqueduct, motif: 'Aqueduct', culture: 'Roman',
     places: ['Segovia', 'Nimes', 'Tarragona', 'Merida', 'Aspendos', 'Caesarea', 'Carthage', 'Ephesus', 'Rome', 'Metz'],
     kws: ['Roman Aqueduct Print', 'Arches Wall Art', 'Italy Travel Poster'],
     tags: ['roman aqueduct art', 'arch print', 'italy wall art', 'roman ruins decor', 'travel poster', 'architecture print', 'engineering gift', 'cypress landscape'],
     blurb: 'Twin tiers of Roman arches striding across the countryside, with cypress trees and a low ancient sun.'
   },
   {
-    key: 'scarab', name: 'Sacred Scarabs', fn: artScarab, motif: 'Winged Scarab', culture: 'Egyptian',
+    key: 'scarab', medium: 'papyrus', name: 'Sacred Scarabs', fn: artScarab, motif: 'Winged Scarab', culture: 'Egyptian',
     places: ['Heliopolis', 'Amarna', 'Tanis', 'Bubastis', 'Hermopolis', 'Elephantine', 'Kom Ombo', 'Esna', 'Naukratis', 'Sais'],
     kws: ['Scarab Print', 'Winged Scarab Wall Art', 'Egyptian Emblem Poster'],
     tags: ['scarab wall art', 'winged scarab', 'egyptian emblem', 'khepri art print', 'ancient egypt art', 'beetle art', 'sun disk print', 'mystical decor'],
     blurb: 'The winged scarab bearing the sun disk — emblem of rebirth and the morning sun, spread across layered feather fans.'
   },
   {
-    key: 'obelisk', name: 'Obelisks at Dawn', fn: artObelisk, motif: 'Obelisk', culture: 'Egyptian',
+    key: 'obelisk', medium: 'engraving', name: 'Obelisks at Dawn', fn: artObelisk, motif: 'Obelisk', culture: 'Egyptian',
     places: ['Heliopolis', 'Karnak', 'Luxor', 'Aswan', 'Alexandria', 'Thebes', 'Tanis', 'Abu Simbel', 'Memphis', 'Piramesse'],
     kws: ['Obelisk Print', 'Egyptian Monument Art', 'Minimalist Poster'],
     tags: ['obelisk wall art', 'egyptian monument', 'minimalist egypt', 'ancient stone art', 'monolith print', 'gilded tip obelisk', 'dawn sun print', 'monument decor'],
     blurb: 'Needle-straight monoliths with gilded pyramidions catching first light, carved with quiet geometric marks.'
   },
   {
-    key: 'temple', name: 'Temples of Marble', fn: artTemple, motif: 'Temple Facade', culture: 'Greek',
+    key: 'temple', medium: 'oil', name: 'Temples of Marble', fn: artTemple, motif: 'Temple Facade', culture: 'Greek',
     places: ['Parthenon', 'Sounion', 'Aphaia', 'Hephaestus', 'Zeus Olympia', 'Apollo Delphi', 'Hera Samos', 'Artemis Ephesus', 'Poseidonia', 'Concordia'],
     kws: ['Greek Temple Print', 'Parthenon Style Art', 'Facade Poster'],
     tags: ['greek temple art', 'parthenon print', 'temple facade', 'classical building', 'marble decor', 'pediment art', 'columns print', 'architect gift'],
     blurb: 'A full temple elevation — steps, fluted columns, triglyph frieze and starred pediment — drafted like an architect’s elevation.'
   },
   {
-    key: 'voyage', name: 'Aegean Voyages', fn: artVoyage, motif: 'Trireme Voyage', culture: 'Greek',
+    key: 'voyage', medium: 'oil', name: 'Aegean Voyages', fn: artVoyage, motif: 'Trireme Voyage', culture: 'Greek',
     places: ['Salamis', 'Samos', 'Naxos', 'Chios', 'Lesbos', 'Kythera', 'Melos', 'Paros', 'Aegina', 'Skyros'],
     kws: ['Greek Ship Print', 'Trireme Wall Art', 'Nautical Poster'],
     tags: ['greek ship art', 'trireme print', 'nautical wall art', 'aegean sea decor', 'ancient sailing', 'wave pattern art', 'maritime print', 'odyssey art'],
     blurb: 'A lone trireme under sail on a sea of running spirals — shields on the gunwale, oars in the swell (crew safely below deck).'
   },
   {
-    key: 'emblem', name: 'Emblems of Egypt', fn: artEmblem, motif: 'Sacred Emblem', culture: 'Egyptian',
+    key: 'emblem', medium: 'papyrus', name: 'Emblems of Egypt', fn: artEmblem, motif: 'Sacred Emblem', culture: 'Egyptian',
     places: ['Ankh', 'Djed', 'Lotus', 'Winged Sun', 'Ankh II', 'Djed II', 'Lotus II', 'Winged Sun II', 'Ankh III', 'Djed III'],
     kws: ['Ankh Print', 'Egyptian Symbol Art', 'Sacred Emblem Poster'],
     tags: ['ankh wall art', 'egyptian symbol', 'djed pillar art', 'winged sun print', 'sacred emblem', 'spiritual decor', 'kemetic art', 'symbol print'],
     blurb: 'The great emblems of the Nile — ankh, djed pillar, lotus standard and winged sun — set in ceremonial nested frames.'
   },
   {
-    key: 'lunar', name: 'Lunar Rites', fn: artLunar, motif: 'Moon Phases', culture: 'Babylonian', dark: true,
+    key: 'lunar', medium: 'papyrus', name: 'Lunar Rites', fn: artLunar, motif: 'Moon Phases', culture: 'Babylonian',
     places: ['Sin', 'Nanna', 'Harran', 'Ur', 'Jericho', 'Byblos', 'Ugarit', 'Mari', 'Ebla', 'Emar'],
     kws: ['Moon Phases Print', 'Lunar Cycle Wall Art', 'Celestial Poster'],
     tags: ['moon phases art', 'lunar cycle print', 'celestial decor', 'moon wall art', 'boho moon print', 'mystic wall decor', 'astrology art', 'night sky poster'],
     blurb: 'The full lunar cycle stacked as a ritual column, rayed at the full moon — moon-worship rendered as minimal geometry.'
   },
   {
-    key: 'rosette', name: 'Rosettes of Assyria', fn: artRosette, motif: 'Rosette Medallion', culture: 'Assyrian',
+    key: 'rosette', medium: 'fresco', name: 'Rosettes of Assyria', fn: artRosette, motif: 'Rosette Medallion', culture: 'Assyrian',
     places: ['Nimrud', 'Nineveh', 'Assur', 'Khorsabad', 'Kalhu', 'Arbela', 'Dur Sharrukin', 'Balawat', 'Til Barsip', 'Carchemish'],
     kws: ['Rosette Print', 'Assyrian Wall Art', 'Mandala Poster'],
     tags: ['rosette wall art', 'assyrian art', 'ancient mandala', 'radial pattern', 'medallion decor', 'petal pattern art', 'sacred flower', 'geometric mandala'],
@@ -1204,22 +1390,17 @@ const COLLECTIONS = [
 ]
 
 // ---------- product assembly ----------
-function darkAdjust(P, wantDark) {
-  if (!wantDark) return P
-  if (luminance(P.bg) <= 0.45) return P
-  // swap to dark ground
-  return { ...P, bg: P.fg, fg: P.bg, soft: P.accent, accent: P.soft, name: P.name + ' (Night)' }
-}
-
 function renderArt(coll, v, index) {
   const uid = `a${index}`
   const seed = 77001 + index * 613
   const r = mulberry32(seed)
-  let P = PALETTES[(v + COLLECTIONS.indexOf(coll) * 3) % PALETTES.length]
-  P = darkAdjust(P, !!coll.dark)
-  let inner = paper(uid, P, r)
-  inner += coll.fn(r, P, uid, v)
-  inner += frame(P)
+  const medium = coll.medium
+  const pals = MEDIA_PALETTES[medium]
+  const P = pals[(v + COLLECTIONS.indexOf(coll) * 3) % pals.length]
+  let inner = textureDefs(uid, (seed % 9000) + 1, medium)
+  inner += ground(uid, P, r, medium)
+  inner += `<g filter="url(#${uid}-warp)">` + coll.fn(r, P, uid, v) + frame(P, medium) + `</g>`
+  inner += mediumOverlays(uid, P, r, medium)
   return { inner, P, uid }
 }
 
@@ -1439,7 +1620,7 @@ ${coll.blurb}
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.`
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.`
 }
 
 // ---------- main ----------

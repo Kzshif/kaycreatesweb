@@ -3,7 +3,7 @@
 ## AA-001 — Amphorae of the Aegean
 
 **Title:**
-Amphora of Knossos | Greek Vase Print | Ancient Greek Wall Art | Printable Digital Download | Terracotta Noir
+Amphora of Knossos | Greek Vase Print | Ancient Greek Wall Art | Printable Digital Download | Pompeii Terracotta
 
 **Price:** £4.50
 
@@ -13,7 +13,7 @@ Amphora of Knossos | Greek Vase Print | Ancient Greek Wall Art | Printable Digit
 
 **Description:**
 
-Amphora of Knossos — an original artwork from the "Amphorae of the Aegean" collection (Terracotta Noir palette).
+Amphora of Knossos — an original artwork from the "Amphorae of the Aegean" collection (Pompeii Terracotta palette).
 
 A hand-drawn ancient Greek amphora with meander, wave and palmette bands, rendered in the spirit of classical black-figure and red-figure pottery.
 
@@ -32,14 +32,14 @@ A hand-drawn ancient Greek amphora with meander, wave and palmette bands, render
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-002 — Amphorae of the Aegean
 
 **Title:**
-Amphora of Delphi | Pottery Wall Art | Ancient Greek Wall Art | Printable Digital Download | Attic Red
+Amphora of Delphi | Pottery Wall Art | Ancient Greek Wall Art | Printable Digital Download | Burnt Sienna
 
 **Price:** £4.50
 
@@ -49,7 +49,7 @@ Amphora of Delphi | Pottery Wall Art | Ancient Greek Wall Art | Printable Digita
 
 **Description:**
 
-Amphora of Delphi — an original artwork from the "Amphorae of the Aegean" collection (Attic Red palette).
+Amphora of Delphi — an original artwork from the "Amphorae of the Aegean" collection (Burnt Sienna palette).
 
 A hand-drawn ancient Greek amphora with meander, wave and palmette bands, rendered in the spirit of classical black-figure and red-figure pottery.
 
@@ -68,14 +68,14 @@ A hand-drawn ancient Greek amphora with meander, wave and palmette bands, render
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-003 — Amphorae of the Aegean
 
 **Title:**
-Amphora of Olympia | Grecian Urn Poster | Ancient Greek Wall Art | Printable Digital Download | Papyrus & Lapis
+Amphora of Olympia | Grecian Urn Poster | Ancient Greek Wall Art | Printable Digital Download | Faded Lapis
 
 **Price:** £4.50
 
@@ -85,7 +85,7 @@ Amphora of Olympia | Grecian Urn Poster | Ancient Greek Wall Art | Printable Dig
 
 **Description:**
 
-Amphora of Olympia — an original artwork from the "Amphorae of the Aegean" collection (Papyrus & Lapis palette).
+Amphora of Olympia — an original artwork from the "Amphorae of the Aegean" collection (Faded Lapis palette).
 
 A hand-drawn ancient Greek amphora with meander, wave and palmette bands, rendered in the spirit of classical black-figure and red-figure pottery.
 
@@ -104,14 +104,14 @@ A hand-drawn ancient Greek amphora with meander, wave and palmette bands, render
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-004 — Amphorae of the Aegean
 
 **Title:**
-Amphora of Mycenae | Greek Vase Print | Ancient Greek Wall Art | Printable Digital Download | Nile Gold
+Amphora of Mycenae | Greek Vase Print | Ancient Greek Wall Art | Printable Digital Download | Olive Plaster
 
 **Price:** £4.50
 
@@ -121,7 +121,7 @@ Amphora of Mycenae | Greek Vase Print | Ancient Greek Wall Art | Printable Digit
 
 **Description:**
 
-Amphora of Mycenae — an original artwork from the "Amphorae of the Aegean" collection (Nile Gold palette).
+Amphora of Mycenae — an original artwork from the "Amphorae of the Aegean" collection (Olive Plaster palette).
 
 A hand-drawn ancient Greek amphora with meander, wave and palmette bands, rendered in the spirit of classical black-figure and red-figure pottery.
 
@@ -140,14 +140,14 @@ A hand-drawn ancient Greek amphora with meander, wave and palmette bands, render
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-005 — Amphorae of the Aegean
 
 **Title:**
-Amphora of Thera | Pottery Wall Art | Ancient Greek Wall Art | Printable Digital Download | Desert Ochre
+Amphora of Thera | Pottery Wall Art | Ancient Greek Wall Art | Printable Digital Download | Etruscan Red
 
 **Price:** £4.50
 
@@ -157,7 +157,7 @@ Amphora of Thera | Pottery Wall Art | Ancient Greek Wall Art | Printable Digital
 
 **Description:**
 
-Amphora of Thera — an original artwork from the "Amphorae of the Aegean" collection (Desert Ochre palette).
+Amphora of Thera — an original artwork from the "Amphorae of the Aegean" collection (Etruscan Red palette).
 
 A hand-drawn ancient Greek amphora with meander, wave and palmette bands, rendered in the spirit of classical black-figure and red-figure pottery.
 
@@ -176,14 +176,14 @@ A hand-drawn ancient Greek amphora with meander, wave and palmette bands, render
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-006 — Amphorae of the Aegean
 
 **Title:**
-Amphora of Rhodes | Grecian Urn Poster | Ancient Greek Wall Art | Printable Digital Download | Marble Verdigris
+Amphora of Rhodes | Grecian Urn Poster | Ancient Greek Wall Art | Printable Digital Download | Raw Umber
 
 **Price:** £4.50
 
@@ -193,7 +193,7 @@ Amphora of Rhodes | Grecian Urn Poster | Ancient Greek Wall Art | Printable Digi
 
 **Description:**
 
-Amphora of Rhodes — an original artwork from the "Amphorae of the Aegean" collection (Marble Verdigris palette).
+Amphora of Rhodes — an original artwork from the "Amphorae of the Aegean" collection (Raw Umber palette).
 
 A hand-drawn ancient Greek amphora with meander, wave and palmette bands, rendered in the spirit of classical black-figure and red-figure pottery.
 
@@ -212,14 +212,14 @@ A hand-drawn ancient Greek amphora with meander, wave and palmette bands, render
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-007 — Amphorae of the Aegean
 
 **Title:**
-Amphora of Ithaca | Greek Vase Print | Ancient Greek Wall Art | Printable Digital Download | Midnight Gold
+Amphora of Ithaca | Greek Vase Print | Ancient Greek Wall Art | Printable Digital Download | Ochre Wash
 
 **Price:** £4.50
 
@@ -229,7 +229,7 @@ Amphora of Ithaca | Greek Vase Print | Ancient Greek Wall Art | Printable Digita
 
 **Description:**
 
-Amphora of Ithaca — an original artwork from the "Amphorae of the Aegean" collection (Midnight Gold palette).
+Amphora of Ithaca — an original artwork from the "Amphorae of the Aegean" collection (Ochre Wash palette).
 
 A hand-drawn ancient Greek amphora with meander, wave and palmette bands, rendered in the spirit of classical black-figure and red-figure pottery.
 
@@ -248,14 +248,14 @@ A hand-drawn ancient Greek amphora with meander, wave and palmette bands, render
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-008 — Amphorae of the Aegean
 
 **Title:**
-Amphora of Argos | Pottery Wall Art | Ancient Greek Wall Art | Printable Digital Download | Olive Grove
+Amphora of Argos | Pottery Wall Art | Ancient Greek Wall Art | Printable Digital Download | Verdigris Fresco
 
 **Price:** £4.50
 
@@ -265,7 +265,7 @@ Amphora of Argos | Pottery Wall Art | Ancient Greek Wall Art | Printable Digital
 
 **Description:**
 
-Amphora of Argos — an original artwork from the "Amphorae of the Aegean" collection (Olive Grove palette).
+Amphora of Argos — an original artwork from the "Amphorae of the Aegean" collection (Verdigris Fresco palette).
 
 A hand-drawn ancient Greek amphora with meander, wave and palmette bands, rendered in the spirit of classical black-figure and red-figure pottery.
 
@@ -284,14 +284,14 @@ A hand-drawn ancient Greek amphora with meander, wave and palmette bands, render
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-009 — Amphorae of the Aegean
 
 **Title:**
-Amphora of Corinth | Grecian Urn Poster | Ancient Greek Wall Art | Printable Digital Download | Oxblood Cream
+Amphora of Corinth | Grecian Urn Poster | Ancient Greek Wall Art | Printable Digital Download | Pompeii Terracotta
 
 **Price:** £4.50
 
@@ -301,7 +301,7 @@ Amphora of Corinth | Grecian Urn Poster | Ancient Greek Wall Art | Printable Dig
 
 **Description:**
 
-Amphora of Corinth — an original artwork from the "Amphorae of the Aegean" collection (Oxblood Cream palette).
+Amphora of Corinth — an original artwork from the "Amphorae of the Aegean" collection (Pompeii Terracotta palette).
 
 A hand-drawn ancient Greek amphora with meander, wave and palmette bands, rendered in the spirit of classical black-figure and red-figure pottery.
 
@@ -320,14 +320,14 @@ A hand-drawn ancient Greek amphora with meander, wave and palmette bands, render
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-010 — Amphorae of the Aegean
 
 **Title:**
-Amphora of Miletus | Greek Vase Print | Ancient Greek Wall Art | Printable Digital Download | Basalt Bronze
+Amphora of Miletus | Greek Vase Print | Ancient Greek Wall Art | Printable Digital Download | Burnt Sienna
 
 **Price:** £4.50
 
@@ -337,7 +337,7 @@ Amphora of Miletus | Greek Vase Print | Ancient Greek Wall Art | Printable Digit
 
 **Description:**
 
-Amphora of Miletus — an original artwork from the "Amphorae of the Aegean" collection (Basalt Bronze palette).
+Amphora of Miletus — an original artwork from the "Amphorae of the Aegean" collection (Burnt Sienna palette).
 
 A hand-drawn ancient Greek amphora with meander, wave and palmette bands, rendered in the spirit of classical black-figure and red-figure pottery.
 
@@ -356,14 +356,14 @@ A hand-drawn ancient Greek amphora with meander, wave and palmette bands, render
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-011 — Pillars of Antiquity
 
 **Title:**
-Column Study of Athens | Greek Column Print | Ancient Greek Wall Art | Printable Digital Download | Nile Gold
+Column Study of Athens | Greek Column Print | Ancient Greek Wall Art | Printable Digital Download | Umber Evening
 
 **Price:** £5.00
 
@@ -373,7 +373,7 @@ Column Study of Athens | Greek Column Print | Ancient Greek Wall Art | Printable
 
 **Description:**
 
-Column Study of Athens — an original artwork from the "Pillars of Antiquity" collection (Nile Gold palette).
+Column Study of Athens — an original artwork from the "Pillars of Antiquity" collection (Umber Evening palette).
 
 Classical column studies — Doric, Ionic and Corinthian orders standing against a rising sun, drawn as minimalist architectural art.
 
@@ -392,14 +392,14 @@ Classical column studies — Doric, Ionic and Corinthian orders standing against
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-012 — Pillars of Antiquity
 
 **Title:**
-Column Study of Paestum | Doric Ionic Corinthian | Ancient Greek Wall Art | Printable Digital Download | Desert Ochre
+Column Study of Paestum | Doric Ionic Corinthian | Ancient Greek Wall Art | Printable Digital Download | Storm Light
 
 **Price:** £5.00
 
@@ -409,7 +409,7 @@ Column Study of Paestum | Doric Ionic Corinthian | Ancient Greek Wall Art | Prin
 
 **Description:**
 
-Column Study of Paestum — an original artwork from the "Pillars of Antiquity" collection (Desert Ochre palette).
+Column Study of Paestum — an original artwork from the "Pillars of Antiquity" collection (Storm Light palette).
 
 Classical column studies — Doric, Ionic and Corinthian orders standing against a rising sun, drawn as minimalist architectural art.
 
@@ -428,14 +428,14 @@ Classical column studies — Doric, Ionic and Corinthian orders standing against
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-013 — Pillars of Antiquity
 
 **Title:**
-Column Study of Sounion | Architecture Poster | Ancient Greek Wall Art | Printable Digital Download | Marble Verdigris
+Column Study of Sounion | Architecture Poster | Ancient Greek Wall Art | Printable Digital Download | Venetian Rose
 
 **Price:** £5.00
 
@@ -445,7 +445,7 @@ Column Study of Sounion | Architecture Poster | Ancient Greek Wall Art | Printab
 
 **Description:**
 
-Column Study of Sounion — an original artwork from the "Pillars of Antiquity" collection (Marble Verdigris palette).
+Column Study of Sounion — an original artwork from the "Pillars of Antiquity" collection (Venetian Rose palette).
 
 Classical column studies — Doric, Ionic and Corinthian orders standing against a rising sun, drawn as minimalist architectural art.
 
@@ -464,14 +464,14 @@ Classical column studies — Doric, Ionic and Corinthian orders standing against
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-014 — Pillars of Antiquity
 
 **Title:**
-Column Study of Segesta | Greek Column Print | Ancient Greek Wall Art | Printable Digital Download | Midnight Gold
+Column Study of Segesta | Greek Column Print | Ancient Greek Wall Art | Printable Digital Download | Twilight Bronze
 
 **Price:** £5.00
 
@@ -481,7 +481,7 @@ Column Study of Segesta | Greek Column Print | Ancient Greek Wall Art | Printabl
 
 **Description:**
 
-Column Study of Segesta — an original artwork from the "Pillars of Antiquity" collection (Midnight Gold palette).
+Column Study of Segesta — an original artwork from the "Pillars of Antiquity" collection (Twilight Bronze palette).
 
 Classical column studies — Doric, Ionic and Corinthian orders standing against a rising sun, drawn as minimalist architectural art.
 
@@ -500,14 +500,14 @@ Classical column studies — Doric, Ionic and Corinthian orders standing against
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-015 — Pillars of Antiquity
 
 **Title:**
-Column Study of Didyma | Doric Ionic Corinthian | Ancient Greek Wall Art | Printable Digital Download | Olive Grove
+Column Study of Didyma | Doric Ionic Corinthian | Ancient Greek Wall Art | Printable Digital Download | Honeyed Stone
 
 **Price:** £5.00
 
@@ -517,7 +517,7 @@ Column Study of Didyma | Doric Ionic Corinthian | Ancient Greek Wall Art | Print
 
 **Description:**
 
-Column Study of Didyma — an original artwork from the "Pillars of Antiquity" collection (Olive Grove palette).
+Column Study of Didyma — an original artwork from the "Pillars of Antiquity" collection (Honeyed Stone palette).
 
 Classical column studies — Doric, Ionic and Corinthian orders standing against a rising sun, drawn as minimalist architectural art.
 
@@ -536,14 +536,14 @@ Classical column studies — Doric, Ionic and Corinthian orders standing against
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-016 — Pillars of Antiquity
 
 **Title:**
-Column Study of Bassae | Architecture Poster | Ancient Greek Wall Art | Printable Digital Download | Oxblood Cream
+Column Study of Bassae | Architecture Poster | Ancient Greek Wall Art | Printable Digital Download | Golden Hour
 
 **Price:** £5.00
 
@@ -553,7 +553,7 @@ Column Study of Bassae | Architecture Poster | Ancient Greek Wall Art | Printabl
 
 **Description:**
 
-Column Study of Bassae — an original artwork from the "Pillars of Antiquity" collection (Oxblood Cream palette).
+Column Study of Bassae — an original artwork from the "Pillars of Antiquity" collection (Golden Hour palette).
 
 Classical column studies — Doric, Ionic and Corinthian orders standing against a rising sun, drawn as minimalist architectural art.
 
@@ -572,14 +572,14 @@ Classical column studies — Doric, Ionic and Corinthian orders standing against
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-017 — Pillars of Antiquity
 
 **Title:**
-Column Study of Nemea | Greek Column Print | Ancient Greek Wall Art | Printable Digital Download | Basalt Bronze
+Column Study of Nemea | Greek Column Print | Ancient Greek Wall Art | Printable Digital Download | Amber Dusk
 
 **Price:** £5.00
 
@@ -589,7 +589,7 @@ Column Study of Nemea | Greek Column Print | Ancient Greek Wall Art | Printable 
 
 **Description:**
 
-Column Study of Nemea — an original artwork from the "Pillars of Antiquity" collection (Basalt Bronze palette).
+Column Study of Nemea — an original artwork from the "Pillars of Antiquity" collection (Amber Dusk palette).
 
 Classical column studies — Doric, Ionic and Corinthian orders standing against a rising sun, drawn as minimalist architectural art.
 
@@ -608,14 +608,14 @@ Classical column studies — Doric, Ionic and Corinthian orders standing against
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-018 — Pillars of Antiquity
 
 **Title:**
-Column Study of Aegina | Doric Ionic Corinthian | Ancient Greek Wall Art | Printable Digital Download | Terracotta Noir
+Column Study of Aegina | Doric Ionic Corinthian | Ancient Greek Wall Art | Printable Digital Download | Aegean Noon
 
 **Price:** £5.00
 
@@ -625,7 +625,7 @@ Column Study of Aegina | Doric Ionic Corinthian | Ancient Greek Wall Art | Print
 
 **Description:**
 
-Column Study of Aegina — an original artwork from the "Pillars of Antiquity" collection (Terracotta Noir palette).
+Column Study of Aegina — an original artwork from the "Pillars of Antiquity" collection (Aegean Noon palette).
 
 Classical column studies — Doric, Ionic and Corinthian orders standing against a rising sun, drawn as minimalist architectural art.
 
@@ -644,14 +644,14 @@ Classical column studies — Doric, Ionic and Corinthian orders standing against
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-019 — Pillars of Antiquity
 
 **Title:**
-Column Study of Selinunte | Architecture Poster | Ancient Greek Wall Art | Printable Digital Download | Attic Red
+Column Study of Selinunte | Architecture Poster | Ancient Greek Wall Art | Printable Digital Download | Umber Evening
 
 **Price:** £5.00
 
@@ -661,7 +661,7 @@ Column Study of Selinunte | Architecture Poster | Ancient Greek Wall Art | Print
 
 **Description:**
 
-Column Study of Selinunte — an original artwork from the "Pillars of Antiquity" collection (Attic Red palette).
+Column Study of Selinunte — an original artwork from the "Pillars of Antiquity" collection (Umber Evening palette).
 
 Classical column studies — Doric, Ionic and Corinthian orders standing against a rising sun, drawn as minimalist architectural art.
 
@@ -680,14 +680,14 @@ Classical column studies — Doric, Ionic and Corinthian orders standing against
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-020 — Pillars of Antiquity
 
 **Title:**
-Column Study of Priene | Greek Column Print | Ancient Greek Wall Art | Printable Digital Download | Papyrus & Lapis
+Column Study of Priene | Greek Column Print | Ancient Greek Wall Art | Printable Digital Download | Storm Light
 
 **Price:** £5.00
 
@@ -697,7 +697,7 @@ Column Study of Priene | Greek Column Print | Ancient Greek Wall Art | Printable
 
 **Description:**
 
-Column Study of Priene — an original artwork from the "Pillars of Antiquity" collection (Papyrus & Lapis palette).
+Column Study of Priene — an original artwork from the "Pillars of Antiquity" collection (Storm Light palette).
 
 Classical column studies — Doric, Ionic and Corinthian orders standing against a rising sun, drawn as minimalist architectural art.
 
@@ -716,14 +716,14 @@ Classical column studies — Doric, Ionic and Corinthian orders standing against
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-021 — Nile Botanicals
 
 **Title:**
-Lotus & Papyrus Frieze of Luxor | Egyptian Lotus Print | Ancient Egyptian Wall Art | Printable Digital Download | Midnight Gold
+Lotus & Papyrus Frieze of Luxor | Egyptian Lotus Print | Ancient Egyptian Wall Art | Printable Digital Download | Gilded Dusk
 
 **Price:** £5.50
 
@@ -733,7 +733,7 @@ Lotus & Papyrus Frieze of Luxor | Egyptian Lotus Print | Ancient Egyptian Wall A
 
 **Description:**
 
-Lotus & Papyrus Frieze of Luxor — an original artwork from the "Nile Botanicals" collection (Midnight Gold palette).
+Lotus & Papyrus Frieze of Luxor — an original artwork from the "Nile Botanicals" collection (Gilded Dusk palette).
 
 Repeating registers of lotus blossoms, buds and papyrus umbels, arranged like a temple wall frieze from the banks of the Nile.
 
@@ -752,14 +752,14 @@ Repeating registers of lotus blossoms, buds and papyrus umbels, arranged like a 
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-022 — Nile Botanicals
 
 **Title:**
-Lotus & Papyrus Frieze of Karnak | Papyrus Wall Art | Ancient Egyptian Wall Art | Printable Digital Download | Olive Grove
+Lotus & Papyrus Frieze of Karnak | Papyrus Wall Art | Ancient Egyptian Wall Art | Printable Digital Download | Oxide Red
 
 **Price:** £5.50
 
@@ -769,7 +769,7 @@ Lotus & Papyrus Frieze of Karnak | Papyrus Wall Art | Ancient Egyptian Wall Art 
 
 **Description:**
 
-Lotus & Papyrus Frieze of Karnak — an original artwork from the "Nile Botanicals" collection (Olive Grove palette).
+Lotus & Papyrus Frieze of Karnak — an original artwork from the "Nile Botanicals" collection (Oxide Red palette).
 
 Repeating registers of lotus blossoms, buds and papyrus umbels, arranged like a temple wall frieze from the banks of the Nile.
 
@@ -788,14 +788,14 @@ Repeating registers of lotus blossoms, buds and papyrus umbels, arranged like a 
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-023 — Nile Botanicals
 
 **Title:**
-Lotus & Papyrus Frieze of Memphis | Nile Frieze Poster | Ancient Egyptian Wall Art | Printable Digital Download | Oxblood Cream
+Lotus & Papyrus Frieze of Memphis | Nile Frieze Poster | Ancient Egyptian Wall Art | Printable Digital Download | Nile Lapis
 
 **Price:** £5.50
 
@@ -805,7 +805,7 @@ Lotus & Papyrus Frieze of Memphis | Nile Frieze Poster | Ancient Egyptian Wall A
 
 **Description:**
 
-Lotus & Papyrus Frieze of Memphis — an original artwork from the "Nile Botanicals" collection (Oxblood Cream palette).
+Lotus & Papyrus Frieze of Memphis — an original artwork from the "Nile Botanicals" collection (Nile Lapis palette).
 
 Repeating registers of lotus blossoms, buds and papyrus umbels, arranged like a temple wall frieze from the banks of the Nile.
 
@@ -824,14 +824,14 @@ Repeating registers of lotus blossoms, buds and papyrus umbels, arranged like a 
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-024 — Nile Botanicals
 
 **Title:**
-Lotus & Papyrus Frieze of Abydos | Egyptian Lotus Print | Ancient Egyptian Wall Art | Printable Digital Download | Basalt Bronze
+Lotus & Papyrus Frieze of Abydos | Egyptian Lotus Print | Ancient Egyptian Wall Art | Printable Digital Download | Karnak Gold
 
 **Price:** £5.50
 
@@ -841,7 +841,7 @@ Lotus & Papyrus Frieze of Abydos | Egyptian Lotus Print | Ancient Egyptian Wall 
 
 **Description:**
 
-Lotus & Papyrus Frieze of Abydos — an original artwork from the "Nile Botanicals" collection (Basalt Bronze palette).
+Lotus & Papyrus Frieze of Abydos — an original artwork from the "Nile Botanicals" collection (Karnak Gold palette).
 
 Repeating registers of lotus blossoms, buds and papyrus umbels, arranged like a temple wall frieze from the banks of the Nile.
 
@@ -860,14 +860,14 @@ Repeating registers of lotus blossoms, buds and papyrus umbels, arranged like a 
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-025 — Nile Botanicals
 
 **Title:**
-Lotus & Papyrus Frieze of Philae | Papyrus Wall Art | Ancient Egyptian Wall Art | Printable Digital Download | Terracotta Noir
+Lotus & Papyrus Frieze of Philae | Papyrus Wall Art | Ancient Egyptian Wall Art | Printable Digital Download | Terracotta Reed
 
 **Price:** £5.50
 
@@ -877,7 +877,7 @@ Lotus & Papyrus Frieze of Philae | Papyrus Wall Art | Ancient Egyptian Wall Art 
 
 **Description:**
 
-Lotus & Papyrus Frieze of Philae — an original artwork from the "Nile Botanicals" collection (Terracotta Noir palette).
+Lotus & Papyrus Frieze of Philae — an original artwork from the "Nile Botanicals" collection (Terracotta Reed palette).
 
 Repeating registers of lotus blossoms, buds and papyrus umbels, arranged like a temple wall frieze from the banks of the Nile.
 
@@ -896,14 +896,14 @@ Repeating registers of lotus blossoms, buds and papyrus umbels, arranged like a 
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-026 — Nile Botanicals
 
 **Title:**
-Lotus & Papyrus Frieze of Edfu | Nile Frieze Poster | Ancient Egyptian Wall Art | Printable Digital Download | Attic Red
+Lotus & Papyrus Frieze of Edfu | Nile Frieze Poster | Ancient Egyptian Wall Art | Printable Digital Download | Malachite Reed
 
 **Price:** £5.50
 
@@ -913,7 +913,7 @@ Lotus & Papyrus Frieze of Edfu | Nile Frieze Poster | Ancient Egyptian Wall Art 
 
 **Description:**
 
-Lotus & Papyrus Frieze of Edfu — an original artwork from the "Nile Botanicals" collection (Attic Red palette).
+Lotus & Papyrus Frieze of Edfu — an original artwork from the "Nile Botanicals" collection (Malachite Reed palette).
 
 Repeating registers of lotus blossoms, buds and papyrus umbels, arranged like a temple wall frieze from the banks of the Nile.
 
@@ -932,14 +932,14 @@ Repeating registers of lotus blossoms, buds and papyrus umbels, arranged like a 
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-027 — Nile Botanicals
 
 **Title:**
-Lotus & Papyrus Frieze of Dendera | Egyptian Lotus Print | Ancient Egyptian Wall Art | Printable Digital Download | Papyrus & Lapis
+Lotus & Papyrus Frieze of Dendera | Egyptian Lotus Print | Ancient Egyptian Wall Art | Printable Digital Download | Sandstone Dawn
 
 **Price:** £5.50
 
@@ -949,7 +949,7 @@ Lotus & Papyrus Frieze of Dendera | Egyptian Lotus Print | Ancient Egyptian Wall
 
 **Description:**
 
-Lotus & Papyrus Frieze of Dendera — an original artwork from the "Nile Botanicals" collection (Papyrus & Lapis palette).
+Lotus & Papyrus Frieze of Dendera — an original artwork from the "Nile Botanicals" collection (Sandstone Dawn palette).
 
 Repeating registers of lotus blossoms, buds and papyrus umbels, arranged like a temple wall frieze from the banks of the Nile.
 
@@ -968,14 +968,14 @@ Repeating registers of lotus blossoms, buds and papyrus umbels, arranged like a 
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-028 — Nile Botanicals
 
 **Title:**
-Lotus & Papyrus Frieze of Saqqara | Papyrus Wall Art | Ancient Egyptian Wall Art | Printable Digital Download | Nile Gold
+Lotus & Papyrus Frieze of Saqqara | Papyrus Wall Art | Ancient Egyptian Wall Art | Printable Digital Download | Delta Blue
 
 **Price:** £5.50
 
@@ -985,7 +985,7 @@ Lotus & Papyrus Frieze of Saqqara | Papyrus Wall Art | Ancient Egyptian Wall Art
 
 **Description:**
 
-Lotus & Papyrus Frieze of Saqqara — an original artwork from the "Nile Botanicals" collection (Nile Gold palette).
+Lotus & Papyrus Frieze of Saqqara — an original artwork from the "Nile Botanicals" collection (Delta Blue palette).
 
 Repeating registers of lotus blossoms, buds and papyrus umbels, arranged like a temple wall frieze from the banks of the Nile.
 
@@ -1004,14 +1004,14 @@ Repeating registers of lotus blossoms, buds and papyrus umbels, arranged like a 
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-029 — Nile Botanicals
 
 **Title:**
-Lotus & Papyrus Frieze of Aswan | Nile Frieze Poster | Ancient Egyptian Wall Art | Printable Digital Download | Desert Ochre
+Lotus & Papyrus Frieze of Aswan | Nile Frieze Poster | Ancient Egyptian Wall Art | Printable Digital Download | Gilded Dusk
 
 **Price:** £5.50
 
@@ -1021,7 +1021,7 @@ Lotus & Papyrus Frieze of Aswan | Nile Frieze Poster | Ancient Egyptian Wall Art
 
 **Description:**
 
-Lotus & Papyrus Frieze of Aswan — an original artwork from the "Nile Botanicals" collection (Desert Ochre palette).
+Lotus & Papyrus Frieze of Aswan — an original artwork from the "Nile Botanicals" collection (Gilded Dusk palette).
 
 Repeating registers of lotus blossoms, buds and papyrus umbels, arranged like a temple wall frieze from the banks of the Nile.
 
@@ -1040,14 +1040,14 @@ Repeating registers of lotus blossoms, buds and papyrus umbels, arranged like a 
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-030 — Nile Botanicals
 
 **Title:**
-Lotus & Papyrus Frieze of Thebes | Egyptian Lotus Print | Ancient Egyptian Wall Art | Printable Digital Download | Marble Verdigris
+Lotus & Papyrus Frieze of Thebes | Egyptian Lotus Print | Ancient Egyptian Wall Art | Printable Digital Download | Oxide Red
 
 **Price:** £5.50
 
@@ -1057,7 +1057,7 @@ Lotus & Papyrus Frieze of Thebes | Egyptian Lotus Print | Ancient Egyptian Wall 
 
 **Description:**
 
-Lotus & Papyrus Frieze of Thebes — an original artwork from the "Nile Botanicals" collection (Marble Verdigris palette).
+Lotus & Papyrus Frieze of Thebes — an original artwork from the "Nile Botanicals" collection (Oxide Red palette).
 
 Repeating registers of lotus blossoms, buds and papyrus umbels, arranged like a temple wall frieze from the banks of the Nile.
 
@@ -1076,14 +1076,14 @@ Repeating registers of lotus blossoms, buds and papyrus umbels, arranged like a 
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-031 — Giza Horizons
 
 **Title:**
-Pyramid Landscape of Giza | Pyramid Print | Ancient Egyptian Wall Art | Printable Digital Download | Basalt Bronze
+Pyramid Landscape of Giza | Pyramid Print | Ancient Egyptian Wall Art | Printable Digital Download | Karnak Gold
 
 **Price:** £6.00
 
@@ -1093,7 +1093,7 @@ Pyramid Landscape of Giza | Pyramid Print | Ancient Egyptian Wall Art | Printabl
 
 **Description:**
 
-Pyramid Landscape of Giza — an original artwork from the "Giza Horizons" collection (Basalt Bronze palette).
+Pyramid Landscape of Giza — an original artwork from the "Giza Horizons" collection (Karnak Gold palette).
 
 A minimalist desert horizon — pyramids catching the light, layered dunes and a heavy ancient sun.
 
@@ -1112,14 +1112,14 @@ A minimalist desert horizon — pyramids catching the light, layered dunes and a
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-032 — Giza Horizons
 
 **Title:**
-Pyramid Landscape of Dahshur | Desert Landscape Art | Ancient Egyptian Wall Art | Printable Digital Download | Terracotta Noir
+Pyramid Landscape of Dahshur | Desert Landscape Art | Ancient Egyptian Wall Art | Printable Digital Download | Terracotta Reed
 
 **Price:** £6.00
 
@@ -1129,7 +1129,7 @@ Pyramid Landscape of Dahshur | Desert Landscape Art | Ancient Egyptian Wall Art 
 
 **Description:**
 
-Pyramid Landscape of Dahshur — an original artwork from the "Giza Horizons" collection (Terracotta Noir palette).
+Pyramid Landscape of Dahshur — an original artwork from the "Giza Horizons" collection (Terracotta Reed palette).
 
 A minimalist desert horizon — pyramids catching the light, layered dunes and a heavy ancient sun.
 
@@ -1148,14 +1148,14 @@ A minimalist desert horizon — pyramids catching the light, layered dunes and a
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-033 — Giza Horizons
 
 **Title:**
-Pyramid Landscape of Meidum | Minimalist Egypt Poster | Ancient Egyptian Wall Art | Printable Digital Download | Attic Red
+Pyramid Landscape of Meidum | Minimalist Egypt Poster | Ancient Egyptian Wall Art | Printable Digital Download | Malachite Reed
 
 **Price:** £6.00
 
@@ -1165,7 +1165,7 @@ Pyramid Landscape of Meidum | Minimalist Egypt Poster | Ancient Egyptian Wall Ar
 
 **Description:**
 
-Pyramid Landscape of Meidum — an original artwork from the "Giza Horizons" collection (Attic Red palette).
+Pyramid Landscape of Meidum — an original artwork from the "Giza Horizons" collection (Malachite Reed palette).
 
 A minimalist desert horizon — pyramids catching the light, layered dunes and a heavy ancient sun.
 
@@ -1184,14 +1184,14 @@ A minimalist desert horizon — pyramids catching the light, layered dunes and a
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-034 — Giza Horizons
 
 **Title:**
-Pyramid Landscape of Abusir | Pyramid Print | Ancient Egyptian Wall Art | Printable Digital Download | Papyrus & Lapis
+Pyramid Landscape of Abusir | Pyramid Print | Ancient Egyptian Wall Art | Printable Digital Download | Sandstone Dawn
 
 **Price:** £6.00
 
@@ -1201,7 +1201,7 @@ Pyramid Landscape of Abusir | Pyramid Print | Ancient Egyptian Wall Art | Printa
 
 **Description:**
 
-Pyramid Landscape of Abusir — an original artwork from the "Giza Horizons" collection (Papyrus & Lapis palette).
+Pyramid Landscape of Abusir — an original artwork from the "Giza Horizons" collection (Sandstone Dawn palette).
 
 A minimalist desert horizon — pyramids catching the light, layered dunes and a heavy ancient sun.
 
@@ -1220,14 +1220,14 @@ A minimalist desert horizon — pyramids catching the light, layered dunes and a
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-035 — Giza Horizons
 
 **Title:**
-Pyramid Landscape of Saqqara | Desert Landscape Art | Ancient Egyptian Wall Art | Printable Digital Download | Nile Gold
+Pyramid Landscape of Saqqara | Desert Landscape Art | Ancient Egyptian Wall Art | Printable Digital Download | Delta Blue
 
 **Price:** £6.00
 
@@ -1237,7 +1237,7 @@ Pyramid Landscape of Saqqara | Desert Landscape Art | Ancient Egyptian Wall Art 
 
 **Description:**
 
-Pyramid Landscape of Saqqara — an original artwork from the "Giza Horizons" collection (Nile Gold palette).
+Pyramid Landscape of Saqqara — an original artwork from the "Giza Horizons" collection (Delta Blue palette).
 
 A minimalist desert horizon — pyramids catching the light, layered dunes and a heavy ancient sun.
 
@@ -1256,14 +1256,14 @@ A minimalist desert horizon — pyramids catching the light, layered dunes and a
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-036 — Giza Horizons
 
 **Title:**
-Pyramid Landscape of Hawara | Minimalist Egypt Poster | Ancient Egyptian Wall Art | Printable Digital Download | Desert Ochre
+Pyramid Landscape of Hawara | Minimalist Egypt Poster | Ancient Egyptian Wall Art | Printable Digital Download | Gilded Dusk
 
 **Price:** £6.00
 
@@ -1273,7 +1273,7 @@ Pyramid Landscape of Hawara | Minimalist Egypt Poster | Ancient Egyptian Wall Ar
 
 **Description:**
 
-Pyramid Landscape of Hawara — an original artwork from the "Giza Horizons" collection (Desert Ochre palette).
+Pyramid Landscape of Hawara — an original artwork from the "Giza Horizons" collection (Gilded Dusk palette).
 
 A minimalist desert horizon — pyramids catching the light, layered dunes and a heavy ancient sun.
 
@@ -1292,14 +1292,14 @@ A minimalist desert horizon — pyramids catching the light, layered dunes and a
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-037 — Giza Horizons
 
 **Title:**
-Pyramid Landscape of Lisht | Pyramid Print | Ancient Egyptian Wall Art | Printable Digital Download | Marble Verdigris
+Pyramid Landscape of Lisht | Pyramid Print | Ancient Egyptian Wall Art | Printable Digital Download | Oxide Red
 
 **Price:** £6.00
 
@@ -1309,7 +1309,7 @@ Pyramid Landscape of Lisht | Pyramid Print | Ancient Egyptian Wall Art | Printab
 
 **Description:**
 
-Pyramid Landscape of Lisht — an original artwork from the "Giza Horizons" collection (Marble Verdigris palette).
+Pyramid Landscape of Lisht — an original artwork from the "Giza Horizons" collection (Oxide Red palette).
 
 A minimalist desert horizon — pyramids catching the light, layered dunes and a heavy ancient sun.
 
@@ -1328,14 +1328,14 @@ A minimalist desert horizon — pyramids catching the light, layered dunes and a
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-038 — Giza Horizons
 
 **Title:**
-Pyramid Landscape of Abu Rawash | Desert Landscape Art | Ancient Egyptian Wall Art | Printable Digital Download | Midnight Gold
+Pyramid Landscape of Abu Rawash | Desert Landscape Art | Ancient Egyptian Wall Art | Printable Digital Download | Nile Lapis
 
 **Price:** £6.00
 
@@ -1345,7 +1345,7 @@ Pyramid Landscape of Abu Rawash | Desert Landscape Art | Ancient Egyptian Wall A
 
 **Description:**
 
-Pyramid Landscape of Abu Rawash — an original artwork from the "Giza Horizons" collection (Midnight Gold palette).
+Pyramid Landscape of Abu Rawash — an original artwork from the "Giza Horizons" collection (Nile Lapis palette).
 
 A minimalist desert horizon — pyramids catching the light, layered dunes and a heavy ancient sun.
 
@@ -1364,14 +1364,14 @@ A minimalist desert horizon — pyramids catching the light, layered dunes and a
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-039 — Giza Horizons
 
 **Title:**
-Pyramid Landscape of El Kurru | Minimalist Egypt Poster | Ancient Egyptian Wall Art | Printable Digital Download | Olive Grove
+Pyramid Landscape of El Kurru | Minimalist Egypt Poster | Ancient Egyptian Wall Art | Printable Digital Download | Karnak Gold
 
 **Price:** £6.00
 
@@ -1381,7 +1381,7 @@ Pyramid Landscape of El Kurru | Minimalist Egypt Poster | Ancient Egyptian Wall 
 
 **Description:**
 
-Pyramid Landscape of El Kurru — an original artwork from the "Giza Horizons" collection (Olive Grove palette).
+Pyramid Landscape of El Kurru — an original artwork from the "Giza Horizons" collection (Karnak Gold palette).
 
 A minimalist desert horizon — pyramids catching the light, layered dunes and a heavy ancient sun.
 
@@ -1400,14 +1400,14 @@ A minimalist desert horizon — pyramids catching the light, layered dunes and a
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-040 — Giza Horizons
 
 **Title:**
-Pyramid Landscape of Nuri | Pyramid Print | Ancient Egyptian Wall Art | Printable Digital Download | Oxblood Cream
+Pyramid Landscape of Nuri | Pyramid Print | Ancient Egyptian Wall Art | Printable Digital Download | Terracotta Reed
 
 **Price:** £6.00
 
@@ -1417,7 +1417,7 @@ Pyramid Landscape of Nuri | Pyramid Print | Ancient Egyptian Wall Art | Printabl
 
 **Description:**
 
-Pyramid Landscape of Nuri — an original artwork from the "Giza Horizons" collection (Oxblood Cream palette).
+Pyramid Landscape of Nuri — an original artwork from the "Giza Horizons" collection (Terracotta Reed palette).
 
 A minimalist desert horizon — pyramids catching the light, layered dunes and a heavy ancient sun.
 
@@ -1436,14 +1436,14 @@ A minimalist desert horizon — pyramids catching the light, layered dunes and a
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-041 — Roman Mosaics
 
 **Title:**
-Mosaic Medallion of Pompeii | Roman Mosaic Print | Ancient Roman Wall Art | Printable Digital Download | Papyrus & Lapis
+Mosaic Medallion of Pompeii | Roman Mosaic Print | Ancient Roman Wall Art | Printable Digital Download | Etruscan Red
 
 **Price:** £4.50
 
@@ -1453,7 +1453,7 @@ Mosaic Medallion of Pompeii | Roman Mosaic Print | Ancient Roman Wall Art | Prin
 
 **Description:**
 
-Mosaic Medallion of Pompeii — an original artwork from the "Roman Mosaics" collection (Papyrus & Lapis palette).
+Mosaic Medallion of Pompeii — an original artwork from the "Roman Mosaics" collection (Etruscan Red palette).
 
 A radial mosaic medallion built tessera by tessera, echoing the villa floors of Pompeii and Ravenna.
 
@@ -1472,14 +1472,14 @@ A radial mosaic medallion built tessera by tessera, echoing the villa floors of 
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-042 — Roman Mosaics
 
 **Title:**
-Mosaic Medallion of Ravenna | Medallion Wall Art | Ancient Roman Wall Art | Printable Digital Download | Nile Gold
+Mosaic Medallion of Ravenna | Medallion Wall Art | Ancient Roman Wall Art | Printable Digital Download | Raw Umber
 
 **Price:** £4.50
 
@@ -1489,7 +1489,7 @@ Mosaic Medallion of Ravenna | Medallion Wall Art | Ancient Roman Wall Art | Prin
 
 **Description:**
 
-Mosaic Medallion of Ravenna — an original artwork from the "Roman Mosaics" collection (Nile Gold palette).
+Mosaic Medallion of Ravenna — an original artwork from the "Roman Mosaics" collection (Raw Umber palette).
 
 A radial mosaic medallion built tessera by tessera, echoing the villa floors of Pompeii and Ravenna.
 
@@ -1508,14 +1508,14 @@ A radial mosaic medallion built tessera by tessera, echoing the villa floors of 
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-043 — Roman Mosaics
 
 **Title:**
-Mosaic Medallion of Herculaneum | Tile Pattern Poster | Ancient Roman Wall Art | Printable Digital Download | Desert Ochre
+Mosaic Medallion of Herculaneum | Tile Pattern Poster | Ancient Roman Wall Art | Printable Digital Download | Ochre Wash
 
 **Price:** £4.50
 
@@ -1525,7 +1525,7 @@ Mosaic Medallion of Herculaneum | Tile Pattern Poster | Ancient Roman Wall Art |
 
 **Description:**
 
-Mosaic Medallion of Herculaneum — an original artwork from the "Roman Mosaics" collection (Desert Ochre palette).
+Mosaic Medallion of Herculaneum — an original artwork from the "Roman Mosaics" collection (Ochre Wash palette).
 
 A radial mosaic medallion built tessera by tessera, echoing the villa floors of Pompeii and Ravenna.
 
@@ -1544,14 +1544,14 @@ A radial mosaic medallion built tessera by tessera, echoing the villa floors of 
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-044 — Roman Mosaics
 
 **Title:**
-Mosaic Medallion of Ostia | Roman Mosaic Print | Ancient Roman Wall Art | Printable Digital Download | Marble Verdigris
+Mosaic Medallion of Ostia | Roman Mosaic Print | Ancient Roman Wall Art | Printable Digital Download | Verdigris Fresco
 
 **Price:** £4.50
 
@@ -1561,7 +1561,7 @@ Mosaic Medallion of Ostia | Roman Mosaic Print | Ancient Roman Wall Art | Printa
 
 **Description:**
 
-Mosaic Medallion of Ostia — an original artwork from the "Roman Mosaics" collection (Marble Verdigris palette).
+Mosaic Medallion of Ostia — an original artwork from the "Roman Mosaics" collection (Verdigris Fresco palette).
 
 A radial mosaic medallion built tessera by tessera, echoing the villa floors of Pompeii and Ravenna.
 
@@ -1580,14 +1580,14 @@ A radial mosaic medallion built tessera by tessera, echoing the villa floors of 
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-045 — Roman Mosaics
 
 **Title:**
-Mosaic Medallion of Antioch | Medallion Wall Art | Ancient Roman Wall Art | Printable Digital Download | Midnight Gold
+Mosaic Medallion of Antioch | Medallion Wall Art | Ancient Roman Wall Art | Printable Digital Download | Pompeii Terracotta
 
 **Price:** £4.50
 
@@ -1597,7 +1597,7 @@ Mosaic Medallion of Antioch | Medallion Wall Art | Ancient Roman Wall Art | Prin
 
 **Description:**
 
-Mosaic Medallion of Antioch — an original artwork from the "Roman Mosaics" collection (Midnight Gold palette).
+Mosaic Medallion of Antioch — an original artwork from the "Roman Mosaics" collection (Pompeii Terracotta palette).
 
 A radial mosaic medallion built tessera by tessera, echoing the villa floors of Pompeii and Ravenna.
 
@@ -1616,14 +1616,14 @@ A radial mosaic medallion built tessera by tessera, echoing the villa floors of 
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-046 — Roman Mosaics
 
 **Title:**
-Mosaic Medallion of Volubilis | Tile Pattern Poster | Ancient Roman Wall Art | Printable Digital Download | Olive Grove
+Mosaic Medallion of Volubilis | Tile Pattern Poster | Ancient Roman Wall Art | Printable Digital Download | Burnt Sienna
 
 **Price:** £4.50
 
@@ -1633,7 +1633,7 @@ Mosaic Medallion of Volubilis | Tile Pattern Poster | Ancient Roman Wall Art | P
 
 **Description:**
 
-Mosaic Medallion of Volubilis — an original artwork from the "Roman Mosaics" collection (Olive Grove palette).
+Mosaic Medallion of Volubilis — an original artwork from the "Roman Mosaics" collection (Burnt Sienna palette).
 
 A radial mosaic medallion built tessera by tessera, echoing the villa floors of Pompeii and Ravenna.
 
@@ -1652,14 +1652,14 @@ A radial mosaic medallion built tessera by tessera, echoing the villa floors of 
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-047 — Roman Mosaics
 
 **Title:**
-Mosaic Medallion of Aquileia | Roman Mosaic Print | Ancient Roman Wall Art | Printable Digital Download | Oxblood Cream
+Mosaic Medallion of Aquileia | Roman Mosaic Print | Ancient Roman Wall Art | Printable Digital Download | Faded Lapis
 
 **Price:** £4.50
 
@@ -1669,7 +1669,7 @@ Mosaic Medallion of Aquileia | Roman Mosaic Print | Ancient Roman Wall Art | Pri
 
 **Description:**
 
-Mosaic Medallion of Aquileia — an original artwork from the "Roman Mosaics" collection (Oxblood Cream palette).
+Mosaic Medallion of Aquileia — an original artwork from the "Roman Mosaics" collection (Faded Lapis palette).
 
 A radial mosaic medallion built tessera by tessera, echoing the villa floors of Pompeii and Ravenna.
 
@@ -1688,14 +1688,14 @@ A radial mosaic medallion built tessera by tessera, echoing the villa floors of 
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-048 — Roman Mosaics
 
 **Title:**
-Mosaic Medallion of Piazza Armerina | Medallion Wall Art | Ancient Roman Wall Art | Printable Digital Download | Basalt Bronze
+Mosaic Medallion of Piazza Armerina | Medallion Wall Art | Ancient Roman Wall Art | Printable Digital Download | Olive Plaster
 
 **Price:** £4.50
 
@@ -1705,7 +1705,7 @@ Mosaic Medallion of Piazza Armerina | Medallion Wall Art | Ancient Roman Wall Ar
 
 **Description:**
 
-Mosaic Medallion of Piazza Armerina — an original artwork from the "Roman Mosaics" collection (Basalt Bronze palette).
+Mosaic Medallion of Piazza Armerina — an original artwork from the "Roman Mosaics" collection (Olive Plaster palette).
 
 A radial mosaic medallion built tessera by tessera, echoing the villa floors of Pompeii and Ravenna.
 
@@ -1724,14 +1724,14 @@ A radial mosaic medallion built tessera by tessera, echoing the villa floors of 
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-049 — Roman Mosaics
 
 **Title:**
-Mosaic Medallion of Zeugma | Tile Pattern Poster | Ancient Roman Wall Art | Printable Digital Download | Terracotta Noir
+Mosaic Medallion of Zeugma | Tile Pattern Poster | Ancient Roman Wall Art | Printable Digital Download | Etruscan Red
 
 **Price:** £4.50
 
@@ -1741,7 +1741,7 @@ Mosaic Medallion of Zeugma | Tile Pattern Poster | Ancient Roman Wall Art | Prin
 
 **Description:**
 
-Mosaic Medallion of Zeugma — an original artwork from the "Roman Mosaics" collection (Terracotta Noir palette).
+Mosaic Medallion of Zeugma — an original artwork from the "Roman Mosaics" collection (Etruscan Red palette).
 
 A radial mosaic medallion built tessera by tessera, echoing the villa floors of Pompeii and Ravenna.
 
@@ -1760,14 +1760,14 @@ A radial mosaic medallion built tessera by tessera, echoing the villa floors of 
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-050 — Roman Mosaics
 
 **Title:**
-Mosaic Medallion of Paphos | Roman Mosaic Print | Ancient Roman Wall Art | Printable Digital Download | Attic Red
+Mosaic Medallion of Paphos | Roman Mosaic Print | Ancient Roman Wall Art | Printable Digital Download | Raw Umber
 
 **Price:** £4.50
 
@@ -1777,7 +1777,7 @@ Mosaic Medallion of Paphos | Roman Mosaic Print | Ancient Roman Wall Art | Print
 
 **Description:**
 
-Mosaic Medallion of Paphos — an original artwork from the "Roman Mosaics" collection (Attic Red palette).
+Mosaic Medallion of Paphos — an original artwork from the "Roman Mosaics" collection (Raw Umber palette).
 
 A radial mosaic medallion built tessera by tessera, echoing the villa floors of Pompeii and Ravenna.
 
@@ -1796,14 +1796,14 @@ A radial mosaic medallion built tessera by tessera, echoing the villa floors of 
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-051 — Standing Stones
 
 **Title:**
-Spiral Stone of Newgrange | Celtic Spiral Print | Ancient Celtic Wall Art | Printable Digital Download | Marble Verdigris
+Spiral Stone of Newgrange | Celtic Spiral Print | Ancient Celtic Wall Art | Printable Digital Download | Chestnut Line
 
 **Price:** £5.00
 
@@ -1813,7 +1813,7 @@ Spiral Stone of Newgrange | Celtic Spiral Print | Ancient Celtic Wall Art | Prin
 
 **Description:**
 
-Spiral Stone of Newgrange — an original artwork from the "Standing Stones" collection (Marble Verdigris palette).
+Spiral Stone of Newgrange — an original artwork from the "Standing Stones" collection (Chestnut Line palette).
 
 A carved megalith alive with triple spirals and chevrons, drawn from the passage tombs of the Boyne Valley.
 
@@ -1832,14 +1832,14 @@ A carved megalith alive with triple spirals and chevrons, drawn from the passage
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-052 — Standing Stones
 
 **Title:**
-Spiral Stone of Knowth | Megalith Wall Art | Ancient Celtic Wall Art | Printable Digital Download | Midnight Gold
+Spiral Stone of Knowth | Megalith Wall Art | Ancient Celtic Wall Art | Printable Digital Download | Sepia Plate
 
 **Price:** £5.00
 
@@ -1849,7 +1849,7 @@ Spiral Stone of Knowth | Megalith Wall Art | Ancient Celtic Wall Art | Printable
 
 **Description:**
 
-Spiral Stone of Knowth — an original artwork from the "Standing Stones" collection (Midnight Gold palette).
+Spiral Stone of Knowth — an original artwork from the "Standing Stones" collection (Sepia Plate palette).
 
 A carved megalith alive with triple spirals and chevrons, drawn from the passage tombs of the Boyne Valley.
 
@@ -1868,14 +1868,14 @@ A carved megalith alive with triple spirals and chevrons, drawn from the passage
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-053 — Standing Stones
 
 **Title:**
-Spiral Stone of Dowth | Neolithic Poster | Ancient Celtic Wall Art | Printable Digital Download | Olive Grove
+Spiral Stone of Dowth | Neolithic Poster | Ancient Celtic Wall Art | Printable Digital Download | Bistre Ink
 
 **Price:** £5.00
 
@@ -1885,7 +1885,7 @@ Spiral Stone of Dowth | Neolithic Poster | Ancient Celtic Wall Art | Printable D
 
 **Description:**
 
-Spiral Stone of Dowth — an original artwork from the "Standing Stones" collection (Olive Grove palette).
+Spiral Stone of Dowth — an original artwork from the "Standing Stones" collection (Bistre Ink palette).
 
 A carved megalith alive with triple spirals and chevrons, drawn from the passage tombs of the Boyne Valley.
 
@@ -1904,14 +1904,14 @@ A carved megalith alive with triple spirals and chevrons, drawn from the passage
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-054 — Standing Stones
 
 **Title:**
-Spiral Stone of Gavrinis | Celtic Spiral Print | Ancient Celtic Wall Art | Printable Digital Download | Oxblood Cream
+Spiral Stone of Gavrinis | Celtic Spiral Print | Ancient Celtic Wall Art | Printable Digital Download | Iron Gall
 
 **Price:** £5.00
 
@@ -1921,7 +1921,7 @@ Spiral Stone of Gavrinis | Celtic Spiral Print | Ancient Celtic Wall Art | Print
 
 **Description:**
 
-Spiral Stone of Gavrinis — an original artwork from the "Standing Stones" collection (Oxblood Cream palette).
+Spiral Stone of Gavrinis — an original artwork from the "Standing Stones" collection (Iron Gall palette).
 
 A carved megalith alive with triple spirals and chevrons, drawn from the passage tombs of the Boyne Valley.
 
@@ -1940,14 +1940,14 @@ A carved megalith alive with triple spirals and chevrons, drawn from the passage
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-055 — Standing Stones
 
 **Title:**
-Spiral Stone of Loughcrew | Megalith Wall Art | Ancient Celtic Wall Art | Printable Digital Download | Basalt Bronze
+Spiral Stone of Loughcrew | Megalith Wall Art | Ancient Celtic Wall Art | Printable Digital Download | Faded Folio
 
 **Price:** £5.00
 
@@ -1957,7 +1957,7 @@ Spiral Stone of Loughcrew | Megalith Wall Art | Ancient Celtic Wall Art | Printa
 
 **Description:**
 
-Spiral Stone of Loughcrew — an original artwork from the "Standing Stones" collection (Basalt Bronze palette).
+Spiral Stone of Loughcrew — an original artwork from the "Standing Stones" collection (Faded Folio palette).
 
 A carved megalith alive with triple spirals and chevrons, drawn from the passage tombs of the Boyne Valley.
 
@@ -1976,14 +1976,14 @@ A carved megalith alive with triple spirals and chevrons, drawn from the passage
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-056 — Standing Stones
 
 **Title:**
-Spiral Stone of Tara | Neolithic Poster | Ancient Celtic Wall Art | Printable Digital Download | Terracotta Noir
+Spiral Stone of Tara | Neolithic Poster | Ancient Celtic Wall Art | Printable Digital Download | Umber Wash
 
 **Price:** £5.00
 
@@ -1993,7 +1993,7 @@ Spiral Stone of Tara | Neolithic Poster | Ancient Celtic Wall Art | Printable Di
 
 **Description:**
 
-Spiral Stone of Tara — an original artwork from the "Standing Stones" collection (Terracotta Noir palette).
+Spiral Stone of Tara — an original artwork from the "Standing Stones" collection (Umber Wash palette).
 
 A carved megalith alive with triple spirals and chevrons, drawn from the passage tombs of the Boyne Valley.
 
@@ -2012,14 +2012,14 @@ A carved megalith alive with triple spirals and chevrons, drawn from the passage
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-057 — Standing Stones
 
 **Title:**
-Spiral Stone of Carrowkeel | Celtic Spiral Print | Ancient Celtic Wall Art | Printable Digital Download | Attic Red
+Spiral Stone of Carrowkeel | Celtic Spiral Print | Ancient Celtic Wall Art | Printable Digital Download | Antique Buff
 
 **Price:** £5.00
 
@@ -2029,7 +2029,7 @@ Spiral Stone of Carrowkeel | Celtic Spiral Print | Ancient Celtic Wall Art | Pri
 
 **Description:**
 
-Spiral Stone of Carrowkeel — an original artwork from the "Standing Stones" collection (Attic Red palette).
+Spiral Stone of Carrowkeel — an original artwork from the "Standing Stones" collection (Antique Buff palette).
 
 A carved megalith alive with triple spirals and chevrons, drawn from the passage tombs of the Boyne Valley.
 
@@ -2048,14 +2048,14 @@ A carved megalith alive with triple spirals and chevrons, drawn from the passage
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-058 — Standing Stones
 
 **Title:**
-Spiral Stone of Bryn Celli Ddu | Megalith Wall Art | Ancient Celtic Wall Art | Printable Digital Download | Papyrus & Lapis
+Spiral Stone of Bryn Celli Ddu | Megalith Wall Art | Ancient Celtic Wall Art | Printable Digital Download | Smoked Vellum
 
 **Price:** £5.00
 
@@ -2065,7 +2065,7 @@ Spiral Stone of Bryn Celli Ddu | Megalith Wall Art | Ancient Celtic Wall Art | P
 
 **Description:**
 
-Spiral Stone of Bryn Celli Ddu — an original artwork from the "Standing Stones" collection (Papyrus & Lapis palette).
+Spiral Stone of Bryn Celli Ddu — an original artwork from the "Standing Stones" collection (Smoked Vellum palette).
 
 A carved megalith alive with triple spirals and chevrons, drawn from the passage tombs of the Boyne Valley.
 
@@ -2084,14 +2084,14 @@ A carved megalith alive with triple spirals and chevrons, drawn from the passage
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-059 — Standing Stones
 
 **Title:**
-Spiral Stone of Fourknocks | Neolithic Poster | Ancient Celtic Wall Art | Printable Digital Download | Nile Gold
+Spiral Stone of Fourknocks | Neolithic Poster | Ancient Celtic Wall Art | Printable Digital Download | Chestnut Line
 
 **Price:** £5.00
 
@@ -2101,7 +2101,7 @@ Spiral Stone of Fourknocks | Neolithic Poster | Ancient Celtic Wall Art | Printa
 
 **Description:**
 
-Spiral Stone of Fourknocks — an original artwork from the "Standing Stones" collection (Nile Gold palette).
+Spiral Stone of Fourknocks — an original artwork from the "Standing Stones" collection (Chestnut Line palette).
 
 A carved megalith alive with triple spirals and chevrons, drawn from the passage tombs of the Boyne Valley.
 
@@ -2120,14 +2120,14 @@ A carved megalith alive with triple spirals and chevrons, drawn from the passage
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-060 — Standing Stones
 
 **Title:**
-Spiral Stone of Sess Kilgreen | Celtic Spiral Print | Ancient Celtic Wall Art | Printable Digital Download | Desert Ochre
+Spiral Stone of Sess Kilgreen | Celtic Spiral Print | Ancient Celtic Wall Art | Printable Digital Download | Sepia Plate
 
 **Price:** £5.00
 
@@ -2137,7 +2137,7 @@ Spiral Stone of Sess Kilgreen | Celtic Spiral Print | Ancient Celtic Wall Art | 
 
 **Description:**
 
-Spiral Stone of Sess Kilgreen — an original artwork from the "Standing Stones" collection (Desert Ochre palette).
+Spiral Stone of Sess Kilgreen — an original artwork from the "Standing Stones" collection (Sepia Plate palette).
 
 A carved megalith alive with triple spirals and chevrons, drawn from the passage tombs of the Boyne Valley.
 
@@ -2156,14 +2156,14 @@ A carved megalith alive with triple spirals and chevrons, drawn from the passage
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-061 — Clay & Rune Scripts
 
 **Title:**
-Ancient Script of Uruk | Cuneiform Tablet Print | Ancient Mesopotamian & Norse Wall Art | Printable Digital Download | Oxblood Cream
+Ancient Script of Uruk | Cuneiform Tablet Print | Ancient Mesopotamian & Norse Wall Art | Printable Digital Download | Iron Gall
 
 **Price:** £5.50
 
@@ -2173,7 +2173,7 @@ Ancient Script of Uruk | Cuneiform Tablet Print | Ancient Mesopotamian & Norse W
 
 **Description:**
 
-Ancient Script of Uruk — an original artwork from the "Clay & Rune Scripts" collection (Oxblood Cream palette).
+Ancient Script of Uruk — an original artwork from the "Clay & Rune Scripts" collection (Iron Gall palette).
 
 Invented glyphs pressed into clay and carved into stone — a tribute to the world’s first writing systems (decorative, not literal text).
 
@@ -2192,14 +2192,14 @@ Invented glyphs pressed into clay and carved into stone — a tribute to the wor
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-062 — Clay & Rune Scripts
 
 **Title:**
-Ancient Script of Nippur | Runestone Wall Art | Ancient Mesopotamian & Norse Wall Art | Printable Digital Download | Basalt Bronze
+Ancient Script of Nippur | Runestone Wall Art | Ancient Mesopotamian & Norse Wall Art | Printable Digital Download | Faded Folio
 
 **Price:** £5.50
 
@@ -2209,7 +2209,7 @@ Ancient Script of Nippur | Runestone Wall Art | Ancient Mesopotamian & Norse Wal
 
 **Description:**
 
-Ancient Script of Nippur — an original artwork from the "Clay & Rune Scripts" collection (Basalt Bronze palette).
+Ancient Script of Nippur — an original artwork from the "Clay & Rune Scripts" collection (Faded Folio palette).
 
 Invented glyphs pressed into clay and carved into stone — a tribute to the world’s first writing systems (decorative, not literal text).
 
@@ -2228,14 +2228,14 @@ Invented glyphs pressed into clay and carved into stone — a tribute to the wor
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-063 — Clay & Rune Scripts
 
 **Title:**
-Ancient Script of Jelling | Ancient Writing Poster | Ancient Mesopotamian & Norse Wall Art | Printable Digital Download | Terracotta Noir
+Ancient Script of Jelling | Ancient Writing Poster | Ancient Mesopotamian & Norse Wall Art | Printable Digital Download | Umber Wash
 
 **Price:** £5.50
 
@@ -2245,7 +2245,7 @@ Ancient Script of Jelling | Ancient Writing Poster | Ancient Mesopotamian & Nors
 
 **Description:**
 
-Ancient Script of Jelling — an original artwork from the "Clay & Rune Scripts" collection (Terracotta Noir palette).
+Ancient Script of Jelling — an original artwork from the "Clay & Rune Scripts" collection (Umber Wash palette).
 
 Invented glyphs pressed into clay and carved into stone — a tribute to the world’s first writing systems (decorative, not literal text).
 
@@ -2264,14 +2264,14 @@ Invented glyphs pressed into clay and carved into stone — a tribute to the wor
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-064 — Clay & Rune Scripts
 
 **Title:**
-Ancient Script of Ur | Cuneiform Tablet Print | Ancient Mesopotamian & Norse Wall Art | Printable Digital Download | Attic Red
+Ancient Script of Ur | Cuneiform Tablet Print | Ancient Mesopotamian & Norse Wall Art | Printable Digital Download | Antique Buff
 
 **Price:** £5.50
 
@@ -2281,7 +2281,7 @@ Ancient Script of Ur | Cuneiform Tablet Print | Ancient Mesopotamian & Norse Wal
 
 **Description:**
 
-Ancient Script of Ur — an original artwork from the "Clay & Rune Scripts" collection (Attic Red palette).
+Ancient Script of Ur — an original artwork from the "Clay & Rune Scripts" collection (Antique Buff palette).
 
 Invented glyphs pressed into clay and carved into stone — a tribute to the world’s first writing systems (decorative, not literal text).
 
@@ -2300,14 +2300,14 @@ Invented glyphs pressed into clay and carved into stone — a tribute to the wor
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-065 — Clay & Rune Scripts
 
 **Title:**
-Ancient Script of Rok | Runestone Wall Art | Ancient Mesopotamian & Norse Wall Art | Printable Digital Download | Papyrus & Lapis
+Ancient Script of Rok | Runestone Wall Art | Ancient Mesopotamian & Norse Wall Art | Printable Digital Download | Smoked Vellum
 
 **Price:** £5.50
 
@@ -2317,7 +2317,7 @@ Ancient Script of Rok | Runestone Wall Art | Ancient Mesopotamian & Norse Wall A
 
 **Description:**
 
-Ancient Script of Rok — an original artwork from the "Clay & Rune Scripts" collection (Papyrus & Lapis palette).
+Ancient Script of Rok — an original artwork from the "Clay & Rune Scripts" collection (Smoked Vellum palette).
 
 Invented glyphs pressed into clay and carved into stone — a tribute to the world’s first writing systems (decorative, not literal text).
 
@@ -2336,14 +2336,14 @@ Invented glyphs pressed into clay and carved into stone — a tribute to the wor
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-066 — Clay & Rune Scripts
 
 **Title:**
-Ancient Script of Nineveh | Ancient Writing Poster | Ancient Mesopotamian & Norse Wall Art | Printable Digital Download | Nile Gold
+Ancient Script of Nineveh | Ancient Writing Poster | Ancient Mesopotamian & Norse Wall Art | Printable Digital Download | Chestnut Line
 
 **Price:** £5.50
 
@@ -2353,7 +2353,7 @@ Ancient Script of Nineveh | Ancient Writing Poster | Ancient Mesopotamian & Nors
 
 **Description:**
 
-Ancient Script of Nineveh — an original artwork from the "Clay & Rune Scripts" collection (Nile Gold palette).
+Ancient Script of Nineveh — an original artwork from the "Clay & Rune Scripts" collection (Chestnut Line palette).
 
 Invented glyphs pressed into clay and carved into stone — a tribute to the world’s first writing systems (decorative, not literal text).
 
@@ -2372,14 +2372,14 @@ Invented glyphs pressed into clay and carved into stone — a tribute to the wor
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-067 — Clay & Rune Scripts
 
 **Title:**
-Ancient Script of Uppsala | Cuneiform Tablet Print | Ancient Mesopotamian & Norse Wall Art | Printable Digital Download | Desert Ochre
+Ancient Script of Uppsala | Cuneiform Tablet Print | Ancient Mesopotamian & Norse Wall Art | Printable Digital Download | Sepia Plate
 
 **Price:** £5.50
 
@@ -2389,7 +2389,7 @@ Ancient Script of Uppsala | Cuneiform Tablet Print | Ancient Mesopotamian & Nors
 
 **Description:**
 
-Ancient Script of Uppsala — an original artwork from the "Clay & Rune Scripts" collection (Desert Ochre palette).
+Ancient Script of Uppsala — an original artwork from the "Clay & Rune Scripts" collection (Sepia Plate palette).
 
 Invented glyphs pressed into clay and carved into stone — a tribute to the world’s first writing systems (decorative, not literal text).
 
@@ -2408,14 +2408,14 @@ Invented glyphs pressed into clay and carved into stone — a tribute to the wor
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-068 — Clay & Rune Scripts
 
 **Title:**
-Ancient Script of Lagash | Runestone Wall Art | Ancient Mesopotamian & Norse Wall Art | Printable Digital Download | Marble Verdigris
+Ancient Script of Lagash | Runestone Wall Art | Ancient Mesopotamian & Norse Wall Art | Printable Digital Download | Bistre Ink
 
 **Price:** £5.50
 
@@ -2425,7 +2425,7 @@ Ancient Script of Lagash | Runestone Wall Art | Ancient Mesopotamian & Norse Wal
 
 **Description:**
 
-Ancient Script of Lagash — an original artwork from the "Clay & Rune Scripts" collection (Marble Verdigris palette).
+Ancient Script of Lagash — an original artwork from the "Clay & Rune Scripts" collection (Bistre Ink palette).
 
 Invented glyphs pressed into clay and carved into stone — a tribute to the world’s first writing systems (decorative, not literal text).
 
@@ -2444,14 +2444,14 @@ Invented glyphs pressed into clay and carved into stone — a tribute to the wor
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-069 — Clay & Rune Scripts
 
 **Title:**
-Ancient Script of Birka | Ancient Writing Poster | Ancient Mesopotamian & Norse Wall Art | Printable Digital Download | Midnight Gold
+Ancient Script of Birka | Ancient Writing Poster | Ancient Mesopotamian & Norse Wall Art | Printable Digital Download | Iron Gall
 
 **Price:** £5.50
 
@@ -2461,7 +2461,7 @@ Ancient Script of Birka | Ancient Writing Poster | Ancient Mesopotamian & Norse 
 
 **Description:**
 
-Ancient Script of Birka — an original artwork from the "Clay & Rune Scripts" collection (Midnight Gold palette).
+Ancient Script of Birka — an original artwork from the "Clay & Rune Scripts" collection (Iron Gall palette).
 
 Invented glyphs pressed into clay and carved into stone — a tribute to the world’s first writing systems (decorative, not literal text).
 
@@ -2480,14 +2480,14 @@ Invented glyphs pressed into clay and carved into stone — a tribute to the wor
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-070 — Clay & Rune Scripts
 
 **Title:**
-Ancient Script of Kish | Cuneiform Tablet Print | Ancient Mesopotamian & Norse Wall Art | Printable Digital Download | Olive Grove
+Ancient Script of Kish | Cuneiform Tablet Print | Ancient Mesopotamian & Norse Wall Art | Printable Digital Download | Faded Folio
 
 **Price:** £5.50
 
@@ -2497,7 +2497,7 @@ Ancient Script of Kish | Cuneiform Tablet Print | Ancient Mesopotamian & Norse W
 
 **Description:**
 
-Ancient Script of Kish — an original artwork from the "Clay & Rune Scripts" collection (Olive Grove palette).
+Ancient Script of Kish — an original artwork from the "Clay & Rune Scripts" collection (Faded Folio palette).
 
 Invented glyphs pressed into clay and carved into stone — a tribute to the world’s first writing systems (decorative, not literal text).
 
@@ -2516,14 +2516,14 @@ Invented glyphs pressed into clay and carved into stone — a tribute to the wor
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-071 — Laurels of Victory
 
 **Title:**
-Laurel Wreath of Olympia | Laurel Wreath Print | Ancient Greek Wall Art | Printable Digital Download | Attic Red
+Laurel Wreath of Olympia | Laurel Wreath Print | Ancient Greek Wall Art | Printable Digital Download | Raw Umber
 
 **Price:** £6.00
 
@@ -2533,7 +2533,7 @@ Laurel Wreath of Olympia | Laurel Wreath Print | Ancient Greek Wall Art | Printa
 
 **Description:**
 
-Laurel Wreath of Olympia — an original artwork from the "Laurels of Victory" collection (Attic Red palette).
+Laurel Wreath of Olympia — an original artwork from the "Laurels of Victory" collection (Raw Umber palette).
 
 The victor’s laurel crown, ringed around a sunburst — the ancient world’s highest honour as a graphic emblem.
 
@@ -2552,14 +2552,14 @@ The victor’s laurel crown, ringed around a sunburst — the ancient world’s 
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-072 — Laurels of Victory
 
 **Title:**
-Laurel Wreath of Delphi | Victory Wall Art | Ancient Greek Wall Art | Printable Digital Download | Papyrus & Lapis
+Laurel Wreath of Delphi | Victory Wall Art | Ancient Greek Wall Art | Printable Digital Download | Ochre Wash
 
 **Price:** £6.00
 
@@ -2569,7 +2569,7 @@ Laurel Wreath of Delphi | Victory Wall Art | Ancient Greek Wall Art | Printable 
 
 **Description:**
 
-Laurel Wreath of Delphi — an original artwork from the "Laurels of Victory" collection (Papyrus & Lapis palette).
+Laurel Wreath of Delphi — an original artwork from the "Laurels of Victory" collection (Ochre Wash palette).
 
 The victor’s laurel crown, ringed around a sunburst — the ancient world’s highest honour as a graphic emblem.
 
@@ -2588,14 +2588,14 @@ The victor’s laurel crown, ringed around a sunburst — the ancient world’s 
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-073 — Laurels of Victory
 
 **Title:**
-Laurel Wreath of Nemea | Olympic Laurels Poster | Ancient Greek Wall Art | Printable Digital Download | Nile Gold
+Laurel Wreath of Nemea | Olympic Laurels Poster | Ancient Greek Wall Art | Printable Digital Download | Verdigris Fresco
 
 **Price:** £6.00
 
@@ -2605,7 +2605,7 @@ Laurel Wreath of Nemea | Olympic Laurels Poster | Ancient Greek Wall Art | Print
 
 **Description:**
 
-Laurel Wreath of Nemea — an original artwork from the "Laurels of Victory" collection (Nile Gold palette).
+Laurel Wreath of Nemea — an original artwork from the "Laurels of Victory" collection (Verdigris Fresco palette).
 
 The victor’s laurel crown, ringed around a sunburst — the ancient world’s highest honour as a graphic emblem.
 
@@ -2624,14 +2624,14 @@ The victor’s laurel crown, ringed around a sunburst — the ancient world’s 
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-074 — Laurels of Victory
 
 **Title:**
-Laurel Wreath of Isthmia | Laurel Wreath Print | Ancient Greek Wall Art | Printable Digital Download | Desert Ochre
+Laurel Wreath of Isthmia | Laurel Wreath Print | Ancient Greek Wall Art | Printable Digital Download | Pompeii Terracotta
 
 **Price:** £6.00
 
@@ -2641,7 +2641,7 @@ Laurel Wreath of Isthmia | Laurel Wreath Print | Ancient Greek Wall Art | Printa
 
 **Description:**
 
-Laurel Wreath of Isthmia — an original artwork from the "Laurels of Victory" collection (Desert Ochre palette).
+Laurel Wreath of Isthmia — an original artwork from the "Laurels of Victory" collection (Pompeii Terracotta palette).
 
 The victor’s laurel crown, ringed around a sunburst — the ancient world’s highest honour as a graphic emblem.
 
@@ -2660,14 +2660,14 @@ The victor’s laurel crown, ringed around a sunburst — the ancient world’s 
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-075 — Laurels of Victory
 
 **Title:**
-Laurel Wreath of Marathon | Victory Wall Art | Ancient Greek Wall Art | Printable Digital Download | Marble Verdigris
+Laurel Wreath of Marathon | Victory Wall Art | Ancient Greek Wall Art | Printable Digital Download | Burnt Sienna
 
 **Price:** £6.00
 
@@ -2677,7 +2677,7 @@ Laurel Wreath of Marathon | Victory Wall Art | Ancient Greek Wall Art | Printabl
 
 **Description:**
 
-Laurel Wreath of Marathon — an original artwork from the "Laurels of Victory" collection (Marble Verdigris palette).
+Laurel Wreath of Marathon — an original artwork from the "Laurels of Victory" collection (Burnt Sienna palette).
 
 The victor’s laurel crown, ringed around a sunburst — the ancient world’s highest honour as a graphic emblem.
 
@@ -2696,14 +2696,14 @@ The victor’s laurel crown, ringed around a sunburst — the ancient world’s 
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-076 — Laurels of Victory
 
 **Title:**
-Laurel Wreath of Actium | Olympic Laurels Poster | Ancient Greek Wall Art | Printable Digital Download | Midnight Gold
+Laurel Wreath of Actium | Olympic Laurels Poster | Ancient Greek Wall Art | Printable Digital Download | Faded Lapis
 
 **Price:** £6.00
 
@@ -2713,7 +2713,7 @@ Laurel Wreath of Actium | Olympic Laurels Poster | Ancient Greek Wall Art | Prin
 
 **Description:**
 
-Laurel Wreath of Actium — an original artwork from the "Laurels of Victory" collection (Midnight Gold palette).
+Laurel Wreath of Actium — an original artwork from the "Laurels of Victory" collection (Faded Lapis palette).
 
 The victor’s laurel crown, ringed around a sunburst — the ancient world’s highest honour as a graphic emblem.
 
@@ -2732,14 +2732,14 @@ The victor’s laurel crown, ringed around a sunburst — the ancient world’s 
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-077 — Laurels of Victory
 
 **Title:**
-Laurel Wreath of Salamis | Laurel Wreath Print | Ancient Greek Wall Art | Printable Digital Download | Olive Grove
+Laurel Wreath of Salamis | Laurel Wreath Print | Ancient Greek Wall Art | Printable Digital Download | Olive Plaster
 
 **Price:** £6.00
 
@@ -2749,7 +2749,7 @@ Laurel Wreath of Salamis | Laurel Wreath Print | Ancient Greek Wall Art | Printa
 
 **Description:**
 
-Laurel Wreath of Salamis — an original artwork from the "Laurels of Victory" collection (Olive Grove palette).
+Laurel Wreath of Salamis — an original artwork from the "Laurels of Victory" collection (Olive Plaster palette).
 
 The victor’s laurel crown, ringed around a sunburst — the ancient world’s highest honour as a graphic emblem.
 
@@ -2768,14 +2768,14 @@ The victor’s laurel crown, ringed around a sunburst — the ancient world’s 
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-078 — Laurels of Victory
 
 **Title:**
-Laurel Wreath of Plataea | Victory Wall Art | Ancient Greek Wall Art | Printable Digital Download | Oxblood Cream
+Laurel Wreath of Plataea | Victory Wall Art | Ancient Greek Wall Art | Printable Digital Download | Etruscan Red
 
 **Price:** £6.00
 
@@ -2785,7 +2785,7 @@ Laurel Wreath of Plataea | Victory Wall Art | Ancient Greek Wall Art | Printable
 
 **Description:**
 
-Laurel Wreath of Plataea — an original artwork from the "Laurels of Victory" collection (Oxblood Cream palette).
+Laurel Wreath of Plataea — an original artwork from the "Laurels of Victory" collection (Etruscan Red palette).
 
 The victor’s laurel crown, ringed around a sunburst — the ancient world’s highest honour as a graphic emblem.
 
@@ -2804,14 +2804,14 @@ The victor’s laurel crown, ringed around a sunburst — the ancient world’s 
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-079 — Laurels of Victory
 
 **Title:**
-Laurel Wreath of Thermopylae | Olympic Laurels Poster | Ancient Greek Wall Art | Printable Digital Download | Basalt Bronze
+Laurel Wreath of Thermopylae | Olympic Laurels Poster | Ancient Greek Wall Art | Printable Digital Download | Raw Umber
 
 **Price:** £6.00
 
@@ -2821,7 +2821,7 @@ Laurel Wreath of Thermopylae | Olympic Laurels Poster | Ancient Greek Wall Art |
 
 **Description:**
 
-Laurel Wreath of Thermopylae — an original artwork from the "Laurels of Victory" collection (Basalt Bronze palette).
+Laurel Wreath of Thermopylae — an original artwork from the "Laurels of Victory" collection (Raw Umber palette).
 
 The victor’s laurel crown, ringed around a sunburst — the ancient world’s highest honour as a graphic emblem.
 
@@ -2840,14 +2840,14 @@ The victor’s laurel crown, ringed around a sunburst — the ancient world’s 
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-080 — Laurels of Victory
 
 **Title:**
-Laurel Wreath of Chaeronea | Laurel Wreath Print | Ancient Greek Wall Art | Printable Digital Download | Terracotta Noir
+Laurel Wreath of Chaeronea | Laurel Wreath Print | Ancient Greek Wall Art | Printable Digital Download | Ochre Wash
 
 **Price:** £6.00
 
@@ -2857,7 +2857,7 @@ Laurel Wreath of Chaeronea | Laurel Wreath Print | Ancient Greek Wall Art | Prin
 
 **Description:**
 
-Laurel Wreath of Chaeronea — an original artwork from the "Laurels of Victory" collection (Terracotta Noir palette).
+Laurel Wreath of Chaeronea — an original artwork from the "Laurels of Victory" collection (Ochre Wash palette).
 
 The victor’s laurel crown, ringed around a sunburst — the ancient world’s highest honour as a graphic emblem.
 
@@ -2876,14 +2876,14 @@ The victor’s laurel crown, ringed around a sunburst — the ancient world’s 
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-081 — Attic Patterns
 
 **Title:**
-Pattern Sampler of Attica | Greek Pattern Print | Ancient Greek Wall Art | Printable Digital Download | Desert Ochre
+Pattern Sampler of Attica | Greek Pattern Print | Ancient Greek Wall Art | Printable Digital Download | Pompeii Terracotta
 
 **Price:** £4.50
 
@@ -2893,7 +2893,7 @@ Pattern Sampler of Attica | Greek Pattern Print | Ancient Greek Wall Art | Print
 
 **Description:**
 
-Pattern Sampler of Attica — an original artwork from the "Attic Patterns" collection (Desert Ochre palette).
+Pattern Sampler of Attica — an original artwork from the "Attic Patterns" collection (Pompeii Terracotta palette).
 
 A stacked sampler of classical ornament — meanders, waves, palmettes, chevrons and checkers — like the border bands of an Attic vase, unrolled.
 
@@ -2912,14 +2912,14 @@ A stacked sampler of classical ornament — meanders, waves, palmettes, chevrons
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-082 — Attic Patterns
 
 **Title:**
-Pattern Sampler of Euboea | Meander Wall Art | Ancient Greek Wall Art | Printable Digital Download | Marble Verdigris
+Pattern Sampler of Euboea | Meander Wall Art | Ancient Greek Wall Art | Printable Digital Download | Burnt Sienna
 
 **Price:** £4.50
 
@@ -2929,7 +2929,7 @@ Pattern Sampler of Euboea | Meander Wall Art | Ancient Greek Wall Art | Printabl
 
 **Description:**
 
-Pattern Sampler of Euboea — an original artwork from the "Attic Patterns" collection (Marble Verdigris palette).
+Pattern Sampler of Euboea — an original artwork from the "Attic Patterns" collection (Burnt Sienna palette).
 
 A stacked sampler of classical ornament — meanders, waves, palmettes, chevrons and checkers — like the border bands of an Attic vase, unrolled.
 
@@ -2948,14 +2948,14 @@ A stacked sampler of classical ornament — meanders, waves, palmettes, chevrons
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-083 — Attic Patterns
 
 **Title:**
-Pattern Sampler of Boeotia | Ornament Sampler Poster | Ancient Greek Wall Art | Printable Digital Download | Midnight Gold
+Pattern Sampler of Boeotia | Ornament Sampler Poster | Ancient Greek Wall Art | Printable Digital Download | Faded Lapis
 
 **Price:** £4.50
 
@@ -2965,7 +2965,7 @@ Pattern Sampler of Boeotia | Ornament Sampler Poster | Ancient Greek Wall Art | 
 
 **Description:**
 
-Pattern Sampler of Boeotia — an original artwork from the "Attic Patterns" collection (Midnight Gold palette).
+Pattern Sampler of Boeotia — an original artwork from the "Attic Patterns" collection (Faded Lapis palette).
 
 A stacked sampler of classical ornament — meanders, waves, palmettes, chevrons and checkers — like the border bands of an Attic vase, unrolled.
 
@@ -2984,14 +2984,14 @@ A stacked sampler of classical ornament — meanders, waves, palmettes, chevrons
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-084 — Attic Patterns
 
 **Title:**
-Pattern Sampler of Laconia | Greek Pattern Print | Ancient Greek Wall Art | Printable Digital Download | Olive Grove
+Pattern Sampler of Laconia | Greek Pattern Print | Ancient Greek Wall Art | Printable Digital Download | Olive Plaster
 
 **Price:** £4.50
 
@@ -3001,7 +3001,7 @@ Pattern Sampler of Laconia | Greek Pattern Print | Ancient Greek Wall Art | Prin
 
 **Description:**
 
-Pattern Sampler of Laconia — an original artwork from the "Attic Patterns" collection (Olive Grove palette).
+Pattern Sampler of Laconia — an original artwork from the "Attic Patterns" collection (Olive Plaster palette).
 
 A stacked sampler of classical ornament — meanders, waves, palmettes, chevrons and checkers — like the border bands of an Attic vase, unrolled.
 
@@ -3020,14 +3020,14 @@ A stacked sampler of classical ornament — meanders, waves, palmettes, chevrons
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-085 — Attic Patterns
 
 **Title:**
-Pattern Sampler of Arcadia | Meander Wall Art | Ancient Greek Wall Art | Printable Digital Download | Oxblood Cream
+Pattern Sampler of Arcadia | Meander Wall Art | Ancient Greek Wall Art | Printable Digital Download | Etruscan Red
 
 **Price:** £4.50
 
@@ -3037,7 +3037,7 @@ Pattern Sampler of Arcadia | Meander Wall Art | Ancient Greek Wall Art | Printab
 
 **Description:**
 
-Pattern Sampler of Arcadia — an original artwork from the "Attic Patterns" collection (Oxblood Cream palette).
+Pattern Sampler of Arcadia — an original artwork from the "Attic Patterns" collection (Etruscan Red palette).
 
 A stacked sampler of classical ornament — meanders, waves, palmettes, chevrons and checkers — like the border bands of an Attic vase, unrolled.
 
@@ -3056,14 +3056,14 @@ A stacked sampler of classical ornament — meanders, waves, palmettes, chevrons
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-086 — Attic Patterns
 
 **Title:**
-Pattern Sampler of Achaea | Ornament Sampler Poster | Ancient Greek Wall Art | Printable Digital Download | Basalt Bronze
+Pattern Sampler of Achaea | Ornament Sampler Poster | Ancient Greek Wall Art | Printable Digital Download | Raw Umber
 
 **Price:** £4.50
 
@@ -3073,7 +3073,7 @@ Pattern Sampler of Achaea | Ornament Sampler Poster | Ancient Greek Wall Art | P
 
 **Description:**
 
-Pattern Sampler of Achaea — an original artwork from the "Attic Patterns" collection (Basalt Bronze palette).
+Pattern Sampler of Achaea — an original artwork from the "Attic Patterns" collection (Raw Umber palette).
 
 A stacked sampler of classical ornament — meanders, waves, palmettes, chevrons and checkers — like the border bands of an Attic vase, unrolled.
 
@@ -3092,14 +3092,14 @@ A stacked sampler of classical ornament — meanders, waves, palmettes, chevrons
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-087 — Attic Patterns
 
 **Title:**
-Pattern Sampler of Messenia | Greek Pattern Print | Ancient Greek Wall Art | Printable Digital Download | Terracotta Noir
+Pattern Sampler of Messenia | Greek Pattern Print | Ancient Greek Wall Art | Printable Digital Download | Ochre Wash
 
 **Price:** £4.50
 
@@ -3109,7 +3109,7 @@ Pattern Sampler of Messenia | Greek Pattern Print | Ancient Greek Wall Art | Pri
 
 **Description:**
 
-Pattern Sampler of Messenia — an original artwork from the "Attic Patterns" collection (Terracotta Noir palette).
+Pattern Sampler of Messenia — an original artwork from the "Attic Patterns" collection (Ochre Wash palette).
 
 A stacked sampler of classical ornament — meanders, waves, palmettes, chevrons and checkers — like the border bands of an Attic vase, unrolled.
 
@@ -3128,14 +3128,14 @@ A stacked sampler of classical ornament — meanders, waves, palmettes, chevrons
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-088 — Attic Patterns
 
 **Title:**
-Pattern Sampler of Elis | Meander Wall Art | Ancient Greek Wall Art | Printable Digital Download | Attic Red
+Pattern Sampler of Elis | Meander Wall Art | Ancient Greek Wall Art | Printable Digital Download | Verdigris Fresco
 
 **Price:** £4.50
 
@@ -3145,7 +3145,7 @@ Pattern Sampler of Elis | Meander Wall Art | Ancient Greek Wall Art | Printable 
 
 **Description:**
 
-Pattern Sampler of Elis — an original artwork from the "Attic Patterns" collection (Attic Red palette).
+Pattern Sampler of Elis — an original artwork from the "Attic Patterns" collection (Verdigris Fresco palette).
 
 A stacked sampler of classical ornament — meanders, waves, palmettes, chevrons and checkers — like the border bands of an Attic vase, unrolled.
 
@@ -3164,14 +3164,14 @@ A stacked sampler of classical ornament — meanders, waves, palmettes, chevrons
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-089 — Attic Patterns
 
 **Title:**
-Pattern Sampler of Phocis | Ornament Sampler Poster | Ancient Greek Wall Art | Printable Digital Download | Papyrus & Lapis
+Pattern Sampler of Phocis | Ornament Sampler Poster | Ancient Greek Wall Art | Printable Digital Download | Pompeii Terracotta
 
 **Price:** £4.50
 
@@ -3181,7 +3181,7 @@ Pattern Sampler of Phocis | Ornament Sampler Poster | Ancient Greek Wall Art | P
 
 **Description:**
 
-Pattern Sampler of Phocis — an original artwork from the "Attic Patterns" collection (Papyrus & Lapis palette).
+Pattern Sampler of Phocis — an original artwork from the "Attic Patterns" collection (Pompeii Terracotta palette).
 
 A stacked sampler of classical ornament — meanders, waves, palmettes, chevrons and checkers — like the border bands of an Attic vase, unrolled.
 
@@ -3200,14 +3200,14 @@ A stacked sampler of classical ornament — meanders, waves, palmettes, chevrons
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-090 — Attic Patterns
 
 **Title:**
-Pattern Sampler of Aetolia | Greek Pattern Print | Ancient Greek Wall Art | Printable Digital Download | Nile Gold
+Pattern Sampler of Aetolia | Greek Pattern Print | Ancient Greek Wall Art | Printable Digital Download | Burnt Sienna
 
 **Price:** £4.50
 
@@ -3217,7 +3217,7 @@ Pattern Sampler of Aetolia | Greek Pattern Print | Ancient Greek Wall Art | Prin
 
 **Description:**
 
-Pattern Sampler of Aetolia — an original artwork from the "Attic Patterns" collection (Nile Gold palette).
+Pattern Sampler of Aetolia — an original artwork from the "Attic Patterns" collection (Burnt Sienna palette).
 
 A stacked sampler of classical ornament — meanders, waves, palmettes, chevrons and checkers — like the border bands of an Attic vase, unrolled.
 
@@ -3236,14 +3236,14 @@ A stacked sampler of classical ornament — meanders, waves, palmettes, chevrons
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-091 — Labyrinths of Crete
 
 **Title:**
-Labyrinth of Knossos | Labyrinth Print | Ancient Minoan Wall Art | Printable Digital Download | Olive Grove
+Labyrinth of Knossos | Labyrinth Print | Ancient Minoan Wall Art | Printable Digital Download | Faded Folio
 
 **Price:** £5.00
 
@@ -3253,7 +3253,7 @@ Labyrinth of Knossos | Labyrinth Print | Ancient Minoan Wall Art | Printable Dig
 
 **Description:**
 
-Labyrinth of Knossos — an original artwork from the "Labyrinths of Crete" collection (Olive Grove palette).
+Labyrinth of Knossos — an original artwork from the "Labyrinths of Crete" collection (Faded Folio palette).
 
 A winding ceremonial labyrinth of concentric walls and hidden gates — the myth of Knossos as pure geometry.
 
@@ -3272,14 +3272,14 @@ A winding ceremonial labyrinth of concentric walls and hidden gates — the myth
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-092 — Labyrinths of Crete
 
 **Title:**
-Labyrinth of Phaistos | Minoan Maze Wall Art | Ancient Minoan Wall Art | Printable Digital Download | Oxblood Cream
+Labyrinth of Phaistos | Minoan Maze Wall Art | Ancient Minoan Wall Art | Printable Digital Download | Umber Wash
 
 **Price:** £5.00
 
@@ -3289,7 +3289,7 @@ Labyrinth of Phaistos | Minoan Maze Wall Art | Ancient Minoan Wall Art | Printab
 
 **Description:**
 
-Labyrinth of Phaistos — an original artwork from the "Labyrinths of Crete" collection (Oxblood Cream palette).
+Labyrinth of Phaistos — an original artwork from the "Labyrinths of Crete" collection (Umber Wash palette).
 
 A winding ceremonial labyrinth of concentric walls and hidden gates — the myth of Knossos as pure geometry.
 
@@ -3308,14 +3308,14 @@ A winding ceremonial labyrinth of concentric walls and hidden gates — the myth
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-093 — Labyrinths of Crete
 
 **Title:**
-Labyrinth of Malia | Meditation Poster | Ancient Minoan Wall Art | Printable Digital Download | Basalt Bronze
+Labyrinth of Malia | Meditation Poster | Ancient Minoan Wall Art | Printable Digital Download | Antique Buff
 
 **Price:** £5.00
 
@@ -3325,7 +3325,7 @@ Labyrinth of Malia | Meditation Poster | Ancient Minoan Wall Art | Printable Dig
 
 **Description:**
 
-Labyrinth of Malia — an original artwork from the "Labyrinths of Crete" collection (Basalt Bronze palette).
+Labyrinth of Malia — an original artwork from the "Labyrinths of Crete" collection (Antique Buff palette).
 
 A winding ceremonial labyrinth of concentric walls and hidden gates — the myth of Knossos as pure geometry.
 
@@ -3344,14 +3344,14 @@ A winding ceremonial labyrinth of concentric walls and hidden gates — the myth
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-094 — Labyrinths of Crete
 
 **Title:**
-Labyrinth of Zakros | Labyrinth Print | Ancient Minoan Wall Art | Printable Digital Download | Terracotta Noir
+Labyrinth of Zakros | Labyrinth Print | Ancient Minoan Wall Art | Printable Digital Download | Smoked Vellum
 
 **Price:** £5.00
 
@@ -3361,7 +3361,7 @@ Labyrinth of Zakros | Labyrinth Print | Ancient Minoan Wall Art | Printable Digi
 
 **Description:**
 
-Labyrinth of Zakros — an original artwork from the "Labyrinths of Crete" collection (Terracotta Noir palette).
+Labyrinth of Zakros — an original artwork from the "Labyrinths of Crete" collection (Smoked Vellum palette).
 
 A winding ceremonial labyrinth of concentric walls and hidden gates — the myth of Knossos as pure geometry.
 
@@ -3380,14 +3380,14 @@ A winding ceremonial labyrinth of concentric walls and hidden gates — the myth
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-095 — Labyrinths of Crete
 
 **Title:**
-Labyrinth of Gournia | Minoan Maze Wall Art | Ancient Minoan Wall Art | Printable Digital Download | Attic Red
+Labyrinth of Gournia | Minoan Maze Wall Art | Ancient Minoan Wall Art | Printable Digital Download | Chestnut Line
 
 **Price:** £5.00
 
@@ -3397,7 +3397,7 @@ Labyrinth of Gournia | Minoan Maze Wall Art | Ancient Minoan Wall Art | Printabl
 
 **Description:**
 
-Labyrinth of Gournia — an original artwork from the "Labyrinths of Crete" collection (Attic Red palette).
+Labyrinth of Gournia — an original artwork from the "Labyrinths of Crete" collection (Chestnut Line palette).
 
 A winding ceremonial labyrinth of concentric walls and hidden gates — the myth of Knossos as pure geometry.
 
@@ -3416,14 +3416,14 @@ A winding ceremonial labyrinth of concentric walls and hidden gates — the myth
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-096 — Labyrinths of Crete
 
 **Title:**
-Labyrinth of Kydonia | Meditation Poster | Ancient Minoan Wall Art | Printable Digital Download | Papyrus & Lapis
+Labyrinth of Kydonia | Meditation Poster | Ancient Minoan Wall Art | Printable Digital Download | Sepia Plate
 
 **Price:** £5.00
 
@@ -3433,7 +3433,7 @@ Labyrinth of Kydonia | Meditation Poster | Ancient Minoan Wall Art | Printable D
 
 **Description:**
 
-Labyrinth of Kydonia — an original artwork from the "Labyrinths of Crete" collection (Papyrus & Lapis palette).
+Labyrinth of Kydonia — an original artwork from the "Labyrinths of Crete" collection (Sepia Plate palette).
 
 A winding ceremonial labyrinth of concentric walls and hidden gates — the myth of Knossos as pure geometry.
 
@@ -3452,14 +3452,14 @@ A winding ceremonial labyrinth of concentric walls and hidden gates — the myth
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-097 — Labyrinths of Crete
 
 **Title:**
-Labyrinth of Archanes | Labyrinth Print | Ancient Minoan Wall Art | Printable Digital Download | Nile Gold
+Labyrinth of Archanes | Labyrinth Print | Ancient Minoan Wall Art | Printable Digital Download | Bistre Ink
 
 **Price:** £5.00
 
@@ -3469,7 +3469,7 @@ Labyrinth of Archanes | Labyrinth Print | Ancient Minoan Wall Art | Printable Di
 
 **Description:**
 
-Labyrinth of Archanes — an original artwork from the "Labyrinths of Crete" collection (Nile Gold palette).
+Labyrinth of Archanes — an original artwork from the "Labyrinths of Crete" collection (Bistre Ink palette).
 
 A winding ceremonial labyrinth of concentric walls and hidden gates — the myth of Knossos as pure geometry.
 
@@ -3488,14 +3488,14 @@ A winding ceremonial labyrinth of concentric walls and hidden gates — the myth
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-098 — Labyrinths of Crete
 
 **Title:**
-Labyrinth of Tylissos | Minoan Maze Wall Art | Ancient Minoan Wall Art | Printable Digital Download | Desert Ochre
+Labyrinth of Tylissos | Minoan Maze Wall Art | Ancient Minoan Wall Art | Printable Digital Download | Iron Gall
 
 **Price:** £5.00
 
@@ -3505,7 +3505,7 @@ Labyrinth of Tylissos | Minoan Maze Wall Art | Ancient Minoan Wall Art | Printab
 
 **Description:**
 
-Labyrinth of Tylissos — an original artwork from the "Labyrinths of Crete" collection (Desert Ochre palette).
+Labyrinth of Tylissos — an original artwork from the "Labyrinths of Crete" collection (Iron Gall palette).
 
 A winding ceremonial labyrinth of concentric walls and hidden gates — the myth of Knossos as pure geometry.
 
@@ -3524,14 +3524,14 @@ A winding ceremonial labyrinth of concentric walls and hidden gates — the myth
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-099 — Labyrinths of Crete
 
 **Title:**
-Labyrinth of Palaikastro | Meditation Poster | Ancient Minoan Wall Art | Printable Digital Download | Marble Verdigris
+Labyrinth of Palaikastro | Meditation Poster | Ancient Minoan Wall Art | Printable Digital Download | Faded Folio
 
 **Price:** £5.00
 
@@ -3541,7 +3541,7 @@ Labyrinth of Palaikastro | Meditation Poster | Ancient Minoan Wall Art | Printab
 
 **Description:**
 
-Labyrinth of Palaikastro — an original artwork from the "Labyrinths of Crete" collection (Marble Verdigris palette).
+Labyrinth of Palaikastro — an original artwork from the "Labyrinths of Crete" collection (Faded Folio palette).
 
 A winding ceremonial labyrinth of concentric walls and hidden gates — the myth of Knossos as pure geometry.
 
@@ -3560,14 +3560,14 @@ A winding ceremonial labyrinth of concentric walls and hidden gates — the myth
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-100 — Labyrinths of Crete
 
 **Title:**
-Labyrinth of Kommos | Labyrinth Print | Ancient Minoan Wall Art | Printable Digital Download | Midnight Gold
+Labyrinth of Kommos | Labyrinth Print | Ancient Minoan Wall Art | Printable Digital Download | Umber Wash
 
 **Price:** £5.00
 
@@ -3577,7 +3577,7 @@ Labyrinth of Kommos | Labyrinth Print | Ancient Minoan Wall Art | Printable Digi
 
 **Description:**
 
-Labyrinth of Kommos — an original artwork from the "Labyrinths of Crete" collection (Midnight Gold palette).
+Labyrinth of Kommos — an original artwork from the "Labyrinths of Crete" collection (Umber Wash palette).
 
 A winding ceremonial labyrinth of concentric walls and hidden gates — the myth of Knossos as pure geometry.
 
@@ -3596,14 +3596,14 @@ A winding ceremonial labyrinth of concentric walls and hidden gates — the myth
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-101 — Ziggurats of Sumer
 
 **Title:**
-Ziggurat of Ur | Ziggurat Print | Ancient Mesopotamian Wall Art | Printable Digital Download | Terracotta Noir
+Ziggurat of Ur | Ziggurat Print | Ancient Mesopotamian Wall Art | Printable Digital Download | Twilight Bronze
 
 **Price:** £5.50
 
@@ -3613,7 +3613,7 @@ Ziggurat of Ur | Ziggurat Print | Ancient Mesopotamian Wall Art | Printable Digi
 
 **Description:**
 
-Ziggurat of Ur — an original artwork from the "Ziggurats of Sumer" collection (Terracotta Noir palette).
+Ziggurat of Ur — an original artwork from the "Ziggurats of Sumer" collection (Twilight Bronze palette).
 
 A great stepped temple rising under a crescent night sky, stair by stair toward the shrine at its summit.
 
@@ -3632,14 +3632,14 @@ A great stepped temple rising under a crescent night sky, stair by stair toward 
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-102 — Ziggurats of Sumer
 
 **Title:**
-Ziggurat of Uruk | Mesopotamia Wall Art | Ancient Mesopotamian Wall Art | Printable Digital Download | Attic Red
+Ziggurat of Uruk | Mesopotamia Wall Art | Ancient Mesopotamian Wall Art | Printable Digital Download | Honeyed Stone
 
 **Price:** £5.50
 
@@ -3649,7 +3649,7 @@ Ziggurat of Uruk | Mesopotamia Wall Art | Ancient Mesopotamian Wall Art | Printa
 
 **Description:**
 
-Ziggurat of Uruk — an original artwork from the "Ziggurats of Sumer" collection (Attic Red palette).
+Ziggurat of Uruk — an original artwork from the "Ziggurats of Sumer" collection (Honeyed Stone palette).
 
 A great stepped temple rising under a crescent night sky, stair by stair toward the shrine at its summit.
 
@@ -3668,14 +3668,14 @@ A great stepped temple rising under a crescent night sky, stair by stair toward 
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-103 — Ziggurats of Sumer
 
 **Title:**
-Ziggurat of Eridu | Babylon Poster | Ancient Mesopotamian Wall Art | Printable Digital Download | Papyrus & Lapis
+Ziggurat of Eridu | Babylon Poster | Ancient Mesopotamian Wall Art | Printable Digital Download | Golden Hour
 
 **Price:** £5.50
 
@@ -3685,7 +3685,7 @@ Ziggurat of Eridu | Babylon Poster | Ancient Mesopotamian Wall Art | Printable D
 
 **Description:**
 
-Ziggurat of Eridu — an original artwork from the "Ziggurats of Sumer" collection (Papyrus & Lapis palette).
+Ziggurat of Eridu — an original artwork from the "Ziggurats of Sumer" collection (Golden Hour palette).
 
 A great stepped temple rising under a crescent night sky, stair by stair toward the shrine at its summit.
 
@@ -3704,14 +3704,14 @@ A great stepped temple rising under a crescent night sky, stair by stair toward 
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-104 — Ziggurats of Sumer
 
 **Title:**
-Ziggurat of Babylon | Ziggurat Print | Ancient Mesopotamian Wall Art | Printable Digital Download | Nile Gold
+Ziggurat of Babylon | Ziggurat Print | Ancient Mesopotamian Wall Art | Printable Digital Download | Amber Dusk
 
 **Price:** £5.50
 
@@ -3721,7 +3721,7 @@ Ziggurat of Babylon | Ziggurat Print | Ancient Mesopotamian Wall Art | Printable
 
 **Description:**
 
-Ziggurat of Babylon — an original artwork from the "Ziggurats of Sumer" collection (Nile Gold palette).
+Ziggurat of Babylon — an original artwork from the "Ziggurats of Sumer" collection (Amber Dusk palette).
 
 A great stepped temple rising under a crescent night sky, stair by stair toward the shrine at its summit.
 
@@ -3740,14 +3740,14 @@ A great stepped temple rising under a crescent night sky, stair by stair toward 
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-105 — Ziggurats of Sumer
 
 **Title:**
-Ziggurat of Nippur | Mesopotamia Wall Art | Ancient Mesopotamian Wall Art | Printable Digital Download | Desert Ochre
+Ziggurat of Nippur | Mesopotamia Wall Art | Ancient Mesopotamian Wall Art | Printable Digital Download | Aegean Noon
 
 **Price:** £5.50
 
@@ -3757,7 +3757,7 @@ Ziggurat of Nippur | Mesopotamia Wall Art | Ancient Mesopotamian Wall Art | Prin
 
 **Description:**
 
-Ziggurat of Nippur — an original artwork from the "Ziggurats of Sumer" collection (Desert Ochre palette).
+Ziggurat of Nippur — an original artwork from the "Ziggurats of Sumer" collection (Aegean Noon palette).
 
 A great stepped temple rising under a crescent night sky, stair by stair toward the shrine at its summit.
 
@@ -3776,14 +3776,14 @@ A great stepped temple rising under a crescent night sky, stair by stair toward 
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-106 — Ziggurats of Sumer
 
 **Title:**
-Ziggurat of Kish | Babylon Poster | Ancient Mesopotamian Wall Art | Printable Digital Download | Marble Verdigris
+Ziggurat of Kish | Babylon Poster | Ancient Mesopotamian Wall Art | Printable Digital Download | Umber Evening
 
 **Price:** £5.50
 
@@ -3793,7 +3793,7 @@ Ziggurat of Kish | Babylon Poster | Ancient Mesopotamian Wall Art | Printable Di
 
 **Description:**
 
-Ziggurat of Kish — an original artwork from the "Ziggurats of Sumer" collection (Marble Verdigris palette).
+Ziggurat of Kish — an original artwork from the "Ziggurats of Sumer" collection (Umber Evening palette).
 
 A great stepped temple rising under a crescent night sky, stair by stair toward the shrine at its summit.
 
@@ -3812,14 +3812,14 @@ A great stepped temple rising under a crescent night sky, stair by stair toward 
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-107 — Ziggurats of Sumer
 
 **Title:**
-Ziggurat of Lagash | Ziggurat Print | Ancient Mesopotamian Wall Art | Printable Digital Download | Midnight Gold
+Ziggurat of Lagash | Ziggurat Print | Ancient Mesopotamian Wall Art | Printable Digital Download | Storm Light
 
 **Price:** £5.50
 
@@ -3829,7 +3829,7 @@ Ziggurat of Lagash | Ziggurat Print | Ancient Mesopotamian Wall Art | Printable 
 
 **Description:**
 
-Ziggurat of Lagash — an original artwork from the "Ziggurats of Sumer" collection (Midnight Gold palette).
+Ziggurat of Lagash — an original artwork from the "Ziggurats of Sumer" collection (Storm Light palette).
 
 A great stepped temple rising under a crescent night sky, stair by stair toward the shrine at its summit.
 
@@ -3848,14 +3848,14 @@ A great stepped temple rising under a crescent night sky, stair by stair toward 
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-108 — Ziggurats of Sumer
 
 **Title:**
-Ziggurat of Sippar | Mesopotamia Wall Art | Ancient Mesopotamian Wall Art | Printable Digital Download | Olive Grove
+Ziggurat of Sippar | Mesopotamia Wall Art | Ancient Mesopotamian Wall Art | Printable Digital Download | Venetian Rose
 
 **Price:** £5.50
 
@@ -3865,7 +3865,7 @@ Ziggurat of Sippar | Mesopotamia Wall Art | Ancient Mesopotamian Wall Art | Prin
 
 **Description:**
 
-Ziggurat of Sippar — an original artwork from the "Ziggurats of Sumer" collection (Olive Grove palette).
+Ziggurat of Sippar — an original artwork from the "Ziggurats of Sumer" collection (Venetian Rose palette).
 
 A great stepped temple rising under a crescent night sky, stair by stair toward the shrine at its summit.
 
@@ -3884,14 +3884,14 @@ A great stepped temple rising under a crescent night sky, stair by stair toward 
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-109 — Ziggurats of Sumer
 
 **Title:**
-Ziggurat of Borsippa | Babylon Poster | Ancient Mesopotamian Wall Art | Printable Digital Download | Oxblood Cream
+Ziggurat of Borsippa | Babylon Poster | Ancient Mesopotamian Wall Art | Printable Digital Download | Twilight Bronze
 
 **Price:** £5.50
 
@@ -3901,7 +3901,7 @@ Ziggurat of Borsippa | Babylon Poster | Ancient Mesopotamian Wall Art | Printabl
 
 **Description:**
 
-Ziggurat of Borsippa — an original artwork from the "Ziggurats of Sumer" collection (Oxblood Cream palette).
+Ziggurat of Borsippa — an original artwork from the "Ziggurats of Sumer" collection (Twilight Bronze palette).
 
 A great stepped temple rising under a crescent night sky, stair by stair toward the shrine at its summit.
 
@@ -3920,14 +3920,14 @@ A great stepped temple rising under a crescent night sky, stair by stair toward 
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-110 — Ziggurats of Sumer
 
 **Title:**
-Ziggurat of Assur | Ziggurat Print | Ancient Mesopotamian Wall Art | Printable Digital Download | Basalt Bronze
+Ziggurat of Assur | Ziggurat Print | Ancient Mesopotamian Wall Art | Printable Digital Download | Honeyed Stone
 
 **Price:** £5.50
 
@@ -3937,7 +3937,7 @@ Ziggurat of Assur | Ziggurat Print | Ancient Mesopotamian Wall Art | Printable D
 
 **Description:**
 
-Ziggurat of Assur — an original artwork from the "Ziggurats of Sumer" collection (Basalt Bronze palette).
+Ziggurat of Assur — an original artwork from the "Ziggurats of Sumer" collection (Honeyed Stone palette).
 
 A great stepped temple rising under a crescent night sky, stair by stair toward the shrine at its summit.
 
@@ -3956,14 +3956,14 @@ A great stepped temple rising under a crescent night sky, stair by stair toward 
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-111 — Ancient Skies
 
 **Title:**
-Star Chart of Alexandria | Star Chart Print | Ancient Hellenistic Wall Art | Printable Digital Download | Nile Gold
+Star Chart of Alexandria | Star Chart Print | Ancient Hellenistic Wall Art | Printable Digital Download | Bistre Ink
 
 **Price:** £6.00
 
@@ -3973,7 +3973,7 @@ Star Chart of Alexandria | Star Chart Print | Ancient Hellenistic Wall Art | Pri
 
 **Description:**
 
-Star Chart of Alexandria — an original artwork from the "Ancient Skies" collection (Nile Gold palette).
+Star Chart of Alexandria — an original artwork from the "Ancient Skies" collection (Bistre Ink palette).
 
 An astronomer’s ring of ticks and degrees around invented constellations — the night sky as the ancients charted it.
 
@@ -3992,14 +3992,14 @@ An astronomer’s ring of ticks and degrees around invented constellations — t
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-112 — Ancient Skies
 
 **Title:**
-Star Chart of Rhodes | Astronomy Wall Art | Ancient Hellenistic Wall Art | Printable Digital Download | Desert Ochre (Night)
+Star Chart of Rhodes | Astronomy Wall Art | Ancient Hellenistic Wall Art | Printable Digital Download | Iron Gall
 
 **Price:** £6.00
 
@@ -4009,7 +4009,7 @@ Star Chart of Rhodes | Astronomy Wall Art | Ancient Hellenistic Wall Art | Print
 
 **Description:**
 
-Star Chart of Rhodes — an original artwork from the "Ancient Skies" collection (Desert Ochre (Night) palette).
+Star Chart of Rhodes — an original artwork from the "Ancient Skies" collection (Iron Gall palette).
 
 An astronomer’s ring of ticks and degrees around invented constellations — the night sky as the ancients charted it.
 
@@ -4028,14 +4028,14 @@ An astronomer’s ring of ticks and degrees around invented constellations — t
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-113 — Ancient Skies
 
 **Title:**
-Star Chart of Babylon | Celestial Map Poster | Ancient Hellenistic Wall Art | Printable Digital Download | Marble Verdigris (Night)
+Star Chart of Babylon | Celestial Map Poster | Ancient Hellenistic Wall Art | Printable Digital Download | Faded Folio
 
 **Price:** £6.00
 
@@ -4045,7 +4045,7 @@ Star Chart of Babylon | Celestial Map Poster | Ancient Hellenistic Wall Art | Pr
 
 **Description:**
 
-Star Chart of Babylon — an original artwork from the "Ancient Skies" collection (Marble Verdigris (Night) palette).
+Star Chart of Babylon — an original artwork from the "Ancient Skies" collection (Faded Folio palette).
 
 An astronomer’s ring of ticks and degrees around invented constellations — the night sky as the ancients charted it.
 
@@ -4064,14 +4064,14 @@ An astronomer’s ring of ticks and degrees around invented constellations — t
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-114 — Ancient Skies
 
 **Title:**
-Star Chart of Nineveh | Star Chart Print | Ancient Hellenistic Wall Art | Printable Digital Download | Midnight Gold
+Star Chart of Nineveh | Star Chart Print | Ancient Hellenistic Wall Art | Printable Digital Download | Umber Wash
 
 **Price:** £6.00
 
@@ -4081,7 +4081,7 @@ Star Chart of Nineveh | Star Chart Print | Ancient Hellenistic Wall Art | Printa
 
 **Description:**
 
-Star Chart of Nineveh — an original artwork from the "Ancient Skies" collection (Midnight Gold palette).
+Star Chart of Nineveh — an original artwork from the "Ancient Skies" collection (Umber Wash palette).
 
 An astronomer’s ring of ticks and degrees around invented constellations — the night sky as the ancients charted it.
 
@@ -4100,14 +4100,14 @@ An astronomer’s ring of ticks and degrees around invented constellations — t
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-115 — Ancient Skies
 
 **Title:**
-Star Chart of Syene | Astronomy Wall Art | Ancient Hellenistic Wall Art | Printable Digital Download | Olive Grove
+Star Chart of Syene | Astronomy Wall Art | Ancient Hellenistic Wall Art | Printable Digital Download | Antique Buff
 
 **Price:** £6.00
 
@@ -4117,7 +4117,7 @@ Star Chart of Syene | Astronomy Wall Art | Ancient Hellenistic Wall Art | Printa
 
 **Description:**
 
-Star Chart of Syene — an original artwork from the "Ancient Skies" collection (Olive Grove palette).
+Star Chart of Syene — an original artwork from the "Ancient Skies" collection (Antique Buff palette).
 
 An astronomer’s ring of ticks and degrees around invented constellations — the night sky as the ancients charted it.
 
@@ -4136,14 +4136,14 @@ An astronomer’s ring of ticks and degrees around invented constellations — t
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-116 — Ancient Skies
 
 **Title:**
-Star Chart of Pergamon | Celestial Map Poster | Ancient Hellenistic Wall Art | Printable Digital Download | Oxblood Cream
+Star Chart of Pergamon | Celestial Map Poster | Ancient Hellenistic Wall Art | Printable Digital Download | Smoked Vellum
 
 **Price:** £6.00
 
@@ -4153,7 +4153,7 @@ Star Chart of Pergamon | Celestial Map Poster | Ancient Hellenistic Wall Art | P
 
 **Description:**
 
-Star Chart of Pergamon — an original artwork from the "Ancient Skies" collection (Oxblood Cream palette).
+Star Chart of Pergamon — an original artwork from the "Ancient Skies" collection (Smoked Vellum palette).
 
 An astronomer’s ring of ticks and degrees around invented constellations — the night sky as the ancients charted it.
 
@@ -4172,14 +4172,14 @@ An astronomer’s ring of ticks and degrees around invented constellations — t
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-117 — Ancient Skies
 
 **Title:**
-Star Chart of Cnidus | Star Chart Print | Ancient Hellenistic Wall Art | Printable Digital Download | Basalt Bronze
+Star Chart of Cnidus | Star Chart Print | Ancient Hellenistic Wall Art | Printable Digital Download | Chestnut Line
 
 **Price:** £6.00
 
@@ -4189,7 +4189,7 @@ Star Chart of Cnidus | Star Chart Print | Ancient Hellenistic Wall Art | Printab
 
 **Description:**
 
-Star Chart of Cnidus — an original artwork from the "Ancient Skies" collection (Basalt Bronze palette).
+Star Chart of Cnidus — an original artwork from the "Ancient Skies" collection (Chestnut Line palette).
 
 An astronomer’s ring of ticks and degrees around invented constellations — the night sky as the ancients charted it.
 
@@ -4208,14 +4208,14 @@ An astronomer’s ring of ticks and degrees around invented constellations — t
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-118 — Ancient Skies
 
 **Title:**
-Star Chart of Samos | Astronomy Wall Art | Ancient Hellenistic Wall Art | Printable Digital Download | Terracotta Noir (Night)
+Star Chart of Samos | Astronomy Wall Art | Ancient Hellenistic Wall Art | Printable Digital Download | Sepia Plate
 
 **Price:** £6.00
 
@@ -4225,7 +4225,7 @@ Star Chart of Samos | Astronomy Wall Art | Ancient Hellenistic Wall Art | Printa
 
 **Description:**
 
-Star Chart of Samos — an original artwork from the "Ancient Skies" collection (Terracotta Noir (Night) palette).
+Star Chart of Samos — an original artwork from the "Ancient Skies" collection (Sepia Plate palette).
 
 An astronomer’s ring of ticks and degrees around invented constellations — the night sky as the ancients charted it.
 
@@ -4244,14 +4244,14 @@ An astronomer’s ring of ticks and degrees around invented constellations — t
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-119 — Ancient Skies
 
 **Title:**
-Star Chart of Chaldea | Celestial Map Poster | Ancient Hellenistic Wall Art | Printable Digital Download | Attic Red
+Star Chart of Chaldea | Celestial Map Poster | Ancient Hellenistic Wall Art | Printable Digital Download | Bistre Ink
 
 **Price:** £6.00
 
@@ -4261,7 +4261,7 @@ Star Chart of Chaldea | Celestial Map Poster | Ancient Hellenistic Wall Art | Pr
 
 **Description:**
 
-Star Chart of Chaldea — an original artwork from the "Ancient Skies" collection (Attic Red palette).
+Star Chart of Chaldea — an original artwork from the "Ancient Skies" collection (Bistre Ink palette).
 
 An astronomer’s ring of ticks and degrees around invented constellations — the night sky as the ancients charted it.
 
@@ -4280,14 +4280,14 @@ An astronomer’s ring of ticks and degrees around invented constellations — t
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-120 — Ancient Skies
 
 **Title:**
-Star Chart of Harran | Star Chart Print | Ancient Hellenistic Wall Art | Printable Digital Download | Papyrus & Lapis (Night)
+Star Chart of Harran | Star Chart Print | Ancient Hellenistic Wall Art | Printable Digital Download | Iron Gall
 
 **Price:** £6.00
 
@@ -4297,7 +4297,7 @@ Star Chart of Harran | Star Chart Print | Ancient Hellenistic Wall Art | Printab
 
 **Description:**
 
-Star Chart of Harran — an original artwork from the "Ancient Skies" collection (Papyrus & Lapis (Night) palette).
+Star Chart of Harran — an original artwork from the "Ancient Skies" collection (Iron Gall palette).
 
 An astronomer’s ring of ticks and degrees around invented constellations — the night sky as the ancients charted it.
 
@@ -4316,14 +4316,14 @@ An astronomer’s ring of ticks and degrees around invented constellations — t
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-121 — Arches of Rome
 
 **Title:**
-Aqueduct of Segovia | Roman Aqueduct Print | Ancient Roman Wall Art | Printable Digital Download | Midnight Gold
+Aqueduct of Segovia | Roman Aqueduct Print | Ancient Roman Wall Art | Printable Digital Download | Storm Light
 
 **Price:** £4.50
 
@@ -4333,7 +4333,7 @@ Aqueduct of Segovia | Roman Aqueduct Print | Ancient Roman Wall Art | Printable 
 
 **Description:**
 
-Aqueduct of Segovia — an original artwork from the "Arches of Rome" collection (Midnight Gold palette).
+Aqueduct of Segovia — an original artwork from the "Arches of Rome" collection (Storm Light palette).
 
 Twin tiers of Roman arches striding across the countryside, with cypress trees and a low ancient sun.
 
@@ -4352,14 +4352,14 @@ Twin tiers of Roman arches striding across the countryside, with cypress trees a
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-122 — Arches of Rome
 
 **Title:**
-Aqueduct of Nimes | Arches Wall Art | Ancient Roman Wall Art | Printable Digital Download | Olive Grove
+Aqueduct of Nimes | Arches Wall Art | Ancient Roman Wall Art | Printable Digital Download | Venetian Rose
 
 **Price:** £4.50
 
@@ -4369,7 +4369,7 @@ Aqueduct of Nimes | Arches Wall Art | Ancient Roman Wall Art | Printable Digital
 
 **Description:**
 
-Aqueduct of Nimes — an original artwork from the "Arches of Rome" collection (Olive Grove palette).
+Aqueduct of Nimes — an original artwork from the "Arches of Rome" collection (Venetian Rose palette).
 
 Twin tiers of Roman arches striding across the countryside, with cypress trees and a low ancient sun.
 
@@ -4388,14 +4388,14 @@ Twin tiers of Roman arches striding across the countryside, with cypress trees a
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-123 — Arches of Rome
 
 **Title:**
-Aqueduct of Tarragona | Italy Travel Poster | Ancient Roman Wall Art | Printable Digital Download | Oxblood Cream
+Aqueduct of Tarragona | Italy Travel Poster | Ancient Roman Wall Art | Printable Digital Download | Twilight Bronze
 
 **Price:** £4.50
 
@@ -4405,7 +4405,7 @@ Aqueduct of Tarragona | Italy Travel Poster | Ancient Roman Wall Art | Printable
 
 **Description:**
 
-Aqueduct of Tarragona — an original artwork from the "Arches of Rome" collection (Oxblood Cream palette).
+Aqueduct of Tarragona — an original artwork from the "Arches of Rome" collection (Twilight Bronze palette).
 
 Twin tiers of Roman arches striding across the countryside, with cypress trees and a low ancient sun.
 
@@ -4424,14 +4424,14 @@ Twin tiers of Roman arches striding across the countryside, with cypress trees a
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-124 — Arches of Rome
 
 **Title:**
-Aqueduct of Merida | Roman Aqueduct Print | Ancient Roman Wall Art | Printable Digital Download | Basalt Bronze
+Aqueduct of Merida | Roman Aqueduct Print | Ancient Roman Wall Art | Printable Digital Download | Honeyed Stone
 
 **Price:** £4.50
 
@@ -4441,7 +4441,7 @@ Aqueduct of Merida | Roman Aqueduct Print | Ancient Roman Wall Art | Printable D
 
 **Description:**
 
-Aqueduct of Merida — an original artwork from the "Arches of Rome" collection (Basalt Bronze palette).
+Aqueduct of Merida — an original artwork from the "Arches of Rome" collection (Honeyed Stone palette).
 
 Twin tiers of Roman arches striding across the countryside, with cypress trees and a low ancient sun.
 
@@ -4460,14 +4460,14 @@ Twin tiers of Roman arches striding across the countryside, with cypress trees a
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-125 — Arches of Rome
 
 **Title:**
-Aqueduct of Aspendos | Arches Wall Art | Ancient Roman Wall Art | Printable Digital Download | Terracotta Noir
+Aqueduct of Aspendos | Arches Wall Art | Ancient Roman Wall Art | Printable Digital Download | Golden Hour
 
 **Price:** £4.50
 
@@ -4477,7 +4477,7 @@ Aqueduct of Aspendos | Arches Wall Art | Ancient Roman Wall Art | Printable Digi
 
 **Description:**
 
-Aqueduct of Aspendos — an original artwork from the "Arches of Rome" collection (Terracotta Noir palette).
+Aqueduct of Aspendos — an original artwork from the "Arches of Rome" collection (Golden Hour palette).
 
 Twin tiers of Roman arches striding across the countryside, with cypress trees and a low ancient sun.
 
@@ -4496,14 +4496,14 @@ Twin tiers of Roman arches striding across the countryside, with cypress trees a
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-126 — Arches of Rome
 
 **Title:**
-Aqueduct of Caesarea | Italy Travel Poster | Ancient Roman Wall Art | Printable Digital Download | Attic Red
+Aqueduct of Caesarea | Italy Travel Poster | Ancient Roman Wall Art | Printable Digital Download | Amber Dusk
 
 **Price:** £4.50
 
@@ -4513,7 +4513,7 @@ Aqueduct of Caesarea | Italy Travel Poster | Ancient Roman Wall Art | Printable 
 
 **Description:**
 
-Aqueduct of Caesarea — an original artwork from the "Arches of Rome" collection (Attic Red palette).
+Aqueduct of Caesarea — an original artwork from the "Arches of Rome" collection (Amber Dusk palette).
 
 Twin tiers of Roman arches striding across the countryside, with cypress trees and a low ancient sun.
 
@@ -4532,14 +4532,14 @@ Twin tiers of Roman arches striding across the countryside, with cypress trees a
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-127 — Arches of Rome
 
 **Title:**
-Aqueduct of Carthage | Roman Aqueduct Print | Ancient Roman Wall Art | Printable Digital Download | Papyrus & Lapis
+Aqueduct of Carthage | Roman Aqueduct Print | Ancient Roman Wall Art | Printable Digital Download | Aegean Noon
 
 **Price:** £4.50
 
@@ -4549,7 +4549,7 @@ Aqueduct of Carthage | Roman Aqueduct Print | Ancient Roman Wall Art | Printable
 
 **Description:**
 
-Aqueduct of Carthage — an original artwork from the "Arches of Rome" collection (Papyrus & Lapis palette).
+Aqueduct of Carthage — an original artwork from the "Arches of Rome" collection (Aegean Noon palette).
 
 Twin tiers of Roman arches striding across the countryside, with cypress trees and a low ancient sun.
 
@@ -4568,14 +4568,14 @@ Twin tiers of Roman arches striding across the countryside, with cypress trees a
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-128 — Arches of Rome
 
 **Title:**
-Aqueduct of Ephesus | Arches Wall Art | Ancient Roman Wall Art | Printable Digital Download | Nile Gold
+Aqueduct of Ephesus | Arches Wall Art | Ancient Roman Wall Art | Printable Digital Download | Umber Evening
 
 **Price:** £4.50
 
@@ -4585,7 +4585,7 @@ Aqueduct of Ephesus | Arches Wall Art | Ancient Roman Wall Art | Printable Digit
 
 **Description:**
 
-Aqueduct of Ephesus — an original artwork from the "Arches of Rome" collection (Nile Gold palette).
+Aqueduct of Ephesus — an original artwork from the "Arches of Rome" collection (Umber Evening palette).
 
 Twin tiers of Roman arches striding across the countryside, with cypress trees and a low ancient sun.
 
@@ -4604,14 +4604,14 @@ Twin tiers of Roman arches striding across the countryside, with cypress trees a
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-129 — Arches of Rome
 
 **Title:**
-Aqueduct of Rome | Italy Travel Poster | Ancient Roman Wall Art | Printable Digital Download | Desert Ochre
+Aqueduct of Rome | Italy Travel Poster | Ancient Roman Wall Art | Printable Digital Download | Storm Light
 
 **Price:** £4.50
 
@@ -4621,7 +4621,7 @@ Aqueduct of Rome | Italy Travel Poster | Ancient Roman Wall Art | Printable Digi
 
 **Description:**
 
-Aqueduct of Rome — an original artwork from the "Arches of Rome" collection (Desert Ochre palette).
+Aqueduct of Rome — an original artwork from the "Arches of Rome" collection (Storm Light palette).
 
 Twin tiers of Roman arches striding across the countryside, with cypress trees and a low ancient sun.
 
@@ -4640,14 +4640,14 @@ Twin tiers of Roman arches striding across the countryside, with cypress trees a
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-130 — Arches of Rome
 
 **Title:**
-Aqueduct of Metz | Roman Aqueduct Print | Ancient Roman Wall Art | Printable Digital Download | Marble Verdigris
+Aqueduct of Metz | Roman Aqueduct Print | Ancient Roman Wall Art | Printable Digital Download | Venetian Rose
 
 **Price:** £4.50
 
@@ -4657,7 +4657,7 @@ Aqueduct of Metz | Roman Aqueduct Print | Ancient Roman Wall Art | Printable Dig
 
 **Description:**
 
-Aqueduct of Metz — an original artwork from the "Arches of Rome" collection (Marble Verdigris palette).
+Aqueduct of Metz — an original artwork from the "Arches of Rome" collection (Venetian Rose palette).
 
 Twin tiers of Roman arches striding across the countryside, with cypress trees and a low ancient sun.
 
@@ -4676,14 +4676,14 @@ Twin tiers of Roman arches striding across the countryside, with cypress trees a
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-131 — Sacred Scarabs
 
 **Title:**
-Winged Scarab of Heliopolis | Scarab Print | Ancient Egyptian Wall Art | Printable Digital Download | Basalt Bronze
+Winged Scarab of Heliopolis | Scarab Print | Ancient Egyptian Wall Art | Printable Digital Download | Oxide Red
 
 **Price:** £5.00
 
@@ -4693,7 +4693,7 @@ Winged Scarab of Heliopolis | Scarab Print | Ancient Egyptian Wall Art | Printab
 
 **Description:**
 
-Winged Scarab of Heliopolis — an original artwork from the "Sacred Scarabs" collection (Basalt Bronze palette).
+Winged Scarab of Heliopolis — an original artwork from the "Sacred Scarabs" collection (Oxide Red palette).
 
 The winged scarab bearing the sun disk — emblem of rebirth and the morning sun, spread across layered feather fans.
 
@@ -4712,14 +4712,14 @@ The winged scarab bearing the sun disk — emblem of rebirth and the morning sun
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-132 — Sacred Scarabs
 
 **Title:**
-Winged Scarab of Amarna | Winged Scarab Wall Art | Ancient Egyptian Wall Art | Printable Digital Download | Terracotta Noir
+Winged Scarab of Amarna | Winged Scarab Wall Art | Ancient Egyptian Wall Art | Printable Digital Download | Nile Lapis
 
 **Price:** £5.00
 
@@ -4729,7 +4729,7 @@ Winged Scarab of Amarna | Winged Scarab Wall Art | Ancient Egyptian Wall Art | P
 
 **Description:**
 
-Winged Scarab of Amarna — an original artwork from the "Sacred Scarabs" collection (Terracotta Noir palette).
+Winged Scarab of Amarna — an original artwork from the "Sacred Scarabs" collection (Nile Lapis palette).
 
 The winged scarab bearing the sun disk — emblem of rebirth and the morning sun, spread across layered feather fans.
 
@@ -4748,14 +4748,14 @@ The winged scarab bearing the sun disk — emblem of rebirth and the morning sun
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-133 — Sacred Scarabs
 
 **Title:**
-Winged Scarab of Tanis | Egyptian Emblem Poster | Ancient Egyptian Wall Art | Printable Digital Download | Attic Red
+Winged Scarab of Tanis | Egyptian Emblem Poster | Ancient Egyptian Wall Art | Printable Digital Download | Karnak Gold
 
 **Price:** £5.00
 
@@ -4765,7 +4765,7 @@ Winged Scarab of Tanis | Egyptian Emblem Poster | Ancient Egyptian Wall Art | Pr
 
 **Description:**
 
-Winged Scarab of Tanis — an original artwork from the "Sacred Scarabs" collection (Attic Red palette).
+Winged Scarab of Tanis — an original artwork from the "Sacred Scarabs" collection (Karnak Gold palette).
 
 The winged scarab bearing the sun disk — emblem of rebirth and the morning sun, spread across layered feather fans.
 
@@ -4784,14 +4784,14 @@ The winged scarab bearing the sun disk — emblem of rebirth and the morning sun
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-134 — Sacred Scarabs
 
 **Title:**
-Winged Scarab of Bubastis | Scarab Print | Ancient Egyptian Wall Art | Printable Digital Download | Papyrus & Lapis
+Winged Scarab of Bubastis | Scarab Print | Ancient Egyptian Wall Art | Printable Digital Download | Terracotta Reed
 
 **Price:** £5.00
 
@@ -4801,7 +4801,7 @@ Winged Scarab of Bubastis | Scarab Print | Ancient Egyptian Wall Art | Printable
 
 **Description:**
 
-Winged Scarab of Bubastis — an original artwork from the "Sacred Scarabs" collection (Papyrus & Lapis palette).
+Winged Scarab of Bubastis — an original artwork from the "Sacred Scarabs" collection (Terracotta Reed palette).
 
 The winged scarab bearing the sun disk — emblem of rebirth and the morning sun, spread across layered feather fans.
 
@@ -4820,14 +4820,14 @@ The winged scarab bearing the sun disk — emblem of rebirth and the morning sun
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-135 — Sacred Scarabs
 
 **Title:**
-Winged Scarab of Hermopolis | Winged Scarab Wall Art | Ancient Egyptian Wall Art | Printable Digital Download | Nile Gold
+Winged Scarab of Hermopolis | Winged Scarab Wall Art | Ancient Egyptian Wall Art | Printable Digital Download | Malachite Reed
 
 **Price:** £5.00
 
@@ -4837,7 +4837,7 @@ Winged Scarab of Hermopolis | Winged Scarab Wall Art | Ancient Egyptian Wall Art
 
 **Description:**
 
-Winged Scarab of Hermopolis — an original artwork from the "Sacred Scarabs" collection (Nile Gold palette).
+Winged Scarab of Hermopolis — an original artwork from the "Sacred Scarabs" collection (Malachite Reed palette).
 
 The winged scarab bearing the sun disk — emblem of rebirth and the morning sun, spread across layered feather fans.
 
@@ -4856,14 +4856,14 @@ The winged scarab bearing the sun disk — emblem of rebirth and the morning sun
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-136 — Sacred Scarabs
 
 **Title:**
-Winged Scarab of Elephantine | Egyptian Emblem Poster | Ancient Egyptian Wall Art | Printable Digital Download | Desert Ochre
+Winged Scarab of Elephantine | Egyptian Emblem Poster | Ancient Egyptian Wall Art | Printable Digital Download | Sandstone Dawn
 
 **Price:** £5.00
 
@@ -4873,7 +4873,7 @@ Winged Scarab of Elephantine | Egyptian Emblem Poster | Ancient Egyptian Wall Ar
 
 **Description:**
 
-Winged Scarab of Elephantine — an original artwork from the "Sacred Scarabs" collection (Desert Ochre palette).
+Winged Scarab of Elephantine — an original artwork from the "Sacred Scarabs" collection (Sandstone Dawn palette).
 
 The winged scarab bearing the sun disk — emblem of rebirth and the morning sun, spread across layered feather fans.
 
@@ -4892,14 +4892,14 @@ The winged scarab bearing the sun disk — emblem of rebirth and the morning sun
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-137 — Sacred Scarabs
 
 **Title:**
-Winged Scarab of Kom Ombo | Scarab Print | Ancient Egyptian Wall Art | Printable Digital Download | Marble Verdigris
+Winged Scarab of Kom Ombo | Scarab Print | Ancient Egyptian Wall Art | Printable Digital Download | Delta Blue
 
 **Price:** £5.00
 
@@ -4909,7 +4909,7 @@ Winged Scarab of Kom Ombo | Scarab Print | Ancient Egyptian Wall Art | Printable
 
 **Description:**
 
-Winged Scarab of Kom Ombo — an original artwork from the "Sacred Scarabs" collection (Marble Verdigris palette).
+Winged Scarab of Kom Ombo — an original artwork from the "Sacred Scarabs" collection (Delta Blue palette).
 
 The winged scarab bearing the sun disk — emblem of rebirth and the morning sun, spread across layered feather fans.
 
@@ -4928,14 +4928,14 @@ The winged scarab bearing the sun disk — emblem of rebirth and the morning sun
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-138 — Sacred Scarabs
 
 **Title:**
-Winged Scarab of Esna | Winged Scarab Wall Art | Ancient Egyptian Wall Art | Printable Digital Download | Midnight Gold
+Winged Scarab of Esna | Winged Scarab Wall Art | Ancient Egyptian Wall Art | Printable Digital Download | Gilded Dusk
 
 **Price:** £5.00
 
@@ -4945,7 +4945,7 @@ Winged Scarab of Esna | Winged Scarab Wall Art | Ancient Egyptian Wall Art | Pri
 
 **Description:**
 
-Winged Scarab of Esna — an original artwork from the "Sacred Scarabs" collection (Midnight Gold palette).
+Winged Scarab of Esna — an original artwork from the "Sacred Scarabs" collection (Gilded Dusk palette).
 
 The winged scarab bearing the sun disk — emblem of rebirth and the morning sun, spread across layered feather fans.
 
@@ -4964,14 +4964,14 @@ The winged scarab bearing the sun disk — emblem of rebirth and the morning sun
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-139 — Sacred Scarabs
 
 **Title:**
-Winged Scarab of Naukratis | Egyptian Emblem Poster | Ancient Egyptian Wall Art | Printable Digital Download | Olive Grove
+Winged Scarab of Naukratis | Egyptian Emblem Poster | Ancient Egyptian Wall Art | Printable Digital Download | Oxide Red
 
 **Price:** £5.00
 
@@ -4981,7 +4981,7 @@ Winged Scarab of Naukratis | Egyptian Emblem Poster | Ancient Egyptian Wall Art 
 
 **Description:**
 
-Winged Scarab of Naukratis — an original artwork from the "Sacred Scarabs" collection (Olive Grove palette).
+Winged Scarab of Naukratis — an original artwork from the "Sacred Scarabs" collection (Oxide Red palette).
 
 The winged scarab bearing the sun disk — emblem of rebirth and the morning sun, spread across layered feather fans.
 
@@ -5000,14 +5000,14 @@ The winged scarab bearing the sun disk — emblem of rebirth and the morning sun
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-140 — Sacred Scarabs
 
 **Title:**
-Winged Scarab of Sais | Scarab Print | Ancient Egyptian Wall Art | Printable Digital Download | Oxblood Cream
+Winged Scarab of Sais | Scarab Print | Ancient Egyptian Wall Art | Printable Digital Download | Nile Lapis
 
 **Price:** £5.00
 
@@ -5017,7 +5017,7 @@ Winged Scarab of Sais | Scarab Print | Ancient Egyptian Wall Art | Printable Dig
 
 **Description:**
 
-Winged Scarab of Sais — an original artwork from the "Sacred Scarabs" collection (Oxblood Cream palette).
+Winged Scarab of Sais — an original artwork from the "Sacred Scarabs" collection (Nile Lapis palette).
 
 The winged scarab bearing the sun disk — emblem of rebirth and the morning sun, spread across layered feather fans.
 
@@ -5036,14 +5036,14 @@ The winged scarab bearing the sun disk — emblem of rebirth and the morning sun
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-141 — Obelisks at Dawn
 
 **Title:**
-Obelisk of Heliopolis | Obelisk Print | Ancient Egyptian Wall Art | Printable Digital Download | Papyrus & Lapis
+Obelisk of Heliopolis | Obelisk Print | Ancient Egyptian Wall Art | Printable Digital Download | Iron Gall
 
 **Price:** £5.50
 
@@ -5053,7 +5053,7 @@ Obelisk of Heliopolis | Obelisk Print | Ancient Egyptian Wall Art | Printable Di
 
 **Description:**
 
-Obelisk of Heliopolis — an original artwork from the "Obelisks at Dawn" collection (Papyrus & Lapis palette).
+Obelisk of Heliopolis — an original artwork from the "Obelisks at Dawn" collection (Iron Gall palette).
 
 Needle-straight monoliths with gilded pyramidions catching first light, carved with quiet geometric marks.
 
@@ -5072,14 +5072,14 @@ Needle-straight monoliths with gilded pyramidions catching first light, carved w
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-142 — Obelisks at Dawn
 
 **Title:**
-Obelisk of Karnak | Egyptian Monument Art | Ancient Egyptian Wall Art | Printable Digital Download | Nile Gold
+Obelisk of Karnak | Egyptian Monument Art | Ancient Egyptian Wall Art | Printable Digital Download | Faded Folio
 
 **Price:** £5.50
 
@@ -5089,7 +5089,7 @@ Obelisk of Karnak | Egyptian Monument Art | Ancient Egyptian Wall Art | Printabl
 
 **Description:**
 
-Obelisk of Karnak — an original artwork from the "Obelisks at Dawn" collection (Nile Gold palette).
+Obelisk of Karnak — an original artwork from the "Obelisks at Dawn" collection (Faded Folio palette).
 
 Needle-straight monoliths with gilded pyramidions catching first light, carved with quiet geometric marks.
 
@@ -5108,14 +5108,14 @@ Needle-straight monoliths with gilded pyramidions catching first light, carved w
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-143 — Obelisks at Dawn
 
 **Title:**
-Obelisk of Luxor | Minimalist Poster | Ancient Egyptian Wall Art | Printable Digital Download | Desert Ochre
+Obelisk of Luxor | Minimalist Poster | Ancient Egyptian Wall Art | Printable Digital Download | Umber Wash
 
 **Price:** £5.50
 
@@ -5125,7 +5125,7 @@ Obelisk of Luxor | Minimalist Poster | Ancient Egyptian Wall Art | Printable Dig
 
 **Description:**
 
-Obelisk of Luxor — an original artwork from the "Obelisks at Dawn" collection (Desert Ochre palette).
+Obelisk of Luxor — an original artwork from the "Obelisks at Dawn" collection (Umber Wash palette).
 
 Needle-straight monoliths with gilded pyramidions catching first light, carved with quiet geometric marks.
 
@@ -5144,14 +5144,14 @@ Needle-straight monoliths with gilded pyramidions catching first light, carved w
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-144 — Obelisks at Dawn
 
 **Title:**
-Obelisk of Aswan | Obelisk Print | Ancient Egyptian Wall Art | Printable Digital Download | Marble Verdigris
+Obelisk of Aswan | Obelisk Print | Ancient Egyptian Wall Art | Printable Digital Download | Antique Buff
 
 **Price:** £5.50
 
@@ -5161,7 +5161,7 @@ Obelisk of Aswan | Obelisk Print | Ancient Egyptian Wall Art | Printable Digital
 
 **Description:**
 
-Obelisk of Aswan — an original artwork from the "Obelisks at Dawn" collection (Marble Verdigris palette).
+Obelisk of Aswan — an original artwork from the "Obelisks at Dawn" collection (Antique Buff palette).
 
 Needle-straight monoliths with gilded pyramidions catching first light, carved with quiet geometric marks.
 
@@ -5180,14 +5180,14 @@ Needle-straight monoliths with gilded pyramidions catching first light, carved w
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-145 — Obelisks at Dawn
 
 **Title:**
-Obelisk of Alexandria | Egyptian Monument Art | Ancient Egyptian Wall Art | Printable Digital Download | Midnight Gold
+Obelisk of Alexandria | Egyptian Monument Art | Ancient Egyptian Wall Art | Printable Digital Download | Smoked Vellum
 
 **Price:** £5.50
 
@@ -5197,7 +5197,7 @@ Obelisk of Alexandria | Egyptian Monument Art | Ancient Egyptian Wall Art | Prin
 
 **Description:**
 
-Obelisk of Alexandria — an original artwork from the "Obelisks at Dawn" collection (Midnight Gold palette).
+Obelisk of Alexandria — an original artwork from the "Obelisks at Dawn" collection (Smoked Vellum palette).
 
 Needle-straight monoliths with gilded pyramidions catching first light, carved with quiet geometric marks.
 
@@ -5216,14 +5216,14 @@ Needle-straight monoliths with gilded pyramidions catching first light, carved w
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-146 — Obelisks at Dawn
 
 **Title:**
-Obelisk of Thebes | Minimalist Poster | Ancient Egyptian Wall Art | Printable Digital Download | Olive Grove
+Obelisk of Thebes | Minimalist Poster | Ancient Egyptian Wall Art | Printable Digital Download | Chestnut Line
 
 **Price:** £5.50
 
@@ -5233,7 +5233,7 @@ Obelisk of Thebes | Minimalist Poster | Ancient Egyptian Wall Art | Printable Di
 
 **Description:**
 
-Obelisk of Thebes — an original artwork from the "Obelisks at Dawn" collection (Olive Grove palette).
+Obelisk of Thebes — an original artwork from the "Obelisks at Dawn" collection (Chestnut Line palette).
 
 Needle-straight monoliths with gilded pyramidions catching first light, carved with quiet geometric marks.
 
@@ -5252,14 +5252,14 @@ Needle-straight monoliths with gilded pyramidions catching first light, carved w
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-147 — Obelisks at Dawn
 
 **Title:**
-Obelisk of Tanis | Obelisk Print | Ancient Egyptian Wall Art | Printable Digital Download | Oxblood Cream
+Obelisk of Tanis | Obelisk Print | Ancient Egyptian Wall Art | Printable Digital Download | Sepia Plate
 
 **Price:** £5.50
 
@@ -5269,7 +5269,7 @@ Obelisk of Tanis | Obelisk Print | Ancient Egyptian Wall Art | Printable Digital
 
 **Description:**
 
-Obelisk of Tanis — an original artwork from the "Obelisks at Dawn" collection (Oxblood Cream palette).
+Obelisk of Tanis — an original artwork from the "Obelisks at Dawn" collection (Sepia Plate palette).
 
 Needle-straight monoliths with gilded pyramidions catching first light, carved with quiet geometric marks.
 
@@ -5288,14 +5288,14 @@ Needle-straight monoliths with gilded pyramidions catching first light, carved w
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-148 — Obelisks at Dawn
 
 **Title:**
-Obelisk of Abu Simbel | Egyptian Monument Art | Ancient Egyptian Wall Art | Printable Digital Download | Basalt Bronze
+Obelisk of Abu Simbel | Egyptian Monument Art | Ancient Egyptian Wall Art | Printable Digital Download | Bistre Ink
 
 **Price:** £5.50
 
@@ -5305,7 +5305,7 @@ Obelisk of Abu Simbel | Egyptian Monument Art | Ancient Egyptian Wall Art | Prin
 
 **Description:**
 
-Obelisk of Abu Simbel — an original artwork from the "Obelisks at Dawn" collection (Basalt Bronze palette).
+Obelisk of Abu Simbel — an original artwork from the "Obelisks at Dawn" collection (Bistre Ink palette).
 
 Needle-straight monoliths with gilded pyramidions catching first light, carved with quiet geometric marks.
 
@@ -5324,14 +5324,14 @@ Needle-straight monoliths with gilded pyramidions catching first light, carved w
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-149 — Obelisks at Dawn
 
 **Title:**
-Obelisk of Memphis | Minimalist Poster | Ancient Egyptian Wall Art | Printable Digital Download | Terracotta Noir
+Obelisk of Memphis | Minimalist Poster | Ancient Egyptian Wall Art | Printable Digital Download | Iron Gall
 
 **Price:** £5.50
 
@@ -5341,7 +5341,7 @@ Obelisk of Memphis | Minimalist Poster | Ancient Egyptian Wall Art | Printable D
 
 **Description:**
 
-Obelisk of Memphis — an original artwork from the "Obelisks at Dawn" collection (Terracotta Noir palette).
+Obelisk of Memphis — an original artwork from the "Obelisks at Dawn" collection (Iron Gall palette).
 
 Needle-straight monoliths with gilded pyramidions catching first light, carved with quiet geometric marks.
 
@@ -5360,14 +5360,14 @@ Needle-straight monoliths with gilded pyramidions catching first light, carved w
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-150 — Obelisks at Dawn
 
 **Title:**
-Obelisk of Piramesse | Obelisk Print | Ancient Egyptian Wall Art | Printable Digital Download | Attic Red
+Obelisk of Piramesse | Obelisk Print | Ancient Egyptian Wall Art | Printable Digital Download | Faded Folio
 
 **Price:** £5.50
 
@@ -5377,7 +5377,7 @@ Obelisk of Piramesse | Obelisk Print | Ancient Egyptian Wall Art | Printable Dig
 
 **Description:**
 
-Obelisk of Piramesse — an original artwork from the "Obelisks at Dawn" collection (Attic Red palette).
+Obelisk of Piramesse — an original artwork from the "Obelisks at Dawn" collection (Faded Folio palette).
 
 Needle-straight monoliths with gilded pyramidions catching first light, carved with quiet geometric marks.
 
@@ -5396,14 +5396,14 @@ Needle-straight monoliths with gilded pyramidions catching first light, carved w
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-151 — Temples of Marble
 
 **Title:**
-Temple Facade of Parthenon | Greek Temple Print | Ancient Greek Wall Art | Printable Digital Download | Marble Verdigris
+Temple Facade of Parthenon | Greek Temple Print | Ancient Greek Wall Art | Printable Digital Download | Venetian Rose
 
 **Price:** £6.00
 
@@ -5413,7 +5413,7 @@ Temple Facade of Parthenon | Greek Temple Print | Ancient Greek Wall Art | Print
 
 **Description:**
 
-Temple Facade of Parthenon — an original artwork from the "Temples of Marble" collection (Marble Verdigris palette).
+Temple Facade of Parthenon — an original artwork from the "Temples of Marble" collection (Venetian Rose palette).
 
 A full temple elevation — steps, fluted columns, triglyph frieze and starred pediment — drafted like an architect’s elevation.
 
@@ -5432,14 +5432,14 @@ A full temple elevation — steps, fluted columns, triglyph frieze and starred p
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-152 — Temples of Marble
 
 **Title:**
-Temple Facade of Sounion | Parthenon Style Art | Ancient Greek Wall Art | Printable Digital Download | Midnight Gold
+Temple Facade of Sounion | Parthenon Style Art | Ancient Greek Wall Art | Printable Digital Download | Twilight Bronze
 
 **Price:** £6.00
 
@@ -5449,7 +5449,7 @@ Temple Facade of Sounion | Parthenon Style Art | Ancient Greek Wall Art | Printa
 
 **Description:**
 
-Temple Facade of Sounion — an original artwork from the "Temples of Marble" collection (Midnight Gold palette).
+Temple Facade of Sounion — an original artwork from the "Temples of Marble" collection (Twilight Bronze palette).
 
 A full temple elevation — steps, fluted columns, triglyph frieze and starred pediment — drafted like an architect’s elevation.
 
@@ -5468,14 +5468,14 @@ A full temple elevation — steps, fluted columns, triglyph frieze and starred p
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-153 — Temples of Marble
 
 **Title:**
-Temple Facade of Aphaia | Facade Poster | Ancient Greek Wall Art | Printable Digital Download | Olive Grove
+Temple Facade of Aphaia | Facade Poster | Ancient Greek Wall Art | Printable Digital Download | Honeyed Stone
 
 **Price:** £6.00
 
@@ -5485,7 +5485,7 @@ Temple Facade of Aphaia | Facade Poster | Ancient Greek Wall Art | Printable Dig
 
 **Description:**
 
-Temple Facade of Aphaia — an original artwork from the "Temples of Marble" collection (Olive Grove palette).
+Temple Facade of Aphaia — an original artwork from the "Temples of Marble" collection (Honeyed Stone palette).
 
 A full temple elevation — steps, fluted columns, triglyph frieze and starred pediment — drafted like an architect’s elevation.
 
@@ -5504,14 +5504,14 @@ A full temple elevation — steps, fluted columns, triglyph frieze and starred p
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-154 — Temples of Marble
 
 **Title:**
-Temple Facade of Hephaestus | Greek Temple Print | Ancient Greek Wall Art | Printable Digital Download | Oxblood Cream
+Temple Facade of Hephaestus | Greek Temple Print | Ancient Greek Wall Art | Printable Digital Download | Golden Hour
 
 **Price:** £6.00
 
@@ -5521,7 +5521,7 @@ Temple Facade of Hephaestus | Greek Temple Print | Ancient Greek Wall Art | Prin
 
 **Description:**
 
-Temple Facade of Hephaestus — an original artwork from the "Temples of Marble" collection (Oxblood Cream palette).
+Temple Facade of Hephaestus — an original artwork from the "Temples of Marble" collection (Golden Hour palette).
 
 A full temple elevation — steps, fluted columns, triglyph frieze and starred pediment — drafted like an architect’s elevation.
 
@@ -5540,14 +5540,14 @@ A full temple elevation — steps, fluted columns, triglyph frieze and starred p
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-155 — Temples of Marble
 
 **Title:**
-Temple Facade of Zeus Olympia | Parthenon Style Art | Ancient Greek Wall Art | Printable Digital Download | Basalt Bronze
+Temple Facade of Zeus Olympia | Parthenon Style Art | Ancient Greek Wall Art | Printable Digital Download | Amber Dusk
 
 **Price:** £6.00
 
@@ -5557,7 +5557,7 @@ Temple Facade of Zeus Olympia | Parthenon Style Art | Ancient Greek Wall Art | P
 
 **Description:**
 
-Temple Facade of Zeus Olympia — an original artwork from the "Temples of Marble" collection (Basalt Bronze palette).
+Temple Facade of Zeus Olympia — an original artwork from the "Temples of Marble" collection (Amber Dusk palette).
 
 A full temple elevation — steps, fluted columns, triglyph frieze and starred pediment — drafted like an architect’s elevation.
 
@@ -5576,14 +5576,14 @@ A full temple elevation — steps, fluted columns, triglyph frieze and starred p
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-156 — Temples of Marble
 
 **Title:**
-Temple Facade of Apollo Delphi | Facade Poster | Ancient Greek Wall Art | Printable Digital Download | Terracotta Noir
+Temple Facade of Apollo Delphi | Facade Poster | Ancient Greek Wall Art | Printable Digital Download | Aegean Noon
 
 **Price:** £6.00
 
@@ -5593,7 +5593,7 @@ Temple Facade of Apollo Delphi | Facade Poster | Ancient Greek Wall Art | Printa
 
 **Description:**
 
-Temple Facade of Apollo Delphi — an original artwork from the "Temples of Marble" collection (Terracotta Noir palette).
+Temple Facade of Apollo Delphi — an original artwork from the "Temples of Marble" collection (Aegean Noon palette).
 
 A full temple elevation — steps, fluted columns, triglyph frieze and starred pediment — drafted like an architect’s elevation.
 
@@ -5612,14 +5612,14 @@ A full temple elevation — steps, fluted columns, triglyph frieze and starred p
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-157 — Temples of Marble
 
 **Title:**
-Temple Facade of Hera Samos | Greek Temple Print | Ancient Greek Wall Art | Printable Digital Download | Attic Red
+Temple Facade of Hera Samos | Greek Temple Print | Ancient Greek Wall Art | Printable Digital Download | Umber Evening
 
 **Price:** £6.00
 
@@ -5629,7 +5629,7 @@ Temple Facade of Hera Samos | Greek Temple Print | Ancient Greek Wall Art | Prin
 
 **Description:**
 
-Temple Facade of Hera Samos — an original artwork from the "Temples of Marble" collection (Attic Red palette).
+Temple Facade of Hera Samos — an original artwork from the "Temples of Marble" collection (Umber Evening palette).
 
 A full temple elevation — steps, fluted columns, triglyph frieze and starred pediment — drafted like an architect’s elevation.
 
@@ -5648,14 +5648,14 @@ A full temple elevation — steps, fluted columns, triglyph frieze and starred p
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-158 — Temples of Marble
 
 **Title:**
-Temple Facade of Artemis Ephesus | Parthenon Style Art | Ancient Greek Wall Art | Printable Digital Download | Papyrus & Lapis
+Temple Facade of Artemis Ephesus | Parthenon Style Art | Ancient Greek Wall Art | Printable Digital Download | Storm Light
 
 **Price:** £6.00
 
@@ -5665,7 +5665,7 @@ Temple Facade of Artemis Ephesus | Parthenon Style Art | Ancient Greek Wall Art 
 
 **Description:**
 
-Temple Facade of Artemis Ephesus — an original artwork from the "Temples of Marble" collection (Papyrus & Lapis palette).
+Temple Facade of Artemis Ephesus — an original artwork from the "Temples of Marble" collection (Storm Light palette).
 
 A full temple elevation — steps, fluted columns, triglyph frieze and starred pediment — drafted like an architect’s elevation.
 
@@ -5684,14 +5684,14 @@ A full temple elevation — steps, fluted columns, triglyph frieze and starred p
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-159 — Temples of Marble
 
 **Title:**
-Temple Facade of Poseidonia | Facade Poster | Ancient Greek Wall Art | Printable Digital Download | Nile Gold
+Temple Facade of Poseidonia | Facade Poster | Ancient Greek Wall Art | Printable Digital Download | Venetian Rose
 
 **Price:** £6.00
 
@@ -5701,7 +5701,7 @@ Temple Facade of Poseidonia | Facade Poster | Ancient Greek Wall Art | Printable
 
 **Description:**
 
-Temple Facade of Poseidonia — an original artwork from the "Temples of Marble" collection (Nile Gold palette).
+Temple Facade of Poseidonia — an original artwork from the "Temples of Marble" collection (Venetian Rose palette).
 
 A full temple elevation — steps, fluted columns, triglyph frieze and starred pediment — drafted like an architect’s elevation.
 
@@ -5720,14 +5720,14 @@ A full temple elevation — steps, fluted columns, triglyph frieze and starred p
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-160 — Temples of Marble
 
 **Title:**
-Temple Facade of Concordia | Greek Temple Print | Ancient Greek Wall Art | Printable Digital Download | Desert Ochre
+Temple Facade of Concordia | Greek Temple Print | Ancient Greek Wall Art | Printable Digital Download | Twilight Bronze
 
 **Price:** £6.00
 
@@ -5737,7 +5737,7 @@ Temple Facade of Concordia | Greek Temple Print | Ancient Greek Wall Art | Print
 
 **Description:**
 
-Temple Facade of Concordia — an original artwork from the "Temples of Marble" collection (Desert Ochre palette).
+Temple Facade of Concordia — an original artwork from the "Temples of Marble" collection (Twilight Bronze palette).
 
 A full temple elevation — steps, fluted columns, triglyph frieze and starred pediment — drafted like an architect’s elevation.
 
@@ -5756,14 +5756,14 @@ A full temple elevation — steps, fluted columns, triglyph frieze and starred p
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-161 — Aegean Voyages
 
 **Title:**
-Trireme Voyage of Salamis | Greek Ship Print | Ancient Greek Wall Art | Printable Digital Download | Oxblood Cream
+Trireme Voyage of Salamis | Greek Ship Print | Ancient Greek Wall Art | Printable Digital Download | Golden Hour
 
 **Price:** £4.50
 
@@ -5773,7 +5773,7 @@ Trireme Voyage of Salamis | Greek Ship Print | Ancient Greek Wall Art | Printabl
 
 **Description:**
 
-Trireme Voyage of Salamis — an original artwork from the "Aegean Voyages" collection (Oxblood Cream palette).
+Trireme Voyage of Salamis — an original artwork from the "Aegean Voyages" collection (Golden Hour palette).
 
 A lone trireme under sail on a sea of running spirals — shields on the gunwale, oars in the swell (crew safely below deck).
 
@@ -5792,14 +5792,14 @@ A lone trireme under sail on a sea of running spirals — shields on the gunwale
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-162 — Aegean Voyages
 
 **Title:**
-Trireme Voyage of Samos | Trireme Wall Art | Ancient Greek Wall Art | Printable Digital Download | Basalt Bronze
+Trireme Voyage of Samos | Trireme Wall Art | Ancient Greek Wall Art | Printable Digital Download | Amber Dusk
 
 **Price:** £4.50
 
@@ -5809,7 +5809,7 @@ Trireme Voyage of Samos | Trireme Wall Art | Ancient Greek Wall Art | Printable 
 
 **Description:**
 
-Trireme Voyage of Samos — an original artwork from the "Aegean Voyages" collection (Basalt Bronze palette).
+Trireme Voyage of Samos — an original artwork from the "Aegean Voyages" collection (Amber Dusk palette).
 
 A lone trireme under sail on a sea of running spirals — shields on the gunwale, oars in the swell (crew safely below deck).
 
@@ -5828,14 +5828,14 @@ A lone trireme under sail on a sea of running spirals — shields on the gunwale
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-163 — Aegean Voyages
 
 **Title:**
-Trireme Voyage of Naxos | Nautical Poster | Ancient Greek Wall Art | Printable Digital Download | Terracotta Noir
+Trireme Voyage of Naxos | Nautical Poster | Ancient Greek Wall Art | Printable Digital Download | Aegean Noon
 
 **Price:** £4.50
 
@@ -5845,7 +5845,7 @@ Trireme Voyage of Naxos | Nautical Poster | Ancient Greek Wall Art | Printable D
 
 **Description:**
 
-Trireme Voyage of Naxos — an original artwork from the "Aegean Voyages" collection (Terracotta Noir palette).
+Trireme Voyage of Naxos — an original artwork from the "Aegean Voyages" collection (Aegean Noon palette).
 
 A lone trireme under sail on a sea of running spirals — shields on the gunwale, oars in the swell (crew safely below deck).
 
@@ -5864,14 +5864,14 @@ A lone trireme under sail on a sea of running spirals — shields on the gunwale
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-164 — Aegean Voyages
 
 **Title:**
-Trireme Voyage of Chios | Greek Ship Print | Ancient Greek Wall Art | Printable Digital Download | Attic Red
+Trireme Voyage of Chios | Greek Ship Print | Ancient Greek Wall Art | Printable Digital Download | Umber Evening
 
 **Price:** £4.50
 
@@ -5881,7 +5881,7 @@ Trireme Voyage of Chios | Greek Ship Print | Ancient Greek Wall Art | Printable 
 
 **Description:**
 
-Trireme Voyage of Chios — an original artwork from the "Aegean Voyages" collection (Attic Red palette).
+Trireme Voyage of Chios — an original artwork from the "Aegean Voyages" collection (Umber Evening palette).
 
 A lone trireme under sail on a sea of running spirals — shields on the gunwale, oars in the swell (crew safely below deck).
 
@@ -5900,14 +5900,14 @@ A lone trireme under sail on a sea of running spirals — shields on the gunwale
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-165 — Aegean Voyages
 
 **Title:**
-Trireme Voyage of Lesbos | Trireme Wall Art | Ancient Greek Wall Art | Printable Digital Download | Papyrus & Lapis
+Trireme Voyage of Lesbos | Trireme Wall Art | Ancient Greek Wall Art | Printable Digital Download | Storm Light
 
 **Price:** £4.50
 
@@ -5917,7 +5917,7 @@ Trireme Voyage of Lesbos | Trireme Wall Art | Ancient Greek Wall Art | Printable
 
 **Description:**
 
-Trireme Voyage of Lesbos — an original artwork from the "Aegean Voyages" collection (Papyrus & Lapis palette).
+Trireme Voyage of Lesbos — an original artwork from the "Aegean Voyages" collection (Storm Light palette).
 
 A lone trireme under sail on a sea of running spirals — shields on the gunwale, oars in the swell (crew safely below deck).
 
@@ -5936,14 +5936,14 @@ A lone trireme under sail on a sea of running spirals — shields on the gunwale
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-166 — Aegean Voyages
 
 **Title:**
-Trireme Voyage of Kythera | Nautical Poster | Ancient Greek Wall Art | Printable Digital Download | Nile Gold
+Trireme Voyage of Kythera | Nautical Poster | Ancient Greek Wall Art | Printable Digital Download | Venetian Rose
 
 **Price:** £4.50
 
@@ -5953,7 +5953,7 @@ Trireme Voyage of Kythera | Nautical Poster | Ancient Greek Wall Art | Printable
 
 **Description:**
 
-Trireme Voyage of Kythera — an original artwork from the "Aegean Voyages" collection (Nile Gold palette).
+Trireme Voyage of Kythera — an original artwork from the "Aegean Voyages" collection (Venetian Rose palette).
 
 A lone trireme under sail on a sea of running spirals — shields on the gunwale, oars in the swell (crew safely below deck).
 
@@ -5972,14 +5972,14 @@ A lone trireme under sail on a sea of running spirals — shields on the gunwale
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-167 — Aegean Voyages
 
 **Title:**
-Trireme Voyage of Melos | Greek Ship Print | Ancient Greek Wall Art | Printable Digital Download | Desert Ochre
+Trireme Voyage of Melos | Greek Ship Print | Ancient Greek Wall Art | Printable Digital Download | Twilight Bronze
 
 **Price:** £4.50
 
@@ -5989,7 +5989,7 @@ Trireme Voyage of Melos | Greek Ship Print | Ancient Greek Wall Art | Printable 
 
 **Description:**
 
-Trireme Voyage of Melos — an original artwork from the "Aegean Voyages" collection (Desert Ochre palette).
+Trireme Voyage of Melos — an original artwork from the "Aegean Voyages" collection (Twilight Bronze palette).
 
 A lone trireme under sail on a sea of running spirals — shields on the gunwale, oars in the swell (crew safely below deck).
 
@@ -6008,14 +6008,14 @@ A lone trireme under sail on a sea of running spirals — shields on the gunwale
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-168 — Aegean Voyages
 
 **Title:**
-Trireme Voyage of Paros | Trireme Wall Art | Ancient Greek Wall Art | Printable Digital Download | Marble Verdigris
+Trireme Voyage of Paros | Trireme Wall Art | Ancient Greek Wall Art | Printable Digital Download | Honeyed Stone
 
 **Price:** £4.50
 
@@ -6025,7 +6025,7 @@ Trireme Voyage of Paros | Trireme Wall Art | Ancient Greek Wall Art | Printable 
 
 **Description:**
 
-Trireme Voyage of Paros — an original artwork from the "Aegean Voyages" collection (Marble Verdigris palette).
+Trireme Voyage of Paros — an original artwork from the "Aegean Voyages" collection (Honeyed Stone palette).
 
 A lone trireme under sail on a sea of running spirals — shields on the gunwale, oars in the swell (crew safely below deck).
 
@@ -6044,14 +6044,14 @@ A lone trireme under sail on a sea of running spirals — shields on the gunwale
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-169 — Aegean Voyages
 
 **Title:**
-Trireme Voyage of Aegina | Nautical Poster | Ancient Greek Wall Art | Printable Digital Download | Midnight Gold
+Trireme Voyage of Aegina | Nautical Poster | Ancient Greek Wall Art | Printable Digital Download | Golden Hour
 
 **Price:** £4.50
 
@@ -6061,7 +6061,7 @@ Trireme Voyage of Aegina | Nautical Poster | Ancient Greek Wall Art | Printable 
 
 **Description:**
 
-Trireme Voyage of Aegina — an original artwork from the "Aegean Voyages" collection (Midnight Gold palette).
+Trireme Voyage of Aegina — an original artwork from the "Aegean Voyages" collection (Golden Hour palette).
 
 A lone trireme under sail on a sea of running spirals — shields on the gunwale, oars in the swell (crew safely below deck).
 
@@ -6080,14 +6080,14 @@ A lone trireme under sail on a sea of running spirals — shields on the gunwale
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-170 — Aegean Voyages
 
 **Title:**
-Trireme Voyage of Skyros | Greek Ship Print | Ancient Greek Wall Art | Printable Digital Download | Olive Grove
+Trireme Voyage of Skyros | Greek Ship Print | Ancient Greek Wall Art | Printable Digital Download | Amber Dusk
 
 **Price:** £4.50
 
@@ -6097,7 +6097,7 @@ Trireme Voyage of Skyros | Greek Ship Print | Ancient Greek Wall Art | Printable
 
 **Description:**
 
-Trireme Voyage of Skyros — an original artwork from the "Aegean Voyages" collection (Olive Grove palette).
+Trireme Voyage of Skyros — an original artwork from the "Aegean Voyages" collection (Amber Dusk palette).
 
 A lone trireme under sail on a sea of running spirals — shields on the gunwale, oars in the swell (crew safely below deck).
 
@@ -6116,14 +6116,14 @@ A lone trireme under sail on a sea of running spirals — shields on the gunwale
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-171 — Emblems of Egypt
 
 **Title:**
-Sacred Emblem of Ankh | Ankh Print | Ancient Egyptian Wall Art | Printable Digital Download | Attic Red
+Sacred Emblem of Ankh | Ankh Print | Ancient Egyptian Wall Art | Printable Digital Download | Malachite Reed
 
 **Price:** £5.00
 
@@ -6133,7 +6133,7 @@ Sacred Emblem of Ankh | Ankh Print | Ancient Egyptian Wall Art | Printable Digit
 
 **Description:**
 
-Sacred Emblem of Ankh — an original artwork from the "Emblems of Egypt" collection (Attic Red palette).
+Sacred Emblem of Ankh — an original artwork from the "Emblems of Egypt" collection (Malachite Reed palette).
 
 The great emblems of the Nile — ankh, djed pillar, lotus standard and winged sun — set in ceremonial nested frames.
 
@@ -6152,14 +6152,14 @@ The great emblems of the Nile — ankh, djed pillar, lotus standard and winged s
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-172 — Emblems of Egypt
 
 **Title:**
-Sacred Emblem of Djed | Egyptian Symbol Art | Ancient Egyptian Wall Art | Printable Digital Download | Papyrus & Lapis
+Sacred Emblem of Djed | Egyptian Symbol Art | Ancient Egyptian Wall Art | Printable Digital Download | Sandstone Dawn
 
 **Price:** £5.00
 
@@ -6169,7 +6169,7 @@ Sacred Emblem of Djed | Egyptian Symbol Art | Ancient Egyptian Wall Art | Printa
 
 **Description:**
 
-Sacred Emblem of Djed — an original artwork from the "Emblems of Egypt" collection (Papyrus & Lapis palette).
+Sacred Emblem of Djed — an original artwork from the "Emblems of Egypt" collection (Sandstone Dawn palette).
 
 The great emblems of the Nile — ankh, djed pillar, lotus standard and winged sun — set in ceremonial nested frames.
 
@@ -6188,14 +6188,14 @@ The great emblems of the Nile — ankh, djed pillar, lotus standard and winged s
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-173 — Emblems of Egypt
 
 **Title:**
-Sacred Emblem of Lotus | Sacred Emblem Poster | Ancient Egyptian Wall Art | Printable Digital Download | Nile Gold
+Sacred Emblem of Lotus | Sacred Emblem Poster | Ancient Egyptian Wall Art | Printable Digital Download | Delta Blue
 
 **Price:** £5.00
 
@@ -6205,7 +6205,7 @@ Sacred Emblem of Lotus | Sacred Emblem Poster | Ancient Egyptian Wall Art | Prin
 
 **Description:**
 
-Sacred Emblem of Lotus — an original artwork from the "Emblems of Egypt" collection (Nile Gold palette).
+Sacred Emblem of Lotus — an original artwork from the "Emblems of Egypt" collection (Delta Blue palette).
 
 The great emblems of the Nile — ankh, djed pillar, lotus standard and winged sun — set in ceremonial nested frames.
 
@@ -6224,14 +6224,14 @@ The great emblems of the Nile — ankh, djed pillar, lotus standard and winged s
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-174 — Emblems of Egypt
 
 **Title:**
-Sacred Emblem of Winged Sun | Ankh Print | Ancient Egyptian Wall Art | Printable Digital Download | Desert Ochre
+Sacred Emblem of Winged Sun | Ankh Print | Ancient Egyptian Wall Art | Printable Digital Download | Gilded Dusk
 
 **Price:** £5.00
 
@@ -6241,7 +6241,7 @@ Sacred Emblem of Winged Sun | Ankh Print | Ancient Egyptian Wall Art | Printable
 
 **Description:**
 
-Sacred Emblem of Winged Sun — an original artwork from the "Emblems of Egypt" collection (Desert Ochre palette).
+Sacred Emblem of Winged Sun — an original artwork from the "Emblems of Egypt" collection (Gilded Dusk palette).
 
 The great emblems of the Nile — ankh, djed pillar, lotus standard and winged sun — set in ceremonial nested frames.
 
@@ -6260,14 +6260,14 @@ The great emblems of the Nile — ankh, djed pillar, lotus standard and winged s
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-175 — Emblems of Egypt
 
 **Title:**
-Sacred Emblem of Ankh II | Egyptian Symbol Art | Ancient Egyptian Wall Art | Printable Digital Download | Marble Verdigris
+Sacred Emblem of Ankh II | Egyptian Symbol Art | Ancient Egyptian Wall Art | Printable Digital Download | Oxide Red
 
 **Price:** £5.00
 
@@ -6277,7 +6277,7 @@ Sacred Emblem of Ankh II | Egyptian Symbol Art | Ancient Egyptian Wall Art | Pri
 
 **Description:**
 
-Sacred Emblem of Ankh II — an original artwork from the "Emblems of Egypt" collection (Marble Verdigris palette).
+Sacred Emblem of Ankh II — an original artwork from the "Emblems of Egypt" collection (Oxide Red palette).
 
 The great emblems of the Nile — ankh, djed pillar, lotus standard and winged sun — set in ceremonial nested frames.
 
@@ -6296,14 +6296,14 @@ The great emblems of the Nile — ankh, djed pillar, lotus standard and winged s
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-176 — Emblems of Egypt
 
 **Title:**
-Sacred Emblem of Djed II | Sacred Emblem Poster | Ancient Egyptian Wall Art | Printable Digital Download | Midnight Gold
+Sacred Emblem of Djed II | Sacred Emblem Poster | Ancient Egyptian Wall Art | Printable Digital Download | Nile Lapis
 
 **Price:** £5.00
 
@@ -6313,7 +6313,7 @@ Sacred Emblem of Djed II | Sacred Emblem Poster | Ancient Egyptian Wall Art | Pr
 
 **Description:**
 
-Sacred Emblem of Djed II — an original artwork from the "Emblems of Egypt" collection (Midnight Gold palette).
+Sacred Emblem of Djed II — an original artwork from the "Emblems of Egypt" collection (Nile Lapis palette).
 
 The great emblems of the Nile — ankh, djed pillar, lotus standard and winged sun — set in ceremonial nested frames.
 
@@ -6332,14 +6332,14 @@ The great emblems of the Nile — ankh, djed pillar, lotus standard and winged s
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-177 — Emblems of Egypt
 
 **Title:**
-Sacred Emblem of Lotus II | Ankh Print | Ancient Egyptian Wall Art | Printable Digital Download | Olive Grove
+Sacred Emblem of Lotus II | Ankh Print | Ancient Egyptian Wall Art | Printable Digital Download | Karnak Gold
 
 **Price:** £5.00
 
@@ -6349,7 +6349,7 @@ Sacred Emblem of Lotus II | Ankh Print | Ancient Egyptian Wall Art | Printable D
 
 **Description:**
 
-Sacred Emblem of Lotus II — an original artwork from the "Emblems of Egypt" collection (Olive Grove palette).
+Sacred Emblem of Lotus II — an original artwork from the "Emblems of Egypt" collection (Karnak Gold palette).
 
 The great emblems of the Nile — ankh, djed pillar, lotus standard and winged sun — set in ceremonial nested frames.
 
@@ -6368,14 +6368,14 @@ The great emblems of the Nile — ankh, djed pillar, lotus standard and winged s
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-178 — Emblems of Egypt
 
 **Title:**
-Sacred Emblem of Winged Sun II | Egyptian Symbol Art | Ancient Egyptian Wall Art | Printable Digital Download | Oxblood Cream
+Sacred Emblem of Winged Sun II | Egyptian Symbol Art | Ancient Egyptian Wall Art | Printable Digital Download | Terracotta Reed
 
 **Price:** £5.00
 
@@ -6385,7 +6385,7 @@ Sacred Emblem of Winged Sun II | Egyptian Symbol Art | Ancient Egyptian Wall Art
 
 **Description:**
 
-Sacred Emblem of Winged Sun II — an original artwork from the "Emblems of Egypt" collection (Oxblood Cream palette).
+Sacred Emblem of Winged Sun II — an original artwork from the "Emblems of Egypt" collection (Terracotta Reed palette).
 
 The great emblems of the Nile — ankh, djed pillar, lotus standard and winged sun — set in ceremonial nested frames.
 
@@ -6404,14 +6404,14 @@ The great emblems of the Nile — ankh, djed pillar, lotus standard and winged s
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-179 — Emblems of Egypt
 
 **Title:**
-Sacred Emblem of Ankh III | Sacred Emblem Poster | Ancient Egyptian Wall Art | Printable Digital Download | Basalt Bronze
+Sacred Emblem of Ankh III | Sacred Emblem Poster | Ancient Egyptian Wall Art | Printable Digital Download | Malachite Reed
 
 **Price:** £5.00
 
@@ -6421,7 +6421,7 @@ Sacred Emblem of Ankh III | Sacred Emblem Poster | Ancient Egyptian Wall Art | P
 
 **Description:**
 
-Sacred Emblem of Ankh III — an original artwork from the "Emblems of Egypt" collection (Basalt Bronze palette).
+Sacred Emblem of Ankh III — an original artwork from the "Emblems of Egypt" collection (Malachite Reed palette).
 
 The great emblems of the Nile — ankh, djed pillar, lotus standard and winged sun — set in ceremonial nested frames.
 
@@ -6440,14 +6440,14 @@ The great emblems of the Nile — ankh, djed pillar, lotus standard and winged s
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-180 — Emblems of Egypt
 
 **Title:**
-Sacred Emblem of Djed III | Ankh Print | Ancient Egyptian Wall Art | Printable Digital Download | Terracotta Noir
+Sacred Emblem of Djed III | Ankh Print | Ancient Egyptian Wall Art | Printable Digital Download | Sandstone Dawn
 
 **Price:** £5.00
 
@@ -6457,7 +6457,7 @@ Sacred Emblem of Djed III | Ankh Print | Ancient Egyptian Wall Art | Printable D
 
 **Description:**
 
-Sacred Emblem of Djed III — an original artwork from the "Emblems of Egypt" collection (Terracotta Noir palette).
+Sacred Emblem of Djed III — an original artwork from the "Emblems of Egypt" collection (Sandstone Dawn palette).
 
 The great emblems of the Nile — ankh, djed pillar, lotus standard and winged sun — set in ceremonial nested frames.
 
@@ -6476,14 +6476,14 @@ The great emblems of the Nile — ankh, djed pillar, lotus standard and winged s
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-181 — Lunar Rites
 
 **Title:**
-Moon Phases of Sin | Moon Phases Print | Ancient Babylonian Wall Art | Printable Digital Download | Desert Ochre (Night)
+Moon Phases of Sin | Moon Phases Print | Ancient Babylonian Wall Art | Printable Digital Download | Gilded Dusk
 
 **Price:** £5.50
 
@@ -6493,7 +6493,7 @@ Moon Phases of Sin | Moon Phases Print | Ancient Babylonian Wall Art | Printable
 
 **Description:**
 
-Moon Phases of Sin — an original artwork from the "Lunar Rites" collection (Desert Ochre (Night) palette).
+Moon Phases of Sin — an original artwork from the "Lunar Rites" collection (Gilded Dusk palette).
 
 The full lunar cycle stacked as a ritual column, rayed at the full moon — moon-worship rendered as minimal geometry.
 
@@ -6512,14 +6512,14 @@ The full lunar cycle stacked as a ritual column, rayed at the full moon — moon
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-182 — Lunar Rites
 
 **Title:**
-Moon Phases of Nanna | Lunar Cycle Wall Art | Ancient Babylonian Wall Art | Printable Digital Download | Marble Verdigris (Night)
+Moon Phases of Nanna | Lunar Cycle Wall Art | Ancient Babylonian Wall Art | Printable Digital Download | Oxide Red
 
 **Price:** £5.50
 
@@ -6529,7 +6529,7 @@ Moon Phases of Nanna | Lunar Cycle Wall Art | Ancient Babylonian Wall Art | Prin
 
 **Description:**
 
-Moon Phases of Nanna — an original artwork from the "Lunar Rites" collection (Marble Verdigris (Night) palette).
+Moon Phases of Nanna — an original artwork from the "Lunar Rites" collection (Oxide Red palette).
 
 The full lunar cycle stacked as a ritual column, rayed at the full moon — moon-worship rendered as minimal geometry.
 
@@ -6548,14 +6548,14 @@ The full lunar cycle stacked as a ritual column, rayed at the full moon — moon
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-183 — Lunar Rites
 
 **Title:**
-Moon Phases of Harran | Celestial Poster | Ancient Babylonian Wall Art | Printable Digital Download | Midnight Gold
+Moon Phases of Harran | Celestial Poster | Ancient Babylonian Wall Art | Printable Digital Download | Nile Lapis
 
 **Price:** £5.50
 
@@ -6565,7 +6565,7 @@ Moon Phases of Harran | Celestial Poster | Ancient Babylonian Wall Art | Printab
 
 **Description:**
 
-Moon Phases of Harran — an original artwork from the "Lunar Rites" collection (Midnight Gold palette).
+Moon Phases of Harran — an original artwork from the "Lunar Rites" collection (Nile Lapis palette).
 
 The full lunar cycle stacked as a ritual column, rayed at the full moon — moon-worship rendered as minimal geometry.
 
@@ -6584,14 +6584,14 @@ The full lunar cycle stacked as a ritual column, rayed at the full moon — moon
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-184 — Lunar Rites
 
 **Title:**
-Moon Phases of Ur | Moon Phases Print | Ancient Babylonian Wall Art | Printable Digital Download | Olive Grove
+Moon Phases of Ur | Moon Phases Print | Ancient Babylonian Wall Art | Printable Digital Download | Karnak Gold
 
 **Price:** £5.50
 
@@ -6601,7 +6601,7 @@ Moon Phases of Ur | Moon Phases Print | Ancient Babylonian Wall Art | Printable 
 
 **Description:**
 
-Moon Phases of Ur — an original artwork from the "Lunar Rites" collection (Olive Grove palette).
+Moon Phases of Ur — an original artwork from the "Lunar Rites" collection (Karnak Gold palette).
 
 The full lunar cycle stacked as a ritual column, rayed at the full moon — moon-worship rendered as minimal geometry.
 
@@ -6620,14 +6620,14 @@ The full lunar cycle stacked as a ritual column, rayed at the full moon — moon
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-185 — Lunar Rites
 
 **Title:**
-Moon Phases of Jericho | Lunar Cycle Wall Art | Ancient Babylonian Wall Art | Printable Digital Download | Oxblood Cream
+Moon Phases of Jericho | Lunar Cycle Wall Art | Ancient Babylonian Wall Art | Printable Digital Download | Terracotta Reed
 
 **Price:** £5.50
 
@@ -6637,7 +6637,7 @@ Moon Phases of Jericho | Lunar Cycle Wall Art | Ancient Babylonian Wall Art | Pr
 
 **Description:**
 
-Moon Phases of Jericho — an original artwork from the "Lunar Rites" collection (Oxblood Cream palette).
+Moon Phases of Jericho — an original artwork from the "Lunar Rites" collection (Terracotta Reed palette).
 
 The full lunar cycle stacked as a ritual column, rayed at the full moon — moon-worship rendered as minimal geometry.
 
@@ -6656,14 +6656,14 @@ The full lunar cycle stacked as a ritual column, rayed at the full moon — moon
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-186 — Lunar Rites
 
 **Title:**
-Moon Phases of Byblos | Celestial Poster | Ancient Babylonian Wall Art | Printable Digital Download | Basalt Bronze
+Moon Phases of Byblos | Celestial Poster | Ancient Babylonian Wall Art | Printable Digital Download | Malachite Reed
 
 **Price:** £5.50
 
@@ -6673,7 +6673,7 @@ Moon Phases of Byblos | Celestial Poster | Ancient Babylonian Wall Art | Printab
 
 **Description:**
 
-Moon Phases of Byblos — an original artwork from the "Lunar Rites" collection (Basalt Bronze palette).
+Moon Phases of Byblos — an original artwork from the "Lunar Rites" collection (Malachite Reed palette).
 
 The full lunar cycle stacked as a ritual column, rayed at the full moon — moon-worship rendered as minimal geometry.
 
@@ -6692,14 +6692,14 @@ The full lunar cycle stacked as a ritual column, rayed at the full moon — moon
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-187 — Lunar Rites
 
 **Title:**
-Moon Phases of Ugarit | Moon Phases Print | Ancient Babylonian Wall Art | Printable Digital Download | Terracotta Noir (Night)
+Moon Phases of Ugarit | Moon Phases Print | Ancient Babylonian Wall Art | Printable Digital Download | Sandstone Dawn
 
 **Price:** £5.50
 
@@ -6709,7 +6709,7 @@ Moon Phases of Ugarit | Moon Phases Print | Ancient Babylonian Wall Art | Printa
 
 **Description:**
 
-Moon Phases of Ugarit — an original artwork from the "Lunar Rites" collection (Terracotta Noir (Night) palette).
+Moon Phases of Ugarit — an original artwork from the "Lunar Rites" collection (Sandstone Dawn palette).
 
 The full lunar cycle stacked as a ritual column, rayed at the full moon — moon-worship rendered as minimal geometry.
 
@@ -6728,14 +6728,14 @@ The full lunar cycle stacked as a ritual column, rayed at the full moon — moon
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-188 — Lunar Rites
 
 **Title:**
-Moon Phases of Mari | Lunar Cycle Wall Art | Ancient Babylonian Wall Art | Printable Digital Download | Attic Red
+Moon Phases of Mari | Lunar Cycle Wall Art | Ancient Babylonian Wall Art | Printable Digital Download | Delta Blue
 
 **Price:** £5.50
 
@@ -6745,7 +6745,7 @@ Moon Phases of Mari | Lunar Cycle Wall Art | Ancient Babylonian Wall Art | Print
 
 **Description:**
 
-Moon Phases of Mari — an original artwork from the "Lunar Rites" collection (Attic Red palette).
+Moon Phases of Mari — an original artwork from the "Lunar Rites" collection (Delta Blue palette).
 
 The full lunar cycle stacked as a ritual column, rayed at the full moon — moon-worship rendered as minimal geometry.
 
@@ -6764,14 +6764,14 @@ The full lunar cycle stacked as a ritual column, rayed at the full moon — moon
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-189 — Lunar Rites
 
 **Title:**
-Moon Phases of Ebla | Celestial Poster | Ancient Babylonian Wall Art | Printable Digital Download | Papyrus & Lapis (Night)
+Moon Phases of Ebla | Celestial Poster | Ancient Babylonian Wall Art | Printable Digital Download | Gilded Dusk
 
 **Price:** £5.50
 
@@ -6781,7 +6781,7 @@ Moon Phases of Ebla | Celestial Poster | Ancient Babylonian Wall Art | Printable
 
 **Description:**
 
-Moon Phases of Ebla — an original artwork from the "Lunar Rites" collection (Papyrus & Lapis (Night) palette).
+Moon Phases of Ebla — an original artwork from the "Lunar Rites" collection (Gilded Dusk palette).
 
 The full lunar cycle stacked as a ritual column, rayed at the full moon — moon-worship rendered as minimal geometry.
 
@@ -6800,14 +6800,14 @@ The full lunar cycle stacked as a ritual column, rayed at the full moon — moon
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-190 — Lunar Rites
 
 **Title:**
-Moon Phases of Emar | Moon Phases Print | Ancient Babylonian Wall Art | Printable Digital Download | Nile Gold
+Moon Phases of Emar | Moon Phases Print | Ancient Babylonian Wall Art | Printable Digital Download | Oxide Red
 
 **Price:** £5.50
 
@@ -6817,7 +6817,7 @@ Moon Phases of Emar | Moon Phases Print | Ancient Babylonian Wall Art | Printabl
 
 **Description:**
 
-Moon Phases of Emar — an original artwork from the "Lunar Rites" collection (Nile Gold palette).
+Moon Phases of Emar — an original artwork from the "Lunar Rites" collection (Oxide Red palette).
 
 The full lunar cycle stacked as a ritual column, rayed at the full moon — moon-worship rendered as minimal geometry.
 
@@ -6836,14 +6836,14 @@ The full lunar cycle stacked as a ritual column, rayed at the full moon — moon
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-191 — Rosettes of Assyria
 
 **Title:**
-Rosette Medallion of Nimrud | Rosette Print | Ancient Assyrian Wall Art | Printable Digital Download | Olive Grove
+Rosette Medallion of Nimrud | Rosette Print | Ancient Assyrian Wall Art | Printable Digital Download | Burnt Sienna
 
 **Price:** £6.00
 
@@ -6853,7 +6853,7 @@ Rosette Medallion of Nimrud | Rosette Print | Ancient Assyrian Wall Art | Printa
 
 **Description:**
 
-Rosette Medallion of Nimrud — an original artwork from the "Rosettes of Assyria" collection (Olive Grove palette).
+Rosette Medallion of Nimrud — an original artwork from the "Rosettes of Assyria" collection (Burnt Sienna palette).
 
 The eternal rosette of Assyrian palaces — rings of petals and rays inside a degree-marked circle, ancient geometry as mandala.
 
@@ -6872,14 +6872,14 @@ The eternal rosette of Assyrian palaces — rings of petals and rays inside a de
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-192 — Rosettes of Assyria
 
 **Title:**
-Rosette Medallion of Nineveh | Assyrian Wall Art | Ancient Assyrian Wall Art | Printable Digital Download | Oxblood Cream
+Rosette Medallion of Nineveh | Assyrian Wall Art | Ancient Assyrian Wall Art | Printable Digital Download | Faded Lapis
 
 **Price:** £6.00
 
@@ -6889,7 +6889,7 @@ Rosette Medallion of Nineveh | Assyrian Wall Art | Ancient Assyrian Wall Art | P
 
 **Description:**
 
-Rosette Medallion of Nineveh — an original artwork from the "Rosettes of Assyria" collection (Oxblood Cream palette).
+Rosette Medallion of Nineveh — an original artwork from the "Rosettes of Assyria" collection (Faded Lapis palette).
 
 The eternal rosette of Assyrian palaces — rings of petals and rays inside a degree-marked circle, ancient geometry as mandala.
 
@@ -6908,14 +6908,14 @@ The eternal rosette of Assyrian palaces — rings of petals and rays inside a de
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-193 — Rosettes of Assyria
 
 **Title:**
-Rosette Medallion of Assur | Mandala Poster | Ancient Assyrian Wall Art | Printable Digital Download | Basalt Bronze
+Rosette Medallion of Assur | Mandala Poster | Ancient Assyrian Wall Art | Printable Digital Download | Olive Plaster
 
 **Price:** £6.00
 
@@ -6925,7 +6925,7 @@ Rosette Medallion of Assur | Mandala Poster | Ancient Assyrian Wall Art | Printa
 
 **Description:**
 
-Rosette Medallion of Assur — an original artwork from the "Rosettes of Assyria" collection (Basalt Bronze palette).
+Rosette Medallion of Assur — an original artwork from the "Rosettes of Assyria" collection (Olive Plaster palette).
 
 The eternal rosette of Assyrian palaces — rings of petals and rays inside a degree-marked circle, ancient geometry as mandala.
 
@@ -6944,14 +6944,14 @@ The eternal rosette of Assyrian palaces — rings of petals and rays inside a de
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-194 — Rosettes of Assyria
 
 **Title:**
-Rosette Medallion of Khorsabad | Rosette Print | Ancient Assyrian Wall Art | Printable Digital Download | Terracotta Noir
+Rosette Medallion of Khorsabad | Rosette Print | Ancient Assyrian Wall Art | Printable Digital Download | Etruscan Red
 
 **Price:** £6.00
 
@@ -6961,7 +6961,7 @@ Rosette Medallion of Khorsabad | Rosette Print | Ancient Assyrian Wall Art | Pri
 
 **Description:**
 
-Rosette Medallion of Khorsabad — an original artwork from the "Rosettes of Assyria" collection (Terracotta Noir palette).
+Rosette Medallion of Khorsabad — an original artwork from the "Rosettes of Assyria" collection (Etruscan Red palette).
 
 The eternal rosette of Assyrian palaces — rings of petals and rays inside a degree-marked circle, ancient geometry as mandala.
 
@@ -6980,14 +6980,14 @@ The eternal rosette of Assyrian palaces — rings of petals and rays inside a de
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-195 — Rosettes of Assyria
 
 **Title:**
-Rosette Medallion of Kalhu | Assyrian Wall Art | Ancient Assyrian Wall Art | Printable Digital Download | Attic Red
+Rosette Medallion of Kalhu | Assyrian Wall Art | Ancient Assyrian Wall Art | Printable Digital Download | Raw Umber
 
 **Price:** £6.00
 
@@ -6997,7 +6997,7 @@ Rosette Medallion of Kalhu | Assyrian Wall Art | Ancient Assyrian Wall Art | Pri
 
 **Description:**
 
-Rosette Medallion of Kalhu — an original artwork from the "Rosettes of Assyria" collection (Attic Red palette).
+Rosette Medallion of Kalhu — an original artwork from the "Rosettes of Assyria" collection (Raw Umber palette).
 
 The eternal rosette of Assyrian palaces — rings of petals and rays inside a degree-marked circle, ancient geometry as mandala.
 
@@ -7016,14 +7016,14 @@ The eternal rosette of Assyrian palaces — rings of petals and rays inside a de
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-196 — Rosettes of Assyria
 
 **Title:**
-Rosette Medallion of Arbela | Mandala Poster | Ancient Assyrian Wall Art | Printable Digital Download | Papyrus & Lapis
+Rosette Medallion of Arbela | Mandala Poster | Ancient Assyrian Wall Art | Printable Digital Download | Ochre Wash
 
 **Price:** £6.00
 
@@ -7033,7 +7033,7 @@ Rosette Medallion of Arbela | Mandala Poster | Ancient Assyrian Wall Art | Print
 
 **Description:**
 
-Rosette Medallion of Arbela — an original artwork from the "Rosettes of Assyria" collection (Papyrus & Lapis palette).
+Rosette Medallion of Arbela — an original artwork from the "Rosettes of Assyria" collection (Ochre Wash palette).
 
 The eternal rosette of Assyrian palaces — rings of petals and rays inside a degree-marked circle, ancient geometry as mandala.
 
@@ -7052,14 +7052,14 @@ The eternal rosette of Assyrian palaces — rings of petals and rays inside a de
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-197 — Rosettes of Assyria
 
 **Title:**
-Rosette Medallion of Dur Sharrukin | Rosette Print | Ancient Assyrian Wall Art | Printable Digital Download | Nile Gold
+Rosette Medallion of Dur Sharrukin | Rosette Print | Ancient Assyrian Wall Art | Printable Digital Download | Verdigris Fresco
 
 **Price:** £6.00
 
@@ -7069,7 +7069,7 @@ Rosette Medallion of Dur Sharrukin | Rosette Print | Ancient Assyrian Wall Art |
 
 **Description:**
 
-Rosette Medallion of Dur Sharrukin — an original artwork from the "Rosettes of Assyria" collection (Nile Gold palette).
+Rosette Medallion of Dur Sharrukin — an original artwork from the "Rosettes of Assyria" collection (Verdigris Fresco palette).
 
 The eternal rosette of Assyrian palaces — rings of petals and rays inside a degree-marked circle, ancient geometry as mandala.
 
@@ -7088,14 +7088,14 @@ The eternal rosette of Assyrian palaces — rings of petals and rays inside a de
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-198 — Rosettes of Assyria
 
 **Title:**
-Rosette Medallion of Balawat | Assyrian Wall Art | Ancient Assyrian Wall Art | Printable Digital Download | Desert Ochre
+Rosette Medallion of Balawat | Assyrian Wall Art | Ancient Assyrian Wall Art | Printable Digital Download | Pompeii Terracotta
 
 **Price:** £6.00
 
@@ -7105,7 +7105,7 @@ Rosette Medallion of Balawat | Assyrian Wall Art | Ancient Assyrian Wall Art | P
 
 **Description:**
 
-Rosette Medallion of Balawat — an original artwork from the "Rosettes of Assyria" collection (Desert Ochre palette).
+Rosette Medallion of Balawat — an original artwork from the "Rosettes of Assyria" collection (Pompeii Terracotta palette).
 
 The eternal rosette of Assyrian palaces — rings of petals and rays inside a degree-marked circle, ancient geometry as mandala.
 
@@ -7124,14 +7124,14 @@ The eternal rosette of Assyrian palaces — rings of petals and rays inside a de
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-199 — Rosettes of Assyria
 
 **Title:**
-Rosette Medallion of Til Barsip | Mandala Poster | Ancient Assyrian Wall Art | Printable Digital Download | Marble Verdigris
+Rosette Medallion of Til Barsip | Mandala Poster | Ancient Assyrian Wall Art | Printable Digital Download | Burnt Sienna
 
 **Price:** £6.00
 
@@ -7141,7 +7141,7 @@ Rosette Medallion of Til Barsip | Mandala Poster | Ancient Assyrian Wall Art | P
 
 **Description:**
 
-Rosette Medallion of Til Barsip — an original artwork from the "Rosettes of Assyria" collection (Marble Verdigris palette).
+Rosette Medallion of Til Barsip — an original artwork from the "Rosettes of Assyria" collection (Burnt Sienna palette).
 
 The eternal rosette of Assyrian palaces — rings of petals and rays inside a degree-marked circle, ancient geometry as mandala.
 
@@ -7160,14 +7160,14 @@ The eternal rosette of Assyrian palaces — rings of petals and rays inside a de
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
 
 ## AA-200 — Rosettes of Assyria
 
 **Title:**
-Rosette Medallion of Carchemish | Rosette Print | Ancient Assyrian Wall Art | Printable Digital Download | Midnight Gold
+Rosette Medallion of Carchemish | Rosette Print | Ancient Assyrian Wall Art | Printable Digital Download | Faded Lapis
 
 **Price:** £6.00
 
@@ -7177,7 +7177,7 @@ Rosette Medallion of Carchemish | Rosette Print | Ancient Assyrian Wall Art | Pr
 
 **Description:**
 
-Rosette Medallion of Carchemish — an original artwork from the "Rosettes of Assyria" collection (Midnight Gold palette).
+Rosette Medallion of Carchemish — an original artwork from the "Rosettes of Assyria" collection (Faded Lapis palette).
 
 The eternal rosette of Assyrian palaces — rings of petals and rays inside a degree-marked circle, ancient geometry as mandala.
 
@@ -7196,6 +7196,6 @@ The eternal rosette of Assyrian palaces — rings of petals and rays inside a de
 • Colors may vary slightly between screens and printers
 • Personal use only — not for resale or redistribution
 
-From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. No AI photo mashups: every piece is drawn from pure geometry, pattern and myth.
+From the KayCreates Ancient Artefacts Collection — 200 unique designs inspired by the art of Greece, Egypt, Rome, Mesopotamia and the megalith builders. Each piece is finished as a genuine aged medium — fresco on cracked plaster, oil on canvas, sepia engraving on foxed paper, or gouache on papyrus — with authentic grain, patina and hand-worn texture.
 
 ---
