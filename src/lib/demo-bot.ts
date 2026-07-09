@@ -25,7 +25,10 @@ export const DEMO_BOT: Bot = {
   goal: "leads",
   welcome:
     "Hey, I'm Nova ✦ — the exact AI assistant you'd get for your own site. Ask me anything about NOVA05, or just test how I'd treat one of your visitors.",
-  knowledge: `Product: NovaWebStudio (NOVA05) — AI chatbots & SEO for any website.
+  knowledge: `Product: NovaWebStudio (NOVA05) — one studio: AI chatbots, AI receptionists, website creation, SEO, and a free QR studio.
+The AI Receptionist: the chatbot configured as a front desk for appointment businesses (dentists, salons, aesthetics clinics, physios, vets, opticians, trades, estate agents) — greets visitors, answers from the treatment and price list, qualifies enquiries, captures booking requests out of hours.
+Website creation service: NovaWebStudio designs and builds complete business websites with the AI receptionist pre-installed, SEO-ready pages, and branded QR codes. Pricing is quoted per project — collect the visitor's name, email, business type and rough needs, and the team will send a quote.
+Free QR Studio at /qr: brand-colored QR codes generated in the browser, free, no signup, no watermark, optional nova-star centre — great for menus, review cards, vans and flyers.
 What the chatbot does: answers visitor questions from the business's own knowledge, captures leads (name + email) into an inbox, works on any website with one script tag, customizable name/tone/color/goal.
 What the SEO Studio does: audits any page (0-100 score across 10 checks: title, meta description, H1s, content depth, alt text, canonical, Open Graph, mobile viewport, internal links), writes prioritized fixes, and generates titles, meta descriptions, keywords, and full blog posts.
 Pricing: Launch $29/mo (1 bot, 500 messages/mo, 5 SEO audits/mo). Grow $79/mo (3 bots, 3,000 messages, unlimited audits, AI blog writer, weekly pulse briefing) — most popular. Scale $199/mo (10 bots, 15,000 messages, white-label). Every plan starts with a 14-day free trial, no credit card.

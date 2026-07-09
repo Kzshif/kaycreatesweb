@@ -5,9 +5,9 @@ import { WarpLink } from "@/components/Warp";
 // Mission control — the Deep Space home page (docs/design-philosophy.md).
 
 export const metadata = {
-  title: { absolute: "NOVA05 — AI chatbots & SEO for any website" },
+  title: { absolute: "NOVA05 — AI chatbots, receptionists, websites & SEO" },
   description:
-    "NOVA05 adds an AI chatbot to any website with one script tag — it answers visitors 24/7 from your own info and captures leads while you sleep — plus an AI SEO studio that audits your pages and rewrites them to rank.",
+    "NOVA05 is one studio for everything your business needs online: an AI chatbot and AI receptionist that answer visitors 24/7 and capture leads, done-for-you website creation, an AI SEO studio that gets you found, and a free QR code studio.",
   alternates: { canonical: "/" },
 };
 
@@ -38,7 +38,7 @@ export default function Home() {
       <section className="container-x relative grid gap-14 pb-24 pt-44 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:pt-52">
         <div>
           <Reveal>
-            <p className="eyebrow-space mb-6">NOVA05 · AI chatbots + SEO · any website</p>
+            <p className="eyebrow-space mb-6">NOVA05 · chatbots · receptionists · websites · SEO · QR</p>
           </Reveal>
           <Reveal delay={80}>
             <h1 className="font-display text-4xl font-bold leading-[1.12] tracking-tight sm:text-5xl lg:text-6xl">
@@ -103,34 +103,67 @@ export default function Home() {
         </Reveal>
       </section>
 
-      {/* -------------------------------------------------- The two destinations */}
+      {/* -------------------------------------------------- The five destinations */}
       <section className="container-x pb-24">
         <Reveal>
           <p className="eyebrow-space mb-4">Pick a destination</p>
           <h2 className="max-w-2xl font-display text-3xl font-bold tracking-tight sm:text-4xl">
-            Two engines. <em className="serif-accent grad-text font-normal">One ship.</em>
+            One studio. <em className="serif-accent grad-text font-normal">Every orbit.</em>
           </h2>
         </Reveal>
         <div className="mt-10 grid gap-6 md:grid-cols-2">
           <PortalCard
             href="/chatbot"
             delay={0}
-            eyebrow="Engine one"
+            eyebrow="Orbit one"
             title="The AI Chatbot"
             body="An employee who never sleeps, on every page — answering visitors and turning the interested ones into leads while you're busy or asleep."
             cta="Visit the chatbot →"
             emblem="💬"
           />
           <PortalCard
+            href="/receptionist"
+            delay={90}
+            eyebrow="Orbit two"
+            title="The AI Receptionist"
+            body="Built for booking businesses — dentists, salons, clinics, trades. It greets, answers from your price list, and captures the enquiry at 2am."
+            cta="Meet the receptionist →"
+            emblem="✦"
+          />
+          <PortalCard
+            href="/websites"
+            delay={180}
+            eyebrow="Orbit three"
+            title="Website Creation"
+            body="Done-for-you websites with the AI already inside — designed, written to rank, and answering customers from the day they launch."
+            cta="Visit the studio →"
+            emblem="🪐"
+          />
+          <PortalCard
             href="/seo"
-            delay={120}
-            eyebrow="Engine two"
+            delay={270}
+            eyebrow="Orbit four"
             title="The SEO Studio"
             body="A chatbot can't help visitors who never arrive. Audit any page for a 0–100 score, get an AI action plan, and generate content that ranks."
-            cta="Visit the studio →"
+            cta="Enter the studio →"
             emblem="▲"
           />
         </div>
+        <Reveal delay={340}>
+          <WarpLink href="/qr" className="group mt-6 block">
+            <div className="glass flex flex-col items-start gap-3 p-6 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <p className="eyebrow-space mb-1.5">Free tool · no signup</p>
+                <h3 className="font-display text-xl font-semibold">
+                  The QR Studio — brand-colored codes with a nova in the middle
+                </h3>
+              </div>
+              <p className="grad-text text-sm font-bold transition group-hover:translate-x-1">
+                Make one free →
+              </p>
+            </div>
+          </WarpLink>
+        </Reveal>
       </section>
 
       {/* --------------------------------------------------------- Platform marquee */}

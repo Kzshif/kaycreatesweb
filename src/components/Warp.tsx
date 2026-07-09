@@ -179,14 +179,26 @@ export function WarpProvider({ children }: { children: React.ReactNode }) {
           {state === "intro" && (
             <div className="absolute inset-0 grid place-items-center">
               <div className="warp-zoom-in text-center">
+                {/* The iconic mark: the 5 tucked under the O, so it reads 05. */}
                 <p
-                  className="font-display text-6xl font-bold tracking-[0.18em] text-starlight sm:text-8xl"
+                  className="font-display text-6xl font-bold tracking-[0.16em] text-starlight sm:text-8xl"
                   style={{ textShadow: "0 0 60px rgba(255,180,84,0.5), 0 0 120px rgba(240,101,149,0.35)" }}
+                  aria-label="NOVA 05"
                 >
-                  NOVA
+                  N
+                  <span className="relative inline-block">
+                    <span className="grad-text">O</span>
+                    <span
+                      className="grad-text absolute left-1/2 top-[96%] -translate-x-1/2 text-[0.5em] font-bold tracking-normal"
+                      aria-hidden
+                    >
+                      5
+                    </span>
+                  </span>
+                  VA
                 </p>
-                <p className="grad-text mt-2 font-display text-2xl font-semibold tracking-[0.6em] sm:text-3xl">
-                  05
+                <p className="mt-16 text-xs font-semibold uppercase tracking-[0.5em] text-starlight/40 sm:mt-20">
+                  One studio · every orbit
                 </p>
               </div>
             </div>

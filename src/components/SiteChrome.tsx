@@ -3,7 +3,42 @@
 import Link from "next/link";
 import { WarpLink } from "./Warp";
 
-/** The NOVA/05 lockup. */
+/**
+ * The iconic NOVA wordmark: the 5 sits directly under the O, so the O and 5
+ * together read "05". N/V/A in starlight, O + 5 in the nova gradient.
+ */
+export function Wordmark({
+  size = "text-lg",
+  night = true,
+  className = "",
+}: {
+  size?: string;
+  night?: boolean;
+  className?: string;
+}) {
+  return (
+    <span
+      className={`inline-flex font-display font-bold leading-none tracking-[0.14em] ${size} ${
+        night ? "text-starlight" : "text-ink"
+      } ${className}`}
+      aria-label="NOVA 05"
+    >
+      N
+      <span className="relative inline-block">
+        <span className="grad-text">O</span>
+        <span
+          className="grad-text absolute left-1/2 top-[98%] -translate-x-1/2 text-[0.52em] font-bold tracking-normal"
+          aria-hidden
+        >
+          5
+        </span>
+      </span>
+      VA
+    </span>
+  );
+}
+
+/** The NOVA lockup: star mark + wordmark (extra bottom room for the tucked 5). */
 export function Logo({
   className = "",
   night = false,
@@ -14,19 +49,10 @@ export function Logo({
   href?: string;
 }) {
   return (
-    <Link href={href} className={`group flex items-center gap-3 ${className}`}>
+    <Link href={href} className={`group flex items-center gap-2.5 ${className}`}>
       <NovaMark />
-      <span className="leading-none">
-        <span
-          className={`block font-display text-lg font-bold tracking-[0.22em] ${
-            night ? "text-starlight" : "text-ink"
-          }`}
-        >
-          NOVA
-        </span>
-        <span className="grad-text mt-0.5 block font-display text-[10px] font-semibold tracking-[0.62em]">
-          05
-        </span>
+      <span className="pb-[0.6em] leading-none">
+        <Wordmark night={night} />
       </span>
     </Link>
   );
@@ -53,7 +79,10 @@ export function NovaMark({ size = 34 }: { size?: number }) {
 
 const NAV = [
   { href: "/chatbot", label: "AI Chatbot" },
-  { href: "/seo", label: "SEO Studio" },
+  { href: "/receptionist", label: "AI Receptionist" },
+  { href: "/seo", label: "SEO" },
+  { href: "/websites", label: "Websites" },
+  { href: "/qr", label: "QR Studio" },
   { href: "/pricing", label: "Pricing" },
 ];
 
@@ -61,9 +90,9 @@ const NAV = [
 export function SiteHeader() {
   return (
     <header className="fixed inset-x-0 top-4 z-40 px-4">
-      <div className="mx-auto flex h-14 max-w-5xl items-center justify-between rounded-full border border-white/10 bg-space/70 px-5 backdrop-blur-xl">
+      <div className="mx-auto flex h-14 max-w-6xl items-center justify-between rounded-full border border-white/10 bg-space/70 px-5 backdrop-blur-xl">
         <Logo night />
-        <nav className="hidden items-center gap-6 text-sm font-medium text-starlight/60 md:flex">
+        <nav className="hidden items-center gap-5 text-sm font-medium text-starlight/60 lg:flex">
           {NAV.map((n) => (
             <WarpLink key={n.href} href={n.href} className="transition hover:text-starlight">
               {n.label}
@@ -82,8 +111,8 @@ export function SiteHeader() {
           </Link>
         </div>
       </div>
-      {/* Mobile page nav */}
-      <nav className="mx-auto mt-2 flex max-w-5xl justify-center gap-2 md:hidden">
+      {/* Mobile / tablet page nav */}
+      <nav className="mx-auto mt-2 flex max-w-6xl flex-wrap justify-center gap-2 lg:hidden">
         {NAV.map((n) => (
           <WarpLink
             key={n.href}
@@ -104,7 +133,7 @@ export function SiteFooter() {
       <div className="container-x flex flex-col gap-4 py-10 text-sm text-starlight/50 sm:flex-row sm:items-center sm:justify-between">
         <Logo night />
         <p>© {new Date().getFullYear()} NovaWebStudio. Built with the Claude API.</p>
-        <div className="flex gap-5">
+        <div className="flex flex-wrap gap-4">
           {NAV.map((n) => (
             <WarpLink key={n.href} href={n.href} className="transition hover:text-starlight">
               {n.label}

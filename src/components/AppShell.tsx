@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { NovaMark } from "./SiteChrome";
+import { NovaMark, Wordmark } from "./SiteChrome";
 import type { User, Workspace } from "@/lib/types";
 
 const NAV = [
@@ -45,13 +45,8 @@ export default function AppShell({
         />
         <Link href="/app" className="relative flex items-center gap-3 px-2 py-3">
           <NovaMark size={30} />
-          <span className="leading-none">
-            <span className="block font-display text-base font-bold tracking-[0.22em] text-starlight">
-              NOVA
-            </span>
-            <span className="grad-text mt-0.5 block font-display text-[9px] font-semibold tracking-[0.62em]">
-              05
-            </span>
+          <span className="pb-[0.6em] leading-none">
+            <Wordmark size="text-base" />
           </span>
         </Link>
 
@@ -93,7 +88,7 @@ export default function AppShell({
       <div className="flex min-w-0 flex-1 flex-col">
         <header className="sticky top-0 z-20 flex items-center justify-between gap-2 border-b border-ink/10 bg-paper/90 px-4 py-3 backdrop-blur md:hidden">
           <Link href="/app" className="flex items-center gap-2 font-display text-base font-bold tracking-[0.2em]">
-            <NovaMark size={24} /> NOVA<span className="grad-text">05</span>
+            <NovaMark size={24} /> <span className="pb-[0.55em]"><Wordmark size="text-base" /></span>
           </Link>
           <nav className="flex gap-1 overflow-x-auto text-xs font-medium">
             {NAV.map((item) => {
