@@ -72,7 +72,7 @@ export function NovaMark({ size = 34 }: { size?: number }) {
         d="M17 1 L20.2 13.8 L33 17 L20.2 20.2 L17 33 L13.8 20.2 L1 17 L13.8 13.8 Z"
         fill="url(#novaGrad)"
       />
-      <circle cx="17" cy="17" r="2.4" fill="#08070f" opacity="0.55" />
+      <circle cx="17" cy="17" r="2.4" fill="#1a1735" opacity="0.55" />
     </svg>
   );
 }
@@ -83,6 +83,7 @@ const NAV = [
   { href: "/seo", label: "SEO" },
   { href: "/websites", label: "Websites" },
   { href: "/qr", label: "QR Studio" },
+  { href: "/quiz", label: "Quiz" },
   { href: "/pricing", label: "Pricing" },
 ];
 

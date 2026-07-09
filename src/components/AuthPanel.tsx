@@ -23,7 +23,7 @@ export function AuthPanel({
           className="pointer-events-none absolute inset-0"
           style={{
             background:
-              "radial-gradient(700px 500px at 30% 45%, rgba(8,7,15,0.25) 0%, rgba(8,7,15,0.85) 70%, #08070f 100%)",
+              "radial-gradient(700px 500px at 30% 45%, rgba(26,23,53,0.25) 0%, rgba(26,23,53,0.85) 70%, #1a1735 100%)",
           }}
         />
         <div className="relative">

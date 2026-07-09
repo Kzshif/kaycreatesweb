@@ -1,5 +1,7 @@
 import AskNova from "@/components/AskNova";
+import CosmicScene from "@/components/CosmicScene";
 import { Counter, Reveal } from "@/components/Motion";
+import Tilt from "@/components/Tilt";
 import { WarpLink } from "@/components/Warp";
 
 // Mission control — the Deep Space home page (docs/design-philosophy.md).
@@ -35,7 +37,9 @@ export default function Home() {
   return (
     <>
       {/* ---------------------------------------------------------------- Hero */}
-      <section className="container-x relative grid gap-14 pb-24 pt-44 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:pt-52">
+      <section className="relative">
+        <CosmicScene />
+        <div className="container-x relative grid gap-14 pb-24 pt-44 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:pt-52">
         <div>
           <Reveal>
             <p className="eyebrow-space mb-6">NOVA05 · chatbots · receptionists · websites · SEO · QR</p>
@@ -72,6 +76,7 @@ export default function Home() {
 
         {/* Hero conversation — void glass, floating */}
         <Reveal delay={200}>
+          <Tilt max={7}>
           <div className="glass float-slow relative p-6 sm:p-7">
             <div className="mb-5 flex items-center gap-3">
               <span
@@ -100,7 +105,9 @@ export default function Home() {
               <span>★</span> Lead captured · mia@example.com · AI reply drafted
             </div>
           </div>
+          </Tilt>
         </Reveal>
+        </div>
       </section>
 
       {/* -------------------------------------------------- The five destinations */}
@@ -149,8 +156,23 @@ export default function Home() {
             emblem="▲"
           />
         </div>
-        <Reveal delay={340}>
-          <WarpLink href="/qr" className="group mt-6 block">
+        <Reveal delay={320}>
+          <WarpLink href="/quiz" className="group mt-6 block">
+            <div className="glass flex flex-col items-start gap-3 border-nova/25 p-6 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <p className="eyebrow-space mb-1.5">Play · 2 minutes</p>
+                <h3 className="font-display text-xl font-semibold">
+                  🛰️ The Mission Readiness Scan — what should <em className="serif-accent grad-text font-normal">your</em> website be doing?
+                </h3>
+              </div>
+              <p className="grad-text text-sm font-bold transition group-hover:translate-x-1">
+                Start the scan →
+              </p>
+            </div>
+          </WarpLink>
+        </Reveal>
+        <Reveal delay={380}>
+          <WarpLink href="/qr" className="group mt-4 block">
             <div className="glass flex flex-col items-start gap-3 p-6 sm:flex-row sm:items-center sm:justify-between">
               <div>
                 <p className="eyebrow-space mb-1.5">Free tool · no signup</p>
@@ -279,6 +301,7 @@ function PortalCard({
   return (
     <Reveal delay={delay}>
       <WarpLink href={href} className="group block">
+        <Tilt max={9}>
         <div className="glass relative overflow-hidden p-8">
           {/* Orbit emblem */}
           <div className="relative mb-6 h-20 w-20">
@@ -303,6 +326,7 @@ function PortalCard({
             {cta}
           </p>
         </div>
+        </Tilt>
       </WarpLink>
     </Reveal>
   );

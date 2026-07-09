@@ -136,7 +136,7 @@ export function WarpProvider({ children }: { children: React.ReactNode }) {
     let raf = 0;
     const maxDist = Math.hypot(cx, cy) + 60;
     const step = () => {
-      ctx.fillStyle = "rgba(8, 7, 15, 0.32)";
+      ctx.fillStyle = "rgba(26, 23, 53, 0.32)";
       ctx.fillRect(0, 0, w, h);
       for (const s of streaks) {
         s.speed *= 1.035; // accelerate into the jump
@@ -160,7 +160,7 @@ export function WarpProvider({ children }: { children: React.ReactNode }) {
       }
       raf = requestAnimationFrame(step);
     };
-    ctx.fillStyle = "#08070f";
+    ctx.fillStyle = "#1a1735";
     ctx.fillRect(0, 0, w, h);
     raf = requestAnimationFrame(step);
     return () => cancelAnimationFrame(raf);

@@ -9,6 +9,7 @@
 - **Website Creation** — done-for-you business websites designed and built by NovaWebStudio, with the AI receptionist pre-installed and trained, SEO-ready pages, and branded QR codes included.
 - **AI SEO Studio** — audits any page for a 0–100 score across ten checks, returns a prioritised action plan with rewritten title and meta description, and includes an AI writer for keywords, metadata and full blog posts.
 - **QR Studio** — a free in-browser QR code generator (no signup, no watermark) with brand colors and an optional nova-star centre, for menus, review cards, vans, flyers.
+- **Mission Readiness Scan** — a free 2-minute quiz that diagnoses whether an AI receptionist, chatbot, new website or SEO would help a business most, with a personal follow-up.
 
 ## Who it is for
 
@@ -29,6 +30,7 @@ Small and independent businesses with a website — dentists, salons and clinics
 - Website Creation: https://novawebstudio05.netlify.app/websites
 - SEO Studio: https://novawebstudio05.netlify.app/seo
 - Free QR Studio: https://novawebstudio05.netlify.app/qr
+- Readiness Quiz: https://novawebstudio05.netlify.app/quiz
 - Pricing: https://novawebstudio05.netlify.app/pricing
 
 ## How it works

@@ -20,8 +20,8 @@ const config: Config = {
         mint: "#0ca678",
         // Dark (marketing) context — Cosmic Nova, Deep Space side
         space: {
-          DEFAULT: "#08070f",
-          raised: "#100e1c",
+          DEFAULT: "#1a1735",
+          raised: "#241f47",
         },
         nova: {
           DEFAULT: "#ffb454",

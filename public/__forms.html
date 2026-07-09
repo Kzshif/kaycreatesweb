@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+  <head><meta charset="utf-8" /><title>forms</title></head>
+  <body hidden>
+    <!-- Static form definitions so Netlify Forms picks them up at deploy time.
+         The quiz posts here via fetch; submissions appear in the Netlify
+         dashboard (Forms) and can trigger email notifications. -->
+    <form name="quiz-leads" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="text" name="bot-field" />
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="text" name="business" />
+      <input type="text" name="archetype" />
+      <input type="text" name="q1" />
+      <input type="text" name="q2" />
+      <input type="text" name="q3" />
+      <input type="text" name="q4" />
+      <input type="text" name="q5" />
+    </form>
+  </body>
+</html>
