@@ -13,6 +13,15 @@ export default function QuizPage() {
     <>
       <section className="container-x pb-10 pt-44 text-center lg:pt-52">
         <Reveal>
+          {/* Nova the mascot (generated with Higgsfield; snapshotted at build) */}
+          <img
+            src="/brand/mascot.png"
+            alt=""
+            width={120}
+            height={120}
+            loading="lazy"
+            className="float-slow mx-auto mb-6 h-28 w-28 rounded-3xl object-cover shadow-2xl"
+          />
           <p className="eyebrow-space mb-6">Free · 2 minutes · weirdly accurate</p>
           <h1 className="mx-auto max-w-3xl font-display text-4xl font-bold leading-[1.12] tracking-tight sm:text-5xl">
             The Mission{" "}

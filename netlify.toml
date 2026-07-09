@@ -1,6 +1,8 @@
 # Netlify configuration — Next.js runs on Netlify's official runtime plugin.
+# Brand art (AI-generated via Higgsfield) is snapshotted into public/brand at
+# build time so it serves same-origin; failures never break the build.
 [build]
-  command = "npm run build"
+  command = "mkdir -p public/brand && (curl -sSf -o public/brand/mascot.png 'https://d8j0ntlcm91z4.cloudfront.net/user_3GHDt5upVu1xScWxwntc9moKgb4/hf_20260709_180314_dd3f4162-842f-4f69-9683-67274a89c9b1.png' || true) && (curl -sSf -o public/brand/scene.png 'https://d8j0ntlcm91z4.cloudfront.net/user_3GHDt5upVu1xScWxwntc9moKgb4/hf_20260709_180336_da061ff8-f58b-4bac-9bcc-f48cf65caa60.png' || true) && npm run build"
   publish = ".next"
 
 [[plugins]]

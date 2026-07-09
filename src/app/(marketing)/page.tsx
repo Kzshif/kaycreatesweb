@@ -261,6 +261,14 @@ export default function Home() {
         />
         <div className="container-x relative text-center">
           <Reveal>
+            <img
+              src="/brand/mascot.png"
+              alt=""
+              width={96}
+              height={96}
+              loading="lazy"
+              className="float-slow mx-auto mb-6 h-24 w-24 rounded-3xl object-cover shadow-2xl"
+            />
             <h2 className="mx-auto max-w-3xl font-display text-3xl font-bold tracking-tight sm:text-5xl">
               Your next customer is on your site{" "}
               <em className="serif-accent grad-text font-normal">right now.</em>
