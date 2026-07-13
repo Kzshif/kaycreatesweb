@@ -71,6 +71,15 @@
       "outOfStockText": ["out of stock", "sold out", "coming soon"]
     },
     {
+      "id": "tgjones-example",
+      "name": "TG Jones — (paste a real product here)",
+      "store": "TG Jones online (Newbury store: TCG is mostly in-store — ask staff about pre-order deposits)",
+      "url": "https://www.tgjonesonline.co.uk/",
+      "enabled": false,
+      "inStockText": ["add to basket", "add to cart"],
+      "outOfStockText": ["out of stock", "sold out", "unavailable"]
+    },
+    {
       "id": "pokemoncenter-uk-example",
       "name": "Pokémon Center UK — (paste a real product here)",
       "store": "Pokémon Center UK (official)",

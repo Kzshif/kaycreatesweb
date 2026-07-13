@@ -160,7 +160,8 @@ getting scarce stock, and lets you grab it same-day:
 | **Argos** | Newbury, Kennet Centre (in-town) | Check-stock-at-store + reserve online. Also inside some Sainsbury's. |
 | **Smyths Toys** | Reading & Basingstoke | Reserve online, collect in store. Good for ETBs/boxes. |
 | **GAME** | Reading (Broad St / Oracle) | Sometimes gets TCG allocations. |
-| **WHSmith / Tesco / Sainsbury's** | Newbury town + retail parks | Supermarkets get booster boxes/blisters; in-store only, no online stock feed — worth a physical pop-in on drop days. |
+| **TG Jones** (ex-WHSmith) | Newbury town | TCG is mostly **in-store** — they run pre-order deposits at the counter for new sets (e.g. £2/pack). Ask staff when the next set's pre-orders open; online shop (tgjonesonline.co.uk) has little TCG. |
+| **Tesco / Sainsbury's** | Newbury retail parks | Supermarkets get booster boxes/blisters; in-store only, no online stock feed — worth a physical pop-in on drop days. |
 | **John Lewis** | Reading | Occasional TCG stock, reliable click & collect. |
 
 Strong **online-only** UK specialists worth watching (usually get allocations
