@@ -4,15 +4,13 @@
   "perRequestDelayMs": 2500,
   "requestTimeoutMs": 20000,
   "stateFile": "state.preorders.json",
-
   "notify": {
+    "ntfyTopic": "",
     "discordWebhookUrl": "",
     "telegramBotToken": "",
     "telegramChatId": ""
   },
-
   "_comment": "Pre-order watcher. Point each watch at a retailer's product/category page for an upcoming set BEFORE it releases. It alerts the moment the page becomes orderable (pre-order / add to basket goes live). mode:'preorder' gives sensible default phrases and 'PRE-ORDER LIVE' alerts, so you can omit inStockText/outOfStockText unless a site needs tuning. Set browser:true for JS-rendered sites (also pass --browser, or run: node checker.mjs --config preorders.json --browser).",
-
   "watches": [
     {
       "id": "chaoscards-preorder",

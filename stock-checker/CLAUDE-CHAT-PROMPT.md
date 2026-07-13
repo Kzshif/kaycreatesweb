@@ -52,8 +52,10 @@ HOW IT WORKS
        node checker.mjs --once   (single pass, for cron)
        node checker.mjs --config preorders.json --browser
 - Deployment options I have: Dockerfile, a systemd unit (poke-checker.service),
-  and a crontab example. Alerts via Discord webhook URL or Telegram bot
-  token + chat id in the config's "notify" block.
+  and a crontab example. Alerts via the config's "notify" block: ntfy
+  (my preference — "ntfyTopic" with a secret topic name, paired with the
+  free ntfy phone app, no account needed), or Discord webhook URL, or
+  Telegram bot token + chat id.
 
 WHAT I MIGHT ASK YOU FOR
 - Finding the right inStockText/outOfStockText phrases for a specific UK

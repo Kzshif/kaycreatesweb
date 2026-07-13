@@ -5,6 +5,7 @@
   "requestTimeoutMs": 20000,
   "stateFile": "state.uk.json",
   "notify": {
+    "ntfyTopic": "",
     "discordWebhookUrl": "",
     "telegramBotToken": "",
     "telegramChatId": ""

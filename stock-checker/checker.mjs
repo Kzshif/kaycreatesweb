@@ -360,6 +360,13 @@ async function notifyTelegramNewProducts(token, chatId, watch, items) {
 
 async function sendNewProductAlerts(notify, watch, items) {
   const jobs = [];
+  if (notify?.ntfyTopic) {
+    jobs.push(
+      notifyNtfyNewProducts(notify.ntfyTopic, watch, items).catch((e) =>
+        console.warn(`  ! ntfy alert failed: ${e.message}`),
+      ),
+    );
+  }
   if (notify?.discordWebhookUrl) {
     jobs.push(
       notifyDiscordNewProducts(notify.discordWebhookUrl, watch, items).catch(
@@ -380,8 +387,54 @@ async function sendNewProductAlerts(notify, watch, items) {
   await Promise.all(jobs);
 }
 
+// ntfy.sh — zero-account push notifications. The topic name IS the secret;
+// pick something unguessable. Accepts a bare topic ("kays-poke-alerts-x7q2")
+// or a full URL for self-hosted servers.
+function ntfyUrl(topic) {
+  return topic.includes("://") ? topic : `https://ntfy.sh/${topic}`;
+}
+
+async function notifyNtfy(topic, watch) {
+  const res = await fetch(ntfyUrl(topic), {
+    method: "POST",
+    headers: {
+      Title: `${liveLabel(watch)}: ${watch.name}`,
+      Click: watch.url,
+      Priority: "high",
+      Tags: modeOf(watch) === "preorder" ? "purple_circle" : "green_circle",
+    },
+    body: (watch.store ? `${watch.store}\n` : "") + watch.url,
+  });
+  if (!res.ok) throw new Error(`ntfy returned ${res.status}`);
+}
+
+async function notifyNtfyNewProducts(topic, watch, items) {
+  const lines = items
+    .slice(0, 10)
+    .map((p) => `• ${p.name.slice(0, 90)}\n  ${p.url}`)
+    .join("\n");
+  const res = await fetch(ntfyUrl(topic), {
+    method: "POST",
+    headers: {
+      Title: `NEW LISTINGS: ${watch.name}`,
+      Click: items[0]?.url || watch.url,
+      Priority: "high",
+      Tags: "new",
+    },
+    body: (watch.store ? `${watch.store}\n` : "") + lines,
+  });
+  if (!res.ok) throw new Error(`ntfy returned ${res.status}`);
+}
+
 async function sendAlerts(notify, watch) {
   const jobs = [];
+  if (notify?.ntfyTopic) {
+    jobs.push(
+      notifyNtfy(notify.ntfyTopic, watch).catch((e) =>
+        console.warn(`  ! ntfy alert failed: ${e.message}`),
+      ),
+    );
+  }
   if (notify?.discordWebhookUrl) {
     jobs.push(
       notifyDiscord(notify.discordWebhookUrl, watch).catch((e) =>
