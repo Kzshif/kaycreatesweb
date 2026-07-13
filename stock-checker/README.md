@@ -227,6 +227,32 @@ and this checker can watch pre-order pages for the "add to basket" going live.
 
 ---
 
+## Keeping on top of the news (how Dropee-style services know)
+
+Drop-alert services know when and where drops happen from three places, and you
+can tap all three yourself:
+
+1. **News-site watches (built in).** The UK config includes category watches on
+   **PokéBeach** and **Dittobase** — they alert when a new article matches your
+   keywords ("Ascended Heroes", "pre-order", "product lineup"…). PokéBeach in
+   particular breaks set reveals and retailer lineups days-to-weeks before
+   products go live, which is your cue to point restock watches at the right
+   pages.
+2. **UK stock intel accounts.** Follow **@PokemonStockUK** on X — they post
+   in-store allocation news that never appears online (e.g. TG Jones/WHSmith
+   counter pre-order deposits, supermarket drop days). Free Discord communities
+   like **UK Pokémon Restocks / TCG stock servers** relay member sightings from
+   physical stores; joining one for *intel* is entirely legitimate — it's the
+   auto-buy bots some sell that you don't need.
+3. **Retailer newsletters + apps.** Sign up to email lists at Pokémon Center
+   UK, Chaos Cards, Magic Madhouse and Smyths, and enable app notifications for
+   Smyths/Argos. Retailers announce their own pre-order windows there first.
+
+The workflow that beats the paid services: news watch fires ("Ascended Heroes
+restock wave at Smyths") → you add/enable the exact product-page watches → the
+restock watch pings you the second it's buyable → you check out, or reserve
+click & collect at Reading/Basingstoke/Newbury.
+
 ## Browser mode — for JavaScript-rendered sites
 
 Some retailers (Pokémon Center, some Argos flows) build stock status in the

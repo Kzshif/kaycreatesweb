@@ -4,15 +4,12 @@
   "perRequestDelayMs": 3000,
   "requestTimeoutMs": 20000,
   "stateFile": "state.uk.json",
-
   "notify": {
     "discordWebhookUrl": "",
     "telegramBotToken": "",
     "telegramChatId": ""
   },
-
-  "_comment": "UK-wide sweep for Pokémon ETBs, booster bundles and booster boxes. Category watches scan a shop's whole Pokémon section and alert when NEW products matching the keywords appear (first pass seeds silently). Specialist TCG shops are enabled out of the box; big-box retailers are included but disabled — verify their section URL loads in your browser, then enable (add browser:true if a watch always finds 0 matches). Copy to uk-watches.json, add your webhook, then run: node checker.mjs --config uk-watches.json",
-
+  "_comment": "UK-wide sweep for Pokémon sealed product. Category watches scan a shop's whole Pokémon section and alert when NEW products matching the keywords appear (first pass seeds silently). Keywords cover product TYPES (etb, bundle, box, tins, collections) AND hot SET NAMES (ascended heroes, pitch black) so any product from those sets alerts whatever it is. Specialist TCG shops are enabled out of the box; big-box retailers are included but disabled — verify their section URL loads in your browser, then enable (add browser:true if a watch always finds 0 matches). News watches at the bottom use the same engine on Pokémon news sites so you hear about drops/allocations before they happen. Copy to uk-watches.json, add your webhook, then run: node checker.mjs --config uk-watches.json",
   "watches": [
     {
       "id": "cat-chaoscards",
@@ -20,8 +17,23 @@
       "store": "Chaos Cards (UK online)",
       "url": "https://www.chaoscards.co.uk/shop/card-games/pokemon",
       "mode": "category",
-      "keywords": ["elite trainer box", "booster bundle", "booster box"],
-      "excludeText": ["japanese", "single"],
+      "keywords": [
+        "elite trainer box",
+        "booster bundle",
+        "booster box",
+        "premium collection",
+        "poster collection",
+        "illustration collection",
+        "tech sticker",
+        "mini tin",
+        "top trainer",
+        "ascended heroes",
+        "pitch black"
+      ],
+      "excludeText": [
+        "japanese",
+        "single"
+      ],
       "enabled": true
     },
     {
@@ -30,8 +42,23 @@
       "store": "Magic Madhouse (UK online)",
       "url": "https://magicmadhouse.co.uk/pokemon",
       "mode": "category",
-      "keywords": ["elite trainer box", "booster bundle", "booster box"],
-      "excludeText": ["japanese", "single"],
+      "keywords": [
+        "elite trainer box",
+        "booster bundle",
+        "booster box",
+        "premium collection",
+        "poster collection",
+        "illustration collection",
+        "tech sticker",
+        "mini tin",
+        "top trainer",
+        "ascended heroes",
+        "pitch black"
+      ],
+      "excludeText": [
+        "japanese",
+        "single"
+      ],
       "enabled": true
     },
     {
@@ -40,8 +67,23 @@
       "store": "Total Cards (UK online)",
       "url": "https://totalcards.net/collections/pokemon",
       "mode": "category",
-      "keywords": ["elite trainer box", "booster bundle", "booster box"],
-      "excludeText": ["japanese", "single"],
+      "keywords": [
+        "elite trainer box",
+        "booster bundle",
+        "booster box",
+        "premium collection",
+        "poster collection",
+        "illustration collection",
+        "tech sticker",
+        "mini tin",
+        "top trainer",
+        "ascended heroes",
+        "pitch black"
+      ],
+      "excludeText": [
+        "japanese",
+        "single"
+      ],
       "enabled": true
     },
     {
@@ -50,8 +92,23 @@
       "store": "Titan Cards (UK online)",
       "url": "https://titancards.co.uk/",
       "mode": "category",
-      "keywords": ["elite trainer box", "booster bundle", "booster box"],
-      "excludeText": ["japanese", "single"],
+      "keywords": [
+        "elite trainer box",
+        "booster bundle",
+        "booster box",
+        "premium collection",
+        "poster collection",
+        "illustration collection",
+        "tech sticker",
+        "mini tin",
+        "top trainer",
+        "ascended heroes",
+        "pitch black"
+      ],
+      "excludeText": [
+        "japanese",
+        "single"
+      ],
       "enabled": true
     },
     {
@@ -60,8 +117,23 @@
       "store": "Zatu Games (UK online)",
       "url": "https://www.board-game.co.uk/product-category/pokemon/",
       "mode": "category",
-      "keywords": ["elite trainer box", "booster bundle", "booster box"],
-      "excludeText": ["japanese", "single"],
+      "keywords": [
+        "elite trainer box",
+        "booster bundle",
+        "booster box",
+        "premium collection",
+        "poster collection",
+        "illustration collection",
+        "tech sticker",
+        "mini tin",
+        "top trainer",
+        "ascended heroes",
+        "pitch black"
+      ],
+      "excludeText": [
+        "japanese",
+        "single"
+      ],
       "enabled": true
     },
     {
@@ -70,9 +142,21 @@
       "store": "Smyths Toys (Reading / Basingstoke for collect)",
       "url": "https://www.smythstoys.com/uk/en-gb/toys/pokemon/",
       "mode": "category",
-      "keywords": ["elite trainer box", "booster bundle", "booster box"],
+      "keywords": [
+        "elite trainer box",
+        "booster bundle",
+        "booster box",
+        "premium collection",
+        "poster collection",
+        "illustration collection",
+        "tech sticker",
+        "mini tin",
+        "top trainer",
+        "ascended heroes",
+        "pitch black"
+      ],
       "excludeText": [],
-      "enabled": false
+      "enabled": true
     },
     {
       "id": "cat-pokemoncenter-uk",
@@ -80,7 +164,19 @@
       "store": "Pokémon Center UK (official)",
       "url": "https://www.pokemoncenter.com/en-gb/category/new-releases",
       "mode": "category",
-      "keywords": ["elite trainer box", "booster bundle", "booster box"],
+      "keywords": [
+        "elite trainer box",
+        "booster bundle",
+        "booster box",
+        "premium collection",
+        "poster collection",
+        "illustration collection",
+        "tech sticker",
+        "mini tin",
+        "top trainer",
+        "ascended heroes",
+        "pitch black"
+      ],
       "excludeText": [],
       "browser": true,
       "enabled": true,
@@ -92,7 +188,19 @@
       "store": "Argos (Newbury Kennet Centre for collect)",
       "url": "https://www.argos.co.uk/search/pokemon-trading-cards/",
       "mode": "category",
-      "keywords": ["elite trainer box", "booster bundle", "booster box"],
+      "keywords": [
+        "elite trainer box",
+        "booster bundle",
+        "booster box",
+        "premium collection",
+        "poster collection",
+        "illustration collection",
+        "tech sticker",
+        "mini tin",
+        "top trainer",
+        "ascended heroes",
+        "pitch black"
+      ],
       "excludeText": [],
       "browser": true,
       "enabled": false
@@ -103,11 +211,61 @@
       "store": "TG Jones online (TCG mostly in-store — ask Newbury staff re pre-order deposits)",
       "url": "https://www.tgjonesonline.co.uk/books/childrens/pokemon",
       "mode": "category",
-      "keywords": ["elite trainer box", "booster bundle", "booster box"],
+      "keywords": [
+        "elite trainer box",
+        "booster bundle",
+        "booster box",
+        "premium collection",
+        "poster collection",
+        "illustration collection",
+        "tech sticker",
+        "mini tin",
+        "top trainer",
+        "ascended heroes",
+        "pitch black"
+      ],
       "excludeText": [],
       "enabled": false
     },
-
+    {
+      "id": "news-pokebeach",
+      "name": "PokéBeach — TCG news",
+      "store": "News — pokebeach.com (breaks product/set news earliest)",
+      "url": "https://www.pokebeach.com/",
+      "mode": "category",
+      "keywords": [
+        "ascended heroes",
+        "pitch black",
+        "mega evolution",
+        "pre-order",
+        "preorder",
+        "elite trainer box",
+        "product lineup",
+        "special set",
+        "revealed"
+      ],
+      "excludeText": [],
+      "enabled": true,
+      "_note": "News watch: alerts when PokéBeach posts a new article matching these keywords — set reveals, product lineups, pre-order dates. This is your early-warning radar for WHEN drops happen."
+    },
+    {
+      "id": "news-dittobase",
+      "name": "Dittobase — TCG news",
+      "store": "News — dittobase.com/tcg/news",
+      "url": "https://www.dittobase.com/tcg/news",
+      "mode": "category",
+      "keywords": [
+        "ascended heroes",
+        "pitch black",
+        "mega evolution",
+        "pre-order",
+        "preorder",
+        "product lineup",
+        "release date"
+      ],
+      "excludeText": [],
+      "enabled": true
+    },
     {
       "id": "pitchblack-etb-chaoscards",
       "name": "Pitch Black ETB — Chaos Cards (paste exact product URL)",
