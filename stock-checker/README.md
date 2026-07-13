@@ -164,11 +164,18 @@ mode tells you the instant the button appears.
 
 ## Getting alerts
 
-Console output always works. For push-to-phone, fill in one or both in the
-`notify` block of `config.json`:
+Console output always works. For push-to-phone, fill in any of these in the
+`notify` block of your config — you only need ONE:
+
+**ntfy (easiest — no account needed)** — install the free **ntfy** app
+(Android/iPhone). In the app, subscribe to a topic with a name you invent —
+make it unguessable, since anyone who knows the name could see your alerts
+(e.g. `kays-poke-alerts-x7q2`, not `pokemon`). Put that same name in
+`"ntfyTopic"`. Done — alerts now buzz your phone, and tapping one opens the
+product page. No Discord, no Telegram, no sign-up.
 
 **Discord** — in your server: *Server Settings → Integrations → Webhooks → New
-Webhook → Copy URL*. Paste into `discordWebhookUrl`. Free, instant, easiest.
+Webhook → Copy URL*. Paste into `discordWebhookUrl`.
 
 **Telegram** — message [@BotFather](https://t.me/BotFather), `/newbot`, copy the
 token into `telegramBotToken`. Then message your new bot once, and get your chat
