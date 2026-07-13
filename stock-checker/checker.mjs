@@ -394,12 +394,27 @@ function ntfyUrl(topic) {
   return topic.includes("://") ? topic : `https://ntfy.sh/${topic}`;
 }
 
+// HTTP header values must be Latin-1 (ByteString), but watch names use em dashes
+// and other Unicode punctuation, which make fetch() throw. Transliterate header
+// text to an ASCII-safe form. (The request body may stay UTF-8 — only headers
+// like Title/Click are affected.)
+function headerSafe(str) {
+  return String(str)
+    .replace(/[‒-―−]/g, "-") // figure/en/em dashes, minus → hyphen
+    .replace(/[‘’‚‛]/g, "'") // curly single quotes
+    .replace(/[“”„‟]/g, '"') // curly double quotes
+    .replace(/…/g, "...") // ellipsis
+    .normalize("NFKD")
+    .replace(/[̀-ͯ]/g, "") // strip combining diacritics (é → e)
+    .replace(/[^\x00-\xff]/g, "?"); // any remaining non-Latin1 char → ?
+}
+
 async function notifyNtfy(topic, watch) {
   const res = await fetch(ntfyUrl(topic), {
     method: "POST",
     headers: {
-      Title: `${liveLabel(watch)}: ${watch.name}`,
-      Click: watch.url,
+      Title: headerSafe(`${liveLabel(watch)}: ${watch.name}`),
+      Click: headerSafe(watch.url),
       Priority: "high",
       Tags: modeOf(watch) === "preorder" ? "purple_circle" : "green_circle",
     },
@@ -416,8 +431,8 @@ async function notifyNtfyNewProducts(topic, watch, items) {
   const res = await fetch(ntfyUrl(topic), {
     method: "POST",
     headers: {
-      Title: `NEW LISTINGS: ${watch.name}`,
-      Click: items[0]?.url || watch.url,
+      Title: headerSafe(`NEW LISTINGS: ${watch.name}`),
+      Click: headerSafe(items[0]?.url || watch.url),
       Priority: "high",
       Tags: "new",
     },
