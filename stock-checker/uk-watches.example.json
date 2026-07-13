@@ -1,0 +1,121 @@
+{
+  "intervalSeconds": 300,
+  "jitterSeconds": 60,
+  "perRequestDelayMs": 3000,
+  "requestTimeoutMs": 20000,
+  "stateFile": "state.uk.json",
+
+  "notify": {
+    "discordWebhookUrl": "",
+    "telegramBotToken": "",
+    "telegramChatId": ""
+  },
+
+  "_comment": "UK-wide sweep for Pokémon ETBs, booster bundles and booster boxes. Category watches scan a shop's whole Pokémon section and alert when NEW products matching the keywords appear (first pass seeds silently). Specialist TCG shops are enabled out of the box; big-box retailers are included but disabled — verify their section URL loads in your browser, then enable (add browser:true if a watch always finds 0 matches). Copy to uk-watches.json, add your webhook, then run: node checker.mjs --config uk-watches.json",
+
+  "watches": [
+    {
+      "id": "cat-chaoscards",
+      "name": "Chaos Cards — Pokémon sealed",
+      "store": "Chaos Cards (UK online)",
+      "url": "https://www.chaoscards.co.uk/shop/card-games/pokemon",
+      "mode": "category",
+      "keywords": ["elite trainer box", "booster bundle", "booster box"],
+      "excludeText": ["japanese", "single"],
+      "enabled": true
+    },
+    {
+      "id": "cat-magicmadhouse",
+      "name": "Magic Madhouse — Pokémon",
+      "store": "Magic Madhouse (UK online)",
+      "url": "https://magicmadhouse.co.uk/pokemon",
+      "mode": "category",
+      "keywords": ["elite trainer box", "booster bundle", "booster box"],
+      "excludeText": ["japanese", "single"],
+      "enabled": true
+    },
+    {
+      "id": "cat-totalcards",
+      "name": "Total Cards — Pokémon",
+      "store": "Total Cards (UK online)",
+      "url": "https://totalcards.net/collections/pokemon",
+      "mode": "category",
+      "keywords": ["elite trainer box", "booster bundle", "booster box"],
+      "excludeText": ["japanese", "single"],
+      "enabled": true
+    },
+    {
+      "id": "cat-titancards",
+      "name": "Titan Cards — Pokémon sealed",
+      "store": "Titan Cards (UK online)",
+      "url": "https://titancards.co.uk/",
+      "mode": "category",
+      "keywords": ["elite trainer box", "booster bundle", "booster box"],
+      "excludeText": ["japanese", "single"],
+      "enabled": true
+    },
+    {
+      "id": "cat-zatu",
+      "name": "Zatu Games — Pokémon",
+      "store": "Zatu Games (UK online)",
+      "url": "https://www.board-game.co.uk/product-category/pokemon/",
+      "mode": "category",
+      "keywords": ["elite trainer box", "booster bundle", "booster box"],
+      "excludeText": ["japanese", "single"],
+      "enabled": true
+    },
+    {
+      "id": "cat-smyths",
+      "name": "Smyths — Pokémon section",
+      "store": "Smyths Toys (Reading / Basingstoke for collect)",
+      "url": "https://www.smythstoys.com/uk/en-gb/toys/pokemon/",
+      "mode": "category",
+      "keywords": ["elite trainer box", "booster bundle", "booster box"],
+      "excludeText": [],
+      "enabled": false
+    },
+    {
+      "id": "cat-pokemoncenter-uk",
+      "name": "Pokémon Center UK — new releases",
+      "store": "Pokémon Center UK (official)",
+      "url": "https://www.pokemoncenter.com/en-gb/category/new-releases",
+      "mode": "category",
+      "keywords": ["elite trainer box", "booster bundle", "booster box"],
+      "excludeText": [],
+      "browser": true,
+      "enabled": true,
+      "_note": "Needs the one-time browser install: npm run setup-browser (Pokémon Center builds its pages with JavaScript)."
+    },
+    {
+      "id": "cat-argos",
+      "name": "Argos — Pokémon trading cards search",
+      "store": "Argos (Newbury Kennet Centre for collect)",
+      "url": "https://www.argos.co.uk/search/pokemon-trading-cards/",
+      "mode": "category",
+      "keywords": ["elite trainer box", "booster bundle", "booster box"],
+      "excludeText": [],
+      "browser": true,
+      "enabled": false
+    },
+    {
+      "id": "cat-tgjones",
+      "name": "TG Jones — Pokémon section",
+      "store": "TG Jones online (TCG mostly in-store — ask Newbury staff re pre-order deposits)",
+      "url": "https://www.tgjonesonline.co.uk/books/childrens/pokemon",
+      "mode": "category",
+      "keywords": ["elite trainer box", "booster bundle", "booster box"],
+      "excludeText": [],
+      "enabled": false
+    },
+
+    {
+      "id": "pitchblack-etb-chaoscards",
+      "name": "Pitch Black ETB — Chaos Cards (paste exact product URL)",
+      "store": "Chaos Cards",
+      "url": "https://www.chaoscards.co.uk/",
+      "mode": "restock",
+      "enabled": false,
+      "_note": "Example slot for the July 17 2026 Mega Evolution: Pitch Black drop — put the exact ETB/bundle/box product page here for instant out->in alerts, which are faster/surer than category scans for a product you already know about."
+    }
+  ]
+}

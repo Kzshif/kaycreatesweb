@@ -13,9 +13,30 @@ almost the whole game.
 
 ---
 
-## Setup (2 minutes)
+## Quick start — track everything (recommended)
 
-Requires **Node 18 or newer** (uses the built-in `fetch` — no `npm install`).
+Requires **Node 18 or newer**. The UK-wide config sweeps the big UK TCG shops
+for **ETBs, booster bundles and booster boxes** — including brand-new listings
+and pre-orders you didn't know the URL for yet:
+
+```bash
+cd stock-checker
+cp uk-watches.example.json uk-watches.json
+# edit uk-watches.json: paste your Discord webhook into "notify"
+npm run setup-browser        # one-time, enables Pokémon Center UK watching
+node checker.mjs --config uk-watches.json
+```
+
+Chaos Cards, Magic Madhouse, Total Cards, Titan Cards, Zatu and Pokémon Center
+UK are enabled out of the box. The first pass silently learns what's already
+listed; from then on you get a **🆕 NEW LISTINGS** ping whenever any of them
+puts up a new ETB/bundle/box — which is exactly how pre-orders appear. Smyths,
+Argos and TG Jones watches are included too: open their section URL in your
+browser to confirm it's right, then flip `"enabled": true`.
+
+## Setup for single-product watching (2 minutes)
+
+For products you already know the URL of (no `npm install` needed):
 
 ```bash
 cd stock-checker
@@ -87,6 +108,38 @@ the button is disabled.
 > when it isn't. If a watch alerts wrongly, either tighten the phrases to
 > something only the live button shows, or switch that watch to browser mode
 > (below), which reads the *rendered* page instead of the raw source.
+
+### Category mode — whole-shop sweeps (the Discord-bot killer)
+
+Add `"mode": "category"` and point the watch at a shop's Pokémon **section or
+search page** instead of one product. Every pass it extracts all product links,
+keeps the ones whose names match your `keywords`, and alerts when **new ones
+appear** (with name + direct link, up to 10 per alert):
+
+```jsonc
+{
+  "id": "cat-chaoscards",
+  "name": "Chaos Cards — Pokémon sealed",
+  "url": "https://www.chaoscards.co.uk/shop/card-games/pokemon",
+  "mode": "category",
+  "keywords": ["elite trainer box", "booster bundle", "booster box"],
+  "excludeText": ["japanese", "single"],
+  "enabled": true
+}
+```
+
+- The **first pass seeds silently** (learns what's already listed) so you don't
+  get spammed with the whole catalogue; after that, only genuinely new URLs
+  alert, exactly once.
+- `excludeText` filters noise (e.g. `"japanese"`, `"single"`).
+- This is how you catch **pre-orders going up** for a set nobody has URLs for
+  yet — the moment a shop lists "Mega Evolution: Pitch Black Elite Trainer
+  Box", you get the link.
+- Once you have the product link from a category alert, add it as a normal
+  `restock` watch too — per-product out→in detection is the fastest, surest
+  signal for a product you already know about.
+- If a category watch keeps finding 0 matches on a page that clearly has
+  products, that shop renders listings with JavaScript — add `"browser": true`.
 
 ### Pre-order mode
 

@@ -1,0 +1,14 @@
+{
+  "name": "poke-stock-checker",
+  "version": "1.0.0",
+  "private": true,
+  "description": "UK Pokémon TCG restock / pre-order / new-listing alert monitor (watcher only — no auto-buying)",
+  "type": "module",
+  "scripts": {
+    "start": "node checker.mjs",
+    "once": "node checker.mjs --once",
+    "uk": "node checker.mjs --config uk-watches.json",
+    "preorders": "node checker.mjs --config preorders.json",
+    "setup-browser": "npm install playwright --no-save --no-audit --no-fund && npx playwright install chromium"
+  }
+}

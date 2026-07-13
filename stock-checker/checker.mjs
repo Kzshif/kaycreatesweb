@@ -52,6 +52,57 @@ const config = JSON.parse(readFileSync(configPath, "utf8"));
 const statePath = resolve(__dirname, config.stateFile || "state.json");
 
 // ----------------------------------------------------------------------------
+// Category mode — watch a whole shop section for new matching products.
+//
+// A watch with "mode": "category" points at a category/search page (e.g. a
+// shop's Pokémon section). Every pass, we extract all product links whose
+// text matches any of the watch's "keywords" (e.g. "elite trainer box"),
+// remember them in state, and alert when NEW matches appear. The first pass
+// seeds state silently so you don't get blasted with everything already
+// listed. This is how you catch brand-new ETB/bundle/box listings across a
+// shop without knowing product URLs in advance.
+// ----------------------------------------------------------------------------
+
+// Extract candidate products from raw/rendered HTML: [{url, name}].
+// We scan anchors and use their visible text plus title/aria-label attrs.
+function extractProducts(html, baseUrl) {
+  const products = new Map();
+  const anchorRe = /<a\b([^>]*)href\s*=\s*["']([^"'#]+)["']([^>]*)>([\s\S]*?)<\/a>/gi;
+  let m;
+  while ((m = anchorRe.exec(html)) !== null) {
+    const attrs = `${m[1]} ${m[3]}`;
+    const href = m[2];
+    // Visible text with inner tags stripped, whitespace collapsed.
+    let text = m[4].replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim();
+    // Product names often live in title= or aria-label= instead of text.
+    const attrName =
+      /(?:title|aria-label)\s*=\s*["']([^"']+)["']/i.exec(attrs)?.[1] ?? "";
+    if (attrName.length > text.length) text = attrName;
+    if (!text) continue;
+
+    let abs;
+    try {
+      abs = new URL(href, baseUrl).href;
+    } catch {
+      continue;
+    }
+    // Keep the longest name seen for a URL (tiles often link image + title).
+    const existing = products.get(abs);
+    if (!existing || text.length > existing.length) products.set(abs, text);
+  }
+  return [...products.entries()].map(([url, name]) => ({ url, name }));
+}
+
+function matchesKeywords(name, watch) {
+  const n = name.toLowerCase();
+  const keywords = (watch.keywords || []).map((k) => k.toLowerCase());
+  if (!keywords.some((k) => k && n.includes(k))) return false;
+  const excludes = (watch.excludeText || []).map((k) => k.toLowerCase());
+  if (excludes.some((k) => k && n.includes(k))) return false;
+  return true;
+}
+
+// ----------------------------------------------------------------------------
 // Detection presets — sensible defaults per watch mode, overridable per watch.
 // ----------------------------------------------------------------------------
 const PRESETS = {
@@ -259,6 +310,76 @@ async function notifyTelegram(token, chatId, watch) {
   if (!res.ok) throw new Error(`Telegram API returned ${res.status}`);
 }
 
+// Category alerts: one message listing the newly seen products.
+async function notifyDiscordNewProducts(webhookUrl, watch, items) {
+  const body = {
+    username: "Pokémon Restock",
+    embeds: [
+      {
+        title: `🆕 NEW LISTINGS: ${watch.name}`,
+        description: items
+          .slice(0, 10)
+          .map((p) => `• [${p.name.slice(0, 90)}](${p.url})`)
+          .join("\n"),
+        color: 0x3498db,
+        fields: watch.store ? [{ name: "Store", value: watch.store }] : [],
+        timestamp: new Date().toISOString(),
+      },
+    ],
+  };
+  const res = await fetch(webhookUrl, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(body),
+  });
+  if (!res.ok) throw new Error(`Discord webhook returned ${res.status}`);
+}
+
+async function notifyTelegramNewProducts(token, chatId, watch, items) {
+  const lines = items
+    .slice(0, 10)
+    .map((p) => `• ${p.name.slice(0, 90)}\n  ${p.url}`)
+    .join("\n");
+  const text =
+    `🆕 *NEW LISTINGS*\n${watch.name}` +
+    (watch.store ? `\n_${watch.store}_` : "") +
+    `\n${lines}`;
+  const url = `https://api.telegram.org/bot${token}/sendMessage`;
+  const res = await fetch(url, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      chat_id: chatId,
+      text,
+      parse_mode: "Markdown",
+      disable_web_page_preview: true,
+    }),
+  });
+  if (!res.ok) throw new Error(`Telegram API returned ${res.status}`);
+}
+
+async function sendNewProductAlerts(notify, watch, items) {
+  const jobs = [];
+  if (notify?.discordWebhookUrl) {
+    jobs.push(
+      notifyDiscordNewProducts(notify.discordWebhookUrl, watch, items).catch(
+        (e) => console.warn(`  ! Discord alert failed: ${e.message}`),
+      ),
+    );
+  }
+  if (notify?.telegramBotToken && notify?.telegramChatId) {
+    jobs.push(
+      notifyTelegramNewProducts(
+        notify.telegramBotToken,
+        notify.telegramChatId,
+        watch,
+        items,
+      ).catch((e) => console.warn(`  ! Telegram alert failed: ${e.message}`)),
+    );
+  }
+  await Promise.all(jobs);
+}
+
 async function sendAlerts(notify, watch) {
   const jobs = [];
   if (notify?.discordWebhookUrl) {
@@ -299,6 +420,29 @@ async function runPass(state, fetchers) {
 
       if (!ok && status) {
         console.log(`[${nowStamp()}] ${watch.name}: HTTP ${status} (skipped)`);
+      } else if (watch.mode === "category") {
+        const matches = extractProducts(html, watch.url).filter((p) =>
+          matchesKeywords(p.name, watch),
+        );
+        const seen = state[key]?.seenUrls;
+        const fresh = seen ? matches.filter((p) => !seen.includes(p.url)) : [];
+
+        console.log(
+          `[${nowStamp()}] ${watch.name}: ${matches.length} match(es), ` +
+            `${seen ? `${fresh.length} new` : "first run — seeding"}` +
+            (useBrowser ? " (browser)" : ""),
+        );
+
+        if (seen && fresh.length > 0) {
+          console.log(`  >>> NEW LISTINGS — sending alerts`);
+          for (const p of fresh.slice(0, 10)) console.log(`      ${p.name}`);
+          await sendNewProductAlerts(config.notify, watch, fresh);
+        }
+
+        // Remember everything matched so far (union, so delistings that
+        // reappear don't re-alert unless genuinely new URLs).
+        const union = new Set([...(seen || []), ...matches.map((p) => p.url)]);
+        state[key] = { seenUrls: [...union], checkedAt: nowStamp() };
       } else {
         const current = detectStatus(html, watch);
         const previous = state[key]?.status ?? "unknown";

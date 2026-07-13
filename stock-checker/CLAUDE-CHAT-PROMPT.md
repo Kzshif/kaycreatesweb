@@ -36,6 +36,14 @@ HOW IT WORKS
 - mode "preorder" has built-in phrase defaults ("coming soon"/"register
   interest" = not live; "pre-order"/"add to basket" = live) and sends
   "PRE-ORDER LIVE" alerts. There's a preorders.json config for these.
+- mode "category" watches a shop's whole Pokémon section/search page: it
+  extracts product links, keeps ones matching "keywords" (e.g. "elite
+  trainer box", "booster bundle", "booster box", minus "excludeText"
+  noise), seeds silently on first pass, then sends "NEW LISTINGS" alerts
+  with names + links when new matching products appear. My main config is
+  uk-watches.json which sweeps Chaos Cards, Magic Madhouse, Total Cards,
+  Titan Cards, Zatu and Pokémon Center UK (browser mode) this way, with
+  Smyths/Argos/TG Jones entries I can enable after checking their URLs.
 - --browser flag (or "browser": true per watch) renders pages with
   Playwright/Chromium for sites that build stock status with JavaScript
   (e.g. Pokémon Center UK). Requires: npm install playwright &&
