@@ -16,7 +16,7 @@ const freeze = () =>
     content:
       "*, *::before, *::after { animation: none !important; transition: none !important; } html { scroll-behavior: auto !important; } " +
       // Fiverr forbids contact info in gig videos: hide the email link on camera.
-      'a[href^="mailto:"] { visibility: hidden !important; }',
+      'a[href^=\"mailto:\"]:not(.kc-btn) { visibility: hidden !important; }',
   });
 
 const targetY = (finder, offset) =>
