@@ -13,12 +13,18 @@ export function Logo({ className = "" }: { className?: string }) {
   );
 }
 
-export function SiteHeader({ active }: { active?: "demo" | "dashboard" }) {
+export function SiteHeader({ active }: { active?: "demo" | "dashboard" | "websites" }) {
   return (
     <header className="sticky top-0 z-30 border-b border-white/10 bg-night/70 backdrop-blur-xl">
       <div className="container-x flex h-16 items-center justify-between">
         <Logo />
         <nav className="hidden items-center gap-7 text-sm font-medium text-slate-300 md:flex">
+          <Link
+            href="/websites"
+            className={active === "websites" ? "text-white" : "hover:text-white"}
+          >
+            Websites
+          </Link>
           <Link href="/#how" className="hover:text-white">How it works</Link>
           <Link href="/#verticals" className="hover:text-white">Sectors</Link>
           <Link href="/#pricing" className="hover:text-white">Pricing</Link>
@@ -29,8 +35,8 @@ export function SiteHeader({ active }: { active?: "demo" | "dashboard" }) {
             Dashboard
           </Link>
         </nav>
-        <Link href="/demo" className="btn-primary">
-          Try the live demo
+        <Link href="/signup" className="btn-primary">
+          Sign up
         </Link>
       </div>
     </header>
@@ -47,8 +53,10 @@ export function SiteFooter() {
           Claude API.
         </p>
         <div className="flex gap-5">
+          <Link href="/websites" className="hover:text-white">Websites</Link>
           <Link href="/demo" className="hover:text-white">Demo</Link>
           <Link href="/dashboard" className="hover:text-white">Dashboard</Link>
+          <Link href="/signup" className="hover:text-white">Sign up</Link>
         </div>
       </div>
     </footer>

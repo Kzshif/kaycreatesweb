@@ -85,19 +85,11 @@ const PLANS = [
   },
 ];
 
-// Stripe Payment Link URLs live in env so you can swap test → live by pasting a
-// new URL into Vercel — never a code edit. Until they're set, the button falls
-// back to the demo so it's never a dead link.
-const CHECKOUT_URL: Record<string, string | undefined> = {
-  Starter: process.env.NEXT_PUBLIC_STRIPE_STARTER_URL,
-  Practice: process.env.NEXT_PUBLIC_STRIPE_PRACTICE_URL,
-};
-const TRIAL_DAYS = 14;
 // Where the "Contact us" (Group) button goes; set NEXT_PUBLIC_CONTACT_EMAIL to
-// turn it into a mailto, otherwise it opens the demo.
+// turn it into a mailto, otherwise it opens the sign-up form.
 const CONTACT_HREF = process.env.NEXT_PUBLIC_CONTACT_EMAIL
   ? `mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}?subject=nova05%20Group%20plan`
-  : "/demo";
+  : "/signup?plan=Group";
 
 export default function Home() {
   return (
@@ -309,7 +301,8 @@ export default function Home() {
             <span className="font-semibold text-cyan">Founding-practice offer.</span>{" "}
             The first 10 clinics lock in <span className="font-semibold text-white">£49/mo</span>{" "}
             (Starter) or <span className="font-semibold text-white">£119/mo</span> (Practice)
-            for 12 months — then your normal rate. Start with a 14-day free trial.
+            for 12 months — then your normal rate. Sign up and we&apos;ll set you up
+            with a personal demo before you pay a penny.
           </p>
         </div>
         <div className="grid gap-5 lg:grid-cols-3">
@@ -344,26 +337,54 @@ export default function Home() {
                 <a href={CONTACT_HREF} className="btn-ghost mt-7">
                   Contact us
                 </a>
-              ) : CHECKOUT_URL[p.name] ? (
-                <a
-                  href={CHECKOUT_URL[p.name]}
+              ) : (
+                // No self-serve checkout: sign-ups land in the dashboard and we
+                // follow up personally with a demo (and a trial if they want one).
+                <Link
+                  href={`/signup?plan=${p.name}`}
                   className={`mt-7 ${p.highlight ? "btn-primary" : "btn-ghost"}`}
                 >
-                  Start {TRIAL_DAYS}-day free trial
-                </a>
-              ) : (
-                // No checkout link configured yet — send them to the demo and say
-                // so, rather than promising a trial that can't start.
-                <a href="/demo" className={`mt-7 ${p.highlight ? "btn-primary" : "btn-ghost"}`}>
-                  Try the live demo
-                </a>
+                  Sign up
+                </Link>
               )}
             </div>
           ))}
         </div>
         <p className="mt-5 text-center text-xs text-slate-500">
-          {TRIAL_DAYS}-day free trial, card required — cancel anytime. Prices exclude VAT; phone-line usage (Twilio) billed separately at cost.
+          No card needed to sign up — you only pay once you&apos;ve seen your demo and want to go live. Cancel anytime. Prices exclude VAT; phone-line usage (Twilio) billed separately at cost.
         </p>
+      </section>
+
+      {/* Websites cross-sell — for businesses with no site yet, the receptionist
+          pitch lands second; the website is the way in. */}
+      <section className="container-x py-16">
+        <hr className="hairline reveal mb-16" />
+        <div className="card reveal relative overflow-hidden p-10 sm:p-12">
+          <div className="pointer-events-none absolute -left-16 -top-16 h-64 w-64 rounded-full bg-cyan/20 blur-3xl" />
+          <div className="relative grid items-center gap-8 lg:grid-cols-[1.2fr_0.8fr]">
+            <div>
+              <p className="eyebrow mb-3">No website yet?</p>
+              <h2 className="font-display text-2xl font-semibold tracking-tight text-white sm:text-3xl">
+                We build those too — start there.
+              </h2>
+              <p className="mt-3 max-w-xl text-sm leading-relaxed text-slate-300">
+                Running on a Facebook page or an old site that doesn&apos;t rank? We
+                design and build fast, mobile-friendly websites for local
+                businesses — menus, booking, galleries, online ordering — for one
+                flat price, live in days. Every site is ready for the receptionist
+                the day you want it.
+              </p>
+              <div className="mt-6 flex flex-wrap gap-3">
+                <Link href="/websites" className="btn-primary">See example websites →</Link>
+                <Link href="/signup?interest=website" className="btn-ghost">Get a free mockup</Link>
+              </div>
+            </div>
+            <div className="hidden text-center lg:block">
+              <span className="text-7xl">🌐</span>
+              <p className="mt-3 font-mono text-xs text-slate-400">design · copy · hosting · done for you</p>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* FAQ — extractable Q&A (also emitted as FAQPage JSON-LD for AI search) */}

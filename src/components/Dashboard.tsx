@@ -20,6 +20,7 @@ const KIND_META: Record<CapturedEvent["kind"], { label: string; icon: string; to
   appointment: { label: "Appointment", icon: "📅", tone: "bg-cyan/10 text-cyan" },
   message: { label: "Message", icon: "📝", tone: "bg-amber-accent/15 text-amber-accent" },
   callback: { label: "Callback", icon: "📞", tone: "bg-iris/15 text-iris-soft" },
+  signup: { label: "Sign-up", icon: "⭐", tone: "bg-cyan/15 text-cyan" },
 };
 
 export default function Dashboard() {
@@ -126,7 +127,7 @@ function Row({ event, onAction }: { event: CapturedEvent; onAction: () => void }
         <div>
           <p className="text-sm font-semibold text-white">{meta.label}</p>
           <p className="text-xs text-slate-500">
-            {v.emoji} {v.practice}
+            {event.kind === "signup" ? "🌐 Website enquiry" : `${v.emoji} ${v.practice}`}
           </p>
         </div>
       </div>
