@@ -1,5 +1,7 @@
+import AiCore from "@/components/AiCore";
 import AskNova from "@/components/AskNova";
 import CosmicScene from "@/components/CosmicScene";
+import HeroChat from "@/components/HeroChat";
 import { Counter, Reveal } from "@/components/Motion";
 import Tilt from "@/components/Tilt";
 import { WarpLink } from "@/components/Warp";
@@ -74,38 +76,16 @@ export default function Home() {
           </Reveal>
         </div>
 
-        {/* Hero conversation — void glass, floating */}
+        {/* Hero — the AI core glowing behind the living chat demo */}
         <Reveal delay={200}>
-          <Tilt max={7}>
-          <div className="glass float-slow relative p-6 sm:p-7">
-            <div className="mb-5 flex items-center gap-3">
-              <span
-                className="pulse-ring grid h-11 w-11 place-items-center rounded-full font-display font-bold text-space"
-                style={{ background: "linear-gradient(120deg, #ffb454, #f06595)" }}
-              >
-                ✦
-              </span>
-              <div>
-                <p className="text-sm font-semibold">Visitor on trattoriamia.com · 11:42 PM</p>
-                <p className="text-xs text-starlight/45">Answered in 0.6s</p>
+          <div className="relative">
+            <AiCore className="left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" />
+            <Tilt max={7}>
+              <div className="float-slow relative">
+                <HeroChat />
               </div>
-            </div>
-            <div className="space-y-3 text-sm">
-              <Bubble who="visitor">Do you do private events? Rough price for 30 people?</Bubble>
-              <Bubble who="bot">
-                We'd love to host you! Private dinners for 30 start around $1,400 with a
-                set menu. Want me to have the events team send you the full options?
-              </Bubble>
-              <Bubble who="visitor">Yes please — mia@example.com</Bubble>
-              <Bubble who="bot">
-                Perfect, Mia! You'll hear from the team first thing tomorrow. 🎉
-              </Bubble>
-            </div>
-            <div className="mt-5 flex items-center gap-2 rounded-xl border border-nova/25 bg-nova/[0.08] px-3 py-2.5 text-xs font-medium text-nova">
-              <span>★</span> Lead captured · mia@example.com · AI reply drafted
-            </div>
+            </Tilt>
           </div>
-          </Tilt>
         </Reveal>
         </div>
       </section>
@@ -337,22 +317,5 @@ function PortalCard({
         </Tilt>
       </WarpLink>
     </Reveal>
-  );
-}
-
-function Bubble({ who, children }: { who: "visitor" | "bot"; children: React.ReactNode }) {
-  const isBot = who === "bot";
-  return (
-    <div className={`flex ${isBot ? "justify-start" : "justify-end"}`}>
-      <p
-        className={`max-w-[85%] rounded-2xl px-3.5 py-2 leading-snug ${
-          isBot
-            ? "rounded-tl-sm border border-white/[0.08] bg-white/[0.06] text-starlight/90"
-            : "rounded-tr-sm bg-gradient-to-br from-nova to-nebula text-space"
-        }`}
-      >
-        {children}
-      </p>
-    </div>
   );
 }
