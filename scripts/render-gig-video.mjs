@@ -13,7 +13,10 @@ const page = await browser.newPage({ viewport: { width: 1280, height: 720 } });
 // Freeze all page motion so every frame is deterministic.
 const freeze = () =>
   page.addStyleTag({
-    content: "*, *::before, *::after { animation: none !important; transition: none !important; } html { scroll-behavior: auto !important; }",
+    content:
+      "*, *::before, *::after { animation: none !important; transition: none !important; } html { scroll-behavior: auto !important; } " +
+      // Fiverr forbids contact info in gig videos: hide the email link on camera.
+      'a[href^="mailto:"] { visibility: hidden !important; }',
   });
 
 const targetY = (finder, offset) =>
