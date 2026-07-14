@@ -1,4 +1,5 @@
 import Script from "next/script";
+import CursorGlow from "@/components/CursorGlow";
 import Starfield from "@/components/Starfield";
 import { SiteFooter, SiteHeader } from "@/components/SiteChrome";
 import { WarpProvider } from "@/components/Warp";
@@ -21,6 +22,7 @@ export default function MarketingLayout({ children }: { children: React.ReactNod
             }}
           />
         </div>
+        <CursorGlow />
         <SiteHeader />
         <div className="relative">{children}</div>
         <SiteFooter />
