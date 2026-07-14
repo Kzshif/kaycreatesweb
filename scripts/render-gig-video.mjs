@@ -78,7 +78,10 @@ await scene("01-studio", "/studio", [
   { finder: { text: "Most small-business sites", tag: "h2" }, offset: 130, dur: 4.5 },
   { hold: 2.8 },
   { finder: { sel: "#work" }, offset: 60, dur: 4.5 },
-  { hold: 3.0 },
+  { hold: 2.2 },
+  // pan down the nova05 screenshot so the AI conversation and CTAs are fully in frame
+  { finder: { text: "nova05, an AI receptionist", tag: "h3" }, offset: 620, dur: 3.5 },
+  { hold: 2.8 },
   { finder: { text: "Concept builds", tag: "h3" }, offset: 110, dur: 4.0 },
   { hold: 2.8 },
 ]);
