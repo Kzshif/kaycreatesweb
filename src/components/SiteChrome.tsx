@@ -64,15 +64,15 @@ export function NovaMark({ size = 34 }: { size?: number }) {
     <svg width={size} height={size} viewBox="0 0 34 34" aria-hidden>
       <defs>
         <linearGradient id="novaGrad" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="#ffb454" />
-          <stop offset="100%" stopColor="#f06595" />
+          <stop offset="0%" stopColor="#a855f7" />
+          <stop offset="100%" stopColor="#22d3ee" />
         </linearGradient>
       </defs>
       <path
         d="M17 1 L20.2 13.8 L33 17 L20.2 20.2 L17 33 L13.8 20.2 L1 17 L13.8 13.8 Z"
         fill="url(#novaGrad)"
       />
-      <circle cx="17" cy="17" r="2.4" fill="#1a1735" opacity="0.55" />
+      <circle cx="17" cy="17" r="2.4" fill="#0b0812" opacity="0.55" />
     </svg>
   );
 }

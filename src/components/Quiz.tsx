@@ -170,7 +170,7 @@ export default function Quiz() {
             className="h-full rounded-full transition-all duration-500"
             style={{
               width: `${Math.max(6, progress * 100)}%`,
-              background: "linear-gradient(90deg, #ffb454, #f06595)",
+              background: "linear-gradient(90deg, #a855f7, #22d3ee)",
             }}
           />
         </div>
@@ -252,7 +252,7 @@ export default function Quiz() {
       {step === total + 1 && (
         <div className="warp-arrive text-center">
           <div className="mx-auto mb-6 grid h-24 w-24 place-items-center rounded-full text-5xl"
-            style={{ background: "linear-gradient(135deg, rgba(255,180,84,0.25), rgba(240,101,149,0.25))" }}
+            style={{ background: "linear-gradient(135deg, rgba(168,85,247,0.25), rgba(34,211,238,0.25))" }}
           >
             {r.emoji}
           </div>

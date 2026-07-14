@@ -105,7 +105,7 @@ export default function QrStudio() {
             type="checkbox"
             checked={star}
             onChange={(e) => setStar(e.target.checked)}
-            className="h-4 w-4 accent-[#f06595]"
+            className="h-4 w-4 accent-[#a855f7]"
           />
           Nova star in the centre
         </label>
@@ -144,8 +144,8 @@ function drawStar(canvas: HTMLCanvasElement, ink: string) {
   ctx.fill();
 
   const grad = ctx.createLinearGradient(cx - r, cy - r, cx + r, cy + r);
-  grad.addColorStop(0, "#ffb454");
-  grad.addColorStop(1, "#f06595");
+  grad.addColorStop(0, "#a855f7");
+  grad.addColorStop(1, "#22d3ee");
   ctx.fillStyle = grad;
   const p = r * 0.78;
   const q = p * 0.22;

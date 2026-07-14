@@ -37,7 +37,7 @@ interface Meteor {
   life: number;
 }
 
-const TINTS = ["244, 242, 255", "244, 242, 255", "244, 242, 255", "59, 201, 219", "255, 180, 84"];
+const TINTS = ["244, 242, 255", "244, 242, 255", "244, 242, 255", "34, 211, 238", "168, 85, 247"];
 const PARALLAX = [6, 14, 26]; // px of cursor lean per depth
 
 export default function Starfield({
@@ -146,7 +146,7 @@ export default function Starfield({
             meteor.x,
             meteor.y,
           );
-          grad.addColorStop(0, "rgba(255, 180, 84, 0)");
+          grad.addColorStop(0, "rgba(168, 85, 247, 0)");
           grad.addColorStop(1, `rgba(244, 242, 255, ${Math.max(0, meteor.life * 0.9)})`);
           ctx.strokeStyle = grad;
           ctx.lineWidth = 1.6;

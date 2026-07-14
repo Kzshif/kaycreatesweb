@@ -68,8 +68,8 @@ export default function SeoPage() {
                   />
                   <defs>
                     <linearGradient id="seoGrad" x1="0" y1="0" x2="1" y2="1">
-                      <stop offset="0%" stopColor="#ffb454" />
-                      <stop offset="100%" stopColor="#f06595" />
+                      <stop offset="0%" stopColor="#a855f7" />
+                      <stop offset="100%" stopColor="#22d3ee" />
                     </linearGradient>
                   </defs>
                 </svg>

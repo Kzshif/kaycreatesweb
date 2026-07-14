@@ -6,8 +6,8 @@ const config: Config = {
     extend: {
       colors: {
         // Light (app) context — Cosmic Nova, Paper side
-        ink: "#12141d",
-        paper: "#f8f7f3",
+        ink: "#1a2142",
+        paper: "#f2f0ec",
         primary: {
           DEFAULT: "#3b5bdb",
           deep: "#2b44ad",
@@ -20,16 +20,16 @@ const config: Config = {
         mint: "#0ca678",
         // Dark (marketing) context — Cosmic Nova, Deep Space side
         space: {
-          DEFAULT: "#1a1735",
-          raised: "#241f47",
+          DEFAULT: "#0b0812",
+          raised: "#171126",
         },
         nova: {
-          DEFAULT: "#ffb454",
-          deep: "#f59f00",
+          DEFAULT: "#a855f7",
+          deep: "#7c3aed",
         },
-        nebula: "#f06595",
-        stellar: "#3bc9db",
-        starlight: "#f4f2ff",
+        nebula: "#6366f1",
+        stellar: "#22d3ee",
+        starlight: "#f5f3ff",
       },
       fontFamily: {
         display: ["var(--font-display)", "system-ui", "sans-serif"],

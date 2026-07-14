@@ -47,6 +47,6 @@ Setup: sign up, describe your business, paste one script tag into your site — 
       a: "Yes — you paste in your business info, services, pricing, and FAQs, and the bot answers from that (and only that — it never invents details).",
     },
   ],
-  color: "#f06595",
+  color: "#7c3aed",
   createdAt: "2026-01-01T00:00:00.000Z",
 };

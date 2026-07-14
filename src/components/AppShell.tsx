@@ -40,7 +40,7 @@ export default function AppShell({
         <div
           className="pointer-events-none absolute inset-x-0 top-0 h-48"
           style={{
-            background: "radial-gradient(320px 180px at 40% 0%, rgba(240,101,149,0.2), transparent 70%)",
+            background: "radial-gradient(320px 180px at 40% 0%, rgba(168,85,247,0.22), transparent 70%)",
           }}
         />
         <Link href="/app" className="relative flex items-center gap-3 px-2 py-3">

@@ -18,7 +18,7 @@ export default function MarketingLayout({ children }: { children: React.ReactNod
             className="absolute inset-0"
             style={{
               background:
-                "radial-gradient(1000px 600px at 80% -10%, rgba(240,101,149,0.1), transparent 60%), radial-gradient(900px 500px at -10% 40%, rgba(59,201,219,0.07), transparent 55%), radial-gradient(700px 500px at 60% 110%, rgba(255,180,84,0.07), transparent 60%)",
+                "radial-gradient(1100px 650px at 50% -14%, rgba(123,63,242,0.22), transparent 62%), radial-gradient(900px 500px at -10% 40%, rgba(34,211,238,0.06), transparent 55%), radial-gradient(700px 500px at 60% 110%, rgba(168,85,247,0.08), transparent 60%)",
             }}
           />
         </div>

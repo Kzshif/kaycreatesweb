@@ -114,7 +114,7 @@ export default function PricingPage() {
                   p.highlight
                     ? {
                         boxShadow:
-                          "0 0 0 1px rgba(255,180,84,0.4), 0 24px 80px -32px rgba(240,101,149,0.55)",
+                          "0 0 0 1px rgba(168,85,247,0.45), 0 24px 80px -32px rgba(99,102,241,0.55)",
                       }
                     : undefined
                 }
@@ -122,7 +122,7 @@ export default function PricingPage() {
                 {p.highlight && (
                   <span
                     className="absolute -top-3 left-8 rounded-full px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-space"
-                    style={{ background: "linear-gradient(120deg, #ffb454, #f06595)" }}
+                    style={{ background: "linear-gradient(120deg, #a855f7, #22d3ee)" }}
                   >
                     Most popular
                   </span>

@@ -125,7 +125,7 @@ export function WarpProvider({ children }: { children: React.ReactNode }) {
       speed: number;
       tint: string;
     }
-    const TINTS = ["244, 242, 255", "244, 242, 255", "59, 201, 219", "255, 180, 84", "240, 101, 149"];
+    const TINTS = ["245, 243, 255", "245, 243, 255", "34, 211, 238", "168, 85, 247", "99, 102, 241"];
     const streaks: Streak[] = Array.from({ length: 260 }, () => ({
       angle: Math.random() * Math.PI * 2,
       dist: 20 + Math.random() * Math.max(w, h) * 0.5,
@@ -136,7 +136,7 @@ export function WarpProvider({ children }: { children: React.ReactNode }) {
     let raf = 0;
     const maxDist = Math.hypot(cx, cy) + 60;
     const step = () => {
-      ctx.fillStyle = "rgba(26, 23, 53, 0.32)";
+      ctx.fillStyle = "rgba(11, 8, 18, 0.32)";
       ctx.fillRect(0, 0, w, h);
       for (const s of streaks) {
         s.speed *= 1.035; // accelerate into the jump
@@ -160,7 +160,7 @@ export function WarpProvider({ children }: { children: React.ReactNode }) {
       }
       raf = requestAnimationFrame(step);
     };
-    ctx.fillStyle = "#1a1735";
+    ctx.fillStyle = "#0b0812";
     ctx.fillRect(0, 0, w, h);
     raf = requestAnimationFrame(step);
     return () => cancelAnimationFrame(raf);
@@ -182,7 +182,7 @@ export function WarpProvider({ children }: { children: React.ReactNode }) {
                 {/* The iconic mark: the 5 tucked under the O, so it reads 05. */}
                 <p
                   className="font-display text-6xl font-bold tracking-[0.16em] text-starlight sm:text-8xl"
-                  style={{ textShadow: "0 0 60px rgba(255,180,84,0.5), 0 0 120px rgba(240,101,149,0.35)" }}
+                  style={{ textShadow: "0 0 60px rgba(168,85,247,0.55), 0 0 120px rgba(34,211,238,0.3)" }}
                   aria-label="NOVA 05"
                 >
                   N

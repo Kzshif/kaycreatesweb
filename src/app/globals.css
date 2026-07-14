@@ -43,17 +43,17 @@ body {
 
   /* Primary CTA in Deep Space: the nova burst. */
   .btn-nova {
-    @apply btn relative text-space;
-    background: linear-gradient(120deg, #ffb454, #f06595);
+    @apply btn relative text-white;
+    background: linear-gradient(120deg, #a855f7, #22d3ee);
     box-shadow:
-      0 0 0 1px rgba(255, 180, 84, 0.4),
-      0 8px 32px -8px rgba(240, 101, 149, 0.55);
+      0 0 0 1px rgba(168, 85, 247, 0.4),
+      0 8px 32px -8px rgba(99, 102, 241, 0.55);
     transition: box-shadow 0.3s ease, transform 0.2s ease;
   }
   .btn-nova:hover {
     box-shadow:
-      0 0 0 1px rgba(255, 180, 84, 0.7),
-      0 10px 48px -6px rgba(255, 180, 84, 0.6);
+      0 0 0 1px rgba(168, 85, 247, 0.7),
+      0 10px 48px -6px rgba(34, 211, 238, 0.5);
     transform: translateY(-1px);
   }
 
@@ -75,7 +75,7 @@ body {
   }
   .glass:hover {
     border-color: rgba(255, 255, 255, 0.22);
-    box-shadow: 0 24px 64px -32px rgba(240, 101, 149, 0.45);
+    box-shadow: 0 24px 64px -32px rgba(168, 85, 247, 0.5);
     transform: translateY(-2px);
   }
 
@@ -88,7 +88,7 @@ body {
 
   /* The nova burst, as text. */
   .grad-text {
-    background: linear-gradient(110deg, #ffb454 15%, #f06595 85%);
+    background: linear-gradient(110deg, #a855f7 15%, #22d3ee 85%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -108,8 +108,8 @@ body {
   }
   .side-link-active {
     @apply text-starlight;
-    background: linear-gradient(120deg, rgba(255, 180, 84, 0.22), rgba(240, 101, 149, 0.12));
-    box-shadow: inset 0 0 0 1px rgba(255, 180, 84, 0.35);
+    background: linear-gradient(120deg, rgba(168, 85, 247, 0.25), rgba(34, 211, 238, 0.12));
+    box-shadow: inset 0 0 0 1px rgba(168, 85, 247, 0.4);
   }
 }
 
@@ -198,9 +198,9 @@ body {
 }
 
 @keyframes pulse-ring {
-  0% { box-shadow: 0 0 0 0 rgba(255, 180, 84, 0.4); }
-  70% { box-shadow: 0 0 0 12px rgba(255, 180, 84, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(255, 180, 84, 0); }
+  0% { box-shadow: 0 0 0 0 rgba(168, 85, 247, 0.4); }
+  70% { box-shadow: 0 0 0 12px rgba(168, 85, 247, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(168, 85, 247, 0); }
 }
 .pulse-ring {
   animation: pulse-ring 2.6s ease-out infinite;
@@ -324,7 +324,7 @@ body {
   @apply glass w-full cursor-pointer p-5 text-left text-sm font-medium text-starlight/80 transition;
 }
 .quiz-option:hover {
-  border-color: rgba(255, 180, 84, 0.5);
+  border-color: rgba(168, 85, 247, 0.5);
   transform: translateY(-2px);
 }
 
