@@ -19,7 +19,7 @@ const body = Outfit({
 export const metadata: Metadata = {
   title: "The Kiln · wood-fired kitchen, Newbury",
   description:
-    "A concept site by Kay Creates Web: a wood-fired neighbourhood kitchen in Newbury. Seasonal plates, blistered pizzas, and a short, honest wine list.",
+    "A concept site by nova05 studio: a wood-fired neighbourhood kitchen in Newbury. Seasonal plates, blistered pizzas, and a short, honest wine list.",
   robots: { index: false },
 };
 
@@ -195,7 +195,7 @@ export default function KilnPage() {
             href="/studio"
             className="font-semibold text-[#d96f32] underline-offset-4 hover:underline"
           >
-            Kay Creates Web
+            nova05 studio
           </Link>
           .
         </p>

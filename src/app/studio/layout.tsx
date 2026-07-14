@@ -10,17 +10,17 @@ const kcFont = Bricolage_Grotesque({
 });
 
 export const metadata: Metadata = {
-  title: { absolute: "Kay Creates Web · freelance web studio" },
+  title: { absolute: "nova05 studio · websites for small businesses" },
   description:
     "A freelance web studio building fast, custom websites for small businesses, with AI assistants baked in. Fixed prices, quick turnarounds, one team from design to deploy.",
   openGraph: {
-    title: "Kay Creates Web · freelance web studio",
+    title: "nova05 studio · websites for small businesses",
     description:
       "Fast, custom websites for small businesses, with AI assistants baked in. Fixed prices, quick turnarounds.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Kay Creates Web · freelance web studio",
+    title: "nova05 studio · websites for small businesses",
     description:
       "Fast, custom websites for small businesses, with AI assistants baked in. Fixed prices, quick turnarounds.",
   },

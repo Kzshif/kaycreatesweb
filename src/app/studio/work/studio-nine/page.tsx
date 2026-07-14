@@ -12,7 +12,7 @@ const sora = Sora({
 export const metadata: Metadata = {
   title: "Studio Nine · hair studio, Newbury",
   description:
-    "A concept site by Kay Creates Web: an independent hair studio in Newbury. Cuts, colour, and honest advice, booked online in seconds.",
+    "A concept site by nova05 studio: an independent hair studio in Newbury. Cuts, colour, and honest advice, booked online in seconds.",
   robots: { index: false },
 };
 
@@ -189,7 +189,7 @@ export default function StudioNinePage() {
             href="/studio"
             className="font-semibold text-[#a64d79] underline-offset-4 hover:underline"
           >
-            Kay Creates Web
+            nova05 studio
           </Link>
           .
         </p>

@@ -16,23 +16,14 @@ const CONTACT_EMAIL = "novawebstudio05@gmail.com";
 function Wordmark() {
   return (
     <span className="flex items-center gap-2.5">
-      <svg
-        width="30"
-        height="30"
-        viewBox="0 0 30 30"
+      <span
         aria-hidden="true"
-        className="shrink-0"
+        className="flex h-[30px] w-[30px] shrink-0 items-center justify-center rounded-[9px] bg-[var(--kc-ever)] pb-0.5 text-lg font-extrabold leading-none text-[var(--kc-bone)]"
       >
-        <rect width="30" height="30" rx="9" fill="var(--kc-ever)" />
-        <path
-          d="M10 7.5v15M10 15l8-7.5M10.5 14.5l8 8"
-          stroke="var(--kc-bone)"
-          strokeWidth="2.4"
-          strokeLinecap="round"
-        />
-      </svg>
+        n
+      </span>
       <span className="text-lg font-bold tracking-tight">
-        Kay Creates<span className="font-light text-[var(--kc-moss)]"> Web</span>
+        nova05<span className="font-light text-[var(--kc-moss)]"> studio</span>
       </span>
     </span>
   );
@@ -47,7 +38,7 @@ export default function StudioPage() {
           aria-label="Main"
           className="mx-auto flex h-[68px] w-full max-w-[1200px] items-center justify-between px-5 sm:px-8"
         >
-          <Link href="/studio" aria-label="Kay Creates Web, home">
+          <Link href="/studio" aria-label="nova05 studio, home">
             <Wordmark />
           </Link>
           <div className="hidden items-center gap-8 text-sm font-medium text-[var(--kc-ink-soft)] md:flex">

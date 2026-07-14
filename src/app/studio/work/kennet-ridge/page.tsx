@@ -19,7 +19,7 @@ const archivo = Archivo({
 export const metadata: Metadata = {
   title: "Kennet Ridge Roofing · repairs & re-roofs, West Berkshire",
   description:
-    "A concept site by Kay Creates Web: a family roofing firm covering Newbury and West Berkshire. Repairs, re-roofs, flat roofs, and honest quotes.",
+    "A concept site by nova05 studio: a family roofing firm covering Newbury and West Berkshire. Repairs, re-roofs, flat roofs, and honest quotes.",
   robots: { index: false },
 };
 
@@ -198,7 +198,7 @@ export default function KennetRidgePage() {
             href="/studio"
             className="font-bold text-[#f2a516] underline-offset-4 hover:underline"
           >
-            Kay Creates Web
+            nova05 studio
           </Link>
           .
         </p>
