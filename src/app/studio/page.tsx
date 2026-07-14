@@ -11,7 +11,7 @@ import {
   Sparkle,
 } from "@phosphor-icons/react/dist/ssr";
 
-const CONTACT_EMAIL = "hello@kaycreatesweb.com";
+const CONTACT_EMAIL = "novawebstudio05@gmail.com";
 
 function Wordmark() {
   return (
