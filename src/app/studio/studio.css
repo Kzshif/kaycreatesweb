@@ -1,0 +1,171 @@
+/* nova05 studio page. Light, organic, evergreen. Scoped under .kc. */
+
+.kc {
+  --kc-paper: #f2f5ee;
+  --kc-paper-2: #e9eee2;
+  --kc-card: #fcfdf9;
+  --kc-ink: #17251b;
+  --kc-ink-soft: #4a5a4e;
+  --kc-ever: #1d3a29;
+  --kc-ever-deep: #142a1e;
+  --kc-moss: #3e6b4a;
+  --kc-line: #d9e1d0;
+  --kc-bone: #f5f8ef;
+
+  color-scheme: light;
+  background-color: var(--kc-paper);
+  color: var(--kc-ink);
+  font-family: var(--font-kc), system-ui, sans-serif;
+}
+
+.kc ::selection {
+  background: var(--kc-moss);
+  color: var(--kc-bone);
+}
+
+/* Deep evergreen hero canvas: layered organic light, no photo needed. */
+.kc-canvas {
+  background:
+    radial-gradient(90% 70% at 85% 10%, rgba(126, 168, 116, 0.5), transparent 62%),
+    radial-gradient(70% 60% at 8% 96%, rgba(58, 105, 72, 0.65), transparent 60%),
+    radial-gradient(48% 42% at 62% 78%, rgba(210, 227, 160, 0.16), transparent 65%),
+    linear-gradient(160deg, #22402d 0%, #16301f 48%, #0f2417 100%);
+}
+
+/* Static grain so the canvas reads as material, not flat gradient. */
+.kc-grain {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+}
+
+/* Frosted glass chip used for floating hero cards. */
+.kc-glass {
+  background: linear-gradient(135deg, rgba(252, 253, 249, 0.16), rgba(252, 253, 249, 0.07));
+  border: 1px solid rgba(252, 253, 249, 0.28);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.22),
+    0 24px 50px -24px rgba(10, 22, 14, 0.55);
+  backdrop-filter: blur(18px) saturate(150%);
+  -webkit-backdrop-filter: blur(18px) saturate(150%);
+}
+@media (prefers-reduced-transparency: reduce) {
+  .kc-glass {
+    background: rgba(20, 42, 30, 0.94);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+}
+
+/* Buttons. One accent, one shape system: pills for interactive. */
+.kc-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 999px;
+  padding: 0.875rem 1.75rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.25s ease, background-color 0.25s ease;
+}
+.kc-btn:active {
+  transform: scale(0.98);
+}
+.kc-btn-primary {
+  background: var(--kc-ever);
+  color: var(--kc-bone);
+  box-shadow: 0 14px 30px -14px rgba(20, 42, 30, 0.55);
+}
+.kc-btn-primary:hover {
+  background: var(--kc-ever-deep);
+  transform: translateY(-1px);
+}
+.kc-btn-primary:focus-visible {
+  outline: 2px solid var(--kc-moss);
+  outline-offset: 3px;
+}
+.kc-btn-ghost {
+  border: 1px solid var(--kc-line);
+  background: var(--kc-card);
+  color: var(--kc-ink);
+}
+.kc-btn-ghost:hover {
+  border-color: var(--kc-moss);
+  transform: translateY(-1px);
+}
+.kc-btn-ghost:focus-visible {
+  outline: 2px solid var(--kc-moss);
+  outline-offset: 3px;
+}
+/* Ghost-on-dark variant for the hero and CTA band. */
+.kc-btn-ghost-dark {
+  border: 1px solid rgba(245, 248, 239, 0.35);
+  background: rgba(245, 248, 239, 0.08);
+  color: var(--kc-bone);
+}
+.kc-btn-ghost-dark:hover {
+  border-color: rgba(245, 248, 239, 0.7);
+  transform: translateY(-1px);
+}
+.kc-btn-ghost-dark:focus-visible {
+  outline: 2px solid var(--kc-bone);
+  outline-offset: 3px;
+}
+/* Bone button on dark canvas. */
+.kc-btn-bone {
+  background: var(--kc-bone);
+  color: var(--kc-ever-deep);
+  box-shadow: 0 14px 30px -14px rgba(0, 0, 0, 0.5);
+}
+.kc-btn-bone:hover {
+  background: #ffffff;
+  transform: translateY(-1px);
+}
+.kc-btn-bone:focus-visible {
+  outline: 2px solid var(--kc-bone);
+  outline-offset: 3px;
+}
+
+/* Soft cards on paper. One radius system: 1.25rem cards, pills for buttons. */
+.kc-card {
+  background: var(--kc-card);
+  border: 1px solid var(--kc-line);
+  border-radius: 1.25rem;
+  box-shadow: 0 20px 45px -32px rgba(23, 37, 27, 0.35);
+}
+/* Deep evergreen card cell (bento accent). Own class so .kc-card's
+   background shorthand can never override it. */
+.kc-card-ever {
+  background: var(--kc-ever);
+  border-radius: 1.25rem;
+  color: var(--kc-bone);
+  box-shadow: 0 20px 45px -32px rgba(23, 37, 27, 0.5);
+}
+
+.kc-lift {
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+}
+.kc-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 30px 55px -30px rgba(23, 37, 27, 0.45);
+}
+
+/* Gentle float for the hero's glass cards, offset so they breathe out of sync. */
+@keyframes kc-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+.kc-float { animation: kc-float 8s ease-in-out infinite; }
+.kc-float-late { animation: kc-float 8s ease-in-out 2.5s infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .kc-float,
+  .kc-float-late {
+    animation: none;
+  }
+  .kc-lift:hover,
+  .kc-btn:hover {
+    transform: none;
+  }
+}
