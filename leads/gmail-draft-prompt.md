@@ -7,12 +7,14 @@ You review each draft and hit send yourself.
 
 - **Your name:** Kay
 - **Studio name:** Kay Creates Web
-- **Reply email / signature contact:** kay@… (your real address)
+- **Reply email / signature contact:** novawebstudio05@gmail.com
 - **Portfolio links (must be public):**
-  - Live product site: `https://kaycreatesweb-taupe.vercel.app` (nova05)
-  - Example websites page: `https://kaycreatesweb-taupe.vercel.app/websites`
-    *(⚠️ only works once the branch is merged to main — until then use the
-    temporary share link, or remove this line)*
+  - Studio portfolio (hire page, real example builds): `https://kaycreatesweb-taupe.vercel.app/studio`
+    — shows The Kiln (restaurant), Kennet Ridge (roofing), Studio Nine (salon)
+  - Live product: `https://kaycreatesweb-taupe.vercel.app` (nova05 AI receptionist)
+    *(⚠️ BEFORE SENDING: turn OFF Vercel Deployment Protection or these links
+    show recipients a login wall — Vercel → project → Settings → Deployment
+    Protection → Vercel Authentication → Off. Test in a private window first.)*
 - **Turnaround:** ~10 days
 - **Attachments (optional):** your two demo videos — attach manually after the
   draft is created, Gmail-side. Filenames: `nova05intro.mp4`,
@@ -26,11 +28,11 @@ You review each draft and hit send yourself.
 You have access to my Gmail. For each lead in the list at the bottom, create a
 DRAFT email (do not send). I will review and send each one myself.
 
-I run Kay Creates Web, a UK web design studio that builds fast, mobile-friendly
+I run nova05 studio, a UK web design studio that builds fast, mobile-friendly
 websites for local businesses — menus, online booking, galleries, click-and-
 collect — for one flat price, live in about 10 days. My portfolio:
+- Studio + example builds (restaurant, roofing, salon): [PORTFOLIO_LINK]
 - nova05, a live AI-receptionist product I designed and built: [LIVE_SITE_LINK]
-- Example site designs (café, trades, salon): [EXAMPLES_LINK]
 
 For EACH lead, write the draft like this:
 
@@ -50,7 +52,7 @@ marks):
    dead domain → anyone clicking their old link hits nothing right now.
 3. One line: I build the whole thing — design, words, hosting — for one flat
    price agreed upfront, live in about 10 days. If their sector matches an
-   example on my page, add: "here's the kind of site I mean: [EXAMPLES_LINK]".
+   example on my page, add: "here's the kind of site I mean: [PORTFOLIO_LINK]".
 4. Close with the free-mockup question: "Want me to mock up your homepage for
    free so you can see it first — no cost, no obligation?"
 5. Sign off:
