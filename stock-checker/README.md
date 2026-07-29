@@ -234,6 +234,26 @@ and this checker can watch pre-order pages for the "add to basket" going live.
 
 ---
 
+## Drop-day site watcher (queue & maintenance alerts)
+
+`"mode": "status"` watches a **site's state** instead of a product: it alerts
+when the site goes into **maintenance** (the classic sign a drop is being
+loaded in), when the **queue/waiting room goes up** (urgent alert), and when
+it's back to normal. Detection uses page text, HTTP 503s, and queue-system
+redirects (e.g. Queue-it domains).
+
+```bash
+cp queuewatch.example.json queuewatch.json   # add your ntfy topic
+node checker.mjs --config queuewatch.json    # checks every ~60s
+```
+
+Run it in its own terminal alongside your normal config — its faster cadence
+is meant for one or two site watches on drop days, not a big list. Paired with
+`listener.mjs`, the QUEUE IS UP alert **auto-opens the site in your browser**,
+so you join the waiting room within seconds of it appearing — as a normal
+person in a normal tab, which is exactly what wins a first-come queue. You
+queue and check out manually from there.
+
 ## Auto-open alerts in your browser (listener.mjs)
 
 For drops where seconds matter (queue pages, hyped restocks), tapping a phone

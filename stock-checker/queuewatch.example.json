@@ -1,0 +1,36 @@
+{
+  "intervalSeconds": 60,
+  "jitterSeconds": 15,
+  "perRequestDelayMs": 1000,
+  "requestTimeoutMs": 20000,
+  "stateFile": "state.queue.json",
+
+  "notify": {
+    "ntfyTopic": "",
+    "discordWebhookUrl": "",
+    "telegramBotToken": "",
+    "telegramChatId": ""
+  },
+
+  "_comment": "Drop-day site watcher. mode:'status' watches a SITE's state, not a product: it alerts when the site flips into maintenance (classic sign a drop is being loaded in), when the queue/waiting room goes up (URGENT alert — pair with listener.mjs to auto-open the page so you join the queue immediately), and when it comes back to normal. Checks every ~60s, which is fine for a couple of watches on drop days — don't add dozens at this cadence. Run alongside your normal config in its own terminal: node checker.mjs --config queuewatch.json",
+
+  "watches": [
+    {
+      "id": "status-pokemoncenter",
+      "name": "Pokémon Center UK",
+      "store": "pokemoncenter.com/en-gb",
+      "url": "https://www.pokemoncenter.com/en-gb",
+      "mode": "status",
+      "enabled": true
+    },
+    {
+      "id": "status-pokemoncenter-product",
+      "name": "Pokémon Center — hyped product page",
+      "store": "Pokémon Center UK",
+      "url": "https://www.pokemoncenter.com/en-gb/category/new-releases",
+      "mode": "status",
+      "enabled": false,
+      "_note": "Optional: on a drop day, point this at the specific product/category page for the release — queues sometimes go up per-page rather than site-wide."
+    }
+  ]
+}
