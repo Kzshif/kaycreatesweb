@@ -234,6 +234,36 @@ and this checker can watch pre-order pages for the "add to basket" going live.
 
 ---
 
+## Auto-open alerts in your browser (listener.mjs)
+
+For drops where seconds matter (queue pages, hyped restocks), tapping a phone
+notification still costs a few seconds. The listener removes them: it stays
+connected to your ntfy topic, and the instant an alert arrives it **opens the
+link in your browser automatically** — you arrive on the page as a normal
+person in a normal Chrome tab, just faster. You still queue and buy manually.
+
+```bash
+node listener.mjs                    # topic read from uk-watches.json
+node listener.mjs --filter queue,pokemon    # only auto-open matching alerts
+```
+
+Run it in a second terminal tab alongside the checker. Notes:
+
+- It opens the alert's Click link (checker alerts always have one), or the
+  first URL in the message text otherwise.
+- A 5-minute per-URL cooldown stops one hot drop opening a wall of tabs.
+- `--filter` is useful if your topic is chatty: e.g. only auto-open alerts
+  containing "queue" or "pokemon center", while everything else stays
+  notification-only.
+- Anything that can POST to your ntfy topic feeds it. That includes you: see
+  a queue link posted in a Discord community? Share/copy it to your topic
+  (`curl -d "queue up! https://..." ntfy.sh/YOURTOPIC`) and your Chromebook
+  opens it. On Android, automation apps like **MacroDroid/Tasker** can watch
+  your Discord notifications ON YOUR OWN DEVICE and forward them to your ntfy
+  topic automatically — that's device-side and fine. (What's not fine/possible:
+  a script logging into Discord as you to read other servers — "self-bots" are
+  against Discord's terms, so this tool doesn't do that.)
+
 ## Keeping on top of the news (how Dropee-style services know)
 
 Drop-alert services know when and where drops happen from three places, and you
