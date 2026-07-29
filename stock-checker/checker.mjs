@@ -103,6 +103,85 @@ function matchesKeywords(name, watch) {
 }
 
 // ----------------------------------------------------------------------------
+// Status mode — watch a SITE's state rather than a product's stock.
+//
+// A watch with "mode": "status" detects when a site (e.g. Pokémon Center)
+// flips into maintenance (the classic sign a drop is being loaded in) or
+// puts its queue/waiting room up, and alerts on every change:
+//   normal -> maintenance   "MAINTENANCE — drop may be imminent"
+//   *      -> queue         "QUEUE IS UP — get in now"
+//   *      -> normal        "back online"
+// Queue detection uses both page text and the final URL after redirects
+// (queue systems like Queue-it redirect to their own domain).
+// ----------------------------------------------------------------------------
+const STATUS_PRESETS = {
+  maintenanceText: [
+    "maintenance",
+    "we'll be back",
+    "we’ll be back",
+    "be right back",
+    "temporarily down",
+    "site is currently unavailable",
+  ],
+  queueText: [
+    "queue-it",
+    "waiting room",
+    "you are now in line",
+    "you are in a queue",
+    "your estimated wait",
+    "virtual queue",
+  ],
+  queueUrlMarkers: ["queue-it.net", "queue."],
+};
+
+function detectSiteStatus({ status, html, finalUrl }, watch) {
+  const hay = (html || "").toLowerCase();
+  const url = (finalUrl || "").toLowerCase();
+
+  const queueUrlMarkers =
+    watch.queueUrlMarkers ?? STATUS_PRESETS.queueUrlMarkers;
+  const queueText = watch.queueText ?? STATUS_PRESETS.queueText;
+  const maintenanceText = watch.maintenanceText ?? STATUS_PRESETS.maintenanceText;
+
+  if (
+    queueUrlMarkers.some((m) => m && url.includes(m)) ||
+    queueText.some((p) => p && hay.includes(p.toLowerCase()))
+  ) {
+    return "queue";
+  }
+  if (
+    status === 503 ||
+    maintenanceText.some((p) => p && hay.includes(p.toLowerCase()))
+  ) {
+    return "maintenance";
+  }
+  return "normal";
+}
+
+// title stays ASCII-safe for HTTP headers; emoji goes to Discord/console and
+// ntfy renders its own icon from tags.
+const STATUS_ALERTS = {
+  queue: {
+    title: "QUEUE IS UP",
+    emoji: "🚨",
+    tags: "rotating_light",
+    priority: "urgent",
+  },
+  maintenance: {
+    title: "MAINTENANCE - drop may be imminent",
+    emoji: "🛠",
+    tags: "warning",
+    priority: "high",
+  },
+  normal: {
+    title: "Back online",
+    emoji: "✅",
+    tags: "white_check_mark",
+    priority: "high",
+  },
+};
+
+// ----------------------------------------------------------------------------
 // Detection presets — sensible defaults per watch mode, overridable per watch.
 // ----------------------------------------------------------------------------
 const PRESETS = {
@@ -218,7 +297,7 @@ async function fetchPageHttp(url, timeoutMs) {
       signal: controller.signal,
     });
     const html = await res.text();
-    return { ok: res.ok, status: res.status, html };
+    return { ok: res.ok, status: res.status, html, finalUrl: res.url };
   } finally {
     clearTimeout(timer);
   }
@@ -256,7 +335,12 @@ function createBrowserFetcher() {
           timeout: timeoutMs,
         });
         const html = await page.content();
-        return { ok: res ? res.ok() : true, status: res ? res.status() : 0, html };
+        return {
+          ok: res ? res.ok() : true,
+          status: res ? res.status() : 0,
+          html,
+          finalUrl: page.url(),
+        };
       } finally {
         await context.close();
       }
@@ -356,6 +440,80 @@ async function notifyTelegramNewProducts(token, chatId, watch, items) {
     }),
   });
   if (!res.ok) throw new Error(`Telegram API returned ${res.status}`);
+}
+
+// Status alerts (queue up / maintenance / back online) across all channels.
+async function sendStatusAlerts(notify, watch, label) {
+  const meta = STATUS_ALERTS[label];
+  const title = `${meta.title}: ${watch.name}`;
+  const richTitle = `${meta.emoji} ${title}`;
+  const jobs = [];
+
+  if (notify?.ntfyTopic) {
+    jobs.push(
+      fetch(ntfyUrl(notify.ntfyTopic), {
+        method: "POST",
+        headers: {
+          Title: headerSafe(title),
+          Click: watch.url,
+          Priority: meta.priority,
+          Tags: meta.tags,
+        },
+        body: (watch.store ? `${watch.store}\n` : "") + watch.url,
+      })
+        .then((r) => {
+          if (!r.ok) throw new Error(`ntfy returned ${r.status}`);
+        })
+        .catch((e) => console.warn(`  ! ntfy alert failed: ${e.message}`)),
+    );
+  }
+  if (notify?.discordWebhookUrl) {
+    jobs.push(
+      fetch(notify.discordWebhookUrl, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          username: "Pokémon Restock",
+          embeds: [
+            {
+              title: richTitle,
+              description: watch.url,
+              color: label === "queue" ? 0xe74c3c : 0xf39c12,
+              fields: watch.store
+                ? [{ name: "Store", value: watch.store }]
+                : [],
+              timestamp: new Date().toISOString(),
+            },
+          ],
+        }),
+      })
+        .then((r) => {
+          if (!r.ok) throw new Error(`Discord webhook returned ${r.status}`);
+        })
+        .catch((e) => console.warn(`  ! Discord alert failed: ${e.message}`)),
+    );
+  }
+  if (notify?.telegramBotToken && notify?.telegramChatId) {
+    jobs.push(
+      fetch(
+        `https://api.telegram.org/bot${notify.telegramBotToken}/sendMessage`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            chat_id: notify.telegramChatId,
+            text: `*${richTitle}*\n${watch.url}`,
+            parse_mode: "Markdown",
+          }),
+        },
+      )
+        .then((r) => {
+          if (!r.ok) throw new Error(`Telegram API returned ${r.status}`);
+        })
+        .catch((e) => console.warn(`  ! Telegram alert failed: ${e.message}`)),
+    );
+  }
+  await Promise.all(jobs);
 }
 
 async function sendNewProductAlerts(notify, watch, items) {
@@ -484,9 +642,35 @@ async function runPass(state, fetchers) {
     const fetcher = useBrowser ? fetchers.browser : fetchers.http;
 
     try {
-      const { ok, status, html } = await fetcher.fetchPage(watch.url, timeoutMs);
+      const { ok, status, html, finalUrl } = await fetcher.fetchPage(
+        watch.url,
+        timeoutMs,
+      );
 
-      if (!ok && status) {
+      if (watch.mode === "status") {
+        const current = detectSiteStatus({ status, html, finalUrl }, watch);
+        const previous = state[key]?.status;
+
+        console.log(
+          `[${nowStamp()}] ${watch.name}: ${current.toUpperCase()}` +
+            (useBrowser ? " (browser)" : ""),
+        );
+
+        // Alert on every change — including straight into queue/maintenance
+        // on the very first pass (if the site is already mid-drop when you
+        // start the checker, you want to know NOW). A quiet "normal" first
+        // pass just seeds state.
+        const changed = previous !== undefined && current !== previous;
+        const firstPassHot = previous === undefined && current !== "normal";
+        if (changed || firstPassHot) {
+          console.log(
+            `  >>> ${STATUS_ALERTS[current].emoji} ${STATUS_ALERTS[current].title} — sending alerts`,
+          );
+          await sendStatusAlerts(config.notify, watch, current);
+        }
+
+        state[key] = { status: current, checkedAt: nowStamp() };
+      } else if (!ok && status) {
         console.log(`[${nowStamp()}] ${watch.name}: HTTP ${status} (skipped)`);
       } else if (watch.mode === "category") {
         const matches = extractProducts(html, watch.url).filter((p) =>
