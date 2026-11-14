@@ -1,0 +1,102 @@
+// Turns a storyboard + word timings into the exact frame numbers the renderer
+// uses. Scenes and their reveal steps are pinned to spoken words, so pictures
+// land with the narration instead of drifting.
+import { FRAME, RULES, cueCount } from '../../src/shared/spec.mjs';
+import { buildCaptions } from './captions.mjs';
+import { resolveAnchors } from './plan.mjs';
+
+const FPS = FRAME.fps;
+const SCENE_LEAD = 0.12; // a scene cuts in just before its word, so it has landed when the word is heard
+const BEAT_LEAD = 0.1;
+const TAIL = 0.3; // air after the last word before the loop restarts
+const MIN_SCENE = 0.9;
+export const LOOP_FRAMES = 9; // the last frames blend back into frame 0 so the loop is seamless
+
+const f = (seconds) => Math.round(seconds * FPS);
+const issue = (level, rule, message) => ({ level, rule, message });
+
+/**
+ * words: [{ w, start, end }] one per script word, in order.
+ * Returns { props, issues, events } where props is the Remotion input.
+ */
+export function buildProps({ plan, script, words, channel = {}, audio = null, id = plan.id }) {
+  const issues = [];
+  if (words.length !== script.words.length) {
+    issues.push(issue('error', 'timing', `words.json has ${words.length} words but the script has ${script.words.length}. Re-run timing.`));
+  }
+  const { anchors, issues: anchorIssues } = resolveAnchors(plan, script.words);
+  issues.push(...anchorIssues);
+
+  const endSec = (words[words.length - 1]?.end || 0) + TAIL;
+  const total = Math.max(f(endSec), 1);
+  const at = (idx) => words[Math.min(idx, words.length - 1)]?.start ?? 0;
+
+  // scene starts
+  const starts = [];
+  anchors.forEach((a, i) => {
+    let s = i === 0 ? 0 : at(a.at) - SCENE_LEAD;
+    if (i > 0) s = Math.max(s, starts[i - 1] + MIN_SCENE);
+    starts.push(Math.max(0, s));
+  });
+
+  const scenes = plan.scenes.map((sc, i) => {
+    const from = f(starts[i]);
+    const to = i + 1 < plan.scenes.length ? f(starts[i + 1]) : total;
+    const duration = Math.max(1, to - from);
+    const need = cueCount(sc);
+    const cues = [0];
+    for (const b of anchors[i]?.beats || []) {
+      const c = f(at(b) - BEAT_LEAD) - from;
+      cues.push(Math.max(cues[cues.length - 1] + 4, Math.min(c, duration - 6)));
+    }
+    // steps without a beat are spread evenly through the time that is left
+    const missing = need - cues.length;
+    if (missing > 0) {
+      const last = cues[cues.length - 1];
+      const hold = Math.min(20, Math.round(duration * 0.22));
+      const room = duration - hold - last;
+      const gap = room / (missing + 0.15);
+      if (gap < 7) issues.push(issue('warn', 'timing', `Scene ${i + 1} (${sc.type}) has ${need} steps in ${(duration / FPS).toFixed(1)}s: too fast to read. Give it more words or fewer steps.`));
+      for (let k = 1; k <= missing; k++) cues.push(Math.round(last + Math.max(4, gap) * k));
+    }
+    if (duration < f(MIN_SCENE) - 1) issues.push(issue('warn', 'timing', `Scene ${i + 1} (${sc.type}) lasts only ${(duration / FPS).toFixed(1)}s.`));
+    return { type: sc.type, variant: sc.variant, from, duration, cues, props: sc.props || {} };
+  });
+
+  // every visible change, as absolute frames
+  const events = [...new Set(scenes.flatMap((s) => s.cues.map((c) => s.from + c)))].sort((a, b) => a - b);
+  const gaps = [];
+  for (let i = 0; i < events.length; i++) {
+    const next = i + 1 < events.length ? events[i + 1] : total;
+    gaps.push({ at: events[i] / FPS, gap: (next - events[i]) / FPS });
+  }
+  const worst = gaps.reduce((m, g) => (g.gap > m.gap ? g : m), { gap: 0, at: 0 });
+  if (worst.gap > RULES.cadence.maxGapSeconds + 0.05) {
+    issues.push(issue('error', 'cadence', `Nothing new appears for ${worst.gap.toFixed(1)}s from ${worst.at.toFixed(1)}s. The brief asks for a visual change every 2-3 seconds: add a beat or a scene there.`));
+  }
+  const avgGap = total / FPS / Math.max(1, events.length);
+  if (avgGap > RULES.cadence.targetGapSeconds + 0.3) issues.push(issue('warn', 'cadence', `Average ${avgGap.toFixed(1)}s between visual changes; aim for about ${RULES.cadence.targetGapSeconds}s.`));
+
+  const pages = buildCaptions(words).map((p) => ({
+    from: f(p.start),
+    to: Math.max(f(p.start) + 2, f(p.end)),
+    words: p.words.map((w) => ({ t: w.t, from: f(w.start), to: Math.max(f(w.start) + 1, f(w.end)) })),
+  }));
+
+  const filled = (s) => typeof s === 'string' && s.trim() && !/^\[.*\]$/.test(s.trim());
+  const props = {
+    id,
+    durationInFrames: total,
+    fps: FPS,
+    look: plan.look,
+    scenes,
+    captions: pages,
+    audio,
+    loopFrames: LOOP_FRAMES,
+    // channel furniture appears only once the placeholders in channel.json are filled in
+    handle: filled(channel.handle) ? channel.handle.trim() : null,
+    cta: filled(channel.cta) && channel.ctaOnScreen !== false ? channel.cta.trim() : null,
+    probe: false,
+  };
+  return { props, issues, events: events.map((e) => +(e / FPS).toFixed(2)), seconds: total / FPS, worstGap: +worst.gap.toFixed(2), avgGap: +avgGap.toFixed(2) };
+}

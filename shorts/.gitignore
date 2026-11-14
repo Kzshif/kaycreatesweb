@@ -1,0 +1,13 @@
+# dependencies and local tooling (rebuilt by setup.sh)
+node_modules/
+.venv/
+.models/
+.cache/
+
+# per-video working files and renders (rebuilt from script + voice + plan)
+videos/*/work/
+videos/*/out/
+
+# OS / editor
+.DS_Store
+*.log

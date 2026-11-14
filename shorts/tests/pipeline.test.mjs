@@ -1,0 +1,286 @@
+// Run with: npm test   (node --test tests/)
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import os from 'node:os';
+import path from 'node:path';
+import test from 'node:test';
+
+import { ACCENTS, GROUNDS, GROUND_ACCENTS, SCENES, cueCount } from '../src/shared/spec.mjs';
+import { buildCaptions, captionStats, displayWord } from '../pipeline/lib/captions.mjs';
+import { checkVariety, findPhrase, resolveAnchors, screenFigures, signature, validatePlan } from '../pipeline/lib/plan.mjs';
+import { lintScript, parseScript } from '../pipeline/lib/script.mjs';
+import { checkClaims, checkCoverage, parseSources } from '../pipeline/lib/sources.mjs';
+import { parseCsv, toCsv } from '../pipeline/lib/status.mjs';
+import { estimateSeconds, figures, norm, sentences, spokenForm, syntheticTimings, tokens, yearToWords } from '../pipeline/lib/text.mjs';
+import { buildProps } from '../pipeline/lib/timing.mjs';
+
+const tmp = (name, text) => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'shorts-test-'));
+  const file = path.join(dir, name);
+  fs.writeFileSync(file, text);
+  return file;
+};
+const keys = (s) => figures(s).map((f) => f.key);
+
+test('figures: currency, magnitude, percent, years', () => {
+  assert.deepEqual(keys('$5.3 billion'), ['$5300000000']);
+  assert.deepEqual(keys('$5.3bn'), ['$5300000000']);
+  assert.deepEqual(keys('5.3 billion dollars'), ['$5300000000']);
+  assert.deepEqual(keys('$5,323 million'), ['$5323000000']);
+  assert.deepEqual(keys('51%'), ['51%']);
+  assert.deepEqual(keys('51 percent'), ['51%']);
+  assert.deepEqual(keys('£4bn'), ['£4000000000']);
+  assert.deepEqual(keys('a $1.50 hot dog'), ['$1.5']);
+  assert.equal(figures('in 2024')[0].year, true);
+  assert.equal(figures('$2024')[0].year, false);
+  assert.deepEqual(keys('3x bigger'), ['3x']);
+});
+
+test('figures: names with digits are not claims', () => {
+  assert.deepEqual(keys('its 10-K filing'), []);
+  assert.deepEqual(keys('the iPhone 15 costs $799'), ['$799']);
+  assert.deepEqual(figures('the Model 3', { ignore: ['Model 3'] }).map((f) => f.key), []);
+});
+
+test('figures: number words and qualifiers', () => {
+  const f = figures('more than half of its profit, over $5 billion');
+  assert.equal(f[0].kind, 'word');
+  assert.equal(f[0].key, 'half');
+  assert.equal(f[1].qualifier, 'over');
+  assert.deepEqual(figures('5.3 billion').map((x) => x.kind), ['digit']); // "billion" is not double counted
+});
+
+test('spoken form', () => {
+  assert.equal(spokenForm('$5.3 billion'), 'five point three billion dollars');
+  assert.equal(spokenForm('£4bn'), 'four billion pounds');
+  assert.equal(spokenForm('51%'), 'fifty-one percent');
+  assert.equal(spokenForm('a $1.50 hot dog'), 'a one dollar fifty hot dog');
+  assert.equal(spokenForm('$0.99'), 'ninety-nine cents');
+  assert.equal(spokenForm('in 2024'), 'in twenty twenty-four');
+  assert.equal(yearToWords(1985), 'nineteen eighty-five');
+  assert.equal(yearToWords(2005), 'two thousand and five');
+  assert.equal(spokenForm('the 1990s'), 'the nineteen nineties');
+  assert.equal(spokenForm('900 stores'), 'nine hundred stores');
+  assert.equal(spokenForm('3x'), 'three times');
+  assert.equal(spokenForm('the 3rd largest'), 'the third largest');
+});
+
+test('sentences and tokens', () => {
+  assert.equal(sentences('Costco sells cheap. It earns $5.3 billion from cards.').length, 2);
+  assert.equal(sentences('U.S. sales rose. Then fell.').length, 2);
+  assert.equal(tokens('one — two').length, 2);
+  assert.equal(norm('"Billion,"'), 'billion');
+});
+
+test('duration estimate is in a sane range', () => {
+  const text = Array.from({ length: 90 }, () => 'money').join(' ');
+  const e = estimateSeconds(text);
+  assert.ok(e.seconds > 30 && e.seconds < 50, String(e.seconds));
+});
+
+test('captions: 2-4 words, figures stay together', () => {
+  const script = 'Costco made $5.3 billion from membership cards last year. That is more than half of its profit, and the reason prices stay low.';
+  const pages = buildCaptions(syntheticTimings(script));
+  const st = captionStats(pages);
+  assert.equal(st.over, 0);
+  assert.ok(st.singles <= 1, JSON.stringify(pages.map((p) => p.words.map((w) => w.t).join(' '))));
+  const texts = pages.map((p) => p.words.map((w) => w.t).join(' '));
+  assert.ok(texts.some((t) => /\$5\.3 billion/.test(t)), texts.join(' | '));
+  assert.ok(texts.some((t) => /more than/.test(t)), texts.join(' | '));
+  for (let i = 1; i < pages.length; i++) assert.ok(pages[i].start >= pages[i - 1].end - 1e-6, 'pages never overlap');
+  assert.equal(displayWord('profit,'), 'profit');
+  assert.equal(displayWord('"why?"'), 'why?');
+});
+
+test('csv round trip keeps commas and quotes', () => {
+  const rows = [['id', 'problems'], ['001', 'a, "b"; c\nd']];
+  assert.deepEqual(parseCsv(toCsv(rows)), rows);
+});
+
+const GOOD_SCRIPT = `---
+id: 001
+company: Costco
+topic: Membership fees are the profit
+idea: Costco earns most of its profit from membership cards, not from what it sells.
+---
+Costco barely makes money selling things.
+Last year it sold $270 billion of goods.
+After paying for the goods and the stores, little was left.
+The money is in the card.
+Shoppers paid $5.3 billion in membership fees.
+That is 51% of the profit the company made from running the business.
+A fee costs almost nothing to collect.
+So Costco can sell a hot dog for $1.50 and still smile.
+Cheap prices bring people in.
+The card is what they are there to sell, which is why
+`;
+
+test('script lint: a good script passes, bad ones fail for the right reason', () => {
+  const good = lintScript(parseScript(tmp('script.md', GOOD_SCRIPT)));
+  assert.deepEqual(good.issues.filter((i) => i.level === 'error'), [], JSON.stringify(good.issues, null, 1));
+  assert.ok(good.stats.words >= 70 && good.stats.words <= 110, String(good.stats.words));
+
+  const rules = (text) => lintScript(parseScript(tmp('script.md', text))).issues.filter((i) => i.level === 'error').map((i) => i.rule);
+  assert.ok(rules(GOOD_SCRIPT.replace('Costco barely makes money selling things.', 'Did you know Costco barely makes money?')).includes('hook'));
+  assert.ok(rules(GOOD_SCRIPT.replace('which is why', 'and that is the end.')).includes('loop'));
+  assert.ok(rules(GOOD_SCRIPT.replace('The money is in the card.', 'You should buy the stock.')).includes('advice'));
+  assert.ok(rules(GOOD_SCRIPT.replace('The money is in the card.', 'Basically the money is in the card.')).includes('filler'));
+  assert.ok(rules(GOOD_SCRIPT.split('\n').slice(0, 9).join('\n')).includes('length'));
+});
+
+const GOOD_SOURCES = `# Sources: 001
+
+## 1. Net sales were $269,912 million in fiscal 2025
+- Figures: $270 billion
+- Exact: $269,912 million
+- Source: Costco Wholesale Corporation, Form 10-K, fiscal 2025
+- Type: regulator filing
+- URL: https://www.sec.gov/example
+- Date: 2025-10-08
+- Quote: "Net sales $ 269,912"
+- Checked: 2026-11-14
+
+## 2. Membership fees were $5,323 million
+- Figures: $5.3 billion
+- Exact: $5,323 million
+- Source: Costco Wholesale Corporation, Form 10-K, fiscal 2025
+- Type: regulator filing
+- URL: https://www.sec.gov/example
+- Date: 2025-10-08
+- Quote: "Membership fees 5,323"
+- Checked: 2026-11-14
+
+## 3. Membership fees were 51% of operating income
+- Figures: 51%
+- Derived: 5323 / 10383 * 100 = 51.3
+- From: 2
+
+## 4. The hot dog combo is $1.50
+- Figures: $1.50
+- Exact: $1.50
+- Source: Costco annual report
+- Type: company report
+- URL: https://investor.costco.com/example
+- Date: 2025-10-08
+- Quote: "the $1.50 hot dog and soda combo"
+- Checked: 2026-11-14
+`;
+
+test('sources: complete file passes; coverage and rounding are enforced', () => {
+  const src = parseSources(tmp('sources.md', GOOD_SOURCES));
+  assert.deepEqual(checkClaims(src, { today: '2026-11-14' }).filter((i) => i.level === 'error'), []);
+  const script = parseScript(tmp('script.md', GOOD_SCRIPT));
+  const cov = checkCoverage(src, figures(script.text));
+  assert.deepEqual(cov.filter((i) => i.level === 'error'), [], JSON.stringify(cov, null, 1));
+
+  // an unsourced figure is an error
+  const bad = checkCoverage(src, figures('It made $9 billion.'));
+  assert.equal(bad[0].rule, 'unsourced');
+  // a wrong rounding is an error, a fair one is not
+  const wrong = parseSources(tmp('sources.md', GOOD_SOURCES.replace('- Figures: $5.3 billion', '- Figures: $5.3 billion, $5.5 billion')));
+  assert.equal(checkCoverage(wrong, figures('It made $5.5 billion.')).some((i) => i.rule === 'rounding' && i.level === 'error'), true);
+  // "more than" must be true
+  const more = parseSources(tmp('sources.md', GOOD_SOURCES.replace('- Figures: $5.3 billion', '- Figures: $5.3 billion, $5.4 billion')));
+  assert.equal(checkCoverage(more, figures('more than $5.4 billion')).some((i) => i.level === 'error'), true);
+  assert.equal(checkCoverage(src, figures('more than $5.3 billion')).some((i) => i.level === 'error'), false);
+});
+
+test('sources: banned sites, bad sums and missing fields are caught', () => {
+  const rules = (text) => checkClaims(parseSources(tmp('sources.md', text)), { today: '2026-11-14' }).filter((i) => i.level === 'error');
+  assert.ok(rules(GOOD_SOURCES.replace('https://investor.costco.com/example', 'https://en.wikipedia.org/wiki/Costco')).length > 0);
+  assert.ok(rules(GOOD_SOURCES.replace('= 51.3', '= 61.3')).some((i) => i.rule === 'derived'));
+  assert.ok(rules(GOOD_SOURCES.replace('- Date: 2025-10-08\n- Quote: "the', '- Quote: "the')).length > 0);
+  assert.ok(rules(GOOD_SOURCES.replace('- Date: 2025-10-08', '- Date: 2031-01-01')).length > 0);
+});
+
+const PLAN = {
+  id: '001',
+  look: { accent: 'lime', ground: 'ink', type: 'grotesk', motion: 'snap', captions: 'pop', shape: 'sharp' },
+  scenes: [
+    { type: 'hook', variant: 'slam', props: { lines: ['Costco barely', 'makes money', 'selling things'] } },
+    { type: 'counter', variant: 'odometer', at: 'Last year it sold', props: { prefix: '$', value: 270, suffix: 'billion', label: 'of goods sold' } },
+    { type: 'mockup', variant: 'card', at: 'The money is in the card', props: { title: 'Member' } },
+    { type: 'counter', variant: 'countup', at: 'Shoppers paid', beats: ['in membership fees'], props: { prefix: '$', value: 5.3, decimals: 1, suffix: 'billion', label: 'membership fees', sub: 'in one year' } },
+    { type: 'chart', variant: 'meter', at: 'That is 51%', props: { series: [{ label: 'Membership fees', value: 51, display: '51%' }] } },
+    { type: 'breakdown', variant: 'receipt', at: 'So Costco can sell', props: { items: [{ label: 'Hot dog and drink', display: '$1.50' }] } },
+    { type: 'kinetic', variant: 'cascade', at: 'Cheap prices', props: { lines: ['Cheap prices', 'bring people in'] } },
+  ],
+};
+
+test('storyboard: valid plan, anchors, on-screen figures', () => {
+  const script = parseScript(tmp('script.md', GOOD_SCRIPT));
+  const v = validatePlan(PLAN, script);
+  assert.deepEqual(v.issues.filter((i) => i.level === 'error'), [], JSON.stringify(v.issues, null, 1));
+  assert.equal(v.anchors[0].at, 0);
+  assert.ok(v.anchors[3].beats.length === 1);
+  assert.ok(findPhrase(script.words.map(norm), '$5.3 billion') > 0);
+  const shown = screenFigures(PLAN).map((f) => f.key);
+  assert.ok(shown.includes('$270000000000') && shown.includes('$5300000000') && shown.includes('51%') && shown.includes('$1.5'), shown.join(','));
+
+  const broken = structuredClone(PLAN);
+  broken.scenes[2].at = 'words that are not there';
+  broken.look.accent = 'beige';
+  const rules = validatePlan(broken, script).issues.map((i) => i.rule);
+  assert.ok(rules.includes('anchor') && rules.includes('look'));
+  const mismatch = structuredClone(PLAN);
+  mismatch.scenes[4].props.series = [{ label: 'A', value: 10, display: '$10' }, { label: 'B', value: 20, display: '$90' }];
+  assert.ok(validatePlan(mismatch, script).issues.some((i) => i.rule === 'chart'));
+});
+
+test('variety: neighbours must differ in order, accent and opening', () => {
+  const a = signature(PLAN);
+  assert.equal(a.opening, 'hook/slam');
+  assert.equal(checkVariety(a, [a]).filter((i) => i.level === 'error').length, 4);
+  const other = structuredClone(PLAN);
+  other.look = { accent: 'coral', ground: 'paper', type: 'editorial', motion: 'glide', captions: 'box', shape: 'soft' };
+  other.scenes[0].variant = 'stamp';
+  other.scenes.reverse();
+  other.scenes.unshift(other.scenes.pop());
+  assert.deepEqual(checkVariety(signature(other), [a]).filter((i) => i.level === 'error'), []);
+});
+
+test('timing: scenes follow the words, cadence is checked', () => {
+  const script = parseScript(tmp('script.md', GOOD_SCRIPT));
+  const words = syntheticTimings(script.text);
+  const built = buildProps({ plan: PLAN, script, words });
+  assert.deepEqual(built.issues.filter((i) => i.rule !== 'cadence' && i.level === 'error'), []);
+  const p = built.props;
+  assert.equal(p.scenes[0].from, 0);
+  for (let i = 1; i < p.scenes.length; i++) assert.equal(p.scenes[i].from, p.scenes[i - 1].from + p.scenes[i - 1].duration);
+  assert.equal(p.scenes.at(-1).from + p.scenes.at(-1).duration, p.durationInFrames);
+  for (const s of p.scenes) {
+    assert.equal(s.cues.length, cueCount({ type: s.type, variant: s.variant, props: s.props }));
+    for (let i = 1; i < s.cues.length; i++) assert.ok(s.cues[i] > s.cues[i - 1], `${s.type} cues ascend`);
+    assert.ok(s.cues.at(-1) < s.duration, `${s.type} last cue inside scene`);
+  }
+  assert.ok(p.captions.every((c) => c.words.length >= 1 && c.words.length <= 4));
+  assert.equal(p.handle, null); // placeholders in channel.json never reach the screen
+  assert.equal(buildProps({ plan: PLAN, script, words, channel: { handle: '[channel name]', cta: '[e.g. follow]' } }).props.cta, null);
+
+  // a storyboard with too few scenes leaves the screen static, and that is an error
+  const sparse = { ...PLAN, scenes: [PLAN.scenes[0], { ...PLAN.scenes[6], at: 'Cheap prices' }] };
+  assert.ok(buildProps({ plan: sparse, script, words }).issues.some((i) => i.rule === 'cadence' && i.level === 'error'));
+});
+
+test('look system: every approved accent has contrast on its ground', () => {
+  const lum = (hex) => {
+    const c = [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16) / 255).map((v) => (v <= 0.04045 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4));
+    return 0.2126 * c[0] + 0.7152 * c[1] + 0.0722 * c[2];
+  };
+  const ratio = (a, b) => (Math.max(lum(a), lum(b)) + 0.05) / (Math.min(lum(a), lum(b)) + 0.05);
+  for (const [ground, accents] of Object.entries(GROUND_ACCENTS)) {
+    const g = GROUNDS[ground];
+    assert.ok(ratio(g.fg, g.bg) >= 7, `${ground} text`);
+    assert.ok(ratio(g.muted, g.bg) >= 4.5, `${ground} muted text`);
+    for (const name of accents) {
+      const a = ACCENTS[name];
+      const fill = g.mode === 'dark' ? a.dark : a.light;
+      const on = g.mode === 'dark' ? a.onDark : a.onLight;
+      assert.ok(ratio(fill, g.bg) >= 3, `${name} on ${ground}: ${ratio(fill, g.bg).toFixed(2)}`);
+      // Labels on a fill are always large and bold, so the WCAG large-text bar (3:1) applies.
+      // The values were chosen with APCA (>= Lc 57) using the data-viz skill's validator.
+      assert.ok(ratio(on, fill) >= 3, `label on ${name} (${g.mode}): ${ratio(on, fill).toFixed(2)}`);
+    }
+  }
+  assert.ok(Object.keys(SCENES).length >= 10, 'at least 10 scene types');
+});

@@ -1,0 +1,12 @@
+{
+  "name": "[channel name]",
+  "handle": "[channel name]",
+  "creator": "[one line on who I am]",
+  "cta": "[e.g. follow for a new company every day]",
+  "ctaOnScreen": true,
+  "tts": {
+    "voice": "bm_george",
+    "lang": "en-gb",
+    "speed": 1.18
+  }
+}
