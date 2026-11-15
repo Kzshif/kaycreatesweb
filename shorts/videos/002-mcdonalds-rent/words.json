@@ -1,13 +1,13 @@
 {
  "engine": "faster-whisper small.en (word_timestamps)",
+ "pass_used": "no prompt",
+ "unheard_words": 0,
  "duration": 28.805,
  "match": 1.0,
  "heard": "McDonald's earns more from rent than from royalties. It does not run most of its restaurants. About 95% belong to franchisees. They run the kitchens and hire the staff. McDonald's usually owns or leases the land and the building. So, franchisees pay it rent plus a royalty on their sales. Last year, rent came to $10.4 billion. Royalties came to $6 billion. The burgers keep the tenants busy. The property is where the money is, which is why.",
  "mismatches": [],
  "figure_mismatches": [],
- "low_confidence": [
-  "busy."
- ],
+ "low_confidence": [],
  "words": [
   {
    "w": "McDonald's",
@@ -59,19 +59,19 @@
   },
   {
    "w": "It",
-   "start": 3.22,
+   "start": 3.24,
    "end": 3.32,
    "matched": true
   },
   {
    "w": "does",
    "start": 3.32,
-   "end": 3.48,
+   "end": 3.46,
    "matched": true
   },
   {
    "w": "not",
-   "start": 3.48,
+   "start": 3.46,
    "end": 3.7,
    "matched": true
   },
@@ -102,7 +102,7 @@
   {
    "w": "restaurants.",
    "start": 4.64,
-   "end": 5.12,
+   "end": 5.14,
    "matched": true
   },
   {
@@ -114,12 +114,12 @@
   {
    "w": "95%",
    "start": 5.8,
-   "end": 6.8,
+   "end": 6.78,
    "matched": true
   },
   {
    "w": "belong",
-   "start": 6.8,
+   "start": 6.78,
    "end": 7.34,
    "matched": true
   },
@@ -137,7 +137,7 @@
   },
   {
    "w": "They",
-   "start": 8.64,
+   "start": 8.66,
    "end": 8.8,
    "matched": true
   },
@@ -156,12 +156,12 @@
   {
    "w": "kitchens",
    "start": 9.14,
-   "end": 9.42,
+   "end": 9.4,
    "matched": true
   },
   {
    "w": "and",
-   "start": 9.42,
+   "start": 9.4,
    "end": 9.9,
    "matched": true
   },
@@ -186,12 +186,12 @@
   {
    "w": "McDonald's",
    "start": 11.2,
-   "end": 11.68,
+   "end": 11.66,
    "matched": true
   },
   {
    "w": "usually",
-   "start": 11.68,
+   "start": 11.66,
    "end": 12.0,
    "matched": true
   },
@@ -216,12 +216,12 @@
   {
    "w": "the",
    "start": 13.08,
-   "end": 13.32,
+   "end": 13.3,
    "matched": true
   },
   {
    "w": "land",
-   "start": 13.32,
+   "start": 13.3,
    "end": 13.58,
    "matched": true
   },
@@ -251,7 +251,7 @@
   },
   {
    "w": "franchisees",
-   "start": 15.04,
+   "start": 15.02,
    "end": 15.54,
    "matched": true
   },
@@ -288,12 +288,12 @@
   {
    "w": "royalty",
    "start": 16.76,
-   "end": 17.04,
+   "end": 17.02,
    "matched": true
   },
   {
    "w": "on",
-   "start": 17.04,
+   "start": 17.02,
    "end": 17.34,
    "matched": true
   },
@@ -353,7 +353,7 @@
   },
   {
    "w": "Royalties",
-   "start": 21.56,
+   "start": 21.62,
    "end": 22.0,
    "matched": true
   },
@@ -414,24 +414,24 @@
   {
    "w": "busy.",
    "start": 25.38,
-   "end": 25.76,
+   "end": 25.78,
    "matched": true
   },
   {
    "w": "The",
    "start": 26.24,
-   "end": 26.34,
+   "end": 26.32,
    "matched": true
   },
   {
    "w": "property",
-   "start": 26.34,
-   "end": 26.56,
+   "start": 26.32,
+   "end": 26.6,
    "matched": true
   },
   {
    "w": "is",
-   "start": 26.56,
+   "start": 26.6,
    "end": 26.92,
    "matched": true
   },
@@ -444,36 +444,36 @@
   {
    "w": "the",
    "start": 27.1,
-   "end": 27.26,
+   "end": 27.28,
    "matched": true
   },
   {
    "w": "money",
-   "start": 27.26,
+   "start": 27.28,
    "end": 27.4,
    "matched": true
   },
   {
    "w": "is,",
    "start": 27.4,
-   "end": 27.78,
+   "end": 27.82,
    "matched": true
   },
   {
    "w": "which",
-   "start": 27.98,
-   "end": 28.12,
+   "start": 27.88,
+   "end": 28.1,
    "matched": true
   },
   {
    "w": "is",
-   "start": 28.12,
-   "end": 28.26,
+   "start": 28.1,
+   "end": 28.28,
    "matched": true
   },
   {
    "w": "why",
-   "start": 28.26,
+   "start": 28.28,
    "end": 28.58,
    "matched": true
   }

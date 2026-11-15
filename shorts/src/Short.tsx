@@ -27,14 +27,13 @@ const SceneShell: React.FC<{ scene: SceneData; first: boolean; children: React.R
       style = { transform: `scale(${1.035 - 0.035 * p})`, opacity: Math.min(1, 0.35 + frame * 0.4), transformOrigin: origin };
     } else if (look.cut === 'fade') {
       const p = tween(frame, 0, 7);
-      const out = tween(frame, scene.duration - 4, 4, Easing.in(Easing.quad));
-      style = { transform: `translateY(${(1 - p) * 20}px)`, opacity: p * (1 - out) };
+      style = { transform: `translateY(${(1 - p) * 20}px)`, opacity: Math.min(1, 0.4 + 0.6 * tween(frame, 0, 5)) };
     } else if (look.cut === 'zoom') {
       const p = spring({ frame, fps, config: { damping: 12, stiffness: 190, mass: 0.6 } });
-      style = { transform: `scale(${0.9 + 0.1 * p})`, opacity: Math.min(1, frame / 3), transformOrigin: origin };
+      style = { transform: `scale(${0.9 + 0.1 * p})`, opacity: Math.min(1, 0.4 + frame * 0.3), transformOrigin: origin };
     } else {
       const p = tween(frame, 0, 7, Easing.out(Easing.quad));
-      style = { clipPath: `inset(0 ${(1 - p) * 100}% 0 0)` };
+      style = { clipPath: `inset(0 ${(1 - p) * 82}% 0 0)` }; // the wipe starts part-open: no empty first frame
     }
   }
   // A beat on every reveal step after the first: the whole scene moves briefly, in the

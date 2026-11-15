@@ -116,35 +116,49 @@ def main():
         check=True,
     ).stdout
     audio = np.frombuffer(raw, dtype=np.float32)
-    segments, info = model.transcribe(
-        audio,
-        language="en",
-        beam_size=5,
-        word_timestamps=True,
-        condition_on_previous_text=False,
-        initial_prompt=a.prompt or None,
-        vad_filter=False,
-    )
-    heard = []
-    for seg in segments:
-        first = True
-        for w in seg.words or []:
-            text = w.word.strip()
-            if not text:
-                continue
-            # Whisper marks a new word with a leading space. A piece without one ("$5" + ".3",
-            # "51" + "%") belongs to the word before it, so the two are joined back together.
-            glued = not w.word.startswith(" ") and not first and heard
-            if glued and (re.match(r"^[.,]?\d|^%|^'", text) or not re.search(r"\w", text)):
-                heard[-1]["word"] += text
-                heard[-1]["end"] = float(w.end)
-                heard[-1]["p"] = min(heard[-1]["p"], round(float(w.probability), 3))
-            else:
-                heard.append({"word": text, "start": float(w.start), "end": float(w.end), "p": round(float(w.probability), 3)})
-            first = False
+    def listen(**opts):
+        """One Whisper pass. Returns the words it heard, each with a start and end time."""
+        segments, info = model.transcribe(audio, language="en", word_timestamps=True, condition_on_previous_text=False, **opts)
+        out = []
+        for seg in segments:
+            first = True
+            for w in seg.words or []:
+                text = w.word.strip()
+                if not text:
+                    continue
+                # Whisper marks a new word with a leading space. A piece without one ("$5" + ".3",
+                # "51" + "%") belongs to the word before it, so the two are joined back together.
+                glued = not w.word.startswith(" ") and not first and out
+                if glued and (re.match(r"^[.,]?\d|^%|^'", text) or not re.search(r"\w", text)):
+                    out[-1]["word"] += text
+                    out[-1]["end"] = float(w.end)
+                    out[-1]["p"] = min(out[-1]["p"], round(float(w.probability), 3))
+                else:
+                    out.append({"word": text, "start": float(w.start), "end": float(w.end), "p": round(float(w.probability), 3)})
+                first = False
+        return out, float(info.duration)
 
-    words, mism = align(script, heard)
-    duration = float(info.duration)
+    # Whisper occasionally drops a whole sentence from its transcript. The script tells us
+    # what should be there, so several settings are tried and the pass that hears the most
+    # of the script is kept.
+    attempts = [
+        ("glossary prompt", dict(beam_size=5, initial_prompt=a.prompt or None)),
+        ("no prompt", dict(beam_size=5)),
+        ("voice-activity filter", dict(beam_size=5, vad_filter=True)),
+        ("greedy decoding", dict(beam_size=1, temperature=0.0)),
+    ]
+    best = None
+    for name, opts in attempts:
+        heard, duration = listen(**opts)
+        words, mism = align(script, heard)
+        unheard = sum(len(m["script"].split()) for m in mism if not m["heard"])
+        score = (sum(1 for w in words if w["matched"]) / max(1, len(words))) - unheard * 0.01
+        if best is None or score > best[0]:
+            best = (score, name, heard, duration, words, mism, unheard)
+        if unheard == 0 and score >= 0.97:
+            break
+    _, used, heard, duration, words, mism, unheard = best
+
     # tidy: in order, no overlaps, every word at least 40 ms, nothing past the end of the audio
     prev = 0.0
     for w in words:
@@ -159,6 +173,8 @@ def main():
         json.dumps(
             {
                 "engine": "faster-whisper small.en (word_timestamps)",
+                "pass_used": used,
+                "unheard_words": unheard,
                 "duration": round(duration, 3),
                 "match": round(matched / max(1, len(words)), 4),
                 "heard": " ".join(h["word"] for h in heard),
@@ -171,7 +187,7 @@ def main():
         )
         + "\n"
     )
-    print(json.dumps({"ok": True, "words": len(words), "match": round(matched / max(1, len(words)), 3), "mismatches": len(mism), "figure_mismatches": len(figure_mismatches)}))
+    print(json.dumps({"ok": True, "words": len(words), "match": round(matched / max(1, len(words)), 3), "mismatches": len(mism), "figure_mismatches": len(figure_mismatches), "unheard": unheard, "pass": used}))
 
 
 if __name__ == "__main__":

@@ -198,6 +198,10 @@ function time(v, { force = false } = {}) {
   const problems = [];
   if (t.words.length !== script.words.length) problems.push('word timings do not line up with the script: re-run timing');
   if (t.match < 0.9) problems.push(`the voice matches only ${(t.match * 100).toFixed(0)}% of the script. Heard: "${t.heard.slice(0, 160)}..."`);
+  // Words with nothing heard opposite them have no real timing: the line was skipped in the recording, or Whisper missed it.
+  for (const m of (t.mismatches || []).filter((x) => !x.heard && x.script.split(/\s+/).length >= 3)) {
+    problems.push(`nothing was heard for "${m.script}" (around ${m.at}s). If the recording skips that line, re-record it; otherwise run timing again.`);
+  }
   for (const m of t.figure_mismatches || []) problems.push(`the voice says "${m.heard}" where the script says "${m.script}" (at ${m.at}s). A spoken figure must match its source: re-record that line.`);
   const soft = (t.mismatches || []).filter((m) => !(t.figure_mismatches || []).includes(m));
   if (soft.length) problems.push(`warning: ${soft.length} small wording difference(s) between voice and script, e.g. heard "${soft[0].heard}" for "${soft[0].script}"`);

@@ -41,22 +41,22 @@ export const Split: React.FC<SceneProps> = ({ scene }) => {
       >
         <div style={{ display: 'flex', alignItems: 'center', gap: 18, marginBottom: 14 }}>
           {side.icon ? <Icon name={side.icon} size={76} color={fg} accent={hot ? look.bg : look.accent} /> : null}
-          <L size={34} color={sub} style={{ opacity: hot ? 0.82 : 1 }}>
+          <L size={h > 600 ? 42 : 34} color={sub} style={{ opacity: hot ? 0.82 : 1 }}>
             {side.tag}
           </L>
         </div>
         {side.figure ? (
-          <D size={fitSize(side.figure, look.display, look.displayWeight, inner, Math.min(230, h * 0.44), look.tracking, 60)} color={fg} style={{ whiteSpace: 'nowrap' }}>
+          <D size={fitSize(side.figure, look.display, look.displayWeight, inner, Math.min(380, h * 0.42), look.tracking, 60)} color={fg} style={{ whiteSpace: 'nowrap' }}>
             {side.figure}
           </D>
         ) : null}
         {title ? (
-          <D size={side.figure ? 60 : fitSize(title, look.display, look.displayWeight, inner, Math.min(130, h * 0.3), look.tracking, 52)} color={fg} lh={1.02} style={{ marginTop: side.figure ? 8 : 0 }}>
+          <D size={side.figure ? Math.max(60, Math.min(110, h * 0.12)) : fitSize(title, look.display, look.displayWeight, inner, Math.min(130, h * 0.3), look.tracking, 52)} color={fg} lh={1.02} style={{ marginTop: side.figure ? 8 : 0 }}>
             {title}
           </D>
         ) : null}
         {side.note ? (
-          <T size={38} bold color={sub} style={{ marginTop: 12, opacity: hot ? 0.85 : 1 }} lh={1.1}>
+          <T size={h > 600 ? 50 : 38} bold color={sub} style={{ marginTop: 12, opacity: hot ? 0.85 : 1 }} lh={1.1}>
             {side.note}
           </T>
         ) : null}
