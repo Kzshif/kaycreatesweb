@@ -187,7 +187,11 @@ function time(v, { force = false } = {}) {
     log('  timing: Whisper is listening to the voice-over');
     const wordsFile = path.join(f.work, 'script-words.json');
     writeJson(wordsFile, script.words);
-    const prompt = [script.meta.company, script.sentences[0]].filter(Boolean).join('. ');
+    // Spelling hints only (names and capitalised terms). Never the script's own sentences:
+    // Whisper treats prompt text as already said and would skip it in the audio.
+    const names = new Set([script.meta.company, ...script.names].filter(Boolean));
+    script.sentences.forEach((s) => s.split(/\s+/).slice(1).forEach((w) => /^[A-Z][A-Za-z'-]{2,}/.test(w) && names.add(w.replace(/[^A-Za-z'-]/g, ''))));
+    const prompt = `Glossary: ${[...names].join(', ')}.`;
     py('transcribe.py', [f.voiceClean, wordsFile, f.words, '--prompt', prompt]);
   }
   const t = readJson(f.words);

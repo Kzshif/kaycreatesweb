@@ -17,8 +17,11 @@ import argparse
 import difflib
 import json
 import re
+import subprocess
 import sys
 from pathlib import Path
+
+import numpy as np
 
 ROOT = Path(__file__).resolve().parent.parent
 MODEL_DIR = ROOT / ".models" / "faster-whisper-small.en"
@@ -103,8 +106,16 @@ def main():
 
     script = json.loads(Path(a.script_words).read_text())
     model = WhisperModel(str(MODEL_DIR), device="cpu", compute_type="int8", cpu_threads=4)
+    # Decode with ffmpeg ourselves (16 kHz mono float), so timing does not depend on
+    # whichever audio-decoding library version happens to be installed.
+    raw = subprocess.run(
+        ["ffmpeg", "-loglevel", "error", "-i", a.audio, "-ac", "1", "-ar", "16000", "-f", "f32le", "-"],
+        capture_output=True,
+        check=True,
+    ).stdout
+    audio = np.frombuffer(raw, dtype=np.float32)
     segments, info = model.transcribe(
-        a.audio,
+        audio,
         language="en",
         beam_size=5,
         word_timestamps=True,
@@ -114,10 +125,21 @@ def main():
     )
     heard = []
     for seg in segments:
+        first = True
         for w in seg.words or []:
             text = w.word.strip()
-            if text:
+            if not text:
+                continue
+            # Whisper marks a new word with a leading space. A piece without one ("$5" + ".3",
+            # "51" + "%") belongs to the word before it, so the two are joined back together.
+            glued = not w.word.startswith(" ") and not first and heard
+            if glued and (re.match(r"^[.,]?\d|^%|^'", text) or not re.search(r"\w", text)):
+                heard[-1]["word"] += text
+                heard[-1]["end"] = float(w.end)
+                heard[-1]["p"] = min(heard[-1]["p"], round(float(w.probability), 3))
+            else:
                 heard.append({"word": text, "start": float(w.start), "end": float(w.end), "p": round(float(w.probability), 3)})
+            first = False
 
     words, mism = align(script, heard)
     duration = float(info.duration)
