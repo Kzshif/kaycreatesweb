@@ -1,5 +1,6 @@
 import React from 'react';
 import { Composition } from 'remotion';
+import { Board } from './board/Board';
 import { Short } from './Short';
 import { FRAME } from './shared/spec.mjs';
 import type { ShortProps } from './types';
@@ -20,6 +21,8 @@ const demo: ShortProps = {
 };
 
 export const Root: React.FC = () => (
+  <>
+  <Composition id="Board" component={Board} width={FRAME.width} height={FRAME.height} fps={FRAME.fps} durationInFrames={90} defaultProps={{ page: 1, probe: false }} />
   <Composition
     id="Short"
     component={Short}
@@ -30,4 +33,5 @@ export const Root: React.FC = () => (
     defaultProps={demo}
     calculateMetadata={({ props }) => ({ durationInFrames: props.durationInFrames, fps: FRAME.fps, width: FRAME.width, height: FRAME.height })}
   />
+  </>
 );

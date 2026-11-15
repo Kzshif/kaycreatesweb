@@ -420,6 +420,8 @@ async function qa(v) {
   const first = probe.frames.find((fr) => fr.frame === 0);
   if (!first || first.n === 0 || first.area < 60000) problems.push('frame 0 has no large readable text: the hook must be on screen from the first frame');
   if (!probe.frames.length) problems.push('the safe-zone check produced no data');
+  // the look these pilots were first rendered in has captions low in the frame and no caption report
+  if (probe.frames.length && !probe.frames.some((fr) => Array.isArray(fr.captions))) problems.push('rendered in the old look: captions are not in the centre third. Re-render in the Paper Money identity.');
 
   // 4. the loop
   if (vr.loop.first_last_mean_diff > 9) warn(`the last frame differs from the first (${vr.loop.first_last_mean_diff}): the loop may show a visible cut`);

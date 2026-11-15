@@ -18,3 +18,6 @@ __pycache__/
 
 # finished videos, zipped and sent per batch (never stored in git)
 output/
+
+# style-board stills are sent in chat; only the contact sheet is kept
+identity/board/*.png

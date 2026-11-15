@@ -9,6 +9,7 @@ import { ACCENTS, GROUNDS, GROUND_ACCENTS, SCENES, cueCount } from '../src/share
 import { buildCaptions, captionStats, displayWord } from '../pipeline/lib/captions.mjs';
 import { checkVariety, findPhrase, resolveAnchors, screenFigures, signature, validatePlan } from '../pipeline/lib/plan.mjs';
 import { lintScript, parseScript } from '../pipeline/lib/script.mjs';
+import * as PM from '../src/shared/paper.mjs';
 import { MUSIC, SFX, pickMusic, soundPlan } from '../src/shared/sound.mjs';
 import { TITLE_MAX, buildMetadata, buildSrt, disclosure, lintPublish, publishFigures } from '../pipeline/lib/publish.mjs';
 import { checkClaims, checkCoverage, parseSources, uncertainClaims } from '../pipeline/lib/sources.mjs';
@@ -409,4 +410,72 @@ test('sound: music rotates so neighbours differ; effects follow the cue frames',
   assert.notEqual(other.music, sp.music);
   assert.notDeepEqual(other.events.map((e) => e.file), sp.events.map((e) => e.file));
   assert.deepEqual(soundPlan(props, { ...PLAN, sound: { sfx: false } }).events, []);
+});
+
+// ------------------------------------------------------------- Paper Money
+test('paper money: the palette is the one in the brief', () => {
+  assert.equal(PM.CREAM, '#F4EBDD');
+  assert.equal(PM.INK, '#15130F');
+  assert.deepEqual(Object.fromEntries(Object.entries(PM.ACCENTS).map(([k, v]) => [k, v.hex])), { green: '#1F6F54', vermilion: '#E8452C', cobalt: '#2B4EFF', gold: '#D9A441' });
+  assert.deepEqual(PM.ACCENT_ORDER, ['green', 'vermilion', 'cobalt', 'gold']);
+});
+
+test('paper money: every accent, on both desks, keeps everything readable', () => {
+  for (const accent of PM.ACCENT_ORDER) {
+    for (const inverted of [false, true]) {
+      const t = PM.tokens(accent, inverted);
+      const tag = `${accent}${inverted ? ' inverted' : ''}`;
+      assert.ok(PM.contrast(t.type, t.ground) >= 12, `${tag}: type on desk`);
+      assert.ok(PM.contrast(PM.INK, t.hl) >= 7, `${tag}: ink on the highlighter is ${PM.contrast(PM.INK, t.hl).toFixed(2)}:1`);
+      assert.ok(PM.contrast(PM.INK, PM.BRIGHT) >= 15, 'ink on the caption strip');
+      assert.ok(PM.contrast(t.onAccent, t.accent) >= 4.5, `${tag}: text on accent paper is ${PM.contrast(t.onAccent, t.accent).toFixed(2)}:1`);
+      assert.ok(PM.contrast(t.numeral, t.ground) >= 3, `${tag}: numerals`);
+      assert.ok(PM.contrast(t.stamp, t.ground) >= 3, `${tag}: stamp ink`);
+      assert.equal(t.accent, PM.ACCENTS[accent].hex);
+    }
+  }
+  // gold cannot carry numerals on cream, so they stay ink; on the ink desk it can
+  assert.equal(PM.tokens('gold', false).numeral, PM.INK);
+  assert.equal(PM.tokens('gold', true).numeral, '#D9A441');
+  assert.throws(() => PM.tokens('teal'));
+});
+
+test('paper money: text zones match YouTube\'s buttons and captions sit in the centre third', () => {
+  const { width: W, height: H } = PM.FRAME;
+  assert.equal(PM.SAFE.right, Math.round(W * 0.85)); // right 15%
+  assert.equal(PM.SAFE.bottom, Math.round(H * 0.8)); // bottom 20%
+  assert.ok(PM.SAFE.top >= H * 0.115);
+  assert.ok(PM.CAPTION.top >= H / 3 && PM.CAPTION.bottom <= (H * 2) / 3, 'caption strip inside the centre third');
+  assert.ok(PM.CAPTION.thirdTop === 640 && PM.CAPTION.thirdBottom === 1280);
+  for (const zone of [PM.STAGE, PM.DECK]) assert.ok(zone.left >= PM.SAFE.left && zone.right <= PM.SAFE.right && zone.top >= PM.SAFE.top && zone.bottom <= PM.SAFE.bottom);
+  assert.ok(PM.CAPTION.left >= PM.SAFE.left && PM.CAPTION.right <= PM.SAFE.right);
+  assert.ok(PM.STAGE.bottom <= PM.CAPTION.top && PM.CAPTION.bottom <= PM.DECK.top, 'stage, captions and deck do not overlap');
+});
+
+test('paper money: accents rotate, neighbours differ, every tenth video is inverted', () => {
+  for (let n = 1; n <= 100; n++) {
+    assert.notEqual(PM.lookFor(n).accent, PM.lookFor(n + 1).accent);
+    assert.equal(PM.lookFor(n).inverted, n % 10 === 0);
+  }
+  const used = new Set(Array.from({ length: 100 }, (_, i) => PM.lookFor(i + 1).accent));
+  assert.equal(used.size, 4);
+  assert.equal(Array.from({ length: 100 }, (_, i) => PM.lookFor(i + 1)).filter((l) => l.inverted).length, 10);
+});
+
+test('paper money: three typefaces, none of the forbidden ones', () => {
+  assert.equal(PM.TYPE.headline.family, 'Bricolage Grotesque Variable');
+  assert.equal(PM.TYPE.numeral.family, 'Fraunces Variable');
+  assert.equal(PM.TYPE.label.family, 'DM Mono');
+  assert.equal(PM.TYPE.headline.weight, 800);
+  assert.equal(PM.TYPE.numeral.weight, 900);
+  assert.ok(PM.TYPE.numeral.soft === 100 && PM.TYPE.numeral.wonk === 1);
+  assert.ok(PM.TYPE.captionMin >= 60);
+  const src = path.join(path.dirname(new URL(import.meta.url).pathname), '..', 'src');
+  for (const dir of ['paper', 'board']) {
+    for (const f of fs.readdirSync(path.join(src, dir))) {
+      const text = fs.readFileSync(path.join(src, dir, f), 'utf8');
+      for (const font of PM.FORBIDDEN_FONTS) assert.ok(!new RegExp(`['"\`]${font}['"\`]|fontsource/${font.toLowerCase()}`).test(text), `${dir}/${f} uses ${font}`);
+    }
+  }
+  assert.deepEqual(PM.FORBIDDEN_FONTS, ['Inter', 'Roboto', 'Arial', 'Montserrat', 'Poppins']);
 });
