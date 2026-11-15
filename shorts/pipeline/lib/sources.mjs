@@ -157,6 +157,11 @@ export function checkClaims(src, { today = new Date().toISOString().slice(0, 10)
           const tol = Math.max(Math.abs(want) * 0.006, 0.006);
           if (!(Math.abs(got - want) <= tol)) out.push(issue('error', 'derived', `${tag}: ${parts[0].trim()} is ${+got.toPrecision(6)}, not ${parts[1].trim()}.`));
           c.derivedValue = got;
+          // "Exact: $275.2 billion" states the unit of the result; its number must be the result of the sum
+          if (c.exact) {
+            const shown = c.exact.value / (c.exact.unit || 1);
+            if (Math.abs(shown - got) > Math.max(Math.abs(got) * 0.006, 0.006)) out.push(issue('error', 'derived', `${tag}: Exact (${c.exact.raw}) does not match the result of the sum (${+got.toPrecision(6)}).`));
+          }
         } catch (e) {
           out.push(issue('error', 'derived', `${tag}: cannot read the sum (${e.message}).`));
         }
@@ -254,7 +259,9 @@ export function checkCoverage(src, spoken, shown = []) {
         continue;
       }
       if (fig.kind !== 'digit' || fig.year) continue;
-      const exact = claim.exact || (claim.derivedValue !== undefined ? { value: claim.derivedValue, raw: String(+claim.derivedValue.toPrecision(5)), currency: fig.currency, percent: fig.percent, mult: fig.mult } : null);
+      // A derived result with no "Exact:" line is a bare number: only comparable with a bare figure or a percentage.
+      const bare = !fig.currency && (fig.unit || 1) === 1;
+      const exact = claim.exact || (claim.derivedValue !== undefined && bare ? { value: claim.derivedValue, raw: String(+claim.derivedValue.toPrecision(5)), currency: fig.currency, percent: fig.percent, mult: fig.mult } : null);
       if (!exact) continue;
       const r = roundingIssue(fig, exact, where);
       if (r) out.push(r);

@@ -35,7 +35,10 @@ export const Counter: React.FC<SceneProps> = ({ scene }) => {
   const colW = (ch: string) => Math.max(textWidth(/\d/.test(ch) ? ch : '0', fam, wt, size), widest * 0.78) + look.tracking * size;
   const chars = final.split('');
   const run = 26; // frames the count takes
-  const done = tween(frame, 0, run, Easing.out(Easing.exp));
+  // As the opening shot of a video the real figure must be readable on frame 0, so the
+  // number starts on its final value and only spins or flickers in place.
+  const opening = scene.from === 0;
+  const done = opening ? 1 : tween(frame, 0, run, Easing.out(Easing.exp));
 
   let shown: string[] = chars;
   if (scene.variant === 'countup') {
@@ -54,8 +57,8 @@ export const Counter: React.FC<SceneProps> = ({ scene }) => {
       const order = chars.filter((c) => /\d/.test(c)).length;
       const nth = chars.slice(0, i).filter((c) => /\d/.test(c)).length;
       const pr = spring({ frame: frame - nth * 2, fps, config: { damping: 15, stiffness: 70, mass: 0.9 } });
-      const target = Number(ch) + 10 * (1 + (order - nth)); // extra turns for the drama
-      const pos = pr * target;
+      const turns = 10 * (1 + (order - nth)); // extra turns for the drama
+      const pos = opening ? Number(ch) + pr * turns : pr * (Number(ch) + turns);
       return (
         <span key={i} style={{ ...box, height: size * 0.98, overflow: 'hidden', verticalAlign: 'top', position: 'relative' }}>
           <span style={{ display: 'block', transform: `translateY(${-(pos % 10) * size * 0.98}px)` }}>
@@ -72,7 +75,7 @@ export const Counter: React.FC<SceneProps> = ({ scene }) => {
       // digits flicker, then lock from left to right
       const nth = chars.slice(0, i).filter((c) => /\d/.test(c)).length;
       const lockAt = 7 + nth * 4;
-      const locked = frame >= lockAt;
+      const locked = frame >= lockAt || (opening && frame < 2);
       const pop = spring({ frame: frame - lockAt, fps, config: { damping: 10, stiffness: 300, mass: 0.4 } });
       const flick = Math.floor(random(`${i}-${Math.floor(frame / 2)}`) * 10);
       return (
@@ -85,7 +88,7 @@ export const Counter: React.FC<SceneProps> = ({ scene }) => {
   };
 
   const settle = spring({ frame: frame - (scene.variant === 'slot' ? 7 + chars.length * 4 : run - 4), fps, config: { damping: 12, stiffness: 200, mass: 0.6 } });
-  const underline = scene.variant === 'slot' ? clamp(settle) : done;
+  const underline = scene.variant === 'slot' ? clamp(settle) : opening ? tween(frame, 0, 14) : done;
 
   return (
     <Stage style={{ justifyContent: 'center' }}>

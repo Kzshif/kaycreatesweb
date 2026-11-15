@@ -8,7 +8,7 @@ import { STAGE } from '../shared/spec.mjs';
 import type { SceneProps } from '../types';
 
 type Side = { label: string; display: string; value: number };
-type VersusProps = { title?: string; a: Side; b: Side; note?: string; source?: string };
+type VersusProps = { title?: string; a: Side; b: Side; note?: string; source?: string; accent?: 'a' | 'b' };
 
 export const Versus: React.FC<SceneProps> = ({ scene }) => {
   const s = useScene(scene);
@@ -18,8 +18,9 @@ export const Versus: React.FC<SceneProps> = ({ scene }) => {
   const max = Math.max(p.a.value, p.b.value, 1e-9);
   const g = (i: number) => spring({ frame: frame - s.at(i), fps, config: { damping: 14, stiffness: 110, mass: 0.8 } });
   const sides = [p.a, p.b];
-  const fills = [look.n[1], look.accent];
-  const inks = [look.bg, look.onAccent];
+  const hotA = p.accent === 'a';
+  const fills = hotA ? [look.accent, look.n[1]] : [look.n[1], look.accent];
+  const inks = hotA ? [look.onAccent, look.bg] : [look.bg, look.onAccent];
   const note = p.note ? (
     <div style={{ marginTop: 30, ...s.enter(2) }}>
       <T size={48} bold>
@@ -111,7 +112,7 @@ export const Versus: React.FC<SceneProps> = ({ scene }) => {
       </div>
       <div style={{ display: 'flex', gap: 70, marginTop: 18 }}>
         {sides.map((x, i) => (
-          <T key={i} size={40} bold color={i ? look.fg : look.muted} style={{ width: bw, visibility: s.on(i) ? 'visible' : 'hidden' }} lh={1.1}>
+          <T key={i} size={40} bold color={(i === 0) === hotA ? look.fg : look.muted} style={{ width: bw, visibility: s.on(i) ? 'visible' : 'hidden' }} lh={1.1}>
             {x.label}
           </T>
         ))}

@@ -59,7 +59,7 @@ export function resolveAnchors(plan, scriptWords) {
   return { anchors: out, issues };
 }
 
-const SKIP_KEYS = new Set(['icon', 'tone', 'at', 'region', 'object', 'align', 'kind', 'id', 'from', 'to', 'lat', 'lon', 'highlight', 'value', 'total', 'filled', 'max', 'joiner', 'variant']);
+const SKIP_KEYS = new Set(['icon', 'tone', 'at', 'region', 'object', 'align', 'kind', 'id', 'from', 'to', 'lat', 'lon', 'highlight', 'value', 'total', 'filled', 'max', 'joiner', 'variant', 'prefix', 'suffix', 'accent']);
 
 /** Every string that ends up on screen, for the fact checker. */
 export function screenStrings(plan) {
@@ -76,7 +76,7 @@ export function screenStrings(plan) {
     if (sc.type === 'counter' && typeof p.value === 'number') {
       out.push(`${p.prefix || ''}${p.value.toFixed(p.decimals ?? 0)}${p.suffix ? ` ${p.suffix}` : ''}`);
     }
-    if (sc.type === 'ratio' && typeof p.filled === 'number') out.push(`${p.filled} in ${p.total}`);
+    if (sc.type === 'ratio' && typeof p.filled === 'number' && p.total > 0) out.push(`${+((p.filled / p.total) * 100).toFixed(1)}%`);
   }
   return out;
 }

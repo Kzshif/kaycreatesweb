@@ -108,7 +108,8 @@ export const SCENES = {
   hook: {
     label: 'kinetic hook text',
     variants: ['slam', 'stamp', 'stack', 'highlighter', 'redacted', 'spotlight'],
-    cues: (p) => 1 + (p.sub ? 1 : 0),
+    // step 0: the claim, on frame 0. step 1: the "punch" on the key word, timed to the voice. step 2: the sub-line.
+    cues: (p) => 2 + (p.sub ? 1 : 0),
     required: ['lines'],
   },
   kinetic: {
@@ -128,7 +129,7 @@ export const SCENES = {
     // No donut on purpose: for part-to-whole a segmented bar reads faster and
     // compares more honestly (data-viz skill, "choosing a form").
     variants: ['bars', 'hbars', 'line', 'segmented', 'meter'],
-    cues: (p, v) => (v === 'line' || v === 'meter' ? 2 : Math.max(1, len(p.series))),
+    cues: (p, v) => (v === 'line' ? 2 : v === 'meter' ? 2 + (p.note ? 1 : 0) : Math.max(1, len(p.series))),
     required: ['series'],
   },
   counter: {

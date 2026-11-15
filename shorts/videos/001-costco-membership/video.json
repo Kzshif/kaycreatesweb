@@ -1,0 +1,183 @@
+{
+  "id": "001",
+  "look": {
+    "accent": "lime",
+    "ground": "ink",
+    "type": "grotesk",
+    "motion": "snap",
+    "captions": "pop",
+    "shape": "sharp"
+  },
+  "scenes": [
+    {
+      "type": "hook",
+      "variant": "slam",
+      "beats": [
+        "half",
+        "Last year"
+      ],
+      "props": {
+        "kicker": "Costco",
+        "lines": [
+          "Membership fees",
+          "equal half",
+          "its profit"
+        ],
+        "emphasis": "half",
+        "sub": "Fiscal year 2025, by the numbers"
+      }
+    },
+    {
+      "type": "counter",
+      "variant": "countup",
+      "at": "sold $270 billion",
+      "beats": [
+        "of goods"
+      ],
+      "props": {
+        "prefix": "$",
+        "value": 270,
+        "suffix": "billion",
+        "label": "Goods sold in one year",
+        "sub": "through its warehouses",
+        "source": "Costco results, fiscal 2025"
+      }
+    },
+    {
+      "type": "versus",
+      "variant": "towers",
+      "at": "But buying and selling",
+      "beats": [
+        "cost almost"
+      ],
+      "props": {
+        "title": "One year at Costco",
+        "a": {
+          "label": "Money in",
+          "display": "$275bn",
+          "value": 275.2
+        },
+        "b": {
+          "label": "Left as profit",
+          "display": "$10.4bn",
+          "value": 10.4
+        }
+      }
+    },
+    {
+      "type": "kinetic",
+      "variant": "cascade",
+      "at": "Its low prices",
+      "beats": [
+        "leave little"
+      ],
+      "props": {
+        "lines": [
+          "Low prices",
+          "little profit"
+        ],
+        "emphasis": [
+          "little profit"
+        ]
+      }
+    },
+    {
+      "type": "mockup",
+      "variant": "card",
+      "at": "The money comes",
+      "props": {
+        "title": "Member",
+        "sub": "Membership card"
+      }
+    },
+    {
+      "type": "counter",
+      "variant": "odometer",
+      "at": "Shoppers paid",
+      "beats": [
+        "just to walk"
+      ],
+      "props": {
+        "prefix": "$",
+        "value": 5.3,
+        "decimals": 1,
+        "suffix": "billion",
+        "label": "Membership fees, one year",
+        "sub": "paid just to walk in"
+      }
+    },
+    {
+      "type": "split",
+      "variant": "slider",
+      "at": "Since 2024",
+      "beats": [
+        "a basic US card",
+        "$65 a year"
+      ],
+      "props": {
+        "a": {
+          "tag": "Until 2024",
+          "figure": "$60",
+          "title": "a year"
+        },
+        "b": {
+          "tag": "Since 2024",
+          "figure": "$65",
+          "title": "a year",
+          "note": "basic US card"
+        },
+        "verdict": "Up $5 a year"
+      }
+    },
+    {
+      "type": "chart",
+      "variant": "meter",
+      "at": "Those fees add up",
+      "beats": [
+        "about half",
+        "earned from running"
+      ],
+      "props": {
+        "title": "Fees against operating profit",
+        "series": [
+          {
+            "label": "of operating profit",
+            "value": 51,
+            "display": "51%"
+          }
+        ],
+        "note": "$5.3bn of $10.4bn"
+      }
+    },
+    {
+      "type": "icons",
+      "variant": "chain",
+      "at": "So the shelves",
+      "beats": [
+        "bring you in",
+        "The card is",
+        "which is why"
+      ],
+      "props": {
+        "items": [
+          {
+            "icon": "cart",
+            "label": "Low prices"
+          },
+          {
+            "icon": "people",
+            "label": "Shoppers"
+          },
+          {
+            "icon": "card",
+            "label": "Fees"
+          }
+        ],
+        "result": {
+          "icon": "safe",
+          "label": "Profit"
+        }
+      }
+    }
+  ]
+}

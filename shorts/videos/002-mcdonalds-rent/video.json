@@ -1,0 +1,170 @@
+{
+  "id": "002",
+  "look": {
+    "accent": "cobalt",
+    "ground": "paper",
+    "type": "editorial",
+    "motion": "glide",
+    "captions": "box",
+    "shape": "soft"
+  },
+  "scenes": [
+    {
+      "type": "hook",
+      "variant": "redacted",
+      "props": {
+        "kicker": "McDonald's",
+        "lines": [
+          "Earns more from",
+          "rent",
+          "than royalties"
+        ],
+        "emphasis": "rent"
+      },
+      "beats": [
+        "rent"
+      ]
+    },
+    {
+      "type": "ratio",
+      "variant": "grid",
+      "at": "It does not run",
+      "beats": [
+        "About 95%",
+        "belong to franchisees"
+      ],
+      "props": {
+        "title": "Out of every 100 restaurants",
+        "total": 100,
+        "filled": 95,
+        "figure": "95%",
+        "label": "belong to franchisees",
+        "note": "Run by independent owners",
+        "source": "McDonald's annual report, 2025"
+      }
+    },
+    {
+      "type": "icons",
+      "variant": "grid",
+      "at": "They run the kitchens",
+      "beats": [
+        "hire the staff"
+      ],
+      "props": {
+        "title": "The franchisee's job",
+        "items": [
+          {
+            "icon": "burger",
+            "label": "Run the kitchen"
+          },
+          {
+            "icon": "people",
+            "label": "Hire the staff"
+          }
+        ]
+      }
+    },
+    {
+      "type": "mockup",
+      "variant": "storefront",
+      "at": "McDonald's usually owns",
+      "beats": [
+        "the land",
+        "the building"
+      ],
+      "props": {
+        "heading": "The company's part",
+        "title": "Restaurant",
+        "callouts": [
+          "Owns 56% of the land",
+          "Owns 80% of the buildings"
+        ]
+      }
+    },
+    {
+      "type": "flow",
+      "variant": "chain",
+      "at": "So franchisees pay",
+      "beats": [
+        "plus a royalty"
+      ],
+      "props": {
+        "title": "Who pays whom",
+        "nodes": [
+          {
+            "icon": "store",
+            "label": "Franchisee",
+            "sub": "runs the restaurant"
+          },
+          {
+            "icon": "building",
+            "label": "McDonald's",
+            "sub": "holds the site and the brand"
+          }
+        ],
+        "links": [
+          "rent + royalty"
+        ]
+      }
+    },
+    {
+      "type": "versus",
+      "variant": "towers",
+      "at": "Last year rent",
+      "beats": [
+        "Royalties came"
+      ],
+      "props": {
+        "title": "Paid by franchisees, 2025",
+        "accent": "a",
+        "a": {
+          "label": "Rent",
+          "display": "$10.4bn",
+          "value": 10.442
+        },
+        "b": {
+          "label": "Royalties",
+          "display": "$6.0bn",
+          "value": 6.018
+        }
+      }
+    },
+    {
+      "type": "kinetic",
+      "variant": "mask",
+      "at": "The burgers keep",
+      "beats": [
+        "the tenants"
+      ],
+      "props": {
+        "lines": [
+          "Burgers keep",
+          "the tenants busy"
+        ],
+        "emphasis": [
+          "tenants"
+        ]
+      }
+    },
+    {
+      "type": "split",
+      "variant": "halves",
+      "at": "The property is",
+      "beats": [
+        "where the money"
+      ],
+      "props": {
+        "a": {
+          "tag": "What you see",
+          "title": "A burger chain",
+          "icon": "burger"
+        },
+        "b": {
+          "tag": "What earns more",
+          "title": "A landlord",
+          "icon": "key"
+        }
+      }
+    }
+  ]
+}

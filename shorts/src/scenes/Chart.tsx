@@ -274,7 +274,7 @@ export const Chart: React.FC<SceneProps> = ({ scene }) => {
             </T>
           </div>
           {p.note ? (
-            <div style={{ marginTop: 20, ...s.enter(1, 10) }}>
+            <div style={{ marginTop: 20, ...s.enter(2) }}>
               <T size={44} color={look.muted} bold>
                 {p.note}
               </T>

@@ -8,7 +8,7 @@ import type { CaptionPage } from '../types';
 
 const MAX = 98;
 const MIN = 58;
-const GAP = 0.27; // space between words, in em
+const GAP = 0.3; // space between words, in em
 
 export const Captions: React.FC<{ pages: CaptionPage[] }> = ({ pages }) => {
   const frame = useCurrentFrame();
@@ -86,7 +86,7 @@ export const Captions: React.FC<{ pages: CaptionPage[] }> = ({ pages }) => {
             };
             if (look.captions === 'pop') {
               return (
-                <span key={i} style={{ ...base, color: isLive ? look.accent : look.fg, transform: isLive ? `scale(${1 + 0.07 * pop})` : undefined }}>
+                <span key={i} style={{ ...base, color: isLive ? look.accent : look.fg, transform: isLive ? `scale(${1 + 0.035 * pop}) translateY(${-size * 0.03 * pop}px)` : undefined }}>
                   {w.t}
                 </span>
               );

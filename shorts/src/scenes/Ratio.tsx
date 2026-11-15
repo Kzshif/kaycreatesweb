@@ -20,7 +20,8 @@ export const Ratio: React.FC<SceneProps> = ({ scene }) => {
   const cols = row ? (total <= 6 ? total : Math.ceil(total / 2)) : total <= 25 ? 5 : 10;
   const rows = Math.ceil(total / cols);
   const gap = total > 50 ? 8 : 14;
-  const cell = Math.min(row ? 150 : 132, Math.floor((W - gap * (cols - 1)) / cols), Math.floor((row ? 420 : 660) / rows) - gap);
+  const taken = (p.title ? 64 : 0) + (p.figure ? 222 : 0) + 100 + (p.note ? 90 : 0) + (p.source ? 54 : 0) + 16;
+  const cell = Math.min(row ? 150 : 132, Math.floor((W - gap * (cols - 1)) / cols), Math.floor((STAGE.height - taken) / rows) - gap);
   const corner = Math.min(look.radius * 0.5, cell * 0.24);
   const step = Math.max(0.6, Math.min(2.4, 26 / Math.max(1, filled))); // the fill sweep takes under a second
   const gridIn = spring({ frame, fps, config: look.spring });

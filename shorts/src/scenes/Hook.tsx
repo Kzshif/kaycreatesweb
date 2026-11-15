@@ -38,8 +38,12 @@ export const Hook: React.FC<SceneProps> = ({ scene }) => {
     const lines = growLines(given, (ls) => ls.length * sizeOf(ls) * lh + extra, STAGE.height * 0.5, STAGE.height * 0.9);
     return { lines, size: sizeOf(lines) };
   };
+  // The punch: step 1, timed to the moment the key word is spoken.
+  const punchAt = s.at(1);
+  const punch = spring({ frame: frame - punchAt, fps, config: { damping: 10, stiffness: 230, mass: 0.5 } });
+  const kick = Math.sin(Math.min(1, Math.max(0, (frame - punchAt) / 9)) * Math.PI); // 0 -> 1 -> 0 over nine frames
   const sub = p.sub ? (
-    <div style={{ marginTop: 34, ...s.enter(1) }}>
+    <div style={{ marginTop: 34, ...s.enter(2) }}>
       <T size={50} color={look.muted} bold>
         {p.sub}
       </T>
@@ -53,7 +57,7 @@ export const Hook: React.FC<SceneProps> = ({ scene }) => {
     case 'slam': {
       const W = 752;
       const hit = spring({ frame, fps, config: { damping: 11, stiffness: 210, mass: 0.55 } });
-      const bar = tween(frame, 3, 10);
+      const bar = tween(frame, punchAt, 9);
       const sizes = (ls: Line[]) => ls.map((l) => fitSize(lineText(l), fam, wt, W, 310, look.tracking, 60));
       const lines = growLines(given, (ls) => sizes(ls).reduce((a, b) => a + b * 0.98, 0) + extra + 44, STAGE.height * 0.62, STAGE.height * 0.94);
       const sz = sizes(lines);
@@ -66,7 +70,7 @@ export const Hook: React.FC<SceneProps> = ({ scene }) => {
               </Pill>
             ) : null}
             {lines.map((line, i) => (
-              <D key={i} size={sz[i]} lh={0.94} style={{ whiteSpace: 'nowrap', marginBottom: sz[i] * 0.04 }}>
+              <D key={i} size={sz[i]} lh={0.94} style={{ whiteSpace: 'nowrap', marginBottom: sz[i] * 0.04, transform: isHot(line) ? `scale(${1 + 0.045 * kick})` : undefined, transformOrigin: 'left center' }}>
                 <Parts line={line} hot={look.accent} cold={look.fg} />
               </D>
             ))}
@@ -93,7 +97,7 @@ export const Hook: React.FC<SceneProps> = ({ scene }) => {
             <div style={{ width: W, boxSizing: 'border-box', padding: '40px 48px 44px', border: `12px solid ${look.accent}`, borderRadius: look.radius, outline: `4px solid ${look.accent}`, outlineOffset: 12 }}>
               {lines.map((line, i) =>
                 isHot(line) ? (
-                  <div key={i} style={{ background: look.accent, margin: '8px -18px', padding: '6px 18px', borderRadius: look.radius ? 12 : 0 }}>
+                  <div key={i} style={{ background: look.accent, margin: '8px -18px', padding: '6px 18px', borderRadius: look.radius ? 12 : 0, transform: `scale(${1 + 0.05 * kick}) rotate(${-1.5 * kick}deg)` }}>
                     <D size={size} color={look.onAccent} style={{ whiteSpace: 'nowrap' }}>
                       {lineText(line)}
                     </D>
@@ -164,7 +168,7 @@ export const Hook: React.FC<SceneProps> = ({ scene }) => {
                   marginBottom: 14,
                   borderRadius: look.radius,
                   // every bar is readable on frame 0; they snap from a staggered offset into line
-                  transform: `translateY(${(1 - pr) * i * 18}px) rotate(${(1 - pr) * (i % 2 ? 1.6 : -1.6)}deg)`,
+                  transform: `translateY(${(1 - pr) * i * 18}px) rotate(${(1 - pr) * (i % 2 ? 1.6 : -1.6)}deg) scale(${hot ? 1 + 0.05 * kick : 1})`,
                   transformOrigin: 'left center',
                 }}
               >
@@ -182,7 +186,7 @@ export const Hook: React.FC<SceneProps> = ({ scene }) => {
     // ----------------------------------------------------- highlighter ----
     case 'highlighter': {
       const { lines, size } = uniform(STAGE.width - 20, 190, 1.06);
-      const sweep = tween(frame, 5, 11, Easing.inOut(Easing.cubic));
+      const sweep = tween(frame, punchAt, 10, Easing.inOut(Easing.cubic));
       return (
         <Stage style={{ justifyContent: 'center', alignItems: 'flex-start' }}>
           {p.kicker ? (
@@ -234,7 +238,7 @@ export const Hook: React.FC<SceneProps> = ({ scene }) => {
       const sizeOf = (ls: Line[]) => fitLines(ls.map(lineText), fam, wt, STAGE.width - 20, 190, look.tracking, 56);
       const lines = growLines(base, (ls) => ls.length * sizeOf(ls) * 1.08 + extra, STAGE.height * 0.5, STAGE.height * 0.9);
       const size = sizeOf(lines);
-      const open = tween(frame, 13, 9, Easing.inOut(Easing.cubic));
+      const open = tween(frame, punchAt, 9, Easing.inOut(Easing.cubic));
       return (
         <Stage style={{ justifyContent: 'center', alignItems: 'flex-start' }}>
           {p.kicker ? (
@@ -300,6 +304,7 @@ export const Hook: React.FC<SceneProps> = ({ scene }) => {
           </Stage>
           <svg width={1080} height={1920} style={{ position: 'absolute', left: 0, top: 0 }}>
             <circle cx={STAGE.left + cx} cy={STAGE.top + cy} r={r} fill="none" stroke={look.accent} strokeWidth={6} opacity={Math.max(0, 1 - tween(frame, 8, 8))} />
+            {frame >= punchAt ? <circle cx={STAGE.left + cx} cy={STAGE.top + cy} r={200 + punch * 420} fill="none" stroke={look.accent} strokeWidth={10} opacity={Math.max(0, 0.9 - punch * 0.9)} /> : null}
           </svg>
         </>
       );

@@ -36,7 +36,7 @@ def norm(tok):
     """Comparable form of a word: lower case, no punctuation, small number words as digits."""
     t = tok.lower().replace("’", "'")
     t = re.sub(r"^[^\w$£€]+|[^\w%]+$", "", t)
-    t = t.replace(",", "")
+    t = t.replace(",", "").lstrip("$£€")  # "$270" is said, and often heard, as "270 ... dollars"
     t = {"percent": "%", "per": "per", "bn": "billion", "mn": "million", "tn": "trillion", "&": "and"}.get(t, t)
     if t in NUMWORD:
         t = str(NUMWORD[t])
@@ -83,7 +83,9 @@ def align(script, heard):
                 d = span * weights[k] / total
                 out[i1 + k] = {"w": w, "start": t, "end": t + d, "matched": False}
                 t += d
-        # "$5.3" heard as "$5.3" never reaches here; this is a real difference in wording
+        # A currency word with nothing opposite it is just the "$" being read out, not a difference.
+        if not wrote and re.fullmatch(r"(dollars?|pounds?|euros?|cents?|pence)[.,]?", said.lower()):
+            continue
         mism.append({"script": wrote, "heard": said, "at": round(t0, 2)})
     return out, mism
 

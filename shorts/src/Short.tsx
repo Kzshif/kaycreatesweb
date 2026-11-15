@@ -1,7 +1,8 @@
 // The one composition every video renders through: background, scenes cut to
 // the narration, subtitles, voice, and a seamless loop back to frame 0.
 import React, { useEffect, useMemo, useState } from 'react';
-import { AbsoluteFill, Easing, Freeze, Html5Audio, Sequence, continueRender, delayRender, spring, staticFile, useCurrentFrame, useVideoConfig } from 'remotion';
+import { Audio } from '@remotion/media';
+import { AbsoluteFill, Easing, Freeze, Sequence, continueRender, delayRender, spring, staticFile, useCurrentFrame, useVideoConfig } from 'remotion';
 import { Captions } from './components/Captions';
 import { Ground } from './components/Ground';
 import { Probe } from './components/Probe';
@@ -113,7 +114,7 @@ export const Short: React.FC<ShortProps> = (props) => {
         <Captions pages={props.captions} />
         {props.handle ? <Handle text={props.handle} /> : null}
         {props.cta ? <Cta text={props.cta} total={total} /> : null}
-        {props.audio ? <Html5Audio src={staticFile(props.audio)} /> : null}
+        {props.audio ? <Audio src={staticFile(props.audio)} /> : null}
         {props.probe ? <Probe /> : null}
       </AbsoluteFill>
     </LookProvider>

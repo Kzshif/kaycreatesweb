@@ -157,7 +157,7 @@ export const Icons: React.FC<SceneProps> = ({ scene }) => {
   const cols = 2;
   const rows = Math.ceil(items.length / cols);
   const cw = (W - 26) / cols;
-  const chh = Math.min(330, (STAGE.height - (p.title ? 70 : 0) - (p.result ? 210 : 30)) / rows - 26);
+  const chh = Math.min(rows === 1 ? 470 : 330, (STAGE.height - (p.title ? 70 : 0) - (p.result ? 210 : 30)) / rows - 26);
   return (
     <Stage style={{ justifyContent: 'center' }}>
       <Head title={p.title} />
@@ -182,7 +182,7 @@ export const Icons: React.FC<SceneProps> = ({ scene }) => {
                 visibility: s.on(i) ? 'visible' : 'hidden',
               }}
             >
-              <Icon name={it.icon} size={Math.min(150, chh * 0.46)} color={look.fg} accent={look.accent} />
+              <Icon name={it.icon} size={Math.min(rows === 1 ? 210 : 150, chh * 0.46)} color={look.fg} accent={look.accent} />
               <div>
                 <T size={42} bold lh={1.06}>
                   {it.label}

@@ -177,7 +177,7 @@ export const SourceLine: React.FC<{ text?: string }> = ({ text }) => {
   const look = useLook();
   if (!text) return null;
   return (
-    <div style={{ position: 'absolute', left: 0, bottom: 0 }}>
+    <div style={{ marginTop: 22 }}>
       <L size={25} color={look.muted}>
         Source: {text}
       </L>
