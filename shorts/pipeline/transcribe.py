@@ -37,7 +37,9 @@ def norm(tok):
     t = tok.lower().replace("’", "'")
     t = re.sub(r"^[^\w$£€]+|[^\w%]+$", "", t)
     t = t.replace(",", "").lstrip("$£€")  # "$270" is said, and often heard, as "270 ... dollars"
-    t = {"percent": "%", "per": "per", "bn": "billion", "mn": "million", "tn": "trillion", "&": "and"}.get(t, t)
+    if re.fullmatch(r"(?:[a-z]\.)+[a-z]?", t):
+        t = t.replace(".", "")  # "u.s." and "us" are the same word
+    t = {"percent": "%", "bn": "billion", "mn": "million", "tn": "trillion", "&": "and"}.get(t, t)
     if t in NUMWORD:
         t = str(NUMWORD[t])
     return t
@@ -127,9 +129,9 @@ def main():
                 if not text:
                     continue
                 # Whisper marks a new word with a leading space. A piece without one ("$5" + ".3",
-                # "51" + "%") belongs to the word before it, so the two are joined back together.
+                # "51" + "%", "U" + ".S.") belongs to the word before it, so they are joined back together.
                 glued = not w.word.startswith(" ") and not first and out
-                if glued and (re.match(r"^[.,]?\d|^%|^'", text) or not re.search(r"\w", text)):
+                if glued:
                     out[-1]["word"] += text
                     out[-1]["end"] = float(w.end)
                     out[-1]["p"] = min(out[-1]["p"], round(float(w.probability), 3))
