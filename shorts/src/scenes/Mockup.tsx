@@ -34,16 +34,33 @@ export const Mockup: React.FC<SceneProps> = ({ scene }) => {
   const up = (str: string) => (look.upper ? str.toUpperCase() : str);
   const callouts = p.callouts || [];
 
+  // which callout is the newest one on screen (-1 before the first)
+  let live = -1;
+  callouts.forEach((_, i) => {
+    if (s.on(i + 1)) live = i;
+  });
   const Callouts: React.FC<{ width?: number; row?: boolean }> = ({ width, row }) => (
-    <div style={{ display: 'flex', flexDirection: row ? 'row' : 'column', flexWrap: 'wrap', gap: row ? 16 : 20, width }}>
-      {callouts.map((c, i) => (
-        <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 16, ...s.enter(i + 1) }}>
-          <div style={{ width: 20, height: 20, borderRadius: look.radius ? 10 : 0, background: look.accent, flexShrink: 0 }} />
-          <T size={row ? 40 : 44} bold lh={1.08}>
-            {c}
-          </T>
-        </div>
-      ))}
+    <div style={{ display: 'flex', flexDirection: row ? 'row' : 'column', flexWrap: 'wrap', gap: 14, width }}>
+      {callouts.map((c, i) => {
+        const hot = i === live;
+        return (
+          <div
+            key={i}
+            style={{
+              background: hot ? look.accent : 'transparent',
+              borderLeft: `10px solid ${look.accent}`,
+              borderRadius: Math.min(look.radius, 14),
+              padding: '12px 20px 12px 18px',
+              alignSelf: 'flex-start',
+              ...s.enter(i + 1),
+            }}
+          >
+            <T size={row ? 44 : 48} bold lh={1.08} color={hot ? look.onAccent : look.fg}>
+              {c}
+            </T>
+          </div>
+        );
+      })}
     </div>
   );
 
@@ -148,7 +165,8 @@ export const Mockup: React.FC<SceneProps> = ({ scene }) => {
                 <div style={{ marginTop: 26, display: 'flex', flexDirection: 'column', gap: 16 }}>
                   {(rows.length ? rows : [{ label: '' }, { label: '' }, { label: '' }, { label: '' }]).map((r, i) => {
                     const pr = spring({ frame: frame - 22 - i * 4, fps, config: look.spring });
-                    const first = i === 0 && rows.length > 0;
+                    // the highlighted row moves down the screen as each callout lands
+                    const first = rows.length > 0 && i === Math.max(0, Math.min(live, rows.length - 1));
                     return (
                       <div
                         key={i}

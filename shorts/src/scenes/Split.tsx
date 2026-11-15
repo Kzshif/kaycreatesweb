@@ -65,10 +65,11 @@ export const Split: React.FC<SceneProps> = ({ scene }) => {
   };
 
   const verdict = p.verdict ? (
-    <div style={{ ...s.enter(2) }}>
-      <T size={50} bold lh={1.1}>
-        {p.verdict}
-      </T>
+    <div style={{ display: 'flex', alignItems: 'center', gap: 22, ...s.enter(2) }}>
+      <div style={{ width: 14, alignSelf: 'stretch', background: look.accent, borderRadius: look.radius ? 7 : 0 }} />
+      <D size={fitSize(look.upper ? p.verdict.toUpperCase() : p.verdict, look.display, look.displayWeight, W - 60, 84, look.tracking, 44)} lh={1.05}>
+        {look.upper ? p.verdict.toUpperCase() : p.verdict}
+      </D>
     </div>
   ) : null;
 

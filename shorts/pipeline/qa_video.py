@@ -86,10 +86,12 @@ def main():
     mask = np.ones((H, W), dtype=bool)
     mask[CAPTION_TOP:CAPTION_BOTTOM, :] = False
 
-    # A "visual change" = at least 2.5% of the picture changing clearly from one sample to the next.
-    diff = np.abs(np.diff(f, axis=0))  # [n-1, H, W]
-    changed = (diff > 28)[:, mask].mean(axis=1)
-    events = [0.0] + [round((i + 1) / FPS, 2) for i, c in enumerate(changed) if c > 0.025]
+    # A "visual change" = at least 1.5% of the picture (outside the subtitle band) clearly
+    # different from half a second earlier. Half a second covers a whole entrance animation,
+    # so a reveal counts once rather than being split into slivers that each look like nothing.
+    k = FPS // 2
+    changed = (np.abs(f[k:] - f[:-k]) > 28)[:, mask].mean(axis=1) if len(f) > k else np.zeros(0)
+    events = [0.0] + [round((i + k) / FPS, 2) for i, c in enumerate(changed) if c > 0.015]
     events.append(round(len(f) / FPS, 2))
     gaps = [(round(b - a, 2), a) for a, b in zip(events, events[1:])]
     worst = max(gaps) if gaps else (0, 0)

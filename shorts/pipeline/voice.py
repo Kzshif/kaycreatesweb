@@ -10,7 +10,7 @@
       Fallback only, for when no recording exists: synthesise the script with
       the Kokoro voice, then trim and normalise it the same way.
 
-Both write 48 kHz mono 16-bit WAV plus a JSON report of what was measured,
+Both write 48 kHz 16-bit WAV (the voice on both channels) plus a JSON report of what was measured,
 what was changed and anything the recording should be redone for.
 """
 import argparse
@@ -147,7 +147,10 @@ def tighten(x, sr, segs):
 def loudnorm(src, dst, chain=""):
     """Two-pass EBU R128 normalisation to TARGET_LUFS, written as 48 kHz mono 16-bit."""
     base = f"loudnorm=I={TARGET_LUFS}:TP={TRUE_PEAK}:LRA=11"
-    pre = f"{chain}," if chain else ""
+    # The finished video carries the voice on both channels. A signal on two channels measures
+    # 3 LU louder than the same signal on one, so the level is set on the stereo version.
+    stereo = "pan=stereo|c0=c0|c1=c0"
+    pre = f"{chain},{stereo}," if chain else f"{stereo},"
     err = run(["ffmpeg", "-y", "-hide_banner", "-i", str(src), "-af", f"{pre}{base}:print_format=json", "-f", "null", "-"])
     m = re.search(r"\{[^{}]*\"input_i\"[^{}]*\}", err, re.S)
     if not m:
@@ -157,7 +160,7 @@ def loudnorm(src, dst, chain=""):
         f"{pre}{base}:measured_I={j['input_i']}:measured_TP={j['input_tp']}:measured_LRA={j['input_lra']}"
         f":measured_thresh={j['input_thresh']}:offset={j['target_offset']}:linear=true:print_format=json"
     )
-    err = run(["ffmpeg", "-y", "-hide_banner", "-i", str(src), "-af", second, "-ar", "48000", "-ac", "1", "-c:a", "pcm_s16le", str(dst)])
+    err = run(["ffmpeg", "-y", "-hide_banner", "-i", str(src), "-af", second, "-ar", "48000", "-ac", "2", "-c:a", "pcm_s16le", str(dst)])
     m = re.search(r"\{[^{}]*\"output_i\"[^{}]*\}", err, re.S)
     out = json.loads(m.group(0)) if m else {}
     return {"lufs": float(out.get("output_i", "nan")), "true_peak_db": float(out.get("output_tp", "nan")), "input_lufs": float(j["input_i"])}
@@ -197,6 +200,8 @@ def process(x, sr, out_path, recorded):
         steps.append(f"normalised to {loud['lufs']:.1f} LUFS, true peak {loud['true_peak_db']:.1f} dB")
 
     y, osr = sf.read(str(out_path), dtype="float32")
+    if y.ndim > 1:
+        y = y.mean(axis=1)
     after = measure(y, osr)
     after.update({"lufs": round(loud["lufs"], 2), "true_peak_db": round(loud["true_peak_db"], 2), "sample_rate": osr})
     if recorded:

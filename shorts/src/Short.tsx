@@ -37,7 +37,26 @@ const SceneShell: React.FC<{ scene: SceneData; first: boolean; children: React.R
       style = { clipPath: `inset(0 ${(1 - p) * 100}% 0 0)` };
     }
   }
-  return <AbsoluteFill style={style}>{children}</AbsoluteFill>;
+  // A beat on every reveal step after the first: the whole scene moves briefly, in the
+  // look's motion style, so each new piece of information lands with a visible accent.
+  const since = Math.min(...scene.cues.filter((c) => c > 0 && frame >= c).map((c) => frame - c), 999);
+  const len = look.cut === 'fade' ? 14 : 9;
+  const k = since < len ? Math.sin((since / len) * Math.PI) : 0;
+  const beat: React.CSSProperties =
+    k === 0
+      ? {}
+      : look.cut === 'flash'
+        ? { transform: `scale(${1 + 0.035 * k})`, transformOrigin: origin }
+        : look.cut === 'fade'
+          ? { transform: `translateY(${-12 * k}px)` }
+          : look.cut === 'zoom'
+            ? { transform: `scale(${1 + 0.045 * k}) rotate(${0.5 * k}deg)`, transformOrigin: origin }
+            : { transform: `translateX(${Math.sin((since / len) * Math.PI * 3) * 7 * (1 - since / len)}px)` };
+  return (
+    <AbsoluteFill style={style}>
+      <AbsoluteFill style={beat}>{children}</AbsoluteFill>
+    </AbsoluteFill>
+  );
 };
 
 /** Channel handle, top-left. Only drawn once channel.json has a real handle. */

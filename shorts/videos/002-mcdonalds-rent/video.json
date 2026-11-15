@@ -108,11 +108,28 @@
       }
     },
     {
-      "type": "versus",
-      "variant": "towers",
+      "type": "counter",
+      "variant": "slot",
       "at": "Last year rent",
       "beats": [
-        "Royalties came"
+        "came to $10.4"
+      ],
+      "props": {
+        "prefix": "$",
+        "value": 10.4,
+        "decimals": 1,
+        "suffix": "billion",
+        "label": "Rent from franchisees, 2025",
+        "sub": "paid to the landlord",
+        "source": "McDonald's annual report, 2025"
+      }
+    },
+    {
+      "type": "versus",
+      "variant": "towers",
+      "at": "Royalties came",
+      "beats": [
+        "$6 billion"
       ],
       "props": {
         "title": "Paid by franchisees, 2025",
