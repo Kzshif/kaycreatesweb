@@ -8,20 +8,24 @@
 //   node pipeline/cli.mjs check 001         script rules, fact file, storyboard, variety
 //   node pipeline/cli.mjs voice 001         clean voice.wav (or fall back to TTS, flagged)
 //   node pipeline/cli.mjs time 001          Whisper word timings, locked to the script
+//   node pipeline/cli.mjs mix 001           soundtrack: voice + music bed + effects, -14 LUFS
 //   node pipeline/cli.mjs render 001        render the MP4
 //   node pipeline/cli.mjs qa 001            check the finished MP4
 //   node pipeline/cli.mjs make 001|all      run every remaining step, stopping at the first failure
+//   node pipeline/cli.mjs pack 001|all      copy the finished files to output/<id>-<company>/
 //   node pipeline/cli.mjs preview 001       contact sheet of stills, to review the look by eye
 //   node pipeline/cli.mjs mark 001 uploaded record that you uploaded it
 import { execFileSync } from 'node:child_process';
 import fs from 'node:fs';
 import path from 'node:path';
 import { RULES } from '../src/shared/spec.mjs';
-import { captionStats, buildCaptions } from './lib/captions.mjs';
-import { CHANNEL_JSON, PYTHON, ROOT, VIDEOS, exists, findVideo, listVideos, mtime, padId, readJson, upToDate, videoFiles, writeJson } from './lib/paths.mjs';
+import { captionStats, buildCaptions, displayWord } from './lib/captions.mjs';
+import { soundPlan } from '../src/shared/sound.mjs';
+import { ASSETS, CHANNEL_JSON, LICENCES, OUTPUT, PYTHON, ROOT, VIDEOS, exists, findVideo, listVideos, mtime, padId, readJson, upToDate, videoFiles, writeJson } from './lib/paths.mjs';
 import { checkVariety, screenFigures, signature, validatePlan } from './lib/plan.mjs';
+import { buildMetadata, buildSrt, lintPublish, publishFigures } from './lib/publish.mjs';
 import { lintScript, parseScript } from './lib/script.mjs';
-import { checkClaims, checkCoverage, parseSources } from './lib/sources.mjs';
+import { checkClaims, checkCoverage, parseSources, uncertainClaims } from './lib/sources.mjs';
 import { STAGES, getRow, readStatus, setProblems, setStage, stageIndex, updateRow } from './lib/status.mjs';
 import { figures, spokenForm, syntheticTimings } from './lib/text.mjs';
 import { buildProps } from './lib/timing.mjs';
@@ -72,6 +76,7 @@ function check(v, { quiet = false } = {}) {
   const script = parseScript(f.script);
   out.script = script;
   const lint = lintScript(script);
+  const publish = lintPublish(script);
   const title = script.meta.company && script.meta.topic ? `${script.meta.company}: ${script.meta.topic}` : row.topic;
   updateRow(v.id, { topic: title });
 
@@ -85,7 +90,7 @@ function check(v, { quiet = false } = {}) {
   }
   const plan = exists(f.plan) ? readJson(f.plan) : null;
   out.plan = plan;
-  if (src) coverage = checkCoverage(src, figures(script.text, { ignore: script.names }), plan ? screenFigures(plan, script.names) : []);
+  if (src) coverage = checkCoverage(src, figures(script.text, { ignore: script.names }), plan ? screenFigures(plan, script.names) : [], publishFigures(script));
 
   // storyboard
   let planIssues = [{ level: 'error', message: 'video.json (the storyboard) is missing' }];
@@ -107,6 +112,7 @@ function check(v, { quiet = false } = {}) {
 
   if (!quiet) {
     show(`script   ${lint.stats.words} words, ~${lint.stats.seconds}s, hook ${lint.stats.hookWords} words (~${lint.stats.hookSeconds}s)`, lint.issues);
+    show('publish  3 titles under 60 characters, 3 hashtags, pinned comment', publish);
     show(`sources  ${src ? src.claims.length : 0} claims`, srcIssues);
     show('facts    every spoken and on-screen figure traced to a claim', coverage);
     show(`plan     ${plan ? `${plan.scenes.length} scenes: ${signature(plan).order}` : '-'}`, planIssues);
@@ -118,13 +124,14 @@ function check(v, { quiet = false } = {}) {
 
   setProblems(v.id, 'sources', fmt(srcIssues));
   setProblems(v.id, 'script', fmt(lint.issues));
+  setProblems(v.id, 'publish', fmt(publish));
   setProblems(v.id, 'facts', fmt(coverage));
   setProblems(v.id, 'plan', fmt([...planIssues, ...cadence]));
   setProblems(v.id, 'variety', fmt(variety));
   setProblems(v.id, 'channel', fmt(channelIssues));
 
   const sourcesOk = !errorsOf(srcIssues).length;
-  const scriptOk = sourcesOk && !errorsOf(lint.issues).length && !errorsOf(coverage).length;
+  const scriptOk = sourcesOk && !errorsOf(lint.issues).length && !errorsOf(coverage).length && !errorsOf(publish).length;
   const planOk = scriptOk && !errorsOf(planIssues).length && !errorsOf(variety).length && !errorsOf(cadence).length;
   if (sourcesOk) reached = 'sourced';
   if (scriptOk) reached = 'scripted';
@@ -215,6 +222,44 @@ function time(v, { force = false } = {}) {
   return ok;
 }
 
+// --------------------------------------------------------------- mix -------
+const SOUND_CODE = [path.join(ROOT, 'src', 'shared', 'sound.mjs'), path.join(ROOT, 'pipeline', 'mix.py'), LICENCES];
+
+function sound(v, { force = false } = {}) {
+  const f = videoFiles(v);
+  const script = parseScript(f.script);
+  const plan = readJson(f.plan);
+  const built = buildProps({ plan, script, words: readJson(f.words).words, channel: channel(), id: v.id });
+  const sp = soundPlan(built.props, plan);
+  // rewrite the plan only when it really changed, so an unchanged video is not mixed again
+  if (!exists(f.soundPlan) || JSON.stringify(readJson(f.soundPlan)) !== JSON.stringify(sp)) writeJson(f.soundPlan, sp);
+  if (!force && upToDate(f.mix, [f.voiceClean, f.soundPlan, ...SOUND_CODE]) && exists(f.mixReport)) {
+    log('  skip  mix (soundtrack is up to date)');
+  } else {
+    py('mix.py', [f.voiceClean, f.soundPlan, ASSETS, f.mix, f.mixReport]);
+  }
+  const r = readJson(f.mixReport);
+  const problems = [...r.problems];
+  // neighbours must not share a music bed
+  const rows = readStatus();
+  const idx = rows.findIndex((x) => x.id === v.id);
+  for (const other of [rows[idx - 1], rows[idx + 1]]) {
+    if (other && sp.musicName && other.music === sp.musicName) problems.push(`same music bed as video ${other.id} (${sp.musicName}): neighbouring videos must differ`);
+  }
+  setProblems(v.id, 'sound', problems);
+  updateRow(v.id, { music: sp.musicName || 'none' });
+  const ok = !problems.length;
+  if (ok) setStage(v.id, 'mixed');
+  else setStage(v.id, 'timed', { force: true });
+  const m = r.music;
+  log(
+    `  ${ok ? 'ok  ' : 'FAIL'}  mix     ${r.final.lufs} LUFS, peak ${r.final.true_peak_db} dB, ` +
+      `${m ? `bed "${sp.musicName}" ${m.db_under_voice_while_speaking} dB under the voice` : 'no music'}, ${r.effects.count} effects` +
+      `${problems.length ? `\n          ${problems.join('\n          ')}` : ''}`,
+  );
+  return ok;
+}
+
 // ------------------------------------------------------------ render -------
 async function prepare(v) {
   const f = videoFiles(v);
@@ -235,10 +280,10 @@ async function render(v, { force = false } = {}) {
     return false;
   }
   const serveUrl = await getBundle({ log: (m) => log(`  ${m}`) });
-  built.props.audio = stageAudio(serveUrl, v.id, f.voiceClean);
+  built.props.audio = stageAudio(serveUrl, v.id, f.mix);
   writeJson(f.props, built.props);
   const bundleStamp = path.join(ROOT, '.cache', 'bundle.hash');
-  if (!force && upToDate(f.mp4, [f.plan, f.words, f.voiceClean, CHANNEL_JSON, bundleStamp])) {
+  if (!force && upToDate(f.mp4, [f.plan, f.words, f.mix, CHANNEL_JSON, bundleStamp])) {
     log('  skip  render (MP4 is up to date)');
   } else {
     const t0 = Date.now();
@@ -261,6 +306,55 @@ async function render(v, { force = false } = {}) {
 }
 
 // ---------------------------------------------------------------- qa -------
+function parseCheckedSources(f) {
+  const src = parseSources(f.sources);
+  checkClaims(src); // fills in each claim's confidence
+  return src;
+}
+
+/** Every subtitle word, in order, must be the script's word (edge punctuation aside). */
+function matchCaptions(script, pages) {
+  const shown = pages.flatMap((p) => p.words.map((w) => w.t));
+  const expected = script.words.map(displayWord).filter(Boolean);
+  const mismatches = [];
+  for (let i = 0; i < Math.min(shown.length, expected.length); i++) if (shown[i] !== expected[i]) mismatches.push({ index: i, shown: shown[i], script: expected[i] });
+  return { shown: shown.length, expected: expected.length, mismatches };
+}
+
+/**
+ * Six frames cut from the finished MP4, spread across the video, each on a subtitle page.
+ * The same frames are judged from the page itself (the probe): text outside its box,
+ * text under YouTube's buttons, and captions that are too small, too faint or out of place.
+ */
+function exportStills(f, props, probe) {
+  const pages = props.captions;
+  const picks = [...Array(6)].map((_, k) => pages[Math.min(pages.length - 1, Math.floor(((k + 0.5) * pages.length) / 6))]).filter(Boolean);
+  const probed = new Map(probe.frames.map((fr) => [fr.frame, fr]));
+  const nearest = (frame) => [...probed.keys()].reduce((best, x) => (Math.abs(x - frame) < Math.abs(best - frame) ? x : best), probe.frames[0]?.frame ?? 0);
+  const frames = [...new Set(picks.map((p) => nearest(Math.round((p.from + p.to) / 2))))];
+  fs.rmSync(f.checks, { recursive: true, force: true });
+  fs.mkdirSync(f.checks, { recursive: true });
+  const items = frames.map((frame, i) => {
+    const file = path.join(f.checks, `still-${i + 1}.png`);
+    execFileSync('ffmpeg', ['-loglevel', 'error', '-y', '-ss', (frame / props.fps).toFixed(3), '-i', f.mp4, '-frames:v', '1', file]);
+    const pr = probed.get(frame) || { hits: [] };
+    const problems = [];
+    for (const h of pr.hits.filter((x) => x.zone === 'right' || x.zone === 'bottom')) problems.push(`"${h.t}" sits in the ${h.zone === 'right' ? 'right 15%' : 'bottom 20%'} button zone`);
+    for (const o of pr.overflow || []) problems.push(`"${o.t}" spills out of its box`);
+    const caps = pr.captions || [];
+    if (pr.captions && !caps.length) problems.push('no subtitle on screen');
+    for (const c of caps) {
+      if (c.fontPx < 56) problems.push(`subtitle is ${Math.round(c.fontPx)}px tall: too small to read on a phone`);
+      if (c.contrast < 7) problems.push(`subtitle contrast is ${c.contrast.toFixed(1)}:1 (needs 7:1)`);
+      if (c.top < 640 || c.bottom > 1280) problems.push(`subtitle sits at ${Math.round(c.top)}-${Math.round(c.bottom)}px, outside the centre third (640-1280)`);
+    }
+    return { n: i + 1, frame, seconds: +(frame / props.fps).toFixed(2), file: path.relative(ROOT, file), text_boxes: pr.n ?? null, problems };
+  });
+  const sheet = path.join(f.checks, 'sheet.png');
+  execFileSync('ffmpeg', ['-loglevel', 'error', '-y', ...items.flatMap((x) => ['-i', path.join(ROOT, x.file)]), '-filter_complex', `${items.map((_, i) => `[${i}:v]scale=360:-1[s${i}]`).join(';')};${items.map((_, i) => `[s${i}]`).join('')}hstack=inputs=${items.length}`, '-frames:v', '1', sheet]);
+  return { sheet, items };
+}
+
 async function qa(v) {
   const { probeVideo } = await import('./lib/render.mjs');
   const { f, built } = await prepare(v);
@@ -271,7 +365,7 @@ async function qa(v) {
     setProblems(v.id, 'qa', ['no MP4 to check: run render']);
     return false;
   }
-  if (mtime(f.mp4) < Math.max(mtime(f.plan), mtime(f.words), mtime(f.voiceClean))) problems.push('the MP4 is older than its script, storyboard or voice: render it again');
+  if (mtime(f.mp4) < Math.max(mtime(f.plan), mtime(f.words), mtime(f.mix))) problems.push('the MP4 is older than its script, storyboard or soundtrack: render it again');
 
   // 1. the file itself
   const videoReport = path.join(f.work, 'qa.video.json');
@@ -282,9 +376,24 @@ async function qa(v) {
   if (Math.abs(fm.fps - 30) > 0.01) problems.push(`frame rate is ${fm.fps}, not 30`);
   if (fm.video_codec !== 'h264' || fm.pix_fmt !== 'yuv420p') problems.push(`video is ${fm.video_codec}/${fm.pix_fmt}, expected h264/yuv420p`);
   if (fm.audio_codec !== 'aac') problems.push(`audio is ${fm.audio_codec}, expected aac`);
-  if (fm.seconds < R.minSeconds || fm.seconds > R.maxSeconds) problems.push(`runs ${fm.seconds.toFixed(1)}s; the brief asks for ${R.minSeconds}-${R.maxSeconds}s`);
-  if (vr.loudness.lufs === null || Math.abs(vr.loudness.lufs + 14) > 1.5) problems.push(`audio loudness is ${vr.loudness.lufs} LUFS; target -14`);
-  if (vr.loudness.true_peak_db !== null && vr.loudness.true_peak_db > -0.5) problems.push(`audio peaks at ${vr.loudness.true_peak_db} dB: risk of clipping`);
+  if (fm.seconds >= 60) problems.push(`runs ${fm.seconds.toFixed(1)}s: a Short must be under 60 seconds`);
+  else if (fm.seconds < R.minSeconds || fm.seconds > R.maxSeconds) problems.push(`runs ${fm.seconds.toFixed(1)}s; the brief asks for ${R.minSeconds}-${R.maxSeconds}s`);
+  // audio level, measured twice (ffprobe and ffmpeg) on the finished file
+  const lp = vr.loudness_ffprobe || {};
+  const lufs = lp.lufs ?? vr.loudness.lufs;
+  const peak = Math.max(lp.true_peak_db ?? -99, vr.loudness.true_peak_db ?? -99);
+  if (lufs === null || lufs === undefined || Math.abs(lufs + 14) > 1.0) problems.push(`audio loudness is ${lufs} LUFS; target -14`);
+  if (lp.lufs !== null && lp.lufs !== undefined && vr.loudness.lufs !== null && Math.abs(lp.lufs - vr.loudness.lufs) > 0.5) warn(`two loudness measurements disagree (${lp.lufs} and ${vr.loudness.lufs} LUFS)`);
+  if (peak > -1.0) problems.push(`audio peaks at ${peak} dB: too close to clipping (limit -1.0)`);
+  if (fm.audio_rate !== 48000 || fm.audio_channels !== 2) warn(`audio is ${fm.audio_rate} Hz, ${fm.audio_channels} channel(s); expected 48000 Hz stereo`);
+  // the soundtrack: mixed from licensed files only, bed quiet under the voice
+  if (!exists(f.mixReport)) problems.push('no soundtrack report: run mix');
+  else {
+    const mr = readJson(f.mixReport);
+    for (const m of mr.problems) problems.push(`soundtrack: ${m}`);
+    const listed = new Set([...fs.readFileSync(LICENCES, 'utf8').matchAll(/`((?:sfx|music)\/[A-Za-z0-9_.-]+)`/g)].map((m) => m[1]));
+    for (const a of mr.assets_used) if (!listed.has(a)) problems.push(`soundtrack uses ${a}, which has no entry in assets/licences.md`);
+  }
   if (vr.flat_frames_at_s.length) problems.push(`blank frame(s) at ${vr.flat_frames_at_s.join(', ')}s`);
 
   // 2. a visual change every 2-3 seconds: planned cues, then the real pixels
@@ -315,12 +424,20 @@ async function qa(v) {
   // 4. the loop
   if (vr.loop.first_last_mean_diff > 9) warn(`the last frame differs from the first (${vr.loop.first_last_mean_diff}): the loop may show a visible cut`);
 
-  // 5. subtitles
+  // 5. subtitles: sized 2-4 words, and spelled exactly as the script spells them
   const st = captionStats(buildCaptions(readJson(f.words).words));
   if (st.over) problems.push(`${st.over} subtitle page(s) have more than 4 words`);
   if (st.singles / Math.max(1, st.pages) > 0.2) warn(`${st.singles} of ${st.pages} subtitle pages have a single word`);
+  const script = parseScript(f.script);
+  const spelling = matchCaptions(script, built.props.captions);
+  for (const m of spelling.mismatches.slice(0, 5)) problems.push(`subtitle word ${m.index + 1} is "${m.shown}" but the script says "${m.script}"`);
+  if (spelling.shown !== spelling.expected) problems.push(`subtitles show ${spelling.shown} words; the script has ${spelling.expected}`);
 
-  // 6. facts and script must still pass
+  // 6. six stills from the finished file, each checked for overflow, button zones and caption legibility
+  const stills = exportStills(f, built.props, probe);
+  for (const s of stills.items) for (const m of s.problems) problems.push(`still ${s.n} (${s.seconds}s): ${m}`);
+
+  // 7. facts and script must still pass
   const c = check(v, { quiet: true });
   if (!c.ok) problems.push('script, sources or storyboard no longer pass: run check');
 
@@ -333,54 +450,68 @@ async function qa(v) {
     visual_change: { ...vr.visual_change, planned_events: built.events.length, planned_worst_gap_s: built.worstGap, planned_mean_gap_s: built.avgGap },
     safe_zones: { frames_checked: probe.frames.length, violations: hard.length, text_boxes_on_frame_0: first?.n ?? 0 },
     loop: vr.loop,
-    subtitles: st,
+    subtitles: { ...st, words_shown: spelling.shown, words_in_script: spelling.expected, spelling_mismatches: spelling.mismatches.length },
+    stills: { sheet: path.relative(ROOT, stills.sheet), items: stills.items },
+    soundtrack: exists(f.mixReport) ? readJson(f.mixReport) : null,
+    hand_checks: uncertainClaims(parseCheckedSources(f)),
   };
   writeJson(f.qa, report);
   setProblems(v.id, 'qa', problems);
   if (report.passed) setStage(v.id, 'ready');
   else setStage(v.id, 'rendered', { force: true });
   log(
-    `  ${report.passed ? 'ok  ' : 'FAIL'}  qa      ${fm.seconds.toFixed(1)}s, ${fm.megabytes} MB, ${vr.loudness.lufs} LUFS, ${built.events.length} visual changes (longest gap ${built.worstGap}s planned / ${vr.visual_change.longest_static_s}s measured), ` +
+    `  ${report.passed ? 'ok  ' : 'FAIL'}  qa      ${fm.seconds.toFixed(1)}s, ${fm.megabytes} MB, ${lufs} LUFS (peak ${peak} dB), subtitles ${spelling.shown}/${spelling.expected} words match, 6 stills -> ${path.relative(ROOT, stills.sheet)}, ${built.events.length} visual changes (longest gap ${built.worstGap}s planned / ${vr.visual_change.longest_static_s}s measured), ` +
       `${probe.frames.length} frames probed, ${hard.length} safe-zone violations${problems.length ? `\n          ${problems.join('\n          ')}` : ''}`,
   );
   return report.passed;
 }
 
-// --------------------------------------------------------- upload.md -------
-function writeUpload(v) {
+// ------------------------------------------------------ publishing pack ----
+const slug = (s) => String(s).toLowerCase().replace(/&/g, ' and ').replace(/['’]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+const outputDir = (v, script) => path.join(OUTPUT, `${v.id}-${slug(script.meta.company || v.slug)}`);
+
+/** metadata.md, captions.srt and cover.png: everything typed or chosen by hand at upload. */
+function publish(v) {
   const f = videoFiles(v);
-  if (exists(f.upload)) return; // never overwrite text you may have edited
   const script = parseScript(f.script);
   const src = parseSources(f.sources);
-  const ch = channel();
-  const filled = (s) => s && !/^\[.*\]$/.test(String(s).trim());
-  const seen = new Set();
-  const refs = src.claims
-    .filter((c) => c.fields.url && !seen.has(c.fields.url) && seen.add(c.fields.url))
-    .map((c) => `- ${c.fields.source} (${c.fields.date}): ${c.fields.url}`);
-  const tags = ['#shorts', `#${(script.meta.company || '').replace(/[^A-Za-z0-9]/g, '')}`, ...(script.meta.tags || '#business #money #explained').split(/\s+/)].filter((t) => t.length > 1);
-  const text = `# Upload sheet: ${v.id} ${script.meta.company}
+  checkClaims(src);
+  const voiceSource = exists(f.voiceReport) ? readJson(f.voiceReport).source : 'tts';
+  const text = buildMetadata({ id: v.id, script, src, channel: channel(), voiceSource, files: { cover: 'cover.png', srt: 'captions.srt' } });
+  if (!exists(f.metadata) || fs.readFileSync(f.metadata, 'utf8') !== text) fs.writeFileSync(f.metadata, text);
+  if (exists(f.words)) {
+    fs.mkdirSync(f.out, { recursive: true });
+    fs.writeFileSync(f.srt, buildSrt(script, readJson(f.words).words));
+  }
+  if (exists(f.mp4) && exists(f.props)) {
+    // the cover: the hook scene with everything landed
+    const props = readJson(f.props);
+    const first = props.scenes[0];
+    const frame = Math.max(0, Math.min(first.duration - 3, Math.round(first.duration * 0.9)));
+    execFileSync('ffmpeg', ['-loglevel', 'error', '-y', '-ss', (frame / props.fps).toFixed(3), '-i', f.mp4, '-frames:v', '1', f.cover]);
+  }
+  return { script, src };
+}
 
-## Title (under 100 characters)
-${script.meta.title || `How ${script.meta.company} really makes money`}
-
-## Description
-${script.meta.idea || script.meta.topic}
-${filled(ch.cta) ? `\n${ch.cta}\n` : ''}
-Sources:
-${refs.join('\n')}
-
-This video explains how a business works. It is not financial advice.
-
-${[...new Set(tags)].join(' ')}
-
-## Before you upload
-- [ ] Watched it once with sound, once without
-- [ ] Set "Altered or synthetic content" correctly if the fallback voice was used
-- [ ] Not made for kids
-`;
-  fs.writeFileSync(f.upload, text);
-  log(`  wrote ${path.relative(ROOT, f.upload)}`);
+/** output/<id>-<company>/ with final.mp4, metadata.md, sources.md (+ cover and subtitles). */
+function pack(v) {
+  const f = videoFiles(v);
+  const row = getRow(v.id);
+  if (!['ready', 'uploaded'].includes(row?.stage)) {
+    log(`  skip  pack (${v.id} is "${row?.stage}", not ready)`);
+    return null;
+  }
+  const { script } = publish(v);
+  const dir = outputDir(v, script);
+  fs.mkdirSync(dir, { recursive: true });
+  const copies = [[f.mp4, 'final.mp4'], [f.metadata, 'metadata.md'], [f.sources, 'sources.md'], [f.cover, 'cover.png'], [f.srt, 'captions.srt']];
+  for (const [from, name] of copies) {
+    if (!exists(from)) continue;
+    const to = path.join(dir, name);
+    if (!exists(to) || mtime(to) < mtime(from)) fs.copyFileSync(from, to);
+  }
+  log(`  packed ${path.relative(ROOT, dir)}/`);
+  return dir;
 }
 
 // --------------------------------------------------------------- make ------
@@ -396,10 +527,11 @@ async function make(v, opts = {}) {
   log('  ok    script, sources, storyboard and variety');
   if (!voice(v, opts)) return false;
   if (!time(v, opts)) return false;
+  if (!sound(v, opts)) return false;
   if (!(await render(v, opts))) return false;
   if (!(await qa(v))) return false;
-  writeUpload(v);
-  log(`  READY ${path.relative(ROOT, videoFiles(v).mp4)}`);
+  const dir = pack(v);
+  log(`  READY ${path.relative(ROOT, dir || videoFiles(v).mp4)}`);
   return true;
 }
 
@@ -432,8 +564,8 @@ function create(id, slug, rest) {
   const dir = path.join(VIDEOS, `${id}-${slug}`);
   fs.mkdirSync(dir, { recursive: true });
   const company = rest.join(' ') || slug.split('-')[0];
-  fs.writeFileSync(path.join(dir, 'script.md'), `---\nid: ${id}\ncompany: ${company}\ntopic: \nidea: \ntitle: \ntags: #business #money\n---\n# One line per sentence. 70-110 words. Hook first. Leave the last line open so it loops.\n`);
-  fs.writeFileSync(path.join(dir, 'sources.md'), `# Sources: ${id} ${company}\n\n## 1. \n- Figures: \n- Exact: \n- Source: \n- Type: company report | regulator filing | major news outlet\n- URL: \n- Date: \n- Quote: \n- Checked: \n`);
+  fs.writeFileSync(path.join(dir, 'script.md'), `---\nid: ${id}\ncompany: ${company}\ntopic: \nidea: \ntitles:  |  | \ntags: #${company.replace(/[^A-Za-z0-9]/g, '')} #business #money\npinned: \n---\n# One line per sentence. 70-110 words. Hook first. Leave the last line open so it loops.\n`);
+  fs.writeFileSync(path.join(dir, 'sources.md'), `# Sources: ${id} ${company}\n\n## 1. \n- Figures: \n- Exact: \n- Source: \n- Type: company report | regulator filing | major news outlet\n- URL: \n- Date: \n- Quote: \n- Year: \n- Verified: search-verified\n- Agrees: \n- Confidence: high | medium | low\n- Checked: \n`);
   updateRow(id, { topic: company, stage: 'idea' });
   log(`created ${path.relative(ROOT, dir)}`);
 }
@@ -504,6 +636,12 @@ try {
         time(v, flags);
       }
       break;
+    case 'mix':
+      for (const v of targets()) {
+        log(`\n${v.name}`);
+        sound(v, flags);
+      }
+      break;
     case 'render':
       for (const v of targets()) {
         log(`\n${v.name}`);
@@ -522,6 +660,13 @@ try {
       process.exitCode = ok ? 0 : 1;
       break;
     }
+    case 'pack':
+      for (const v of targets()) {
+        log(`\n${v.name}`);
+        publish(v);
+        pack(v);
+      }
+      break;
     case 'preview':
       for (const v of targets()) {
         log(`\n${v.name}`);

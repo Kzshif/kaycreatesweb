@@ -64,6 +64,24 @@ def loudness(path):
     return {"lufs": float(i.group(1)) if i else None, "true_peak_db": float(tp.group(1)) if tp else None}
 
 
+def loudness_ffprobe(path):
+    """The same measurement taken with ffprobe (EBU R128 through its lavfi input)."""
+    esc = path.replace("\\", "\\\\").replace(":", "\\:").replace("'", "\\'")
+    out = subprocess.run(
+        ["ffprobe", "-v", "error", "-f", "lavfi", "-i", f"amovie='{esc}',ebur128=metadata=1:peak=true",
+         "-show_entries", "frame_tags=lavfi.r128.I,lavfi.r128.true_peaks_ch0,lavfi.r128.true_peaks_ch1", "-of", "json"],
+        capture_output=True, text=True,
+    )
+    try:
+        tags = [f.get("tags", {}) for f in json.loads(out.stdout).get("frames", [])]
+        last = next(t for t in reversed(tags) if "lavfi.r128.I" in t)
+        peaks = [float(t[k]) for t in tags for k in ("lavfi.r128.true_peaks_ch0", "lavfi.r128.true_peaks_ch1") if k in t]
+        peak = max(peaks) if peaks else None
+        return {"lufs": round(float(last["lavfi.r128.I"]), 1), "true_peak_db": round(20 * float(np.log10(peak)), 1) if peak and peak > 0 else None}
+    except Exception as e:  # noqa: BLE001 - reported, never fatal: the ffmpeg measurement is still there
+        return {"lufs": None, "true_peak_db": None, "error": str(e)[:200]}
+
+
 def frames(path):
     raw = run(["ffmpeg", "-loglevel", "error", "-i", path, "-vf", f"fps={FPS},scale={W}:{H}:flags=area,format=gray", "-f", "rawvideo", "-"], binary=True)
     return np.frombuffer(raw, dtype=np.uint8).reshape(-1, H, W).astype(np.int16)
@@ -82,6 +100,7 @@ def main():
     path, out = sys.argv[1], sys.argv[2]
     info = probe(path)
     loud = loudness(path)
+    loud_probe = loudness_ffprobe(path)
     f = frames(path)
     mask = np.ones((H, W), dtype=bool)
     mask[CAPTION_TOP:CAPTION_BOTTOM, :] = False
@@ -103,6 +122,7 @@ def main():
     report = {
         "format": info,
         "loudness": loud,
+        "loudness_ffprobe": loud_probe,
         "visual_change": {"events": len(events) - 2, "longest_static_s": worst[0], "longest_static_at_s": worst[1], "mean_gap_s": round(float(np.mean([g for g, _ in gaps])), 2) if gaps else 0},
         "flat_frames_at_s": flat[:10],
         "loop": {"first_last_mean_diff": round(loop_diff, 2)},

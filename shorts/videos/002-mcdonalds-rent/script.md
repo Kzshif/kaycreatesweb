@@ -3,8 +3,9 @@ id: 002
 company: McDonald's
 topic: Rent brings in more than royalties
 idea: McDonald's earns more from franchisees as their landlord (rent) than as their brand (royalties).
-title: McDonald's is a landlord that sells burgers
-tags: #business #money #franchise #explained
+titles: McDonald's is a landlord that sells burgers | McDonald's earns more from rent than royalties | The $10.4 billion McDonald's makes from rent
+tags: #McDonalds #business #money
+pinned: Burger chain or property company: what would you call it? Every number in this video is sourced in the description.
 ---
 McDonald's earns more from rent than from royalties.
 It does not run most of its restaurants.

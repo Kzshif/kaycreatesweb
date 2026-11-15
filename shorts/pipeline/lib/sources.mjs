@@ -6,6 +6,12 @@ import { cleanQuotes, figures } from './text.mjs';
 
 export const SOURCE_TYPES = ['company report', 'regulator filing', 'major news outlet'];
 
+// How a figure was confirmed. `search-verified`: a web search returned the wording from the page at
+// the URL (the page itself could not be opened). `page-read`: someone opened the page and read it.
+export const VERIFIED = ['search-verified', 'page-read'];
+// high = two independent results agree. Anything lower goes to the top of the batch report.
+export const CONFIDENCE = ['high', 'medium', 'low'];
+
 // Not acceptable as a source, whatever they say.
 const BANNED = [
   'wikipedia.org', 'wikimedia.org', 'statista.com', 'investopedia.com', 'medium.com', 'substack.com', 'reddit.com', 'quora.com', 'fandom.com',
@@ -49,6 +55,10 @@ const isDate = (s) => /^\d{4}-\d{2}-\d{2}$/.test(s) && !Number.isNaN(Date.parse(
  *   - URL: https://www.sec.gov/...
  *   - Date: 2025-10-08
  *   - Quote: "Membership fees ... 5,323"
+ *   - Year: fiscal 2025 (year ended 31 August 2025)
+ *   - Verified: search-verified
+ *   - Agrees: Retail Insider, https://retail-insider.com/... ("$5.32 billion")
+ *   - Confidence: high
  *   - Checked: 2026-11-14
  *
  *   ## 2. Membership fees were about half of operating income
@@ -206,8 +216,55 @@ export function checkClaims(src, { today = new Date().toISOString().slice(0, 10)
     if (c.figures.some((x) => x.kind === 'digit' && !x.year) && !c.exact) {
       out.push(issue('warn', 'sources', `${tag}: add "Exact:" with the precise source value, so rounding can be checked.`));
     }
+
+    // how it was checked, the year it refers to, and how sure we are
+    if (f.url) {
+      try {
+        if (new URL(f.url).pathname.replace(/\/+$/, '').length < 2) out.push(issue('error', 'sources', `${tag}: the URL is a home page. Give the exact page that carries the figure.`));
+      } catch {
+        /* reported above */
+      }
+    }
+    const verified = (f.verified || '').toLowerCase();
+    if (!verified) out.push(issue('error', 'verified', `${tag}: missing "Verified:" (${VERIFIED.join(' or ')}).`));
+    else if (!VERIFIED.includes(verified)) out.push(issue('error', 'verified', `${tag}: Verified must be ${VERIFIED.join(' or ')}.`));
+    if (!f.year) out.push(issue('error', 'verified', `${tag}: missing "Year:" (the year the figure refers to, e.g. "fiscal 2025").`));
+    else if (!/\b(19|20)\d{2}\b/.test(f.year)) out.push(issue('error', 'verified', `${tag}: Year must name a year, e.g. "2022" or "fiscal 2025".`));
+    const conf = (f.confidence || '').toLowerCase();
+    if (!conf) out.push(issue('error', 'verified', `${tag}: missing "Confidence:" (${CONFIDENCE.join(', ')}).`));
+    else if (!CONFIDENCE.includes(conf)) out.push(issue('error', 'verified', `${tag}: Confidence must be one of: ${CONFIDENCE.join(', ')}.`));
+    else if (conf === 'high') {
+      const second = (f.agrees || '').match(/https:\/\/[^\s)>\]]+/);
+      if (!second) out.push(issue('error', 'verified', `${tag}: "Confidence: high" needs "Agrees:" with the link of a second, independent result that gives the same figure.`));
+      else if (hostOf(second[0]) === hostOf(f.url || '')) out.push(issue('error', 'verified', `${tag}: the second result is on the same site as the first (${hostOf(second[0])}). It has to be independent.`));
+      else if (inList(hostOf(second[0]), BANNED)) out.push(issue('error', 'verified', `${tag}: ${hostOf(second[0])} cannot confirm a figure.`));
+    } else if (c.figures.length) {
+      out.push(issue('warn', 'verified', `${tag}: confidence ${conf} (${f.agrees && !/^none/i.test(f.agrees) ? 'second result does not fully agree' : 'only one result found'}). Check "${c.title}" by hand before upload.`));
+    }
+    c.confidence = CONFIDENCE.includes(conf) ? conf : 'low';
+  }
+  // a calculated figure is only as sure as the least sure figure it is made from
+  for (const c of src.claims) {
+    if (!c.fields.derived) continue;
+    const from = String(c.fields.from || '').split(/[,\s]+/).filter(Boolean).map(Number);
+    const levels = from.map((n) => byN.get(n)?.confidence).filter(Boolean);
+    c.confidence = levels.length ? CONFIDENCE[Math.max(...levels.map((l) => CONFIDENCE.indexOf(l)))] : 'low';
   }
   return out;
+}
+
+/** Figures to check by hand before upload: everything that is not confirmed by two results. */
+export function uncertainClaims(src) {
+  return src.claims
+    .filter((c) => c.confidence && c.confidence !== 'high' && (c.figures.length || c.fields.derived))
+    .map((c) => ({
+      n: c.n,
+      title: c.title,
+      confidence: c.confidence,
+      figures: c.fields.figures || '',
+      url: c.fields.url || null,
+      why: c.fields.derived ? `calculated from claim(s) ${c.fields.from}, at least one of which is not confirmed twice` : c.fields.note || (c.fields.agrees && !/^none/i.test(c.fields.agrees) ? c.fields.agrees : 'only one search result carries this figure'),
+    }));
 }
 
 // Does a rounded, spoken figure fairly represent the exact source value?
@@ -241,9 +298,9 @@ function roundingIssue(fig, exact, where) {
 
 /**
  * Is every figure that is spoken or shown backed by a claim?
- * `spoken` and `shown` are figure lists from text.figures().
+ * `spoken`, `shown` and `published` (titles, description, pinned comment) are figure lists from text.figures().
  */
-export function checkCoverage(src, spoken, shown = []) {
+export function checkCoverage(src, spoken, shown = [], published = []) {
   const out = [];
   const find = (key) => src.claims.find((c) => c.keys.has(key));
   const seen = new Set();
@@ -269,5 +326,6 @@ export function checkCoverage(src, spoken, shown = []) {
   };
   visit(spoken, 'Script');
   visit(shown, 'On-screen');
+  visit(published, 'Title, description or pinned comment');
   return out;
 }

@@ -2,9 +2,10 @@
 id: 001
 company: Costco
 topic: Membership fees equal half the profit
-idea: Costco sells goods at almost no profit; the money it keeps is about the size of its membership fees.
-title: Costco's real product is the card
-tags: #business #money #retail #explained
+idea: Costco sells its goods at almost no profit. The fees shoppers pay just to walk in add up to about half of what it earns from running the business.
+titles: Costco's real product is a $65 card | Costco's fees equal half its profit | The $5.3 billion Costco makes at the door
+tags: #Costco #business #money
+pinned: Would you still shop there if the card cost more? Every number in this video is sourced in the description.
 ---
 Costco's membership fees equal half its profit.
 Last year its warehouses sold $270 billion of goods.

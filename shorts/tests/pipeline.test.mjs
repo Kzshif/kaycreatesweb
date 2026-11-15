@@ -9,7 +9,9 @@ import { ACCENTS, GROUNDS, GROUND_ACCENTS, SCENES, cueCount } from '../src/share
 import { buildCaptions, captionStats, displayWord } from '../pipeline/lib/captions.mjs';
 import { checkVariety, findPhrase, resolveAnchors, screenFigures, signature, validatePlan } from '../pipeline/lib/plan.mjs';
 import { lintScript, parseScript } from '../pipeline/lib/script.mjs';
-import { checkClaims, checkCoverage, parseSources } from '../pipeline/lib/sources.mjs';
+import { MUSIC, SFX, pickMusic, soundPlan } from '../src/shared/sound.mjs';
+import { TITLE_MAX, buildMetadata, buildSrt, disclosure, lintPublish, publishFigures } from '../pipeline/lib/publish.mjs';
+import { checkClaims, checkCoverage, parseSources, uncertainClaims } from '../pipeline/lib/sources.mjs';
 import { parseCsv, toCsv } from '../pipeline/lib/status.mjs';
 import { estimateSeconds, figures, norm, sentences, spokenForm, syntheticTimings, tokens, yearToWords } from '../pipeline/lib/text.mjs';
 import { buildProps } from '../pipeline/lib/timing.mjs';
@@ -138,6 +140,10 @@ const GOOD_SOURCES = `# Sources: 001
 - URL: https://www.sec.gov/example
 - Date: 2025-10-08
 - Quote: "Net sales $ 269,912"
+- Year: fiscal 2025
+- Verified: search-verified
+- Agrees: Retail Insider, https://retail-insider.com/example
+- Confidence: high
 - Checked: 2026-11-14
 
 ## 2. Membership fees were $5,323 million
@@ -148,6 +154,10 @@ const GOOD_SOURCES = `# Sources: 001
 - URL: https://www.sec.gov/example
 - Date: 2025-10-08
 - Quote: "Membership fees 5,323"
+- Year: fiscal 2025
+- Verified: search-verified
+- Agrees: Retail Insider, https://retail-insider.com/example
+- Confidence: high
 - Checked: 2026-11-14
 
 ## 3. Membership fees were 51% of operating income
@@ -163,6 +173,10 @@ const GOOD_SOURCES = `# Sources: 001
 - URL: https://investor.costco.com/example
 - Date: 2025-10-08
 - Quote: "the $1.50 hot dog and soda combo"
+- Year: fiscal 2025
+- Verified: search-verified
+- Agrees: Retail Insider, https://retail-insider.com/example
+- Confidence: high
 - Checked: 2026-11-14
 `;
 
@@ -283,4 +297,116 @@ test('look system: every approved accent has contrast on its ground', () => {
     }
   }
   assert.ok(Object.keys(SCENES).length >= 10, 'at least 10 scene types');
+});
+
+// ------------------------------------------------------------ fact checking
+test('sources: every figure is marked search-verified with a year; "high" needs a second, independent result', () => {
+  const rules = (text) => checkClaims(parseSources(tmp('sources.md', text)), { today: '2026-11-14' });
+  const errors = (text) => rules(text).filter((i) => i.level === 'error');
+  assert.ok(errors(GOOD_SOURCES.replace('- Verified: search-verified\n', '')).some((i) => /Verified/.test(i.message)));
+  assert.ok(errors(GOOD_SOURCES.replace('- Verified: search-verified', '- Verified: trust me')).some((i) => i.rule === 'verified'));
+  assert.ok(errors(GOOD_SOURCES.replace('- Year: fiscal 2025\n', '')).some((i) => /Year/.test(i.message)));
+  assert.ok(errors(GOOD_SOURCES.replace('- Year: fiscal 2025', '- Year: last year')).some((i) => /Year/.test(i.message)));
+  // "high" with no second link, or a second link on the same site, is refused
+  assert.ok(errors(GOOD_SOURCES.replace('- Agrees: Retail Insider, https://retail-insider.com/example', '- Agrees: none found')).some((i) => /second, independent/.test(i.message)));
+  assert.ok(errors(GOOD_SOURCES.replaceAll('https://retail-insider.com/example', 'https://www.sec.gov/other-page').replaceAll('https://investor.costco.com/example', 'https://www.sec.gov/Archives/example')).some((i) => /same site/.test(i.message)));
+  // a home page is not "the exact page link"
+  assert.ok(errors(GOOD_SOURCES.replace('https://investor.costco.com/example', 'https://investor.costco.com/')).some((i) => /home page/.test(i.message)));
+  // anything below high is flagged for a check by hand, and so is whatever is calculated from it
+  const medium = GOOD_SOURCES.replace('- Confidence: high', '- Confidence: medium');
+  assert.ok(rules(medium).some((i) => i.level === 'warn' && /by hand/.test(i.message)));
+  const src = parseSources(tmp('sources.md', medium));
+  checkClaims(src, { today: '2026-11-14' });
+  const flagged = uncertainClaims(src);
+  assert.ok(flagged.length >= 1 && flagged.every((c) => c.confidence !== 'high'));
+  const clean = parseSources(tmp('sources.md', GOOD_SOURCES));
+  checkClaims(clean, { today: '2026-11-14' });
+  assert.deepEqual(uncertainClaims(clean), []);
+});
+
+// --------------------------------------------------------------- publishing
+const PUBLISH_SCRIPT = GOOD_SCRIPT.replace('---\n', "---\ntitles: Costco's real product is a $1.50 hot dog | Why Costco sells at a loss | The card pays for the hot dog\ntags: #Costco #business #money\npinned: Would you pay to shop? Sources are in the description.\n");
+
+test('publishing pack: 3 titles under 60 characters, 3 hashtags, pinned comment, disclosure', () => {
+  const script = parseScript(tmp('script.md', PUBLISH_SCRIPT));
+  assert.deepEqual(lintPublish(script).filter((i) => i.level === 'error'), []);
+  const bad = (from, to) => lintPublish(parseScript(tmp('script.md', PUBLISH_SCRIPT.replace(from, to)))).filter((i) => i.level === 'error');
+  assert.ok(bad(' | The card pays for the hot dog', '').some((i) => i.rule === 'titles'), 'two titles are not enough');
+  assert.ok(bad('Why Costco sells at a loss', 'Why Costco sells at a loss and what that tells you about the whole of retail').some((i) => /under 60/.test(i.message)));
+  assert.ok(bad('#Costco #business #money', '#Costco #business').some((i) => i.rule === 'hashtags'));
+  assert.ok(bad('pinned: Would you pay to shop? Sources are in the description.\n', '').some((i) => i.rule === 'pinned'));
+  assert.ok(bad('Why Costco sells at a loss', 'Why you should buy the stock').some((i) => /advice/.test(i.message)));
+  assert.equal(TITLE_MAX, 59);
+  // figures in titles need a source too
+  assert.ok(publishFigures(script).some((f) => f.raw.includes('1.50')));
+
+  const src = parseSources(tmp('sources.md', GOOD_SOURCES));
+  const md = buildMetadata({ id: '001', script, src, channel: { cta: 'Follow for a new company every day' }, voiceSource: 'recorded' });
+  assert.match(md, /## Titles/);
+  assert.match(md, /Follow for a new company every day/);
+  assert.match(md, /#Costco #business #money/);
+  assert.match(md, /## Pinned comment\nWould you pay to shop\?/);
+  assert.match(md, /\*\*No\. Leave it unticked\.\*\*/);
+  assert.doesNotMatch(md, /Not ready to upload/);
+  const tts = buildMetadata({ id: '001', script, src, channel: { cta: '[e.g. follow]' }, voiceSource: 'tts' });
+  assert.match(tts, /\*\*Yes, tick it for this file\.\*\*/);
+  assert.match(tts, /Not ready to upload/);
+  assert.equal(disclosure('recorded').tick, false);
+  assert.equal(disclosure('tts').tick, true);
+});
+
+test('subtitle file: one cue per sentence, in order, never overlapping', () => {
+  const script = parseScript(tmp('script.md', GOOD_SCRIPT));
+  const srt = buildSrt(script, syntheticTimings(script.text));
+  const cues = srt.trim().split('\n\n');
+  assert.ok(cues.length >= script.sentences.length);
+  const toMs = (t) => { const [h, m, rest] = t.split(':'); const [s, ms] = rest.split(','); return ((+h * 60 + +m) * 60 + +s) * 1000 + +ms; };
+  let last = -1;
+  for (const c of cues) {
+    const [, times] = c.split('\n');
+    const [a, b] = times.split(' --> ').map(toMs);
+    assert.ok(a > last - 1 && b > a, c);
+    last = b;
+  }
+  assert.equal(cues.map((c) => c.split('\n').slice(2).join(' ')).join(' '), script.words.join(' '));
+});
+
+// -------------------------------------------------------------------- sound
+const ASSETS_DIR = path.join(path.dirname(new URL(import.meta.url).pathname), '..', 'assets');
+
+test('sound: every file in assets/ has a licence entry, and every entry has a file', () => {
+  const lic = fs.readFileSync(path.join(ASSETS_DIR, 'licences.md'), 'utf8');
+  const listed = new Set([...lic.matchAll(/`((?:sfx|music)\/[A-Za-z0-9_.-]+)`/g)].map((m) => m[1]));
+  const onDisk = new Set(['sfx', 'music'].flatMap((d) => fs.readdirSync(path.join(ASSETS_DIR, d)).map((f) => `${d}/${f}`)));
+  assert.deepEqual([...onDisk].filter((f) => !listed.has(f)), [], 'files without a licence entry');
+  assert.deepEqual([...listed].filter((f) => !onDisk.has(f)), [], 'licence entries without a file');
+  for (const [family, count] of Object.entries(SFX)) for (let k = 1; k <= count; k++) assert.ok(onDisk.has(`sfx/${family}-${k}.wav`), `${family}-${k}`);
+  for (const bed of MUSIC) assert.ok(onDisk.has(`music/${bed}.ogg`), bed);
+});
+
+test('sound: music rotates so neighbours differ; effects follow the cue frames', () => {
+  for (let n = 1; n < 40; n++) assert.notEqual(pickMusic(String(n).padStart(3, '0')), pickMusic(String(n + 1).padStart(3, '0')));
+  assert.equal(pickMusic('007', { sound: { music: 'vault' } }), 'vault');
+  assert.equal(pickMusic('007', { sound: { music: 'none' } }), null);
+  assert.throws(() => pickMusic('007', { sound: { music: 'nope' } }));
+
+  const script = parseScript(tmp('script.md', GOOD_SCRIPT));
+  const { props } = buildProps({ plan: PLAN, script, words: syntheticTimings(script.text), id: '001' });
+  const sp = soundPlan(props, PLAN);
+  assert.equal(sp.music, 'music/caper.ogg');
+  assert.equal(sp.events[0].t, 0);
+  assert.equal(sp.events[0].family, 'slam');
+  // one event for each scene change, at that scene's first frame
+  for (const sc of props.scenes.slice(1)) assert.ok(sp.events.some((e) => Math.abs(e.t - sc.from / 30) < 0.001), `no sound at scene start ${sc.from}`);
+  // sorted, inside the video, never two on top of each other (counter ticks aside)
+  for (let i = 1; i < sp.events.length; i++) {
+    assert.ok(sp.events[i].t >= sp.events[i - 1].t);
+    if (sp.events[i].family !== 'tick') assert.ok(sp.events[i].t - sp.events[i - 1].t >= 0.1, `${sp.events[i - 1].file} and ${sp.events[i].file} collide`);
+  }
+  assert.ok(sp.events.every((e) => e.t < sp.seconds && e.gainDb < -5 && /^sfx\/[a-z]+-\d\.wav$/.test(e.file)));
+  // the next video starts on different files
+  const other = soundPlan({ ...props, id: '002' }, PLAN);
+  assert.notEqual(other.music, sp.music);
+  assert.notDeepEqual(other.events.map((e) => e.file), sp.events.map((e) => e.file));
+  assert.deepEqual(soundPlan(props, { ...PLAN, sound: { sfx: false } }).events, []);
 });

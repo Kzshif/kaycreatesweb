@@ -3,7 +3,7 @@
 import fs from 'node:fs';
 import { STATUS_CSV } from './paths.mjs';
 
-export const COLUMNS = ['id', 'topic', 'stage', 'problems', 'voice', 'accent', 'opening', 'scenes', 'seconds', 'updated'];
+export const COLUMNS = ['id', 'topic', 'stage', 'problems', 'voice', 'accent', 'opening', 'scenes', 'music', 'seconds', 'updated'];
 
 // The order a video moves through. A video only advances when its step passes.
 export const STAGES = [
@@ -13,6 +13,7 @@ export const STAGES = [
   'planned', //   video.json (the storyboard) is valid and differs from its neighbours
   'voiced', //    clean audio exists (recorded, or TTS fallback - see `voice` column)
   'timed', //     Whisper word timings exist and match the script
+  'mixed', //     the soundtrack is mixed: voice + music bed + effects at -14 LUFS
   'rendered', //  the MP4 exists
   'ready', //     the MP4 passed every QA check: upload-ready
   'uploaded', //  you uploaded it (set by hand: `cli.mjs mark 001 uploaded`)

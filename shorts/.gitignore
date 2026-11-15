@@ -15,3 +15,6 @@ videos/*/out/
 # Python bytecode
 __pycache__/
 *.pyc
+
+# finished videos, zipped and sent per batch (never stored in git)
+output/

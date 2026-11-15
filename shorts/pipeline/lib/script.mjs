@@ -10,7 +10,10 @@ import { cleanQuotes, estimateSeconds, figures, norm, sentences, tokens } from '
  *   id: 001
  *   company: Costco
  *   topic: Membership fees are the profit
- *   idea: One sentence: the single idea of the video.
+ *   idea: One sentence: the single idea of the video. It opens the description.
+ *   titles: Option one | Option two | Option three     (each under 60 characters)
+ *   tags: #Costco #business #money                     (exactly 3)
+ *   pinned: The comment to pin. A question works best.
  *   names: iPhone 15 | Model 3        (optional: digit-names that are not figures)
  *   say: AWS=A W S | Nvidia=en-vidia  (optional: pronunciation help for the fallback voice)
  *   ---
@@ -158,7 +161,7 @@ export function lintScript(script) {
   }
 
   // 8. housekeeping
-  if (/#\w/.test(script.text)) out.push(issue('error', 'format', 'Hashtags belong in upload.md, not the spoken script.'));
+  if (/#\w/.test(script.text)) out.push(issue('error', 'format', 'Hashtags belong in the front matter (`tags:`), not the spoken script.'));
   if (/[™®]/.test(script.text)) out.push(issue('error', 'format', 'Remove trademark symbols.'));
   if (!script.meta.company) out.push(issue('error', 'format', 'Front matter needs `company:`.'));
   if (!script.meta.topic) out.push(issue('error', 'format', 'Front matter needs `topic:`.'));

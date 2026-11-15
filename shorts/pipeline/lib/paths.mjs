@@ -9,6 +9,9 @@ export const CHANNEL_JSON = path.join(ROOT, 'channel.json');
 export const MODELS = path.join(ROOT, '.models');
 export const CACHE = path.join(ROOT, '.cache');
 export const PYTHON = path.join(ROOT, '.venv', 'bin', 'python');
+export const ASSETS = path.join(ROOT, 'assets');
+export const LICENCES = path.join(ASSETS, 'licences.md');
+export const OUTPUT = path.join(ROOT, 'output');
 
 export const padId = (id) => String(id).replace(/\D/g, '').padStart(3, '0');
 
@@ -37,7 +40,7 @@ export function videoFiles(v) {
     script: path.join(v.dir, 'script.md'),
     sources: path.join(v.dir, 'sources.md'),
     plan: path.join(v.dir, 'video.json'),
-    upload: path.join(v.dir, 'upload.md'),
+    metadata: path.join(v.dir, 'metadata.md'),
     voiceRaw: path.join(v.dir, 'voice.wav'),
     words: path.join(v.dir, 'words.json'),
     work,
@@ -45,6 +48,12 @@ export function videoFiles(v) {
     voiceClean: path.join(work, 'voice.clean.wav'),
     voiceReport: path.join(work, 'voice.report.json'),
     props: path.join(work, 'props.json'),
+    soundPlan: path.join(work, 'sound.plan.json'),
+    mix: path.join(work, 'mix.wav'),
+    mixReport: path.join(work, 'mix.report.json'),
+    checks: path.join(work, 'checks'),
+    cover: path.join(out, 'cover.png'),
+    srt: path.join(out, 'captions.srt'),
     qa: path.join(work, 'qa.json'),
     stills: path.join(work, 'stills'),
     mp4: path.join(out, `${v.name}.mp4`),

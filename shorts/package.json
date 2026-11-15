@@ -20,10 +20,13 @@
     "next": "node pipeline/cli.mjs next"
   },
   "dependencies": {
+    "@fontsource-variable/bricolage-grotesque": "5.3.0",
+    "@fontsource-variable/fraunces": "5.3.0",
     "@fontsource/anton": "5.3.0",
     "@fontsource/archivo": "5.3.0",
     "@fontsource/archivo-black": "5.3.0",
     "@fontsource/bricolage-grotesque": "5.3.0",
+    "@fontsource/dm-mono": "5.3.0",
     "@fontsource/dm-sans": "5.3.0",
     "@fontsource/dm-serif-display": "5.3.0",
     "@fontsource/fraunces": "5.3.0",
