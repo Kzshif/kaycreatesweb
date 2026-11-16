@@ -9,6 +9,7 @@ import { ACCENTS, GROUNDS, GROUND_ACCENTS, SCENES, cueCount } from '../src/share
 import { buildCaptions, captionStats, displayWord } from '../pipeline/lib/captions.mjs';
 import { checkVariety, findPhrase, resolveAnchors, screenFigures, signature, validatePlan } from '../pipeline/lib/plan.mjs';
 import { lintScript, parseScript } from '../pipeline/lib/script.mjs';
+import { EARNED, FEES, SCRIPT, motionPlan, motionSounds } from '../src/board/motion-plan.mjs';
 import * as PM from '../src/shared/paper.mjs';
 import { MUSIC, SFX, pickMusic, soundPlan } from '../src/shared/sound.mjs';
 import { TITLE_MAX, buildMetadata, buildSrt, disclosure, lintPublish, publishFigures } from '../pipeline/lib/publish.mjs';
@@ -478,4 +479,29 @@ test('paper money: three typefaces, none of the forbidden ones', () => {
     }
   }
   assert.deepEqual(PM.FORBIDDEN_FONTS, ['Inter', 'Roboto', 'Arial', 'Montserrat', 'Poppins']);
+});
+
+// -------------------------------------------------------------- motion test
+test('motion test: whole coins that match the sourced figures, sounds on the picture cues', () => {
+  // one coin = $0.5 billion; fees $5.323bn and operating income $10.383bn (pilot 001 sources)
+  assert.equal(FEES.coins, Math.round(5.323 / 0.5));
+  assert.equal(EARNED.coins, Math.round(10.383 / 0.5));
+  // its narration only uses figures the Costco fact file carries
+  const src = parseSources(path.join(path.dirname(new URL(import.meta.url).pathname), '..', 'videos', '001-costco-membership', 'sources.md'));
+  assert.deepEqual(checkCoverage(src, figures(SCRIPT.join('\n'))).filter((i) => i.level === 'error'), []);
+
+  const cues = { billion: 41, just: 77, walk: 97, s2: 125, earned: 133, earnedEnd: 182, s3: 208, half: 280 };
+  const p = motionPlan(cues);
+  assert.ok(p.slamAt <= PM.MOTION.hookImpactBy, 'the opening number is down within half a second');
+  assert.ok(Math.abs(p.right.start + p.right.n * p.right.every - cues.earnedEnd) < 2, 'the stack is complete as the figure finishes being spoken');
+  assert.ok(p.left.start + p.left.n * p.left.every < cues.s2, 'the fees stack is standing before the scene opens');
+  const ev = motionSounds(cues);
+  const at = (family) => ev.filter((e) => e.file.startsWith(`sfx/${family}-`)).map((e) => e.t);
+  assert.deepEqual(at('tear'), [+(cues.s2 / 30).toFixed(3)]);
+  assert.deepEqual(at('whip'), [+(cues.s3 / 30).toFixed(3)]);
+  assert.deepEqual(at('stamp'), [+(cues.half / 30).toFixed(3)]);
+  assert.deepEqual(at('boom'), [+(p.breakAt / 30).toFixed(3)]);
+  assert.equal(at('slam')[0], +(p.slamAt / 30).toFixed(3));
+  for (let i = 1; i < ev.length; i++) assert.ok(ev[i].t >= ev[i - 1].t);
+  for (const e of ev) assert.ok(fs.existsSync(path.join(ASSETS_DIR, e.file)), e.file);
 });

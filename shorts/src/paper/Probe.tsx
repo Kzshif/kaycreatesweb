@@ -49,7 +49,7 @@ const report = (frame: number) => {
       if (x2 < 0 || y2 < 0 || x1 > FRAME.width || y1 > FRAME.height) continue; // off-frame: invisible
       n++;
       area += (x2 - x1) * (y2 - y1);
-      const zone = x2 > SAFE.right + 1 ? 'right' : y2 > SAFE.bottom + 1 ? 'bottom' : y1 < SAFE.top - 1 ? 'top' : x1 < SAFE.left - 40 ? 'left' : null;
+      const zone = x2 > SAFE.right + 1 ? 'right' : y2 > SAFE.bottom + 1 ? 'bottom' : y1 < SAFE.top - 1 ? 'top' : x1 < -1 ? 'cut' : null;
       if (zone) hits.push({ t: text.slice(0, 40), zone, box: [x1, y1, x2, y2].map(Math.round) });
       if (box) {
         const b = box.getBoundingClientRect();

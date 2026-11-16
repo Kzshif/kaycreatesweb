@@ -1,6 +1,7 @@
 import React from 'react';
 import { Composition } from 'remotion';
 import { Board } from './board/Board';
+import { Motion, type MotionProps } from './board/Motion';
 import { Short } from './Short';
 import { FRAME } from './shared/spec.mjs';
 import type { ShortProps } from './types';
@@ -22,6 +23,16 @@ const demo: ShortProps = {
 
 export const Root: React.FC = () => (
   <>
+  <Composition
+    id="Motion"
+    component={Motion}
+    width={FRAME.width}
+    height={FRAME.height}
+    fps={FRAME.fps}
+    durationInFrames={300}
+    defaultProps={{ durationInFrames: 300, captions: [], cues: { billion: 30, just: 50, walk: 62, s2: 95, earned: 110, earnedEnd: 150, s3: 205, half: 250 }, audio: null, probe: false } as MotionProps}
+    calculateMetadata={({ props }) => ({ durationInFrames: props.durationInFrames })}
+  />
   <Composition id="Board" component={Board} width={FRAME.width} height={FRAME.height} fps={FRAME.fps} durationInFrames={90} defaultProps={{ page: 1, probe: false }} />
   <Composition
     id="Short"

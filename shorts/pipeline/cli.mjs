@@ -415,6 +415,8 @@ async function qa(v) {
     seen.add(key);
     problems.push(`text "${h.t}" enters the ${h.zone === 'right' ? 'right 15%' : 'bottom 20%'} of the frame at ${(h.frame / 30).toFixed(1)}s`);
   }
+  const cut = new Set(hits.filter((h) => h.zone === 'cut').map((h) => h.t));
+  if (cut.size) warn(`text cut off by the left edge of the frame: ${[...cut].slice(0, 3).join(', ')}`);
   const top = new Set(hits.filter((h) => h.zone === 'top').map((h) => h.t));
   if (top.size) warn(`text near the very top of the frame: ${[...top].slice(0, 3).join(', ')}`);
   const first = probe.frames.find((fr) => fr.frame === 0);

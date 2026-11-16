@@ -105,10 +105,10 @@ export async function renderStills(props, frames, outDir, { scale = 1, onProbe =
  * Safe-zone pass: renders every `step`-th frame with the probe on and collects
  * what the probe reports. Returns { frames: [{frame, n, area, hits}] }.
  */
-export async function probeVideo(props, { step = 6, onProgress } = {}) {
+export async function probeVideo(props, { step = 6, onProgress, id = 'Short' } = {}) {
   const serveUrl = await getBundle();
   const inputProps = { ...props, probe: true, audio: null };
-  const composition = await selectComposition({ serveUrl, id: 'Short', inputProps, ...common() });
+  const composition = await selectComposition({ serveUrl, id, inputProps, ...common() });
   const out = fs.mkdtempSync(path.join(os.tmpdir(), 'shorts-probe-'));
   const reports = new Map();
   try {
@@ -139,9 +139,9 @@ export async function probeVideo(props, { step = 6, onProgress } = {}) {
   return { frames: [...reports.values()].sort((a, b) => a.frame - b.frame) };
 }
 
-export async function renderVideo(props, output, { onProgress } = {}) {
+export async function renderVideo(props, output, { onProgress, id = 'Short' } = {}) {
   const serveUrl = await getBundle();
-  const composition = await selectComposition({ serveUrl, id: 'Short', inputProps: props, ...common() });
+  const composition = await selectComposition({ serveUrl, id, inputProps: props, ...common() });
   fs.mkdirSync(path.dirname(output), { recursive: true });
   const tmp = `${output}.rendering.mp4`;
   await renderMedia({

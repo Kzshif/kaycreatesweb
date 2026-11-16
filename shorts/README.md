@@ -154,9 +154,15 @@ for contrast; the materials are in `src/paper/`.
 ```bash
 node pipeline/dev/board.mjs          # render the 8-frame style board into identity/board/
 node pipeline/dev/board.mjs --draft  # half size, for a quick look
+node pipeline/dev/motion.mjs         # the 11-second motion and sound test -> identity/motion-test.mp4
 python pipeline/make_textures.py     # remake the paper grain and stamp-wear textures
 node pipeline/make_audio_assets.cjs  # remake the effects and music beds
 ```
+
+The motion test runs through the real stages (fallback voice, Whisper timing,
+captions, sound mix, render, checks) and shows what stills cannot: paper moving
+on twos while type and numbers glide, a page tearing away, coins stacking to
+the spoken figure, the mid-video pattern break, a camera whip and a stamp.
 
 **Where this stands.** The style board is waiting for approval. Until it is
 approved, `render` still draws the first look (flat graphics, captions low in

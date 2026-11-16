@@ -21,3 +21,4 @@ output/
 
 # style-board stills are sent in chat; only the contact sheet is kept
 identity/board/*.png
+identity/*.mp4

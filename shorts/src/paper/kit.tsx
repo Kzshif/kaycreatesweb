@@ -252,7 +252,7 @@ export const Cut: React.FC<CutProps> = ({ w, h, d, core, color, lift = 0.22, dar
   const ox = Math.round(hash(seed, 71) * 512);
   const oy = Math.round(hash(seed, 72) * 512);
   return (
-    <div style={{ position: 'absolute', width: w, height: h, filter: `${contact} ${ambient}`, ...style }}>
+    <div style={{ position: 'absolute', width: w, height: h, filter: L <= 0.16 ? contact : `${contact} ${ambient}`, ...style }}>
       {core ? <div style={{ position: 'absolute', inset: 0, clipPath: `path('${core}')`, background: BRIGHT }} /> : null}
       <div style={{ position: 'absolute', inset: 0, clipPath: `path('${d}')`, background: color }}>
         {children}
