@@ -15,6 +15,7 @@
 //   node pipeline/cli.mjs pack 001|all      copy the finished files to output/<id>-<company>/
 //   node pipeline/cli.mjs preview 001       contact sheet of stills, to review the look by eye
 //   node pipeline/cli.mjs mark 001 uploaded record that you uploaded it
+//   node pipeline/cli.mjs batch pilots 001 002 003   batch report + zip of finished videos, in output/batches/
 import { execFileSync } from 'node:child_process';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -28,8 +29,9 @@ import { buildMetadata, buildSrt, lintPublish, publishFigures } from './lib/publ
 import { lintScript, parseScript } from './lib/script.mjs';
 import { checkClaims, checkCoverage, parseSources, uncertainClaims } from './lib/sources.mjs';
 import { STAGES, getRow, readStatus, setProblems, setStage, stageIndex, updateRow } from './lib/status.mjs';
-import { figures, spokenForm, syntheticTimings } from './lib/text.mjs';
+import { figures, sentences, spokenForm, syntheticTimings } from './lib/text.mjs';
 import { buildProps } from './lib/timing.mjs';
+import { motionWindows, restingHits } from './lib/zones.mjs';
 
 const log = (...a) => console.log(...a);
 const channel = () => readJson(CHANNEL_JSON, {});
@@ -340,11 +342,14 @@ function matchCaptions(script, pages) {
  * The same frames are judged from the page itself (the probe): text outside its box,
  * text under YouTube's buttons, and captions that are too small, too faint or out of place.
  */
-function exportStills(f, props, probe) {
+function exportStills(f, props, probe, motion = []) {
   const pages = props.captions;
   const picks = [...Array(6)].map((_, k) => pages[Math.min(pages.length - 1, Math.floor(((k + 0.5) * pages.length) / 6))]).filter(Boolean);
   const probed = new Map(probe.frames.map((fr) => [fr.frame, fr]));
-  const nearest = (frame) => [...probed.keys()].reduce((best, x) => (Math.abs(x - frame) < Math.abs(best - frame) ? x : best), probe.frames[0]?.frame ?? 0);
+  // a still shows the picture at rest: never a frame in the middle of a transition or the zoom break
+  const still = [...probed.keys()].filter((x) => !motion.some(([a, b]) => x >= a && x < b));
+  const keys = still.length ? still : [...probed.keys()];
+  const nearest = (frame) => keys.reduce((best, x) => (Math.abs(x - frame) < Math.abs(best - frame) ? x : best), keys[0] ?? 0);
   const frames = [...new Set(picks.map((p) => nearest(Math.round((p.from + p.to) / 2))))];
   fs.rmSync(f.checks, { recursive: true, force: true });
   fs.mkdirSync(f.checks, { recursive: true });
@@ -416,23 +421,25 @@ async function qa(v) {
     problems.push(`the picture barely changes for ${vr.visual_change.longest_static_s}s from ${vr.visual_change.longest_static_at_s}s`);
   }
 
-  // 3. no text under YouTube's buttons, and a readable claim on frame 0
+  // 3. no text resting under YouTube's buttons, and a readable claim on frame 0. Text in motion
+  // (a transition, the zoom break, a card dropping in) may pass through a zone; text may not stay there.
   process.stdout.write('  qa: checking every sampled frame for text in the button zones   ');
-  const probe = await probeVideo(built.props, { step: 3 });
+  const STEP = 3;
+  const probe = await probeVideo(built.props, { step: STEP });
   process.stdout.write('\r');
   const hits = probe.frames.flatMap((fr) => fr.hits.map((h) => ({ ...h, frame: fr.frame })));
-  const hard = hits.filter((h) => h.zone === 'right' || h.zone === 'bottom');
-  const seen = new Set();
-  for (const h of hard) {
-    const key = `${h.zone}:${h.t}`;
-    if (seen.has(key)) continue;
-    seen.add(key);
-    problems.push(`text "${h.t}" enters the ${h.zone === 'right' ? 'right 15%' : 'bottom 20%'} of the frame at ${(h.frame / 30).toFixed(1)}s`);
-  }
-  const cut = new Set(hits.filter((h) => h.zone === 'cut').map((h) => h.t));
-  if (cut.size) warn(`text cut off by the left edge of the frame: ${[...cut].slice(0, 3).join(', ')}`);
-  const top = new Set(hits.filter((h) => h.zone === 'top').map((h) => h.t));
-  if (top.size) warn(`text near the very top of the frame: ${[...top].slice(0, 3).join(', ')}`);
+  const motion = motionWindows(built.props);
+  const zone = (z) => restingHits(hits.filter((h) => h.zone === z), motion, { step: STEP });
+  const right = zone('right');
+  const bottom = zone('bottom');
+  const hard = [...right.resting, ...bottom.resting].sort((a, b) => a.frame - b.frame);
+  for (const h of hard) problems.push(`text "${h.t}" rests in the ${h.zone === 'right' ? 'right 15%' : 'bottom 20%'} of the frame from ${(h.frame / 30).toFixed(1)}s`);
+  const passing = right.passing + bottom.passing;
+  if (passing) log(`          note: ${passing} text(s) cross a button zone only while moving (allowed)`);
+  const cut = zone('cut').resting.map((h) => h.t);
+  if (cut.length) warn(`text cut off by the left edge of the frame: ${cut.slice(0, 3).join(', ')}`);
+  const top = zone('top').resting.map((h) => h.t);
+  if (top.length) warn(`text near the very top of the frame: ${top.slice(0, 3).join(', ')}`);
   const first = probe.frames.find((fr) => fr.frame === 0);
   if (!first || first.n === 0 || first.area < 60000) problems.push('frame 0 has no large readable text: the hook must be on screen from the first frame');
   if (!probe.frames.length) problems.push('the safe-zone check produced no data');
@@ -452,7 +459,7 @@ async function qa(v) {
   if (spelling.shown !== spelling.expected) problems.push(`subtitles show ${spelling.shown} words; the script has ${spelling.expected}`);
 
   // 6. six stills from the finished file, each checked for overflow, button zones and caption legibility
-  const stills = exportStills(f, built.props, probe);
+  const stills = exportStills(f, built.props, probe, motion);
   for (const s of stills.items) for (const m of s.problems) problems.push(`still ${s.n} (${s.seconds}s): ${m}`);
 
   // 7. facts and script must still pass
@@ -494,8 +501,8 @@ function publish(v) {
   const script = parseScript(f.script);
   const src = parseSources(f.sources);
   checkClaims(src);
-  const voiceSource = exists(f.voiceReport) ? readJson(f.voiceReport).source : 'tts';
-  const text = buildMetadata({ id: v.id, script, src, channel: channel(), voiceSource, files: { cover: 'cover.png', srt: 'captions.srt' } });
+  const vr = exists(f.voiceReport) ? readJson(f.voiceReport) : {};
+  const text = buildMetadata({ id: v.id, script, src, channel: channel(), voiceSource: vr.source || 'tts', voice: vr.voice || '', files: { cover: 'cover.png', srt: 'captions.srt' } });
   if (!exists(f.metadata) || fs.readFileSync(f.metadata, 'utf8') !== text) fs.writeFileSync(f.metadata, text);
   if (exists(f.words)) {
     fs.mkdirSync(f.out, { recursive: true });
@@ -620,6 +627,62 @@ function next() {
   }
 }
 
+// ------------------------------------------------------------ batches -----
+/**
+ * A batch: the finished videos' folders, a report that leads with every figure to check by hand,
+ * and one zip of the lot in output/batches/, ready to send. Videos never go into git.
+ */
+function batch(name, ids) {
+  if (!name || !ids.length) throw new Error('usage: batch <name> <id> [<id> ...]');
+  const vids = ids.map((id) => findVideo(id));
+  const rows = [];
+  const hand = [];
+  const notReady = [];
+  for (const v of vids) {
+    const f = videoFiles(v);
+    const script = parseScript(f.script);
+    const dir = outputDir(v, script);
+    const q = exists(f.qa) ? readJson(f.qa) : null;
+    const vr = exists(f.voiceReport) ? readJson(f.voiceReport) : {};
+    if (!q?.passed || !exists(path.join(dir, 'final.mp4'))) notReady.push(`${v.id}: ${!q ? 'not checked' : !q.passed ? 'failed QA' : 'not packed'}`);
+    for (const c of q?.hand_checks || uncertainClaims(parseCheckedSources(f))) hand.push({ id: v.id, company: script.meta.company, ...c });
+    rows.push({ v, script, dir, q, vr, hook: sentences(script.text)[0] || '' });
+  }
+  if (notReady.length) throw new Error(`not every video is finished: ${notReady.join('; ')}. Run make first.`);
+
+  const sec = (x) => `${Math.round(x)}s`;
+  const lines = [`# Batch "${name}": ${rows.length} video${rows.length > 1 ? 's' : ''} (${rows.map((r) => r.v.id).join(', ')})`, ''];
+  lines.push(`Made ${new Date().toISOString().slice(0, 10)}. Each folder holds final.mp4, metadata.md (titles, description, hashtags, pinned comment, AI-content answer), sources.md, captions.srt and cover.png.`, '');
+  lines.push('## Check these figures by hand before upload', '');
+  if (!hand.length) lines.push('None. Every figure on screen and in the descriptions has two independent sources.', '');
+  for (const h of hand) lines.push(`- **${h.id} ${h.company}, claim ${h.n}** (${h.confidence}): ${h.title}. Shown as: ${h.figures || 'derived'}. Why: ${h.why.replace(/[.\s]+$/, '')}.${h.url ? ` Source: ${h.url}` : ''}`);
+  if (hand.length) lines.push('');
+  lines.push('## The videos', '', '| No. | Company | Length | Voice | Hook | Loudness | Subtitles | Text under buttons |', '|---|---|---|---|---|---|---|---|');
+  for (const r of rows) {
+    const q = r.q;
+    lines.push(`| ${r.v.id} | ${r.script.meta.company} | ${sec(q.format.seconds)} | ${r.vr.voice || r.vr.source || '?'} | ${r.hook.replace(/\|/g, '/')} | ${q.loudness?.lufs ?? '?'} LUFS | ${q.subtitles.words_shown}/${q.subtitles.words_in_script} words | ${q.safe_zones.violations} |`);
+  }
+  lines.push('', '## At upload, every video', '');
+  lines.push('- Tick "Altered or synthetic content": the narrator is a synthetic voice (each metadata.md says so and why).');
+  lines.push('- Not made for kids. Upload captions.srt as English subtitles. Use cover.png as the thumbnail frame.');
+  lines.push('- Pin the comment from metadata.md, then: `node pipeline/cli.mjs mark <id> uploaded`.');
+  lines.push('- One a day, in number order: neighbours were planned not to share an opening, a colour or a voice.');
+  const warnings = rows.flatMap((r) => (r.q.problems || []).filter((p) => p.startsWith('warning:')).map((p) => `${r.v.id}: ${p.replace(/^warning:\s*/, '')}`));
+  if (warnings.length) lines.push('', '## Warnings from the checks (none of them block upload)', '', ...warnings.map((w) => `- ${w}`));
+  const dirOut = path.join(OUTPUT, 'batches');
+  fs.mkdirSync(dirOut, { recursive: true });
+  const report = path.join(dirOut, `${name}-report.md`);
+  fs.writeFileSync(report, `${lines.join('\n')}\n`);
+  const zip = path.join(dirOut, `${name}.zip`);
+  fs.rmSync(zip, { force: true });
+  // stored, not deflated: the MP4s are already compressed
+  execFileSync('zip', ['-q', '-0', '-r', '-j', zip, report], { cwd: OUTPUT });
+  execFileSync('zip', ['-q', '-0', '-r', zip, ...rows.map((r) => path.relative(OUTPUT, r.dir))], { cwd: OUTPUT });
+  const mb = (fs.statSync(zip).size / 1048576).toFixed(1);
+  log(`  batch  ${path.relative(ROOT, report)}\n  zip    ${path.relative(ROOT, zip)} (${mb} MB, ${rows.length} videos, ${hand.length} figure(s) to check by hand)`);
+  return { report, zip };
+}
+
 // --------------------------------------------------------------- main ------
 const [cmd, arg, ...rest] = process.argv.slice(2);
 const flags = { force: rest.includes('--force') || arg === '--force' };
@@ -691,6 +754,9 @@ try {
         await preview(v);
       }
       break;
+    case 'batch':
+      batch(arg, rest);
+      break;
     case 'mark': {
       const v = findVideo(arg);
       if (!STAGES.includes(rest[0])) throw new Error(`usage: mark <id> <${STAGES.join('|')}>`);
@@ -699,7 +765,7 @@ try {
       break;
     }
     default:
-      log(fs.readFileSync(new URL(import.meta.url), 'utf8').split('\n').slice(1, 17).map((l) => l.replace(/^\/\/ ?/, '')).join('\n'));
+      log(fs.readFileSync(new URL(import.meta.url), 'utf8').split('\n').slice(1, 18).map((l) => l.replace(/^\/\/ ?/, '')).join('\n'));
   }
 } catch (e) {
   console.error(`\nerror: ${e.message}`);

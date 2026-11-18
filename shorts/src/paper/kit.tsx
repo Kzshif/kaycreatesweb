@@ -330,55 +330,47 @@ export const Scraps: React.FC<{ seed?: number }> = ({ seed = 1 }) => {
 };
 
 // ------------------------------------------------------------------ type
-let ctx: CanvasRenderingContext2D | null = null;
 const widths = new Map<string, number>();
-/** Width in px of text in one of the three roles (fonts are loaded before anything is measured). */
-let probeSpan: HTMLSpanElement | null = null;
-/** Numerals are measured as the page draws them: canvas text ignores Fraunces' SOFT and WONK settings. */
-const numeralEm = (text: string): number => {
-  if (typeof document === 'undefined') return text.length * 0.62;
-  if (!probeSpan) {
-    probeSpan = document.createElement('span');
-    Object.assign(probeSpan.style, { position: 'absolute', left: '-99999px', top: '0', visibility: 'hidden', whiteSpace: 'nowrap', fontSize: '200px' });
-    probeSpan.style.fontFamily = `"${TYPE.numeral.family}"`;
-    probeSpan.style.fontWeight = String(TYPE.numeral.weight);
-    probeSpan.style.fontVariationSettings = `"opsz" ${TYPE.numeral.opsz}, "SOFT" ${TYPE.numeral.soft}, "WONK" ${TYPE.numeral.wonk}`;
-    probeSpan.style.letterSpacing = `${TYPE.numeral.tracking}em`;
-    document.body.appendChild(probeSpan);
-  }
-  probeSpan.textContent = text;
-  // the hatched shade sits 4% of the size to the right of the figure
-  return probeSpan.getBoundingClientRect().width / 200 + 0.045;
-};
-export const measure = (text: string, role: 'headline' | 'numeral' | 'label', size: number): number => {
-  const R = TYPE[role];
-  const key = `${role}|${text}`;
-  if (role === 'numeral') {
-    let em = widths.get(key);
-    if (em === undefined) {
-      em = numeralEm(text);
-      widths.set(key, em);
-    }
-    return em * size;
-  }
+const spans: Partial<Record<'headline' | 'numeral' | 'label', HTMLSpanElement>> = {};
+/**
+ * Width in px of text in one of the three roles, measured the way the page draws it: a hidden span
+ * with the role's own style. Canvas text cannot be trusted here: it ignores Fraunces' SOFT and WONK
+ * axes, Bricolage's width axis and the labels' capitals, and came out about 5% narrower than the page.
+ * Fonts are loaded before anything is measured.
+ */
+export const measure = (text: string, role: 'headline' | 'numeral' | 'label', size: number, track?: number): number => {
+  const key = `${role}|${track ?? ''}|${text}`;
   let em = widths.get(key);
   if (em === undefined) {
-    if (!ctx) ctx = document.createElement('canvas').getContext('2d');
-    if (!ctx) return text.length * size * 0.56;
-    ctx.font = `${R.weight} ${role === 'headline' ? 'semi-condensed ' : ''}200px "${R.family}"`;
-    em = ctx.measureText(text).width / 200;
+    if (typeof document === 'undefined') return text.length * size * 0.56;
+    let span = spans[role];
+    if (!span) {
+      span = document.createElement('span');
+      const style = role === 'headline' ? headStyle(200, '#000') : role === 'numeral' ? numStyle(200) : labelStyle(200, '#000');
+      for (const [k, v] of Object.entries(style)) (span.style as unknown as Record<string, string>)[k] = k === 'fontSize' ? `${v}px` : String(v);
+      Object.assign(span.style, { position: 'absolute', left: '-99999px', top: '0', visibility: 'hidden', whiteSpace: 'nowrap', lineHeight: '1' });
+      document.body.appendChild(span);
+      spans[role] = span;
+    }
+    span.style.letterSpacing = `${track ?? TYPE[role].tracking}em`;
+    span.textContent = text;
+    // a numeral's hatched shade sits 4.5% of the size to the right of the figure
+    em = span.getBoundingClientRect().width / 200 + (role === 'numeral' ? 0.045 : 0);
     widths.set(key, em);
   }
-  return (em + R.tracking * text.length) * size;
+  return em * size;
 };
 /** The largest size (up to `max`) at which every line fits `width`. */
-export const fit = (lines: string[], role: 'headline' | 'numeral' | 'label', width: number, max: number, min = 20): number =>
-  Math.max(min, Math.min(max, ...lines.map((l) => Math.floor((width / Math.max(1, measure(l, role, 100))) * 100))));
+export const fit = (lines: string[], role: 'headline' | 'numeral' | 'label', width: number, max: number, min = 20, track?: number): number =>
+  Math.max(min, Math.min(max, ...lines.map((l) => Math.floor((width / Math.max(1, measure(l, role, 100, track))) * 100))));
 
 export const headStyle = (size: number, color: string): Style => ({
   fontFamily: `"${TYPE.headline.family}"`,
   fontWeight: TYPE.headline.weight,
   fontStretch: `${TYPE.headline.width + 0.5}%`,
+  // optical size pinned to the display cut: with it left on auto, small headlines draw a wider
+  // design than the one they were measured in, and run about 5% past their planned edge
+  fontVariationSettings: `"opsz" ${TYPE.headline.opsz}`,
   fontSize: size,
   letterSpacing: `${TYPE.headline.tracking}em`,
   lineHeight: TYPE.headline.leading,

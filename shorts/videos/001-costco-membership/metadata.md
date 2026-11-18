@@ -1,23 +1,21 @@
 # 001 Costco: publishing pack
 
-> **Not ready to upload yet**
-> - The call to action is still a placeholder: fill in `cta` in `channel.json` and run the pipeline again.
-> - This render uses the fallback voice. Record `voice.wav` before uploading.
-
 ## Titles (pick one; each is under 60 characters)
-1. Costco's real product is a $65 card  `35`
-2. Costco's fees equal half its profit  `35`
+1. Costco barely profits from what it sells  `40`
+2. Costco's real product is a $65 card  `35`
 3. The $5.3 billion Costco makes at the door  `41`
 
 ## Description
 ```
 Costco sells its goods at almost no profit. The fees shoppers pay just to walk in add up to about half of what it earns from running the business.
 
-[YOUR CALL TO ACTION: fill in "cta" in channel.json]
+Follow for a new company every day
 
 Sources:
 - Costco Wholesale Corporation, "Reports Fourth Quarter and Fiscal Year 2025 Operating Results" (fiscal 2025): https://investor.costco.com/news/news-details/2025/Costco-Wholesale-Corporation-Reports-Fourth-Quarter-and-Fiscal-Year-2025-Operating-Results/default.aspx
 - CNN Business, "Costco membership fee price increase" (2024): https://amp.cnn.com/cnn/2024/09/03/business/costco-membership-fee-price-increase
+- Fox Business, "Costco's exclusive hours for executive members 'very well received,' drive sales boost of 1%" (fiscal 2025): https://www.foxbusiness.com/retail/costcos-exclusive-hours-executive-members-very-well-received-drive-sales-boost-1
+- Fortune, "Costco claims its $1.50 hot dog combo is 'forever,' laughing in the face of inflation" (2022): https://fortune.com/2022/09/27/costco-hotdog-combo-forever-cfo-inflation-membership-price/
 
 This video explains how a business works. It is not financial advice.
 
@@ -28,10 +26,10 @@ This video explains how a business works. It is not financial advice.
 #Costco #business #money
 
 ## Pinned comment
-Would you still shop there if the card cost double? Every number in this video is sourced in the description.
+Would you still shop there if the card cost more? Every number in this video is sourced in the description.
 
 ## AI-content disclosure ("Altered or synthetic content")
-**Yes, tick it for this file.** The narration in this render is the synthetic fallback voice, not yours. YouTube's rule covers realistic altered or synthetic content; its help page does not spell out a synthetic narrator reading true facts, so disclosing is the safe choice. Better: record voice.wav and run the pipeline again, and the answer becomes No.
+**Yes, tick it for this file.** The narration is a synthetic voice (am_michael). YouTube asks creators to label realistic altered or synthetic content; its help page does not spell out a synthetic narrator reading true facts over animation, so ticking the box is the safe choice. A recorded voice.wav changes the answer to No.
 
 Reference: https://support.google.com/youtube/answer/14328491
 

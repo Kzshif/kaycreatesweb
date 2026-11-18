@@ -1,7 +1,7 @@
 // Scenes built around a relationship: money flowing between two names, two cards side by side,
 // headline lines with a marker pen, and so-many-out-of-so-many as a tray of coins.
 import React from 'react';
-import { BRIGHT, MANILA } from '../shared/paper.mjs';
+import { BRIGHT, MANILA, TEXT_RIGHT } from '../shared/paper.mjs';
 import { Cut, Headline, Label, Layer, Numeral, clamp, fit, glide, headStyle, jit, measure, onTwos, ramp, rounded, sheet, useLook } from '../paper/kit';
 import { Coin } from '../paper/money';
 import { Product } from '../paper/products';
@@ -156,7 +156,8 @@ export const Words: React.FC<SceneProps> = ({ scene, frame, seed }) => {
   const lines: string[] = p.lines || [];
   const marks: string[] = Array.isArray(p.mark) ? p.mark : p.mark ? [p.mark] : [];
   const ladder = scene.variant === 'ladder';
-  const width = ladder ? 820 - (lines.length - 1) * 30 : 820;
+  // the last line's right edge stays on TEXT_RIGHT, ladder or not
+  const width = TEXT_RIGHT - 82 - (ladder ? (lines.length - 1) * 30 : 0);
   const size = Math.min(fit(lines, 'headline', width, 176), 640 / Math.max(1, lines.length * 0.95));
   const back = drop(frame, cue(scene, 0) - 2, seed + 2, [-60, -100, -5], true);
   return (

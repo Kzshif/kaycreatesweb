@@ -89,11 +89,12 @@ export const PriceTag: React.FC<{ label: string; price: string; sub?: string; w?
 };
 
 // ----------------------------------------------------------------- stamp
+const STAMP_TRACK = 0.005;
 /** The ink a rubber stamp leaves: double border, block capitals, worn where the rubber did not take. */
 export const Stamp: React.FC<{ lines: string[]; sub?: string; width: number; rot?: number; seed?: number; press?: number; style?: Style }> = ({ lines, sub, width, rot = -8, seed = 1, press = 1, style }) => {
   const t = useLook();
   const inner = width - 2 * (9 + 30);
-  const size = fit(lines.map((l) => l.toUpperCase()), 'headline', inner, 150);
+  const size = fit(lines.map((l) => l.toUpperCase()), 'headline', inner, 150, 20, STAMP_TRACK);
   return (
     <div style={{ position: 'absolute', width, transform: `rotate(${rot}deg)`, mixBlendMode: t.inverted ? 'normal' : 'multiply', ...style }}>
       {/* a thin even film of ink, then the full impression with its worn patches on top */}
@@ -119,7 +120,7 @@ export const Stamp: React.FC<{ lines: string[]; sub?: string; width: number; rot
         >
           <div {...(pass === 1 ? { 'data-box': true } : {})} style={{ border: `9px solid ${t.stamp}`, borderRadius: 16, padding: '20px 30px 18px', outline: `3px solid ${t.stamp}`, outlineOffset: -19, textAlign: 'center' }}>
             {lines.map((l, i) => (
-              <div key={i} style={{ ...headStyle(size, t.stamp), letterSpacing: '0.005em', lineHeight: 0.98 }}>
+              <div key={i} style={{ ...headStyle(size, t.stamp), letterSpacing: `${STAMP_TRACK}em`, lineHeight: 0.98 }}>
                 {l.toUpperCase()}
               </div>
             ))}

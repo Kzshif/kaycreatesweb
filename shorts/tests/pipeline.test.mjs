@@ -17,6 +17,7 @@ import { checkClaims, checkCoverage, parseSources, uncertainClaims } from '../pi
 import { parseCsv, toCsv } from '../pipeline/lib/status.mjs';
 import { estimateSeconds, figures, norm, sentences, spokenForm, syntheticTimings, tokens, yearToWords } from '../pipeline/lib/text.mjs';
 import { buildProps } from '../pipeline/lib/timing.mjs';
+import { motionWindows, restingHits } from '../pipeline/lib/zones.mjs';
 
 const tmp = (name, text) => {
   const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'shorts-test-'));
@@ -389,9 +390,13 @@ test('publishing pack: 3 titles under 60 characters, 3 hashtags, pinned comment,
   assert.match(md, /## Pinned comment\nWould you pay to shop\?/);
   assert.match(md, /\*\*No\. Leave it unticked\.\*\*/);
   assert.doesNotMatch(md, /Not ready to upload/);
-  const tts = buildMetadata({ id: '001', script, src, channel: { cta: '[e.g. follow]' }, voiceSource: 'tts' });
+  // a synthetic narrator is a choice, not a blocker: the pack says to tick the AI box, nothing more
+  const tts = buildMetadata({ id: '001', script, src, channel: { cta: 'Follow for a new company every day' }, voiceSource: 'tts', voice: 'bf_emma' });
   assert.match(tts, /\*\*Yes, tick it for this file\.\*\*/);
-  assert.match(tts, /Not ready to upload/);
+  assert.match(tts, /synthetic voice \(bf_emma\)/);
+  assert.doesNotMatch(tts, /Not ready to upload/);
+  // a placeholder call to action still blocks
+  assert.match(buildMetadata({ id: '001', script, src, channel: { cta: '[e.g. follow]' }, voiceSource: 'tts' }), /Not ready to upload/);
   assert.equal(disclosure('recorded').tick, false);
   assert.equal(disclosure('tts').tick, true);
 });
@@ -543,4 +548,24 @@ test('motion test: whole coins that match the sourced figures, sounds on the pic
   assert.equal(at('slam')[0], +(p.slamAt / 30).toFixed(3));
   for (let i = 1; i < ev.length; i++) assert.ok(ev[i].t >= ev[i - 1].t);
   for (const e of ev) assert.ok(fs.existsSync(path.join(ASSETS_DIR, e.file)), e.file);
+});
+
+test('button zones: text may pass through while moving, never rest there', () => {
+  const props = { scenes: [{ from: 0 }, { from: 90, enter: 'whip' }, { from: 200, enter: 'tear' }], patternBreak: { frame: 300, kind: 'zoom', frames: 14 } };
+  const w = motionWindows(props);
+  assert.deepEqual(w, [[90, 97], [200, 211], [300, 320]]);
+  const hit = (t, frame, zone = 'right') => ({ t, frame, zone });
+  // a whip slides a headline through the zone: allowed
+  const whip = [hit('Paid before', 90), hit('Paid before', 93), hit('Paid before', 96)];
+  // a card drops in and is in the zone for one sample: allowed
+  const drop = [hit('Rent', 120)];
+  // a tag that stays at the right edge: caught at its first resting sample
+  const rest = [hit('$65', 150), hit('$65', 153), hit('$65', 156), hit('$65', 159)];
+  // the zoom break pushes text out for its whole window: allowed
+  const zoom = [300, 303, 306, 309, 312, 315, 318].map((f) => hit('UP FRONT', f));
+  const r = restingHits([...whip, ...drop, ...rest, ...zoom], w, { step: 3 });
+  assert.deepEqual(r.resting.map((h) => [h.t, h.frame]), [['$65', 150]]);
+  assert.equal(r.passing, 3);
+  // samples spread over more than a second do not add up to a rest
+  assert.equal(restingHits([hit('x', 0), hit('x', 40), hit('x', 80)], [], { step: 3 }).resting.length, 0);
 });

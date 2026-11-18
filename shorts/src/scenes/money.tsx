@@ -1,6 +1,6 @@
 // Scenes built around money itself: the opening hit, a counter, coin stacks, a note cut by scissors.
 import React from 'react';
-import { MANILA } from '../shared/paper.mjs';
+import { MANILA, TEXT_RIGHT } from '../shared/paper.mjs';
 import { Cut, Headline, Label, Layer, Numeral, Slip, clamp, fit, glide, jit, lerp, measure, onTwos, ramp, settle, sheet, thump, useLook } from '../paper/kit';
 import { Coin, CoinStack, Note, Scissors, stackBox, stackHeight, type Fall } from '../paper/money';
 import { Product, productHeight } from '../paper/products';
@@ -11,6 +11,10 @@ import { Kicker, Lines, StampSlam, counting, cue, drop, linesHeight, rise } from
 const TALL = new Set(['fries', 'phone']);
 
 // ------------------------------------------------------------------ slam
+/** The claim lands 10% oversize and settles, growing from its centre. */
+const SLAM = 1.1;
+/** The widest a slammed line may be so that, even at its largest, it stays clear of YouTube's buttons. */
+const slamWidth = (x: number, want: number) => Math.min(want, (TEXT_RIGHT - x) / (1 + (SLAM - 1) / 2));
 /** The key number lands on the desk before the first word is finished. */
 const SlamNumber: React.FC<SceneProps> = ({ scene, frame, seed }) => {
   const p = scene.props;
@@ -77,16 +81,17 @@ const SlamObject: React.FC<SceneProps> = ({ scene, frame, seed }) => {
   const land = thump(f2, 0, 9, 0.1);
   const tall = TALL.has(p.product);
   const tx0 = tall ? 92 + (p.product === 'phone' ? 300 : 400) + 36 : 84;
-  const tw = tall ? 906 - tx0 : 800;
+  const tw = slamWidth(tx0, tall ? TEXT_RIGHT - tx0 : 800);
   const ty = p.kicker ? 366 : 322;
   const max = tall ? 124 : 132;
   const size = fit(lines, 'headline', tw, max);
   const textBottom = ty + lines.length * size * 0.94;
   // a short product sits in whatever room the claim leaves under it
   const room = Math.max(220, 1000 - (tall ? 300 : textBottom + 30));
-  const pw = tall ? (p.product === 'phone' ? 300 : 400) : Math.min(540, (room * 520) / Math.max(1, productHeight(p.product, 520)));
+  // with a price tag the product moves left to leave the tag room inside the safe area
+  const pw = tall ? (p.product === 'phone' ? 300 : 400) : Math.min(p.tag ? 460 : 540, (room * 520) / Math.max(1, productHeight(p.product, 520)));
   const ph = productHeight(p.product, pw);
-  const px = tall ? 92 : 491 - pw / 2;
+  const px = tall ? 92 : p.tag ? 84 : 491 - pw / 2;
   const py = 996 - ph;
   const tx = tx0;
   const swing = (at: number) => {
@@ -101,14 +106,14 @@ const SlamObject: React.FC<SceneProps> = ({ scene, frame, seed }) => {
         <div style={{ position: 'absolute', left: px, top: py - 150 * (1 - land), transform: `rotate(${(tall ? -4 : -2) - 7 * (1 - land)}deg) scale(${(1.08 - 0.08 * land).toFixed(3)})`, transformOrigin: '50% 80%' }}>
           <Product name={p.product} w={pw} seed={seed + 7} text={p.text} price={p.price} />
         </div>
-        <div style={{ position: 'absolute', left: tx, top: ty, transform: `scale(${(1.1 - 0.1 * slam).toFixed(4)})`, transformOrigin: '0% 50%' }}>
+        <div style={{ position: 'absolute', left: tx, top: ty, transform: `scale(${(SLAM - (SLAM - 1) * slam).toFixed(4)})`, transformOrigin: '50% 50%' }}>
           <Headline lines={[lines[0] || '']} width={tw} max={size} />
         </div>
         <Lines lines={lines.slice(1)} frame={frame} at={cLine2 - 2} x={tx} y={ty + size * 0.94} width={tw} max={size} stagger={5} />
       </Layer>
       {p.tag && sw !== null ? (
         <Layer depth={1.35}>
-          <PriceTag label={p.tag.label} price={p.tag.price} sub={p.tag.sub} w={270} h={340} cord={84} swing={sw} seed={seed + 9} style={{ left: tall ? 742 : 764, top: tall ? 560 : 548 }} />
+          <PriceTag label={p.tag.label} price={p.tag.price} sub={p.tag.sub} w={270} h={340} cord={84} swing={sw} seed={seed + 9} style={{ left: 700, top: tall ? 560 : 548 }} />
         </Layer>
       ) : null}
     </>
@@ -122,13 +127,14 @@ const SlamStamp: React.FC<SceneProps> = ({ scene, frame, seed }) => {
   const cStamp = cue(scene, 1);
   const cSub = p.sub ? cue(scene, 2) : Infinity;
   const slam = thump(frame, 0, 9, 0.12);
-  const h = linesHeight(lines, 800, 150);
+  const w = slamWidth(80, 800);
+  const h = linesHeight(lines, w, 150);
   const sub = rise(frame, cSub - 2, 30, 8);
   return (
     <Layer depth={1}>
       <Kicker text={p.kicker} frame={frame} at={8} seed={seed + 4} />
-      <div style={{ position: 'absolute', left: 80, top: 396, transform: `scale(${(1.1 - 0.1 * slam).toFixed(4)}) rotate(${(-2 * (1 - slam)).toFixed(2)}deg)`, transformOrigin: '0% 50%' }}>
-        <Headline lines={lines} width={800} max={150} />
+      <div style={{ position: 'absolute', left: 80, top: 396, transform: `scale(${(SLAM - (SLAM - 1) * slam).toFixed(4)}) rotate(${(-2 * (1 - slam)).toFixed(2)}deg)`, transformOrigin: '50% 50%' }}>
+        <Headline lines={lines} width={w} max={150} />
       </div>
       {sub.on ? (
         <div style={{ position: 'absolute', left: 84, top: 396 + h + 250 + sub.y, opacity: sub.opacity }}>

@@ -123,6 +123,8 @@ const Series: React.FC<{ handle: string | null; id: string }> = ({ handle, id })
 
 export const Short: React.FC<ShortProps> = (props) => {
   const real = useCurrentFrame();
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const perf: Record<string, boolean> = (props as any).perf || {};
   const vid = num(props.id);
   const seed = vid * 13 + 5;
   const hits = useMemo(() => impacts(props.scenes || []), [props.scenes]);
@@ -152,7 +154,7 @@ export const Short: React.FC<ShortProps> = (props) => {
   const d = drift(frame, seed);
   const s = [...hits.map((h) => shake(frame, h, 14, 9)), pb ? shake(real, pb.frame, 7, 8) : { x: 0, y: 0 }].reduce((a, b) => ({ x: a.x + b.x, y: a.y + b.y }), { x: 0, y: 0 });
   const punch = pb && real >= pb.frame ? (pb.kind === 'zoom' ? 0.1 : pb.kind === 'invert' ? 0.045 : 0.02) * (1 - settle(ramp(real, pb.frame, pb.frames + 6))) : 0;
-  const cam = { x: d.x + s.x, y: d.y + s.y, rot: d.rot, zoom: d.zoom + punch };
+  const cam = perf.noCamera ? { x: 0, y: 0, rot: 0, zoom: 1 } : perf.noRotate ? { x: d.x + s.x, y: d.y + s.y, rot: 0, zoom: d.zoom + punch } : { x: d.x + s.x, y: d.y + s.y, rot: d.rot, zoom: d.zoom + punch };
 
   const scenes = props.scenes;
   let i = 0;
@@ -169,9 +171,11 @@ export const Short: React.FC<ShortProps> = (props) => {
       <Layer depth={0.3}>
         <Backdrop src={backdrop} seed={seed} />
       </Layer>
-      <Layer depth={1.2}>
-        <Deck kind={props.deck} seed={seed} />
-      </Layer>
+      {perf.noDeck ? null : (
+        <Layer depth={1.2}>
+          <Deck kind={props.deck} seed={seed} />
+        </Layer>
+      )}
     </>
   );
   const incoming = <SceneLayer scene={cur} frame={frame} index={i} vid={vid} />;
@@ -224,6 +228,9 @@ export const Short: React.FC<ShortProps> = (props) => {
     <Materials>
       <LookProvider value={look}>
         <AbsoluteFill id="short-root" style={{ overflow: 'hidden', background: look.ground }}>
+          {perf.noFilter || perf.noBlend || perf.noClip ? (
+            <style>{`${perf.noFilter ? '#short-root * { filter: none !important; }' : ''} ${perf.noBlend ? '#short-root * { mix-blend-mode: normal !important; background-blend-mode: normal !important; }' : ''} ${perf.noClip ? '#short-root * { clip-path: none !important; }' : ''}`}</style>
+          ) : null}
           <svg width={0} height={0} style={{ position: 'absolute' }}>
             <filter id="whip" x="-20%" y="0" width="140%" height="100%">
               <feGaussianBlur stdDeviation="38 0" />
@@ -254,7 +261,7 @@ export const Short: React.FC<ShortProps> = (props) => {
           {inBreak && pb.kind === 'freeze' ? <AbsoluteFill style={{ border: `16px solid ${look.type}`, pointerEvents: 'none' }} /> : null}
           {inBreak && pb.kind !== 'invert' && real - pb.frame < 3 ? <AbsoluteFill style={{ background: BRIGHT, opacity: 0.5 * (1 - (real - pb.frame) / 3), pointerEvents: 'none' }} /> : null}
           <Series handle={props.handle} id={props.id} />
-          <Captions pages={props.captions} />
+          {perf.noCaptions ? null : <Captions pages={props.captions} />}
           {props.audio ? <Audio src={staticFile(props.audio)} /> : null}
           {props.probe ? <Probe /> : null}
         </AbsoluteFill>

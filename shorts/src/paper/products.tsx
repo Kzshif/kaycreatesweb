@@ -63,7 +63,7 @@ const Box: React.FC<P> = ({ seed = 1, text }) => {
 const Store: React.FC<P> = ({ seed = 1, text = 'Shop' }) => {
   const t = useLook();
   const scallop = Array.from({ length: 7 }, (_, k) => `Q${30 + k * 71.4 + 35.7} 268 ${30 + (k + 1) * 71.4} 232`).join(' ');
-  const size = fit([text.toUpperCase()], 'headline', 440, 58);
+  const size = fit([text.toUpperCase()], 'headline', 440, 58, 20, 0.02);
   return (
     <div style={{ position: 'absolute', width: 560, height: 470 }}>
       <Cut w={560} h={470} d={poly([[40, 150], [520, 150], [520, 448], [40, 448]] as Pt[], seed)} color={BRIGHT} seed={seed} lift={0.3}>
@@ -76,7 +76,7 @@ const Store: React.FC<P> = ({ seed = 1, text = 'Shop' }) => {
         ))}
       </Cut>
       <Cut w={560} h={470} d={poly([[26, 84], [534, 84], [534, 166], [26, 166]] as Pt[], seed + 1)} color={t.accentDeep} seed={seed + 1} lift={0.36}>
-        <div data-box style={{ ...headStyle(size, BRIGHT), position: 'absolute', left: 26, right: 26, top: 84, height: 82, display: 'flex', alignItems: 'center', justifyContent: 'center', letterSpacing: '0.02em' }}>{text.toUpperCase()}</div>
+        <div data-box style={{ ...headStyle(size, BRIGHT), position: 'absolute', left: 26, right: 26, top: 84, height: 82, display: 'flex', alignItems: 'center', justifyContent: 'center', letterSpacing: `${0.02}em` }}>{text.toUpperCase()}</div>
       </Cut>
       <Cut w={560} h={470} d={`M30 160 H530 V232 ${scallop.split(' ').reverse().join(' ') && ''}${Array.from({ length: 7 }, (_, k) => `Q${530 - k * 71.4 - 35.7} 268 ${530 - (k + 1) * 71.4} 232`).join(' ')} Z`} color={t.accent} seed={seed + 2} lift={0.5}>
         <svg width={560} height={470} style={{ position: 'absolute', inset: 0 }}>

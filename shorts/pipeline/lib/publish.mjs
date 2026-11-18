@@ -60,7 +60,7 @@ export function publishFigures(script) {
 }
 
 /** Does YouTube's "altered or synthetic content" box need ticking? */
-export function disclosure(voiceSource) {
+export function disclosure(voiceSource, voice = '') {
   if (voiceSource === 'recorded') {
     return {
       tick: false,
@@ -71,13 +71,13 @@ export function disclosure(voiceSource) {
   return {
     tick: true,
     line: 'Yes, tick it for this file.',
-    why: 'The narration in this render is the synthetic fallback voice, not yours. YouTube\'s rule covers realistic altered or synthetic content; its help page does not spell out a synthetic narrator reading true facts, so disclosing is the safe choice. Better: record voice.wav and run the pipeline again, and the answer becomes No.',
+    why: `The narration is a synthetic voice${voice ? ` (${voice})` : ''}. YouTube asks creators to label realistic altered or synthetic content; its help page does not spell out a synthetic narrator reading true facts over animation, so ticking the box is the safe choice. A recorded voice.wav changes the answer to No.`,
   };
 }
 
-export function buildMetadata({ id, script, src, channel = {}, voiceSource = 'tts', files = {} }) {
+export function buildMetadata({ id, script, src, channel = {}, voiceSource = 'tts', voice = '', files = {} }) {
   const p = publishMeta(script);
-  const d = disclosure(voiceSource);
+  const d = disclosure(voiceSource, voice);
   const seen = new Set();
   const refs = src.claims
     .filter((c) => c.fields.url && !seen.has(c.fields.url) && seen.add(c.fields.url))
@@ -86,7 +86,6 @@ export function buildMetadata({ id, script, src, channel = {}, voiceSource = 'tt
   const description = [p.idea, '', cta || '[YOUR CALL TO ACTION: fill in "cta" in channel.json]', '', 'Sources:', ...refs, '', 'This video explains how a business works. It is not financial advice.', '', p.tags.join(' ')].join('\n');
   const todo = [];
   if (!cta) todo.push('The call to action is still a placeholder: fill in `cta` in `channel.json` and run the pipeline again.');
-  if (d.tick) todo.push('This render uses the fallback voice. Record `voice.wav` before uploading.');
 
   return `# ${id} ${script.meta.company}: publishing pack
 

@@ -97,6 +97,11 @@ export function lookFor(n) {
 // ------------------------------------------------------------------- frame
 /** Text stays inside SAFE: YouTube draws over the top 11.5%, the bottom 20% and the right 15%. */
 export const SAFE = { left: 64, top: 222, right: 918, bottom: 1536 };
+/**
+ * The right-hand limit for text as laid out. The camera drifts up to 16px and zooms up to 2.8% about
+ * the centre, which can carry text at x=890 out to 918, the edge of YouTube's buttons.
+ */
+export const TEXT_RIGHT = 890;
 /** The hero area. Paper may bleed past it; text may not. */
 export const STAGE = { left: 76, top: 236, right: 906, bottom: 1000 };
 /** Captions: one strip of bright paper inside the centre third (640-1280). */
@@ -106,7 +111,7 @@ export const DECK = { left: 76, top: 1300, right: 906, bottom: 1524 };
 
 // -------------------------------------------------------------------- type
 export const TYPE = {
-  headline: { family: 'Bricolage Grotesque Variable', weight: 800, width: 87, tracking: -0.035, leading: 0.92 },
+  headline: { family: 'Bricolage Grotesque Variable', weight: 800, width: 87, opsz: 96, tracking: -0.035, leading: 0.92 },
   numeral: { family: 'Fraunces Variable', weight: 900, opsz: 144, soft: 100, wonk: 1, tracking: -0.02 },
   label: { family: 'DM Mono', weight: 500, tracking: 0.14 },
   captionSize: 84, // px at 1080 wide; shrinks to fit, never below captionMin

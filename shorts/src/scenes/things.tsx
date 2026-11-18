@@ -1,6 +1,6 @@
 // Scenes built around an object on the desk: a receipt, a price tag, a product, a stamp.
 import React from 'react';
-import { BRIGHT, MANILA } from '../shared/paper.mjs';
+import { BRIGHT, MANILA, TEXT_RIGHT } from '../shared/paper.mjs';
 import { Clip, Cut, Headline, Layer, Numeral, Tape, fit, glide, jit, onTwos, ramp, rounded, sheet, useLook } from '../paper/kit';
 import { Coin } from '../paper/money';
 import { Product, productHeight } from '../paper/products';
@@ -82,14 +82,14 @@ export const TagScene: React.FC<SceneProps> = ({ scene, frame, seed }) => {
         {withProduct ? (
           <Lines lines={lines} frame={frame} at={cLines - 2} x={84} y={316} width={800} max={96} stagger={5} />
         ) : (
-          <Lines lines={lines} frame={frame} at={cLines - 2} x={556} y={452} width={346} max={108} stagger={5} />
+          <Lines lines={lines} frame={frame} at={cLines - 2} x={556} y={452} width={TEXT_RIGHT - 556} max={108} stagger={5} />
         )}
         {p.note ? <Kicker text={p.note} frame={frame} at={cNote} seed={seed + 6} x={86} y={withProduct ? 316 + linesHeight(lines, 800, 96) + 24 : 924} size={23} rot={-1.5} /> : null}
       </Layer>
       {swing !== null ? (
         <Layer depth={1.35}>
           {withProduct ? (
-            <PriceTag label={p.label} price={p.price} sub={p.sub} w={300} h={372} cord={90} swing={swing} seed={seed + 9} style={{ left: 716, top: 500 }} />
+            <PriceTag label={p.label} price={p.price} sub={p.sub} w={300} h={372} cord={90} swing={swing} seed={seed + 9} style={{ left: 640, top: 500 }} />
           ) : (
             <PriceTag label={p.label} price={p.price} sub={p.sub} w={410} h={490} cord={104} swing={swing} seed={seed + 9} style={{ left: 316, top: 300 }} />
           )}
@@ -113,7 +113,7 @@ export const ProductScene: React.FC<SceneProps> = ({ scene, frame, seed }) => {
   const py = tall ? 996 - ph : 336;
   const d = drop(frame, c0, seed, [0, -280, -9]);
   const tx = tall ? px + pw + 40 : 84;
-  const tw = tall ? 906 - tx : 800;
+  const tw = tall ? TEXT_RIGHT - tx : 800;
   const max = tall ? 78 : 72;
   const size = callouts.length ? fit(callouts, 'headline', tw - 34, max) : 0;
   const gap = tall ? Math.min(170, 560 / Math.max(1, callouts.length)) : size * 1.16;

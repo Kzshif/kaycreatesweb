@@ -70,7 +70,7 @@ const props = { durationInFrames: total, captions, cues, audio: null, probe: fal
 console.log(`cues ${JSON.stringify(cues)}; ${total} frames (${(total / FPS).toFixed(1)}s); ${captions.length} caption pages; pattern break at ${(motionPlan(cues).breakAt / FPS).toFixed(1)}s`);
 
 const serveUrl = await getBundle({ log: (m) => console.log(m) });
-const common = { browserExecutable: findBrowser(), chromiumOptions: { gl: 'swangle' }, logLevel: 'error' };
+const common = { browserExecutable: findBrowser(), chromiumOptions: { gl: process.env.SHORTS_GL || 'angle' }, logLevel: 'error' };
 const sheetOf = async (frames, name) => {
   const composition = await selectComposition({ serveUrl, id: 'Motion', inputProps: props, ...common });
   const dir = path.join(work, 'stills');

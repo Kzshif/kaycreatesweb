@@ -26,7 +26,7 @@ const outDir = draft ? path.join(CACHE, 'board') : path.join(ROOT, 'identity', '
 fs.mkdirSync(outDir, { recursive: true });
 
 const serveUrl = await getBundle({ log: (m) => console.log(m) });
-const common = { browserExecutable: findBrowser(), chromiumOptions: { gl: 'swangle' }, logLevel: 'error' };
+const common = { browserExecutable: findBrowser(), chromiumOptions: { gl: process.env.SHORTS_GL || 'angle' }, logLevel: 'error' };
 let bad = 0;
 const files = [];
 for (const page of want) {
