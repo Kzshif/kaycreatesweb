@@ -23,7 +23,7 @@ const BANNED = [
 const MAJOR_NEWS = [
   'reuters.com', 'apnews.com', 'bbc.co.uk', 'bbc.com', 'ft.com', 'wsj.com', 'nytimes.com', 'bloomberg.com', 'theguardian.com', 'cnbc.com',
   'washingtonpost.com', 'economist.com', 'npr.org', 'cnn.com', 'telegraph.co.uk', 'thetimes.com', 'thetimes.co.uk', 'news.sky.com', 'independent.co.uk',
-  'fortune.com', 'axios.com', 'politico.com', 'time.com', 'usatoday.com', 'latimes.com', 'abcnews.go.com', 'nbcnews.com', 'cbsnews.com', 'pbs.org',
+  'fortune.com', 'foxbusiness.com', 'axios.com', 'politico.com', 'time.com', 'usatoday.com', 'latimes.com', 'abcnews.go.com', 'nbcnews.com', 'cbsnews.com', 'pbs.org',
   'marketwatch.com', 'barrons.com', 'theatlantic.com', 'newyorker.com', 'wired.com', 'theverge.com', 'techcrunch.com', 'itv.com', 'standard.co.uk',
 ];
 

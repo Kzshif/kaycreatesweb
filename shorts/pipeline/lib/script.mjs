@@ -1,7 +1,7 @@
 // script.md: the words that are spoken. This file parses one and checks it
 // against every script rule in the brief.
 import fs from 'node:fs';
-import { RULES } from '../../src/shared/spec.mjs';
+import { HOOK_STYLES, RULES } from '../../src/shared/spec.mjs';
 import { cleanQuotes, estimateSeconds, figures, norm, sentences, tokens } from './text.mjs';
 
 /**
@@ -11,6 +11,8 @@ import { cleanQuotes, estimateSeconds, figures, norm, sentences, tokens } from '
  *   company: Costco
  *   topic: Membership fees are the profit
  *   idea: One sentence: the single idea of the video. It opens the description.
+ *   hook: number | contradiction | reframe | stakes | hidden   (how the first line earns attention)
+ *   voice: am_michael                                 (optional: a narrator from channel.json)
  *   titles: Option one | Option two | Option three     (each under 60 characters)
  *   tags: #Costco #business #money                     (exactly 3)
  *   pinned: The comment to pin. A question works best.
@@ -115,6 +117,10 @@ export function lintScript(script) {
   const hookHasFigure = figures(hook, { ignore: script.names }).some((f) => f.kind === 'digit');
   const hookHasName = company && company.split(/[\s/&]+/).some((part) => part.length > 2 && hook.toLowerCase().includes(part));
   if (!hookHasFigure && !hookHasName) out.push(issue('error', 'hook', 'Hook names neither the company nor a figure, so it is not specific.'));
+  const style = (script.meta.hook || '').trim();
+  if (!style) out.push(issue('error', 'hook', `Front matter needs \`hook:\` naming how the first line earns attention (${Object.keys(HOOK_STYLES).join(', ')}).`));
+  else if (!HOOK_STYLES[style]) out.push(issue('error', 'hook', `hook: "${style}" is not a hook style (${Object.keys(HOOK_STYLES).join(', ')}).`));
+  else if (style === 'number' && !hookHasFigure) out.push(issue('error', 'hook', 'A "number" hook has to open on the figure itself.'));
 
   // 3. sentences
   const lens = sents.map((s) => tokens(s).length);

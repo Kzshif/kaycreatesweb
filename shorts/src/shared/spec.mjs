@@ -1,190 +1,131 @@
-// Shared contract between the pipeline (Node) and the animation (Remotion).
-// Plain JavaScript on purpose: both sides import this one file, so the rules
-// the pipeline checks are exactly the rules the renderer draws with.
+// Shared contract between the pipeline (Node) and the animation (Remotion): the scene types a
+// storyboard can use, what each one needs, how many reveal steps it has and what each step
+// sounds like. Plain JavaScript on purpose: both sides read this one file. The look itself
+// (colours, zones, type) is in paper.mjs.
+export { CAPTION, DECK, FRAME, SAFE, STAGE } from './paper.mjs';
 
-export const FRAME = {
-  width: 1080,
-  height: 1920,
-  fps: 30,
-};
-
-// YouTube Shorts draws its buttons over the right edge and its title, channel
-// and progress bar over the bottom. No text may enter those zones.
-//   bottom 20%  -> y >= 1536      right 15% -> x >= 918
-// The top strip is a softer rule (search / camera icons) that we also respect.
-export const SAFE = {
-  left: 48,
-  top: 150,
-  right: 918, // 1080 * 0.85
-  bottom: 1536, // 1920 * 0.80
-};
-SAFE.width = SAFE.right - SAFE.left;
-SAFE.height = SAFE.bottom - SAFE.top;
-
-// Scene art lives in STAGE; subtitles live in CAPTION. They never overlap.
-// Both stop 24px short of the right-hand button zone, so a headline that
-// overshoots as it springs into place still cannot touch it.
-export const STAGE = { left: 70, top: 170, right: 894, bottom: 1215 };
-STAGE.width = STAGE.right - STAGE.left; // 824
-STAGE.height = STAGE.bottom - STAGE.top; // 1045
-export const CAPTION = { left: 70, top: 1250, right: 894, bottom: 1520 };
-CAPTION.width = CAPTION.right - CAPTION.left; // 824
-CAPTION.height = CAPTION.bottom - CAPTION.top; // 270
-
-// ---------------------------------------------------------------- looks ----
-// `dark` is the accent as used on dark grounds, `light` on light grounds.
-// `onDark` / `onLight` is the text colour that sits on top of the accent.
-export const ACCENTS = {
-  lime: { dark: '#C8F031', light: '#4F7A00', onDark: '#0B0D12', onLight: '#FFFFFF' },
-  coral: { dark: '#FF8576', light: '#D93A26', onDark: '#0B0D12', onLight: '#FFFFFF' },
-  amber: { dark: '#FFB829', light: '#B56A00', onDark: '#0B0D12', onLight: '#FFFFFF' },
-  mint: { dark: '#3DE8A9', light: '#08875C', onDark: '#0B0D12', onLight: '#FFFFFF' },
-  sky: { dark: '#4DBDFF', light: '#0A6FBA', onDark: '#0B0D12', onLight: '#FFFFFF' },
-  violet: { dark: '#AE9FFF', light: '#5A3DDB', onDark: '#0B0D12', onLight: '#FFFFFF' },
-  pink: { dark: '#FF82BA', light: '#CC2672', onDark: '#0B0D12', onLight: '#FFFFFF' },
-  gold: { dark: '#F5CE55', light: '#8F6B00', onDark: '#0B0D12', onLight: '#FFFFFF' },
-  tangerine: { dark: '#FF9443', light: '#C24E00', onDark: '#0B0D12', onLight: '#FFFFFF' },
-  teal: { dark: '#22D3D3', light: '#087F84', onDark: '#0B0D12', onLight: '#FFFFFF' },
-  red: { dark: '#FF4352', light: '#C91C2B', onDark: '#FFFFFF', onLight: '#FFFFFF' },
-  cobalt: { dark: '#4C78F5', light: '#1D4BD8', onDark: '#FFFFFF', onLight: '#FFFFFF' },
-};
-
-export const GROUNDS = {
-  ink: { mode: 'dark', bg: '#0B0D12', bg2: '#151924', fg: '#F4F1EA', muted: '#9097A6', line: '#272C3A', card: '#161A25', n: ['#46484F', '#65676E', '#84878E'], pattern: 'glow' },
-  paper: { mode: 'light', bg: '#F3EEE4', bg2: '#E8E0D0', fg: '#14161B', muted: '#655F52', line: '#D3C8B3', card: '#FFFDF8', n: ['#A9A59C', '#848078', '#646058'], pattern: 'halftone' },
-  blueprint: { mode: 'dark', bg: '#0A1F44', bg2: '#102C5E', fg: '#EAF2FF', muted: '#93ABD9', line: '#1F427F', card: '#0F2A58', n: ['#3E5379', '#5C749B', '#7E96C0'], pattern: 'grid' },
-  forest: { mode: 'dark', bg: '#0D2A22', bg2: '#153C30', fg: '#F3EFE3', muted: '#97B3A6', line: '#214D3F', card: '#12362B', n: ['#425C54', '#617D73', '#83A096'], pattern: 'blobs' },
-  plum: { mode: 'dark', bg: '#24102E', bg2: '#341941', fg: '#F7EEF5', muted: '#B79DC2', line: '#48255D', card: '#2E153A', n: ['#5B4766', '#7B6687', '#9D87A9'], pattern: 'stripes' },
-  chalk: { mode: 'light', bg: '#FAFAF6', bg2: '#EEEEE8', fg: '#101114', muted: '#63656C', line: '#D8D8D0', card: '#FFFFFF', n: ['#ABABA5', '#868681', '#666662'], pattern: 'dots' },
-  ledger: { mode: 'light', bg: '#E9F2E4', bg2: '#DBE9D5', fg: '#122016', muted: '#56695A', line: '#BBD1B8', card: '#F7FBF4', n: ['#A2A99E', '#7B8277', '#5C6358'], pattern: 'rules' },
-  graphite: { mode: 'dark', bg: '#1A1B1E', bg2: '#27292E', fg: '#F2F2EE', muted: '#9C9EA6', line: '#35373E', card: '#222428', n: ['#4E5056', '#6D6F76', '#8E9097'], pattern: 'rings' },
-};
-
-// Which accents each ground may wear. Same-hue pairs (teal on forest) and muddy
-// ones (gold on paper) are left out: every listed pair was checked for contrast.
-export const GROUND_ACCENTS = {
-  ink: ['lime', 'coral', 'amber', 'mint', 'sky', 'violet', 'pink', 'gold', 'tangerine', 'teal', 'red', 'cobalt'],
-  graphite: ['lime', 'coral', 'amber', 'mint', 'sky', 'violet', 'pink', 'gold', 'tangerine', 'teal', 'red', 'cobalt'],
-  paper: ['coral', 'red', 'cobalt', 'violet', 'pink', 'teal', 'mint', 'sky', 'tangerine'],
-  chalk: ['coral', 'red', 'cobalt', 'violet', 'pink', 'teal', 'mint', 'sky', 'tangerine'],
-  ledger: ['coral', 'red', 'cobalt', 'violet', 'pink', 'tangerine'],
-  blueprint: ['lime', 'amber', 'gold', 'coral', 'pink', 'tangerine', 'mint', 'red'],
-  forest: ['amber', 'gold', 'coral', 'pink', 'tangerine', 'sky', 'violet'],
-  plum: ['lime', 'amber', 'gold', 'mint', 'teal', 'tangerine', 'coral', 'sky'],
-};
-
-// Shape language: corner radius used by cards, bars, pills and frames.
-export const SHAPES = { sharp: 0, soft: 20, round: 44 };
-
-// Type voices: a display face for headlines and figures, a text face for labels.
-export const TYPE_VOICES = {
-  grotesk: { display: 'Archivo Black', displayWeight: 400, text: 'Archivo', upper: true, tracking: -0.02, numeric: 'Archivo Black', label: 'Archivo', widthFactor: 0.62 },
-  editorial: { display: 'DM Serif Display', displayWeight: 400, text: 'DM Sans', upper: false, tracking: -0.01, numeric: 'DM Serif Display', label: 'DM Sans', widthFactor: 0.5 },
-  tech: { display: 'Space Grotesk', displayWeight: 700, text: 'Space Grotesk', upper: false, tracking: -0.03, numeric: 'Space Grotesk', label: 'JetBrains Mono', widthFactor: 0.55 },
-  poster: { display: 'Anton', displayWeight: 400, text: 'Inter', upper: true, tracking: 0.005, numeric: 'Anton', label: 'Inter', widthFactor: 0.43 },
-  quirky: { display: 'Bricolage Grotesque', displayWeight: 800, text: 'Bricolage Grotesque', upper: false, tracking: -0.03, numeric: 'Bricolage Grotesque', label: 'JetBrains Mono', widthFactor: 0.54 },
-  soft: { display: 'Fraunces', displayWeight: 900, text: 'Inter', upper: false, tracking: -0.03, numeric: 'Fraunces', label: 'Inter', widthFactor: 0.56 },
-  wide: { display: 'Syne', displayWeight: 800, text: 'Inter', upper: true, tracking: -0.01, numeric: 'Syne', label: 'JetBrains Mono', widthFactor: 0.68 },
-};
-
-// Motion feels change how everything enters, settles and cuts.
-export const MOTIONS = {
-  snap: { spring: { damping: 15, stiffness: 240, mass: 0.6 }, enter: 'pop', cut: 'flash', travel: 46 },
-  glide: { spring: { damping: 200, stiffness: 110, mass: 0.9 }, enter: 'rise', cut: 'fade', travel: 70 },
-  bounce: { spring: { damping: 9.5, stiffness: 170, mass: 0.7 }, enter: 'drop', cut: 'zoom', travel: 90 },
-  tick: { spring: { damping: 26, stiffness: 320, mass: 0.5 }, enter: 'wipe', cut: 'shutter', travel: 0 },
-};
-
-export const CAPTION_STYLES = ['pop', 'box', 'underline', 'fill'];
-
-// --------------------------------------------------------------- scenes ----
-// Every scene type, its variants, and how many reveal steps ("cues") it has.
-// A cue is one visible change: a bar growing, a node appearing, a figure
-// landing. The pipeline uses these counts to prove something changes on
-// screen at least every three seconds.
 const len = (a) => (Array.isArray(a) ? a.length : 0);
 
+// ---------------------------------------------------------------- rules
+export const RULES = {
+  // 40-55 seconds: long enough for the hook, the mechanism and a turn, still well under a minute.
+  script: { minWords: 110, maxWords: 165, minSeconds: 40, maxSeconds: 55, hardMaxSeconds: 59, hookMaxWords: 9, maxSentenceWords: 18, avgSentenceWords: 12 },
+  // "A visual change every 2-3 seconds": no stretch longer than this without a cue.
+  cadence: { maxGapSeconds: 3.0, targetGapSeconds: 2.5 },
+  // How far back the variety check looks beyond the hard "previous video" rule.
+  variety: { openingWindow: 3, hookWindow: 2 },
+  // The pattern break lands near the middle of the video.
+  breakWindow: [0.35, 0.68],
+  minScenes: 8,
+};
+
+/** How a hook earns the first two seconds. Each script names its style; neighbours must differ. */
+export const HOOK_STYLES = {
+  number: 'opens on the figure itself',
+  contradiction: 'says the opposite of what people assume',
+  reframe: 'the company is really a different kind of business',
+  stakes: 'what it takes from, or pays to, one person',
+  hidden: 'something in plain sight that nobody notices',
+};
+
+/** Scene changes are physical: a page tears away, the camera whips across the desk, the page folds over. */
+export const TRANSITIONS = ['tear', 'whip', 'fold'];
+export const TRANSITION_FRAMES = { tear: 11, whip: 7, fold: 9 };
+/** One pattern break near the middle: the desk flips to negative, the camera punches in, or everything holds still. */
+export const BREAKS = ['invert', 'zoom', 'freeze'];
+export const BREAK_FRAMES = { invert: 8, zoom: 14, freeze: 10 };
+/** Cut-paper products a storyboard can put on the desk (all original, no logos). */
+export const PRODUCTS = ['card', 'trolley', 'box', 'store', 'fries', 'burger', 'plot', 'phone'];
+/** What lies in the lower part of the desk, under the captions. */
+export const DECKS = ['pencil', 'coins', 'inkpad', 'scissors', 'clips'];
+
+// --------------------------------------------------------------- scenes
+// cues(p, v): how many reveal steps the scene has. sounds(p, v): the sound of each step, in order.
+// 'count' is a run of ticks ending in a struck tone; 'coins' is a rising run of clinks.
 export const SCENES = {
-  hook: {
-    label: 'kinetic hook text',
-    variants: ['slam', 'stamp', 'stack', 'highlighter', 'redacted', 'spotlight'],
-    // step 0: the claim, on frame 0. step 1: the "punch" on the key word, timed to the voice. step 2: the sub-line.
-    cues: (p) => 2 + (p.sub ? 1 : 0),
-    required: ['lines'],
+  slam: {
+    label: 'the opening hit: the key number or object lands before the first word is out',
+    variants: ['number', 'object', 'stamp'],
+    cues: (p, v) => (v === 'number' ? 2 + (p.unit ? 1 : 0) + (len(p.lines) ? 1 : 0) : v === 'object' ? 1 + (len(p.lines) > 1 ? 1 : 0) + (p.tag ? 1 : 0) : 2 + (p.sub ? 1 : 0)),
+    required: (v) => (v === 'number' ? ['figure'] : v === 'object' ? ['product', 'lines'] : ['lines', 'stamp']),
+    sounds: (p, v) => (v === 'number' ? ['slam', ...(p.unit ? ['land'] : []), ...(len(p.lines) ? ['fwip'] : []), 'coin'] : v === 'object' ? ['slam', ...(len(p.lines) > 1 ? ['fwip'] : []), ...(p.tag ? ['pop'] : [])] : ['slam', 'stamp', ...(p.sub ? ['pop'] : [])]),
   },
-  kinetic: {
-    label: 'kinetic text',
-    variants: ['cascade', 'mask', 'scale', 'ticker'],
-    cues: (p) => Math.max(1, len(p.lines)),
-    required: ['lines'],
+  count: {
+    label: 'a figure counting up',
+    variants: ['rain', 'pile'],
+    cues: (p) => 1 + (p.line ? 1 : 0) + (p.sub ? 1 : 0),
+    required: () => ['amount'],
+    sounds: (p) => ['count', ...(p.line ? ['fwip'] : []), ...(p.sub ? ['pop'] : [])],
+  },
+  stacks: {
+    label: 'coin-stack chart: the channel\'s bar chart',
+    variants: ['side', 'trio'],
+    cues: (p) => len(p.items) + (p.note ? 1 : 0),
+    required: () => ['unit', 'items'],
+    sounds: (p) => [...Array.from({ length: len(p.items) }, () => 'coins'), ...(p.note ? ['pop'] : [])],
+  },
+  cut: {
+    label: 'a note cut with scissors: the channel\'s pie chart',
+    variants: ['right', 'left'],
+    cues: (p) => 2 + (p.note ? 1 : 0),
+    required: () => ['title', 'share', 'label'],
+    sounds: (p) => ['land', 'snip', ...(p.note ? ['pop'] : [])],
+  },
+  receipt: {
+    label: 'a receipt that prints its lines',
+    variants: ['roll', 'clip'],
+    cues: (p) => 1 + len(p.rows) + (len(p.rows) && p.rows.some((r) => r.mark) ? 1 : 0),
+    required: () => ['title', 'rows'],
+    sounds: (p) => ['printer', ...Array.from({ length: len(p.rows) }, () => 'tick'), ...(len(p.rows) && p.rows.some((r) => r.mark) ? ['swipe'] : [])],
+  },
+  tag: {
+    label: 'a price tag that swings in',
+    variants: ['pin', 'tape'],
+    cues: (p) => 1 + (len(p.lines) ? 1 : 0) + (p.note ? 1 : 0),
+    required: () => ['label', 'price'],
+    sounds: (p) => ['fwip', ...(len(p.lines) ? ['land'] : []), ...(p.note ? ['pop'] : [])],
+  },
+  product: {
+    label: 'a cut-paper product with labels',
+    variants: ['hero', 'pair'],
+    cues: (p) => 1 + len(p.callouts),
+    required: () => ['product'],
+    sounds: (p) => ['land', ...Array.from({ length: len(p.callouts) }, () => 'pop')],
+  },
+  stamp: {
+    label: 'a verdict: a figure or line, then the stamp comes down',
+    variants: ['over', 'under'],
+    cues: (p) => 2 + (p.sub ? 1 : 0),
+    required: () => ['stamp'],
+    sounds: (p) => [p.figure ? 'count' : 'land', ...(p.sub ? ['pop'] : []), 'stamp'],
   },
   flow: {
-    label: 'money-flow diagram',
-    variants: ['river', 'chain'],
-    cues: (p, v) => (v === 'river' ? 1 + len(p.splits) : len(p.nodes)),
-    required: [],
-  },
-  chart: {
-    label: 'animated chart',
-    // No donut on purpose: for part-to-whole a segmented bar reads faster and
-    // compares more honestly (data-viz skill, "choosing a form").
-    variants: ['bars', 'hbars', 'line', 'segmented', 'meter'],
-    cues: (p, v) => (v === 'line' ? 2 : v === 'meter' ? 2 + (p.note ? 1 : 0) : Math.max(1, len(p.series))),
-    required: ['series'],
-  },
-  counter: {
-    label: 'counter',
-    variants: ['odometer', 'countup', 'slot'],
-    cues: (p) => 1 + (p.sub ? 1 : 0) + (p.also ? 1 : 0),
-    required: ['value', 'label'],
-  },
-  breakdown: {
-    label: 'price breakdown',
-    variants: ['stack', 'receipt', 'coins'],
-    cues: (p) => len(p.items) + (p.total ? 1 : 0),
-    required: ['items'],
+    label: 'money moving from one name to another',
+    variants: ['arc', 'drop'],
+    cues: (p) => 2 + (p.note ? 1 : 0),
+    required: () => ['from', 'to'],
+    sounds: (p) => ['land', 'coins', ...(p.note ? ['pop'] : [])],
   },
   split: {
-    label: 'before / after split',
-    variants: ['halves', 'cards', 'slider'],
+    label: 'two cards side by side',
+    variants: ['cards', 'tilt'],
     cues: (p) => 2 + (p.verdict ? 1 : 0),
-    required: ['a', 'b'],
+    required: () => ['a', 'b'],
+    sounds: (p) => ['land', 'land', ...(p.verdict ? ['ding'] : [])],
   },
-  map: {
-    label: 'map',
-    variants: ['dots', 'outline'],
-    cues: (p) => 1 + (len(p.pins) || len(p.highlight) ? 1 : 0) + (p.stat ? 1 : 0),
-    required: ['region'],
+  words: {
+    label: 'headline lines, one at a time, with a marker pen',
+    variants: ['stack', 'ladder'],
+    cues: (p) => Math.max(1, len(p.lines)),
+    required: () => ['lines'],
+    sounds: (p) => Array.from({ length: Math.max(1, len(p.lines)) }, (_, i) => (len(p.mark) && i === len(p.lines) - 1 ? 'swipe' : 'fwip')),
   },
-  timeline: {
-    label: 'timeline',
-    variants: ['rail', 'steps'],
-    cues: (p) => Math.max(1, len(p.events)),
-    required: ['events'],
-  },
-  mockup: {
-    label: 'product mockup',
-    variants: ['card', 'phone', 'receipt', 'storefront', 'box', 'tag'],
-    cues: (p) => 1 + len(p.callouts),
-    required: [],
-  },
-  icons: {
-    label: 'icon story',
-    variants: ['chain', 'equation', 'grid'],
-    cues: (p) => len(p.items) + (p.result ? 1 : 0),
-    required: ['items'],
-  },
-  ratio: {
-    label: 'unit chart',
-    variants: ['grid', 'row'],
-    cues: (p) => 2 + (p.note ? 1 : 0),
-    required: ['total', 'filled', 'label'],
-  },
-  versus: {
-    label: 'size comparison',
-    variants: ['circles', 'towers'],
-    cues: (p) => 2 + (p.note ? 1 : 0),
-    required: ['a', 'b'],
+  grid: {
+    label: 'so many out of so many, as a tray of coins',
+    variants: ['tray', 'rows'],
+    cues: (p) => 2 + (p.label ? 1 : 0),
+    required: () => ['of', 'filled', 'figure'],
+    sounds: (p) => ['fwip', 'coins', ...(p.label ? ['pop'] : [])],
   },
 };
 
@@ -196,20 +137,14 @@ export const cueCount = (scene) => {
   return Math.max(1, spec.cues(scene.props || {}, scene.variant));
 };
 
-// Original icon names the scenes can draw (see src/icons). No brand marks.
-export const ICONS = [
-  'cart', 'card', 'coin', 'cash', 'warehouse', 'store', 'burger', 'fries', 'house', 'key',
-  'phone', 'search', 'cloud', 'server', 'box', 'cup', 'gift', 'person', 'people', 'bank',
-  'tag', 'receipt', 'truck', 'factory', 'globe', 'chart', 'percent', 'clock', 'lock', 'bolt',
-  'plane', 'car', 'film', 'music', 'gamepad', 'printer', 'drop', 'ticket', 'crown', 'handshake',
-  'building', 'wallet', 'safe', 'megaphone', 'eye', 'bottle', 'shirt', 'pill', 'wifi', 'star',
-];
-
-// --------------------------------------------------------------- rules -----
-export const RULES = {
-  script: { minWords: 70, maxWords: 110, minSeconds: 25, maxSeconds: 40, hookMaxWords: 9, maxSentenceWords: 18, avgSentenceWords: 12 },
-  // "A visual change every 2-3 seconds": no stretch longer than this without a cue.
-  cadence: { maxGapSeconds: 3.0, targetGapSeconds: 2.5 },
-  // How far back the variety check looks beyond the hard "previous video" rule.
-  variety: { openingWindow: 4, accentWindow: 2, lookWindow: 3 },
+/** The objects a scene puts on the desk, for the "featured objects must differ" rule. */
+export const sceneObjects = (scene) => {
+  const p = scene.props || {};
+  const out = [];
+  const own = { stacks: 'coin stacks', cut: 'cut note', receipt: 'receipt', tag: 'price tag', stamp: 'stamp', grid: 'coin tray', flow: 'coin flow' }[scene.type];
+  if (own) out.push(own);
+  if (scene.type === 'slam' && scene.variant === 'stamp') out.push('stamp');
+  for (const x of [p.product, p.from?.product, p.to?.product]) if (x) out.push(x);
+  if (p.tag) out.push('price tag');
+  return out;
 };

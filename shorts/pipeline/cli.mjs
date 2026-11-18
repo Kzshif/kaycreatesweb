@@ -23,6 +23,7 @@ import { captionStats, buildCaptions, displayWord } from './lib/captions.mjs';
 import { soundPlan } from '../src/shared/sound.mjs';
 import { ASSETS, CHANNEL_JSON, LICENCES, OUTPUT, PYTHON, ROOT, VIDEOS, exists, findVideo, listVideos, mtime, padId, readJson, upToDate, videoFiles, writeJson } from './lib/paths.mjs';
 import { checkVariety, screenFigures, signature, validatePlan } from './lib/plan.mjs';
+import { pickVoice } from './lib/voices.mjs';
 import { buildMetadata, buildSrt, lintPublish, publishFigures } from './lib/publish.mjs';
 import { lintScript, parseScript } from './lib/script.mjs';
 import { checkClaims, checkCoverage, parseSources, uncertainClaims } from './lib/sources.mjs';
@@ -50,7 +51,10 @@ function neighbours(v) {
     const f = videoFiles(x).plan;
     if (!exists(f)) return null;
     try {
-      return signature(readJson(f));
+      const sig = signature(readJson(f), x.id);
+      const sf = videoFiles(x).script;
+      if (exists(sf)) sig.hook = parseScript(sf).meta.hook || '';
+      return sig;
     } catch {
       return null;
     }
@@ -97,9 +101,13 @@ function check(v, { quiet = false } = {}) {
   let variety = [];
   let cadence = [];
   if (plan) {
-    planIssues = validatePlan(plan, script).issues;
+    planIssues = validatePlan(plan, script, v.id).issues;
     const n = neighbours(v);
-    variety = checkVariety(signature(plan), n.before, n.after);
+    const sig = { ...signature(plan, v.id), hook: script.meta.hook || '' };
+    variety = checkVariety(sig, n.before, n.after);
+    for (const [other, label] of [[n.before[0], 'the previous video'], [n.after, 'the next video']]) {
+      if (other && sig.hook && other.hook === sig.hook) variety.push({ level: 'error', rule: 'variety', message: `Same kind of hook as ${label} ("${sig.hook}"). Open this one a different way.` });
+    }
     if (!errorsOf(planIssues).length) {
       const words = exists(f.words) ? readJson(f.words).words : syntheticTimings(script.text, script.say);
       if (words.length === script.words.length) cadence = buildProps({ plan, script, words, channel: channel() }).issues.filter((i) => i.rule === 'cadence' || i.rule === 'timing');
@@ -115,8 +123,9 @@ function check(v, { quiet = false } = {}) {
     show('publish  3 titles under 60 characters, 3 hashtags, pinned comment', publish);
     show(`sources  ${src ? src.claims.length : 0} claims`, srcIssues);
     show('facts    every spoken and on-screen figure traced to a claim', coverage);
-    show(`plan     ${plan ? `${plan.scenes.length} scenes: ${signature(plan).order}` : '-'}`, planIssues);
-    show(`variety  ${plan ? `accent ${plan.look?.accent}, opening ${signature(plan).opening}` : '-'}`, variety);
+    const sg = plan ? signature(plan, v.id) : null;
+    show(`plan     ${plan ? `${plan.scenes.length} scenes: ${sg.order}` : '-'}`, planIssues);
+    show(`variety  ${plan ? `${sg.accent}${sg.inverted ? ' (inverted)' : ''}, opens ${sg.opening}, hook "${script.meta.hook || '?'}", changes ${sg.transitions}, break ${sg.breakKind}` : '-'}`, variety);
     show('cadence  something new on screen at least every 3 seconds', cadence);
     if (channelIssues.length) show('channel', channelIssues);
     log(`  loop     ${lint.loopSeam}`);
@@ -141,7 +150,10 @@ function check(v, { quiet = false } = {}) {
   const current = getRow(v.id).stage || 'idea';
   if (!planOk) setStage(v.id, reached, { force: true });
   else if (stageIndex(current) < stageIndex('planned')) setStage(v.id, 'planned');
-  if (plan) updateRow(v.id, { accent: plan.look?.accent ?? '', opening: signature(plan).opening, scenes: signature(plan).order });
+  if (plan) {
+    const sg = signature(plan, v.id);
+    updateRow(v.id, { accent: `${sg.accent}${sg.inverted ? '/inverted' : ''}`, opening: sg.opening, scenes: sg.order });
+  }
   out.ok = planOk;
   if (!quiet) log(`  -> ${planOk ? 'ready for voice' : `stops at "${reached}"`}`);
   return out;
@@ -155,29 +167,30 @@ function voice(v, { force = false } = {}) {
   const recorded = exists(f.voiceRaw);
   const input = recorded ? f.voiceRaw : f.script;
   const prev = exists(f.voiceReport) ? readJson(f.voiceReport) : null;
-  const sameSource = prev && prev.source === (recorded ? 'recorded' : 'tts');
+  const wantVoice = recorded ? null : pickVoice(v.id, channel(), script);
+  const sameSource = prev && prev.source === (recorded ? 'recorded' : 'tts') && (recorded || (prev.voice === wantVoice.id && prev.speed === wantVoice.speed));
   if (!force && sameSource && upToDate(f.voiceClean, [input, CHANNEL_JSON])) {
     log(`  skip  voice (clean audio is up to date: ${prev.source}, ${prev.after.seconds}s)`);
   } else if (recorded) {
     log('  voice: cleaning your recording (voice.wav)');
     py('voice.py', ['clean', f.voiceRaw, f.voiceClean, f.voiceReport]);
   } else {
-    const tts = { voice: 'bm_george', lang: 'en-gb', speed: 1.18, ...(channel().tts || {}) };
-    log(`  voice: no voice.wav found, using the fallback voice (${tts.voice})`);
+    const tts = pickVoice(v.id, channel(), script);
+    log(`  voice: no voice.wav found, using the synthetic voice ${tts.id} (${tts.label || tts.lang})`);
     const txt = path.join(f.work, 'spoken.txt');
     fs.writeFileSync(txt, spokenForm(script.text, script.say));
-    py('voice.py', ['tts', txt, f.voiceClean, f.voiceReport, '--voice', tts.voice, '--lang', tts.lang, '--speed', String(tts.speed)]);
+    py('voice.py', ['tts', txt, f.voiceClean, f.voiceReport, '--voice', tts.id, '--lang', tts.lang, '--speed', String(tts.speed)]);
   }
   const rep = readJson(f.voiceReport);
   const secs = rep.after.seconds;
   const R = RULES.script;
   const problems = [...rep.warnings.map((w) => `warning: ${w}`)];
-  if (rep.source === 'tts') problems.push('warning: TTS FALLBACK VOICE - record voice.wav in this folder to replace it');
+  if (rep.source === 'tts') problems.push(`warning: synthetic voice ${rep.voice} (tick the AI-content box at upload)`);
   // the picture runs a third of a second past the last word
   const total = secs + 0.3;
   if (total < R.minSeconds || total > R.maxSeconds) problems.push(`runs ${total.toFixed(1)}s; the brief asks for ${R.minSeconds}-${R.maxSeconds}s. ${total > R.maxSeconds ? 'Cut words or read faster' : 'Add a line or slow down'}.`);
   setProblems(v.id, 'voice', problems);
-  updateRow(v.id, { voice: rep.source, seconds: total.toFixed(1) });
+  updateRow(v.id, { voice: rep.source === 'tts' ? `tts:${rep.voice}` : 'recorded', seconds: total.toFixed(1) });
   const ok = !problems.some((p) => !p.startsWith('warning:'));
   if (ok) setStage(v.id, 'voiced');
   else setStage(v.id, 'planned', { force: true });
@@ -271,7 +284,7 @@ async function prepare(v) {
 }
 
 async function render(v, { force = false } = {}) {
-  const { getBundle, renderVideo, stageAudio } = await import('./lib/render.mjs');
+  const { bakeBackdrop, getBundle, renderVideo, stageAudio } = await import('./lib/render.mjs');
   const { f, built } = await prepare(v);
   const errs = errorsOf(built.issues);
   setProblems(v.id, 'render', fmt(built.issues));
@@ -281,6 +294,7 @@ async function render(v, { force = false } = {}) {
   }
   const serveUrl = await getBundle({ log: (m) => log(`  ${m}`) });
   built.props.audio = stageAudio(serveUrl, v.id, f.mix);
+  Object.assign(built.props, await bakeBackdrop(built.props, f.work));
   writeJson(f.props, built.props);
   const bundleStamp = path.join(ROOT, '.cache', 'bundle.hash');
   if (!force && upToDate(f.mp4, [f.plan, f.words, f.mix, CHANNEL_JSON, bundleStamp])) {
@@ -549,7 +563,7 @@ async function preview(v) {
   const built = buildProps({ plan, script, words, channel: channel(), id: v.id });
   const props = { ...built.props, audio: null };
   // frame 0, then each scene just before it ends (everything revealed)
-  const frames = [0, ...props.scenes.map((s) => Math.min(props.durationInFrames - 1, s.from + s.duration - 2))];
+  const frames = [0, 6, ...props.scenes.map((s) => Math.min(props.durationInFrames - 1, s.from + s.duration - 2))];
   fs.rmSync(f.stills, { recursive: true, force: true });
   const files = await renderStills(props, [...new Set(frames)], f.stills, { scale: 0.5 });
   const sheet = path.join(f.work, 'preview.png');

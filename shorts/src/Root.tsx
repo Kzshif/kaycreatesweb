@@ -8,16 +8,20 @@ import type { ShortProps } from './types';
 
 // Shown in Remotion Studio when no storyboard is loaded.
 const demo: ShortProps = {
-  id: 'demo',
+  id: '000',
   durationInFrames: 90,
   fps: FRAME.fps,
-  look: { accent: 'lime', ground: 'ink', type: 'grotesk', motion: 'snap', captions: 'pop', shape: 'sharp' },
-  scenes: [{ type: 'hook', variant: 'slam', from: 0, duration: 90, cues: [0], props: { kicker: 'Demo', lines: ['Load a', 'storyboard'], emphasis: 'storyboard' } }],
+  look: { accent: 'green', inverted: false },
+  deck: 'pencil',
+  scenes: [{ type: 'slam', variant: 'number', from: 0, duration: 90, cues: [0, 30], enter: null, source: null, props: { figure: '$5.3', unit: 'billion', kicker: 'Demo' } }],
   captions: [],
   audio: null,
   loopFrames: 9,
+  patternBreak: null,
   handle: null,
   cta: null,
+  backdrop: null,
+  backdropAlt: null,
   probe: false,
 };
 

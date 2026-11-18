@@ -92,3 +92,22 @@ filed in February 2026.
 - Agrees: none on an accepted site (an investing blog repeats the figure; the filing is the only origin)
 - Confidence: medium
 - Checked: 2026-11-15
+
+## 7. McDonald's had 45,356 restaurants at the end of 2025
+- Figures: 45,000, 45,356
+- Exact: 45,356
+- Source: McDonald's Corporation, Form 10-K for the fiscal year ended 31 December 2025
+- Type: regulator filing
+- URL: https://www.sec.gov/Archives/edgar/data/63908/000006390826000035/mcd-20251231.htm
+- Date: 2025-12-31
+- Quote: "Of the 45,356 restaurants at year-end 2025, approximately 95% were franchised."
+- Year: 2025 (at 31 December 2025)
+- Verified: search-verified
+- Agrees: none on an accepted site (a business blog repeats the filing's figure)
+- Confidence: medium
+- Checked: 2026-11-18
+
+## 8. About one in twenty restaurants is run by McDonald's itself
+- Figures: 5%, one in twenty
+- Derived: 100 - 95 = 5
+- From: 3

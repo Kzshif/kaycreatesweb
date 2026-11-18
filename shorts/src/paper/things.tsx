@@ -9,12 +9,17 @@ type Style = React.CSSProperties;
 
 // --------------------------------------------------------------- receipt
 export type ReceiptRow = { label: string; value: string; mark?: boolean };
-/** A till receipt: pinked top and bottom, mono labels, numerals in Fraunces. `mark` highlights a row. */
-export const Receipt: React.FC<{ w: number; title: string; rows: ReceiptRow[]; foot?: string; seed?: number; lift?: number; style?: Style }> = ({ w, title, rows, foot, seed = 1, lift = 0.3, style }) => {
+/** Height of a receipt with this many rows. */
+export const receiptHeight = (rows: number, foot = false): number => 62 + 46 + rows * 84 + (foot ? 58 : 16) + 30;
+/**
+ * A till receipt: pinked top and bottom, mono labels, numerals in Fraunces. `mark` highlights a
+ * row. `shown` is how many rows have printed so far, `markOn` how far the highlighter has got.
+ */
+export const Receipt: React.FC<{ w: number; title: string; rows: ReceiptRow[]; foot?: string; seed?: number; lift?: number; shown?: number; markOn?: number; style?: Style }> = ({ w, title, rows, foot, seed = 1, lift = 0.3, shown = 99, markOn = 1, style }) => {
   const t = useLook();
   const pad = 36;
   const rowH = 84;
-  const h = 62 + 46 + rows.length * rowH + (foot ? 58 : 16) + 30;
+  const h = receiptHeight(rows.length, !!foot);
   const d = useMemo(() => sheet(w, h, { seed, edges: 'zczc', m: 9, tooth: 17 }).d, [w, h, seed]);
   const rule: Style = { position: 'absolute', left: pad, right: pad, borderTop: `2.5px dashed ${rgba(t.ink, 0.42)}` };
   return (
@@ -25,11 +30,13 @@ export const Receipt: React.FC<{ w: number; title: string; rows: ReceiptRow[]; f
         {rows.map((r, i) => {
           const top = 108 + i * rowH;
           const size = Math.min(50, fit([r.value], 'numeral', w - pad * 2, 50));
+          if (i >= shown) return null;
+          const mx = pad - 12 + (w - pad * 2 + 22) * markOn;
           return (
             <div key={i} style={{ position: 'absolute', left: 0, right: 0, top, height: rowH }}>
-              {r.mark ? (
+              {r.mark && markOn > 0.01 ? (
                 <svg width={w} height={rowH} style={{ position: 'absolute', left: 0, top: 0 }}>
-                  <path d={`M${pad - 12} 12 L${w - pad + 8} 7 L${w - pad + 13} ${rowH - 13} L${pad - 8} ${rowH - 8} Z`} fill={t.hl} />
+                  <path d={`M${pad - 12} 12 L${mx} 7 L${mx + 5} ${rowH - 13} L${pad - 8} ${rowH - 8} Z`} fill={t.hl} />
                 </svg>
               ) : null}
               <div style={{ ...labelStyle(20, rgba(t.ink, 0.78)), position: 'absolute', left: pad, top: 8 }}>{r.label}</div>

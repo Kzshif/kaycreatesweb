@@ -5,9 +5,9 @@ import os from 'node:os';
 import path from 'node:path';
 import test from 'node:test';
 
-import { ACCENTS, GROUNDS, GROUND_ACCENTS, SCENES, cueCount } from '../src/shared/spec.mjs';
+import { HOOK_STYLES, SCENES, cueCount } from '../src/shared/spec.mjs';
 import { buildCaptions, captionStats, displayWord } from '../pipeline/lib/captions.mjs';
-import { checkVariety, findPhrase, resolveAnchors, screenFigures, signature, validatePlan } from '../pipeline/lib/plan.mjs';
+import { checkVariety, findPhrase, parseAmount, prepareScene, resolveAnchors, screenFigures, signature, validatePlan } from '../pipeline/lib/plan.mjs';
 import { lintScript, parseScript } from '../pipeline/lib/script.mjs';
 import { EARNED, FEES, SCRIPT, motionPlan, motionSounds } from '../src/board/motion-plan.mjs';
 import * as PM from '../src/shared/paper.mjs';
@@ -106,15 +106,20 @@ id: 001
 company: Costco
 topic: Membership fees are the profit
 idea: Costco earns most of its profit from membership cards, not from what it sells.
+hook: contradiction
 ---
 Costco barely makes money selling things.
 Last year it sold $270 billion of goods.
-After paying for the goods and the stores, little was left.
+After paying for the goods, the staff and the stores, little was left.
+That is the plan, not a mistake.
 The money is in the card.
 Shoppers paid $5.3 billion in membership fees.
 That is 51% of the profit the company made from running the business.
 A fee costs almost nothing to collect.
+Nobody has to stack it on a shelf or ship it across the country.
 So Costco can sell a hot dog for $1.50 and still smile.
+The low prices are the bait that keeps people renewing every year.
+Most members come back and pay again.
 Cheap prices bring people in.
 The card is what they are there to sell, which is why
 `;
@@ -122,14 +127,19 @@ The card is what they are there to sell, which is why
 test('script lint: a good script passes, bad ones fail for the right reason', () => {
   const good = lintScript(parseScript(tmp('script.md', GOOD_SCRIPT)));
   assert.deepEqual(good.issues.filter((i) => i.level === 'error'), [], JSON.stringify(good.issues, null, 1));
-  assert.ok(good.stats.words >= 70 && good.stats.words <= 110, String(good.stats.words));
+  assert.ok(good.stats.words >= 110 && good.stats.words <= 165, String(good.stats.words));
 
   const rules = (text) => lintScript(parseScript(tmp('script.md', text))).issues.filter((i) => i.level === 'error').map((i) => i.rule);
   assert.ok(rules(GOOD_SCRIPT.replace('Costco barely makes money selling things.', 'Did you know Costco barely makes money?')).includes('hook'));
   assert.ok(rules(GOOD_SCRIPT.replace('which is why', 'and that is the end.')).includes('loop'));
   assert.ok(rules(GOOD_SCRIPT.replace('The money is in the card.', 'You should buy the stock.')).includes('advice'));
   assert.ok(rules(GOOD_SCRIPT.replace('The money is in the card.', 'Basically the money is in the card.')).includes('filler'));
-  assert.ok(rules(GOOD_SCRIPT.split('\n').slice(0, 9).join('\n')).includes('length'));
+  assert.ok(rules(GOOD_SCRIPT.split('\n').slice(0, 12).join('\n')).includes('length'));
+  // every script names how its first line earns attention, and a number hook opens on the number
+  assert.ok(rules(GOOD_SCRIPT.replace('hook: contradiction\n', '')).includes('hook'));
+  assert.ok(rules(GOOD_SCRIPT.replace('hook: contradiction', 'hook: clickbait')).includes('hook'));
+  assert.ok(rules(GOOD_SCRIPT.replace('hook: contradiction', 'hook: number')).includes('hook'));
+  assert.deepEqual(Object.keys(HOOK_STYLES).sort(), ['contradiction', 'hidden', 'number', 'reframe', 'stakes']);
 });
 
 const GOOD_SOURCES = `# Sources: 001
@@ -211,16 +221,20 @@ test('sources: banned sites, bad sums and missing fields are caught', () => {
 
 const PLAN = {
   id: '001',
-  look: { accent: 'lime', ground: 'ink', type: 'grotesk', motion: 'snap', captions: 'pop', shape: 'sharp' },
   scenes: [
-    { type: 'hook', variant: 'slam', props: { lines: ['Costco barely', 'makes money', 'selling things'] } },
-    { type: 'counter', variant: 'odometer', at: 'Last year it sold', props: { prefix: '$', value: 270, suffix: 'billion', label: 'of goods sold' } },
-    { type: 'mockup', variant: 'card', at: 'The money is in the card', props: { title: 'Member' } },
-    { type: 'counter', variant: 'countup', at: 'Shoppers paid', beats: ['in membership fees'], props: { prefix: '$', value: 5.3, decimals: 1, suffix: 'billion', label: 'membership fees', sub: 'in one year' } },
-    { type: 'chart', variant: 'meter', at: 'That is 51%', props: { series: [{ label: 'Membership fees', value: 51, display: '51%' }] } },
-    { type: 'breakdown', variant: 'receipt', at: 'So Costco can sell', props: { items: [{ label: 'Hot dog and drink', display: '$1.50' }] } },
-    { type: 'kinetic', variant: 'cascade', at: 'Cheap prices', props: { lines: ['Cheap prices', 'bring people in'] } },
+    { type: 'slam', variant: 'stamp', beats: ['selling things'], props: { lines: ['Costco barely', 'makes money', 'selling things'], stamp: ['Barely'] } },
+    { type: 'count', variant: 'rain', at: 'Last year it sold', beats: ['of goods'], props: { amount: '$270 billion', line: 'of goods sold' } },
+    { type: 'receipt', variant: 'roll', at: 'After paying', props: { title: 'Costco', rows: [{ label: 'Sales', value: '$270bn' }, { label: 'Left over', value: 'little', mark: true }] } },
+    { type: 'words', variant: 'stack', at: 'That is the plan', props: { lines: ['The plan,', 'not a mistake'], mark: 'plan' } },
+    { type: 'product', variant: 'hero', at: 'The money is in the card', props: { product: 'card', text: 'MEMBER', callouts: ['The real product'] } },
+    { type: 'count', variant: 'pile', at: 'Shoppers paid', beats: ['in membership fees'], props: { amount: '$5.3 billion', line: 'in membership fees' } },
+    { type: 'grid', variant: 'tray', at: 'That is 51%', props: { of: 100, filled: 51, figure: '51%', label: 'of the profit' } },
+    { type: 'stamp', variant: 'under', at: 'A fee costs', props: { lines: ['Costs almost', 'nothing'], stamp: ['Pure fee'] } },
+    { type: 'tag', variant: 'pin', at: 'So Costco can sell', props: { label: 'Hot dog', price: '$1.50' } },
+    { type: 'split', variant: 'cards', at: 'The low prices', props: { a: { tag: 'The bait', figure: '$1.50', line: 'hot dog' }, b: { tag: 'The catch', figure: 'Card', line: 'renewed each year' } } },
+    { type: 'words', variant: 'ladder', at: 'Cheap prices', props: { lines: ['Cheap prices', 'bring people in'] } },
   ],
+  break: { at: 'Nobody has to' },
 };
 
 test('storyboard: valid plan, anchors, on-screen figures', () => {
@@ -228,77 +242,102 @@ test('storyboard: valid plan, anchors, on-screen figures', () => {
   const v = validatePlan(PLAN, script);
   assert.deepEqual(v.issues.filter((i) => i.level === 'error'), [], JSON.stringify(v.issues, null, 1));
   assert.equal(v.anchors[0].at, 0);
-  assert.ok(v.anchors[3].beats.length === 1);
+  assert.ok(v.anchors[5].beats.length === 1);
   assert.ok(findPhrase(script.words.map(norm), '$5.3 billion') > 0);
   const shown = screenFigures(PLAN).map((f) => f.key);
   assert.ok(shown.includes('$270000000000') && shown.includes('$5300000000') && shown.includes('51%') && shown.includes('$1.5'), shown.join(','));
 
   const broken = structuredClone(PLAN);
   broken.scenes[2].at = 'words that are not there';
-  broken.look.accent = 'beige';
+  broken.look = { accent: 'beige' };
   const rules = validatePlan(broken, script).issues.map((i) => i.rule);
   assert.ok(rules.includes('anchor') && rules.includes('look'));
+  // a drawing must agree with its figure: 51% is 51 coins in a tray of 100
   const mismatch = structuredClone(PLAN);
-  mismatch.scenes[4].props.series = [{ label: 'A', value: 10, display: '$10' }, { label: 'B', value: 20, display: '$90' }];
-  assert.ok(validatePlan(mismatch, script).issues.some((i) => i.rule === 'chart'));
+  mismatch.scenes[6].props.filled = 30;
+  assert.ok(validatePlan(mismatch, script).issues.some((i) => /tray shows/.test(i.message)));
+  // the opening hit comes first, and there are enough scenes for a 40-55 second video
+  const noSlam = structuredClone(PLAN);
+  noSlam.scenes[0] = { type: 'words', variant: 'stack', props: { lines: ['Costco'] } };
+  assert.ok(validatePlan(noSlam, script).issues.some((i) => /slam/.test(i.message)));
+  assert.ok(validatePlan({ ...PLAN, scenes: PLAN.scenes.slice(0, 4) }, script).issues.some((i) => /at least/.test(i.message)));
+  // the pattern break belongs near the middle
+  assert.ok(validatePlan({ ...PLAN, break: { at: 'Costco barely' } }, script).issues.some((i) => i.rule === 'break'));
+  assert.ok(validatePlan({ ...PLAN, break: undefined }, script).issues.some((i) => i.rule === 'break'));
 });
 
-test('variety: neighbours must differ in order, accent and opening', () => {
-  const a = signature(PLAN);
-  assert.equal(a.opening, 'hook/slam');
-  assert.equal(checkVariety(a, [a]).filter((i) => i.level === 'error').length, 4);
+test('storyboard: coin stacks are whole coins, worked out from the figures', () => {
+  const sc = { type: 'stacks', variant: 'side', props: { unit: '$500 million', items: [{ label: 'Rent', amount: '$10.4 billion' }, { label: 'Royalties', amount: '$6 billion' }] } };
+  const { props, issues } = prepareScene(sc, 0);
+  assert.deepEqual(issues.filter((i) => i.level === 'error'), []);
+  assert.deepEqual(props.stacks.map((s) => s.coins), [21, 12]);
+  assert.deepEqual(props.stacks.map((s) => s.display), ['$10.4bn', '$6bn']);
+  assert.equal(props.unitLabel, '1 coin = $500 million');
+  const tooTall = prepareScene({ ...sc, props: { ...sc.props, unit: '$100 million' } }, 0).issues;
+  assert.ok(tooTall.some((i) => i.level === 'error' && /coins tall/.test(i.message)));
+  assert.equal(parseAmount('$5.3 billion').number, 5.3);
+  assert.equal(parseAmount('$5.3 billion').word, 'billion');
+  assert.equal(parseAmount('36%').suffix, '%');
+});
+
+test('variety: neighbours must differ in order, accent, opening, objects and scene changes', () => {
+  const a = signature(PLAN, '001');
+  assert.equal(a.opening, 'slam/stamp');
+  assert.equal(a.accent, 'green');
+  assert.equal(checkVariety(a, [a]).filter((i) => i.level === 'error').length, 5);
   const other = structuredClone(PLAN);
-  other.look = { accent: 'coral', ground: 'paper', type: 'editorial', motion: 'glide', captions: 'box', shape: 'soft' };
-  other.scenes[0].variant = 'stamp';
-  other.scenes.reverse();
-  other.scenes.unshift(other.scenes.pop());
-  assert.deepEqual(checkVariety(signature(other), [a]).filter((i) => i.level === 'error'), []);
+  other.look = { accent: 'vermilion' };
+  other.scenes[0] = { type: 'slam', variant: 'number', props: { figure: '$5.3', unit: 'billion' } };
+  other.scenes = [other.scenes[0], ...other.scenes.slice(1).reverse()].filter((sc) => sc.type !== 'tag');
+  other.scenes.forEach((sc, i) => i && (sc.enter = 'fold'));
+  assert.deepEqual(checkVariety(signature(other, '002'), [a]).filter((i) => i.level === 'error'), []);
+  // the look rotates with the video number unless the storyboard names one
+  assert.equal(signature(PLAN, '002').accent, 'vermilion');
+  assert.equal(signature(PLAN, '010').inverted, true);
 });
 
-test('timing: scenes follow the words, cadence is checked', () => {
+test('timing: scenes follow the words, cadence is checked, the break lands on its words', () => {
   const script = parseScript(tmp('script.md', GOOD_SCRIPT));
   const words = syntheticTimings(script.text);
   const built = buildProps({ plan: PLAN, script, words });
   assert.deepEqual(built.issues.filter((i) => i.rule !== 'cadence' && i.level === 'error'), []);
   const p = built.props;
   assert.equal(p.scenes[0].from, 0);
-  for (let i = 1; i < p.scenes.length; i++) assert.equal(p.scenes[i].from, p.scenes[i - 1].from + p.scenes[i - 1].duration);
+  assert.equal(p.scenes[0].enter, null);
+  for (let i = 1; i < p.scenes.length; i++) {
+    assert.equal(p.scenes[i].from, p.scenes[i - 1].from + p.scenes[i - 1].duration);
+    assert.ok(['tear', 'whip', 'fold'].includes(p.scenes[i].enter));
+  }
   assert.equal(p.scenes.at(-1).from + p.scenes.at(-1).duration, p.durationInFrames);
   for (const s of p.scenes) {
     assert.equal(s.cues.length, cueCount({ type: s.type, variant: s.variant, props: s.props }));
     for (let i = 1; i < s.cues.length; i++) assert.ok(s.cues[i] > s.cues[i - 1], `${s.type} cues ascend`);
     assert.ok(s.cues.at(-1) < s.duration, `${s.type} last cue inside scene`);
   }
+  const at = findPhrase(script.words.map(norm), 'Nobody has to');
+  assert.ok(Math.abs(p.patternBreak.frame - Math.round(words[at].start * 30)) <= 3);
+  assert.ok(['invert', 'zoom', 'freeze'].includes(p.patternBreak.kind));
+  assert.deepEqual(p.look, { accent: 'green', inverted: false });
   assert.ok(p.captions.every((c) => c.words.length >= 1 && c.words.length <= 4));
   assert.equal(p.handle, null); // placeholders in channel.json never reach the screen
   assert.equal(buildProps({ plan: PLAN, script, words, channel: { handle: '[channel name]', cta: '[e.g. follow]' } }).props.cta, null);
+  assert.equal(buildProps({ plan: PLAN, script, words, channel: { handle: '@digitalfinancekay', cta: 'Follow for more' } }).props.handle, '@digitalfinancekay');
 
   // a storyboard with too few scenes leaves the screen static, and that is an error
-  const sparse = { ...PLAN, scenes: [PLAN.scenes[0], { ...PLAN.scenes[6], at: 'Cheap prices' }] };
+  const sparse = { ...PLAN, scenes: [PLAN.scenes[0], { ...PLAN.scenes[10], at: 'Cheap prices' }] };
   assert.ok(buildProps({ plan: sparse, script, words }).issues.some((i) => i.rule === 'cadence' && i.level === 'error'));
 });
 
-test('look system: every approved accent has contrast on its ground', () => {
-  const lum = (hex) => {
-    const c = [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16) / 255).map((v) => (v <= 0.04045 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4));
-    return 0.2126 * c[0] + 0.7152 * c[1] + 0.0722 * c[2];
-  };
-  const ratio = (a, b) => (Math.max(lum(a), lum(b)) + 0.05) / (Math.min(lum(a), lum(b)) + 0.05);
-  for (const [ground, accents] of Object.entries(GROUND_ACCENTS)) {
-    const g = GROUNDS[ground];
-    assert.ok(ratio(g.fg, g.bg) >= 7, `${ground} text`);
-    assert.ok(ratio(g.muted, g.bg) >= 4.5, `${ground} muted text`);
-    for (const name of accents) {
-      const a = ACCENTS[name];
-      const fill = g.mode === 'dark' ? a.dark : a.light;
-      const on = g.mode === 'dark' ? a.onDark : a.onLight;
-      assert.ok(ratio(fill, g.bg) >= 3, `${name} on ${ground}: ${ratio(fill, g.bg).toFixed(2)}`);
-      // Labels on a fill are always large and bold, so the WCAG large-text bar (3:1) applies.
-      // The values were chosen with APCA (>= Lc 57) using the data-viz skill's validator.
-      assert.ok(ratio(on, fill) >= 3, `label on ${name} (${g.mode}): ${ratio(on, fill).toFixed(2)}`);
+test('scene library: twelve kinds of scene, and every step of every scene makes a sound', () => {
+  assert.ok(Object.keys(SCENES).length >= 12);
+  for (const [type, spec] of Object.entries(SCENES)) {
+    for (const variant of spec.variants) {
+      const props = { lines: ['a', 'b'], items: [{}, {}], rows: [{ mark: true }, {}], callouts: ['x', 'y'], unit: 'u', tag: { label: 'l' }, sub: 's', note: 'n', line: 'l', label: 'l', verdict: 'v', figure: '1', mark: ['b'] };
+      const n = spec.cues(props, variant);
+      const sounds = spec.sounds(props, variant);
+      assert.equal(sounds.length, n, `${type}/${variant}: ${sounds.length} sounds for ${n} steps`);
     }
   }
-  assert.ok(Object.keys(SCENES).length >= 10, 'at least 10 scene types');
 });
 
 // ------------------------------------------------------------ fact checking
@@ -396,7 +435,7 @@ test('sound: music rotates so neighbours differ; effects follow the cue frames',
   const { props } = buildProps({ plan: PLAN, script, words: syntheticTimings(script.text), id: '001' });
   const sp = soundPlan(props, PLAN);
   assert.equal(sp.music, 'music/caper.ogg');
-  assert.equal(sp.events[0].t, 0);
+  assert.ok(sp.events[0].t <= 0.2, 'the opening hit is heard in the first fifth of a second');
   assert.equal(sp.events[0].family, 'slam');
   // one event for each scene change, at that scene's first frame
   for (const sc of props.scenes.slice(1)) assert.ok(sp.events.some((e) => Math.abs(e.t - sc.from / 30) < 0.001), `no sound at scene start ${sc.from}`);

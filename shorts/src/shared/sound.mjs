@@ -4,6 +4,8 @@
 //
 // Sound files are named <family>-<n>.wav in assets/sfx and <name>.ogg in assets/music, and every
 // one of them has to be listed in assets/licences.md or the mixer refuses to use it.
+import { MOTION } from './paper.mjs';
+import { SCENES } from './spec.mjs';
 
 /** How many variants each effect family has on disk (checked by the tests). */
 export const SFX = {
@@ -28,32 +30,11 @@ export const LEVELS = {
   },
 };
 
-// Which sound each reveal step of a scene makes. `cues` names steps in order; `each` covers the
-// rest; `last` replaces the final step. 'count' is a run of ticks ending in a soft struck tone.
-export const SCENE_SOUNDS = {
-  hook: { cues: ['slam', 'stamp', 'pop'] },
-  kinetic: { each: 'fwip' },
-  counter: { cues: ['count', 'pop', 'pop'] },
-  chart: { each: 'coin', last: 'ding' },
-  flow: { each: 'fwip', last: 'coin' },
-  breakdown: { each: 'land', last: 'ching' },
-  split: { cues: ['land', 'land', 'stamp'] },
-  map: { cues: ['fwip', 'pop', 'ding'] },
-  timeline: { each: 'tick' },
-  mockup: { cues: ['land'], each: 'pop' },
-  icons: { each: 'pop', last: 'ding' },
-  ratio: { cues: ['fwip', 'coin', 'pop'] },
-  versus: { cues: ['land', 'land', 'stamp'] },
-};
-
-/** The sound of each kind of scene change. */
-export const TRANSITION_SOUNDS = { whip: 'whip', tear: 'tear', fold: 'fold' };
-const TRANSITION_ORDER = ['whip', 'tear', 'fold'];
-
 // when two sounds want the same instant, the one earlier in this list wins
 const PRIORITY = ['slam', 'boom', 'stamp', 'ching', 'ding', 'snip', 'tear', 'whip', 'fold', 'coin', 'land', 'printer', 'riser', 'tape', 'fwip', 'pop', 'swipe', 'tick'];
 const MIN_GAP = 0.11; // seconds between two effects
-const FIRST_CUE_DELAY = 5; // frames: a scene's first object lands just after the transition into it
+/** A scene's first piece starts moving this many frames after the scene change, once the transition is under way. */
+export const FIRST_CUE_DELAY = 3;
 
 const num = (id) => parseInt(String(id).replace(/\D/g, ''), 10) || 0;
 
@@ -69,8 +50,8 @@ export function pickMusic(id, plan = {}) {
 }
 
 /**
- * props: the Remotion input (scenes with absolute `from` and relative `cues`, in frames).
- * Returns { music, events: [{ t, family, variant, file, gainDb, pan }], seconds }.
+ * props: the Remotion input (scenes with absolute `from`, relative `cues`, `enter`, in frames).
+ * Returns { music, events: [{ t, family, file, gainDb, pan }], seconds }.
  */
 export function soundPlan(props, plan = {}) {
   const fps = props.fps || 30;
@@ -79,16 +60,26 @@ export function soundPlan(props, plan = {}) {
   const push = (frame, family, extra = {}) => raw.push({ t: Math.max(0, frame) / fps, family, ...extra });
 
   props.scenes.forEach((sc, i) => {
-    const map = sc.sounds || SCENE_SOUNDS[sc.type] || { each: 'pop' };
-    if (i > 0) push(sc.from, TRANSITION_SOUNDS[sc.transition] || TRANSITION_ORDER[(n + i) % TRANSITION_ORDER.length], { transition: true });
+    const spec = SCENES[sc.type];
+    const families = spec ? spec.sounds(sc.props || {}, sc.variant) : [];
+    if (i > 0 && sc.enter) push(sc.from, sc.enter);
     sc.cues.forEach((c, k) => {
-      const isLast = k === sc.cues.length - 1 && sc.cues.length > 1;
-      const family = (map.cues && map.cues[k]) || (isLast && map.last) || map.each || 'pop';
-      const frame = sc.from + c + (i > 0 && k === 0 ? FIRST_CUE_DELAY : 0);
+      const family = families[k] || 'pop';
+      // the sound belongs to the moment the piece touches down, not the moment it starts moving
+      const frame = sc.from + c + (i > 0 && k === 0 ? FIRST_CUE_DELAY : 0) + MOTION.impact - 1;
+      const next = k + 1 < sc.cues.length ? sc.cues[k + 1] : sc.duration;
       if (family === 'count') {
         // a counter running: ticks that thin out, then the figure lands
         for (let j = 0; j < 8; j++) push(frame + Math.round(j * 2 + (j * j) / 5), 'tick', { gainOffset: -j * 0.7, run: true });
-        push(frame + 24, 'ding');
+        push(frame + 22, 'ding');
+      } else if (family === 'coins') {
+        // coins arriving one after another: a rising run of clinks, every other coin, never a rattle
+        const span = Math.min(52, Math.max(14, next - c - 6));
+        const count = Math.min(7, Math.max(3, Math.round(span / 7)));
+        for (let j = 0; j < count; j++) push(frame + (j * span) / count, 'coin', { step: Math.min(4, Math.floor((j / count) * 5)), gainOffset: -2, run: true });
+      } else if (family === 'snip') {
+        push(frame + 1, 'snip');
+        push(frame + 8, 'snip', { gainOffset: -2 });
       } else if (family === 'coin') push(frame, 'coin', { step: k });
       else push(frame, family);
     });
@@ -128,13 +119,13 @@ export function soundPlan(props, plan = {}) {
     };
   });
 
-  const music = plan.sound?.sfx === false ? pickMusic(props.id, plan) : pickMusic(props.id, plan);
+  const music = pickMusic(props.id, plan);
   return {
     seconds: props.durationInFrames / fps,
     music: music ? `music/${music}.ogg` : null,
     musicName: music,
     musicUnderVoiceDb: LEVELS.musicUnderVoiceDb + (plan.sound?.musicGainDb || 0),
     musicInGapsDb: LEVELS.musicInGapsDb + (plan.sound?.musicGainDb || 0),
-    events: plan.sound?.sfx === false ? [] : events,
+    events: plan.sound?.sfx === false ? [] : events.filter((e) => e.t < props.durationInFrames / fps),
   };
 }

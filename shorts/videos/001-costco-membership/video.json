@@ -1,183 +1,248 @@
 {
   "id": "001",
-  "look": {
-    "accent": "lime",
-    "ground": "ink",
-    "type": "grotesk",
-    "motion": "snap",
-    "captions": "pop",
-    "shape": "sharp"
-  },
   "scenes": [
     {
-      "type": "hook",
-      "variant": "slam",
+      "type": "slam",
+      "variant": "object",
       "beats": [
-        "half",
-        "Last year"
+        "money on what"
       ],
       "props": {
-        "kicker": "Costco",
+        "product": "trolley",
         "lines": [
-          "Membership fees",
-          "equal half",
-          "its profit"
-        ],
-        "emphasis": "half",
-        "sub": "Fiscal year 2025, by the numbers"
-      }
-    },
-    {
-      "type": "counter",
-      "variant": "countup",
-      "at": "sold $270 billion",
-      "beats": [
-        "of goods"
-      ],
-      "props": {
-        "prefix": "$",
-        "value": 270,
-        "suffix": "billion",
-        "label": "Goods sold in one year",
-        "sub": "through its warehouses",
-        "source": "Costco results, fiscal 2025"
-      }
-    },
-    {
-      "type": "versus",
-      "variant": "towers",
-      "at": "But buying and selling",
-      "beats": [
-        "cost almost"
-      ],
-      "props": {
-        "title": "One year at Costco",
-        "a": {
-          "label": "Money in",
-          "display": "$275bn",
-          "value": 275.2
-        },
-        "b": {
-          "label": "Left as profit",
-          "display": "$10.4bn",
-          "value": 10.4
-        }
-      }
-    },
-    {
-      "type": "kinetic",
-      "variant": "cascade",
-      "at": "Its low prices",
-      "beats": [
-        "leave little"
-      ],
-      "props": {
-        "lines": [
-          "Low prices",
-          "little profit"
-        ],
-        "emphasis": [
-          "little profit"
+          "Costco barely makes",
+          "money on what it sells"
         ]
       }
     },
     {
-      "type": "mockup",
-      "variant": "card",
-      "at": "The money comes",
+      "type": "count",
+      "variant": "rain",
+      "at": "Last year its warehouses",
+      "beats": [
+        "billion",
+        "of goods"
+      ],
+      "source": "Costco results, fiscal 2025",
       "props": {
-        "title": "Member",
-        "sub": "Membership card"
+        "amount": "$270 billion",
+        "line": "of goods sold",
+        "kicker": "Last year",
+        "sub": "Fiscal 2025"
       }
     },
     {
-      "type": "counter",
-      "variant": "odometer",
-      "at": "Shoppers paid",
+      "type": "receipt",
+      "variant": "roll",
+      "at": "But buying those goods",
       "beats": [
-        "just to walk"
+        "cost almost",
+        "The low prices",
+        "leaves Costco"
+      ],
+      "source": "Costco results, fiscal 2025",
+      "props": {
+        "title": "Costco \u00b7 fiscal 2025",
+        "rows": [
+          {
+            "label": "Net sales",
+            "value": "$269.9bn"
+          },
+          {
+            "label": "Operating profit",
+            "value": "$10.4bn",
+            "mark": true
+          }
+        ]
+      }
+    },
+    {
+      "type": "words",
+      "variant": "stack",
+      "at": "So where does",
+      "beats": [
+        "the money",
+        "come from"
       ],
       "props": {
-        "prefix": "$",
-        "value": 5.3,
-        "decimals": 1,
-        "suffix": "billion",
-        "label": "Membership fees, one year",
-        "sub": "paid just to walk in"
+        "lines": [
+          "So where does",
+          "the money",
+          "come from?"
+        ],
+        "mark": "money"
+      }
+    },
+    {
+      "type": "product",
+      "variant": "hero",
+      "at": "The card in your wallet",
+      "props": {
+        "product": "card",
+        "text": "MEMBER",
+        "callouts": [
+          "The real product"
+        ]
+      }
+    },
+    {
+      "type": "count",
+      "variant": "pile",
+      "at": "Shoppers paid",
+      "beats": [
+        "in fees",
+        "just to walk"
+      ],
+      "source": "Costco results, fiscal 2025",
+      "props": {
+        "amount": "$5.3 billion",
+        "line": "in fees",
+        "sub": "just to walk in"
+      }
+    },
+    {
+      "type": "stamp",
+      "variant": "under",
+      "at": "That money arrives",
+      "beats": [
+        "before a single"
+      ],
+      "props": {
+        "lines": [
+          "Paid before",
+          "anything is sold"
+        ],
+        "stamp": [
+          "Up front"
+        ]
+      }
+    },
+    {
+      "type": "words",
+      "variant": "ladder",
+      "at": "There is nothing",
+      "beats": [
+        "ship or",
+        "store"
+      ],
+      "props": {
+        "lines": [
+          "Nothing to stock,",
+          "ship",
+          "or store"
+        ]
+      }
+    },
+    {
+      "type": "grid",
+      "variant": "tray",
+      "at": "Those fees equal",
+      "beats": [
+        "about half",
+        "running the business"
+      ],
+      "source": "Costco results, fiscal 2025",
+      "props": {
+        "of": 100,
+        "filled": 51,
+        "figure": "51%",
+        "label": "of what Costco earned from running it"
+      }
+    },
+    {
+      "type": "stamp",
+      "variant": "over",
+      "at": "In the US and Canada",
+      "beats": [
+        "92%",
+        "renewed"
+      ],
+      "source": "Costco earnings call, 2025",
+      "props": {
+        "figure": "92%",
+        "lines": [
+          "of members",
+          "renewed"
+        ],
+        "stamp": [
+          "Came back"
+        ],
+        "sub": "US and Canada"
+      }
+    },
+    {
+      "type": "tag",
+      "variant": "pin",
+      "at": "Since 2024",
+      "beats": [
+        "a basic US card",
+        "$65"
+      ],
+      "source": "CNN, 2024",
+      "props": {
+        "label": "Basic US card",
+        "price": "$65",
+        "sub": "a year",
+        "lines": [
+          "Since 2024"
+        ],
+        "product": "card",
+        "text": "MEMBER",
+        "note": "Was $60 until 2024"
       }
     },
     {
       "type": "split",
-      "variant": "slider",
-      "at": "Since 2024",
+      "variant": "cards",
+      "at": "The hot dog",
       "beats": [
-        "a basic US card",
-        "$65 a year"
+        "still cost",
+        "in the 1980s"
       ],
+      "source": "Fortune, 2022",
       "props": {
         "a": {
-          "tag": "Until 2024",
-          "figure": "$60",
-          "title": "a year"
+          "tag": "1980s",
+          "figure": "$1.50",
+          "line": "hot dog and drink"
         },
         "b": {
-          "tag": "Since 2024",
-          "figure": "$65",
-          "title": "a year",
-          "note": "basic US card"
+          "tag": "Today",
+          "figure": "$1.50",
+          "line": "hot dog and drink"
         },
-        "verdict": "Up $5 a year"
+        "verdict": "Never raised"
       }
     },
     {
-      "type": "chart",
-      "variant": "meter",
-      "at": "Those fees add up",
-      "beats": [
-        "about half",
-        "earned from running"
-      ],
+      "type": "stamp",
+      "variant": "under",
+      "at": "Cheap food keeps",
       "props": {
-        "title": "Fees against operating profit",
-        "series": [
-          {
-            "label": "of operating profit",
-            "value": 51,
-            "display": "51%"
-          }
+        "lines": [
+          "Cheap food keeps",
+          "you coming back"
         ],
-        "note": "$5.3bn of $10.4bn"
+        "stamp": [
+          "The bait"
+        ]
       }
     },
     {
-      "type": "icons",
-      "variant": "chain",
-      "at": "So the shelves",
-      "beats": [
-        "bring you in",
-        "The card is",
-        "which is why"
-      ],
+      "type": "product",
+      "variant": "hero",
+      "at": "The card is the real",
       "props": {
-        "items": [
-          {
-            "icon": "cart",
-            "label": "Low prices"
-          },
-          {
-            "icon": "people",
-            "label": "Shoppers"
-          },
-          {
-            "icon": "card",
-            "label": "Fees"
-          }
-        ],
-        "result": {
-          "icon": "safe",
-          "label": "Profit"
-        }
+        "product": "card",
+        "text": "MEMBER",
+        "price": "$65",
+        "callouts": [
+          "The real product"
+        ]
       }
     }
-  ]
+  ],
+  "break": {
+    "at": "about half of"
+  }
 }

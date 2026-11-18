@@ -8,7 +8,7 @@ gives the same figure. Anything marked below "high" confidence is listed at the
 top of the batch report for a check by hand before upload.
 
 ## 1. Net sales were $269.9 billion in fiscal 2025
-- Figures: $270 billion, 2025
+- Figures: $270 billion, $269.9bn, 2025
 - Exact: $269.9 billion
 - Source: Costco Wholesale Corporation, "Reports Fourth Quarter and Fiscal Year 2025 Operating Results" (52 weeks ended 31 August 2025)
 - Type: company report
@@ -95,3 +95,33 @@ top of the batch report for a check by hand before upload.
 - Exact: $5
 - Derived: 65 - 60 = 5
 - From: 6, 7
+
+## 9. 92.3% of members in the US and Canada renewed in fiscal 2025
+- Figures: 92%
+- Exact: 92.3%
+- Source: Fox Business, "Costco's exclusive hours for executive members 'very well received,' drive sales boost of 1%" (reporting the fiscal 2025 fourth-quarter earnings call)
+- Type: major news outlet
+- URL: https://www.foxbusiness.com/retail/costcos-exclusive-hours-executive-members-very-well-received-drive-sales-boost-1
+- Date: 2025-09-26
+- Quote: Renewal rates were 92.3% in the U.S. and Canada and 89.8% worldwide, per CFO Gary Millerchip on the earnings call.
+- Year: fiscal 2025 (fourth quarter)
+- Verified: search-verified
+- Agrees: none on an accepted site (the same figure appears in earnings-call transcripts and on Zacks)
+- Confidence: medium
+- Checked: 2026-11-18
+
+## 10. The hot dog and soda combo still costs $1.50, the price it has held since the 1980s
+- Figures: $1.50, 1980s
+- Exact: $1.50
+- Historic: yes
+- Source: Fortune, "Costco claims its $1.50 hot dog combo is 'forever,' laughing in the face of inflation"
+- Type: major news outlet
+- URL: https://fortune.com/2022/09/27/costco-hotdog-combo-forever-cfo-inflation-membership-price/
+- Date: 2022-09-27
+- Quote: The $1.50 price of the hot dog and soda combo has held since the 1980s; the CFO said Costco would hold it "forever".
+- Year: 2022 (price unchanged since the 1980s)
+- Verified: search-verified
+- Agrees: Axios, "Costco updates its $1.50 hot dog combo — without raising the price" (the price is still $1.50 in 2026), https://axios.com/2026/05/02/costco-hot-dog-combo-options-water
+- Confidence: medium
+- Note: two outlets agree the price is $1.50 today; only one result gives the 1980s start, and Wikipedia (not accepted) says 1984 while most say 1985. The script says "the 1980s" for that reason.
+- Checked: 2026-11-18

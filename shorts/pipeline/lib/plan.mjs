@@ -1,10 +1,12 @@
-// video.json: the storyboard. Which scenes, in which order, with which look.
-// This file validates one storyboard and compares it with its neighbours so
-// that no two videos in a row look alike.
-import { ACCENTS, CAPTION_STYLES, GROUNDS, GROUND_ACCENTS, ICONS, MOTIONS, RULES, SCENES, SHAPES, TYPE_VOICES, cueCount } from '../../src/shared/spec.mjs';
+// video.json: the storyboard. Which scenes, in which order. This file validates one storyboard,
+// works out what each scene needs to draw (how many coins in a stack, where a counter stops),
+// and compares it with its neighbours so that no two videos in a row share a skeleton.
+import { ACCENT_ORDER, lookFor } from '../../src/shared/paper.mjs';
+import { BREAKS, DECKS, PRODUCTS, RULES, SCENES, TRANSITIONS, cueCount, sceneObjects } from '../../src/shared/spec.mjs';
 import { figures, norm, tokens } from './text.mjs';
 
 const issue = (level, rule, message) => ({ level, rule, message });
+const num = (id) => parseInt(String(id).replace(/\D/g, ''), 10) || 1;
 
 /** Index of the first word of `phrase` in `words` at or after `from`, or -1. */
 export function findPhrase(wordsNorm, phrase, from = 0) {
@@ -59,7 +61,73 @@ export function resolveAnchors(plan, scriptWords) {
   return { anchors: out, issues };
 }
 
-const SKIP_KEYS = new Set(['icon', 'tone', 'at', 'region', 'object', 'align', 'kind', 'id', 'from', 'to', 'lat', 'lon', 'highlight', 'value', 'total', 'filled', 'max', 'joiner', 'variant', 'prefix', 'suffix', 'accent']);
+// ---------------------------------------------------------- amounts
+const WORD_OF = { 1e12: 'trillion', 1e9: 'billion', 1e6: 'million', 1e3: 'thousand' };
+/** "$270 billion" -> { prefix: '$', number: 270, decimals: 0, word: 'billion', suffix: '', value: 2.7e11 } */
+export function parseAmount(text) {
+  const f = figures(String(text || '')).find((x) => x.kind === 'digit' && !x.year);
+  if (!f) return null;
+  const unit = f.unit || 1;
+  return { prefix: f.currency || '', number: +(f.value / unit).toFixed(f.decimals || 0), decimals: f.decimals || 0, word: WORD_OF[unit] || '', suffix: f.percent ? '%' : f.mult ? 'x' : '', value: f.value, raw: f.raw };
+}
+/** "$10.4 billion" -> "$10.4bn": the short form used where space is tight. */
+export const shortAmount = (text) => String(text).replace(/\s*trillion\b/i, 'tn').replace(/\s*billion\b/i, 'bn').replace(/\s*million\b/i, 'm').replace(/\s*thousand\b/i, 'k');
+
+/**
+ * What each scene needs worked out before it can be drawn. Returns { props, issues } where props
+ * are the storyboard's own props plus the derived values (never replacing what was written).
+ */
+export function prepareScene(sc, i = 0) {
+  const p = { ...(sc.props || {}) };
+  const issues = [];
+  const bad = (m) => issues.push(issue('error', 'scenes', `Scene ${i + 1} (${sc.type}): ${m}`));
+  if (sc.type === 'count') {
+    const a = parseAmount(p.amount);
+    if (!a) bad(`"amount" must be a figure such as "$270 billion", not "${p.amount}".`);
+    else p.count = a;
+  }
+  if (sc.type === 'stacks') {
+    const unit = parseAmount(p.unit);
+    if (!unit || !(unit.value > 0)) bad('"unit" must say what one coin is worth, e.g. "$500 million".');
+    else {
+      p.unitLabel = `1 coin = ${p.unit}`;
+      p.stacks = (p.items || []).map((it) => {
+        const a = parseAmount(it.amount);
+        if (!a) {
+          bad(`item "${it.label}" needs an "amount" such as "$10.4 billion".`);
+          return { label: it.label, display: String(it.amount || ''), coins: 1, number: 0, decimals: 0, prefix: '', tail: '' };
+        }
+        const coins = Math.round(a.value / unit.value);
+        if (coins < 1) bad(`"${it.label}" (${it.amount}) is less than half a coin of ${p.unit}: choose a smaller unit.`);
+        if (coins > 26) bad(`"${it.label}" would be ${coins} coins tall: choose a larger unit than ${p.unit}.`);
+        if (coins >= 1 && coins < 4) issues.push(issue('warn', 'scenes', `Scene ${i + 1} (stacks): "${it.label}" is only ${coins} coin(s), so rounding to whole coins distorts it. A smaller unit reads more honestly.`));
+        const short = shortAmount(it.amount);
+        return { label: it.label, display: short, coins: Math.max(1, Math.min(26, coins)), number: a.number, decimals: a.decimals, prefix: a.prefix, tail: short.replace(/^[^0-9]*[0-9.,]+/, '') };
+      });
+      if (p.stacks.length < 2 || p.stacks.length > 3) bad('a coin-stack chart compares 2 or 3 things.');
+    }
+  }
+  if (sc.type === 'cut') {
+    const a = parseAmount(p.share);
+    if (!a || a.suffix !== '%' || !(a.number >= 5 && a.number <= 95)) bad('"share" must be a percentage between 5% and 95%, e.g. "36%".');
+    else p.shareValue = a.number;
+  }
+  if (sc.type === 'grid') {
+    if (![10, 20, 50, 100].includes(p.of)) bad('"of" must be 10, 20, 50 or 100.');
+    if (!(Number.isInteger(p.filled) && p.filled >= 0 && p.filled <= p.of)) bad('"filled" must be a whole number no larger than "of".');
+    const a = parseAmount(p.figure);
+    if (a && a.suffix === '%' && p.of && Math.abs(a.number - (p.filled / p.of) * 100) > 0.51) bad(`the figure says ${p.figure} but the tray shows ${p.filled} of ${p.of}.`);
+  }
+  if (sc.type === 'stamp' && p.figure) {
+    const a = parseAmount(p.figure);
+    if (a) p.count = a;
+  }
+  if (sc.type === 'flow' && p.amount) p.amountShort = shortAmount(p.amount);
+  return { props: p, issues };
+}
+
+// Keys whose strings are not printed as they stand (they are composed, or are names of things to draw).
+const SKIP_KEYS = new Set(['product', 'variant', 'unit', 'figure', 'mark', 'enter', 'kind', 'deck', 'accent', 'at']);
 
 /** Every string that ends up on screen, for the fact checker. */
 export function screenStrings(plan) {
@@ -70,75 +138,60 @@ export function screenStrings(plan) {
     } else if (Array.isArray(v)) v.forEach((x) => walk(x, key));
     else if (v && typeof v === 'object') for (const [k, x] of Object.entries(v)) walk(x, k);
   };
-  for (const sc of plan.scenes) {
-    walk(sc.props || {}, 'props');
+  for (const sc of plan.scenes || []) {
     const p = sc.props || {};
-    if (sc.type === 'counter' && typeof p.value === 'number') {
-      out.push(`${p.prefix || ''}${p.value.toFixed(p.decimals ?? 0)}${p.suffix ? ` ${p.suffix}` : ''}`);
-    }
-    if (sc.type === 'ratio' && typeof p.filled === 'number' && p.total > 0) out.push(`${+((p.filled / p.total) * 100).toFixed(1)}%`);
+    walk(p, 'props');
+    // a figure and its unit are read together: "$5.3" + "billion" is $5.3 billion, not $5.30
+    if (typeof p.figure === 'string') out.push(p.unit && sc.type === 'slam' ? `${p.figure} ${p.unit}` : p.figure);
+    // sc.source is a citation ("Fortune, 2022"), not a claim: its year is not checked as a figure
+    if (sc.type === 'grid' && typeof p.filled === 'number' && p.of > 0) out.push(`${+((p.filled / p.of) * 100).toFixed(1)}%`);
   }
   return out;
 }
 
 export const screenFigures = (plan, ignore = []) => screenStrings(plan).flatMap((s) => figures(s, { ignore }));
 
-function collectIcons(v, out = []) {
-  if (Array.isArray(v)) v.forEach((x) => collectIcons(x, out));
-  else if (v && typeof v === 'object') for (const [k, x] of Object.entries(v)) (k === 'icon' && typeof x === 'string' ? out.push(x) : collectIcons(x, out));
-  return out;
+/** The look of video n: its accent and whether it is the inverted version, unless the storyboard says otherwise. */
+export function resolveLook(id, plan = {}) {
+  const auto = lookFor(num(id));
+  return { accent: plan.look?.accent || auto.accent, inverted: plan.look?.inverted ?? auto.inverted };
 }
-
-// A chart's geometry must agree with the numbers printed on it.
-function checkSeries(sc, i, out) {
-  const series = sc.props?.series;
-  if (!Array.isArray(series)) return;
-  const pairs = [];
-  for (const s of series) {
-    if (typeof s.value !== 'number' || !(s.value >= 0)) out.push(issue('error', 'chart', `Scene ${i + 1}: every series item needs a numeric "value".`));
-    if (!s.label) out.push(issue('error', 'chart', `Scene ${i + 1}: every series item needs a "label".`));
-    const f = s.display ? figures(s.display).find((x) => x.kind === 'digit') : null;
-    if (f) pairs.push([s.value, f.value]);
-  }
-  for (let a = 1; a < pairs.length; a++) {
-    const [v0, d0] = pairs[0];
-    const [v1, d1] = pairs[a];
-    if (v0 > 0 && d0 > 0 && Math.abs(v1 / v0 - d1 / d0) > 0.02 * Math.max(1, d1 / d0)) {
-      out.push(issue('error', 'chart', `Scene ${i + 1}: bar sizes (${v0} vs ${v1}) do not match the printed figures. The drawing would mislead.`));
-      break;
-    }
-  }
+/** Scene changes, in order: what the storyboard asks for, otherwise a rotation that starts differently for every video. */
+export function resolveTransitions(id, plan) {
+  const n = num(id);
+  return (plan.scenes || []).map((sc, i) => (i === 0 ? null : sc.enter || TRANSITIONS[(n + i) % TRANSITIONS.length]));
 }
+export const resolveDeck = (id, plan = {}) => plan.deck || DECKS[(num(id) - 1) % DECKS.length];
+export const resolveBreakKind = (id, plan = {}) => plan.break?.kind || BREAKS[(num(id) - 1) % BREAKS.length];
 
-export function validatePlan(plan, script) {
+export function validatePlan(plan, script, id = plan.id) {
   const out = [];
   const L = plan.look || {};
-  if (!ACCENTS[L.accent]) out.push(issue('error', 'look', `look.accent must be one of: ${Object.keys(ACCENTS).join(', ')}.`));
-  if (!GROUNDS[L.ground]) out.push(issue('error', 'look', `look.ground must be one of: ${Object.keys(GROUNDS).join(', ')}.`));
-  if (ACCENTS[L.accent] && GROUNDS[L.ground] && !GROUND_ACCENTS[L.ground].includes(L.accent)) {
-    out.push(issue('error', 'look', `Accent "${L.accent}" is not approved on ground "${L.ground}". Approved: ${GROUND_ACCENTS[L.ground].join(', ')}.`));
-  }
-  if (!TYPE_VOICES[L.type]) out.push(issue('error', 'look', `look.type must be one of: ${Object.keys(TYPE_VOICES).join(', ')}.`));
-  if (!MOTIONS[L.motion]) out.push(issue('error', 'look', `look.motion must be one of: ${Object.keys(MOTIONS).join(', ')}.`));
-  if (!CAPTION_STYLES.includes(L.captions)) out.push(issue('error', 'look', `look.captions must be one of: ${CAPTION_STYLES.join(', ')}.`));
-  if (!(L.shape in SHAPES)) out.push(issue('error', 'look', `look.shape must be one of: ${Object.keys(SHAPES).join(', ')}.`));
+  if (L.accent && !ACCENT_ORDER.includes(L.accent)) out.push(issue('error', 'look', `look.accent must be one of: ${ACCENT_ORDER.join(', ')}.`));
+  if (plan.deck && !DECKS.includes(plan.deck)) out.push(issue('error', 'look', `deck must be one of: ${DECKS.join(', ')}.`));
+  if (plan.break?.kind && !BREAKS.includes(plan.break.kind)) out.push(issue('error', 'break', `break.kind must be one of: ${BREAKS.join(', ')}.`));
 
-  if (!Array.isArray(plan.scenes) || plan.scenes.length < 4) out.push(issue('error', 'scenes', 'A storyboard needs at least 4 scenes.'));
   const scenes = plan.scenes || [];
+  if (!Array.isArray(plan.scenes) || scenes.length < RULES.minScenes) out.push(issue('error', 'scenes', `A storyboard needs at least ${RULES.minScenes} scenes (it has ${scenes.length}): at 40-55 seconds, fewer leaves the picture still for too long.`));
+  if (scenes[0] && scenes[0].type !== 'slam') out.push(issue('error', 'scenes', 'Scene 1 must be a "slam": the key number or object lands in the first half second.'));
   scenes.forEach((sc, i) => {
     const spec = SCENES[sc.type];
     if (!spec) return out.push(issue('error', 'scenes', `Scene ${i + 1}: unknown type "${sc.type}". Types: ${Object.keys(SCENES).join(', ')}.`));
     if (!spec.variants.includes(sc.variant)) out.push(issue('error', 'scenes', `Scene ${i + 1} (${sc.type}): variant must be one of: ${spec.variants.join(', ')}.`));
-    for (const key of spec.required) if (sc.props?.[key] === undefined) out.push(issue('error', 'scenes', `Scene ${i + 1} (${sc.type}): missing props.${key}.`));
+    for (const key of spec.required(sc.variant)) if (sc.props?.[key] === undefined) out.push(issue('error', 'scenes', `Scene ${i + 1} (${sc.type}/${sc.variant}): missing props.${key}.`));
     const need = cueCount(sc);
     if ((sc.beats || []).length > need - 1) out.push(issue('error', 'scenes', `Scene ${i + 1} (${sc.type}/${sc.variant}) has ${need} steps, so at most ${need - 1} beats; it has ${(sc.beats || []).length}.`));
-    for (const ic of collectIcons(sc.props || {})) if (!ICONS.includes(ic)) out.push(issue('error', 'icons', `Scene ${i + 1}: unknown icon "${ic}".`));
-    checkSeries(sc, i, out);
+    if (sc.enter && !TRANSITIONS.includes(sc.enter)) out.push(issue('error', 'scenes', `Scene ${i + 1}: enter must be one of: ${TRANSITIONS.join(', ')}.`));
+    const p = sc.props || {};
+    for (const prod of [p.product, p.from?.product, p.to?.product]) if (prod && !PRODUCTS.includes(prod)) out.push(issue('error', 'scenes', `Scene ${i + 1}: unknown product "${prod}". Products: ${PRODUCTS.join(', ')}.`));
+    out.push(...prepareScene(sc, i).issues);
+    // long lines shrink to fit, and small type is hard to read on a phone
+    for (const line of [...(p.lines || []), ...(p.stamp || [])]) if (typeof line === 'string' && line.length > 24) out.push(issue('warn', 'scenes', `Scene ${i + 1}: "${line}" is ${line.length} characters; headline lines read best under 22.`));
+    for (const c of p.callouts || []) if (String(c).length > 30) out.push(issue('warn', 'scenes', `Scene ${i + 1}: label "${c}" is long; keep labels under 30 characters.`));
   });
 
-  // No logos or mascots: plain text names and original icons only.
-  const strings = screenStrings(plan);
-  for (const s of strings) if (/[™®©]/.test(s)) out.push(issue('error', 'brand', `On-screen text "${s}" carries a trademark symbol. Plain text names only.`));
+  // No logos or mascots: plain text names and the pipeline's own drawings only.
+  for (const s of screenStrings(plan)) if (/[™®©]/.test(s)) out.push(issue('error', 'brand', `On-screen text "${s}" carries a trademark symbol. Plain text names only.`));
   const walkKeys = (v) => {
     if (Array.isArray(v)) v.forEach(walkKeys);
     else if (v && typeof v === 'object')
@@ -154,31 +207,45 @@ export function validatePlan(plan, script) {
     if (scenes[i].type === scenes[i - 1].type) out.push(issue('warn', 'scenes', `Scenes ${i} and ${i + 1} are both "${scenes[i].type}". Vary the type.`));
   }
   const distinct = new Set(scenes.map((s) => s.type));
-  if (scenes.length >= 5 && distinct.size < 4) out.push(issue('warn', 'scenes', `Only ${distinct.size} different scene types in ${scenes.length} scenes.`));
+  if (scenes.length >= RULES.minScenes && distinct.size < 6) out.push(issue('warn', 'scenes', `Only ${distinct.size} different scene types in ${scenes.length} scenes.`));
 
   const { anchors, issues } = script ? resolveAnchors(plan, script.words) : { anchors: [], issues: [] };
   out.push(...issues);
-  return { issues: out, anchors };
+
+  // the pattern break: named by the words it lands on, somewhere near the middle
+  if (script) {
+    if (!plan.break?.at) out.push(issue('error', 'break', 'The storyboard needs "break": { "at": "words from the script" } for the mid-video pattern break.'));
+    else {
+      const idx = findPhrase(script.words.map(norm), plan.break.at, 0);
+      const [lo, hi] = RULES.breakWindow;
+      if (idx < 0) out.push(issue('error', 'break', `break.at "${plan.break.at}" is not in the script.`));
+      else if (idx / script.words.length < lo || idx / script.words.length > hi) out.push(issue('error', 'break', `The pattern break lands ${Math.round((idx / script.words.length) * 100)}% of the way through; it belongs near the middle (${lo * 100}-${hi * 100}%).`));
+    }
+  }
+  return { issues: out, anchors, id };
 }
 
 /** What makes one video look different from another. */
-export function signature(plan) {
-  const L = plan.look || {};
+export function signature(plan, id = plan.id) {
   const first = plan.scenes?.[0] || {};
+  const look = resolveLook(id, plan);
   return {
     order: (plan.scenes || []).map((s) => s.type).join('>'),
     detail: (plan.scenes || []).map((s) => `${s.type}/${s.variant}`).join('>'),
-    accent: L.accent,
+    accent: look.accent,
+    inverted: look.inverted,
     opening: `${first.type}/${first.variant}`,
-    ground: L.ground,
-    look: [L.ground, L.type, L.motion, L.captions, L.shape].join('/'),
+    transitions: resolveTransitions(id, plan).filter(Boolean).join('>'),
+    objects: [...new Set((plan.scenes || []).flatMap(sceneObjects))].sort().join('+'),
+    deck: resolveDeck(id, plan),
+    breakKind: resolveBreakKind(id, plan),
   };
 }
 
 /**
  * `before` = signatures of earlier videos, nearest first. `after` = the next video, if it exists.
- * Hard rules come from the brief: no two videos in a row share scene order,
- * colour accent or opening style. The windows add a margin of safety.
+ * The identity is fixed; the structure is not. Neighbouring videos must differ in scene order,
+ * accent, opening move, featured objects and transitions.
  */
 export function checkVariety(sig, before = [], after = null) {
   const out = [];
@@ -187,20 +254,15 @@ export function checkVariety(sig, before = [], after = null) {
     if (!other) return;
     if (other.order === sig.order) out.push(issue('error', 'variety', `Same scene order as ${label} (${sig.order}).`));
     if (other.accent === sig.accent) out.push(issue('error', 'variety', `Same colour accent as ${label} (${sig.accent}).`));
-    if (other.opening === sig.opening) out.push(issue('error', 'variety', `Same opening style as ${label} (${sig.opening}).`));
-    if (other.look === sig.look) out.push(issue('error', 'variety', `Same overall look as ${label} (${sig.look}).`));
-    if (other.ground === sig.ground) out.push(issue('warn', 'variety', `Same background as ${label} (${sig.ground}).`));
+    if (other.opening === sig.opening) out.push(issue('error', 'variety', `Same opening move as ${label} (${sig.opening}).`));
+    if (other.transitions === sig.transitions) out.push(issue('error', 'variety', `Same run of scene changes as ${label} (${sig.transitions}).`));
+    if (other.objects === sig.objects) out.push(issue('error', 'variety', `Same featured objects as ${label} (${sig.objects}).`));
+    if (other.deck === sig.deck) out.push(issue('warn', 'variety', `Same desk furniture as ${label} (${sig.deck}).`));
+    if (other.breakKind === sig.breakKind) out.push(issue('warn', 'variety', `Same pattern break as ${label} (${sig.breakKind}).`));
   };
   hard(before[0], 'the previous video');
   hard(after, 'the next video');
   before.slice(1, V.openingWindow).forEach((o, k) => {
-    if (o.opening === sig.opening) out.push(issue('warn', 'variety', `Opening "${sig.opening}" was used ${k + 2} videos ago. Leave at least ${V.openingWindow} between repeats.`));
-  });
-  before.slice(1, V.accentWindow + 1).forEach((o, k) => {
-    if (o.accent === sig.accent) out.push(issue('warn', 'variety', `Accent "${sig.accent}" was used ${k + 2} videos ago.`));
-  });
-  before.slice(1, V.lookWindow + 1).forEach((o, k) => {
-    if (o.look === sig.look) out.push(issue('warn', 'variety', `The same look (${sig.look}) was used ${k + 2} videos ago.`));
     if (o.order === sig.order) out.push(issue('warn', 'variety', `The same scene order was used ${k + 2} videos ago.`));
   });
   return out;

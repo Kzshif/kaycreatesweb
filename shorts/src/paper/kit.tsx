@@ -240,33 +240,41 @@ type CutProps = {
   lift?: number;
   /** a dark paper (the phone, the ink chip): its tooth is screened on instead of multiplied */
   dark?: boolean;
+  /** false for a piece inside a group that casts one shadow together */
+  shadow?: boolean;
   seed?: number;
   style?: Style;
   children?: React.ReactNode;
 };
-/** One piece of cut paper: colour, tooth, an edge, and a two-part warm shadow underneath. */
-export const Cut: React.FC<CutProps> = ({ w, h, d, core, color, lift = 0.22, dark = false, seed = 1, style, children }) => {
+/** The warm shadow under a piece of paper: tight when it lies flat, longer and softer as it lifts. */
+export const shadowOf = (lift: number): string => {
   const L = clamp(lift, 0, 1.4);
-  const contact = `drop-shadow(${(0.6 + L * 2.5).toFixed(1)}px ${(1 + L * 4).toFixed(1)}px ${(0.7 + L * 2.6).toFixed(1)}px ${rgba(SHADOW, 0.36 - L * 0.1)})`;
-  const ambient = `drop-shadow(${(2 + L * 14).toFixed(1)}px ${(4 + L * 26).toFixed(1)}px ${(5 + L * 20).toFixed(1)}px ${rgba(SHADOW, 0.2 - L * 0.05)})`;
+  return `drop-shadow(${(1 + L * 10).toFixed(1)}px ${(1.8 + L * 19).toFixed(1)}px ${(1.3 + L * 12).toFixed(1)}px ${rgba(SHADOW, 0.36 - L * 0.11)})`;
+};
+/**
+ * One piece of cut paper: colour, tooth, an edge and a warm shadow underneath.
+ * (One shadow and a blended background rather than two shadows and an overlay: measured, the
+ * richer version doubled render time for a difference nobody sees at video speed.)
+ */
+export const Cut: React.FC<CutProps> = ({ w, h, d, core, color, lift = 0.22, dark = false, shadow = true, seed = 1, style, children }) => {
   const ox = Math.round(hash(seed, 71) * 512);
   const oy = Math.round(hash(seed, 72) * 512);
   return (
-    <div style={{ position: 'absolute', width: w, height: h, filter: L <= 0.16 ? contact : `${contact} ${ambient}`, ...style }}>
+    <div style={{ position: 'absolute', width: w, height: h, filter: shadow ? shadowOf(lift) : undefined, ...style }}>
       {core ? <div style={{ position: 'absolute', inset: 0, clipPath: `path('${core}')`, background: BRIGHT }} /> : null}
-      <div style={{ position: 'absolute', inset: 0, clipPath: `path('${d}')`, background: color }}>
+      <div
+        style={{
+          position: 'absolute',
+          inset: 0,
+          clipPath: `path('${d}')`,
+          backgroundColor: color,
+          backgroundImage: `url(${staticFile(dark ? GRAIN_DARK : GRAIN)})`,
+          backgroundSize: '512px 512px',
+          backgroundPosition: `${ox}px ${oy}px`,
+          backgroundBlendMode: dark ? 'screen' : 'multiply',
+        }}
+      >
         {children}
-        <div
-          style={{
-            position: 'absolute',
-            inset: 0,
-            backgroundImage: `url(${staticFile(dark ? GRAIN_DARK : GRAIN)})`,
-            backgroundSize: '512px 512px',
-            backgroundPosition: `${ox}px ${oy}px`,
-            mixBlendMode: dark ? 'screen' : 'multiply',
-            pointerEvents: 'none',
-          }}
-        />
       </div>
     </div>
   );
@@ -325,9 +333,34 @@ export const Scraps: React.FC<{ seed?: number }> = ({ seed = 1 }) => {
 let ctx: CanvasRenderingContext2D | null = null;
 const widths = new Map<string, number>();
 /** Width in px of text in one of the three roles (fonts are loaded before anything is measured). */
+let probeSpan: HTMLSpanElement | null = null;
+/** Numerals are measured as the page draws them: canvas text ignores Fraunces' SOFT and WONK settings. */
+const numeralEm = (text: string): number => {
+  if (typeof document === 'undefined') return text.length * 0.62;
+  if (!probeSpan) {
+    probeSpan = document.createElement('span');
+    Object.assign(probeSpan.style, { position: 'absolute', left: '-99999px', top: '0', visibility: 'hidden', whiteSpace: 'nowrap', fontSize: '200px' });
+    probeSpan.style.fontFamily = `"${TYPE.numeral.family}"`;
+    probeSpan.style.fontWeight = String(TYPE.numeral.weight);
+    probeSpan.style.fontVariationSettings = `"opsz" ${TYPE.numeral.opsz}, "SOFT" ${TYPE.numeral.soft}, "WONK" ${TYPE.numeral.wonk}`;
+    probeSpan.style.letterSpacing = `${TYPE.numeral.tracking}em`;
+    document.body.appendChild(probeSpan);
+  }
+  probeSpan.textContent = text;
+  // the hatched shade sits 4% of the size to the right of the figure
+  return probeSpan.getBoundingClientRect().width / 200 + 0.045;
+};
 export const measure = (text: string, role: 'headline' | 'numeral' | 'label', size: number): number => {
   const R = TYPE[role];
   const key = `${role}|${text}`;
+  if (role === 'numeral') {
+    let em = widths.get(key);
+    if (em === undefined) {
+      em = numeralEm(text);
+      widths.set(key, em);
+    }
+    return em * size;
+  }
   let em = widths.get(key);
   if (em === undefined) {
     if (!ctx) ctx = document.createElement('canvas').getContext('2d');

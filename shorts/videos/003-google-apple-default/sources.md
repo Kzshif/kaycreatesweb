@@ -37,3 +37,31 @@ top of the batch report for a check by hand before upload.
 - Agrees: Bloomberg, "Apple Gets 36% of Google Revenue in Search Deal, Expert Says" (a separate witness, the day before), https://www.bloomberg.com/news/articles/2023-11-13/apple-gets-36-of-google-revenue-from-search-deal-witness-says
 - Confidence: high
 - Checked: 2026-11-15
+
+## 3. The 36% figure came out in open court, apparently by accident
+- Figures: none
+- Historic: yes
+- Source: CNBC, "Google pays Apple 36% of Safari search revenue: Sundar Pichai"
+- Type: major news outlet
+- URL: https://www.cnbc.com/2023/11/14/google-pays-apple-36percent-of-safari-search-revenue-sundar-pichai.html
+- Date: 2023-11-14
+- Quote: An expert witness testifying on Google's behalf revealed the 36% figure in open court on Monday, apparently by accident.
+- Year: 2023
+- Verified: search-verified
+- Agrees: Bloomberg, "Apple Gets 36% of Google Revenue in Search Deal, Expert Says", https://www.bloomberg.com/news/articles/2023-11-13/apple-gets-36-of-google-revenue-from-search-deal-witness-says
+- Confidence: high
+- Checked: 2026-11-18
+
+## 4. The figure was supposed to stay confidential, and Google's lawyer visibly cringed
+- Figures: none
+- Historic: yes
+- Source: Bloomberg, "Apple Gets 36% of Google Revenue in Search Deal, Expert Says"
+- Type: major news outlet
+- URL: https://www.bloomberg.com/news/articles/2023-11-13/apple-gets-36-of-google-revenue-from-search-deal-witness-says
+- Date: 2023-11-13
+- Quote: "Schmidtlein, Google's main litigator, visibly cringed when Murphy said the number, which was supposed to remain confidential."
+- Year: 2023
+- Verified: search-verified
+- Agrees: The Star (AP syndication of the same report), https://www.thestar.com.my/tech/tech-news/2023/11/15/apple-gets-36-of-google-revenue-in-search-deal-expert-says
+- Confidence: medium
+- Checked: 2026-11-18

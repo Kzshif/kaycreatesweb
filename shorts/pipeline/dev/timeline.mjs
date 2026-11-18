@@ -1,27 +1,25 @@
-// Developer tool: print when each scene and each reveal step lands, using the real
-// word timings if they exist.   node pipeline/dev/timeline.mjs 001
-import { exists, findVideo, readJson, videoFiles } from '../lib/paths.mjs';
+#!/usr/bin/env node
+// When every scene and reveal of a video lands, with the words being spoken at that moment.
+//   node pipeline/dev/timeline.mjs 001
+import fs from 'node:fs';
+import { findVideo, readJson, videoFiles } from '../lib/paths.mjs';
 import { parseScript } from '../lib/script.mjs';
 import { syntheticTimings } from '../lib/text.mjs';
 import { buildProps } from '../lib/timing.mjs';
 
-const v = findVideo(process.argv[2]);
+const v = findVideo(process.argv[2] || '001');
 const f = videoFiles(v);
 const script = parseScript(f.script);
-const real = exists(f.words);
-const words = real ? readJson(f.words).words : syntheticTimings(script.text, script.say);
-const b = buildProps({ plan: readJson(f.plan), script, words });
-console.log(`${v.name}: ${b.seconds.toFixed(1)}s, ${real ? 'real voice timing' : 'estimated timing'}, longest gap ${b.worstGap}s, mean gap ${b.avgGap}s`);
-let prev = 0;
-for (const s of b.props.scenes) {
-  const cues = s.cues.map((c) => (s.from + c) / 30);
-  const gaps = cues.map((t) => {
-    const g = t - prev;
-    prev = t;
-    return `${t.toFixed(1)}${g > 3.0 ? `(+${g.toFixed(1)}!)` : ''}`;
-  });
-  console.log(`  ${(s.from / 30).toFixed(1).padStart(5)}s ${(s.duration / 30).toFixed(1).padStart(4)}s  ${`${s.type}/${s.variant}`.padEnd(20)} steps at ${gaps.join(', ')}`);
-}
-const end = b.seconds - prev;
-if (end > 3) console.log(`  last step to end: +${end.toFixed(1)}!`);
-for (const i of b.issues) console.log(`  ${i.level === 'error' ? 'x' : '!'} ${i.message}`);
+const plan = readJson(f.plan);
+const words = fs.existsSync(f.words) ? readJson(f.words).words : syntheticTimings(script.text, script.say);
+const b = buildProps({ plan, script, words, id: v.id });
+const said = (t) => words.filter((w) => w.start <= t + 0.35 && w.end >= t - 0.35).map((w) => w.w).join(' ');
+const events = [];
+b.props.scenes.forEach((s, i) => s.cues.forEach((c, k) => events.push({ t: (s.from + c) / 30, label: `${k === 0 ? `#${i + 1} ${s.type}/${s.variant}${s.enter ? ` (${s.enter})` : ''}` : `   step ${k + 1}`}` })));
+events.push({ t: b.props.patternBreak.frame / 30, label: `   BREAK ${b.props.patternBreak.kind}` });
+events.sort((a, c) => a.t - c.t);
+events.forEach((e, i) => {
+  const gap = (i + 1 < events.length ? events[i + 1].t : b.seconds) - e.t;
+  console.log(`${e.t.toFixed(2).padStart(6)}  ${e.label.padEnd(30)} ${gap > 3.05 ? `GAP ${gap.toFixed(1)}s` : '        '}  "${said(e.t)}"`);
+});
+console.log(`total ${b.seconds.toFixed(1)}s`);

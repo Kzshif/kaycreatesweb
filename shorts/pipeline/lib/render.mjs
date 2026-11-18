@@ -70,6 +70,29 @@ export function stageAudio(serveUrl, id, file) {
   return `audio/${name}`;
 }
 
+/**
+ * The desk never changes during a video, so it is drawn once (and once more in negative when the
+ * pattern break flips the colours) and every frame reuses the picture. Returns the props to set.
+ */
+export async function bakeBackdrop(props, workDir) {
+  const serveUrl = await getBundle();
+  const dir = path.join(serveUrl, 'public', 'backdrop');
+  fs.mkdirSync(dir, { recursive: true });
+  const out = {};
+  const want = [['backdrop', props.look.inverted]];
+  if (props.patternBreak?.kind === 'invert') want.push(['backdropAlt', !props.look.inverted]);
+  for (const [key, inverted] of want) {
+    const inputProps = { ...props, look: { ...props.look, inverted }, only: 'backdrop', audio: null, probe: false, durationInFrames: 1 };
+    const composition = await selectComposition({ serveUrl, id: 'Short', inputProps, ...common() });
+    const name = `${props.id}-${props.look.accent}-${inverted ? 'ink' : 'cream'}.png`;
+    const file = path.join(workDir, name);
+    await renderStill({ composition, serveUrl, output: file, frame: 0, inputProps, imageFormat: 'png', ...common() });
+    fs.copyFileSync(file, path.join(dir, name));
+    out[key] = `backdrop/${name}`;
+  }
+  return out;
+}
+
 const common = () => ({ browserExecutable: findBrowser(), chromiumOptions: { gl: 'swangle' }, logLevel: 'error' });
 const cores = () => Math.max(1, Math.min(os.cpus().length, 8));
 

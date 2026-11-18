@@ -1,12 +1,58 @@
 {
-  "name": "[channel name]",
-  "handle": "[channel name]",
-  "creator": "[one line on who I am]",
-  "cta": "[e.g. follow for a new company every day]",
+  "name": "digitalfinancekay",
+  "handle": "@digitalfinancekay",
+  "creator": "I read the annual reports of famous companies and show, in sixty seconds, where their money really comes from.",
+  "cta": "Follow for a new company every day",
   "ctaOnScreen": true,
-  "tts": {
-    "voice": "bm_george",
-    "lang": "en-gb",
-    "speed": 1.28
-  }
+  "voices": [
+    {
+      "id": "am_michael",
+      "lang": "en-us",
+      "speed": 1.22,
+      "label": "US male, warm"
+    },
+    {
+      "id": "bf_emma",
+      "lang": "en-gb",
+      "speed": 1.09,
+      "label": "UK female, clear"
+    },
+    {
+      "id": "am_fenrir",
+      "lang": "en-us",
+      "speed": 1.03,
+      "label": "US male, deep"
+    },
+    {
+      "id": "af_heart",
+      "lang": "en-us",
+      "speed": 1.08,
+      "label": "US female, bright"
+    },
+    {
+      "id": "bm_george",
+      "lang": "en-gb",
+      "speed": 1.28,
+      "label": "UK male, steady"
+    },
+    {
+      "id": "af_bella",
+      "lang": "en-us",
+      "speed": 1.1,
+      "label": "US female, lively"
+    },
+    {
+      "id": "bm_fable",
+      "lang": "en-gb",
+      "speed": 1.29,
+      "label": "UK male, storyteller"
+    },
+    {
+      "id": "af_sarah",
+      "lang": "en-us",
+      "speed": 1.06,
+      "label": "US female, direct"
+    }
+  ],
+  "voiceNote": "Speeds are set so every voice reads at about 180 words a minute over a whole script, pauses included (the pace of the first pilots). They were measured on full scripts for am_michael, bf_emma and am_fenrir; the others are estimates and the duration check catches any that run long. Video N uses voice (N-1) mod 8, so neighbours never share a voice. A script can name one with `voice:` in its front matter. A recorded voice.wav always wins."
 }

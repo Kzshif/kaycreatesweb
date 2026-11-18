@@ -258,8 +258,8 @@ export function estimateSeconds(text, say = {}) {
   const stops = (spoken.match(/[.!?…]/g) || []).length;
   const commas = (spoken.match(/[,;:]/g) || []).length;
   const pauses = stops * 0.28 + commas * 0.12;
-  // 4.4 syllables a second is a clear, unhurried explainer pace.
-  return { seconds: syl / 4.4 + pauses, fast: syl / 5.0 + pauses * 0.8, slow: syl / 3.9 + pauses * 1.2, spokenWords: words.length, syllables: syl, spoken };
+  // 5.0 syllables a second is the channel's pace (about 215 words a minute while speaking).
+  return { seconds: syl / 5.0 + pauses, fast: syl / 5.6 + pauses * 0.8, slow: syl / 4.4 + pauses * 1.2, spokenWords: words.length, syllables: syl, spoken };
 }
 
 /** Lay words out in time when no real voice exists yet (planning and previews only). */
