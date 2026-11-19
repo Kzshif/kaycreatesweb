@@ -136,7 +136,113 @@ const Burger: React.FC<P> = ({ seed = 1 }) => {
   );
 };
 
-const BASE: Record<string, [number, number]> = { card: [420, 265], trolley: [480, 440], box: [440, 370], store: [560, 470], fries: [520, 640], burger: [440, 380], plot: [560, 420], phone: [350, 700] };
+/** A game controller: shoulder buttons, a pad, two sticks and four face buttons. */
+const Controller: React.FC<P> = ({ seed = 1 }) => {
+  const t = useLook();
+  const body = 'M92 98 Q128 66 204 70 H316 Q392 66 428 98 Q476 152 496 262 Q506 328 458 332 Q422 334 394 290 L368 248 H152 L126 290 Q98 334 62 332 Q14 328 24 262 Q44 152 92 98 Z';
+  return (
+    <div style={{ position: 'absolute', width: 520, height: 340 }}>
+      <Cut w={520} h={340} d="M104 74 Q112 46 150 44 H196 Q214 46 216 70 Z" color={t.accentDeep} seed={seed + 1} lift={0.2} />
+      <Cut w={520} h={340} d="M416 74 Q408 46 370 44 H324 Q306 46 304 70 Z" color={t.accentDeep} seed={seed + 2} lift={0.2} />
+      <Cut w={520} h={340} d={body} color={t.accent} seed={seed} lift={0.44}>
+        <svg width={520} height={340} style={{ position: 'absolute', inset: 0 }}>
+          <path d="M106 104 Q150 82 222 84" fill="none" stroke={rgba(BRIGHT, 0.4)} strokeWidth={7} strokeLinecap="round" />
+          <path d="M112 142 h30 v-30 h28 v30 h30 v28 h-30 v30 h-28 v-30 h-30 Z" fill={t.ink} />
+          {[[386, 112, BRIGHT], [416, 142, t.accentWash], [356, 142, t.accentWash], [386, 172, BRIGHT]].map(([x, y, c], k) => (
+            <circle key={k} cx={x as number} cy={y as number} r={15} fill={c as string} stroke={t.ink} strokeWidth={4} />
+          ))}
+          {[204, 316].map((x) => (
+            <g key={x}>
+              <circle cx={x} cy={218} r={36} fill={t.ink} />
+              <circle cx={x} cy={218} r={21} fill={mix(t.ink, BRIGHT, 0.72)} />
+              <path d={`M${x - 12} ${208} Q${x} ${200} ${x + 12} ${208}`} fill="none" stroke={rgba(BRIGHT, 0.35)} strokeWidth={4} strokeLinecap="round" />
+            </g>
+          ))}
+          <rect x={238} y={118} width={44} height={14} rx={7} fill={BRIGHT} opacity={0.85} />
+        </svg>
+      </Cut>
+    </div>
+  );
+};
+
+/** A chocolate bar, its wrapper torn open at one end. `text` is the plain word on the band. */
+const Bar: React.FC<P> = ({ seed = 1, text = 'CHOCOLATE' }) => {
+  const t = useLook();
+  const choc = mix(t.ink, KRAFT, 0.58);
+  const size = Math.min(40, fit([text.toUpperCase()], 'headline', 230, 40));
+  return (
+    <div style={{ position: 'absolute', width: 520, height: 260 }}>
+      <Cut w={520} h={260} d={poly([[300, 40], [508, 52], [500, 222], [292, 214]] as Pt[], seed + 1)} color={choc} dark seed={seed + 1} lift={0.3}>
+        <svg width={520} height={260} style={{ position: 'absolute', inset: 0 }}>
+          {[0, 1, 2].map((r) => [0, 1, 2].map((c) => (
+            <rect key={`${r}${c}`} x={318 + c * 60} y={62 + r * 52} width={48} height={40} rx={5} fill="none" stroke={rgba(BRIGHT, 0.22)} strokeWidth={4} />
+          )))}
+        </svg>
+      </Cut>
+      <Cut w={520} h={260} d={`M14 34 L330 26 ${Array.from({ length: 7 }, (_, k) => `L${k % 2 ? 342 : 318} ${26 + (k + 1) * 28.6}`).join(' ')} L14 228 Z`} color={t.accent} seed={seed} lift={0.42}>
+        <div style={{ position: 'absolute', left: 30, top: 92, width: 286, height: 78, background: BRIGHT, transform: 'rotate(-1deg)' }} />
+        <div data-box style={{ ...headStyle(size, t.ink), position: 'absolute', left: 30, top: 92, width: 286, height: 78, display: 'flex', alignItems: 'center', justifyContent: 'center', transform: 'rotate(-1deg)' }}>{text.toUpperCase()}</div>
+        <div style={{ position: 'absolute', left: 14, right: 180, top: 40, height: 8, background: rgba(BRIGHT, 0.35) }} />
+      </Cut>
+    </div>
+  );
+};
+
+/** An event ticket with a tear-off stub. `text` names the event; `price` goes on the stub. */
+const Ticket: React.FC<P & { price?: string }> = ({ seed = 1, text = 'ADMIT ONE', price }) => {
+  const t = useLook();
+  // the stub is marked off by two half-moon notches, top and bottom
+  const d = 'M16 14 H364 A18 18 0 0 0 400 14 H526 V238 H400 A18 18 0 0 0 364 238 H16 Z';
+  const size = Math.min(52, fit([text.toUpperCase()], 'headline', 300, 52));
+  return (
+    <div style={{ position: 'absolute', width: 540, height: 250 }}>
+      <Cut w={540} h={250} d={d} color={BRIGHT} seed={seed} lift={0.4}>
+        <div style={{ position: 'absolute', left: 16, top: 14, width: 18, bottom: 12, background: t.accent }} />
+        <div style={{ ...labelStyle(18, t.ink), position: 'absolute', left: 56, top: 40 }}>Admit one</div>
+        <div data-box style={{ ...headStyle(size, t.ink), position: 'absolute', left: 52, top: 82, width: 300, height: 90, display: 'flex', alignItems: 'center' }}>{text.toUpperCase()}</div>
+        <div style={{ position: 'absolute', left: 56, top: 190, width: 280, height: 14, background: `repeating-linear-gradient(90deg, ${t.ink} 0 4px, transparent 4px 9px)`, opacity: 0.55 }} />
+        <svg width={540} height={250} style={{ position: 'absolute', inset: 0 }}>
+          <path d="M382 34 V220" stroke={t.ink} strokeWidth={4} strokeDasharray="10 9" opacity={0.6} />
+        </svg>
+        {price ? (
+          <div data-box style={{ position: 'absolute', left: 400, top: 60, width: 126, height: 130, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <div style={{ ...headStyle(Math.min(56, fit([price], 'headline', 110, 56)), t.accentDeep) }}>{price}</div>
+          </div>
+        ) : (
+          <div style={{ position: 'absolute', left: 420, top: 70, width: 86, height: 110, background: t.accentWash, transform: 'rotate(-4deg)' }} />
+        )}
+      </Cut>
+    </div>
+  );
+};
+
+/** A vinyl record sliding out of its sleeve. `text` is the plain word on the label. */
+const Record: React.FC<P> = ({ seed = 1, text = 'HIT' }) => {
+  const t = useLook();
+  const size = Math.min(30, fit([text.toUpperCase()], 'label', 120, 30));
+  return (
+    <div style={{ position: 'absolute', width: 520, height: 440 }}>
+      <Cut w={520} h={440} d={poly([[8, 40], [330, 30], [338, 424], [14, 432]] as Pt[], seed + 1)} color={MANILA} seed={seed + 1} lift={0.3}>
+        <div style={{ position: 'absolute', left: 40, top: 320, width: 200, height: 12, background: t.accent, opacity: 0.8 }} />
+        <div style={{ position: 'absolute', left: 40, top: 344, width: 130, height: 12, background: t.accentDeep, opacity: 0.6 }} />
+      </Cut>
+      <div style={{ position: 'absolute', left: 140, top: 30, width: 380, height: 380, filter: shadowOf(0.5) }}>
+        <svg width={380} height={380} viewBox="0 0 380 380">
+          <circle cx={190} cy={190} r={188} fill={t.ink} />
+          {[170, 152, 136, 120, 104].map((r) => (
+            <circle key={r} cx={190} cy={190} r={r} fill="none" stroke={rgba(BRIGHT, 0.1)} strokeWidth={3} />
+          ))}
+          <path d="M80 92 A150 150 0 0 1 176 44" fill="none" stroke={rgba(BRIGHT, 0.28)} strokeWidth={9} strokeLinecap="round" />
+          <circle cx={190} cy={190} r={74} fill={t.accent} />
+          <circle cx={190} cy={190} r={8} fill={BRIGHT} />
+        </svg>
+        <div data-box style={{ ...labelStyle(size, t.onAccent), position: 'absolute', left: 130, top: 140, width: 120, height: 34, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>{text}</div>
+      </div>
+    </div>
+  );
+};
+
+const BASE: Record<string, [number, number]> = { card: [420, 265], trolley: [480, 440], box: [440, 370], store: [560, 470], fries: [520, 640], burger: [440, 380], plot: [560, 420], phone: [350, 700], controller: [520, 340], bar: [520, 260], ticket: [540, 250], record: [520, 440] };
 /** Natural height of a product drawn `w` wide. */
 export const productHeight = (name: string, w: number): number => {
   const [bw, bh] = BASE[name] || [400, 400];
@@ -162,6 +268,14 @@ export const Product: React.FC<{ name: string; w: number; seed?: number; text?: 
       <Burger seed={seed} />
     ) : name === 'plot' ? (
       <Plot seed={seed} />
+    ) : name === 'controller' ? (
+      <Controller seed={seed} />
+    ) : name === 'bar' ? (
+      <Bar seed={seed} text={text} />
+    ) : name === 'ticket' ? (
+      <Ticket seed={seed} text={text} price={price} />
+    ) : name === 'record' ? (
+      <Record seed={seed} text={text} />
     ) : (
       <Phone w={350} seed={seed} query={text || 'pizza near me'} />
     );

@@ -68,7 +68,10 @@ export function parseAmount(text) {
   const f = figures(String(text || '')).find((x) => x.kind === 'digit' && !x.year);
   if (!f) return null;
   const unit = f.unit || 1;
-  return { prefix: f.currency || '', number: +(f.value / unit).toFixed(f.decimals || 0), decimals: f.decimals || 0, word: WORD_OF[unit] || '', suffix: f.percent ? '%' : f.mult ? 'x' : '', value: f.value, raw: f.raw };
+  // `tail` is the magnitude exactly as written after the digits ("M" in "90M", "bn" in "$3.2bn"),
+  // for scenes that print the figure whole rather than with the word on its own line
+  const tail = f.percent || f.mult ? '' : f.raw.replace(/^[$£€]?\d[\d,]*(?:\.\d+)?/, '');
+  return { prefix: f.currency || '', number: +(f.value / unit).toFixed(f.decimals || 0), decimals: f.decimals || 0, word: WORD_OF[unit] || '', suffix: f.percent ? '%' : f.mult ? 'x' : '', tail, value: f.value, raw: f.raw };
 }
 /** "$10.4 billion" -> "$10.4bn": the short form used where space is tight. */
 export const shortAmount = (text) => String(text).replace(/\s*trillion\b/i, 'tn').replace(/\s*billion\b/i, 'bn').replace(/\s*million\b/i, 'm').replace(/\s*thousand\b/i, 'k');

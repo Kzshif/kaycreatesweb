@@ -1,0 +1,231 @@
+{
+  "id": "004",
+  "break": {
+    "at": "is not how"
+  },
+  "scenes": [
+    {
+      "type": "slam",
+      "variant": "object",
+      "beats": [
+        "$80 a copy"
+      ],
+      "source": "Variety, 2026",
+      "props": {
+        "product": "controller",
+        "lines": [
+          "GTA 6 costs",
+          "$80 a copy"
+        ]
+      }
+    },
+    {
+      "type": "tag",
+      "variant": "pin",
+      "at": "The bigger edition",
+      "beats": [
+        "$100"
+      ],
+      "source": "Variety, 2026",
+      "props": {
+        "label": "Ultimate edition",
+        "price": "$100",
+        "lines": [
+          "The bigger",
+          "edition"
+        ]
+      }
+    },
+    {
+      "type": "stamp",
+      "variant": "under",
+      "at": "Its first trailer",
+      "beats": [
+        "in one day"
+      ],
+      "source": "Guinness World Records, 2023",
+      "props": {
+        "figure": "90M",
+        "lines": [
+          "views in one day"
+        ],
+        "kicker": "The first trailer",
+        "stamp": [
+          "Record"
+        ]
+      }
+    },
+    {
+      "type": "count",
+      "variant": "pile",
+      "at": "The last GTA",
+      "beats": [
+        "in three days"
+      ],
+      "source": "Bloomberg, 2013",
+      "props": {
+        "amount": "$1 billion",
+        "kicker": "GTA 5, 2013",
+        "line": "in three days"
+      }
+    },
+    {
+      "type": "words",
+      "variant": "ladder",
+      "at": "Its makers said",
+      "beats": [
+        "had got there",
+        "faster"
+      ],
+      "props": {
+        "lines": [
+          "Nothing in",
+          "entertainment",
+          "got there faster"
+        ],
+        "mark": "faster"
+      }
+    },
+    {
+      "type": "product",
+      "variant": "hero",
+      "at": "Then GTA 5 kept",
+      "beats": [
+        "thirteen years",
+        "235 million"
+      ],
+      "source": "Take-Two results, November 2026",
+      "props": {
+        "product": "controller",
+        "kicker": "GTA 5, since 2013",
+        "callouts": [
+          "13 years on sale",
+          "235 million copies"
+        ]
+      }
+    },
+    {
+      "type": "stamp",
+      "variant": "under",
+      "at": "A forecast puts",
+      "beats": [
+        "$3.2 billion",
+        "year one"
+      ],
+      "source": "DFC Intelligence, via the FT, 2025",
+      "props": {
+        "figure": "$3.2bn",
+        "lines": [
+          "expected in",
+          "year one"
+        ],
+        "sub": "One firm's forecast",
+        "stamp": [
+          "Forecast"
+        ]
+      }
+    },
+    {
+      "type": "words",
+      "variant": "stack",
+      "at": "Yet selling copies",
+      "beats": [
+        "is not how",
+        "most of its money"
+      ],
+      "props": {
+        "lines": [
+          "Selling copies?",
+          "That's not the",
+          "big money"
+        ],
+        "mark": "big money"
+      }
+    },
+    {
+      "type": "grid",
+      "variant": "tray",
+      "at": "Last year, 78%",
+      "beats": [
+        "Take-Two's money",
+        "after the sale"
+      ],
+      "source": "Take-Two results, fiscal 2026",
+      "props": {
+        "of": 100,
+        "filled": 78,
+        "figure": "78%",
+        "label": "after the sale"
+      }
+    },
+    {
+      "type": "flow",
+      "variant": "arc",
+      "at": "Players spent it",
+      "beats": [
+        "already owned",
+        "Virtual cash"
+      ],
+      "source": "Take-Two results, fiscal 2026",
+      "props": {
+        "from": {
+          "name": "Players",
+          "product": "controller"
+        },
+        "to": {
+          "name": "Take-Two"
+        },
+        "note": "Virtual cash, add-ons, extras"
+      }
+    },
+    {
+      "type": "stamp",
+      "variant": "over",
+      "at": "GTA Online is",
+      "beats": [
+        "biggest earners"
+      ],
+      "source": "Take-Two results, fiscal 2026",
+      "props": {
+        "lines": [
+          "GTA Online"
+        ],
+        "stamp": [
+          "Big earner"
+        ]
+      }
+    },
+    {
+      "type": "count",
+      "variant": "rain",
+      "at": "Take-Two expects about",
+      "beats": [
+        "this financial year",
+        "brought in"
+      ],
+      "source": "Take-Two results, 2026",
+      "props": {
+        "amount": "$8 billion",
+        "kicker": "Take-Two, expected",
+        "line": "this financial year",
+        "sub": "Last year: $6.7bn"
+      }
+    },
+    {
+      "type": "tag",
+      "variant": "tape",
+      "at": "And the ticket",
+      "beats": [
+        "all of it"
+      ],
+      "source": "Variety, 2026",
+      "props": {
+        "label": "GTA 6",
+        "price": "$80",
+        "lines": [
+          "The ticket in"
+        ]
+      }
+    }
+  ]
+}

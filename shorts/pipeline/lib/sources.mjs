@@ -25,6 +25,14 @@ const MAJOR_NEWS = [
   'washingtonpost.com', 'economist.com', 'npr.org', 'cnn.com', 'telegraph.co.uk', 'thetimes.com', 'thetimes.co.uk', 'news.sky.com', 'independent.co.uk',
   'fortune.com', 'foxbusiness.com', 'axios.com', 'politico.com', 'time.com', 'usatoday.com', 'latimes.com', 'abcnews.go.com', 'nbcnews.com', 'cbsnews.com', 'pbs.org',
   'marketwatch.com', 'barrons.com', 'theatlantic.com', 'newyorker.com', 'wired.com', 'theverge.com', 'techcrunch.com', 'itv.com', 'standard.co.uk',
+  'forbes.com', 'businessinsider.com', 'engadget.com', 'arstechnica.com',
+  // games, film, music and sport: the trade and specialist press with its own reporting and editors
+  'ign.com', 'gamespot.com', 'polygon.com', 'kotaku.com', 'eurogamer.net', 'gamesindustry.biz', 'videogameschronicle.com', 'gamesradar.com', 'pcgamer.com',
+  'variety.com', 'hollywoodreporter.com', 'deadline.com', 'billboard.com', 'rollingstone.com', 'pollstar.com', 'boxofficemojo.com', 'the-numbers.com',
+  'espn.com', 'theathletic.com', 'skysports.com', 'guinnessworldrecords.com',
+  // trade press for restaurants, retail, music and the creator economy
+  'qsrmagazine.com', 'restaurantbusinessonline.com', 'nrn.com', 'restaurantdive.com', 'retaildive.com', 'modernretail.co',
+  'musicbusinessworldwide.com', 'tubefilter.com', 'thewrap.com', 'adage.com', 'adweek.com', 'sportico.com', 'frontofficesports.com',
 ];
 
 const REGULATORS = [

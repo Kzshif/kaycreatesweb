@@ -92,8 +92,16 @@ def align(script, heard):
     return out, mism
 
 
+# not "I" or "X": those are a pronoun and a letter far more often than a number
+ROMAN = {"ii": 2, "iii": 3, "iv": 4, "v": 5, "vi": 6, "vii": 7, "viii": 8, "ix": 9}
+
+
 def digits(s):
-    return re.findall(r"\d+(?:\.\d+)?", s.replace(",", ""))
+    """The numbers in a word, reading a bare Roman numeral as its digits: Whisper writes "GTA 6" as "GTA VI"."""
+    t = s.replace(",", "").strip(" .,!?;:'\"")
+    if t.lower() in ROMAN and t.isupper():
+        return [str(ROMAN[t.lower()])]
+    return re.findall(r"\d+(?:\.\d+)?", t)
 
 
 def main():

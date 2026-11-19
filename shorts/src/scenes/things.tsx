@@ -1,7 +1,7 @@
 // Scenes built around an object on the desk: a receipt, a price tag, a product, a stamp.
 import React from 'react';
 import { BRIGHT, MANILA, TEXT_RIGHT } from '../shared/paper.mjs';
-import { Clip, Cut, Headline, Layer, Numeral, Tape, fit, glide, jit, onTwos, ramp, rounded, sheet, useLook } from '../paper/kit';
+import { Backing, Clip, Cut, Headline, Layer, Numeral, Tape, fit, glide, jit, onTwos, ramp, rounded, sheet, useLook } from '../paper/kit';
 import { Coin } from '../paper/money';
 import { Product, productHeight } from '../paper/products';
 import { PriceTag, Receipt, receiptHeight } from '../paper/things';
@@ -121,7 +121,7 @@ export const ProductScene: React.FC<SceneProps> = ({ scene, frame, seed }) => {
   const second = scene.variant === 'pair' && p.with ? drop(frame, c0 + 5, seed + 2, [80, -220, 10]) : null;
   return (
     <>
-      <Layer depth={0.55}>{d.on ? <Cut w={620} h={600} d={sheet(620, 600, { seed: seed + 5, edges: 'tttt', rough: 5, m: 13 }).d} core={sheet(620, 600, { seed: seed + 5, edges: 'tttt', rough: 5, m: 13 }).core} color={MANILA} seed={seed + 5} lift={0.1} style={{ left: tall ? 40 : 230, top: tall ? 420 : 300, transform: `rotate(${tall ? -5 : 4}deg)` }} /> : null}</Layer>
+      <Layer depth={0.55}>{d.on ? <Backing w={620} h={600} seed={seed + 5} style={{ left: tall ? 40 : 230, top: tall ? 420 : 300, transform: `rotate(${tall ? -5 : 4}deg)` }} /> : null}</Layer>
       <Layer depth={1}>
         {second && second.on ? (
           <div style={{ position: 'absolute', left: (tall ? px + pw * 0.55 : px + pw * 0.62) + second.x, top: py + ph * 0.05 + second.y, transform: `rotate(${9 + second.r}deg)` }}>
@@ -161,7 +161,8 @@ export const StampScene: React.FC<SceneProps> = ({ scene, frame, seed }) => {
   const numTop = 392;
   const figBottom = p.figure ? numTop + size * 0.86 : 396;
   const pop = rise(frame, c0, 30, 7);
-  const text = p.figure ? (p.count ? counting(frame, c0 + 1, 20, p.count) : p.figure) : '';
+  // the stamp prints the figure whole, magnitude and all: "90M", "$3.2bn"
+  const text = p.figure ? (p.count ? counting(frame, c0 + 1, 20, p.count) + (p.count.tail || '') : p.figure) : '';
   const lmax = p.figure ? 84 : 150;
   const lh = linesHeight(lines, 800, lmax);
   const linesY = p.figure ? (over ? figBottom + 162 : figBottom + 12) : 396;
@@ -170,7 +171,7 @@ export const StampScene: React.FC<SceneProps> = ({ scene, frame, seed }) => {
   return (
     <>
       <Layer depth={0.5}>
-        <Cut w={640} h={520} d={sheet(640, 520, { seed: seed + 5, edges: 'tttt', rough: 5, m: 12 }).d} core={sheet(640, 520, { seed: seed + 5, edges: 'tttt', rough: 5, m: 12 }).core} color={BRIGHT} seed={seed + 5} lift={0.1} style={{ left: -70, top: 520, transform: 'rotate(-5deg)', opacity: 0.55 }} />
+        <Backing w={640} h={520} seed={seed + 5} tone="bright" style={{ left: -70, top: 520, transform: 'rotate(-5deg)', opacity: 0.55 }} />
       </Layer>
       <Layer depth={1}>
         <Kicker text={p.kicker} frame={frame} at={c0 + 4} seed={seed + 4} />

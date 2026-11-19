@@ -280,6 +280,17 @@ export const Cut: React.FC<CutProps> = ({ w, h, d, core, color, lift = 0.22, dar
   );
 };
 
+/**
+ * A torn sheet laid under a scene's words. Manila on the cream desk; on the ink desk, a deep ink
+ * paper like the desk's own scraps, so light type on top of it still reads.
+ */
+export const Backing: React.FC<{ w: number; h: number; seed: number; lift?: number; tone?: 'manila' | 'bright'; style?: Style }> = ({ w, h, seed, lift = 0.1, tone = 'manila', style }) => {
+  const t = useLook();
+  const s = useMemo(() => sheet(w, h, { seed, edges: 'tttt', rough: 5, m: 13 }), [w, h, seed]);
+  const color = t.inverted ? mix(CREAM, INK_DESK, 0.17) : tone === 'bright' ? BRIGHT : MANILA;
+  return <Cut w={w} h={h} d={s.d} core={t.inverted ? undefined : s.core} color={color} dark={t.inverted} seed={seed} lift={lift} style={style} />;
+};
+
 /** The desk: paper with tooth, lit unevenly from the upper left. */
 export const Desk: React.FC = () => {
   const t = useLook();

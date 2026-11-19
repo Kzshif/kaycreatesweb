@@ -2,7 +2,7 @@
 // headline lines with a marker pen, and so-many-out-of-so-many as a tray of coins.
 import React from 'react';
 import { BRIGHT, MANILA, TEXT_RIGHT } from '../shared/paper.mjs';
-import { Cut, Headline, Label, Layer, Numeral, clamp, fit, glide, headStyle, jit, measure, onTwos, ramp, rounded, sheet, useLook } from '../paper/kit';
+import { Backing, Cut, Headline, Label, Layer, Numeral, clamp, fit, glide, headStyle, jit, measure, onTwos, ramp, rounded, sheet, useLook } from '../paper/kit';
 import { Coin } from '../paper/money';
 import { Product } from '../paper/products';
 import type { SceneProps } from '../types';
@@ -162,7 +162,7 @@ export const Words: React.FC<SceneProps> = ({ scene, frame, seed }) => {
   const back = drop(frame, cue(scene, 0) - 2, seed + 2, [-60, -100, -5], true);
   return (
     <>
-      <Layer depth={0.55}>{back.on ? <Cut w={700} h={560} d={sheet(700, 560, { seed: seed + 2, edges: 'tttt', rough: 5, m: 13 }).d} core={sheet(700, 560, { seed: seed + 2, edges: 'tttt', rough: 5, m: 13 }).core} color={MANILA} seed={seed + 2} lift={0.1} style={{ left: 300 + back.x, top: 420 + back.y, transform: `rotate(${-6 + back.r}deg)` }} /> : null}</Layer>
+      <Layer depth={0.55}>{back.on ? <Backing w={700} h={560} seed={seed + 2} style={{ left: 300 + back.x, top: 420 + back.y, transform: `rotate(${-6 + back.r}deg)` }} /> : null}</Layer>
       <Layer depth={1}>
         {lines.map((l, i) => {
           const at = cue(scene, i);

@@ -46,6 +46,8 @@ const NUMERIC_NAMES = [
   /\b10-[KQ]\b/gi, /\b8-K\b/gi, /\b20-F\b/gi, /\bS-1\b/gi, /\b401\(k\)/gi, /\b24\/7\b/g, /\b7-Eleven\b/gi, /\b3M\b/g,
   /\b[45]G\b/g, /\b4K\b/g, /\bWeb ?[23](\.0)?\b/gi, /\bFormula ?1\b/gi, /\bF1\b/g, /\bCOVID-19\b/gi, /\b(737|747|787|A320|A380)\b/g,
   /\b(iPhone|iPad|PlayStation|PS|Xbox|Windows|Galaxy S|Pixel|Model|Series|Switch) ?\d+\b/gi,
+  // game titles and studios with digits in their names
+  /\b(GTA|FIFA|FC|Madden|Halo|Forza|Mario Kart|Black Ops|Modern Warfare|Battlefield|Fortnite Chapter) ?\d+\b/gi, /\bNBA ?2K\d*\b/gi, /\b2K\d*\b/g, /\bTake-Two\b/gi,
 ];
 
 const MAG_WORDS = { trillion: 1e12, tn: 1e12, billion: 1e9, bn: 1e9, million: 1e6, mn: 1e6, m: 1e6, thousand: 1e3, k: 1e3 };
@@ -103,8 +105,10 @@ export function figures(text, { ignore = [] } = {}) {
       value /= 100;
     }
     const mag = (g.mag || '').toLowerCase();
-    // A bare "m" or "k" only counts as a magnitude next to a currency sign ("$5m"), not "5 m".
-    const useMag = mag && (mag.length > 1 || cur) ? MAG_WORDS[mag] : 1;
+    // A bare "m" or "k" only counts as a magnitude next to a currency sign ("$5m"), not "5 m",
+    // or as a capital glued to the digits ("90M views", "250K"), which on screen never means metres.
+    const glued = (g.mag === 'M' || g.mag === 'K') && /\d[MK]$/.test(m[0].trim());
+    const useMag = mag && (mag.length > 1 || cur || glued) ? MAG_WORDS[mag] : 1;
     const abs = value * useMag;
     let key = `${cur}${trimNum(abs)}`;
     if (g.pct) key += '%';

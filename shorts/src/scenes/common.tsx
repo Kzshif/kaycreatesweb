@@ -26,7 +26,7 @@ export const rise = (frame: number, at: number, dist = 40, dur = 8): { opacity: 
   const p = settle(ramp(frame, at, dur));
   return { opacity: p, y: dist * (1 - p), on: frame >= at };
 };
-export type Amount = { prefix: string; number: number; decimals: number; suffix: string };
+export type Amount = { prefix: string; number: number; decimals: number; suffix: string; tail?: string };
 /** A figure counting up to its value, smooth, landing exactly on it. */
 export const counting = (frame: number, at: number, dur: number, c: Amount): string => {
   const v = c.number * glide(ramp(frame, at, dur));

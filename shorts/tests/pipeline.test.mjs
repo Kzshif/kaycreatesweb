@@ -29,6 +29,10 @@ const keys = (s) => figures(s).map((f) => f.key);
 
 test('figures: currency, magnitude, percent, years', () => {
   assert.deepEqual(keys('$5.3 billion'), ['$5300000000']);
+  // a capital M or K glued to the digits is a magnitude; a spaced lowercase m is not
+  assert.deepEqual(keys('90M views'), ['90000000']);
+  assert.deepEqual(keys('250K fans'), ['250000']);
+  assert.deepEqual(keys('a 5 m wall'), ['5']);
   assert.deepEqual(keys('$5.3bn'), ['$5300000000']);
   assert.deepEqual(keys('5.3 billion dollars'), ['$5300000000']);
   assert.deepEqual(keys('$5,323 million'), ['$5323000000']);
@@ -548,6 +552,14 @@ test('motion test: whole coins that match the sourced figures, sounds on the pic
   assert.equal(at('slam')[0], +(p.slamAt / 30).toFixed(3));
   for (let i = 1; i < ev.length; i++) assert.ok(ev[i].t >= ev[i - 1].t);
   for (const e of ev) assert.ok(fs.existsSync(path.join(ASSETS_DIR, e.file)), e.file);
+});
+
+test('amounts keep their written magnitude for figures printed whole', () => {
+  assert.equal(parseAmount('90M').tail, 'M');
+  assert.equal(parseAmount('$3.2bn').tail, 'bn');
+  assert.equal(parseAmount('$1 billion').tail, ' billion');
+  assert.equal(parseAmount('92%').tail, '');
+  assert.equal(parseAmount('45,356').tail, '');
 });
 
 test('button zones: text may pass through while moving, never rest there', () => {

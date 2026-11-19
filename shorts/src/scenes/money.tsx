@@ -1,7 +1,7 @@
 // Scenes built around money itself: the opening hit, a counter, coin stacks, a note cut by scissors.
 import React from 'react';
 import { MANILA, TEXT_RIGHT } from '../shared/paper.mjs';
-import { Cut, Headline, Label, Layer, Numeral, Slip, clamp, fit, glide, jit, lerp, measure, onTwos, ramp, settle, sheet, thump, useLook } from '../paper/kit';
+import { Backing, Cut, Headline, Label, Layer, Numeral, Slip, clamp, fit, glide, jit, lerp, measure, onTwos, ramp, settle, sheet, thump, useLook } from '../paper/kit';
 import { Coin, CoinStack, Note, Scissors, stackBox, stackHeight, type Fall } from '../paper/money';
 import { Product, productHeight } from '../paper/products';
 import { PriceTag } from '../paper/things';
@@ -172,7 +172,7 @@ export const Count: React.FC<SceneProps> = ({ scene, frame, seed }) => {
     : [[880, 300, 62], [930, 560, 58], [860, 760, 66], [930, 900, 50], [700, 300, 46]];
   return (
     <>
-      <Layer depth={0.55}>{sheetD.on ? <Cut w={640} h={560} d={sheet(640, 560, { seed: seed + 2, edges: 'tttt', rough: 5, m: 13 }).d} core={sheet(640, 560, { seed: seed + 2, edges: 'tttt', rough: 5, m: 13 }).core} color={MANILA} seed={seed + 2} lift={0.1} style={{ left: 420 + sheetD.x, top: 300 + sheetD.y, transform: `rotate(${6 + sheetD.r}deg)` }} /> : null}</Layer>
+      <Layer depth={0.55}>{sheetD.on ? <Backing w={640} h={560} seed={seed + 2} style={{ left: 420 + sheetD.x, top: 300 + sheetD.y, transform: `rotate(${6 + sheetD.r}deg)` }} /> : null}</Layer>
       <Layer depth={1}>
         <Kicker text={p.kicker} frame={frame} at={c0 + 3} seed={seed + 4} />
         {frame >= c0 ? (
