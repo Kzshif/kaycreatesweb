@@ -1,0 +1,230 @@
+{
+  "id": "017",
+  "break": {
+    "at": "cut more than 1,000"
+  },
+  "scenes": [
+    {
+      "type": "slam",
+      "variant": "object",
+      "beats": [
+        "$9 billion"
+      ],
+      "source": "GameSpot, 2021",
+      "props": {
+        "product": "controller",
+        "lines": [
+          "A free game made",
+          "$9 billion",
+          "in two years"
+        ]
+      }
+    },
+    {
+      "type": "count",
+      "variant": "rain",
+      "at": "That's about",
+      "beats": [
+        "a day"
+      ],
+      "source": "GameSpot, 2021",
+      "props": {
+        "amount": "$12 million",
+        "kicker": "About",
+        "line": "every single day"
+      }
+    },
+    {
+      "type": "words",
+      "variant": "ladder",
+      "at": "That was Fortnite",
+      "beats": [
+        "Fortnite, in",
+        "2018 and 2019"
+      ],
+      "source": "GameSpot, 2021",
+      "props": {
+        "lines": [
+          "That was",
+          "Fortnite,",
+          "2018 and 2019."
+        ]
+      }
+    },
+    {
+      "type": "stamp",
+      "variant": "under",
+      "at": "Court papers",
+      "beats": [
+        "revealed it"
+      ],
+      "source": "GameSpot, 2021",
+      "props": {
+        "lines": [
+          "Revealed in",
+          "Epic v Apple"
+        ],
+        "stamp": [
+          "Court papers"
+        ]
+      }
+    },
+    {
+      "type": "product",
+      "variant": "hero",
+      "at": "Players buy",
+      "beats": [
+        "V-Bucks",
+        "Item Shop"
+      ],
+      "source": "Epic Games, 2025",
+      "props": {
+        "product": "phone",
+        "text": "Item Shop",
+        "callouts": [
+          "Buy V-Bucks",
+          "Spend them in the shop"
+        ]
+      }
+    },
+    {
+      "type": "cut",
+      "variant": "right",
+      "at": "Today, 40%",
+      "beats": [
+        "40%",
+        "people who build"
+      ],
+      "source": "Epic Games, 2025",
+      "props": {
+        "title": "Item Shop money",
+        "share": "40%",
+        "label": "Into the islands pot",
+        "note": "Paid out by playtime"
+      }
+    },
+    {
+      "type": "flow",
+      "variant": "drop",
+      "at": "It's shared out",
+      "beats": [
+        "how much people play",
+        "each island"
+      ],
+      "source": "Epic Games, 2025",
+      "props": {
+        "from": {
+          "name": "The pot"
+        },
+        "to": {
+          "name": "Island makers",
+          "product": "controller"
+        },
+        "note": "By playtime"
+      }
+    },
+    {
+      "type": "grid",
+      "variant": "rows",
+      "at": "By May 2026",
+      "beats": [
+        "47%"
+      ],
+      "source": "Tubefilter, 2026",
+      "props": {
+        "of": 100,
+        "filled": 47,
+        "figure": "47%",
+        "label": "of playtime on creators' islands"
+      }
+    },
+    {
+      "type": "count",
+      "variant": "pile",
+      "at": "Since 2023",
+      "beats": [
+        "Epic has paid",
+        "more than $1 billion"
+      ],
+      "source": "GamesBeat, 2026",
+      "props": {
+        "amount": "$1 billion",
+        "kicker": "Paid to creators",
+        "line": "since 2023",
+        "sub": "to island makers"
+      }
+    },
+    {
+      "type": "stamp",
+      "variant": "over",
+      "at": "But in March 2026",
+      "beats": [
+        "1,000 jobs"
+      ],
+      "source": "CNBC, 2026",
+      "props": {
+        "figure": "1,000+",
+        "lines": [
+          "jobs cut",
+          "March 2026"
+        ],
+        "stamp": [
+          "Layoffs"
+        ]
+      }
+    },
+    {
+      "type": "words",
+      "variant": "stack",
+      "at": "Its boss said",
+      "beats": [
+        "spending far more",
+        "than it made"
+      ],
+      "source": "GamesBeat, 2026",
+      "props": {
+        "lines": [
+          "A Fortnite slump:",
+          "spending far more",
+          "than it made"
+        ],
+        "mark": "than it made"
+      }
+    },
+    {
+      "type": "tag",
+      "variant": "pin",
+      "at": "A week earlier",
+      "beats": [
+        "raised the price",
+        "cost more to run"
+      ],
+      "source": "VGC, 2026",
+      "props": {
+        "label": "V-Bucks price",
+        "price": "Raised",
+        "sub": "March 2026",
+        "lines": [
+          "A week earlier"
+        ],
+        "note": "It costs more to run"
+      }
+    },
+    {
+      "type": "words",
+      "variant": "ladder",
+      "at": "Even a free game",
+      "beats": [
+        "has to pay",
+        "its bills"
+      ],
+      "props": {
+        "lines": [
+          "Even a free game",
+          "has to pay",
+          "its bills."
+        ]
+      }
+    }
+  ]
+}

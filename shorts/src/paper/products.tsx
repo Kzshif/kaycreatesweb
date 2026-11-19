@@ -236,7 +236,7 @@ const Record: React.FC<P> = ({ seed = 1, text = 'HIT' }) => {
           <circle cx={190} cy={190} r={74} fill={t.accent} />
           <circle cx={190} cy={190} r={8} fill={BRIGHT} />
         </svg>
-        <div data-box style={{ ...labelStyle(size, t.onAccent), position: 'absolute', left: 130, top: 140, width: 120, height: 34, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>{text}</div>
+        <div data-box style={{ ...labelStyle(size, t.onAccent), position: 'absolute', left: 130, top: 134, width: 120, height: 46, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>{text}</div>
       </div>
     </div>
   );
@@ -383,7 +383,100 @@ const Rocket: React.FC<P> = ({ seed = 1 }) => {
   );
 };
 
-const BASE: Record<string, [number, number]> = { card: [420, 265], trolley: [480, 440], box: [440, 370], store: [560, 470], fries: [520, 640], burger: [440, 380], plot: [560, 420], phone: [350, 700], controller: [520, 340], bar: [520, 260], ticket: [540, 250], record: [520, 440], tradingcard: [300, 420], sprout: [360, 460], can: [300, 520], rocket: [300, 600] };
+/** A toy building brick, eight studs on top, seen slightly from above. Plain plastic: no lettering on the studs. */
+const Brick: React.FC<P> = ({ seed = 1 }) => {
+  const t = useLook();
+  const top = mix(t.accent, BRIGHT, 0.22);
+  const studs = Array.from({ length: 8 }, (_, k) => ({ x: 92 + (k % 4) * 112, y: 96 + Math.floor(k / 4) * 66 }));
+  return (
+    <div style={{ position: 'absolute', width: 560, height: 380 }}>
+      <Cut w={560} h={380} d="M40 150 L520 150 L520 330 Q520 346 504 346 L56 346 Q40 346 40 330 Z" color={t.accentDeep} seed={seed + 1} lift={0.36}>
+        <svg width={560} height={380} style={{ position: 'absolute', inset: 0 }}>
+          <path d="M60 170 V326" stroke={rgba(BRIGHT, 0.22)} strokeWidth={12} strokeLinecap="round" />
+        </svg>
+      </Cut>
+      <Cut w={560} h={380} d="M70 56 L490 56 L520 150 L40 150 Z" color={top} seed={seed} lift={0.3}>
+        <svg width={560} height={380} style={{ position: 'absolute', inset: 0, overflow: 'visible' }}>
+          {studs.map((st, k) => (
+            <g key={k}>
+              <ellipse cx={st.x + 2} cy={st.y + 14} rx={38} ry={14} fill={rgba(t.ink, 0.25)} />
+              <rect x={st.x - 38} y={st.y - 18} width={76} height={30} fill={t.accent} />
+              <ellipse cx={st.x} cy={st.y + 12} rx={38} ry={14} fill={t.accent} />
+              <ellipse cx={st.x} cy={st.y - 18} rx={38} ry={14} fill={mix(t.accent, BRIGHT, 0.35)} stroke={rgba(t.ink, 0.25)} strokeWidth={3} />
+            </g>
+          ))}
+        </svg>
+      </Cut>
+    </div>
+  );
+};
+
+/** A takeaway coffee cup: domed lid, paper sleeve with a plain word, a wisp of steam. No logo. */
+const Cup: React.FC<P> = ({ seed = 1, text = 'COFFEE' }) => {
+  const t = useLook();
+  const size = Math.min(40, fit([text.toUpperCase()], 'headline', 190, 40));
+  return (
+    <div style={{ position: 'absolute', width: 340, height: 520 }}>
+      <svg width={340} height={520} style={{ position: 'absolute', inset: 0, overflow: 'visible' }}>
+        <path d="M150 70 C130 46 168 30 150 6 M196 74 C178 52 212 36 196 12" fill="none" stroke={rgba(t.ink, 0.28)} strokeWidth={8} strokeLinecap="round" />
+      </svg>
+      <Cut w={340} h={520} d="M48 132 L292 132 L262 500 Q260 512 248 512 L92 512 Q80 512 78 500 Z" color={BRIGHT} seed={seed} lift={0.44}>
+        <svg width={340} height={520} style={{ position: 'absolute', inset: 0 }}>
+          <path d="M70 150 L96 496" stroke={rgba(t.ink, 0.08)} strokeWidth={14} strokeLinecap="round" />
+        </svg>
+      </Cut>
+      <Cut w={340} h={520} d="M58 250 L282 250 L270 392 L70 392 Z" color={mix(KRAFT, BRIGHT, 0.5)} seed={seed + 1} lift={0.26}>
+        <div data-box style={{ ...headStyle(size, t.ink), position: 'absolute', left: 74, top: 286, width: 192, height: 70, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>{text.toUpperCase()}</div>
+      </Cut>
+      <Cut w={340} h={520} d="M34 132 Q36 96 76 92 L264 92 Q304 96 306 132 Z" color={t.accent} seed={seed + 2} lift={0.36}>
+        <svg width={340} height={520} style={{ position: 'absolute', inset: 0 }}>
+          <rect x={30} y={124} width={280} height={18} rx={9} fill={t.accentDeep} />
+          <rect x={150} y={98} width={40} height={10} rx={5} fill={rgba(t.ink, 0.35)} />
+        </svg>
+      </Cut>
+    </div>
+  );
+};
+
+/** A football: white leather with dark patches, drawn flat with a soft shadow. No markings. */
+const Ball: React.FC<P> = ({ seed = 1 }) => {
+  const t = useLook();
+  const pent = (cx: number, cy: number, r: number, rot: number) =>
+    Array.from({ length: 5 }, (_, k) => {
+      const a = rot + (k / 5) * Math.PI * 2;
+      return `${k ? 'L' : 'M'}${(cx + Math.cos(a) * r).toFixed(1)} ${(cy + Math.sin(a) * r).toFixed(1)}`;
+    }).join(' ') + ' Z';
+  const outer = [0, 1, 2, 3, 4].map((k) => {
+    const a = -Math.PI / 2 + (k / 5) * Math.PI * 2;
+    return { x: 200 + Math.cos(a) * 128, y: 200 + Math.sin(a) * 128, rot: a + Math.PI };
+  });
+  return (
+    <div style={{ position: 'absolute', width: 400, height: 400 }}>
+      <Cut w={400} h={400} d="M200 16 A184 184 0 1 1 199.9 16 Z" color={BRIGHT} seed={seed} lift={0.44}>
+        <svg width={400} height={400} style={{ position: 'absolute', inset: 0 }}>
+          <defs>
+            <clipPath id={`ball${seed}`}>
+              <circle cx={200} cy={200} r={182} />
+            </clipPath>
+          </defs>
+          <g clipPath={`url(#ball${seed})`}>
+            <path d={pent(200, 200, 58, -Math.PI / 2)} fill={t.ink} />
+            {outer.map((o, k) => (
+              <g key={k}>
+                <path d={`M${(200 + Math.cos(o.rot + Math.PI) * 58).toFixed(1)} ${(200 + Math.sin(o.rot + Math.PI) * 58).toFixed(1)} L${o.x.toFixed(1)} ${o.y.toFixed(1)}`} stroke={rgba(t.ink, 0.55)} strokeWidth={5} />
+                <path d={pent(o.x + Math.cos(o.rot + Math.PI) * 52, o.y + Math.sin(o.rot + Math.PI) * 52, 50, o.rot)} fill={t.ink} />
+              </g>
+            ))}
+            <circle cx={200} cy={200} r={182} fill="none" stroke={rgba(t.ink, 0.14)} strokeWidth={26} />
+            <path d="M92 110 Q130 62 196 50" fill="none" stroke={rgba(BRIGHT, 0.85)} strokeWidth={12} strokeLinecap="round" />
+          </g>
+        </svg>
+      </Cut>
+    </div>
+  );
+};
+
+const BASE: Record<string, [number, number]> = { card: [420, 265], trolley: [480, 440], box: [440, 370], store: [560, 470], fries: [520, 640], burger: [440, 380], plot: [560, 420], phone: [350, 700], controller: [520, 340], bar: [520, 260], ticket: [540, 250], record: [520, 440], tradingcard: [300, 420], sprout: [360, 460], can: [300, 520], rocket: [300, 600], brick: [560, 380], cup: [340, 520], ball: [400, 400] };
 /** Natural height of a product drawn `w` wide. */
 export const productHeight = (name: string, w: number): number => {
   const [bw, bh] = BASE[name] || [400, 400];
@@ -425,6 +518,12 @@ export const Product: React.FC<{ name: string; w: number; seed?: number; text?: 
       <Can seed={seed} text={text} price={price} />
     ) : name === 'rocket' ? (
       <Rocket seed={seed} />
+    ) : name === 'brick' ? (
+      <Brick seed={seed} />
+    ) : name === 'cup' ? (
+      <Cup seed={seed} text={text} />
+    ) : name === 'ball' ? (
+      <Ball seed={seed} />
     ) : (
       // for the phone, `price` is the badge on the top result ("DEFAULT"), shown only when given
       <Phone w={350} seed={seed} query={text || 'pizza near me'} badge={price || ''} />

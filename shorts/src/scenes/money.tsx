@@ -8,7 +8,7 @@ import { PriceTag, stampHeight } from '../paper/things';
 import type { SceneProps } from '../types';
 import { Kicker, Lines, StampSlam, counting, cue, drop, fitStack, linesHeight, rise, stampTilt } from './common';
 
-const TALL = new Set(['fries', 'phone', 'tradingcard', 'sprout', 'can', 'rocket']);
+const TALL = new Set(['fries', 'phone', 'tradingcard', 'sprout', 'can', 'rocket', 'cup']);
 
 // ------------------------------------------------------------------ slam
 /** The claim lands 10% oversize and settles, growing from its centre. */

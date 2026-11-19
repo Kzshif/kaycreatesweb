@@ -1,0 +1,190 @@
+{
+  "id": "015",
+  "break": {
+    "at": "kept about"
+  },
+  "scenes": [
+    {
+      "type": "slam",
+      "variant": "stamp",
+      "beats": [
+        "one song",
+        "Every single year"
+      ],
+      "source": "Forbes, 2022",
+      "props": {
+        "lines": [
+          "Mariah Carey",
+          "makes millions"
+        ],
+        "stamp": [
+          "One song"
+        ],
+        "sub": "every single year"
+      }
+    },
+    {
+      "type": "product",
+      "variant": "hero",
+      "at": "All I Want for Christmas",
+      "beats": [
+        "in 1994"
+      ],
+      "source": "NBC News, 2024",
+      "props": {
+        "product": "record",
+        "text": "Xmas",
+        "callouts": [
+          "Released in 1994"
+        ]
+      }
+    },
+    {
+      "type": "split",
+      "variant": "cards",
+      "at": "It didn't reach",
+      "beats": [
+        "until 2019"
+      ],
+      "source": "Guinness, 2025",
+      "props": {
+        "a": {
+          "tag": "Released",
+          "figure": "1994",
+          "line": "the song"
+        },
+        "b": {
+          "tag": "First US number one",
+          "figure": "2019",
+          "line": "US chart"
+        },
+        "verdict": "25 years later"
+      }
+    },
+    {
+      "type": "stamp",
+      "variant": "under",
+      "at": "Now it has spent",
+      "beats": [
+        "any song ever"
+      ],
+      "source": "Guinness, 2025",
+      "props": {
+        "lines": [
+          "More weeks at number one",
+          "than any song ever"
+        ],
+        "stamp": [
+          "Record"
+        ]
+      }
+    },
+    {
+      "type": "count",
+      "variant": "pile",
+      "at": "Billboard estimated",
+      "beats": [
+        "$8.5 million",
+        "in 2022"
+      ],
+      "source": "Billboard via CNBC, 2024",
+      "props": {
+        "amount": "$8.5 million",
+        "kicker": "Billboard estimate",
+        "line": "made by the song",
+        "sub": "2022"
+      }
+    },
+    {
+      "type": "grid",
+      "variant": "tray",
+      "at": "$5.3 million of that",
+      "beats": [
+        "came from"
+      ],
+      "source": "Billboard via CNBC, 2024",
+      "props": {
+        "of": 100,
+        "filled": 62,
+        "figure": "$5.3M",
+        "label": "from the recording"
+      }
+    },
+    {
+      "type": "cut",
+      "variant": "right",
+      "at": "But Sony owns",
+      "beats": [
+        "kept about",
+        "Mariah got"
+      ],
+      "source": "Billboard via CNBC, 2024",
+      "props": {
+        "title": "The recording: $5.3M",
+        "share": "65%",
+        "label": "Sony's cut",
+        "note": "Mariah: about $1.9M"
+      }
+    },
+    {
+      "type": "flow",
+      "variant": "drop",
+      "at": "Songwriting added",
+      "beats": [
+        "$3.2 million",
+        "co-writer"
+      ],
+      "source": "Billboard via CNBC, 2024",
+      "props": {
+        "from": {
+          "name": "Songwriting"
+        },
+        "to": {
+          "name": "Writers, publishers",
+          "product": "record"
+        },
+        "note": "About $3.2M more"
+      }
+    },
+    {
+      "type": "split",
+      "variant": "tilt",
+      "at": "an estimated",
+      "beats": [
+        "$3.3 million",
+        "that year"
+      ],
+      "source": "Billboard via CNBC, 2024",
+      "props": {
+        "a": {
+          "tag": "Low estimate",
+          "figure": "$2.7M",
+          "line": "Mariah, 2022"
+        },
+        "b": {
+          "tag": "High estimate",
+          "figure": "$3.3M",
+          "line": "Mariah, 2022"
+        },
+        "verdict": "Billboard's estimate"
+      }
+    },
+    {
+      "type": "words",
+      "variant": "ladder",
+      "at": "Every November",
+      "beats": [
+        "two words",
+        "It's time"
+      ],
+      "source": "Forbes, 2024",
+      "props": {
+        "lines": [
+          "Every November,",
+          "two words:",
+          "\"It's time.\""
+        ]
+      }
+    }
+  ]
+}

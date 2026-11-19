@@ -1,0 +1,206 @@
+{
+  "id": "016",
+  "break": {
+    "at": "isn't even on"
+  },
+  "scenes": [
+    {
+      "type": "slam",
+      "variant": "number",
+      "beats": [
+        "billion",
+        "operating profit",
+        "last year"
+      ],
+      "source": "CNBC, 2026",
+      "props": {
+        "figure": "$3.4",
+        "unit": "billion",
+        "kicker": "Lego made",
+        "lines": [
+          "in operating profit",
+          "last year"
+        ],
+        "mark": "last year"
+      }
+    },
+    {
+      "type": "split",
+      "variant": "cards",
+      "at": "That's twice",
+      "beats": [
+        "Monopoly's maker",
+        "added together"
+      ],
+      "source": "CNBC, Mattel, Hasbro, 2026",
+      "props": {
+        "a": {
+          "tag": "Lego",
+          "figure": "$3.4bn",
+          "line": "profit, 2025"
+        },
+        "b": {
+          "tag": "Mattel + Hasbro",
+          "figure": "$1.7bn",
+          "line": "added together"
+        },
+        "verdict": "Twice as much"
+      }
+    },
+    {
+      "type": "receipt",
+      "variant": "clip",
+      "at": "Mattel made",
+      "beats": [
+        "$546 million",
+        "Hasbro",
+        "adjusted count"
+      ],
+      "source": "Mattel, Hasbro, 2026",
+      "props": {
+        "title": "Operating profit, 2025",
+        "rows": [
+          {
+            "label": "Mattel",
+            "value": "$546M"
+          },
+          {
+            "label": "Hasbro (adjusted)",
+            "value": "$1.14bn",
+            "mark": true
+          }
+        ]
+      }
+    },
+    {
+      "type": "count",
+      "variant": "pile",
+      "at": "Lego's sales hit",
+      "beats": [
+        "up 12%"
+      ],
+      "source": "CNBC, 2026",
+      "props": {
+        "amount": "$12.9 billion",
+        "kicker": "Lego's sales, 2025",
+        "line": "up 12% in a year"
+      }
+    },
+    {
+      "type": "stacks",
+      "variant": "side",
+      "at": "The toy market grew",
+      "beats": [
+        "Lego's sales in shops"
+      ],
+      "source": "Lego, 2026",
+      "props": {
+        "unit": "1%",
+        "items": [
+          {
+            "label": "Toy market",
+            "amount": "7%"
+          },
+          {
+            "label": "Lego in shops",
+            "amount": "16%"
+          }
+        ]
+      }
+    },
+    {
+      "type": "product",
+      "variant": "hero",
+      "at": "Its secret",
+      "beats": [
+        "Flowers",
+        "Formula One",
+        "Pokémon and Bluey"
+      ],
+      "source": "CBS News, CNBC, 2025",
+      "props": {
+        "product": "brick",
+        "callouts": [
+          "Flowers and cars",
+          "Formula One",
+          "Pokémon and Bluey"
+        ]
+      }
+    },
+    {
+      "type": "stamp",
+      "variant": "under",
+      "at": "And Lego isn't",
+      "beats": [
+        "stock market"
+      ],
+      "source": "Lego",
+      "props": {
+        "lines": [
+          "Not on the",
+          "stock market"
+        ],
+        "stamp": [
+          "Private"
+        ]
+      }
+    },
+    {
+      "type": "cut",
+      "variant": "left",
+      "at": "A family company",
+      "beats": [
+        "75% of it",
+        "A charity"
+      ],
+      "source": "Lego",
+      "props": {
+        "title": "Who owns Lego",
+        "share": "75%",
+        "label": "The family",
+        "note": "25%: the Lego Foundation"
+      }
+    },
+    {
+      "type": "flow",
+      "variant": "arc",
+      "at": "owns the rest",
+      "beats": [
+        "a quarter",
+        "that charity"
+      ],
+      "source": "Lego",
+      "props": {
+        "from": {
+          "name": "Lego",
+          "product": "brick"
+        },
+        "to": {
+          "name": "Lego Foundation"
+        },
+        "note": "A quarter of payouts"
+      }
+    },
+    {
+      "type": "stamp",
+      "variant": "over",
+      "at": "In the first half",
+      "beats": [
+        "another 22%",
+        "Which is why"
+      ],
+      "source": "CNBC, 2026",
+      "props": {
+        "figure": "+22%",
+        "lines": [
+          "profit, first",
+          "half of 2026"
+        ],
+        "stamp": [
+          "Still rising"
+        ],
+        "sub": "record first-half sales"
+      }
+    }
+  ]
+}

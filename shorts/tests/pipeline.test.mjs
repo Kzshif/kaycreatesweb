@@ -594,3 +594,10 @@ test('a cent sign is money: 99¢ reads and checks as $0.99', async () => {
   assert.equal(figures('99 cents')[0].key, '$0.99');
   assert.equal(spokenForm('A can is 99¢.'), 'A can is ninety-nine cents.');
 });
+
+test('a figure written as a floor keeps its plus: "1,000+"', () => {
+  const a = parseAmount('1,000+');
+  assert.equal(a.number, 1000);
+  assert.equal(a.tail, '+');
+  assert.equal(parseAmount('$3.2bn').tail, 'bn');
+});

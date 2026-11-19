@@ -1,0 +1,188 @@
+{
+  "id": "018",
+  "break": {
+    "at": "never spent at all"
+  },
+  "scenes": [
+    {
+      "type": "slam",
+      "variant": "stamp",
+      "beats": [
+        "like a bank"
+      ],
+      "source": "Starbucks 10-K, 2025",
+      "props": {
+        "lines": [
+          "Starbucks holds",
+          "billions of",
+          "your money"
+        ],
+        "stamp": [
+          "Like a bank"
+        ]
+      }
+    },
+    {
+      "type": "product",
+      "variant": "hero",
+      "at": "Every time you top up",
+      "beats": [
+        "gift card",
+        "paid first"
+      ],
+      "source": "Starbucks 10-K, 2025",
+      "props": {
+        "product": "card",
+        "text": "Gift card",
+        "callouts": [
+          "Top up the app",
+          "Buy a gift card"
+        ]
+      }
+    },
+    {
+      "type": "count",
+      "variant": "pile",
+      "at": "In fiscal 2025",
+      "beats": [
+        "$15.2 billion",
+        "counting reward Stars"
+      ],
+      "source": "Starbucks 10-K, 2025",
+      "props": {
+        "amount": "$15.2 billion",
+        "kicker": "Paid in, fiscal 2025",
+        "line": "before a drink was made",
+        "sub": "counting reward Stars"
+      }
+    },
+    {
+      "type": "flow",
+      "variant": "drop",
+      "at": "Most of it comes",
+      "beats": [
+        "comes back",
+        "coffee"
+      ],
+      "source": "Starbucks 10-K, 2025",
+      "props": {
+        "from": {
+          "name": "Cards and app"
+        },
+        "to": {
+          "name": "Coffee",
+          "product": "cup"
+        },
+        "note": "Most of it"
+      }
+    },
+    {
+      "type": "stamp",
+      "variant": "over",
+      "at": "Starbucks was still",
+      "beats": [
+        "$1.75 billion",
+        "hadn't spent"
+      ],
+      "source": "Starbucks 10-K, 2025",
+      "props": {
+        "figure": "$1.75bn",
+        "lines": [
+          "not yet spent"
+        ],
+        "sub": "end of fiscal 2025",
+        "stamp": [
+          "Held"
+        ]
+      }
+    },
+    {
+      "type": "words",
+      "variant": "stack",
+      "at": "That's money it has",
+      "beats": [
+        "single drink"
+      ],
+      "source": "Starbucks 10-K, 2025",
+      "props": {
+        "lines": [
+          "Paid before",
+          "a single drink"
+        ],
+        "mark": "a single drink"
+      }
+    },
+    {
+      "type": "receipt",
+      "variant": "roll",
+      "at": "And some balances",
+      "beats": [
+        "never spent",
+        "counts those",
+        "breakage"
+      ],
+      "source": "Starbucks 10-K, 2025",
+      "props": {
+        "title": "Leftover balances",
+        "rows": [
+          {
+            "label": "Never spent",
+            "value": "Kept"
+          },
+          {
+            "label": "Counted as",
+            "value": "Revenue",
+            "mark": true
+          }
+        ]
+      }
+    },
+    {
+      "type": "count",
+      "variant": "rain",
+      "at": "Nearly 36 million",
+      "beats": [
+        "Rewards members"
+      ],
+      "source": "Starbucks, 2026",
+      "props": {
+        "amount": "35.8 million",
+        "kicker": "Active Rewards members",
+        "line": "in the US"
+      }
+    },
+    {
+      "type": "grid",
+      "variant": "rows",
+      "at": "And a third",
+      "beats": [
+        "in the app"
+      ],
+      "source": "Starbucks, 2026",
+      "props": {
+        "of": 100,
+        "filled": 33,
+        "figure": "33%",
+        "label": "of US orders in the app"
+      }
+    },
+    {
+      "type": "tag",
+      "variant": "tape",
+      "at": "So this Christmas",
+      "beats": [
+        "gift card",
+        "pays Starbucks first"
+      ],
+      "source": "Starbucks 10-K, 2025",
+      "props": {
+        "label": "Every gift card",
+        "price": "Paid first",
+        "lines": [
+          "This Christmas"
+        ],
+        "note": "Before any coffee"
+      }
+    }
+  ]
+}

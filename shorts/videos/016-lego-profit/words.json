@@ -1,0 +1,734 @@
+{
+ "engine": "faster-whisper small.en (word_timestamps)",
+ "pass_used": "glossary prompt",
+ "unheard_words": 0,
+ "duration": 49.424,
+ "match": 0.9655,
+ "heard": "Lego made $3.4 billion in operating profit last year. That's twice what Barbie's Maker and Monopoly's Maker made, added together. Mattel made $546 million. Hasbro $1.14 billion on its own adjusted count. Lego sales hit $12.9 billion, up 12% in a year. The toy market grew 7%. Lego sales in shops grew 16%. It's secret. Flowers, cars, and famous brands. Formula One, Pok\u00e9mon, and Blue Eye sets. And LEGO isn't even on the stock market. A family company owns 75% of it. A charity, the LEGO Foundation, owns the rest. So a quarter of what LEGO pays its owners goes to that charity. In the first half of 2026, its profit rose another 22%. Which is why...",
+ "mismatches": [
+  {
+   "script": "Lego's",
+   "heard": "Lego",
+   "at": 16.34
+  },
+  {
+   "script": "Lego's",
+   "heard": "Lego",
+   "at": 22.88
+  },
+  {
+   "script": "Its",
+   "heard": "It's",
+   "at": 25.54
+  },
+  {
+   "script": "Bluey",
+   "heard": "Blue Eye",
+   "at": 30.84
+  }
+ ],
+ "figure_mismatches": [],
+ "low_confidence": [
+  "Formula",
+  "Pok\u00e9mon,",
+  "Eye"
+ ],
+ "words": [
+  {
+   "w": "Lego",
+   "start": 0.0,
+   "end": 0.24,
+   "matched": true
+  },
+  {
+   "w": "made",
+   "start": 0.24,
+   "end": 0.48,
+   "matched": true
+  },
+  {
+   "w": "$3.4",
+   "start": 0.48,
+   "end": 1.44,
+   "matched": true
+  },
+  {
+   "w": "billion",
+   "start": 1.44,
+   "end": 1.74,
+   "matched": true
+  },
+  {
+   "w": "in",
+   "start": 1.74,
+   "end": 2.52,
+   "matched": true
+  },
+  {
+   "w": "operating",
+   "start": 2.52,
+   "end": 2.92,
+   "matched": true
+  },
+  {
+   "w": "profit",
+   "start": 2.92,
+   "end": 3.34,
+   "matched": true
+  },
+  {
+   "w": "last",
+   "start": 3.34,
+   "end": 3.62,
+   "matched": true
+  },
+  {
+   "w": "year.",
+   "start": 3.62,
+   "end": 3.94,
+   "matched": true
+  },
+  {
+   "w": "That's",
+   "start": 4.38,
+   "end": 4.56,
+   "matched": true
+  },
+  {
+   "w": "twice",
+   "start": 4.56,
+   "end": 4.76,
+   "matched": true
+  },
+  {
+   "w": "what",
+   "start": 4.76,
+   "end": 5.06,
+   "matched": true
+  },
+  {
+   "w": "Barbie's",
+   "start": 5.06,
+   "end": 5.46,
+   "matched": true
+  },
+  {
+   "w": "maker",
+   "start": 5.46,
+   "end": 5.72,
+   "matched": true
+  },
+  {
+   "w": "and",
+   "start": 5.72,
+   "end": 6.04,
+   "matched": true
+  },
+  {
+   "w": "Monopoly's",
+   "start": 6.04,
+   "end": 6.6,
+   "matched": true
+  },
+  {
+   "w": "maker",
+   "start": 6.6,
+   "end": 6.84,
+   "matched": true
+  },
+  {
+   "w": "made,",
+   "start": 6.84,
+   "end": 7.16,
+   "matched": true
+  },
+  {
+   "w": "added",
+   "start": 7.54,
+   "end": 7.82,
+   "matched": true
+  },
+  {
+   "w": "together.",
+   "start": 7.82,
+   "end": 8.26,
+   "matched": true
+  },
+  {
+   "w": "Mattel",
+   "start": 8.76,
+   "end": 8.94,
+   "matched": true
+  },
+  {
+   "w": "made",
+   "start": 8.94,
+   "end": 9.14,
+   "matched": true
+  },
+  {
+   "w": "$546",
+   "start": 9.14,
+   "end": 9.92,
+   "matched": true
+  },
+  {
+   "w": "million.",
+   "start": 9.92,
+   "end": 11.1,
+   "matched": true
+  },
+  {
+   "w": "Hasbro,",
+   "start": 11.98,
+   "end": 12.36,
+   "matched": true
+  },
+  {
+   "w": "$1.14",
+   "start": 12.36,
+   "end": 13.56,
+   "matched": true
+  },
+  {
+   "w": "billion",
+   "start": 13.56,
+   "end": 13.94,
+   "matched": true
+  },
+  {
+   "w": "on",
+   "start": 13.94,
+   "end": 14.6,
+   "matched": true
+  },
+  {
+   "w": "its",
+   "start": 14.6,
+   "end": 14.74,
+   "matched": true
+  },
+  {
+   "w": "own",
+   "start": 14.74,
+   "end": 14.98,
+   "matched": true
+  },
+  {
+   "w": "adjusted",
+   "start": 14.98,
+   "end": 15.4,
+   "matched": true
+  },
+  {
+   "w": "count.",
+   "start": 15.4,
+   "end": 15.82,
+   "matched": true
+  },
+  {
+   "w": "Lego's",
+   "start": 16.34,
+   "end": 16.54,
+   "matched": false
+  },
+  {
+   "w": "sales",
+   "start": 16.54,
+   "end": 16.82,
+   "matched": true
+  },
+  {
+   "w": "hit",
+   "start": 16.82,
+   "end": 17.14,
+   "matched": true
+  },
+  {
+   "w": "$12.9",
+   "start": 17.14,
+   "end": 17.98,
+   "matched": true
+  },
+  {
+   "w": "billion,",
+   "start": 17.98,
+   "end": 18.3,
+   "matched": true
+  },
+  {
+   "w": "up",
+   "start": 18.94,
+   "end": 19.34,
+   "matched": true
+  },
+  {
+   "w": "12%",
+   "start": 19.34,
+   "end": 19.96,
+   "matched": true
+  },
+  {
+   "w": "in",
+   "start": 19.96,
+   "end": 20.2,
+   "matched": true
+  },
+  {
+   "w": "a",
+   "start": 20.2,
+   "end": 20.3,
+   "matched": true
+  },
+  {
+   "w": "year.",
+   "start": 20.3,
+   "end": 20.54,
+   "matched": true
+  },
+  {
+   "w": "The",
+   "start": 20.9,
+   "end": 21.04,
+   "matched": true
+  },
+  {
+   "w": "toy",
+   "start": 21.04,
+   "end": 21.22,
+   "matched": true
+  },
+  {
+   "w": "market",
+   "start": 21.22,
+   "end": 21.6,
+   "matched": true
+  },
+  {
+   "w": "grew",
+   "start": 21.6,
+   "end": 21.86,
+   "matched": true
+  },
+  {
+   "w": "7%.",
+   "start": 21.86,
+   "end": 22.88,
+   "matched": true
+  },
+  {
+   "w": "Lego's",
+   "start": 22.88,
+   "end": 23.36,
+   "matched": false
+  },
+  {
+   "w": "sales",
+   "start": 23.36,
+   "end": 23.62,
+   "matched": true
+  },
+  {
+   "w": "in",
+   "start": 23.62,
+   "end": 23.92,
+   "matched": true
+  },
+  {
+   "w": "shops",
+   "start": 23.92,
+   "end": 24.18,
+   "matched": true
+  },
+  {
+   "w": "grew",
+   "start": 24.18,
+   "end": 24.48,
+   "matched": true
+  },
+  {
+   "w": "16%.",
+   "start": 24.48,
+   "end": 25.54,
+   "matched": true
+  },
+  {
+   "w": "Its",
+   "start": 25.54,
+   "end": 25.9,
+   "matched": false
+  },
+  {
+   "w": "secret?",
+   "start": 25.9,
+   "end": 26.16,
+   "matched": true
+  },
+  {
+   "w": "Flowers,",
+   "start": 27.16,
+   "end": 27.2,
+   "matched": true
+  },
+  {
+   "w": "cars",
+   "start": 27.4,
+   "end": 27.6,
+   "matched": true
+  },
+  {
+   "w": "and",
+   "start": 27.8,
+   "end": 27.88,
+   "matched": true
+  },
+  {
+   "w": "famous",
+   "start": 27.88,
+   "end": 28.14,
+   "matched": true
+  },
+  {
+   "w": "brands.",
+   "start": 28.14,
+   "end": 28.62,
+   "matched": true
+  },
+  {
+   "w": "Formula",
+   "start": 28.62,
+   "end": 29.28,
+   "matched": true
+  },
+  {
+   "w": "One,",
+   "start": 29.28,
+   "end": 29.76,
+   "matched": true
+  },
+  {
+   "w": "Pok\u00e9mon",
+   "start": 30.32,
+   "end": 30.36,
+   "matched": true
+  },
+  {
+   "w": "and",
+   "start": 30.74,
+   "end": 30.84,
+   "matched": true
+  },
+  {
+   "w": "Bluey",
+   "start": 30.84,
+   "end": 31.14,
+   "matched": false
+  },
+  {
+   "w": "sets.",
+   "start": 31.14,
+   "end": 31.42,
+   "matched": true
+  },
+  {
+   "w": "And",
+   "start": 31.9,
+   "end": 32.02,
+   "matched": true
+  },
+  {
+   "w": "Lego",
+   "start": 32.02,
+   "end": 32.22,
+   "matched": true
+  },
+  {
+   "w": "isn't",
+   "start": 32.22,
+   "end": 32.78,
+   "matched": true
+  },
+  {
+   "w": "even",
+   "start": 32.78,
+   "end": 33.02,
+   "matched": true
+  },
+  {
+   "w": "on",
+   "start": 33.02,
+   "end": 33.18,
+   "matched": true
+  },
+  {
+   "w": "the",
+   "start": 33.18,
+   "end": 33.3,
+   "matched": true
+  },
+  {
+   "w": "stock",
+   "start": 33.3,
+   "end": 33.58,
+   "matched": true
+  },
+  {
+   "w": "market.",
+   "start": 33.58,
+   "end": 33.98,
+   "matched": true
+  },
+  {
+   "w": "A",
+   "start": 34.42,
+   "end": 34.54,
+   "matched": true
+  },
+  {
+   "w": "family",
+   "start": 34.54,
+   "end": 34.8,
+   "matched": true
+  },
+  {
+   "w": "company",
+   "start": 34.8,
+   "end": 35.26,
+   "matched": true
+  },
+  {
+   "w": "owns",
+   "start": 35.26,
+   "end": 35.68,
+   "matched": true
+  },
+  {
+   "w": "75%",
+   "start": 35.68,
+   "end": 36.74,
+   "matched": true
+  },
+  {
+   "w": "of",
+   "start": 36.74,
+   "end": 36.9,
+   "matched": true
+  },
+  {
+   "w": "it.",
+   "start": 36.9,
+   "end": 37.12,
+   "matched": true
+  },
+  {
+   "w": "A",
+   "start": 37.42,
+   "end": 37.56,
+   "matched": true
+  },
+  {
+   "w": "charity,",
+   "start": 37.56,
+   "end": 37.84,
+   "matched": true
+  },
+  {
+   "w": "the",
+   "start": 38.14,
+   "end": 38.2,
+   "matched": true
+  },
+  {
+   "w": "Lego",
+   "start": 38.2,
+   "end": 38.4,
+   "matched": true
+  },
+  {
+   "w": "Foundation,",
+   "start": 38.4,
+   "end": 38.82,
+   "matched": true
+  },
+  {
+   "w": "owns",
+   "start": 39.22,
+   "end": 39.38,
+   "matched": true
+  },
+  {
+   "w": "the",
+   "start": 39.38,
+   "end": 39.56,
+   "matched": true
+  },
+  {
+   "w": "rest.",
+   "start": 39.56,
+   "end": 39.82,
+   "matched": true
+  },
+  {
+   "w": "So",
+   "start": 40.3,
+   "end": 40.38,
+   "matched": true
+  },
+  {
+   "w": "a",
+   "start": 40.38,
+   "end": 40.52,
+   "matched": true
+  },
+  {
+   "w": "quarter",
+   "start": 40.52,
+   "end": 40.7,
+   "matched": true
+  },
+  {
+   "w": "of",
+   "start": 40.7,
+   "end": 40.86,
+   "matched": true
+  },
+  {
+   "w": "what",
+   "start": 40.86,
+   "end": 40.98,
+   "matched": true
+  },
+  {
+   "w": "Lego",
+   "start": 40.98,
+   "end": 41.28,
+   "matched": true
+  },
+  {
+   "w": "pays",
+   "start": 41.28,
+   "end": 41.7,
+   "matched": true
+  },
+  {
+   "w": "its",
+   "start": 41.7,
+   "end": 41.9,
+   "matched": true
+  },
+  {
+   "w": "owners",
+   "start": 41.9,
+   "end": 42.2,
+   "matched": true
+  },
+  {
+   "w": "goes",
+   "start": 42.2,
+   "end": 42.5,
+   "matched": true
+  },
+  {
+   "w": "to",
+   "start": 42.5,
+   "end": 42.74,
+   "matched": true
+  },
+  {
+   "w": "that",
+   "start": 42.74,
+   "end": 42.88,
+   "matched": true
+  },
+  {
+   "w": "charity.",
+   "start": 42.88,
+   "end": 43.24,
+   "matched": true
+  },
+  {
+   "w": "In",
+   "start": 43.74,
+   "end": 43.82,
+   "matched": true
+  },
+  {
+   "w": "the",
+   "start": 43.82,
+   "end": 43.94,
+   "matched": true
+  },
+  {
+   "w": "first",
+   "start": 43.94,
+   "end": 44.16,
+   "matched": true
+  },
+  {
+   "w": "half",
+   "start": 44.16,
+   "end": 44.4,
+   "matched": true
+  },
+  {
+   "w": "of",
+   "start": 44.4,
+   "end": 44.56,
+   "matched": true
+  },
+  {
+   "w": "2026,",
+   "start": 44.56,
+   "end": 45.38,
+   "matched": true
+  },
+  {
+   "w": "its",
+   "start": 45.98,
+   "end": 46.08,
+   "matched": true
+  },
+  {
+   "w": "profit",
+   "start": 46.08,
+   "end": 46.4,
+   "matched": true
+  },
+  {
+   "w": "rose",
+   "start": 46.4,
+   "end": 46.72,
+   "matched": true
+  },
+  {
+   "w": "another",
+   "start": 46.72,
+   "end": 47.06,
+   "matched": true
+  },
+  {
+   "w": "22%.",
+   "start": 47.06,
+   "end": 47.62,
+   "matched": true
+  },
+  {
+   "w": "Which",
+   "start": 48.24,
+   "end": 48.66,
+   "matched": true
+  },
+  {
+   "w": "is",
+   "start": 48.66,
+   "end": 48.84,
+   "matched": true
+  },
+  {
+   "w": "why",
+   "start": 48.84,
+   "end": 49.4,
+   "matched": true
+  }
+ ]
+}

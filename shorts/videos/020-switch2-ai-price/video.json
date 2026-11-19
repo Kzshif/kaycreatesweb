@@ -1,0 +1,199 @@
+{
+  "id": "020",
+  "break": {
+    "at": "2.67 million"
+  },
+  "scenes": [
+    {
+      "type": "slam",
+      "variant": "number",
+      "beats": [
+        "more",
+        "AI boom"
+      ],
+      "source": "Forbes, 2026",
+      "props": {
+        "figure": "$50",
+        "kicker": "A Switch 2 now costs",
+        "lines": [
+          "more.",
+          "Blame the AI boom."
+        ],
+        "mark": "AI boom."
+      }
+    },
+    {
+      "type": "receipt",
+      "variant": "clip",
+      "at": "Nintendo raised",
+      "beats": [
+        "US price",
+        "$499.99"
+      ],
+      "source": "Forbes, CNBC, 2026",
+      "props": {
+        "title": "Switch 2, US price",
+        "rows": [
+          {
+            "label": "At launch",
+            "value": "$449.99"
+          },
+          {
+            "label": "Since September",
+            "value": "$499.99",
+            "mark": true
+          }
+        ]
+      }
+    },
+    {
+      "type": "flow",
+      "variant": "arc",
+      "at": "AI data centres",
+      "beats": [
+        "memory chips",
+        "price has soared"
+      ],
+      "source": "CNBC, 2026",
+      "props": {
+        "from": {
+          "name": "AI data centres"
+        },
+        "to": {
+          "name": "Memory chips"
+        },
+        "note": "Prices soar"
+      }
+    },
+    {
+      "type": "product",
+      "variant": "hero",
+      "at": "Nintendo expects higher",
+      "beats": [
+        "parts costs",
+        "tariffs"
+      ],
+      "source": "CNBC, 2026",
+      "props": {
+        "product": "controller",
+        "callouts": [
+          "Higher parts costs",
+          "Tariffs"
+        ]
+      }
+    },
+    {
+      "type": "count",
+      "variant": "pile",
+      "at": "to cost it",
+      "beats": [
+        "100 billion yen",
+        "That's roughly"
+      ],
+      "source": "CNBC, 2026",
+      "props": {
+        "amount": "$638 million",
+        "kicker": "Extra costs",
+        "line": "about 100 billion yen",
+        "sub": "this financial year"
+      }
+    },
+    {
+      "type": "split",
+      "variant": "tilt",
+      "at": "Then sales fell",
+      "beats": [
+        "2.67 million",
+        "consoles"
+      ],
+      "source": "CNBC, VGC, 2026",
+      "props": {
+        "a": {
+          "tag": "Summer 2025",
+          "figure": "4.54M",
+          "line": "Switch 2 consoles"
+        },
+        "b": {
+          "tag": "Summer 2026",
+          "figure": "2.67M",
+          "line": "Switch 2 consoles"
+        },
+        "verdict": "Down 41%"
+      }
+    },
+    {
+      "type": "stamp",
+      "variant": "over",
+      "at": "on a year before",
+      "beats": [
+        "26 million",
+        "since launch"
+      ],
+      "source": "CNBC, 2026",
+      "props": {
+        "figure": "26.35M",
+        "lines": [
+          "sold since",
+          "launch"
+        ],
+        "sub": "to September 2026",
+        "stamp": [
+          "Still a hit"
+        ]
+      }
+    },
+    {
+      "type": "words",
+      "variant": "ladder",
+      "at": "That's faster than",
+      "beats": [
+        "first Switch",
+        "PS5"
+      ],
+      "source": "GamesRadar, 2026",
+      "props": {
+        "lines": [
+          "Faster than",
+          "the first Switch,",
+          "or the PS5."
+        ]
+      }
+    },
+    {
+      "type": "tag",
+      "variant": "pin",
+      "at": "Nintendo still expects",
+      "beats": [
+        "16.5",
+        "financial year"
+      ],
+      "source": "CNBC, 2026",
+      "props": {
+        "label": "Forecast",
+        "price": "16.5M",
+        "sub": "Switch 2 consoles",
+        "lines": [
+          "Nintendo still expects"
+        ],
+        "note": "to March 2027"
+      }
+    },
+    {
+      "type": "product",
+      "variant": "hero",
+      "at": "And the games",
+      "beats": [
+        "more too",
+        "$80"
+      ],
+      "source": "CNBC, 2025",
+      "props": {
+        "product": "controller",
+        "callouts": [
+          "Games cost more too",
+          "Mario Kart World: $80"
+        ]
+      }
+    }
+  ]
+}

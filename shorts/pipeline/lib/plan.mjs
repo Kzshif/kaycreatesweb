@@ -70,7 +70,10 @@ export function parseAmount(text) {
   const unit = f.unit || 1;
   // `tail` is the magnitude exactly as written after the digits ("M" in "90M", "bn" in "$3.2bn"),
   // for scenes that print the figure whole rather than with the word on its own line
-  const tail = f.percent || f.mult ? '' : f.raw.replace(/^[$£€]?\d[\d,]*(?:\.\d+)?/, '');
+  let tail = f.percent || f.mult ? '' : f.raw.replace(/^[$£€]?\d[\d,]*(?:\.\d+)?/, '');
+  // "1,000+" keeps its plus: the figure is a floor, not a count
+  const after = String(text).slice(String(text).indexOf(f.raw) + f.raw.length);
+  if (after.startsWith('+')) tail += '+';
   return { prefix: f.currency || '', number: +(f.value / unit).toFixed(f.decimals || 0), decimals: f.decimals || 0, word: WORD_OF[unit] || '', suffix: f.percent ? '%' : f.mult ? 'x' : '', tail, value: f.value, raw: f.raw };
 }
 /** "$10.4 billion" -> "$10.4bn": the short form used where space is tight. */

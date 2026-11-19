@@ -1,0 +1,199 @@
+{
+  "id": "019",
+  "break": {
+    "at": "a cut of the money"
+  },
+  "scenes": [
+    {
+      "type": "slam",
+      "variant": "object",
+      "beats": [
+        "pay for Lionel Messi"
+      ],
+      "source": "Fortune, 2023",
+      "props": {
+        "product": "ball",
+        "lines": [
+          "Apple helped",
+          "pay for Messi"
+        ]
+      }
+    },
+    {
+      "type": "count",
+      "variant": "pile",
+      "at": "His official MLS pay",
+      "beats": [
+        "$28.3 million",
+        "a year"
+      ],
+      "source": "Forbes, MLSPA, 2026",
+      "props": {
+        "amount": "$28.3 million",
+        "kicker": "Messi's",
+        "line": "official MLS pay",
+        "sub": "a year, 2026"
+      }
+    },
+    {
+      "type": "split",
+      "variant": "cards",
+      "at": "But Inter Miami's owner",
+      "beats": [
+        "$70 million",
+        "a year"
+      ],
+      "source": "Forbes, 2026",
+      "props": {
+        "a": {
+          "tag": "Official",
+          "figure": "$28.3M",
+          "line": "MLS pay"
+        },
+        "b": {
+          "tag": "Owner says",
+          "figure": "$70M+",
+          "line": "a year"
+        },
+        "verdict": "Up to $80M a year"
+      }
+    },
+    {
+      "type": "words",
+      "variant": "stack",
+      "at": "So where does",
+      "beats": [
+        "come from"
+      ],
+      "props": {
+        "lines": [
+          "So where does",
+          "the rest come from?"
+        ],
+        "mark": "the rest come from?"
+      }
+    },
+    {
+      "type": "tag",
+      "variant": "tape",
+      "at": "Apple pays MLS",
+      "beats": [
+        "$2.5 billion",
+        "stream its games"
+      ],
+      "source": "Front Office Sports, ESPN",
+      "props": {
+        "label": "Apple's MLS deal",
+        "price": "$2.5bn",
+        "sub": "over 10 years",
+        "lines": [
+          "At least"
+        ],
+        "note": "to stream its games"
+      }
+    },
+    {
+      "type": "flow",
+      "variant": "arc",
+      "at": "When Messi signed",
+      "beats": [
+        "a cut",
+        "new subscribers"
+      ],
+      "source": "Fortune, ESPN, 2023",
+      "props": {
+        "from": {
+          "name": "New subscribers"
+        },
+        "to": {
+          "name": "Messi",
+          "product": "ball"
+        },
+        "note": "A cut, from 2023"
+      }
+    },
+    {
+      "type": "stamp",
+      "variant": "under",
+      "at": "Adidas reportedly",
+      "beats": [
+        "its gains too"
+      ],
+      "source": "ESPN, 2023",
+      "props": {
+        "lines": [
+          "Adidas reportedly",
+          "shared its gains"
+        ],
+        "stamp": [
+          "Adidas too"
+        ]
+      }
+    },
+    {
+      "type": "count",
+      "variant": "rain",
+      "at": "Forbes reckons",
+      "beats": [
+        "$145 million",
+        "this season"
+      ],
+      "source": "Forbes, 2026",
+      "props": {
+        "amount": "$145 million",
+        "kicker": "Forbes estimate",
+        "line": "this season",
+        "sub": "before tax and fees"
+      }
+    },
+    {
+      "type": "cut",
+      "variant": "left",
+      "at": "$75 million of that",
+      "beats": [
+        "off the field"
+      ],
+      "source": "Forbes, 2026",
+      "props": {
+        "title": "Messi's $145M",
+        "share": "52%",
+        "label": "Off the field",
+        "note": "$70M from playing"
+      }
+    },
+    {
+      "type": "stamp",
+      "variant": "over",
+      "at": "Forbes now counts",
+      "beats": [
+        "a billionaire"
+      ],
+      "source": "Forbes, 2026",
+      "props": {
+        "figure": "$1.1bn",
+        "lines": [
+          "net worth",
+          "Forbes, 2026"
+        ],
+        "stamp": [
+          "Billionaire"
+        ]
+      }
+    },
+    {
+      "type": "words",
+      "variant": "ladder",
+      "at": "And his contract",
+      "beats": [
+        "until 2028"
+      ],
+      "source": "NBC News, 2025",
+      "props": {
+        "lines": [
+          "Signed until",
+          "2028."
+        ]
+      }
+    }
+  ]
+}

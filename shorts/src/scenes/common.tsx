@@ -31,7 +31,8 @@ export type Amount = { prefix: string; number: number; decimals: number; suffix:
 /** A figure counting up to its value, smooth, landing exactly on it. */
 export const counting = (frame: number, at: number, dur: number, c: Amount): string => {
   const v = c.number * glide(ramp(frame, at, dur));
-  const text = c.number >= 10000 ? Math.round(v).toLocaleString('en-US') : v.toFixed(c.decimals);
+  // thousands are grouped as written: "1,000", "13,706"; smaller figures keep their decimals
+  const text = c.number >= 1000 ? Number(v.toFixed(c.decimals)).toLocaleString('en-US', { minimumFractionDigits: c.decimals, maximumFractionDigits: c.decimals }) : v.toFixed(c.decimals);
   return `${c.prefix}${text}${c.suffix}`;
 };
 

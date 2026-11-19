@@ -96,12 +96,20 @@ def align(script, heard):
 ROMAN = {"ii": 2, "iii": 3, "iv": 4, "v": 5, "vi": 6, "vii": 7, "viii": 8, "ix": 9}
 
 
+# small numbers Whisper writes as the word, or as a word that sounds the same: "Switch 2" heard as "Switch to"
+SAID = {"one": 1, "won": 1, "two": 2, "to": 2, "too": 2, "three": 3, "four": 4, "for": 4, "five": 5, "six": 6,
+        "seven": 7, "eight": 8, "ate": 8, "nine": 9, "ten": 10}
+
+
 def digits(s):
     """The numbers in a word, reading a bare Roman numeral as its digits: Whisper writes "GTA 6" as "GTA VI"."""
     t = s.replace(",", "").strip(" .,!?;:'\"")
     if t.lower() in ROMAN and t.isupper():
         return [str(ROMAN[t.lower()])]
-    return re.findall(r"\d+(?:\.\d+)?", t)
+    found = re.findall(r"\d+(?:\.\d+)?", t)
+    if not found and t.lower() in SAID:
+        return [str(SAID[t.lower()])]
+    return found
 
 
 def main():

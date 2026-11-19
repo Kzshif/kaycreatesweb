@@ -1,0 +1,709 @@
+{
+ "engine": "faster-whisper small.en (word_timestamps)",
+ "pass_used": "glossary prompt",
+ "unheard_words": 0,
+ "duration": 47.899,
+ "match": 0.9913,
+ "heard": "A Switch 2 now costs $50 more. Blame the AI boom. In September, Nintendo raised the U.S. price to $499.99. AI data centers are buying up memory chips, and their price has soared. Nintendo expects higher parts costs and tariffs to cost it about 100 billion yen this year. That's roughly $640 million. Then sales fell. Last quarter, it sold 2.67 million Switch 2 consoles, down 41% on a year before. Still, it has sold more than 26 million since launch. That's faster than the first Switch or the PS5. Nintendo still expects to sell 16.5 million this financial year. And the games cost more, too. Mario Kart World launched at $80. So this Christmas...",
+ "mismatches": [
+  {
+   "script": "centres",
+   "heard": "centers",
+   "at": 10.88
+  }
+ ],
+ "figure_mismatches": [],
+ "low_confidence": [],
+ "words": [
+  {
+   "w": "A",
+   "start": 0.0,
+   "end": 0.14,
+   "matched": true
+  },
+  {
+   "w": "Switch",
+   "start": 0.14,
+   "end": 0.32,
+   "matched": true
+  },
+  {
+   "w": "2",
+   "start": 0.32,
+   "end": 0.52,
+   "matched": true
+  },
+  {
+   "w": "now",
+   "start": 0.52,
+   "end": 0.76,
+   "matched": true
+  },
+  {
+   "w": "costs",
+   "start": 0.76,
+   "end": 1.12,
+   "matched": true
+  },
+  {
+   "w": "$50",
+   "start": 1.12,
+   "end": 1.54,
+   "matched": true
+  },
+  {
+   "w": "more.",
+   "start": 1.54,
+   "end": 2.02,
+   "matched": true
+  },
+  {
+   "w": "Blame",
+   "start": 2.52,
+   "end": 2.68,
+   "matched": true
+  },
+  {
+   "w": "the",
+   "start": 2.68,
+   "end": 2.8,
+   "matched": true
+  },
+  {
+   "w": "AI",
+   "start": 2.8,
+   "end": 3.14,
+   "matched": true
+  },
+  {
+   "w": "boom.",
+   "start": 3.14,
+   "end": 3.4,
+   "matched": true
+  },
+  {
+   "w": "In",
+   "start": 3.98,
+   "end": 4.04,
+   "matched": true
+  },
+  {
+   "w": "September,",
+   "start": 4.04,
+   "end": 4.52,
+   "matched": true
+  },
+  {
+   "w": "Nintendo",
+   "start": 5.16,
+   "end": 5.22,
+   "matched": true
+  },
+  {
+   "w": "raised",
+   "start": 5.22,
+   "end": 5.54,
+   "matched": true
+  },
+  {
+   "w": "the",
+   "start": 5.54,
+   "end": 5.76,
+   "matched": true
+  },
+  {
+   "w": "US",
+   "start": 5.76,
+   "end": 6.38,
+   "matched": true
+  },
+  {
+   "w": "price",
+   "start": 6.7,
+   "end": 6.94,
+   "matched": true
+  },
+  {
+   "w": "to",
+   "start": 6.94,
+   "end": 7.18,
+   "matched": true
+  },
+  {
+   "w": "$499.99.",
+   "start": 7.18,
+   "end": 9.62,
+   "matched": true
+  },
+  {
+   "w": "AI",
+   "start": 10.26,
+   "end": 10.6,
+   "matched": true
+  },
+  {
+   "w": "data",
+   "start": 10.6,
+   "end": 10.88,
+   "matched": true
+  },
+  {
+   "w": "centres",
+   "start": 10.88,
+   "end": 11.22,
+   "matched": false
+  },
+  {
+   "w": "are",
+   "start": 11.22,
+   "end": 11.58,
+   "matched": true
+  },
+  {
+   "w": "buying",
+   "start": 11.58,
+   "end": 11.86,
+   "matched": true
+  },
+  {
+   "w": "up",
+   "start": 11.86,
+   "end": 12.04,
+   "matched": true
+  },
+  {
+   "w": "memory",
+   "start": 12.04,
+   "end": 12.34,
+   "matched": true
+  },
+  {
+   "w": "chips,",
+   "start": 12.34,
+   "end": 12.72,
+   "matched": true
+  },
+  {
+   "w": "and",
+   "start": 13.18,
+   "end": 13.26,
+   "matched": true
+  },
+  {
+   "w": "their",
+   "start": 13.26,
+   "end": 13.4,
+   "matched": true
+  },
+  {
+   "w": "price",
+   "start": 13.4,
+   "end": 13.72,
+   "matched": true
+  },
+  {
+   "w": "has",
+   "start": 13.72,
+   "end": 13.92,
+   "matched": true
+  },
+  {
+   "w": "soared.",
+   "start": 13.92,
+   "end": 14.26,
+   "matched": true
+  },
+  {
+   "w": "Nintendo",
+   "start": 14.74,
+   "end": 15.18,
+   "matched": true
+  },
+  {
+   "w": "expects",
+   "start": 15.18,
+   "end": 15.66,
+   "matched": true
+  },
+  {
+   "w": "higher",
+   "start": 15.66,
+   "end": 16.02,
+   "matched": true
+  },
+  {
+   "w": "parts",
+   "start": 16.02,
+   "end": 16.36,
+   "matched": true
+  },
+  {
+   "w": "costs",
+   "start": 16.36,
+   "end": 16.72,
+   "matched": true
+  },
+  {
+   "w": "and",
+   "start": 16.72,
+   "end": 17.0,
+   "matched": true
+  },
+  {
+   "w": "tariffs",
+   "start": 17.0,
+   "end": 17.34,
+   "matched": true
+  },
+  {
+   "w": "to",
+   "start": 17.34,
+   "end": 17.98,
+   "matched": true
+  },
+  {
+   "w": "cost",
+   "start": 17.98,
+   "end": 18.24,
+   "matched": true
+  },
+  {
+   "w": "it",
+   "start": 18.24,
+   "end": 18.42,
+   "matched": true
+  },
+  {
+   "w": "about",
+   "start": 18.42,
+   "end": 18.64,
+   "matched": true
+  },
+  {
+   "w": "100",
+   "start": 18.64,
+   "end": 19.12,
+   "matched": true
+  },
+  {
+   "w": "billion",
+   "start": 19.12,
+   "end": 19.42,
+   "matched": true
+  },
+  {
+   "w": "yen",
+   "start": 19.42,
+   "end": 19.74,
+   "matched": true
+  },
+  {
+   "w": "this",
+   "start": 19.74,
+   "end": 19.94,
+   "matched": true
+  },
+  {
+   "w": "year.",
+   "start": 19.94,
+   "end": 20.18,
+   "matched": true
+  },
+  {
+   "w": "That's",
+   "start": 20.56,
+   "end": 20.8,
+   "matched": true
+  },
+  {
+   "w": "roughly",
+   "start": 20.8,
+   "end": 21.06,
+   "matched": true
+  },
+  {
+   "w": "$640",
+   "start": 21.06,
+   "end": 21.48,
+   "matched": true
+  },
+  {
+   "w": "million.",
+   "start": 21.48,
+   "end": 22.5,
+   "matched": true
+  },
+  {
+   "w": "Then",
+   "start": 23.2,
+   "end": 23.54,
+   "matched": true
+  },
+  {
+   "w": "sales",
+   "start": 23.54,
+   "end": 23.82,
+   "matched": true
+  },
+  {
+   "w": "fell.",
+   "start": 23.82,
+   "end": 24.14,
+   "matched": true
+  },
+  {
+   "w": "Last",
+   "start": 24.14,
+   "end": 24.84,
+   "matched": true
+  },
+  {
+   "w": "quarter",
+   "start": 24.84,
+   "end": 25.16,
+   "matched": true
+  },
+  {
+   "w": "it",
+   "start": 25.36,
+   "end": 25.4,
+   "matched": true
+  },
+  {
+   "w": "sold",
+   "start": 25.36,
+   "end": 25.58,
+   "matched": true
+  },
+  {
+   "w": "2.67",
+   "start": 25.58,
+   "end": 26.82,
+   "matched": true
+  },
+  {
+   "w": "million",
+   "start": 26.82,
+   "end": 27.34,
+   "matched": true
+  },
+  {
+   "w": "Switch",
+   "start": 27.34,
+   "end": 27.58,
+   "matched": true
+  },
+  {
+   "w": "2",
+   "start": 27.58,
+   "end": 27.88,
+   "matched": true
+  },
+  {
+   "w": "consoles,",
+   "start": 27.88,
+   "end": 28.3,
+   "matched": true
+  },
+  {
+   "w": "down",
+   "start": 28.84,
+   "end": 29.08,
+   "matched": true
+  },
+  {
+   "w": "41%",
+   "start": 29.08,
+   "end": 30.06,
+   "matched": true
+  },
+  {
+   "w": "on",
+   "start": 30.06,
+   "end": 30.32,
+   "matched": true
+  },
+  {
+   "w": "a",
+   "start": 30.32,
+   "end": 30.42,
+   "matched": true
+  },
+  {
+   "w": "year",
+   "start": 30.42,
+   "end": 30.56,
+   "matched": true
+  },
+  {
+   "w": "before.",
+   "start": 30.56,
+   "end": 30.92,
+   "matched": true
+  },
+  {
+   "w": "Still,",
+   "start": 31.46,
+   "end": 31.62,
+   "matched": true
+  },
+  {
+   "w": "it",
+   "start": 31.88,
+   "end": 31.96,
+   "matched": true
+  },
+  {
+   "w": "has",
+   "start": 31.96,
+   "end": 32.08,
+   "matched": true
+  },
+  {
+   "w": "sold",
+   "start": 32.08,
+   "end": 32.3,
+   "matched": true
+  },
+  {
+   "w": "more",
+   "start": 32.3,
+   "end": 32.52,
+   "matched": true
+  },
+  {
+   "w": "than",
+   "start": 32.52,
+   "end": 32.68,
+   "matched": true
+  },
+  {
+   "w": "26",
+   "start": 32.68,
+   "end": 33.06,
+   "matched": true
+  },
+  {
+   "w": "million",
+   "start": 33.06,
+   "end": 33.54,
+   "matched": true
+  },
+  {
+   "w": "since",
+   "start": 33.54,
+   "end": 33.82,
+   "matched": true
+  },
+  {
+   "w": "launch.",
+   "start": 33.82,
+   "end": 34.16,
+   "matched": true
+  },
+  {
+   "w": "That's",
+   "start": 34.68,
+   "end": 34.9,
+   "matched": true
+  },
+  {
+   "w": "faster",
+   "start": 34.9,
+   "end": 35.16,
+   "matched": true
+  },
+  {
+   "w": "than",
+   "start": 35.16,
+   "end": 35.36,
+   "matched": true
+  },
+  {
+   "w": "the",
+   "start": 35.36,
+   "end": 35.46,
+   "matched": true
+  },
+  {
+   "w": "first",
+   "start": 35.46,
+   "end": 35.66,
+   "matched": true
+  },
+  {
+   "w": "Switch,",
+   "start": 35.66,
+   "end": 35.9,
+   "matched": true
+  },
+  {
+   "w": "or",
+   "start": 35.9,
+   "end": 36.32,
+   "matched": true
+  },
+  {
+   "w": "the",
+   "start": 36.32,
+   "end": 36.42,
+   "matched": true
+  },
+  {
+   "w": "PS5.",
+   "start": 36.42,
+   "end": 37.08,
+   "matched": true
+  },
+  {
+   "w": "Nintendo",
+   "start": 37.6,
+   "end": 37.98,
+   "matched": true
+  },
+  {
+   "w": "still",
+   "start": 37.98,
+   "end": 38.3,
+   "matched": true
+  },
+  {
+   "w": "expects",
+   "start": 38.3,
+   "end": 38.66,
+   "matched": true
+  },
+  {
+   "w": "to",
+   "start": 38.66,
+   "end": 38.9,
+   "matched": true
+  },
+  {
+   "w": "sell",
+   "start": 38.9,
+   "end": 39.12,
+   "matched": true
+  },
+  {
+   "w": "16.5",
+   "start": 39.12,
+   "end": 40.7,
+   "matched": true
+  },
+  {
+   "w": "million",
+   "start": 40.7,
+   "end": 40.94,
+   "matched": true
+  },
+  {
+   "w": "this",
+   "start": 40.94,
+   "end": 41.32,
+   "matched": true
+  },
+  {
+   "w": "financial",
+   "start": 41.32,
+   "end": 41.76,
+   "matched": true
+  },
+  {
+   "w": "year.",
+   "start": 41.76,
+   "end": 42.18,
+   "matched": true
+  },
+  {
+   "w": "And",
+   "start": 42.54,
+   "end": 42.62,
+   "matched": true
+  },
+  {
+   "w": "the",
+   "start": 42.62,
+   "end": 42.7,
+   "matched": true
+  },
+  {
+   "w": "games",
+   "start": 42.7,
+   "end": 42.94,
+   "matched": true
+  },
+  {
+   "w": "cost",
+   "start": 42.94,
+   "end": 43.24,
+   "matched": true
+  },
+  {
+   "w": "more",
+   "start": 43.24,
+   "end": 43.54,
+   "matched": true
+  },
+  {
+   "w": "too:",
+   "start": 43.7,
+   "end": 43.82,
+   "matched": true
+  },
+  {
+   "w": "Mario",
+   "start": 44.52,
+   "end": 44.64,
+   "matched": true
+  },
+  {
+   "w": "Kart",
+   "start": 44.64,
+   "end": 44.94,
+   "matched": true
+  },
+  {
+   "w": "World",
+   "start": 44.94,
+   "end": 45.28,
+   "matched": true
+  },
+  {
+   "w": "launched",
+   "start": 45.28,
+   "end": 45.62,
+   "matched": true
+  },
+  {
+   "w": "at",
+   "start": 45.62,
+   "end": 45.8,
+   "matched": true
+  },
+  {
+   "w": "$80.",
+   "start": 45.8,
+   "end": 46.08,
+   "matched": true
+  },
+  {
+   "w": "So",
+   "start": 46.78,
+   "end": 47.0,
+   "matched": true
+  },
+  {
+   "w": "this",
+   "start": 47.0,
+   "end": 47.16,
+   "matched": true
+  },
+  {
+   "w": "Christmas,",
+   "start": 47.16,
+   "end": 47.86,
+   "matched": true
+  }
+ ]
+}

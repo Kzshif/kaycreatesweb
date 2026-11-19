@@ -1,0 +1,700 @@
+{
+ "engine": "faster-whisper small.en (word_timestamps)",
+ "pass_used": "no prompt",
+ "unheard_words": 0,
+ "duration": 45.701,
+ "match": 1.0,
+ "heard": "Mariah Carey makes millions from one song. Every single year. All I want for Christmas is You Came Out in 1994. It didn't reach number one in America until 2019. Now it has spent more weeks at number one than any song ever. Billboard estimated it made about $8.5 million in 2022. $5.3 million of that came from the recording. But Sony owns the recording, so it kept about $3.4 million. dollars. Mariah got about 1.9 million dollars. Songwriting added about 3.2 million dollars more, split with her co-writer and publishers. In all, she made an estimated 2.7 million dollars to 3.3 million dollars that year. Every November, she posts the same two words, it's time. And every year,",
+ "mismatches": [],
+ "figure_mismatches": [],
+ "low_confidence": [
+  "You",
+  "dollars."
+ ],
+ "words": [
+  {
+   "w": "Mariah",
+   "start": 0.0,
+   "end": 0.4,
+   "matched": true
+  },
+  {
+   "w": "Carey",
+   "start": 0.4,
+   "end": 0.64,
+   "matched": true
+  },
+  {
+   "w": "makes",
+   "start": 0.64,
+   "end": 0.98,
+   "matched": true
+  },
+  {
+   "w": "millions",
+   "start": 0.98,
+   "end": 1.32,
+   "matched": true
+  },
+  {
+   "w": "from",
+   "start": 1.32,
+   "end": 1.58,
+   "matched": true
+  },
+  {
+   "w": "one",
+   "start": 1.58,
+   "end": 1.78,
+   "matched": true
+  },
+  {
+   "w": "song.",
+   "start": 1.78,
+   "end": 2.08,
+   "matched": true
+  },
+  {
+   "w": "Every",
+   "start": 3.18,
+   "end": 3.22,
+   "matched": true
+  },
+  {
+   "w": "single",
+   "start": 3.18,
+   "end": 3.5,
+   "matched": true
+  },
+  {
+   "w": "year.",
+   "start": 3.5,
+   "end": 3.88,
+   "matched": true
+  },
+  {
+   "w": "All",
+   "start": 4.78,
+   "end": 4.84,
+   "matched": true
+  },
+  {
+   "w": "I",
+   "start": 4.84,
+   "end": 5.0,
+   "matched": true
+  },
+  {
+   "w": "Want",
+   "start": 5.0,
+   "end": 5.12,
+   "matched": true
+  },
+  {
+   "w": "for",
+   "start": 5.12,
+   "end": 5.32,
+   "matched": true
+  },
+  {
+   "w": "Christmas",
+   "start": 5.32,
+   "end": 5.6,
+   "matched": true
+  },
+  {
+   "w": "Is",
+   "start": 5.6,
+   "end": 5.94,
+   "matched": true
+  },
+  {
+   "w": "You",
+   "start": 5.94,
+   "end": 6.1,
+   "matched": true
+  },
+  {
+   "w": "came",
+   "start": 6.1,
+   "end": 6.26,
+   "matched": true
+  },
+  {
+   "w": "out",
+   "start": 6.26,
+   "end": 6.5,
+   "matched": true
+  },
+  {
+   "w": "in",
+   "start": 6.5,
+   "end": 6.66,
+   "matched": true
+  },
+  {
+   "w": "1994.",
+   "start": 6.66,
+   "end": 7.32,
+   "matched": true
+  },
+  {
+   "w": "It",
+   "start": 8.36,
+   "end": 8.46,
+   "matched": true
+  },
+  {
+   "w": "didn't",
+   "start": 8.46,
+   "end": 8.66,
+   "matched": true
+  },
+  {
+   "w": "reach",
+   "start": 8.66,
+   "end": 8.86,
+   "matched": true
+  },
+  {
+   "w": "number",
+   "start": 8.86,
+   "end": 9.06,
+   "matched": true
+  },
+  {
+   "w": "one",
+   "start": 9.06,
+   "end": 9.34,
+   "matched": true
+  },
+  {
+   "w": "in",
+   "start": 9.34,
+   "end": 9.48,
+   "matched": true
+  },
+  {
+   "w": "America",
+   "start": 9.48,
+   "end": 9.82,
+   "matched": true
+  },
+  {
+   "w": "until",
+   "start": 9.82,
+   "end": 10.28,
+   "matched": true
+  },
+  {
+   "w": "2019.",
+   "start": 10.28,
+   "end": 10.8,
+   "matched": true
+  },
+  {
+   "w": "Now",
+   "start": 11.88,
+   "end": 11.98,
+   "matched": true
+  },
+  {
+   "w": "it",
+   "start": 11.98,
+   "end": 12.1,
+   "matched": true
+  },
+  {
+   "w": "has",
+   "start": 12.1,
+   "end": 12.22,
+   "matched": true
+  },
+  {
+   "w": "spent",
+   "start": 12.22,
+   "end": 12.38,
+   "matched": true
+  },
+  {
+   "w": "more",
+   "start": 12.38,
+   "end": 12.58,
+   "matched": true
+  },
+  {
+   "w": "weeks",
+   "start": 12.58,
+   "end": 12.76,
+   "matched": true
+  },
+  {
+   "w": "at",
+   "start": 12.76,
+   "end": 12.96,
+   "matched": true
+  },
+  {
+   "w": "number",
+   "start": 12.96,
+   "end": 13.06,
+   "matched": true
+  },
+  {
+   "w": "one",
+   "start": 13.06,
+   "end": 13.32,
+   "matched": true
+  },
+  {
+   "w": "than",
+   "start": 13.32,
+   "end": 13.54,
+   "matched": true
+  },
+  {
+   "w": "any",
+   "start": 13.54,
+   "end": 13.7,
+   "matched": true
+  },
+  {
+   "w": "song",
+   "start": 13.7,
+   "end": 13.9,
+   "matched": true
+  },
+  {
+   "w": "ever.",
+   "start": 13.9,
+   "end": 14.18,
+   "matched": true
+  },
+  {
+   "w": "Billboard",
+   "start": 15.08,
+   "end": 15.24,
+   "matched": true
+  },
+  {
+   "w": "estimated",
+   "start": 15.24,
+   "end": 15.68,
+   "matched": true
+  },
+  {
+   "w": "it",
+   "start": 15.68,
+   "end": 15.98,
+   "matched": true
+  },
+  {
+   "w": "made",
+   "start": 15.98,
+   "end": 16.16,
+   "matched": true
+  },
+  {
+   "w": "about",
+   "start": 16.16,
+   "end": 16.4,
+   "matched": true
+  },
+  {
+   "w": "$8.5",
+   "start": 16.4,
+   "end": 17.26,
+   "matched": true
+  },
+  {
+   "w": "million",
+   "start": 17.26,
+   "end": 17.46,
+   "matched": true
+  },
+  {
+   "w": "in",
+   "start": 17.46,
+   "end": 18.22,
+   "matched": true
+  },
+  {
+   "w": "2022.",
+   "start": 18.22,
+   "end": 18.84,
+   "matched": true
+  },
+  {
+   "w": "$5.3",
+   "start": 19.74,
+   "end": 20.46,
+   "matched": true
+  },
+  {
+   "w": "million",
+   "start": 20.46,
+   "end": 20.76,
+   "matched": true
+  },
+  {
+   "w": "of",
+   "start": 20.76,
+   "end": 21.16,
+   "matched": true
+  },
+  {
+   "w": "that",
+   "start": 21.16,
+   "end": 21.38,
+   "matched": true
+  },
+  {
+   "w": "came",
+   "start": 21.38,
+   "end": 21.62,
+   "matched": true
+  },
+  {
+   "w": "from",
+   "start": 21.62,
+   "end": 21.8,
+   "matched": true
+  },
+  {
+   "w": "the",
+   "start": 21.8,
+   "end": 21.88,
+   "matched": true
+  },
+  {
+   "w": "recording.",
+   "start": 21.88,
+   "end": 22.24,
+   "matched": true
+  },
+  {
+   "w": "But",
+   "start": 23.1,
+   "end": 23.28,
+   "matched": true
+  },
+  {
+   "w": "Sony",
+   "start": 23.28,
+   "end": 23.44,
+   "matched": true
+  },
+  {
+   "w": "owns",
+   "start": 23.44,
+   "end": 23.76,
+   "matched": true
+  },
+  {
+   "w": "the",
+   "start": 23.76,
+   "end": 23.94,
+   "matched": true
+  },
+  {
+   "w": "recording,",
+   "start": 23.94,
+   "end": 24.28,
+   "matched": true
+  },
+  {
+   "w": "so",
+   "start": 24.52,
+   "end": 24.68,
+   "matched": true
+  },
+  {
+   "w": "it",
+   "start": 24.68,
+   "end": 24.78,
+   "matched": true
+  },
+  {
+   "w": "kept",
+   "start": 24.78,
+   "end": 24.96,
+   "matched": true
+  },
+  {
+   "w": "about",
+   "start": 24.96,
+   "end": 25.2,
+   "matched": true
+  },
+  {
+   "w": "$3.4",
+   "start": 25.2,
+   "end": 25.9,
+   "matched": true
+  },
+  {
+   "w": "million.",
+   "start": 25.9,
+   "end": 26.12,
+   "matched": true
+  },
+  {
+   "w": "Mariah",
+   "start": 27.48,
+   "end": 27.7,
+   "matched": true
+  },
+  {
+   "w": "got",
+   "start": 27.7,
+   "end": 27.88,
+   "matched": true
+  },
+  {
+   "w": "about",
+   "start": 27.88,
+   "end": 28.1,
+   "matched": true
+  },
+  {
+   "w": "$1.9",
+   "start": 28.1,
+   "end": 28.86,
+   "matched": true
+  },
+  {
+   "w": "million.",
+   "start": 28.86,
+   "end": 29.08,
+   "matched": true
+  },
+  {
+   "w": "Songwriting",
+   "start": 30.52,
+   "end": 30.78,
+   "matched": true
+  },
+  {
+   "w": "added",
+   "start": 30.78,
+   "end": 31.1,
+   "matched": true
+  },
+  {
+   "w": "about",
+   "start": 31.1,
+   "end": 31.38,
+   "matched": true
+  },
+  {
+   "w": "$3.2",
+   "start": 31.38,
+   "end": 32.06,
+   "matched": true
+  },
+  {
+   "w": "million",
+   "start": 32.06,
+   "end": 32.26,
+   "matched": true
+  },
+  {
+   "w": "more,",
+   "start": 32.64,
+   "end": 32.88,
+   "matched": true
+  },
+  {
+   "w": "split",
+   "start": 33.12,
+   "end": 33.36,
+   "matched": true
+  },
+  {
+   "w": "with",
+   "start": 33.36,
+   "end": 33.52,
+   "matched": true
+  },
+  {
+   "w": "her",
+   "start": 33.52,
+   "end": 33.66,
+   "matched": true
+  },
+  {
+   "w": "co-writer",
+   "start": 33.66,
+   "end": 34.08,
+   "matched": true
+  },
+  {
+   "w": "and",
+   "start": 34.08,
+   "end": 34.36,
+   "matched": true
+  },
+  {
+   "w": "publishers.",
+   "start": 34.36,
+   "end": 34.78,
+   "matched": true
+  },
+  {
+   "w": "In",
+   "start": 35.72,
+   "end": 35.8,
+   "matched": true
+  },
+  {
+   "w": "all,",
+   "start": 35.8,
+   "end": 35.96,
+   "matched": true
+  },
+  {
+   "w": "she",
+   "start": 36.12,
+   "end": 36.18,
+   "matched": true
+  },
+  {
+   "w": "made",
+   "start": 36.18,
+   "end": 36.3,
+   "matched": true
+  },
+  {
+   "w": "an",
+   "start": 36.3,
+   "end": 36.42,
+   "matched": true
+  },
+  {
+   "w": "estimated",
+   "start": 36.42,
+   "end": 36.84,
+   "matched": true
+  },
+  {
+   "w": "$2.7",
+   "start": 36.84,
+   "end": 37.76,
+   "matched": true
+  },
+  {
+   "w": "million",
+   "start": 37.76,
+   "end": 38.0,
+   "matched": true
+  },
+  {
+   "w": "to",
+   "start": 38.38,
+   "end": 38.72,
+   "matched": true
+  },
+  {
+   "w": "$3.3",
+   "start": 38.72,
+   "end": 39.4,
+   "matched": true
+  },
+  {
+   "w": "million",
+   "start": 39.4,
+   "end": 39.58,
+   "matched": true
+  },
+  {
+   "w": "that",
+   "start": 40.0,
+   "end": 40.18,
+   "matched": true
+  },
+  {
+   "w": "year.",
+   "start": 40.18,
+   "end": 40.44,
+   "matched": true
+  },
+  {
+   "w": "Every",
+   "start": 41.22,
+   "end": 41.4,
+   "matched": true
+  },
+  {
+   "w": "November,",
+   "start": 41.4,
+   "end": 41.72,
+   "matched": true
+  },
+  {
+   "w": "she",
+   "start": 41.9,
+   "end": 42.02,
+   "matched": true
+  },
+  {
+   "w": "posts",
+   "start": 42.02,
+   "end": 42.28,
+   "matched": true
+  },
+  {
+   "w": "the",
+   "start": 42.28,
+   "end": 42.5,
+   "matched": true
+  },
+  {
+   "w": "same",
+   "start": 42.5,
+   "end": 42.66,
+   "matched": true
+  },
+  {
+   "w": "two",
+   "start": 42.66,
+   "end": 42.88,
+   "matched": true
+  },
+  {
+   "w": "words:",
+   "start": 42.88,
+   "end": 43.2,
+   "matched": true
+  },
+  {
+   "w": "It's",
+   "start": 43.36,
+   "end": 43.56,
+   "matched": true
+  },
+  {
+   "w": "time.",
+   "start": 43.56,
+   "end": 43.8,
+   "matched": true
+  },
+  {
+   "w": "And",
+   "start": 44.72,
+   "end": 44.84,
+   "matched": true
+  },
+  {
+   "w": "every",
+   "start": 44.84,
+   "end": 45.1,
+   "matched": true
+  },
+  {
+   "w": "year,",
+   "start": 45.1,
+   "end": 45.38,
+   "matched": true
+  }
+ ]
+}
