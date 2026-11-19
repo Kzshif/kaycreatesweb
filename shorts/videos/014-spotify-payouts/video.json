@@ -1,0 +1,186 @@
+{
+  "id": "014",
+  "break": {
+    "at": "comes Wrapped"
+  },
+  "scenes": [
+    {
+      "type": "slam",
+      "variant": "object",
+      "beats": [
+        "per stream"
+      ],
+      "source": "Spotify, 2026",
+      "props": {
+        "product": "record",
+        "text": "Play",
+        "lines": [
+          "Spotify doesn't pay",
+          "per stream"
+        ]
+      }
+    },
+    {
+      "type": "cut",
+      "variant": "right",
+      "at": "It pays out",
+      "beats": [
+        "nearly 70%",
+        "goes to music"
+      ],
+      "source": "AP, Spotify",
+      "props": {
+        "title": "Spotify's revenue",
+        "share": "70%",
+        "label": "To rights holders",
+        "note": "Spotify's own figure"
+      }
+    },
+    {
+      "type": "count",
+      "variant": "rain",
+      "at": "In 2025, that was",
+      "beats": [
+        "$11 billion"
+      ],
+      "source": "Spotify, 2026",
+      "props": {
+        "amount": "$11 billion",
+        "kicker": "Paid out in 2025",
+        "line": "to music rights holders"
+      }
+    },
+    {
+      "type": "flow",
+      "variant": "arc",
+      "at": "Each owner gets",
+      "beats": [
+        "share of all streams",
+        "Labels and publishers"
+      ],
+      "source": "Spotify, AP",
+      "props": {
+        "from": {
+          "name": "The pot"
+        },
+        "to": {
+          "name": "Rights holders",
+          "product": "record"
+        },
+        "note": "By share of all streams"
+      }
+    },
+    {
+      "type": "words",
+      "variant": "stack",
+      "at": "get paid first",
+      "beats": [
+        "Artists get"
+      ],
+      "source": "AP, 2024",
+      "props": {
+        "lines": [
+          "Labels first.",
+          "Artists by contract."
+        ],
+        "mark": "Artists by contract."
+      }
+    },
+    {
+      "type": "receipt",
+      "variant": "clip",
+      "at": "80 artists generated",
+      "beats": [
+        "$10 million each",
+        "1,500 passed",
+        "$1 million"
+      ],
+      "source": "Spotify, MBW, 2026",
+      "props": {
+        "title": "Generated on Spotify, 2025",
+        "rows": [
+          {
+            "label": "80 artists",
+            "value": "Over $10M each"
+          },
+          {
+            "label": "1,500 artists",
+            "value": "Over $1M each",
+            "mark": true
+          }
+        ]
+      }
+    },
+    {
+      "type": "words",
+      "variant": "ladder",
+      "at": "Then every December",
+      "beats": [
+        "December",
+        "Wrapped"
+      ],
+      "props": {
+        "lines": [
+          "Then, every",
+          "December:",
+          "Wrapped."
+        ]
+      }
+    },
+    {
+      "type": "product",
+      "variant": "hero",
+      "at": "Last year, 200 million",
+      "beats": [
+        "day one",
+        "500 million shares"
+      ],
+      "source": "TechCrunch, 2025",
+      "props": {
+        "product": "phone",
+        "text": "your Wrapped",
+        "callouts": [
+          "200 million on day one",
+          "500 million shares"
+        ]
+      }
+    },
+    {
+      "type": "count",
+      "variant": "pile",
+      "at": "Spotify now has",
+      "beats": [
+        "290 million",
+        "paying for it"
+      ],
+      "source": "Spotify, 2026",
+      "props": {
+        "amount": "290 million",
+        "kicker": "Spotify now has",
+        "line": "paying subscribers",
+        "sub": "end of 2025"
+      }
+    },
+    {
+      "type": "stamp",
+      "variant": "over",
+      "at": "And it made about",
+      "beats": [
+        "operating profit",
+        "And still"
+      ],
+      "source": "MBW, 2026",
+      "props": {
+        "figure": "$2.5bn",
+        "lines": [
+          "operating profit",
+          "in 2025"
+        ],
+        "stamp": [
+          "Profitable"
+        ],
+        "sub": "Only its 2nd profitable year"
+      }
+    }
+  ]
+}

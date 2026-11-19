@@ -62,7 +62,7 @@ const FIG_RE = new RegExp(
     '(?:\\s?(?<mag>trillion|billion|million|thousand|tn|bn|mn|m|k)\\b)?',
     '(?:\\s?(?<pct>%|percent\\b|per cent\\b))?',
     '(?:\\s?(?<mult>x|times)\\b)?',
-    '(?:\\s(?<curword>dollars?|pounds?|euros?|cents?|pence)\\b)?',
+    '(?:(?<centsign>¢)|\\s(?<curword>dollars?|pounds?|euros?|cents?|pence)\\b)?',
   ].join(''),
   'gi',
 );
@@ -98,7 +98,7 @@ export function figures(text, { ignore = [] } = {}) {
     if (!cur && cw.startsWith('dollar')) cur = '$';
     if (!cur && cw.startsWith('pound')) cur = '£';
     if (!cur && cw.startsWith('euro')) cur = '€';
-    if (!cur && cw.startsWith('cent')) {
+    if (!cur && (cw.startsWith('cent') || g.centsign)) {
       cur = '$';
       value /= 100;
     }
@@ -239,6 +239,7 @@ export function spokenForm(text, say = {}) {
       if (magWord) out += ` ${magWord}`;
       if (unit) out += ` ${value === 1 && !magWord ? unit[0] : unit[1]}`;
       else if (cw) out += ` ${cw}`;
+      else if (g.centsign) out += ' cents';
     }
     if (g.pct) out += ' percent';
     if (g.mult) out += ' times';

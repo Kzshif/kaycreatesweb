@@ -585,3 +585,12 @@ test('button zones: text may pass through while moving, never rest there', () =>
   // samples spread over more than a second do not add up to a rest
   assert.equal(restingHits([hit('x', 0), hit('x', 40), hit('x', 80)], [], { step: 3 }).resting.length, 0);
 });
+
+test('a cent sign is money: 99¢ reads and checks as $0.99', async () => {
+  const { figures, spokenForm } = await import('../pipeline/lib/text.mjs');
+  const [f] = figures('same 99¢');
+  assert.equal(f.key, '$0.99');
+  assert.equal(f.value, 0.99);
+  assert.equal(figures('99 cents')[0].key, '$0.99');
+  assert.equal(spokenForm('A can is 99¢.'), 'A can is ninety-nine cents.');
+});

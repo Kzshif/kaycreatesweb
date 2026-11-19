@@ -8,7 +8,7 @@ import { PriceTag, Receipt, receiptHeight, stampHeight } from '../paper/things';
 import type { SceneProps } from '../types';
 import { Kicker, Lines, StampSlam, counting, cue, drop, fitStack, linesHeight, rise, stampTilt } from './common';
 
-const TALL = new Set(['fries', 'phone', 'tradingcard']);
+const TALL = new Set(['fries', 'phone', 'tradingcard', 'sprout', 'can', 'rocket']);
 
 // --------------------------------------------------------------- receipt
 /** A receipt unrolls, prints its lines one at a time, and a marker goes over the one that matters. */

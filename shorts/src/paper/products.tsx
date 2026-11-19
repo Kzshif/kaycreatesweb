@@ -279,7 +279,111 @@ const TradingCard: React.FC<P> = ({ seed = 1, text = 'RARE' }) => {
   );
 };
 
-const BASE: Record<string, [number, number]> = { card: [420, 265], trolley: [480, 440], box: [440, 370], store: [560, 470], fries: [520, 640], burger: [440, 380], plot: [560, 420], phone: [350, 700], controller: [520, 340], bar: [520, 260], ticket: [540, 250], record: [520, 440], tradingcard: [300, 420] };
+/** A seedling in a paper pot: two leaves and a bud on a curling stem. `text` is the plain word on the pot's label. */
+const Sprout: React.FC<P> = ({ seed = 1, text = 'GROW' }) => {
+  const t = useLook();
+  const size = Math.min(40, fit([text.toUpperCase()], 'headline', 176, 40));
+  // a leaf from its base to its tip, `w` wide at the middle
+  const leaf = (bx: number, by: number, tx: number, ty: number, w: number) => {
+    const mx = (bx + tx) / 2;
+    const my = (by + ty) / 2;
+    const len = Math.hypot(tx - bx, ty - by) || 1;
+    const nx = (-(ty - by) / len) * w;
+    const ny = ((tx - bx) / len) * w;
+    return `M${bx} ${by} Q${(mx + nx).toFixed(1)} ${(my + ny).toFixed(1)} ${tx} ${ty} Q${(mx - nx).toFixed(1)} ${(my - ny).toFixed(1)} ${bx} ${by} Z`;
+  };
+  const leaves: [number, number, number, number, number][] = [
+    [176, 196, 52, 136, 38],
+    [182, 150, 312, 92, 36],
+    [180, 104, 150, 26, 22],
+  ];
+  return (
+    <div style={{ position: 'absolute', width: 360, height: 460 }}>
+      <svg width={360} height={460} style={{ position: 'absolute', inset: 0, overflow: 'visible' }}>
+        <path d="M180 286 C168 236 194 196 178 150 C166 118 184 96 180 74" fill="none" stroke={t.accentDeep} strokeWidth={11} strokeLinecap="round" />
+      </svg>
+      {leaves.map(([bx, by, tx, ty, w], k) => (
+        <Cut key={k} w={360} h={460} d={leaf(bx, by, tx, ty, w)} color={k === 2 ? mix(t.accent, BRIGHT, 0.25) : t.accent} seed={seed + 3 + k} lift={0.26}>
+          <svg width={360} height={460} style={{ position: 'absolute', inset: 0 }}>
+            <path d={`M${bx} ${by} L${(bx + (tx - bx) * 0.82).toFixed(1)} ${(by + (ty - by) * 0.82).toFixed(1)}`} stroke={rgba(t.accentDeep, 0.7)} strokeWidth={4} strokeLinecap="round" />
+          </svg>
+        </Cut>
+      ))}
+      <Cut w={360} h={460} d={poly([[52, 300], [308, 300], [282, 452], [78, 452]] as Pt[], seed)} color={mix(KRAFT, BRIGHT, 0.55)} seed={seed} lift={0.42}>
+        <div style={{ position: 'absolute', left: 92, top: 344, width: 176, height: 70, background: BRIGHT, transform: 'rotate(-2deg)' }} />
+        <div data-box style={{ ...headStyle(size, t.ink), position: 'absolute', left: 92, top: 344, width: 176, height: 70, display: 'flex', alignItems: 'center', justifyContent: 'center', transform: 'rotate(-2deg)' }}>{text.toUpperCase()}</div>
+      </Cut>
+      <Cut w={360} h={460} d={poly([[34, 262], [326, 262], [318, 306], [42, 306]] as Pt[], seed + 1)} color={MANILA} seed={seed + 1} lift={0.32}>
+        <div style={{ position: 'absolute', left: 50, top: 262, width: 260, height: 14, borderRadius: 7, background: mix(t.ink, KRAFT, 0.45), opacity: 0.9 }} />
+      </Cut>
+    </div>
+  );
+};
+
+/** A drink can: lid and pull tab, a printed band with a plain word, and an optional price printed on it. */
+const Can: React.FC<P & { price?: string }> = ({ seed = 1, text = 'SODA', price }) => {
+  const t = useLook();
+  const size = Math.min(54, fit([text.toUpperCase()], 'headline', 200, 54));
+  const body = 'M22 70 Q22 44 150 42 Q278 44 278 70 L278 478 Q278 506 150 508 Q22 506 22 478 Z';
+  return (
+    <div style={{ position: 'absolute', width: 300, height: 520 }}>
+      <Cut w={300} h={520} d={body} color={t.accent} seed={seed} lift={0.44}>
+        <svg width={300} height={520} style={{ position: 'absolute', inset: 0 }}>
+          <path d="M44 80 V470" stroke={rgba(BRIGHT, 0.32)} strokeWidth={16} strokeLinecap="round" />
+          <path d="M252 84 V468" stroke={rgba(t.ink, 0.14)} strokeWidth={20} strokeLinecap="round" />
+          <ellipse cx={150} cy={64} rx={120} ry={20} fill={mix(BRIGHT, KRAFT, 0.3)} stroke={rgba(t.ink, 0.35)} strokeWidth={4} />
+          <ellipse cx={150} cy={64} rx={96} ry={13} fill="none" stroke={rgba(t.ink, 0.22)} strokeWidth={3} />
+          <rect x={126} y={54} width={50} height={18} rx={9} fill={mix(BRIGHT, KRAFT, 0.55)} stroke={rgba(t.ink, 0.4)} strokeWidth={3} />
+          <path d="M28 476 Q150 500 272 476" fill="none" stroke={rgba(t.ink, 0.2)} strokeWidth={4} />
+        </svg>
+        <div style={{ position: 'absolute', left: 22, right: 22, top: 176, height: 132, background: BRIGHT }} />
+        <div style={{ position: 'absolute', left: 22, right: 22, top: 176, height: 10, background: t.accentDeep, opacity: 0.8 }} />
+        <div data-box style={{ ...headStyle(size, t.ink), position: 'absolute', left: 50, top: 190, width: 200, height: 104, display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}>{text.toUpperCase()}</div>
+      </Cut>
+      {price ? (
+        <Cut w={150} h={150} d={rounded(150, 150, 75, seed + 2)} color={BRIGHT} seed={seed + 2} lift={0.24} style={{ left: 150, top: 330, transform: 'rotate(-8deg)' }}>
+          <div style={{ position: 'absolute', inset: 10, borderRadius: '50%', border: `5px solid ${t.ink}` }} />
+          <div data-box style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <div style={{ ...headStyle(Math.min(64, fit([price], 'headline', 104, 64)), t.ink) }}>{price}</div>
+          </div>
+        </Cut>
+      ) : null}
+    </div>
+  );
+};
+
+/** A rocket on its flame: nose cone, a porthole, fins and a ragged plume. No markings. */
+const Rocket: React.FC<P> = ({ seed = 1 }) => {
+  const t = useLook();
+  const body = 'M150 20 C204 64 222 138 222 212 L222 444 Q222 462 204 462 H96 Q78 462 78 444 L78 212 C78 138 96 64 150 20 Z';
+  const plume = `M100 470 ${Array.from({ length: 9 }, (_, k) => {
+    const x = 100 + (k + 1) * 11.1;
+    const y = 520 + (k % 2 ? 22 : 64) + (k === 4 ? 30 : 0);
+    return `L${x.toFixed(1)} ${y}`;
+  }).join(' ')} L200 470 Z`;
+  return (
+    <div style={{ position: 'absolute', width: 300, height: 600 }}>
+      <Cut w={300} h={600} d={plume} color={mix(KRAFT, t.accent, 0.35)} seed={seed + 4} lift={0.18} />
+      <Cut w={300} h={600} d="M118 470 L130 534 L150 506 L170 534 L182 470 Z" color={BRIGHT} seed={seed + 5} lift={0.1} />
+      <Cut w={300} h={600} d="M78 330 L22 420 L22 462 L78 444 Z" color={t.accentDeep} seed={seed + 1} lift={0.3} />
+      <Cut w={300} h={600} d="M222 330 L278 420 L278 462 L222 444 Z" color={t.accentDeep} seed={seed + 2} lift={0.3} />
+      <Cut w={300} h={600} d={body} color={BRIGHT} seed={seed} lift={0.44}>
+        <svg width={300} height={600} style={{ position: 'absolute', inset: 0 }}>
+          <path d="M150 20 C188 52 206 98 214 148 H86 C94 98 112 52 150 20 Z" fill={t.accent} />
+          <rect x={78} y={384} width={144} height={22} fill={t.accent} />
+          <rect x={78} y={414} width={144} height={8} fill={t.accentDeep} opacity={0.7} />
+          <circle cx={150} cy={232} r={38} fill={t.ink} />
+          <circle cx={150} cy={232} r={27} fill={t.accentWash} />
+          <path d="M136 220 Q146 212 158 214" fill="none" stroke={rgba(BRIGHT, 0.7)} strokeWidth={6} strokeLinecap="round" />
+          <path d="M96 170 V440" stroke={rgba(t.ink, 0.1)} strokeWidth={10} strokeLinecap="round" />
+          <path d="M206 176 V440" stroke={rgba(t.ink, 0.14)} strokeWidth={12} strokeLinecap="round" />
+        </svg>
+      </Cut>
+    </div>
+  );
+};
+
+const BASE: Record<string, [number, number]> = { card: [420, 265], trolley: [480, 440], box: [440, 370], store: [560, 470], fries: [520, 640], burger: [440, 380], plot: [560, 420], phone: [350, 700], controller: [520, 340], bar: [520, 260], ticket: [540, 250], record: [520, 440], tradingcard: [300, 420], sprout: [360, 460], can: [300, 520], rocket: [300, 600] };
 /** Natural height of a product drawn `w` wide. */
 export const productHeight = (name: string, w: number): number => {
   const [bw, bh] = BASE[name] || [400, 400];
@@ -315,6 +419,12 @@ export const Product: React.FC<{ name: string; w: number; seed?: number; text?: 
       <Record seed={seed} text={text} />
     ) : name === 'tradingcard' ? (
       <TradingCard seed={seed} text={text} />
+    ) : name === 'sprout' ? (
+      <Sprout seed={seed} text={text} />
+    ) : name === 'can' ? (
+      <Can seed={seed} text={text} price={price} />
+    ) : name === 'rocket' ? (
+      <Rocket seed={seed} />
     ) : (
       // for the phone, `price` is the badge on the top result ("DEFAULT"), shown only when given
       <Phone w={350} seed={seed} query={text || 'pizza near me'} badge={price || ''} />

@@ -1,0 +1,745 @@
+{
+ "engine": "faster-whisper small.en (word_timestamps)",
+ "pass_used": "glossary prompt",
+ "unheard_words": 0,
+ "duration": 43.893,
+ "match": 0.9917,
+ "heard": "This can has cost 99 cents since 1992. The price is printed right on it. Even tariffs haven't moved it. They made AriZona's cans about 40% more expensive. That's about $40 million extra, and the founder is swallowing it. If the price followed his costs, a can would be $1.99. So how does AriZona still make money? Founder Don Vultaggio says nothing solves problems like volume. The cans got thinner and the lines run faster. that can even shrank from 23 ounces to 22, and he has hardly spent a dollar on advertising. He says traditional advertising is dead. Forbes puts his family's fortune at about $5 billion. He calls the price his little way of giving back. And that's why...",
+ "mismatches": [
+  {
+   "script": "The",
+   "heard": "that",
+   "at": 27.84
+  }
+ ],
+ "figure_mismatches": [],
+ "low_confidence": [],
+ "words": [
+  {
+   "w": "This",
+   "start": 0.0,
+   "end": 0.18,
+   "matched": true
+  },
+  {
+   "w": "can",
+   "start": 0.18,
+   "end": 0.3,
+   "matched": true
+  },
+  {
+   "w": "has",
+   "start": 0.3,
+   "end": 0.46,
+   "matched": true
+  },
+  {
+   "w": "cost",
+   "start": 0.46,
+   "end": 0.72,
+   "matched": true
+  },
+  {
+   "w": "99",
+   "start": 0.72,
+   "end": 1.3,
+   "matched": true
+  },
+  {
+   "w": "cents",
+   "start": 1.3,
+   "end": 1.76,
+   "matched": true
+  },
+  {
+   "w": "since",
+   "start": 1.76,
+   "end": 2.2,
+   "matched": true
+  },
+  {
+   "w": "1992.",
+   "start": 2.2,
+   "end": 2.86,
+   "matched": true
+  },
+  {
+   "w": "The",
+   "start": 3.58,
+   "end": 3.62,
+   "matched": true
+  },
+  {
+   "w": "price",
+   "start": 3.6,
+   "end": 3.82,
+   "matched": true
+  },
+  {
+   "w": "is",
+   "start": 3.82,
+   "end": 4.06,
+   "matched": true
+  },
+  {
+   "w": "printed",
+   "start": 4.06,
+   "end": 4.36,
+   "matched": true
+  },
+  {
+   "w": "right",
+   "start": 4.36,
+   "end": 4.64,
+   "matched": true
+  },
+  {
+   "w": "on",
+   "start": 4.64,
+   "end": 4.84,
+   "matched": true
+  },
+  {
+   "w": "it.",
+   "start": 4.84,
+   "end": 5.1,
+   "matched": true
+  },
+  {
+   "w": "Even",
+   "start": 5.44,
+   "end": 5.66,
+   "matched": true
+  },
+  {
+   "w": "tariffs",
+   "start": 5.66,
+   "end": 6.06,
+   "matched": true
+  },
+  {
+   "w": "haven't",
+   "start": 6.06,
+   "end": 6.46,
+   "matched": true
+  },
+  {
+   "w": "moved",
+   "start": 6.46,
+   "end": 6.64,
+   "matched": true
+  },
+  {
+   "w": "it.",
+   "start": 6.64,
+   "end": 6.96,
+   "matched": true
+  },
+  {
+   "w": "They",
+   "start": 7.34,
+   "end": 7.42,
+   "matched": true
+  },
+  {
+   "w": "made",
+   "start": 7.42,
+   "end": 7.64,
+   "matched": true
+  },
+  {
+   "w": "AriZona's",
+   "start": 7.64,
+   "end": 8.42,
+   "matched": true
+  },
+  {
+   "w": "cans",
+   "start": 8.42,
+   "end": 8.7,
+   "matched": true
+  },
+  {
+   "w": "about",
+   "start": 8.7,
+   "end": 9.22,
+   "matched": true
+  },
+  {
+   "w": "40%",
+   "start": 9.22,
+   "end": 9.88,
+   "matched": true
+  },
+  {
+   "w": "more",
+   "start": 9.88,
+   "end": 10.08,
+   "matched": true
+  },
+  {
+   "w": "expensive.",
+   "start": 10.08,
+   "end": 10.54,
+   "matched": true
+  },
+  {
+   "w": "That's",
+   "start": 11.1,
+   "end": 11.3,
+   "matched": true
+  },
+  {
+   "w": "about",
+   "start": 11.3,
+   "end": 11.5,
+   "matched": true
+  },
+  {
+   "w": "$40",
+   "start": 11.5,
+   "end": 11.86,
+   "matched": true
+  },
+  {
+   "w": "million",
+   "start": 11.86,
+   "end": 12.2,
+   "matched": true
+  },
+  {
+   "w": "extra,",
+   "start": 12.2,
+   "end": 12.92,
+   "matched": true
+  },
+  {
+   "w": "and",
+   "start": 13.22,
+   "end": 13.4,
+   "matched": true
+  },
+  {
+   "w": "the",
+   "start": 13.4,
+   "end": 13.54,
+   "matched": true
+  },
+  {
+   "w": "founder",
+   "start": 13.54,
+   "end": 13.8,
+   "matched": true
+  },
+  {
+   "w": "is",
+   "start": 13.8,
+   "end": 14.04,
+   "matched": true
+  },
+  {
+   "w": "swallowing",
+   "start": 14.04,
+   "end": 14.36,
+   "matched": true
+  },
+  {
+   "w": "it.",
+   "start": 14.36,
+   "end": 14.74,
+   "matched": true
+  },
+  {
+   "w": "If",
+   "start": 15.04,
+   "end": 15.14,
+   "matched": true
+  },
+  {
+   "w": "the",
+   "start": 15.14,
+   "end": 15.26,
+   "matched": true
+  },
+  {
+   "w": "price",
+   "start": 15.26,
+   "end": 15.48,
+   "matched": true
+  },
+  {
+   "w": "followed",
+   "start": 15.48,
+   "end": 15.88,
+   "matched": true
+  },
+  {
+   "w": "his",
+   "start": 15.88,
+   "end": 16.08,
+   "matched": true
+  },
+  {
+   "w": "costs,",
+   "start": 16.08,
+   "end": 16.5,
+   "matched": true
+  },
+  {
+   "w": "a",
+   "start": 16.9,
+   "end": 16.98,
+   "matched": true
+  },
+  {
+   "w": "can",
+   "start": 16.98,
+   "end": 17.06,
+   "matched": true
+  },
+  {
+   "w": "would",
+   "start": 17.06,
+   "end": 17.2,
+   "matched": true
+  },
+  {
+   "w": "be",
+   "start": 17.2,
+   "end": 17.34,
+   "matched": true
+  },
+  {
+   "w": "$1.99.",
+   "start": 17.34,
+   "end": 18.18,
+   "matched": true
+  },
+  {
+   "w": "So",
+   "start": 18.82,
+   "end": 18.98,
+   "matched": true
+  },
+  {
+   "w": "how",
+   "start": 18.98,
+   "end": 19.14,
+   "matched": true
+  },
+  {
+   "w": "does",
+   "start": 19.14,
+   "end": 19.34,
+   "matched": true
+  },
+  {
+   "w": "AriZona",
+   "start": 19.34,
+   "end": 19.96,
+   "matched": true
+  },
+  {
+   "w": "still",
+   "start": 19.96,
+   "end": 20.18,
+   "matched": true
+  },
+  {
+   "w": "make",
+   "start": 20.18,
+   "end": 20.36,
+   "matched": true
+  },
+  {
+   "w": "money?",
+   "start": 20.36,
+   "end": 20.66,
+   "matched": true
+  },
+  {
+   "w": "Founder",
+   "start": 21.38,
+   "end": 21.42,
+   "matched": true
+  },
+  {
+   "w": "Don",
+   "start": 21.38,
+   "end": 21.74,
+   "matched": true
+  },
+  {
+   "w": "Vultaggio",
+   "start": 21.74,
+   "end": 22.56,
+   "matched": true
+  },
+  {
+   "w": "says",
+   "start": 22.56,
+   "end": 23.1,
+   "matched": true
+  },
+  {
+   "w": "nothing",
+   "start": 23.1,
+   "end": 23.4,
+   "matched": true
+  },
+  {
+   "w": "solves",
+   "start": 23.4,
+   "end": 23.88,
+   "matched": true
+  },
+  {
+   "w": "problems",
+   "start": 23.88,
+   "end": 24.32,
+   "matched": true
+  },
+  {
+   "w": "like",
+   "start": 24.32,
+   "end": 24.58,
+   "matched": true
+  },
+  {
+   "w": "volume.",
+   "start": 24.58,
+   "end": 25.0,
+   "matched": true
+  },
+  {
+   "w": "The",
+   "start": 25.44,
+   "end": 25.56,
+   "matched": true
+  },
+  {
+   "w": "cans",
+   "start": 25.56,
+   "end": 25.78,
+   "matched": true
+  },
+  {
+   "w": "got",
+   "start": 25.78,
+   "end": 25.98,
+   "matched": true
+  },
+  {
+   "w": "thinner,",
+   "start": 25.98,
+   "end": 26.3,
+   "matched": true
+  },
+  {
+   "w": "and",
+   "start": 26.3,
+   "end": 26.7,
+   "matched": true
+  },
+  {
+   "w": "the",
+   "start": 26.7,
+   "end": 26.82,
+   "matched": true
+  },
+  {
+   "w": "lines",
+   "start": 26.82,
+   "end": 27.1,
+   "matched": true
+  },
+  {
+   "w": "run",
+   "start": 27.1,
+   "end": 27.34,
+   "matched": true
+  },
+  {
+   "w": "faster.",
+   "start": 27.34,
+   "end": 27.84,
+   "matched": true
+  },
+  {
+   "w": "The",
+   "start": 27.84,
+   "end": 28.34,
+   "matched": false
+  },
+  {
+   "w": "can",
+   "start": 28.34,
+   "end": 28.48,
+   "matched": true
+  },
+  {
+   "w": "even",
+   "start": 28.48,
+   "end": 28.74,
+   "matched": true
+  },
+  {
+   "w": "shrank,",
+   "start": 28.74,
+   "end": 29.16,
+   "matched": true
+  },
+  {
+   "w": "from",
+   "start": 29.16,
+   "end": 29.54,
+   "matched": true
+  },
+  {
+   "w": "23",
+   "start": 29.54,
+   "end": 30.0,
+   "matched": true
+  },
+  {
+   "w": "ounces",
+   "start": 30.0,
+   "end": 30.28,
+   "matched": true
+  },
+  {
+   "w": "to",
+   "start": 30.28,
+   "end": 30.58,
+   "matched": true
+  },
+  {
+   "w": "22.",
+   "start": 30.58,
+   "end": 30.94,
+   "matched": true
+  },
+  {
+   "w": "And",
+   "start": 31.36,
+   "end": 31.58,
+   "matched": true
+  },
+  {
+   "w": "he",
+   "start": 31.58,
+   "end": 31.68,
+   "matched": true
+  },
+  {
+   "w": "has",
+   "start": 31.68,
+   "end": 31.76,
+   "matched": true
+  },
+  {
+   "w": "hardly",
+   "start": 31.76,
+   "end": 32.04,
+   "matched": true
+  },
+  {
+   "w": "spent",
+   "start": 32.04,
+   "end": 32.32,
+   "matched": true
+  },
+  {
+   "w": "a",
+   "start": 32.32,
+   "end": 32.48,
+   "matched": true
+  },
+  {
+   "w": "dollar",
+   "start": 32.48,
+   "end": 32.7,
+   "matched": true
+  },
+  {
+   "w": "on",
+   "start": 32.7,
+   "end": 32.96,
+   "matched": true
+  },
+  {
+   "w": "advertising.",
+   "start": 32.96,
+   "end": 33.5,
+   "matched": true
+  },
+  {
+   "w": "He",
+   "start": 34.14,
+   "end": 34.22,
+   "matched": true
+  },
+  {
+   "w": "says",
+   "start": 34.22,
+   "end": 34.42,
+   "matched": true
+  },
+  {
+   "w": "traditional",
+   "start": 34.42,
+   "end": 34.94,
+   "matched": true
+  },
+  {
+   "w": "advertising",
+   "start": 34.94,
+   "end": 35.54,
+   "matched": true
+  },
+  {
+   "w": "is",
+   "start": 35.54,
+   "end": 35.88,
+   "matched": true
+  },
+  {
+   "w": "dead.",
+   "start": 35.88,
+   "end": 36.14,
+   "matched": true
+  },
+  {
+   "w": "Forbes",
+   "start": 36.7,
+   "end": 36.82,
+   "matched": true
+  },
+  {
+   "w": "puts",
+   "start": 36.82,
+   "end": 37.04,
+   "matched": true
+  },
+  {
+   "w": "his",
+   "start": 37.04,
+   "end": 37.24,
+   "matched": true
+  },
+  {
+   "w": "family's",
+   "start": 37.24,
+   "end": 37.66,
+   "matched": true
+  },
+  {
+   "w": "fortune",
+   "start": 37.66,
+   "end": 37.94,
+   "matched": true
+  },
+  {
+   "w": "at",
+   "start": 37.94,
+   "end": 38.3,
+   "matched": true
+  },
+  {
+   "w": "about",
+   "start": 38.3,
+   "end": 38.5,
+   "matched": true
+  },
+  {
+   "w": "$5",
+   "start": 38.5,
+   "end": 38.98,
+   "matched": true
+  },
+  {
+   "w": "billion.",
+   "start": 38.98,
+   "end": 39.28,
+   "matched": true
+  },
+  {
+   "w": "He",
+   "start": 40.1,
+   "end": 40.3,
+   "matched": true
+  },
+  {
+   "w": "calls",
+   "start": 40.3,
+   "end": 40.54,
+   "matched": true
+  },
+  {
+   "w": "the",
+   "start": 40.54,
+   "end": 40.74,
+   "matched": true
+  },
+  {
+   "w": "price",
+   "start": 40.74,
+   "end": 41.12,
+   "matched": true
+  },
+  {
+   "w": "his",
+   "start": 41.12,
+   "end": 41.44,
+   "matched": true
+  },
+  {
+   "w": "little",
+   "start": 41.44,
+   "end": 41.68,
+   "matched": true
+  },
+  {
+   "w": "way",
+   "start": 41.68,
+   "end": 41.92,
+   "matched": true
+  },
+  {
+   "w": "of",
+   "start": 41.92,
+   "end": 42.06,
+   "matched": true
+  },
+  {
+   "w": "giving",
+   "start": 42.06,
+   "end": 42.22,
+   "matched": true
+  },
+  {
+   "w": "back.",
+   "start": 42.22,
+   "end": 42.58,
+   "matched": true
+  },
+  {
+   "w": "And",
+   "start": 43.0,
+   "end": 43.12,
+   "matched": true
+  },
+  {
+   "w": "that's",
+   "start": 43.12,
+   "end": 43.38,
+   "matched": true
+  },
+  {
+   "w": "why",
+   "start": 43.38,
+   "end": 43.84,
+   "matched": true
+  }
+ ]
+}

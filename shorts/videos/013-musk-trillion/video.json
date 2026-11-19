@@ -1,0 +1,213 @@
+{
+  "id": "013",
+  "break": {
+    "at": "dropped below a trillion"
+  },
+  "scenes": [
+    {
+      "type": "slam",
+      "variant": "number",
+      "beats": [
+        "trillion",
+        "didn't come",
+        "from Tesla"
+      ],
+      "source": "Forbes, 2026",
+      "props": {
+        "figure": "$1",
+        "unit": "trillion",
+        "kicker": "Elon Musk's first",
+        "lines": [
+          "didn't come",
+          "from Tesla"
+        ],
+        "mark": "from Tesla"
+      }
+    },
+    {
+      "type": "product",
+      "variant": "hero",
+      "at": "It came from rockets",
+      "beats": [
+        "SpaceX had",
+        "debut ever"
+      ],
+      "source": "CNBC, 2026",
+      "props": {
+        "product": "rocket",
+        "callouts": [
+          "SpaceX",
+          "Biggest IPO ever"
+        ]
+      }
+    },
+    {
+      "type": "split",
+      "variant": "cards",
+      "at": "It raised",
+      "beats": [
+        "ended day one",
+        "$2.1 trillion"
+      ],
+      "source": "CNBC, 2026",
+      "props": {
+        "a": {
+          "tag": "Raised",
+          "figure": "$75bn",
+          "line": "in the IPO"
+        },
+        "b": {
+          "tag": "Worth on day one",
+          "figure": "$2.1tn",
+          "line": "June 2026"
+        },
+        "verdict": "Worth more than Tesla"
+      }
+    },
+    {
+      "type": "cut",
+      "variant": "left",
+      "at": "Musk owned",
+      "beats": [
+        "of SpaceX",
+        "13% of Tesla"
+      ],
+      "source": "CNBC, 2026",
+      "props": {
+        "title": "SpaceX",
+        "share": "43%",
+        "label": "Musk's stake",
+        "note": "Tesla: 13%"
+      }
+    },
+    {
+      "type": "stamp",
+      "variant": "under",
+      "at": "That's why, that day",
+      "beats": [
+        "first trillionaire"
+      ],
+      "source": "Forbes, 2026",
+      "props": {
+        "lines": [
+          "Forbes named him",
+          "the first ever"
+        ],
+        "stamp": [
+          "Trillionaire"
+        ]
+      }
+    },
+    {
+      "type": "grid",
+      "variant": "rows",
+      "at": "SpaceX now makes up",
+      "beats": [
+        "four-fifths"
+      ],
+      "source": "Forbes, 2026",
+      "props": {
+        "of": 100,
+        "filled": 80,
+        "figure": "SpaceX",
+        "label": "most of his fortune"
+      }
+    },
+    {
+      "type": "receipt",
+      "variant": "clip",
+      "at": "But it swings",
+      "beats": [
+        "dropped below",
+        "climbed back"
+      ],
+      "source": "Forbes, Fortune, 2026",
+      "props": {
+        "title": "Musk vs $1 trillion, 2026",
+        "rows": [
+          {
+            "label": "June",
+            "value": "Above"
+          },
+          {
+            "label": "July",
+            "value": "Below"
+          },
+          {
+            "label": "October",
+            "value": "Above, then below"
+          }
+        ]
+      }
+    },
+    {
+      "type": "count",
+      "variant": "pile",
+      "at": "This week",
+      "beats": [
+        "Forbes puts",
+        "$900 billion"
+      ],
+      "source": "Forbes, 2026",
+      "props": {
+        "amount": "$907 billion",
+        "kicker": "Forbes, this week",
+        "line": "Elon Musk's fortune",
+        "sub": "November 2026"
+      }
+    },
+    {
+      "type": "tag",
+      "variant": "pin",
+      "at": "And Tesla's shareholders",
+      "beats": [
+        "another trillion"
+      ],
+      "source": "NBC News, 2025",
+      "props": {
+        "label": "Tesla pay plan",
+        "price": "$1tn",
+        "sub": "in shares",
+        "lines": [
+          "Up to another"
+        ]
+      }
+    },
+    {
+      "type": "stamp",
+      "variant": "over",
+      "at": "But only if",
+      "beats": [
+        "$8.5 trillion"
+      ],
+      "source": "NBC News, 2025",
+      "props": {
+        "figure": "$8.5tn",
+        "lines": [
+          "Tesla's value",
+          "needed"
+        ],
+        "stamp": [
+          "Only if"
+        ]
+      }
+    },
+    {
+      "type": "words",
+      "variant": "ladder",
+      "at": "And delivers",
+      "beats": [
+        "1 million",
+        "robots"
+      ],
+      "source": "NBC News, 2025",
+      "props": {
+        "lines": [
+          "And delivers",
+          "1 million",
+          "robots."
+        ]
+      }
+    }
+  ]
+}

@@ -23,11 +23,11 @@ const BANNED = [
 const MAJOR_NEWS = [
   'reuters.com', 'apnews.com', 'bbc.co.uk', 'bbc.com', 'ft.com', 'wsj.com', 'nytimes.com', 'bloomberg.com', 'theguardian.com', 'cnbc.com',
   'washingtonpost.com', 'economist.com', 'npr.org', 'cnn.com', 'telegraph.co.uk', 'thetimes.com', 'thetimes.co.uk', 'news.sky.com', 'independent.co.uk',
-  'fortune.com', 'foxbusiness.com', 'axios.com', 'politico.com', 'time.com', 'usatoday.com', 'latimes.com', 'abcnews.go.com', 'nbcnews.com', 'cbsnews.com', 'pbs.org',
+  'fortune.com', 'foxbusiness.com', 'axios.com', 'politico.com', 'time.com', 'usatoday.com', 'latimes.com', 'abcnews.go.com', 'nbcnews.com', 'today.com', 'cbsnews.com', 'pbs.org',
   'marketwatch.com', 'barrons.com', 'theatlantic.com', 'newyorker.com', 'wired.com', 'theverge.com', 'techcrunch.com', 'itv.com', 'standard.co.uk',
   'forbes.com', 'businessinsider.com', 'engadget.com', 'arstechnica.com',
   // games, film, music and sport: the trade and specialist press with its own reporting and editors
-  'ign.com', 'gamespot.com', 'polygon.com', 'kotaku.com', 'eurogamer.net', 'gamesindustry.biz', 'videogameschronicle.com', 'gamesradar.com', 'pcgamer.com',
+  'ign.com', 'gamespot.com', 'polygon.com', 'kotaku.com', 'eurogamer.net', 'gamesindustry.biz', 'gamesbeat.com', 'videogameschronicle.com', 'gamesradar.com', 'pcgamer.com',
   'variety.com', 'hollywoodreporter.com', 'deadline.com', 'billboard.com', 'rollingstone.com', 'pollstar.com', 'boxofficemojo.com', 'the-numbers.com',
   'espn.com', 'theathletic.com', 'skysports.com', 'guinnessworldrecords.com',
   // trade press for restaurants, retail, music and the creator economy
@@ -283,6 +283,7 @@ function roundingIssue(fig, exact, where) {
   const x = exact.value;
   if (x === 0) return null;
   const rel = Math.abs(v - x) / Math.abs(x);
+  if (rel < 1e-9) return null; // the very same value, however it is written ("99 cents" and $0.99)
   const unit = fig.unit || 1;
   const step = unit / 10 ** fig.decimals;
   const fair = Math.abs(Math.round(x / step) * step - v) < step * 1e-6;

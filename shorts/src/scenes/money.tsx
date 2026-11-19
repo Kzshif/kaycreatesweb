@@ -1,6 +1,6 @@
 // Scenes built around money itself: the opening hit, a counter, coin stacks, a note cut by scissors.
 import React from 'react';
-import { MANILA, TEXT_RIGHT } from '../shared/paper.mjs';
+import { CAPTION, MANILA, TEXT_RIGHT } from '../shared/paper.mjs';
 import { Backing, Cut, Headline, Label, Layer, Numeral, Slip, clamp, fit, glide, jit, lerp, measure, onTwos, ramp, settle, sheet, thump, useLook } from '../paper/kit';
 import { Coin, CoinStack, Note, Scissors, stackBox, stackHeight, type Fall } from '../paper/money';
 import { Product, productHeight } from '../paper/products';
@@ -8,7 +8,7 @@ import { PriceTag, stampHeight } from '../paper/things';
 import type { SceneProps } from '../types';
 import { Kicker, Lines, StampSlam, counting, cue, drop, fitStack, linesHeight, rise, stampTilt } from './common';
 
-const TALL = new Set(['fries', 'phone', 'tradingcard']);
+const TALL = new Set(['fries', 'phone', 'tradingcard', 'sprout', 'can', 'rocket']);
 
 // ------------------------------------------------------------------ slam
 /** The claim lands 10% oversize and settles, growing from its centre. */
@@ -24,12 +24,20 @@ const SlamNumber: React.FC<SceneProps> = ({ scene, frame, seed }) => {
   const lines: string[] = p.lines || [];
   const cLines = lines.length ? cue(scene, k++) : Infinity;
   const cEnd = cue(scene, k);
-  const size = fit([p.figure], 'numeral', 690, 400);
   const numTop = 392;
-  const headTop = numTop + size * 0.86 + 2;
-  const unitSize = p.unit ? fit([p.unit], 'headline', 700, 196) : 0;
-  const lineTop = headTop + (p.unit ? unitSize * 0.94 + 2 : 6);
   const lineSize = lines.length ? fit(lines, 'headline', 760, 92) : 0;
+  const unitNatural = p.unit ? fit([p.unit], 'headline', 700, 196) : 0;
+  // the figure, its unit and the lines all rest above the subtitle strip: a short figure ("$1")
+  // fits at full size and would push the lines under it, so figure and unit shrink together
+  const stackBottom = (s: number, u: number) => numTop + s * 0.86 + 2 + (p.unit ? u * 0.94 + 2 : 6) + lines.length * lineSize * 0.94 + (p.mark ? 22 : 0);
+  let size = fit([p.figure], 'numeral', 690, 400);
+  let unitSize = unitNatural;
+  while (size > 240 && stackBottom(size, unitSize) > CAPTION.top - 30) {
+    size -= 4;
+    unitSize = Math.min(unitNatural, Math.round(size * 0.49));
+  }
+  const headTop = numTop + size * 0.86 + 2;
+  const lineTop = headTop + (p.unit ? unitSize * 0.94 + 2 : 6);
   const slam = thump(frame, 0, 9, 0.12);
   const a = rise(frame, cUnit - 2, 46, 8);
   const under = glide(ramp(frame, cEnd - 1, 9));
@@ -49,7 +57,7 @@ const SlamNumber: React.FC<SceneProps> = ({ scene, frame, seed }) => {
         </div>
         {p.unit && a.on ? (
           <div style={{ position: 'absolute', left: 80, top: headTop + a.y, opacity: a.opacity }}>
-            <Headline lines={[p.unit]} width={700} max={196} />
+            <Headline lines={[p.unit]} width={700} max={unitSize} />
           </div>
         ) : null}
         <Lines lines={lines} frame={frame} at={cLines - 2} x={84} y={lineTop} width={760} max={92} stagger={4} />
@@ -79,20 +87,26 @@ const SlamObject: React.FC<SceneProps> = ({ scene, frame, seed }) => {
   const slam = thump(frame, 0, 9, 0.12);
   const f2 = onTwos(frame);
   const land = thump(f2, 0, 9, 0.1);
-  const tall = TALL.has(p.product);
-  const tx0 = tall ? 92 + (p.product === 'phone' ? 300 : 400) + 36 : 84;
-  const tw = slamWidth(tx0, tall ? TEXT_RIGHT - tx0 : 800);
+  // the phone stands beside the claim; other tall products (a can, a card, a pot) would squeeze
+  // the claim into a narrow column, so the claim runs full width and the product stands under it
+  const side = TALL.has(p.product) && p.product === 'phone';
+  const tall = side;
+  const stood = TALL.has(p.product) && !side;
+  const tx0 = side ? 92 + 300 + 36 : 84;
+  const tw = slamWidth(tx0, side ? TEXT_RIGHT - tx0 : 800);
   const ty = p.kicker ? 366 : 322;
-  const max = tall ? 124 : 132;
+  const max = side ? 124 : 132;
   const size = fit(lines, 'headline', tw, max);
   const textBottom = ty + lines.length * size * 0.94;
   // a short product sits in whatever room the claim leaves under it
-  const room = Math.max(220, 1000 - (tall ? 300 : textBottom + 30));
+  const room = Math.max(stood ? 300 : 220, 1000 - (side ? 300 : textBottom + 30));
   // with a price tag the product moves left to leave the tag room inside the safe area
-  const pw = tall ? (p.product === 'phone' ? 300 : 400) : Math.min(p.tag ? 460 : 540, (room * 520) / Math.max(1, productHeight(p.product, 520)));
+  const pw = side ? 300 : Math.min(stood ? 420 : p.tag ? 460 : 540, (room * 520) / Math.max(1, productHeight(p.product, 520)));
   const ph = productHeight(p.product, pw);
-  const px = tall ? 92 : p.tag ? 84 : 491 - pw / 2;
+  const px = side ? 92 : p.tag ? 84 : stood ? Math.min(TEXT_RIGHT - pw, 560 - pw / 2) : 491 - pw / 2;
   const py = 996 - ph;
+  // the product drops in from above, but never through the claim: the first frames are the hook
+  const fall = side ? 150 : Math.max(0, Math.min(150, py - textBottom - 24));
   const tx = tx0;
   const swing = (at: number) => {
     const s = f2 - at;
@@ -103,7 +117,7 @@ const SlamObject: React.FC<SceneProps> = ({ scene, frame, seed }) => {
     <>
       <Layer depth={1}>
         <Kicker text={p.kicker} frame={frame} at={8} seed={seed + 4} x={tall ? tx : 86} y={292} />
-        <div style={{ position: 'absolute', left: px, top: py - 150 * (1 - land), transform: `rotate(${(tall ? -4 : -2) - 7 * (1 - land)}deg) scale(${(1.08 - 0.08 * land).toFixed(3)})`, transformOrigin: '50% 80%' }}>
+        <div style={{ position: 'absolute', left: px, top: py - fall * (1 - land), transform: `rotate(${(tall ? -4 : -2) - 7 * (1 - land)}deg) scale(${(1.08 - 0.08 * land).toFixed(3)})`, transformOrigin: '50% 80%' }}>
           <Product name={p.product} w={pw} seed={seed + 7} text={p.text} price={p.price} />
         </div>
         <div style={{ position: 'absolute', left: tx, top: ty, transform: `scale(${(SLAM - (SLAM - 1) * slam).toFixed(4)})`, transformOrigin: '50% 50%' }}>

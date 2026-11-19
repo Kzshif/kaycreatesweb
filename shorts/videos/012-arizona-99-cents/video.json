@@ -1,0 +1,230 @@
+{
+  "id": "012",
+  "break": {
+    "at": "nothing solves problems"
+  },
+  "scenes": [
+    {
+      "type": "slam",
+      "variant": "object",
+      "beats": [
+        "since 1992"
+      ],
+      "source": "CNBC, 2024",
+      "props": {
+        "product": "can",
+        "text": "Iced tea",
+        "price": "99¢",
+        "kicker": "This can has cost",
+        "lines": [
+          "99 cents",
+          "since 1992"
+        ]
+      }
+    },
+    {
+      "type": "words",
+      "variant": "ladder",
+      "at": "The price is printed",
+      "beats": [
+        "Even tariffs",
+        "moved it"
+      ],
+      "source": "TODAY, AriZona, 2026",
+      "props": {
+        "lines": [
+          "Printed on the can.",
+          "Even tariffs",
+          "haven't moved it."
+        ]
+      }
+    },
+    {
+      "type": "count",
+      "variant": "pile",
+      "at": "They made AriZona's",
+      "beats": [
+        "40%",
+        "more expensive"
+      ],
+      "source": "TODAY, 2025",
+      "props": {
+        "amount": "40%",
+        "kicker": "Can costs, after tariffs",
+        "line": "more expensive",
+        "sub": "2025"
+      }
+    },
+    {
+      "type": "tag",
+      "variant": "pin",
+      "at": "That's about $40 million",
+      "beats": [
+        "extra",
+        "swallowing it"
+      ],
+      "source": "TODAY, 2025",
+      "props": {
+        "label": "Extra cost",
+        "price": "$40M",
+        "sub": "for cans, 2025",
+        "lines": [
+          "The founder pays"
+        ],
+        "note": "Not the customer"
+      }
+    },
+    {
+      "type": "split",
+      "variant": "cards",
+      "at": "If the price followed",
+      "beats": [
+        "$1.99"
+      ],
+      "source": "Fortune, 2025",
+      "props": {
+        "a": {
+          "tag": "Today",
+          "figure": "99¢",
+          "line": "a can"
+        },
+        "b": {
+          "tag": "If it followed costs",
+          "figure": "$1.99",
+          "line": "a can"
+        }
+      }
+    },
+    {
+      "type": "words",
+      "variant": "stack",
+      "at": "So how does",
+      "beats": [
+        "make money"
+      ],
+      "props": {
+        "lines": [
+          "So how does it",
+          "still make money?"
+        ],
+        "mark": "make money?"
+      }
+    },
+    {
+      "type": "stamp",
+      "variant": "over",
+      "at": "Founder Don Vultaggio",
+      "beats": [
+        "like volume"
+      ],
+      "source": "TODAY, 2025",
+      "props": {
+        "lines": [
+          "Nothing solves",
+          "problems like"
+        ],
+        "stamp": [
+          "Volume"
+        ]
+      }
+    },
+    {
+      "type": "product",
+      "variant": "hero",
+      "at": "The cans got thinner",
+      "beats": [
+        "thinner",
+        "run faster"
+      ],
+      "source": "Fortune, 2024",
+      "props": {
+        "product": "can",
+        "text": "Iced tea",
+        "callouts": [
+          "Thinner cans",
+          "Faster lines"
+        ]
+      }
+    },
+    {
+      "type": "split",
+      "variant": "tilt",
+      "at": "The can even shrank",
+      "beats": [
+        "to 22"
+      ],
+      "source": "Fortune, 2025",
+      "props": {
+        "a": {
+          "tag": "Before",
+          "figure": "23 oz",
+          "line": "a can"
+        },
+        "b": {
+          "tag": "Now",
+          "figure": "22 oz",
+          "line": "same 99¢"
+        }
+      }
+    },
+    {
+      "type": "receipt",
+      "variant": "roll",
+      "at": "And he has hardly",
+      "beats": [
+        "a dollar",
+        "He says traditional",
+        "is dead"
+      ],
+      "source": "Forbes, 2017",
+      "props": {
+        "title": "AriZona's advertising",
+        "rows": [
+          {
+            "label": "Ad spend",
+            "value": "Hardly a dollar"
+          },
+          {
+            "label": "TV ads",
+            "value": "Dead",
+            "mark": true
+          }
+        ]
+      }
+    },
+    {
+      "type": "count",
+      "variant": "rain",
+      "at": "Forbes puts his",
+      "beats": [
+        "family's fortune",
+        "$5 billion"
+      ],
+      "source": "Forbes, 2026",
+      "props": {
+        "amount": "$5 billion",
+        "kicker": "Forbes estimate",
+        "line": "his family's fortune",
+        "sub": "November 2026"
+      }
+    },
+    {
+      "type": "stamp",
+      "variant": "under",
+      "at": "He calls the price",
+      "beats": [
+        "giving back"
+      ],
+      "source": "CNBC, 2024",
+      "props": {
+        "lines": [
+          "His little way",
+          "of giving back"
+        ],
+        "stamp": [
+          "99¢"
+        ]
+      }
+    }
+  ]
+}

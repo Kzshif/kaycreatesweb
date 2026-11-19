@@ -1,0 +1,693 @@
+{
+ "engine": "faster-whisper small.en (word_timestamps)",
+ "pass_used": "glossary prompt",
+ "unheard_words": 0,
+ "duration": 44.917,
+ "match": 0.9821,
+ "heard": "Spotify doesn't pay artists per stream. It pays off one big pot. Spotify says nearly 70% of its revenue goes to music rights holders. In 2025, that was more than $11 billion. Each owner gets a slice by their share of all streams. Labels and publishers get paid first. Artists get their cut by contract. 80 artists generated over $10 million each. 1,500 passed $1 million. dollars. Then every December comes wrapped. Last year, 200 million people opened it on day one, and it got 500 million shares that day. Spotify now has 290 million people paying for it, and it made about 2.5 billion dollars in operating profit in 2025. And still,",
+ "mismatches": [
+  {
+   "script": "out of",
+   "heard": "off",
+   "at": 2.88
+  }
+ ],
+ "figure_mismatches": [],
+ "low_confidence": [
+  "dollars."
+ ],
+ "words": [
+  {
+   "w": "Spotify",
+   "start": 0.0,
+   "end": 0.48,
+   "matched": true
+  },
+  {
+   "w": "doesn't",
+   "start": 0.48,
+   "end": 0.86,
+   "matched": true
+  },
+  {
+   "w": "pay",
+   "start": 0.86,
+   "end": 1.04,
+   "matched": true
+  },
+  {
+   "w": "artists",
+   "start": 1.04,
+   "end": 1.46,
+   "matched": true
+  },
+  {
+   "w": "per",
+   "start": 1.46,
+   "end": 1.72,
+   "matched": true
+  },
+  {
+   "w": "stream.",
+   "start": 1.72,
+   "end": 2.06,
+   "matched": true
+  },
+  {
+   "w": "It",
+   "start": 2.64,
+   "end": 2.68,
+   "matched": true
+  },
+  {
+   "w": "pays",
+   "start": 2.66,
+   "end": 2.88,
+   "matched": true
+  },
+  {
+   "w": "out",
+   "start": 2.88,
+   "end": 2.98,
+   "matched": false
+  },
+  {
+   "w": "of",
+   "start": 2.98,
+   "end": 3.08,
+   "matched": false
+  },
+  {
+   "w": "one",
+   "start": 3.08,
+   "end": 3.32,
+   "matched": true
+  },
+  {
+   "w": "big",
+   "start": 3.32,
+   "end": 3.56,
+   "matched": true
+  },
+  {
+   "w": "pot.",
+   "start": 3.56,
+   "end": 3.86,
+   "matched": true
+  },
+  {
+   "w": "Spotify",
+   "start": 4.92,
+   "end": 4.96,
+   "matched": true
+  },
+  {
+   "w": "says",
+   "start": 4.92,
+   "end": 5.26,
+   "matched": true
+  },
+  {
+   "w": "nearly",
+   "start": 5.26,
+   "end": 5.6,
+   "matched": true
+  },
+  {
+   "w": "70%",
+   "start": 5.6,
+   "end": 6.44,
+   "matched": true
+  },
+  {
+   "w": "of",
+   "start": 6.44,
+   "end": 6.62,
+   "matched": true
+  },
+  {
+   "w": "its",
+   "start": 6.62,
+   "end": 6.76,
+   "matched": true
+  },
+  {
+   "w": "revenue",
+   "start": 6.76,
+   "end": 7.12,
+   "matched": true
+  },
+  {
+   "w": "goes",
+   "start": 7.12,
+   "end": 7.72,
+   "matched": true
+  },
+  {
+   "w": "to",
+   "start": 7.72,
+   "end": 7.94,
+   "matched": true
+  },
+  {
+   "w": "music",
+   "start": 7.94,
+   "end": 8.2,
+   "matched": true
+  },
+  {
+   "w": "rights",
+   "start": 8.2,
+   "end": 8.5,
+   "matched": true
+  },
+  {
+   "w": "holders.",
+   "start": 8.5,
+   "end": 8.9,
+   "matched": true
+  },
+  {
+   "w": "In",
+   "start": 9.4,
+   "end": 9.44,
+   "matched": true
+  },
+  {
+   "w": "2025,",
+   "start": 9.44,
+   "end": 10.06,
+   "matched": true
+  },
+  {
+   "w": "that",
+   "start": 10.72,
+   "end": 10.92,
+   "matched": true
+  },
+  {
+   "w": "was",
+   "start": 10.92,
+   "end": 11.06,
+   "matched": true
+  },
+  {
+   "w": "more",
+   "start": 11.06,
+   "end": 11.24,
+   "matched": true
+  },
+  {
+   "w": "than",
+   "start": 11.24,
+   "end": 11.38,
+   "matched": true
+  },
+  {
+   "w": "$11",
+   "start": 11.38,
+   "end": 11.76,
+   "matched": true
+  },
+  {
+   "w": "billion.",
+   "start": 11.76,
+   "end": 12.2,
+   "matched": true
+  },
+  {
+   "w": "Each",
+   "start": 12.98,
+   "end": 13.2,
+   "matched": true
+  },
+  {
+   "w": "owner",
+   "start": 13.2,
+   "end": 13.48,
+   "matched": true
+  },
+  {
+   "w": "gets",
+   "start": 13.48,
+   "end": 13.7,
+   "matched": true
+  },
+  {
+   "w": "a",
+   "start": 13.7,
+   "end": 13.86,
+   "matched": true
+  },
+  {
+   "w": "slice,",
+   "start": 13.86,
+   "end": 14.12,
+   "matched": true
+  },
+  {
+   "w": "by",
+   "start": 14.12,
+   "end": 14.7,
+   "matched": true
+  },
+  {
+   "w": "their",
+   "start": 14.7,
+   "end": 14.88,
+   "matched": true
+  },
+  {
+   "w": "share",
+   "start": 14.88,
+   "end": 15.08,
+   "matched": true
+  },
+  {
+   "w": "of",
+   "start": 15.08,
+   "end": 15.22,
+   "matched": true
+  },
+  {
+   "w": "all",
+   "start": 15.22,
+   "end": 15.42,
+   "matched": true
+  },
+  {
+   "w": "streams.",
+   "start": 15.42,
+   "end": 15.88,
+   "matched": true
+  },
+  {
+   "w": "Labels",
+   "start": 16.46,
+   "end": 16.62,
+   "matched": true
+  },
+  {
+   "w": "and",
+   "start": 16.62,
+   "end": 16.8,
+   "matched": true
+  },
+  {
+   "w": "publishers",
+   "start": 16.8,
+   "end": 17.22,
+   "matched": true
+  },
+  {
+   "w": "get",
+   "start": 17.22,
+   "end": 17.58,
+   "matched": true
+  },
+  {
+   "w": "paid",
+   "start": 17.58,
+   "end": 17.82,
+   "matched": true
+  },
+  {
+   "w": "first.",
+   "start": 17.82,
+   "end": 18.26,
+   "matched": true
+  },
+  {
+   "w": "Artists",
+   "start": 18.88,
+   "end": 18.96,
+   "matched": true
+  },
+  {
+   "w": "get",
+   "start": 18.96,
+   "end": 19.24,
+   "matched": true
+  },
+  {
+   "w": "their",
+   "start": 19.24,
+   "end": 19.38,
+   "matched": true
+  },
+  {
+   "w": "cut",
+   "start": 19.38,
+   "end": 19.56,
+   "matched": true
+  },
+  {
+   "w": "by",
+   "start": 19.56,
+   "end": 19.72,
+   "matched": true
+  },
+  {
+   "w": "contract.",
+   "start": 19.72,
+   "end": 20.26,
+   "matched": true
+  },
+  {
+   "w": "80",
+   "start": 20.74,
+   "end": 20.96,
+   "matched": true
+  },
+  {
+   "w": "artists",
+   "start": 20.96,
+   "end": 21.48,
+   "matched": true
+  },
+  {
+   "w": "generated",
+   "start": 21.48,
+   "end": 22.1,
+   "matched": true
+  },
+  {
+   "w": "over",
+   "start": 22.1,
+   "end": 22.36,
+   "matched": true
+  },
+  {
+   "w": "$10",
+   "start": 22.36,
+   "end": 22.68,
+   "matched": true
+  },
+  {
+   "w": "million",
+   "start": 22.68,
+   "end": 23.04,
+   "matched": true
+  },
+  {
+   "w": "each.",
+   "start": 23.04,
+   "end": 23.72,
+   "matched": true
+  },
+  {
+   "w": "1,500",
+   "start": 24.24,
+   "end": 25.0,
+   "matched": true
+  },
+  {
+   "w": "passed",
+   "start": 25.0,
+   "end": 25.76,
+   "matched": true
+  },
+  {
+   "w": "$1",
+   "start": 25.76,
+   "end": 26.08,
+   "matched": true
+  },
+  {
+   "w": "million.",
+   "start": 26.08,
+   "end": 26.46,
+   "matched": true
+  },
+  {
+   "w": "Then",
+   "start": 27.28,
+   "end": 27.38,
+   "matched": true
+  },
+  {
+   "w": "every",
+   "start": 27.38,
+   "end": 27.72,
+   "matched": true
+  },
+  {
+   "w": "December",
+   "start": 27.72,
+   "end": 28.06,
+   "matched": true
+  },
+  {
+   "w": "comes",
+   "start": 28.06,
+   "end": 28.36,
+   "matched": true
+  },
+  {
+   "w": "Wrapped.",
+   "start": 28.36,
+   "end": 28.66,
+   "matched": true
+  },
+  {
+   "w": "Last",
+   "start": 29.14,
+   "end": 29.3,
+   "matched": true
+  },
+  {
+   "w": "year,",
+   "start": 29.3,
+   "end": 29.6,
+   "matched": true
+  },
+  {
+   "w": "200",
+   "start": 30.0,
+   "end": 30.32,
+   "matched": true
+  },
+  {
+   "w": "million",
+   "start": 30.32,
+   "end": 30.62,
+   "matched": true
+  },
+  {
+   "w": "people",
+   "start": 30.62,
+   "end": 31.06,
+   "matched": true
+  },
+  {
+   "w": "opened",
+   "start": 31.06,
+   "end": 31.42,
+   "matched": true
+  },
+  {
+   "w": "it",
+   "start": 31.42,
+   "end": 31.58,
+   "matched": true
+  },
+  {
+   "w": "on",
+   "start": 31.58,
+   "end": 31.72,
+   "matched": true
+  },
+  {
+   "w": "day",
+   "start": 31.72,
+   "end": 31.9,
+   "matched": true
+  },
+  {
+   "w": "one.",
+   "start": 31.9,
+   "end": 32.24,
+   "matched": true
+  },
+  {
+   "w": "And",
+   "start": 32.6,
+   "end": 32.68,
+   "matched": true
+  },
+  {
+   "w": "it",
+   "start": 32.68,
+   "end": 32.76,
+   "matched": true
+  },
+  {
+   "w": "got",
+   "start": 32.76,
+   "end": 32.94,
+   "matched": true
+  },
+  {
+   "w": "500",
+   "start": 32.94,
+   "end": 33.44,
+   "matched": true
+  },
+  {
+   "w": "million",
+   "start": 33.44,
+   "end": 33.78,
+   "matched": true
+  },
+  {
+   "w": "shares",
+   "start": 33.78,
+   "end": 34.14,
+   "matched": true
+  },
+  {
+   "w": "that",
+   "start": 34.14,
+   "end": 34.44,
+   "matched": true
+  },
+  {
+   "w": "day.",
+   "start": 34.44,
+   "end": 34.7,
+   "matched": true
+  },
+  {
+   "w": "Spotify",
+   "start": 35.24,
+   "end": 35.52,
+   "matched": true
+  },
+  {
+   "w": "now",
+   "start": 35.52,
+   "end": 35.94,
+   "matched": true
+  },
+  {
+   "w": "has",
+   "start": 35.94,
+   "end": 36.34,
+   "matched": true
+  },
+  {
+   "w": "290",
+   "start": 36.34,
+   "end": 36.92,
+   "matched": true
+  },
+  {
+   "w": "million",
+   "start": 36.92,
+   "end": 37.56,
+   "matched": true
+  },
+  {
+   "w": "people",
+   "start": 37.56,
+   "end": 38.04,
+   "matched": true
+  },
+  {
+   "w": "paying",
+   "start": 38.04,
+   "end": 38.38,
+   "matched": true
+  },
+  {
+   "w": "for",
+   "start": 38.38,
+   "end": 38.64,
+   "matched": true
+  },
+  {
+   "w": "it.",
+   "start": 38.64,
+   "end": 38.84,
+   "matched": true
+  },
+  {
+   "w": "And",
+   "start": 39.12,
+   "end": 39.2,
+   "matched": true
+  },
+  {
+   "w": "it",
+   "start": 39.2,
+   "end": 39.28,
+   "matched": true
+  },
+  {
+   "w": "made",
+   "start": 39.28,
+   "end": 39.44,
+   "matched": true
+  },
+  {
+   "w": "about",
+   "start": 39.44,
+   "end": 39.68,
+   "matched": true
+  },
+  {
+   "w": "$2.5",
+   "start": 39.68,
+   "end": 40.68,
+   "matched": true
+  },
+  {
+   "w": "billion",
+   "start": 40.68,
+   "end": 41.0,
+   "matched": true
+  },
+  {
+   "w": "in",
+   "start": 41.5,
+   "end": 41.8,
+   "matched": true
+  },
+  {
+   "w": "operating",
+   "start": 41.8,
+   "end": 42.18,
+   "matched": true
+  },
+  {
+   "w": "profit",
+   "start": 42.18,
+   "end": 42.66,
+   "matched": true
+  },
+  {
+   "w": "in",
+   "start": 42.66,
+   "end": 43.04,
+   "matched": true
+  },
+  {
+   "w": "2025.",
+   "start": 43.04,
+   "end": 43.58,
+   "matched": true
+  },
+  {
+   "w": "And",
+   "start": 44.34,
+   "end": 44.48,
+   "matched": true
+  },
+  {
+   "w": "still,",
+   "start": 44.48,
+   "end": 44.72,
+   "matched": true
+  }
+ ]
+}
