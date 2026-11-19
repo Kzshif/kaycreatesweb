@@ -1,0 +1,710 @@
+{
+ "engine": "faster-whisper small.en (word_timestamps)",
+ "pass_used": "glossary prompt",
+ "unheard_words": 0,
+ "duration": 52.533,
+ "match": 0.9912,
+ "heard": "Amazon charges you $139 before you buy a thing. That is the yearly price of Prime. Or $14.99 a month. It started at $79 back in 2005. Then $99. Then $119. Then $139. Prime and Amazon's other subscriptions brought in about $50 billion in 2025. One bank says members still get 10 times their money's worth. worth. The biggest part is free delivery, about $550 a member last year. It also reckons another $20 a year would bring Amazon $3 billion. Meanwhile, Prime Video started showing ads in 2024. No ads now costs another $4.99 a month. And those ads feed a business that took $68.6 billion last year, which means deals are no deals.",
+ "mismatches": [
+  {
+   "script": "",
+   "heard": "worth.",
+   "at": 27.94
+  },
+  {
+   "script": "or",
+   "heard": "are",
+   "at": 51.14
+  }
+ ],
+ "figure_mismatches": [],
+ "low_confidence": [
+  "worth."
+ ],
+ "words": [
+  {
+   "w": "Amazon",
+   "start": 0.0,
+   "end": 0.38,
+   "matched": true
+  },
+  {
+   "w": "charges",
+   "start": 0.38,
+   "end": 0.72,
+   "matched": true
+  },
+  {
+   "w": "you",
+   "start": 0.72,
+   "end": 0.98,
+   "matched": true
+  },
+  {
+   "w": "$139",
+   "start": 0.98,
+   "end": 1.86,
+   "matched": true
+  },
+  {
+   "w": "before",
+   "start": 1.86,
+   "end": 2.74,
+   "matched": true
+  },
+  {
+   "w": "you",
+   "start": 2.74,
+   "end": 2.98,
+   "matched": true
+  },
+  {
+   "w": "buy",
+   "start": 2.98,
+   "end": 3.1,
+   "matched": true
+  },
+  {
+   "w": "a",
+   "start": 3.1,
+   "end": 3.56,
+   "matched": true
+  },
+  {
+   "w": "thing.",
+   "start": 3.56,
+   "end": 3.6,
+   "matched": true
+  },
+  {
+   "w": "That",
+   "start": 4.28,
+   "end": 4.32,
+   "matched": true
+  },
+  {
+   "w": "is",
+   "start": 4.32,
+   "end": 4.48,
+   "matched": true
+  },
+  {
+   "w": "the",
+   "start": 4.48,
+   "end": 4.62,
+   "matched": true
+  },
+  {
+   "w": "yearly",
+   "start": 4.62,
+   "end": 4.94,
+   "matched": true
+  },
+  {
+   "w": "price",
+   "start": 4.94,
+   "end": 5.24,
+   "matched": true
+  },
+  {
+   "w": "of",
+   "start": 5.24,
+   "end": 5.44,
+   "matched": true
+  },
+  {
+   "w": "Prime.",
+   "start": 5.44,
+   "end": 5.68,
+   "matched": true
+  },
+  {
+   "w": "Or",
+   "start": 6.48,
+   "end": 6.74,
+   "matched": true
+  },
+  {
+   "w": "$14.99",
+   "start": 6.74,
+   "end": 7.96,
+   "matched": true
+  },
+  {
+   "w": "a",
+   "start": 7.96,
+   "end": 8.18,
+   "matched": true
+  },
+  {
+   "w": "month.",
+   "start": 8.18,
+   "end": 8.42,
+   "matched": true
+  },
+  {
+   "w": "It",
+   "start": 9.32,
+   "end": 9.4,
+   "matched": true
+  },
+  {
+   "w": "started",
+   "start": 9.4,
+   "end": 9.64,
+   "matched": true
+  },
+  {
+   "w": "at",
+   "start": 9.64,
+   "end": 9.86,
+   "matched": true
+  },
+  {
+   "w": "$79",
+   "start": 9.86,
+   "end": 10.44,
+   "matched": true
+  },
+  {
+   "w": "back",
+   "start": 10.44,
+   "end": 10.86,
+   "matched": true
+  },
+  {
+   "w": "in",
+   "start": 10.86,
+   "end": 11.04,
+   "matched": true
+  },
+  {
+   "w": "2005.",
+   "start": 11.04,
+   "end": 11.9,
+   "matched": true
+  },
+  {
+   "w": "Then",
+   "start": 12.9,
+   "end": 12.98,
+   "matched": true
+  },
+  {
+   "w": "$99.",
+   "start": 12.98,
+   "end": 13.7,
+   "matched": true
+  },
+  {
+   "w": "Then",
+   "start": 14.7,
+   "end": 15.02,
+   "matched": true
+  },
+  {
+   "w": "$119.",
+   "start": 15.02,
+   "end": 15.8,
+   "matched": true
+  },
+  {
+   "w": "Then",
+   "start": 17.28,
+   "end": 17.92,
+   "matched": true
+  },
+  {
+   "w": "$139.",
+   "start": 17.92,
+   "end": 18.56,
+   "matched": true
+  },
+  {
+   "w": "Prime",
+   "start": 19.6,
+   "end": 20.02,
+   "matched": true
+  },
+  {
+   "w": "and",
+   "start": 20.02,
+   "end": 20.14,
+   "matched": true
+  },
+  {
+   "w": "Amazon's",
+   "start": 20.14,
+   "end": 20.64,
+   "matched": true
+  },
+  {
+   "w": "other",
+   "start": 20.64,
+   "end": 20.9,
+   "matched": true
+  },
+  {
+   "w": "subscriptions",
+   "start": 20.9,
+   "end": 21.42,
+   "matched": true
+  },
+  {
+   "w": "brought",
+   "start": 21.42,
+   "end": 21.82,
+   "matched": true
+  },
+  {
+   "w": "in",
+   "start": 21.82,
+   "end": 22.0,
+   "matched": true
+  },
+  {
+   "w": "about",
+   "start": 22.0,
+   "end": 22.2,
+   "matched": true
+  },
+  {
+   "w": "$50",
+   "start": 22.2,
+   "end": 22.6,
+   "matched": true
+  },
+  {
+   "w": "billion",
+   "start": 22.6,
+   "end": 22.9,
+   "matched": true
+  },
+  {
+   "w": "in",
+   "start": 22.9,
+   "end": 23.54,
+   "matched": true
+  },
+  {
+   "w": "2025.",
+   "start": 23.54,
+   "end": 24.16,
+   "matched": true
+  },
+  {
+   "w": "One",
+   "start": 25.22,
+   "end": 25.34,
+   "matched": true
+  },
+  {
+   "w": "bank",
+   "start": 25.34,
+   "end": 25.52,
+   "matched": true
+  },
+  {
+   "w": "says",
+   "start": 25.52,
+   "end": 25.78,
+   "matched": true
+  },
+  {
+   "w": "members",
+   "start": 25.78,
+   "end": 26.16,
+   "matched": true
+  },
+  {
+   "w": "still",
+   "start": 26.16,
+   "end": 26.54,
+   "matched": true
+  },
+  {
+   "w": "get",
+   "start": 26.54,
+   "end": 26.74,
+   "matched": true
+  },
+  {
+   "w": "ten",
+   "start": 26.74,
+   "end": 27.0,
+   "matched": true
+  },
+  {
+   "w": "times",
+   "start": 27.0,
+   "end": 27.34,
+   "matched": true
+  },
+  {
+   "w": "their",
+   "start": 27.34,
+   "end": 27.5,
+   "matched": true
+  },
+  {
+   "w": "money's",
+   "start": 27.5,
+   "end": 27.76,
+   "matched": true
+  },
+  {
+   "w": "worth.",
+   "start": 27.76,
+   "end": 27.94,
+   "matched": true
+  },
+  {
+   "w": "The",
+   "start": 28.76,
+   "end": 28.92,
+   "matched": true
+  },
+  {
+   "w": "biggest",
+   "start": 28.92,
+   "end": 29.12,
+   "matched": true
+  },
+  {
+   "w": "part",
+   "start": 29.12,
+   "end": 29.42,
+   "matched": true
+  },
+  {
+   "w": "is",
+   "start": 29.42,
+   "end": 29.6,
+   "matched": true
+  },
+  {
+   "w": "free",
+   "start": 29.6,
+   "end": 29.86,
+   "matched": true
+  },
+  {
+   "w": "delivery,",
+   "start": 29.86,
+   "end": 30.2,
+   "matched": true
+  },
+  {
+   "w": "about",
+   "start": 30.5,
+   "end": 30.66,
+   "matched": true
+  },
+  {
+   "w": "$550",
+   "start": 30.66,
+   "end": 31.46,
+   "matched": true
+  },
+  {
+   "w": "a",
+   "start": 31.46,
+   "end": 31.96,
+   "matched": true
+  },
+  {
+   "w": "member",
+   "start": 31.96,
+   "end": 32.08,
+   "matched": true
+  },
+  {
+   "w": "last",
+   "start": 32.08,
+   "end": 32.38,
+   "matched": true
+  },
+  {
+   "w": "year.",
+   "start": 32.38,
+   "end": 32.72,
+   "matched": true
+  },
+  {
+   "w": "It",
+   "start": 33.44,
+   "end": 33.54,
+   "matched": true
+  },
+  {
+   "w": "also",
+   "start": 33.54,
+   "end": 33.7,
+   "matched": true
+  },
+  {
+   "w": "reckons",
+   "start": 33.7,
+   "end": 34.1,
+   "matched": true
+  },
+  {
+   "w": "another",
+   "start": 34.1,
+   "end": 34.36,
+   "matched": true
+  },
+  {
+   "w": "$20",
+   "start": 34.36,
+   "end": 34.8,
+   "matched": true
+  },
+  {
+   "w": "a",
+   "start": 34.8,
+   "end": 35.42,
+   "matched": true
+  },
+  {
+   "w": "year",
+   "start": 35.42,
+   "end": 35.62,
+   "matched": true
+  },
+  {
+   "w": "would",
+   "start": 35.62,
+   "end": 35.78,
+   "matched": true
+  },
+  {
+   "w": "bring",
+   "start": 35.78,
+   "end": 35.96,
+   "matched": true
+  },
+  {
+   "w": "Amazon",
+   "start": 35.96,
+   "end": 36.28,
+   "matched": true
+  },
+  {
+   "w": "$3",
+   "start": 36.28,
+   "end": 36.68,
+   "matched": true
+  },
+  {
+   "w": "billion.",
+   "start": 36.68,
+   "end": 36.96,
+   "matched": true
+  },
+  {
+   "w": "Meanwhile,",
+   "start": 38.08,
+   "end": 38.52,
+   "matched": true
+  },
+  {
+   "w": "Prime",
+   "start": 38.82,
+   "end": 38.9,
+   "matched": true
+  },
+  {
+   "w": "Video",
+   "start": 38.9,
+   "end": 39.2,
+   "matched": true
+  },
+  {
+   "w": "started",
+   "start": 39.2,
+   "end": 39.52,
+   "matched": true
+  },
+  {
+   "w": "showing",
+   "start": 39.52,
+   "end": 39.96,
+   "matched": true
+  },
+  {
+   "w": "ads",
+   "start": 39.96,
+   "end": 40.22,
+   "matched": true
+  },
+  {
+   "w": "in",
+   "start": 40.22,
+   "end": 40.46,
+   "matched": true
+  },
+  {
+   "w": "2024.",
+   "start": 40.46,
+   "end": 41.06,
+   "matched": true
+  },
+  {
+   "w": "No",
+   "start": 42.12,
+   "end": 42.28,
+   "matched": true
+  },
+  {
+   "w": "ads",
+   "start": 42.28,
+   "end": 42.5,
+   "matched": true
+  },
+  {
+   "w": "now",
+   "start": 42.5,
+   "end": 42.74,
+   "matched": true
+  },
+  {
+   "w": "costs",
+   "start": 42.74,
+   "end": 43.06,
+   "matched": true
+  },
+  {
+   "w": "another",
+   "start": 43.06,
+   "end": 43.44,
+   "matched": true
+  },
+  {
+   "w": "$4.99",
+   "start": 43.44,
+   "end": 44.56,
+   "matched": true
+  },
+  {
+   "w": "a",
+   "start": 44.56,
+   "end": 44.78,
+   "matched": true
+  },
+  {
+   "w": "month.",
+   "start": 44.78,
+   "end": 45.0,
+   "matched": true
+  },
+  {
+   "w": "And",
+   "start": 45.8,
+   "end": 45.96,
+   "matched": true
+  },
+  {
+   "w": "those",
+   "start": 45.96,
+   "end": 46.1,
+   "matched": true
+  },
+  {
+   "w": "ads",
+   "start": 46.1,
+   "end": 46.32,
+   "matched": true
+  },
+  {
+   "w": "feed",
+   "start": 46.32,
+   "end": 46.5,
+   "matched": true
+  },
+  {
+   "w": "a",
+   "start": 46.5,
+   "end": 46.62,
+   "matched": true
+  },
+  {
+   "w": "business",
+   "start": 46.62,
+   "end": 46.84,
+   "matched": true
+  },
+  {
+   "w": "that",
+   "start": 46.84,
+   "end": 47.18,
+   "matched": true
+  },
+  {
+   "w": "took",
+   "start": 47.18,
+   "end": 47.36,
+   "matched": true
+  },
+  {
+   "w": "$68.6",
+   "start": 47.36,
+   "end": 48.46,
+   "matched": true
+  },
+  {
+   "w": "billion",
+   "start": 48.46,
+   "end": 48.68,
+   "matched": true
+  },
+  {
+   "w": "last",
+   "start": 48.68,
+   "end": 49.28,
+   "matched": true
+  },
+  {
+   "w": "year.",
+   "start": 49.28,
+   "end": 49.64,
+   "matched": true
+  },
+  {
+   "w": "Which",
+   "start": 50.4,
+   "end": 50.52,
+   "matched": true
+  },
+  {
+   "w": "means,",
+   "start": 50.52,
+   "end": 50.82,
+   "matched": true
+  },
+  {
+   "w": "deals",
+   "start": 50.82,
+   "end": 51.14,
+   "matched": true
+  },
+  {
+   "w": "or",
+   "start": 51.14,
+   "end": 51.38,
+   "matched": false
+  },
+  {
+   "w": "no",
+   "start": 51.38,
+   "end": 51.56,
+   "matched": true
+  },
+  {
+   "w": "deals,",
+   "start": 51.56,
+   "end": 51.82,
+   "matched": true
+  }
+ ]
+}

@@ -1,0 +1,747 @@
+{
+ "engine": "faster-whisper small.en (word_timestamps)",
+ "pass_used": "glossary prompt",
+ "unheard_words": 0,
+ "duration": 45.845,
+ "match": 1.0,
+ "heard": "Every night, Taylor Swift's tour took about $15 million for 149 nights. That is an estimated $2.2 billion from just over 10 million tickets. It is the biggest tour in history, nearly double the next. Then she put the show in cinemas. The concert film made more than $261 million, a record for a concert film. But for years, she didn't own her first six albums, so she re-recorded four of them as Taylor's Version. Then, in 2025, she bought the originals back for a reported $360 million. CNBC said the tour is what made that possible. Forbes calls her the first musician to become a billionaire from songs and shows alone. It now puts her at about $2 billion, all because",
+ "mismatches": [],
+ "figure_mismatches": [],
+ "low_confidence": [
+  "Version."
+ ],
+ "words": [
+  {
+   "w": "Every",
+   "start": 0.0,
+   "end": 0.22,
+   "matched": true
+  },
+  {
+   "w": "night,",
+   "start": 0.22,
+   "end": 0.58,
+   "matched": true
+  },
+  {
+   "w": "Taylor",
+   "start": 1.06,
+   "end": 1.18,
+   "matched": true
+  },
+  {
+   "w": "Swift's",
+   "start": 1.18,
+   "end": 1.7,
+   "matched": true
+  },
+  {
+   "w": "tour",
+   "start": 1.7,
+   "end": 1.88,
+   "matched": true
+  },
+  {
+   "w": "took",
+   "start": 1.88,
+   "end": 2.08,
+   "matched": true
+  },
+  {
+   "w": "about",
+   "start": 2.08,
+   "end": 2.3,
+   "matched": true
+  },
+  {
+   "w": "$15",
+   "start": 2.3,
+   "end": 2.66,
+   "matched": true
+  },
+  {
+   "w": "million.",
+   "start": 2.66,
+   "end": 3.04,
+   "matched": true
+  },
+  {
+   "w": "For",
+   "start": 3.04,
+   "end": 3.96,
+   "matched": true
+  },
+  {
+   "w": "149",
+   "start": 3.96,
+   "end": 5.26,
+   "matched": true
+  },
+  {
+   "w": "nights.",
+   "start": 5.26,
+   "end": 5.72,
+   "matched": true
+  },
+  {
+   "w": "That",
+   "start": 6.14,
+   "end": 6.26,
+   "matched": true
+  },
+  {
+   "w": "is",
+   "start": 6.26,
+   "end": 6.44,
+   "matched": true
+  },
+  {
+   "w": "an",
+   "start": 6.44,
+   "end": 6.58,
+   "matched": true
+  },
+  {
+   "w": "estimated",
+   "start": 6.58,
+   "end": 6.98,
+   "matched": true
+  },
+  {
+   "w": "$2.2",
+   "start": 6.98,
+   "end": 7.88,
+   "matched": true
+  },
+  {
+   "w": "billion,",
+   "start": 7.88,
+   "end": 8.22,
+   "matched": true
+  },
+  {
+   "w": "from",
+   "start": 8.22,
+   "end": 9.2,
+   "matched": true
+  },
+  {
+   "w": "just",
+   "start": 9.2,
+   "end": 9.42,
+   "matched": true
+  },
+  {
+   "w": "over",
+   "start": 9.42,
+   "end": 9.7,
+   "matched": true
+  },
+  {
+   "w": "10",
+   "start": 9.7,
+   "end": 9.96,
+   "matched": true
+  },
+  {
+   "w": "million",
+   "start": 9.96,
+   "end": 10.22,
+   "matched": true
+  },
+  {
+   "w": "tickets.",
+   "start": 10.22,
+   "end": 10.7,
+   "matched": true
+  },
+  {
+   "w": "It",
+   "start": 11.14,
+   "end": 11.24,
+   "matched": true
+  },
+  {
+   "w": "is",
+   "start": 11.24,
+   "end": 11.36,
+   "matched": true
+  },
+  {
+   "w": "the",
+   "start": 11.36,
+   "end": 11.5,
+   "matched": true
+  },
+  {
+   "w": "biggest",
+   "start": 11.5,
+   "end": 11.74,
+   "matched": true
+  },
+  {
+   "w": "tour",
+   "start": 11.74,
+   "end": 12.04,
+   "matched": true
+  },
+  {
+   "w": "in",
+   "start": 12.04,
+   "end": 12.18,
+   "matched": true
+  },
+  {
+   "w": "history,",
+   "start": 12.18,
+   "end": 12.56,
+   "matched": true
+  },
+  {
+   "w": "nearly",
+   "start": 12.94,
+   "end": 13.18,
+   "matched": true
+  },
+  {
+   "w": "double",
+   "start": 13.18,
+   "end": 13.48,
+   "matched": true
+  },
+  {
+   "w": "the",
+   "start": 13.48,
+   "end": 13.62,
+   "matched": true
+  },
+  {
+   "w": "next.",
+   "start": 13.62,
+   "end": 13.92,
+   "matched": true
+  },
+  {
+   "w": "Then",
+   "start": 14.36,
+   "end": 14.48,
+   "matched": true
+  },
+  {
+   "w": "she",
+   "start": 14.48,
+   "end": 14.6,
+   "matched": true
+  },
+  {
+   "w": "put",
+   "start": 14.6,
+   "end": 14.74,
+   "matched": true
+  },
+  {
+   "w": "the",
+   "start": 14.74,
+   "end": 14.88,
+   "matched": true
+  },
+  {
+   "w": "show",
+   "start": 14.88,
+   "end": 15.06,
+   "matched": true
+  },
+  {
+   "w": "in",
+   "start": 15.06,
+   "end": 15.26,
+   "matched": true
+  },
+  {
+   "w": "cinemas.",
+   "start": 15.26,
+   "end": 15.76,
+   "matched": true
+  },
+  {
+   "w": "The",
+   "start": 16.08,
+   "end": 16.18,
+   "matched": true
+  },
+  {
+   "w": "concert",
+   "start": 16.18,
+   "end": 16.5,
+   "matched": true
+  },
+  {
+   "w": "film",
+   "start": 16.5,
+   "end": 16.86,
+   "matched": true
+  },
+  {
+   "w": "made",
+   "start": 16.86,
+   "end": 17.16,
+   "matched": true
+  },
+  {
+   "w": "more",
+   "start": 17.16,
+   "end": 17.36,
+   "matched": true
+  },
+  {
+   "w": "than",
+   "start": 17.36,
+   "end": 17.54,
+   "matched": true
+  },
+  {
+   "w": "$261",
+   "start": 17.54,
+   "end": 18.5,
+   "matched": true
+  },
+  {
+   "w": "million,",
+   "start": 18.5,
+   "end": 19.26,
+   "matched": true
+  },
+  {
+   "w": "a",
+   "start": 19.92,
+   "end": 20.28,
+   "matched": true
+  },
+  {
+   "w": "record",
+   "start": 20.28,
+   "end": 20.54,
+   "matched": true
+  },
+  {
+   "w": "for",
+   "start": 20.54,
+   "end": 20.86,
+   "matched": true
+  },
+  {
+   "w": "a",
+   "start": 20.86,
+   "end": 21.0,
+   "matched": true
+  },
+  {
+   "w": "concert",
+   "start": 21.0,
+   "end": 21.34,
+   "matched": true
+  },
+  {
+   "w": "film.",
+   "start": 21.34,
+   "end": 21.72,
+   "matched": true
+  },
+  {
+   "w": "But",
+   "start": 22.0,
+   "end": 22.16,
+   "matched": true
+  },
+  {
+   "w": "for",
+   "start": 22.16,
+   "end": 22.3,
+   "matched": true
+  },
+  {
+   "w": "years,",
+   "start": 22.3,
+   "end": 22.72,
+   "matched": true
+  },
+  {
+   "w": "she",
+   "start": 23.0,
+   "end": 23.2,
+   "matched": true
+  },
+  {
+   "w": "didn't",
+   "start": 23.2,
+   "end": 23.36,
+   "matched": true
+  },
+  {
+   "w": "own",
+   "start": 23.36,
+   "end": 23.54,
+   "matched": true
+  },
+  {
+   "w": "her",
+   "start": 23.54,
+   "end": 23.74,
+   "matched": true
+  },
+  {
+   "w": "first",
+   "start": 23.74,
+   "end": 24.0,
+   "matched": true
+  },
+  {
+   "w": "six",
+   "start": 24.0,
+   "end": 24.24,
+   "matched": true
+  },
+  {
+   "w": "albums.",
+   "start": 24.24,
+   "end": 24.68,
+   "matched": true
+  },
+  {
+   "w": "So",
+   "start": 24.92,
+   "end": 25.28,
+   "matched": true
+  },
+  {
+   "w": "she",
+   "start": 25.28,
+   "end": 25.42,
+   "matched": true
+  },
+  {
+   "w": "re-recorded",
+   "start": 25.42,
+   "end": 25.88,
+   "matched": true
+  },
+  {
+   "w": "four",
+   "start": 25.88,
+   "end": 26.24,
+   "matched": true
+  },
+  {
+   "w": "of",
+   "start": 26.24,
+   "end": 26.34,
+   "matched": true
+  },
+  {
+   "w": "them",
+   "start": 26.34,
+   "end": 26.54,
+   "matched": true
+  },
+  {
+   "w": "as",
+   "start": 26.54,
+   "end": 26.92,
+   "matched": true
+  },
+  {
+   "w": "Taylor's",
+   "start": 26.92,
+   "end": 27.4,
+   "matched": true
+  },
+  {
+   "w": "Version.",
+   "start": 27.4,
+   "end": 27.62,
+   "matched": true
+  },
+  {
+   "w": "Then",
+   "start": 27.62,
+   "end": 28.3,
+   "matched": true
+  },
+  {
+   "w": "in",
+   "start": 28.4,
+   "end": 28.56,
+   "matched": true
+  },
+  {
+   "w": "2025,",
+   "start": 28.56,
+   "end": 29.28,
+   "matched": true
+  },
+  {
+   "w": "she",
+   "start": 30.0,
+   "end": 30.04,
+   "matched": true
+  },
+  {
+   "w": "bought",
+   "start": 30.02,
+   "end": 30.22,
+   "matched": true
+  },
+  {
+   "w": "the",
+   "start": 30.22,
+   "end": 30.42,
+   "matched": true
+  },
+  {
+   "w": "originals",
+   "start": 30.42,
+   "end": 30.84,
+   "matched": true
+  },
+  {
+   "w": "back,",
+   "start": 30.84,
+   "end": 31.22,
+   "matched": true
+  },
+  {
+   "w": "for",
+   "start": 31.22,
+   "end": 31.74,
+   "matched": true
+  },
+  {
+   "w": "a",
+   "start": 31.74,
+   "end": 31.84,
+   "matched": true
+  },
+  {
+   "w": "reported",
+   "start": 31.84,
+   "end": 32.24,
+   "matched": true
+  },
+  {
+   "w": "$360",
+   "start": 32.24,
+   "end": 33.06,
+   "matched": true
+  },
+  {
+   "w": "million.",
+   "start": 33.06,
+   "end": 33.92,
+   "matched": true
+  },
+  {
+   "w": "CNBC",
+   "start": 34.66,
+   "end": 35.12,
+   "matched": true
+  },
+  {
+   "w": "said",
+   "start": 35.12,
+   "end": 35.64,
+   "matched": true
+  },
+  {
+   "w": "the",
+   "start": 35.64,
+   "end": 35.76,
+   "matched": true
+  },
+  {
+   "w": "tour",
+   "start": 35.76,
+   "end": 36.04,
+   "matched": true
+  },
+  {
+   "w": "is",
+   "start": 36.04,
+   "end": 36.22,
+   "matched": true
+  },
+  {
+   "w": "what",
+   "start": 36.22,
+   "end": 36.36,
+   "matched": true
+  },
+  {
+   "w": "made",
+   "start": 36.36,
+   "end": 36.5,
+   "matched": true
+  },
+  {
+   "w": "that",
+   "start": 36.5,
+   "end": 36.7,
+   "matched": true
+  },
+  {
+   "w": "possible.",
+   "start": 36.7,
+   "end": 37.12,
+   "matched": true
+  },
+  {
+   "w": "Forbes",
+   "start": 37.64,
+   "end": 37.82,
+   "matched": true
+  },
+  {
+   "w": "calls",
+   "start": 37.82,
+   "end": 38.12,
+   "matched": true
+  },
+  {
+   "w": "her",
+   "start": 38.12,
+   "end": 38.32,
+   "matched": true
+  },
+  {
+   "w": "the",
+   "start": 38.32,
+   "end": 38.48,
+   "matched": true
+  },
+  {
+   "w": "first",
+   "start": 38.48,
+   "end": 38.8,
+   "matched": true
+  },
+  {
+   "w": "musician",
+   "start": 38.8,
+   "end": 39.26,
+   "matched": true
+  },
+  {
+   "w": "to",
+   "start": 39.26,
+   "end": 39.74,
+   "matched": true
+  },
+  {
+   "w": "become",
+   "start": 39.74,
+   "end": 39.94,
+   "matched": true
+  },
+  {
+   "w": "a",
+   "start": 39.94,
+   "end": 40.06,
+   "matched": true
+  },
+  {
+   "w": "billionaire",
+   "start": 40.06,
+   "end": 40.46,
+   "matched": true
+  },
+  {
+   "w": "from",
+   "start": 40.46,
+   "end": 40.76,
+   "matched": true
+  },
+  {
+   "w": "songs",
+   "start": 40.76,
+   "end": 41.16,
+   "matched": true
+  },
+  {
+   "w": "and",
+   "start": 41.16,
+   "end": 41.5,
+   "matched": true
+  },
+  {
+   "w": "shows",
+   "start": 41.5,
+   "end": 41.76,
+   "matched": true
+  },
+  {
+   "w": "alone.",
+   "start": 41.76,
+   "end": 42.18,
+   "matched": true
+  },
+  {
+   "w": "It",
+   "start": 42.66,
+   "end": 42.72,
+   "matched": true
+  },
+  {
+   "w": "now",
+   "start": 42.72,
+   "end": 42.9,
+   "matched": true
+  },
+  {
+   "w": "puts",
+   "start": 42.9,
+   "end": 43.08,
+   "matched": true
+  },
+  {
+   "w": "her",
+   "start": 43.08,
+   "end": 43.28,
+   "matched": true
+  },
+  {
+   "w": "at",
+   "start": 43.28,
+   "end": 43.46,
+   "matched": true
+  },
+  {
+   "w": "about",
+   "start": 43.46,
+   "end": 43.66,
+   "matched": true
+  },
+  {
+   "w": "$2",
+   "start": 43.66,
+   "end": 43.96,
+   "matched": true
+  },
+  {
+   "w": "billion.",
+   "start": 43.96,
+   "end": 44.36,
+   "matched": true
+  },
+  {
+   "w": "All",
+   "start": 44.88,
+   "end": 45.32,
+   "matched": true
+  },
+  {
+   "w": "because",
+   "start": 45.32,
+   "end": 45.6,
+   "matched": true
+  }
+ ]
+}

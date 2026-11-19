@@ -43,8 +43,10 @@ export function sentences(text) {
 // ----------------------------------------------------------- figures -------
 // Names that contain digits but are not claims.
 const NUMERIC_NAMES = [
-  /\b10-[KQ]\b/gi, /\b8-K\b/gi, /\b20-F\b/gi, /\bS-1\b/gi, /\b401\(k\)/gi, /\b24\/7\b/g, /\b7-Eleven\b/gi, /\b3M\b/g,
-  /\b[45]G\b/g, /\b4K\b/g, /\bWeb ?[23](\.0)?\b/gi, /\bFormula ?1\b/gi, /\bF1\b/g, /\bCOVID-19\b/gi, /\b(737|747|787|A320|A380)\b/g,
+  /\b10-[KQ]\b/gi, /\b8-K\b/gi, /\b20-F\b/gi, /\bS-1\b/gi, /\b401\(k\)/gi, /\b24\/7\b/g, /\b7-Eleven\b/gi,
+  // names that look like amounts only count as names standing alone: "3M" the company, not "$5.3M"
+  /(?<![\d.,$£€])\b3M\b/g,
+  /(?<![\d.,$£€])\b[45]G\b/g, /(?<![\d.,$£€])\b4K\b/g, /\bWeb ?[23](\.0)?\b/gi, /\bFormula ?1\b/gi, /\bF1\b/g, /\bCOVID-19\b/gi, /\b(737|747|787|A320|A380)\b/g,
   /\b(iPhone|iPad|PlayStation|PS|Xbox|Windows|Galaxy S|Pixel|Model|Series|Switch) ?\d+\b/gi,
   // game titles and studios with digits in their names
   /\b(GTA|FIFA|FC|Madden|Halo|Forza|Mario Kart|Black Ops|Modern Warfare|Battlefield|Fortnite Chapter) ?\d+\b/gi, /\bNBA ?2K\d*\b/gi, /\b2K\d*\b/g, /\bTake-Two\b/gi,

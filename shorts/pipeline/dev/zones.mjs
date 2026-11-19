@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // The button-zone pass of QA on its own, without rendering the MP4: which text rests under
-// YouTube's buttons, and which only passes through.
+// YouTube's buttons or the subtitle strip, and which only passes through.
 //   node pipeline/dev/zones.mjs 001 [002 ...]
 import fs from 'node:fs';
 import { CHANNEL_JSON, findVideo, readJson, videoFiles } from '../lib/paths.mjs';
@@ -23,7 +23,7 @@ for (const id of process.argv.slice(2).length ? process.argv.slice(2) : ['001'])
   const hits = probe.frames.flatMap((fr) => fr.hits.map((h) => ({ ...h, frame: fr.frame })));
   const motion = motionWindows(props);
   console.log(`${v.id}: ${probe.frames.length} frames probed in ${((Date.now() - t0) / 1000).toFixed(0)}s`);
-  for (const zone of ['right', 'bottom', 'top', 'cut']) {
+  for (const zone of ['right', 'bottom', 'caption', 'top', 'cut']) {
     const r = restingHits(hits.filter((h) => h.zone === zone), motion, { step });
     for (const h of r.resting) console.log(`   rests  ${zone.padEnd(6)} ${(h.frame / 30).toFixed(1).padStart(5)}s [${h.box.join(', ')}]  "${h.t}"`);
     if (r.passing) console.log(`   passes ${zone.padEnd(6)} ${r.passing} text(s) only while moving`);

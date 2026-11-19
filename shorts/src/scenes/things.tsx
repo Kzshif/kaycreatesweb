@@ -4,11 +4,11 @@ import { BRIGHT, MANILA, TEXT_RIGHT } from '../shared/paper.mjs';
 import { Backing, Clip, Cut, Headline, Layer, Numeral, Tape, fit, glide, jit, onTwos, ramp, rounded, sheet, useLook } from '../paper/kit';
 import { Coin } from '../paper/money';
 import { Product, productHeight } from '../paper/products';
-import { PriceTag, Receipt, receiptHeight } from '../paper/things';
+import { PriceTag, Receipt, receiptHeight, stampHeight } from '../paper/things';
 import type { SceneProps } from '../types';
-import { Kicker, Lines, StampSlam, counting, cue, drop, linesHeight, rise } from './common';
+import { Kicker, Lines, StampSlam, counting, cue, drop, fitStack, linesHeight, rise, stampTilt } from './common';
 
-const TALL = new Set(['fries', 'phone']);
+const TALL = new Set(['fries', 'phone', 'tradingcard']);
 
 // --------------------------------------------------------------- receipt
 /** A receipt unrolls, prints its lines one at a time, and a marker goes over the one that matters. */
@@ -150,6 +150,8 @@ export const ProductScene: React.FC<SceneProps> = ({ scene, frame, seed }) => {
 
 // ----------------------------------------------------------------- stamp
 /** A figure or a line, and then the verdict comes down on it. */
+const STAMP_W = 540;
+
 export const StampScene: React.FC<SceneProps> = ({ scene, frame, seed }) => {
   const p = scene.props;
   const lines: string[] = p.lines || [];
@@ -157,16 +159,40 @@ export const StampScene: React.FC<SceneProps> = ({ scene, frame, seed }) => {
   const c2 = p.sub ? cue(scene, 1) : Infinity;
   const c1 = cue(scene, p.sub ? 2 : 1);
   const over = scene.variant !== 'under';
-  const size = p.figure ? fit([p.figure], 'numeral', 690, 400) : 0;
   const numTop = 392;
-  const figBottom = p.figure ? numTop + size * 0.86 : 396;
+  const tilt = stampTilt(STAMP_W);
+  // the figure (or, with no figure, the headline) is as big as it can be with the whole stack,
+  // stamp included, resting above the subtitle strip
+  const L = fitStack({
+    natural: p.figure ? fit([p.figure], 'numeral', 690, 400) : lines.length ? fit(lines, 'headline', 800, 150) : 150,
+    min: p.figure ? 220 : 72,
+    stamp: p.stamp || [],
+    layout: (hero, stamp, smax) => {
+      const lmax = p.figure ? 84 : hero;
+      const lh = linesHeight(lines, 800, lmax);
+      const sh = stampHeight(stamp, STAMP_W, smax);
+      if (!p.figure) {
+        const linesY = 396;
+        const stampY = linesY + lh + 30;
+        return { lmax, lh, linesY, stampY, bottom: stampY + sh + tilt };
+      }
+      const figBottom = numTop + hero * 0.86;
+      if (over) {
+        // the stamp lands on the foot of the figure; the lines clear its lowest corner
+        const stampY = numTop + hero * 0.62;
+        const linesY = Math.max(figBottom + 12, stampY + sh + tilt + 8);
+        return { lmax, lh, linesY, stampY, bottom: linesY + lh + (p.sub ? 18 + 46 : 0) };
+      }
+      const linesY = figBottom + 12;
+      const stampY = linesY + lh + 26;
+      return { lmax, lh, linesY, stampY, bottom: stampY + sh + tilt };
+    },
+  });
+  const size = p.figure ? L.hero : 0;
+  const { lmax, lh, linesY, stampY } = L;
   const pop = rise(frame, c0, 30, 7);
   // the stamp prints the figure whole, magnitude and all: "90M", "$3.2bn"
   const text = p.figure ? (p.count ? counting(frame, c0 + 1, 20, p.count) + (p.count.tail || '') : p.figure) : '';
-  const lmax = p.figure ? 84 : 150;
-  const lh = linesHeight(lines, 800, lmax);
-  const linesY = p.figure ? (over ? figBottom + 162 : figBottom + 12) : 396;
-  const stampY = p.figure ? (over ? numTop + size * 0.62 : linesY + lh + 26) : linesY + lh + 30;
   if (!pop.on) return null;
   return (
     <>
@@ -182,7 +208,7 @@ export const StampScene: React.FC<SceneProps> = ({ scene, frame, seed }) => {
         ) : null}
         <Lines lines={lines} frame={frame} at={p.figure ? c0 + 9 : c0} x={84} y={linesY} width={800} max={lmax} stagger={4} />
         {p.sub ? <Kicker text={p.sub} frame={frame} at={c2} seed={seed + 6} x={86} y={over && p.figure ? linesY + lh + 18 : 300} size={23} rot={1.5} /> : null}
-        <StampSlam frame={frame} at={c1} x={318} y={stampY} width={540} lines={p.stamp} seed={seed + 11} />
+        <StampSlam frame={frame} at={c1} x={318} y={stampY} width={STAMP_W} lines={L.stamp} max={L.smax} seed={seed + 11} />
       </Layer>
     </>
   );

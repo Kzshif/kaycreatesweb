@@ -359,6 +359,7 @@ function exportStills(f, props, probe, motion = []) {
     const pr = probed.get(frame) || { hits: [] };
     const problems = [];
     for (const h of pr.hits.filter((x) => x.zone === 'right' || x.zone === 'bottom')) problems.push(`"${h.t}" sits in the ${h.zone === 'right' ? 'right 15%' : 'bottom 20%'} button zone`);
+    for (const h of pr.hits.filter((x) => x.zone === 'caption')) problems.push(`"${h.t}" is hidden under the subtitle`);
     for (const o of pr.overflow || []) problems.push(`"${o.t}" spills out of its box`);
     const caps = pr.captions || [];
     if (pr.captions && !caps.length) problems.push('no subtitle on screen');
@@ -434,7 +435,10 @@ async function qa(v) {
   const bottom = zone('bottom');
   const hard = [...right.resting, ...bottom.resting].sort((a, b) => a.frame - b.frame);
   for (const h of hard) problems.push(`text "${h.t}" rests in the ${h.zone === 'right' ? 'right 15%' : 'bottom 20%'} of the frame from ${(h.frame / 30).toFixed(1)}s`);
-  const passing = right.passing + bottom.passing;
+  // the subtitle strip is opaque: scene text that settles under it is lost
+  const covered = zone('caption');
+  for (const h of covered.resting) problems.push(`text "${h.t}" rests under the subtitle strip from ${(h.frame / 30).toFixed(1)}s`);
+  const passing = right.passing + bottom.passing + covered.passing;
   if (passing) log(`          note: ${passing} text(s) cross a button zone only while moving (allowed)`);
   const cut = zone('cut').resting.map((h) => h.t);
   if (cut.length) warn(`text cut off by the left edge of the frame: ${cut.slice(0, 3).join(', ')}`);
@@ -492,7 +496,8 @@ async function qa(v) {
 }
 
 // ------------------------------------------------------ publishing pack ----
-const slug = (s) => String(s).toLowerCase().replace(/&/g, ' and ').replace(/['’]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+// accents fold to plain letters ("Pokémon" -> "pokemon"), so folder names stay readable
+const slug = (s) => String(s).normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/&/g, ' and ').replace(/['’]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 const outputDir = (v, script) => path.join(OUTPUT, `${v.id}-${slug(script.meta.company || v.slug)}`);
 
 /** metadata.md, captions.srt and cover.png: everything typed or chosen by hand at upload. */

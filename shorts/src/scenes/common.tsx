@@ -1,9 +1,10 @@
 // What every Paper Money scene shares: when its reveal steps happen, how paper arrives (on twos,
 // with weight) and how type arrives (smoothly, at full frame rate).
 import React from 'react';
+import { CAPTION } from '../shared/paper.mjs';
 import { FIRST_CUE_DELAY } from '../shared/sound.mjs';
 import { Slip, airborne, fit, glide, headStyle, lerp, onTwos, ramp, settle, thump, useLook, wobble } from '../paper/kit';
-import { Specks, Stamp, StampTool } from '../paper/things';
+import { Specks, Stamp, StampTool, stampHeight } from '../paper/things';
 import type { SceneData } from '../types';
 
 /** Frame (from the scene's start) of reveal step i. A step the scene does not have never arrives. */
@@ -66,12 +67,12 @@ export const Kicker: React.FC<{ text?: string; frame: number; at: number; seed: 
  * A rubber stamp coming down at frame `at`: the tool waits at `rest`, drops in three steps, sits
  * for a beat, and is lifted clear, leaving worn ink and a few thrown specks behind.
  */
-export const StampSlam: React.FC<{ frame: number; at: number; x: number; y: number; width: number; lines: string[]; sub?: string; seed: number; rest?: [number, number] }> = ({ frame, at, x, y, width, lines, sub, seed, rest = [880, 205] }) => {
+export const StampSlam: React.FC<{ frame: number; at: number; x: number; y: number; width: number; lines: string[]; max?: number; sub?: string; seed: number; rest?: [number, number] }> = ({ frame, at, x, y, width, lines, max = 150, sub, seed, rest = [880, 205] }) => {
   const f2 = onTwos(frame);
   const down = glide(ramp(f2, at - 7.5, 7.5));
   const up = glide(ramp(f2, at + 5, 12));
   const k = frame < at + 5 ? down : 1 - up;
-  const h = lines.length > 1 ? 300 : 180;
+  const h = stampHeight(lines, width, max, sub);
   const tool = { x: lerp(rest[0], x + width / 2 - 117, k), y: lerp(rest[1], y + h / 2 - 236, k), rot: lerp(15, -9, k), lift: lerp(1.15, 0.05, k) };
   const squeeze = 1 + 0.07 * (1 - settle(ramp(frame, at, 4)));
   return (
@@ -80,7 +81,7 @@ export const StampSlam: React.FC<{ frame: number; at: number; x: number; y: numb
         <>
           <Specks seed={seed + 1} n={15} spread={[width + 40, h + 80]} style={{ left: x - 20, top: y - 30 }} />
           <div style={{ position: 'absolute', left: x, top: y, width, transform: `scale(${squeeze.toFixed(3)})`, transformOrigin: '50% 50%' }}>
-            <Stamp lines={lines} sub={sub} width={width} rot={-9} seed={seed} style={{ left: 0, top: 0 }} />
+            <Stamp lines={lines} sub={sub} width={width} max={max} rot={-9} seed={seed} style={{ left: 0, top: 0 }} />
           </div>
         </>
       ) : null}
@@ -88,3 +89,36 @@ export const StampSlam: React.FC<{ frame: number; at: number; x: number; y: numb
     </>
   );
 };
+
+/** How far the lowest corner of a stamp `width` wide, tilted -9deg, drops below its untilted box. */
+export const stampTilt = (width: number): number => Math.ceil((width / 2) * Math.sin((9 * Math.PI) / 180));
+
+export type Stack = { bottom: number };
+/**
+ * A stamp scene stacks a hero (a big figure, or the headline itself), lines and a stamp, and all
+ * of it has to rest above the subtitle strip. `layout(hero, stamp, smax)` places everything for
+ * one hero size and returns the stack's lowest point. This finds the biggest hero that keeps the
+ * stack above the strip: the stamp as written if that costs the hero no more than 15%, else the
+ * stamp's words on one line, else a smaller stamp. If nothing fits, the smallest layout is
+ * returned and QA reports the text it leaves under the subtitles.
+ */
+export function fitStack<T extends Stack>(o: { natural: number; min: number; stamp: string[]; layout: (hero: number, stamp: string[], smax: number) => T; floor?: number }): T & { hero: number; stamp: string[]; smax: number } {
+  const floor = o.floor ?? CAPTION.top;
+  const options = o.stamp.length > 1 ? [o.stamp, [o.stamp.join(' ')]] : [o.stamp];
+  const biggest = (stamp: string[], smax: number) => {
+    for (let hero = o.natural; hero >= o.min; hero -= 4) {
+      const r = o.layout(hero, stamp, smax);
+      if (r.bottom <= floor) return { ...r, hero, stamp, smax };
+    }
+    return null;
+  };
+  for (const smax of [150, 120, 96]) {
+    const found = options.map((s) => biggest(s, smax)).filter((r): r is T & { hero: number; stamp: string[]; smax: number } => r !== null);
+    if (!found.length) continue;
+    const kept = found.find((r) => r.stamp === o.stamp);
+    if (kept && kept.hero >= 0.85 * o.natural) return kept;
+    return found.reduce((a, b) => (b.hero > a.hero ? b : a));
+  }
+  const last = options[options.length - 1];
+  return { ...o.layout(o.min, last, 96), hero: o.min, stamp: last, smax: 96 };
+}

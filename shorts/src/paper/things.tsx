@@ -91,10 +91,14 @@ export const PriceTag: React.FC<{ label: string; price: string; sub?: string; w?
 // ----------------------------------------------------------------- stamp
 const STAMP_TRACK = 0.005;
 /** The ink a rubber stamp leaves: double border, block capitals, worn where the rubber did not take. */
-export const Stamp: React.FC<{ lines: string[]; sub?: string; width: number; rot?: number; seed?: number; press?: number; style?: Style }> = ({ lines, sub, width, rot = -8, seed = 1, press = 1, style }) => {
+/** The type size a stamp prints its lines at: the largest that fits inside its border, up to `max`. */
+export const stampSize = (lines: string[], width: number, max = 150): number => fit(lines.map((l) => l.toUpperCase()), 'headline', width - 2 * (9 + 30), max, 20, STAMP_TRACK);
+/** How tall a stamp prints, untilted: border, padding, its lines at 0.98 leading and the sub line. */
+export const stampHeight = (lines: string[], width: number, max = 150, sub?: string): number => 2 * 9 + 20 + 18 + lines.length * stampSize(lines, width, max) * 0.98 + (sub ? 8 + 25 * 1.25 : 0);
+
+export const Stamp: React.FC<{ lines: string[]; sub?: string; width: number; max?: number; rot?: number; seed?: number; press?: number; style?: Style }> = ({ lines, sub, width, max = 150, rot = -8, seed = 1, press = 1, style }) => {
   const t = useLook();
-  const inner = width - 2 * (9 + 30);
-  const size = fit(lines.map((l) => l.toUpperCase()), 'headline', inner, 150, 20, STAMP_TRACK);
+  const size = stampSize(lines, width, max);
   return (
     <div style={{ position: 'absolute', width, transform: `rotate(${rot}deg)`, mixBlendMode: t.inverted ? 'normal' : 'multiply', ...style }}>
       {/* a thin even film of ink, then the full impression with its worn patches on top */}
@@ -207,7 +211,7 @@ export const FriesBox: React.FC<{ scale?: number; seed?: number; label?: string;
 };
 
 /** A phone, in cut paper, showing a search box and a list with one entry already chosen. */
-export const Phone: React.FC<{ w?: number; query?: string; badge?: string; seed?: number; style?: Style }> = ({ w = 350, query = 'pizza near me', badge = 'DEFAULT', seed = 1, style }) => {
+export const Phone: React.FC<{ w?: number; query?: string; badge?: string; seed?: number; style?: Style }> = ({ w = 350, query = 'pizza near me', badge = '', seed = 1, style }) => {
   const t = useLook();
   const h = w * 2;
   const sw = w - 34;
@@ -232,7 +236,7 @@ export const Phone: React.FC<{ w?: number; query?: string; badge?: string; seed?
         const top = 214 + i * 126;
         return (
           <Cut key={i} w={bar} h={108} d={sheet(bar, 108, { seed: seed + 10 + i, m: 4 }).d} color={i === 0 ? t.accentWash : mix(t.ink, BRIGHT, 0.045)} seed={seed + 20 + i} lift={i === 0 ? 0.22 : 0.08} style={{ left: 39, top, transform: `rotate(${i === 0 ? -1.2 : jit(seed, i, 0.6)}deg)` }}>
-            {i === 0 ? (
+            {i === 0 && badge ? (
               <div data-box style={{ position: 'absolute', left: 16, top: 16, width: badgeW, height: 36, borderRadius: 8, background: t.accent }}>
                 <div style={{ ...labelStyle(21, t.onAccent), position: 'absolute', left: 15, top: 5 }}>{badge}</div>
               </div>

@@ -1,0 +1,233 @@
+{
+  "id": "010",
+  "break": {
+    "at": "reckoned Sundays"
+  },
+  "scenes": [
+    {
+      "type": "slam",
+      "variant": "object",
+      "beats": [
+        "every Sunday off"
+      ],
+      "source": "Fortune, 2026",
+      "props": {
+        "product": "store",
+        "text": "Closed Sundays",
+        "lines": [
+          "Chick-fil-A takes",
+          "every Sunday off"
+        ]
+      }
+    },
+    {
+      "type": "words",
+      "variant": "stack",
+      "at": "And its restaurants",
+      "beats": [
+        "out-sell McDonald's"
+      ],
+      "source": "QSR Magazine, 2026",
+      "props": {
+        "lines": [
+          "And still",
+          "out-sells McDonald's"
+        ],
+        "mark": "out-sells McDonald's"
+      }
+    },
+    {
+      "type": "count",
+      "variant": "rain",
+      "at": "The average Chick-fil-A",
+      "beats": [
+        "$7.7 million",
+        "in 2025"
+      ],
+      "source": "QSR Magazine, 2026",
+      "props": {
+        "amount": "$7.7 million",
+        "kicker": "Average Chick-fil-A",
+        "line": "per restaurant",
+        "sub": "2025, QSR estimate"
+      }
+    },
+    {
+      "type": "split",
+      "variant": "cards",
+      "at": "The average McDonald's",
+      "beats": [
+        "$4.1 million",
+        "Almost double"
+      ],
+      "source": "QSR Magazine, 2026",
+      "props": {
+        "a": {
+          "tag": "McDonald's, 2025",
+          "figure": "$4.1M",
+          "line": "per restaurant"
+        },
+        "b": {
+          "tag": "Chick-fil-A, 2025",
+          "figure": "$7.7M",
+          "line": "per restaurant"
+        },
+        "verdict": "Almost double, in 6 days not 7"
+      }
+    },
+    {
+      "type": "receipt",
+      "variant": "clip",
+      "at": "There are only",
+      "beats": [
+        "3,300 Chick-fil-As",
+        "13,700 McDonald's"
+      ],
+      "source": "QSR Magazine, 2026",
+      "props": {
+        "title": "US restaurants, 2025",
+        "rows": [
+          {
+            "label": "Chick-fil-A",
+            "value": "3,287"
+          },
+          {
+            "label": "McDonald's",
+            "value": "13,706"
+          }
+        ]
+      }
+    },
+    {
+      "type": "count",
+      "variant": "pile",
+      "at": "Yet it is",
+      "beats": [
+        "third-biggest",
+        "$23.9 billion"
+      ],
+      "source": "Fortune, QSR Magazine, 2026",
+      "props": {
+        "amount": "$23.9 billion",
+        "kicker": "Sales, 2025",
+        "line": "3rd biggest chain",
+        "sub": "Closed every Sunday"
+      }
+    },
+    {
+      "type": "stamp",
+      "variant": "under",
+      "at": "Analysts once reckoned",
+      "beats": [
+        "$1.2 billion",
+        "won't change"
+      ],
+      "source": "Fortune, 2026",
+      "props": {
+        "figure": "$1.2bn",
+        "lines": [
+          "a year, the cost",
+          "of Sundays (est.)"
+        ],
+        "sub": "Analysts, 2019",
+        "stamp": [
+          "Still",
+          "closed"
+        ]
+      }
+    },
+    {
+      "type": "tag",
+      "variant": "pin",
+      "at": "Running one costs",
+      "beats": [
+        "$10,000 up front"
+      ],
+      "source": "QSR Magazine, 2026",
+      "props": {
+        "product": "store",
+        "text": "Restaurant",
+        "label": "To run one",
+        "price": "$10K",
+        "lines": [
+          "Operator's fee"
+        ]
+      }
+    },
+    {
+      "type": "stamp",
+      "variant": "under",
+      "at": "Back in 2018",
+      "beats": [
+        "fewer than 1%",
+        "got picked"
+      ],
+      "source": "CNBC, 2018",
+      "props": {
+        "figure": "1%",
+        "lines": [
+          "of applicants",
+          "got picked"
+        ],
+        "sub": "2018",
+        "stamp": [
+          "Hard",
+          "to get"
+        ]
+      }
+    },
+    {
+      "type": "flow",
+      "variant": "arc",
+      "at": "But Chick-fil-A owns",
+      "beats": [
+        "And it takes",
+        "plus half"
+      ],
+      "source": "QSR Magazine, 2026",
+      "props": {
+        "from": {
+          "name": "Operator"
+        },
+        "to": {
+          "name": "Chick-fil-A",
+          "product": "store"
+        },
+        "note": "15% of sales, then half the profit"
+      }
+    },
+    {
+      "type": "words",
+      "variant": "stack",
+      "at": "The operator keeps",
+      "beats": [
+        "keeps the rest"
+      ],
+      "source": "QSR Magazine, 2026",
+      "props": {
+        "lines": [
+          "The operator",
+          "keeps the rest."
+        ],
+        "mark": "keeps the rest."
+      }
+    },
+    {
+      "type": "stamp",
+      "variant": "over",
+      "at": "And on the",
+      "beats": [
+        "seventh day"
+      ],
+      "props": {
+        "lines": [
+          "And on the",
+          "seventh day..."
+        ],
+        "stamp": [
+          "Closed"
+        ]
+      }
+    }
+  ]
+}

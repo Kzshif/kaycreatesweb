@@ -53,7 +53,8 @@
           "Answers from Google",
           "Not Bing",
           "Not anyone else"
-        ]
+        ],
+        "price": "DEFAULT"
       }
     },
     {
@@ -216,7 +217,8 @@
         "callouts": [
           "Paid for a choice",
           "you never made"
-        ]
+        ],
+        "price": "DEFAULT"
       }
     },
     {

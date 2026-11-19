@@ -4,11 +4,11 @@ import { MANILA, TEXT_RIGHT } from '../shared/paper.mjs';
 import { Backing, Cut, Headline, Label, Layer, Numeral, Slip, clamp, fit, glide, jit, lerp, measure, onTwos, ramp, settle, sheet, thump, useLook } from '../paper/kit';
 import { Coin, CoinStack, Note, Scissors, stackBox, stackHeight, type Fall } from '../paper/money';
 import { Product, productHeight } from '../paper/products';
-import { PriceTag } from '../paper/things';
+import { PriceTag, stampHeight } from '../paper/things';
 import type { SceneProps } from '../types';
-import { Kicker, Lines, StampSlam, counting, cue, drop, linesHeight, rise } from './common';
+import { Kicker, Lines, StampSlam, counting, cue, drop, fitStack, linesHeight, rise, stampTilt } from './common';
 
-const TALL = new Set(['fries', 'phone']);
+const TALL = new Set(['fries', 'phone', 'tradingcard']);
 
 // ------------------------------------------------------------------ slam
 /** The claim lands 10% oversize and settles, growing from its centre. */
@@ -128,20 +128,34 @@ const SlamStamp: React.FC<SceneProps> = ({ scene, frame, seed }) => {
   const cSub = p.sub ? cue(scene, 2) : Infinity;
   const slam = thump(frame, 0, 9, 0.12);
   const w = slamWidth(80, 800);
-  const h = linesHeight(lines, w, 150);
+  const tilt = stampTilt(540);
+  const subH = p.sub ? linesHeight([p.sub], 780, 70) : 0;
+  // the headline is as big as it can be with the stamp and the line under it resting above the subtitles
+  const L = fitStack({
+    natural: lines.length ? fit(lines, 'headline', w, 150) : 150,
+    min: 72,
+    stamp: p.stamp || [],
+    layout: (hero, stamp, smax) => {
+      const h = linesHeight(lines, w, hero);
+      const stampY = 396 + h + 26;
+      const stampBottom = stampY + stampHeight(stamp, 540, smax) + tilt;
+      const subY = stampBottom + 8;
+      return { h, stampY, subY, bottom: p.sub ? subY + subH : stampBottom };
+    },
+  });
   const sub = rise(frame, cSub - 2, 30, 8);
   return (
     <Layer depth={1}>
       <Kicker text={p.kicker} frame={frame} at={8} seed={seed + 4} />
       <div style={{ position: 'absolute', left: 80, top: 396, transform: `scale(${(SLAM - (SLAM - 1) * slam).toFixed(4)}) rotate(${(-2 * (1 - slam)).toFixed(2)}deg)`, transformOrigin: '50% 50%' }}>
-        <Headline lines={lines} width={w} max={150} />
+        <Headline lines={lines} width={w} max={L.hero} />
       </div>
       {sub.on ? (
-        <div style={{ position: 'absolute', left: 84, top: 396 + h + 250 + sub.y, opacity: sub.opacity }}>
+        <div style={{ position: 'absolute', left: 84, top: L.subY + sub.y, opacity: sub.opacity }}>
           <Headline lines={[p.sub]} width={780} max={70} />
         </div>
       ) : null}
-      <StampSlam frame={frame} at={cStamp} x={300} y={396 + h + 26} width={540} lines={p.stamp} seed={seed + 11} />
+      <StampSlam frame={frame} at={cStamp} x={300} y={L.stampY} width={540} lines={L.stamp} max={L.smax} seed={seed + 11} />
     </Layer>
   );
 };

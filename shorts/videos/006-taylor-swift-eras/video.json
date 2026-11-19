@@ -1,0 +1,208 @@
+{
+  "id": "006",
+  "break": {
+    "at": "bought the originals"
+  },
+  "scenes": [
+    {
+      "type": "slam",
+      "variant": "number",
+      "beats": [
+        "Taylor Swift's tour",
+        "about $15"
+      ],
+      "source": "Pollstar, 2024",
+      "props": {
+        "figure": "$15M",
+        "lines": [
+          "a night, on average"
+        ],
+        "kicker": "Taylor Swift's tour"
+      }
+    },
+    {
+      "type": "stamp",
+      "variant": "under",
+      "at": "For 149 nights",
+      "beats": [
+        "nights"
+      ],
+      "source": "Pollstar, 2024",
+      "props": {
+        "figure": "149",
+        "lines": [
+          "nights"
+        ],
+        "stamp": [
+          "Eras Tour"
+        ]
+      }
+    },
+    {
+      "type": "count",
+      "variant": "rain",
+      "at": "That is an",
+      "beats": [
+        "$2.2 billion",
+        "just over 10"
+      ],
+      "source": "Pollstar, 2024",
+      "props": {
+        "amount": "$2.2 billion",
+        "kicker": "All together, estimated",
+        "line": "The Eras Tour",
+        "sub": "10M tickets"
+      }
+    },
+    {
+      "type": "stamp",
+      "variant": "over",
+      "at": "It is the biggest",
+      "beats": [
+        "nearly double"
+      ],
+      "source": "Pollstar, 2024",
+      "props": {
+        "lines": [
+          "Biggest tour",
+          "in history"
+        ],
+        "stamp": [
+          "Nearly 2x",
+          "the next"
+        ]
+      }
+    },
+    {
+      "type": "product",
+      "variant": "hero",
+      "at": "Then she put",
+      "beats": [
+        "in cinemas",
+        "$261 million",
+        "a record"
+      ],
+      "source": "Variety, 2024",
+      "props": {
+        "product": "ticket",
+        "text": "Concert film",
+        "callouts": [
+          "In cinemas",
+          "$261M+ box office",
+          "A concert-film record"
+        ]
+      }
+    },
+    {
+      "type": "split",
+      "variant": "cards",
+      "at": "she didn't own",
+      "beats": [
+        "So she re-recorded"
+      ],
+      "source": "The Hollywood Reporter, 2025",
+      "props": {
+        "a": {
+          "tag": "The originals",
+          "figure": "6 albums",
+          "line": "not hers"
+        },
+        "b": {
+          "tag": "Taylor's Version",
+          "figure": "4 re-recorded",
+          "line": "owned by her"
+        }
+      }
+    },
+    {
+      "type": "stamp",
+      "variant": "under",
+      "at": "Then in 2025",
+      "beats": [
+        "bought the originals",
+        "reported $360"
+      ],
+      "source": "Billboard, 2025",
+      "props": {
+        "figure": "$360M",
+        "lines": [
+          "reported price"
+        ],
+        "sub": "2025",
+        "stamp": [
+          "Bought",
+          "back"
+        ]
+      }
+    },
+    {
+      "type": "flow",
+      "variant": "arc",
+      "at": "CNBC said the tour",
+      "beats": [
+        "is what made",
+        "that possible"
+      ],
+      "source": "CNBC, 2025",
+      "props": {
+        "from": {
+          "name": "The tour",
+          "product": "ticket"
+        },
+        "to": {
+          "name": "Her music",
+          "product": "record"
+        },
+        "note": "The tour paid for it, says CNBC"
+      }
+    },
+    {
+      "type": "words",
+      "variant": "stack",
+      "at": "Forbes calls her",
+      "beats": [
+        "become a billionaire",
+        "songs and shows"
+      ],
+      "source": "Forbes, 2023",
+      "props": {
+        "lines": [
+          "First musician",
+          "billionaire from",
+          "songs and shows"
+        ],
+        "mark": "songs and shows"
+      }
+    },
+    {
+      "type": "count",
+      "variant": "pile",
+      "at": "It now puts",
+      "beats": [
+        "$2 billion"
+      ],
+      "source": "Forbes, 2026",
+      "props": {
+        "amount": "$2 billion",
+        "kicker": "Forbes estimate, 2026",
+        "line": "her net worth"
+      }
+    },
+    {
+      "type": "tag",
+      "variant": "tape",
+      "at": "All because",
+      "beats": [
+        "because"
+      ],
+      "source": "Pollstar, 2024",
+      "props": {
+        "label": "Every night",
+        "price": "$15M",
+        "lines": [
+          "All because"
+        ]
+      }
+    }
+  ]
+}

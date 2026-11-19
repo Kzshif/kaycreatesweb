@@ -1,0 +1,221 @@
+{
+  "id": "007",
+  "break": {
+    "at": "free delivery"
+  },
+  "scenes": [
+    {
+      "type": "slam",
+      "variant": "object",
+      "beats": [
+        "$139",
+        "a thing"
+      ],
+      "source": "CNBC, 2026",
+      "props": {
+        "product": "box",
+        "text": "Delivery",
+        "lines": [
+          "Amazon charges you",
+          "before you buy"
+        ],
+        "tag": {
+          "label": "Prime, a year",
+          "price": "$139"
+        }
+      }
+    },
+    {
+      "type": "split",
+      "variant": "cards",
+      "at": "That is the yearly",
+      "beats": [
+        "Or $14.99"
+      ],
+      "source": "CNBC, 2026",
+      "props": {
+        "a": {
+          "tag": "Prime, a year",
+          "figure": "$139",
+          "line": "US price"
+        },
+        "b": {
+          "tag": "Or a month",
+          "figure": "$14.99",
+          "line": "US price"
+        }
+      }
+    },
+    {
+      "type": "receipt",
+      "variant": "roll",
+      "at": "It started at",
+      "beats": [
+        "2005",
+        "$99",
+        "$119",
+        "Then $139",
+        "$139"
+      ],
+      "source": "Fortune, CNBC, Bloomberg",
+      "props": {
+        "title": "Prime, yearly price",
+        "rows": [
+          {
+            "label": "2005",
+            "value": "$79"
+          },
+          {
+            "label": "2014",
+            "value": "$99"
+          },
+          {
+            "label": "2018",
+            "value": "$119"
+          },
+          {
+            "label": "2022",
+            "value": "$139",
+            "mark": true
+          }
+        ]
+      }
+    },
+    {
+      "type": "count",
+      "variant": "pile",
+      "at": "Prime and Amazon's",
+      "beats": [
+        "about $50 billion",
+        "in 2025"
+      ],
+      "source": "Amazon 10-K, 2025",
+      "props": {
+        "amount": "$49.6 billion",
+        "kicker": "Subscriptions, 2025",
+        "line": "Prime and the rest",
+        "sub": "In one year"
+      }
+    },
+    {
+      "type": "tag",
+      "variant": "pin",
+      "at": "One bank says",
+      "beats": [
+        "ten times"
+      ],
+      "source": "JPMorgan, via CNBC, 2026",
+      "props": {
+        "label": "Value to members",
+        "price": "$1,437",
+        "lines": [
+          "10x the fee,",
+          "says JPMorgan"
+        ]
+      }
+    },
+    {
+      "type": "product",
+      "variant": "hero",
+      "at": "The biggest part",
+      "beats": [
+        "free delivery",
+        "$550 a member"
+      ],
+      "source": "JPMorgan, via CNBC, 2026",
+      "props": {
+        "product": "box",
+        "text": "Delivery",
+        "callouts": [
+          "Free delivery",
+          "$550 a member"
+        ]
+      }
+    },
+    {
+      "type": "flow",
+      "variant": "arc",
+      "at": "It also reckons",
+      "beats": [
+        "$20 a year",
+        "$3 billion"
+      ],
+      "source": "JPMorgan, via CNBC, 2026",
+      "props": {
+        "from": {
+          "name": "Members",
+          "product": "card"
+        },
+        "to": {
+          "name": "Amazon",
+          "product": "box"
+        },
+        "note": "+$20 a year = $3bn, an estimate"
+      }
+    },
+    {
+      "type": "words",
+      "variant": "stack",
+      "at": "Meanwhile, Prime Video",
+      "beats": [
+        "showing ads"
+      ],
+      "source": "CNBC, 2023",
+      "props": {
+        "lines": [
+          "Prime Video:",
+          "ads since 2024"
+        ],
+        "mark": "ads since 2024"
+      }
+    },
+    {
+      "type": "tag",
+      "variant": "tape",
+      "at": "No ads now",
+      "beats": [
+        "$4.99 a month"
+      ],
+      "source": "CNBC, 2026",
+      "props": {
+        "label": "No ads",
+        "price": "$4.99",
+        "lines": [
+          "a month,",
+          "on top"
+        ]
+      }
+    },
+    {
+      "type": "count",
+      "variant": "rain",
+      "at": "And those ads",
+      "beats": [
+        "$68.6 billion"
+      ],
+      "source": "Amazon 10-K, 2025",
+      "props": {
+        "amount": "$68.6 billion",
+        "kicker": "Amazon ads, 2025",
+        "line": "in one year"
+      }
+    },
+    {
+      "type": "stamp",
+      "variant": "over",
+      "at": "Which means",
+      "beats": [
+        "no deals"
+      ],
+      "props": {
+        "lines": [
+          "Deals or",
+          "no deals"
+        ],
+        "stamp": [
+          "Paid first"
+        ]
+      }
+    }
+  ]
+}

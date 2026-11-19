@@ -1,0 +1,699 @@
+{
+ "engine": "faster-whisper small.en (word_timestamps)",
+ "pass_used": "glossary prompt",
+ "unheard_words": 0,
+ "duration": 43.712,
+ "match": 1.0,
+ "heard": "Cristiano Ronaldo got richer after leaving Europe. In 2022, Forbes had him at $115 million a year. Then he signed for Al-Nassr in Saudi Arabia. This year, Forbes puts him at $300 million. That is about $570 every minute. Even while he sleeps, $235 million came from his club. $65 million from sponsors and business deals. It ties the biggest year Forbes has ever measured for an athlete. For the fourth year running, nobody in sport earned more. He is the first athlete to pass $2 billion in career earnings while still playing. Forbes now counts him as a billionaire, and he says this season will probably be his last. So against every expectation.",
+ "mismatches": [],
+ "figure_mismatches": [],
+ "low_confidence": [
+  "Al-Nassr"
+ ],
+ "words": [
+  {
+   "w": "Cristiano",
+   "start": 0.0,
+   "end": 0.54,
+   "matched": true
+  },
+  {
+   "w": "Ronaldo",
+   "start": 0.54,
+   "end": 0.92,
+   "matched": true
+  },
+  {
+   "w": "got",
+   "start": 0.92,
+   "end": 1.36,
+   "matched": true
+  },
+  {
+   "w": "richer",
+   "start": 1.36,
+   "end": 1.68,
+   "matched": true
+  },
+  {
+   "w": "after",
+   "start": 1.68,
+   "end": 2.08,
+   "matched": true
+  },
+  {
+   "w": "leaving",
+   "start": 2.08,
+   "end": 2.4,
+   "matched": true
+  },
+  {
+   "w": "Europe.",
+   "start": 2.4,
+   "end": 2.78,
+   "matched": true
+  },
+  {
+   "w": "In",
+   "start": 3.24,
+   "end": 3.32,
+   "matched": true
+  },
+  {
+   "w": "2022,",
+   "start": 3.32,
+   "end": 3.96,
+   "matched": true
+  },
+  {
+   "w": "Forbes",
+   "start": 4.8,
+   "end": 4.84,
+   "matched": true
+  },
+  {
+   "w": "had",
+   "start": 4.8,
+   "end": 5.0,
+   "matched": true
+  },
+  {
+   "w": "him",
+   "start": 5.0,
+   "end": 5.2,
+   "matched": true
+  },
+  {
+   "w": "at",
+   "start": 5.2,
+   "end": 5.4,
+   "matched": true
+  },
+  {
+   "w": "$115",
+   "start": 5.4,
+   "end": 6.22,
+   "matched": true
+  },
+  {
+   "w": "million",
+   "start": 6.22,
+   "end": 6.68,
+   "matched": true
+  },
+  {
+   "w": "a",
+   "start": 6.68,
+   "end": 7.24,
+   "matched": true
+  },
+  {
+   "w": "year.",
+   "start": 7.24,
+   "end": 7.5,
+   "matched": true
+  },
+  {
+   "w": "Then",
+   "start": 7.86,
+   "end": 8.04,
+   "matched": true
+  },
+  {
+   "w": "he",
+   "start": 8.04,
+   "end": 8.18,
+   "matched": true
+  },
+  {
+   "w": "signed",
+   "start": 8.18,
+   "end": 8.42,
+   "matched": true
+  },
+  {
+   "w": "for",
+   "start": 8.42,
+   "end": 8.64,
+   "matched": true
+  },
+  {
+   "w": "Al-Nassr",
+   "start": 8.64,
+   "end": 9.18,
+   "matched": true
+  },
+  {
+   "w": "in",
+   "start": 9.18,
+   "end": 9.48,
+   "matched": true
+  },
+  {
+   "w": "Saudi",
+   "start": 9.48,
+   "end": 9.82,
+   "matched": true
+  },
+  {
+   "w": "Arabia.",
+   "start": 9.82,
+   "end": 10.18,
+   "matched": true
+  },
+  {
+   "w": "This",
+   "start": 10.66,
+   "end": 10.82,
+   "matched": true
+  },
+  {
+   "w": "year,",
+   "start": 10.82,
+   "end": 11.08,
+   "matched": true
+  },
+  {
+   "w": "Forbes",
+   "start": 11.38,
+   "end": 11.58,
+   "matched": true
+  },
+  {
+   "w": "puts",
+   "start": 11.58,
+   "end": 11.8,
+   "matched": true
+  },
+  {
+   "w": "him",
+   "start": 11.8,
+   "end": 11.96,
+   "matched": true
+  },
+  {
+   "w": "at",
+   "start": 11.96,
+   "end": 12.12,
+   "matched": true
+  },
+  {
+   "w": "$300",
+   "start": 12.12,
+   "end": 12.58,
+   "matched": true
+  },
+  {
+   "w": "million.",
+   "start": 12.58,
+   "end": 12.88,
+   "matched": true
+  },
+  {
+   "w": "That",
+   "start": 13.72,
+   "end": 13.96,
+   "matched": true
+  },
+  {
+   "w": "is",
+   "start": 13.96,
+   "end": 14.1,
+   "matched": true
+  },
+  {
+   "w": "about",
+   "start": 14.1,
+   "end": 14.38,
+   "matched": true
+  },
+  {
+   "w": "$570",
+   "start": 14.38,
+   "end": 15.1,
+   "matched": true
+  },
+  {
+   "w": "every",
+   "start": 15.1,
+   "end": 16.22,
+   "matched": true
+  },
+  {
+   "w": "minute,",
+   "start": 16.22,
+   "end": 16.54,
+   "matched": true
+  },
+  {
+   "w": "even",
+   "start": 17.08,
+   "end": 17.26,
+   "matched": true
+  },
+  {
+   "w": "while",
+   "start": 17.26,
+   "end": 17.44,
+   "matched": true
+  },
+  {
+   "w": "he",
+   "start": 17.44,
+   "end": 17.6,
+   "matched": true
+  },
+  {
+   "w": "sleeps.",
+   "start": 17.6,
+   "end": 17.88,
+   "matched": true
+  },
+  {
+   "w": "$235",
+   "start": 18.42,
+   "end": 19.24,
+   "matched": true
+  },
+  {
+   "w": "million",
+   "start": 19.24,
+   "end": 19.96,
+   "matched": true
+  },
+  {
+   "w": "came",
+   "start": 19.96,
+   "end": 20.72,
+   "matched": true
+  },
+  {
+   "w": "from",
+   "start": 20.72,
+   "end": 20.94,
+   "matched": true
+  },
+  {
+   "w": "his",
+   "start": 20.94,
+   "end": 21.1,
+   "matched": true
+  },
+  {
+   "w": "club.",
+   "start": 21.1,
+   "end": 21.36,
+   "matched": true
+  },
+  {
+   "w": "$65",
+   "start": 21.78,
+   "end": 22.36,
+   "matched": true
+  },
+  {
+   "w": "million",
+   "start": 22.36,
+   "end": 22.78,
+   "matched": true
+  },
+  {
+   "w": "from",
+   "start": 22.78,
+   "end": 23.6,
+   "matched": true
+  },
+  {
+   "w": "sponsors",
+   "start": 23.6,
+   "end": 24.02,
+   "matched": true
+  },
+  {
+   "w": "and",
+   "start": 24.02,
+   "end": 24.38,
+   "matched": true
+  },
+  {
+   "w": "business",
+   "start": 24.38,
+   "end": 24.66,
+   "matched": true
+  },
+  {
+   "w": "deals.",
+   "start": 24.66,
+   "end": 24.94,
+   "matched": true
+  },
+  {
+   "w": "It",
+   "start": 25.44,
+   "end": 25.56,
+   "matched": true
+  },
+  {
+   "w": "ties",
+   "start": 25.56,
+   "end": 25.78,
+   "matched": true
+  },
+  {
+   "w": "the",
+   "start": 25.78,
+   "end": 26.0,
+   "matched": true
+  },
+  {
+   "w": "biggest",
+   "start": 26.0,
+   "end": 26.24,
+   "matched": true
+  },
+  {
+   "w": "year",
+   "start": 26.24,
+   "end": 26.5,
+   "matched": true
+  },
+  {
+   "w": "Forbes",
+   "start": 26.5,
+   "end": 26.86,
+   "matched": true
+  },
+  {
+   "w": "has",
+   "start": 26.86,
+   "end": 27.16,
+   "matched": true
+  },
+  {
+   "w": "ever",
+   "start": 27.16,
+   "end": 27.42,
+   "matched": true
+  },
+  {
+   "w": "measured",
+   "start": 27.42,
+   "end": 27.72,
+   "matched": true
+  },
+  {
+   "w": "for",
+   "start": 27.72,
+   "end": 27.96,
+   "matched": true
+  },
+  {
+   "w": "an",
+   "start": 27.96,
+   "end": 28.06,
+   "matched": true
+  },
+  {
+   "w": "athlete.",
+   "start": 28.06,
+   "end": 28.44,
+   "matched": true
+  },
+  {
+   "w": "For",
+   "start": 28.9,
+   "end": 28.98,
+   "matched": true
+  },
+  {
+   "w": "the",
+   "start": 28.98,
+   "end": 29.1,
+   "matched": true
+  },
+  {
+   "w": "fourth",
+   "start": 29.1,
+   "end": 29.28,
+   "matched": true
+  },
+  {
+   "w": "year",
+   "start": 29.28,
+   "end": 29.46,
+   "matched": true
+  },
+  {
+   "w": "running,",
+   "start": 29.46,
+   "end": 29.74,
+   "matched": true
+  },
+  {
+   "w": "nobody",
+   "start": 30.14,
+   "end": 30.34,
+   "matched": true
+  },
+  {
+   "w": "in",
+   "start": 30.34,
+   "end": 30.6,
+   "matched": true
+  },
+  {
+   "w": "sport",
+   "start": 30.6,
+   "end": 30.88,
+   "matched": true
+  },
+  {
+   "w": "earned",
+   "start": 30.88,
+   "end": 31.14,
+   "matched": true
+  },
+  {
+   "w": "more.",
+   "start": 31.14,
+   "end": 31.42,
+   "matched": true
+  },
+  {
+   "w": "He",
+   "start": 31.84,
+   "end": 31.92,
+   "matched": true
+  },
+  {
+   "w": "is",
+   "start": 31.92,
+   "end": 31.98,
+   "matched": true
+  },
+  {
+   "w": "the",
+   "start": 31.98,
+   "end": 32.1,
+   "matched": true
+  },
+  {
+   "w": "first",
+   "start": 32.1,
+   "end": 32.34,
+   "matched": true
+  },
+  {
+   "w": "athlete",
+   "start": 32.34,
+   "end": 32.76,
+   "matched": true
+  },
+  {
+   "w": "to",
+   "start": 32.76,
+   "end": 32.94,
+   "matched": true
+  },
+  {
+   "w": "pass",
+   "start": 32.94,
+   "end": 33.14,
+   "matched": true
+  },
+  {
+   "w": "$2",
+   "start": 33.14,
+   "end": 33.46,
+   "matched": true
+  },
+  {
+   "w": "billion",
+   "start": 33.46,
+   "end": 33.76,
+   "matched": true
+  },
+  {
+   "w": "in",
+   "start": 33.76,
+   "end": 34.56,
+   "matched": true
+  },
+  {
+   "w": "career",
+   "start": 34.56,
+   "end": 34.84,
+   "matched": true
+  },
+  {
+   "w": "earnings",
+   "start": 34.84,
+   "end": 35.28,
+   "matched": true
+  },
+  {
+   "w": "while",
+   "start": 35.28,
+   "end": 35.72,
+   "matched": true
+  },
+  {
+   "w": "still",
+   "start": 35.72,
+   "end": 35.96,
+   "matched": true
+  },
+  {
+   "w": "playing.",
+   "start": 35.96,
+   "end": 36.36,
+   "matched": true
+  },
+  {
+   "w": "Forbes",
+   "start": 36.88,
+   "end": 37.02,
+   "matched": true
+  },
+  {
+   "w": "now",
+   "start": 37.02,
+   "end": 37.32,
+   "matched": true
+  },
+  {
+   "w": "counts",
+   "start": 37.32,
+   "end": 37.66,
+   "matched": true
+  },
+  {
+   "w": "him",
+   "start": 37.66,
+   "end": 37.84,
+   "matched": true
+  },
+  {
+   "w": "as",
+   "start": 37.84,
+   "end": 38.06,
+   "matched": true
+  },
+  {
+   "w": "a",
+   "start": 38.06,
+   "end": 38.18,
+   "matched": true
+  },
+  {
+   "w": "billionaire.",
+   "start": 38.18,
+   "end": 38.56,
+   "matched": true
+  },
+  {
+   "w": "And",
+   "start": 38.84,
+   "end": 39.18,
+   "matched": true
+  },
+  {
+   "w": "he",
+   "start": 39.18,
+   "end": 39.28,
+   "matched": true
+  },
+  {
+   "w": "says",
+   "start": 39.28,
+   "end": 39.46,
+   "matched": true
+  },
+  {
+   "w": "this",
+   "start": 39.46,
+   "end": 39.7,
+   "matched": true
+  },
+  {
+   "w": "season",
+   "start": 39.7,
+   "end": 40.0,
+   "matched": true
+  },
+  {
+   "w": "will",
+   "start": 40.0,
+   "end": 40.22,
+   "matched": true
+  },
+  {
+   "w": "probably",
+   "start": 40.22,
+   "end": 40.56,
+   "matched": true
+  },
+  {
+   "w": "be",
+   "start": 40.56,
+   "end": 40.88,
+   "matched": true
+  },
+  {
+   "w": "his",
+   "start": 40.88,
+   "end": 41.04,
+   "matched": true
+  },
+  {
+   "w": "last.",
+   "start": 41.04,
+   "end": 41.44,
+   "matched": true
+  },
+  {
+   "w": "So,",
+   "start": 41.88,
+   "end": 42.08,
+   "matched": true
+  },
+  {
+   "w": "against",
+   "start": 42.08,
+   "end": 42.4,
+   "matched": true
+  },
+  {
+   "w": "every",
+   "start": 42.4,
+   "end": 42.8,
+   "matched": true
+  },
+  {
+   "w": "expectation,",
+   "start": 42.8,
+   "end": 43.28,
+   "matched": true
+  }
+ ]
+}

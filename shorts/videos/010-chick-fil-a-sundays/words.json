@@ -1,0 +1,725 @@
+{
+ "engine": "faster-whisper small.en (word_timestamps)",
+ "pass_used": "greedy decoding",
+ "unheard_words": 0,
+ "duration": 49.717,
+ "match": 0.9655,
+ "heard": "Chick-fil-a takes every Sunday off. And its restaurants still outsell McDonald's. The average Chick-fil-a took about $7.7 million in 2025. The average McDonald's took about $4.1 million, almost double in six days instead of seven. There are only about 3,300 Chick-fil-as against 13,700 McDonald's. Yet it is America's third biggest fast food chain, with $23.9 billion in sales. Analysts once reckon Sundays cost it $1.2 billion a year. Its boss says that won't change. Running one costs an operator just $10,000 up front. Back in 2018, fewer than 1% of applicants got picked. But Chick-fil-a owns the restaurant. And it takes 15% of sales, plus half the profit. The operator keeps the rest. And on the seventh day.",
+ "mismatches": [
+  {
+   "script": "out-sell",
+   "heard": "outsell",
+   "at": 3.22
+  },
+  {
+   "script": "third-biggest fast-food",
+   "heard": "third biggest fast food",
+   "at": 22.46
+  },
+  {
+   "script": "reckoned",
+   "heard": "reckon",
+   "at": 28.18
+  }
+ ],
+ "figure_mismatches": [],
+ "low_confidence": [],
+ "words": [
+  {
+   "w": "Chick-fil-A",
+   "start": 0.0,
+   "end": 0.48,
+   "matched": true
+  },
+  {
+   "w": "takes",
+   "start": 0.48,
+   "end": 0.74,
+   "matched": true
+  },
+  {
+   "w": "every",
+   "start": 0.74,
+   "end": 1.14,
+   "matched": true
+  },
+  {
+   "w": "Sunday",
+   "start": 1.14,
+   "end": 1.46,
+   "matched": true
+  },
+  {
+   "w": "off.",
+   "start": 1.46,
+   "end": 1.8,
+   "matched": true
+  },
+  {
+   "w": "And",
+   "start": 2.28,
+   "end": 2.32,
+   "matched": true
+  },
+  {
+   "w": "its",
+   "start": 2.32,
+   "end": 2.46,
+   "matched": true
+  },
+  {
+   "w": "restaurants",
+   "start": 2.46,
+   "end": 2.88,
+   "matched": true
+  },
+  {
+   "w": "still",
+   "start": 2.88,
+   "end": 3.22,
+   "matched": true
+  },
+  {
+   "w": "out-sell",
+   "start": 3.22,
+   "end": 3.64,
+   "matched": false
+  },
+  {
+   "w": "McDonald's.",
+   "start": 3.64,
+   "end": 4.42,
+   "matched": true
+  },
+  {
+   "w": "The",
+   "start": 4.74,
+   "end": 4.82,
+   "matched": true
+  },
+  {
+   "w": "average",
+   "start": 4.82,
+   "end": 5.12,
+   "matched": true
+  },
+  {
+   "w": "Chick-fil-A",
+   "start": 5.12,
+   "end": 5.8,
+   "matched": true
+  },
+  {
+   "w": "took",
+   "start": 5.8,
+   "end": 6.04,
+   "matched": true
+  },
+  {
+   "w": "about",
+   "start": 6.04,
+   "end": 6.28,
+   "matched": true
+  },
+  {
+   "w": "$7.7",
+   "start": 6.28,
+   "end": 7.34,
+   "matched": true
+  },
+  {
+   "w": "million",
+   "start": 7.34,
+   "end": 7.56,
+   "matched": true
+  },
+  {
+   "w": "in",
+   "start": 7.56,
+   "end": 8.38,
+   "matched": true
+  },
+  {
+   "w": "2025.",
+   "start": 8.38,
+   "end": 9.12,
+   "matched": true
+  },
+  {
+   "w": "The",
+   "start": 9.74,
+   "end": 9.8,
+   "matched": true
+  },
+  {
+   "w": "average",
+   "start": 9.8,
+   "end": 10.14,
+   "matched": true
+  },
+  {
+   "w": "McDonald's",
+   "start": 10.14,
+   "end": 10.8,
+   "matched": true
+  },
+  {
+   "w": "took",
+   "start": 10.8,
+   "end": 10.92,
+   "matched": true
+  },
+  {
+   "w": "about",
+   "start": 10.92,
+   "end": 11.16,
+   "matched": true
+  },
+  {
+   "w": "$4.1",
+   "start": 11.16,
+   "end": 12.0,
+   "matched": true
+  },
+  {
+   "w": "million.",
+   "start": 12.0,
+   "end": 12.32,
+   "matched": true
+  },
+  {
+   "w": "Almost",
+   "start": 13.04,
+   "end": 13.36,
+   "matched": true
+  },
+  {
+   "w": "double,",
+   "start": 13.36,
+   "end": 13.62,
+   "matched": true
+  },
+  {
+   "w": "in",
+   "start": 13.62,
+   "end": 13.98,
+   "matched": true
+  },
+  {
+   "w": "six",
+   "start": 13.98,
+   "end": 14.2,
+   "matched": true
+  },
+  {
+   "w": "days",
+   "start": 14.2,
+   "end": 14.58,
+   "matched": true
+  },
+  {
+   "w": "instead",
+   "start": 14.58,
+   "end": 14.92,
+   "matched": true
+  },
+  {
+   "w": "of",
+   "start": 14.92,
+   "end": 15.1,
+   "matched": true
+  },
+  {
+   "w": "seven.",
+   "start": 15.1,
+   "end": 15.38,
+   "matched": true
+  },
+  {
+   "w": "There",
+   "start": 15.8,
+   "end": 15.9,
+   "matched": true
+  },
+  {
+   "w": "are",
+   "start": 15.9,
+   "end": 16.02,
+   "matched": true
+  },
+  {
+   "w": "only",
+   "start": 16.02,
+   "end": 16.26,
+   "matched": true
+  },
+  {
+   "w": "about",
+   "start": 16.26,
+   "end": 16.56,
+   "matched": true
+  },
+  {
+   "w": "3,300",
+   "start": 16.56,
+   "end": 17.58,
+   "matched": true
+  },
+  {
+   "w": "Chick-fil-As,",
+   "start": 17.58,
+   "end": 18.4,
+   "matched": true
+  },
+  {
+   "w": "against",
+   "start": 18.4,
+   "end": 19.06,
+   "matched": true
+  },
+  {
+   "w": "13,700",
+   "start": 19.06,
+   "end": 20.34,
+   "matched": true
+  },
+  {
+   "w": "McDonald's.",
+   "start": 20.34,
+   "end": 21.26,
+   "matched": true
+  },
+  {
+   "w": "Yet",
+   "start": 21.42,
+   "end": 21.6,
+   "matched": true
+  },
+  {
+   "w": "it",
+   "start": 21.6,
+   "end": 21.72,
+   "matched": true
+  },
+  {
+   "w": "is",
+   "start": 21.72,
+   "end": 21.88,
+   "matched": true
+  },
+  {
+   "w": "America's",
+   "start": 21.88,
+   "end": 22.46,
+   "matched": true
+  },
+  {
+   "w": "third-biggest",
+   "start": 22.46,
+   "end": 23.168,
+   "matched": false
+  },
+  {
+   "w": "fast-food",
+   "start": 23.168,
+   "end": 23.64,
+   "matched": false
+  },
+  {
+   "w": "chain,",
+   "start": 23.64,
+   "end": 24.06,
+   "matched": true
+  },
+  {
+   "w": "with",
+   "start": 24.38,
+   "end": 24.6,
+   "matched": true
+  },
+  {
+   "w": "$23.9",
+   "start": 24.6,
+   "end": 25.68,
+   "matched": true
+  },
+  {
+   "w": "billion",
+   "start": 25.68,
+   "end": 25.94,
+   "matched": true
+  },
+  {
+   "w": "in",
+   "start": 25.94,
+   "end": 26.52,
+   "matched": true
+  },
+  {
+   "w": "sales.",
+   "start": 26.52,
+   "end": 26.92,
+   "matched": true
+  },
+  {
+   "w": "Analysts",
+   "start": 27.62,
+   "end": 27.88,
+   "matched": true
+  },
+  {
+   "w": "once",
+   "start": 27.88,
+   "end": 28.18,
+   "matched": true
+  },
+  {
+   "w": "reckoned",
+   "start": 28.18,
+   "end": 28.48,
+   "matched": false
+  },
+  {
+   "w": "Sundays",
+   "start": 28.48,
+   "end": 28.94,
+   "matched": true
+  },
+  {
+   "w": "cost",
+   "start": 28.94,
+   "end": 29.4,
+   "matched": true
+  },
+  {
+   "w": "it",
+   "start": 29.4,
+   "end": 29.6,
+   "matched": true
+  },
+  {
+   "w": "$1.2",
+   "start": 29.6,
+   "end": 30.32,
+   "matched": true
+  },
+  {
+   "w": "billion",
+   "start": 30.32,
+   "end": 30.64,
+   "matched": true
+  },
+  {
+   "w": "a",
+   "start": 30.64,
+   "end": 31.08,
+   "matched": true
+  },
+  {
+   "w": "year.",
+   "start": 31.08,
+   "end": 31.36,
+   "matched": true
+  },
+  {
+   "w": "Its",
+   "start": 31.68,
+   "end": 31.88,
+   "matched": true
+  },
+  {
+   "w": "boss",
+   "start": 31.88,
+   "end": 32.12,
+   "matched": true
+  },
+  {
+   "w": "says",
+   "start": 32.12,
+   "end": 32.4,
+   "matched": true
+  },
+  {
+   "w": "that",
+   "start": 32.4,
+   "end": 32.56,
+   "matched": true
+  },
+  {
+   "w": "won't",
+   "start": 32.56,
+   "end": 32.86,
+   "matched": true
+  },
+  {
+   "w": "change.",
+   "start": 32.86,
+   "end": 33.26,
+   "matched": true
+  },
+  {
+   "w": "Running",
+   "start": 33.74,
+   "end": 33.94,
+   "matched": true
+  },
+  {
+   "w": "one",
+   "start": 33.94,
+   "end": 34.2,
+   "matched": true
+  },
+  {
+   "w": "costs",
+   "start": 34.2,
+   "end": 34.5,
+   "matched": true
+  },
+  {
+   "w": "an",
+   "start": 34.5,
+   "end": 34.72,
+   "matched": true
+  },
+  {
+   "w": "operator",
+   "start": 34.72,
+   "end": 35.12,
+   "matched": true
+  },
+  {
+   "w": "just",
+   "start": 35.12,
+   "end": 35.46,
+   "matched": true
+  },
+  {
+   "w": "$10,000",
+   "start": 35.46,
+   "end": 36.24,
+   "matched": true
+  },
+  {
+   "w": "up",
+   "start": 36.24,
+   "end": 36.6,
+   "matched": true
+  },
+  {
+   "w": "front.",
+   "start": 36.6,
+   "end": 36.88,
+   "matched": true
+  },
+  {
+   "w": "Back",
+   "start": 37.32,
+   "end": 37.48,
+   "matched": true
+  },
+  {
+   "w": "in",
+   "start": 37.48,
+   "end": 37.68,
+   "matched": true
+  },
+  {
+   "w": "2018,",
+   "start": 37.68,
+   "end": 38.26,
+   "matched": true
+  },
+  {
+   "w": "fewer",
+   "start": 38.78,
+   "end": 38.88,
+   "matched": true
+  },
+  {
+   "w": "than",
+   "start": 38.88,
+   "end": 39.08,
+   "matched": true
+  },
+  {
+   "w": "1%",
+   "start": 39.08,
+   "end": 39.56,
+   "matched": true
+  },
+  {
+   "w": "of",
+   "start": 39.56,
+   "end": 39.76,
+   "matched": true
+  },
+  {
+   "w": "applicants",
+   "start": 39.76,
+   "end": 40.14,
+   "matched": true
+  },
+  {
+   "w": "got",
+   "start": 40.14,
+   "end": 40.42,
+   "matched": true
+  },
+  {
+   "w": "picked.",
+   "start": 40.42,
+   "end": 40.78,
+   "matched": true
+  },
+  {
+   "w": "But",
+   "start": 41.12,
+   "end": 41.3,
+   "matched": true
+  },
+  {
+   "w": "Chick-fil-A",
+   "start": 41.3,
+   "end": 41.8,
+   "matched": true
+  },
+  {
+   "w": "owns",
+   "start": 41.8,
+   "end": 42.04,
+   "matched": true
+  },
+  {
+   "w": "the",
+   "start": 42.04,
+   "end": 42.26,
+   "matched": true
+  },
+  {
+   "w": "restaurant.",
+   "start": 42.26,
+   "end": 42.64,
+   "matched": true
+  },
+  {
+   "w": "And",
+   "start": 43.18,
+   "end": 43.26,
+   "matched": true
+  },
+  {
+   "w": "it",
+   "start": 43.26,
+   "end": 43.36,
+   "matched": true
+  },
+  {
+   "w": "takes",
+   "start": 43.36,
+   "end": 43.62,
+   "matched": true
+  },
+  {
+   "w": "15%",
+   "start": 43.62,
+   "end": 44.26,
+   "matched": true
+  },
+  {
+   "w": "of",
+   "start": 44.26,
+   "end": 44.44,
+   "matched": true
+  },
+  {
+   "w": "sales,",
+   "start": 44.44,
+   "end": 44.86,
+   "matched": true
+  },
+  {
+   "w": "plus",
+   "start": 45.04,
+   "end": 45.22,
+   "matched": true
+  },
+  {
+   "w": "half",
+   "start": 45.22,
+   "end": 45.46,
+   "matched": true
+  },
+  {
+   "w": "the",
+   "start": 45.46,
+   "end": 45.62,
+   "matched": true
+  },
+  {
+   "w": "profit.",
+   "start": 45.62,
+   "end": 45.9,
+   "matched": true
+  },
+  {
+   "w": "The",
+   "start": 46.46,
+   "end": 46.56,
+   "matched": true
+  },
+  {
+   "w": "operator",
+   "start": 46.56,
+   "end": 46.96,
+   "matched": true
+  },
+  {
+   "w": "keeps",
+   "start": 46.96,
+   "end": 47.36,
+   "matched": true
+  },
+  {
+   "w": "the",
+   "start": 47.36,
+   "end": 47.6,
+   "matched": true
+  },
+  {
+   "w": "rest.",
+   "start": 47.6,
+   "end": 47.9,
+   "matched": true
+  },
+  {
+   "w": "And",
+   "start": 48.42,
+   "end": 48.54,
+   "matched": true
+  },
+  {
+   "w": "on",
+   "start": 48.54,
+   "end": 48.68,
+   "matched": true
+  },
+  {
+   "w": "the",
+   "start": 48.68,
+   "end": 48.84,
+   "matched": true
+  },
+  {
+   "w": "seventh",
+   "start": 48.84,
+   "end": 49.14,
+   "matched": true
+  },
+  {
+   "w": "day,",
+   "start": 49.14,
+   "end": 49.48,
+   "matched": true
+  }
+ ]
+}

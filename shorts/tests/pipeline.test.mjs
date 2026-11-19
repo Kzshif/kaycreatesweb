@@ -33,6 +33,10 @@ test('figures: currency, magnitude, percent, years', () => {
   assert.deepEqual(keys('90M views'), ['90000000']);
   assert.deepEqual(keys('250K fans'), ['250000']);
   assert.deepEqual(keys('a 5 m wall'), ['5']);
+  // a company called 3M is a name, but $5.3M is an amount
+  assert.deepEqual(keys('$5.3M'), ['$5300000']);
+  assert.deepEqual(keys('3M makes tape'), []);
+  assert.deepEqual(keys('$1.4K'), ['$1400']);
   assert.deepEqual(keys('$5.3bn'), ['$5300000000']);
   assert.deepEqual(keys('5.3 billion dollars'), ['$5300000000']);
   assert.deepEqual(keys('$5,323 million'), ['$5323000000']);

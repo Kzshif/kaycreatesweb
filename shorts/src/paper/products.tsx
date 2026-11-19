@@ -242,7 +242,44 @@ const Record: React.FC<P> = ({ seed = 1, text = 'HIT' }) => {
   );
 };
 
-const BASE: Record<string, [number, number]> = { card: [420, 265], trolley: [480, 440], box: [440, 370], store: [560, 470], fries: [520, 640], burger: [440, 380], plot: [560, 420], phone: [350, 700], controller: [520, 340], bar: [520, 260], ticket: [540, 250], record: [520, 440] };
+/** A collectible trading card: foil border, an abstract burst in the art window, a name bar. No real artwork. */
+const TradingCard: React.FC<P> = ({ seed = 1, text = 'RARE' }) => {
+  const t = useLook();
+  const size = Math.min(34, fit([text.toUpperCase()], 'headline', 230, 34));
+  const rays = Array.from({ length: 12 }, (_, k) => {
+    const a = (k / 12) * Math.PI * 2;
+    return `M150 172 L${(150 + Math.cos(a) * 120).toFixed(1)} ${(172 + Math.sin(a) * 120).toFixed(1)} L${(150 + Math.cos(a + 0.18) * 120).toFixed(1)} ${(172 + Math.sin(a + 0.18) * 120).toFixed(1)} Z`;
+  }).join(' ');
+  return (
+    <div style={{ position: 'absolute', width: 300, height: 420 }}>
+      <Cut w={300} h={420} d={rounded(300, 420, 18, seed)} color={t.accent} seed={seed} lift={0.42}>
+        <div style={{ position: 'absolute', left: 16, top: 16, right: 16, bottom: 16, borderRadius: 10, background: mix(t.accent, BRIGHT, 0.55) }} />
+        <div style={{ position: 'absolute', left: 30, top: 30, width: 240, height: 56, borderRadius: 6, background: BRIGHT }} />
+        <div data-box style={{ ...headStyle(size, t.ink), position: 'absolute', left: 30, top: 30, width: 240, height: 56, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>{text.toUpperCase()}</div>
+        <svg width={300} height={420} style={{ position: 'absolute', inset: 0 }}>
+          <defs>
+            <clipPath id={`art${seed}`}>
+              <rect x={30} y={98} width={240} height={150} rx={6} />
+            </clipPath>
+          </defs>
+          <rect x={30} y={98} width={240} height={150} rx={6} fill={t.accentWash} />
+          <g clipPath={`url(#art${seed})`}>
+            <path d={rays} fill={rgba(BRIGHT, 0.55)} />
+            <circle cx={150} cy={172} r={34} fill={t.accentDeep} />
+            <circle cx={150} cy={172} r={14} fill={BRIGHT} />
+          </g>
+          {[0, 1, 2].map((k) => (
+            <rect key={k} x={30} y={266 + k * 30} width={240 - k * 50} height={12} rx={6} fill={rgba(t.ink, k ? 0.16 : 0.28)} />
+          ))}
+          <path d="M40 30 L120 30 L60 390 L20 390 Z" fill={rgba(BRIGHT, 0.18)} />
+          <path d="M150 30 L190 30 L130 390 L110 390 Z" fill={rgba(BRIGHT, 0.12)} />
+        </svg>
+      </Cut>
+    </div>
+  );
+};
+
+const BASE: Record<string, [number, number]> = { card: [420, 265], trolley: [480, 440], box: [440, 370], store: [560, 470], fries: [520, 640], burger: [440, 380], plot: [560, 420], phone: [350, 700], controller: [520, 340], bar: [520, 260], ticket: [540, 250], record: [520, 440], tradingcard: [300, 420] };
 /** Natural height of a product drawn `w` wide. */
 export const productHeight = (name: string, w: number): number => {
   const [bw, bh] = BASE[name] || [400, 400];
@@ -276,8 +313,11 @@ export const Product: React.FC<{ name: string; w: number; seed?: number; text?: 
       <Ticket seed={seed} text={text} price={price} />
     ) : name === 'record' ? (
       <Record seed={seed} text={text} />
+    ) : name === 'tradingcard' ? (
+      <TradingCard seed={seed} text={text} />
     ) : (
-      <Phone w={350} seed={seed} query={text || 'pizza near me'} />
+      // for the phone, `price` is the badge on the top result ("DEFAULT"), shown only when given
+      <Phone w={350} seed={seed} query={text || 'pizza near me'} badge={price || ''} />
     );
   return (
     <div style={{ position: 'absolute', width: w, height: bh * k, ...style }}>

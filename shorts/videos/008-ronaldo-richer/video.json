@@ -1,0 +1,226 @@
+{
+  "id": "008",
+  "break": {
+    "at": "biggest year Forbes"
+  },
+  "scenes": [
+    {
+      "type": "slam",
+      "variant": "number",
+      "beats": [
+        "got richer",
+        "leaving Europe"
+      ],
+      "source": "Forbes, 2026",
+      "props": {
+        "figure": "$300M",
+        "lines": [
+          "after leaving Europe"
+        ],
+        "kicker": "Ronaldo, this year"
+      }
+    },
+    {
+      "type": "stamp",
+      "variant": "under",
+      "at": "In 2022, Forbes",
+      "beats": [
+        "had him at",
+        "a year"
+      ],
+      "source": "Forbes, 2022",
+      "props": {
+        "figure": "$115M",
+        "lines": [
+          "a year, in 2022"
+        ],
+        "sub": "Forbes estimate",
+        "stamp": [
+          "In Europe"
+        ]
+      }
+    },
+    {
+      "type": "flow",
+      "variant": "arc",
+      "at": "Then he signed",
+      "beats": [
+        "Al-Nassr",
+        "Saudi Arabia"
+      ],
+      "source": "CNBC, 2022",
+      "props": {
+        "from": {
+          "name": "Europe"
+        },
+        "to": {
+          "name": "Al-Nassr"
+        },
+        "note": "Saudi Arabia, December 2022"
+      }
+    },
+    {
+      "type": "count",
+      "variant": "rain",
+      "at": "This year, Forbes",
+      "beats": [
+        "$300 million"
+      ],
+      "source": "Forbes, 2026",
+      "props": {
+        "amount": "$300 million",
+        "kicker": "Forbes, this year",
+        "line": "in twelve months"
+      }
+    },
+    {
+      "type": "tag",
+      "variant": "pin",
+      "at": "That is about",
+      "beats": [
+        "every minute",
+        "even while"
+      ],
+      "source": "Forbes, 2026",
+      "props": {
+        "label": "Every minute",
+        "price": "$570",
+        "lines": [
+          "every minute"
+        ],
+        "note": "Even while he sleeps"
+      }
+    },
+    {
+      "type": "receipt",
+      "variant": "clip",
+      "at": "$235 million came",
+      "beats": [
+        "came from his",
+        "$65 million",
+        "business deals"
+      ],
+      "source": "Forbes, 2026",
+      "props": {
+        "title": "Ronaldo, 12 months",
+        "rows": [
+          {
+            "label": "Al-Nassr",
+            "value": "$235M"
+          },
+          {
+            "label": "Sponsors, business",
+            "value": "$65M"
+          },
+          {
+            "label": "Total",
+            "value": "$300M",
+            "mark": true
+          }
+        ]
+      }
+    },
+    {
+      "type": "stamp",
+      "variant": "over",
+      "at": "It ties the",
+      "beats": [
+        "for an athlete"
+      ],
+      "source": "Forbes, 2026",
+      "props": {
+        "lines": [
+          "Biggest year",
+          "ever measured"
+        ],
+        "stamp": [
+          "Ties the",
+          "record"
+        ]
+      }
+    },
+    {
+      "type": "words",
+      "variant": "stack",
+      "at": "For the fourth",
+      "beats": [
+        "nobody in sport"
+      ],
+      "source": "Forbes, 2026",
+      "props": {
+        "lines": [
+          "Fourth year",
+          "at number one"
+        ],
+        "mark": "number one"
+      }
+    },
+    {
+      "type": "count",
+      "variant": "pile",
+      "at": "He is the first",
+      "beats": [
+        "$2 billion",
+        "still playing"
+      ],
+      "source": "Forbes, 2026",
+      "props": {
+        "amount": "$2 billion",
+        "kicker": "Career earnings",
+        "line": "first to pass it",
+        "sub": "while still playing"
+      }
+    },
+    {
+      "type": "tag",
+      "variant": "tape",
+      "at": "Forbes now counts",
+      "beats": [
+        "a billionaire"
+      ],
+      "source": "Forbes, 2026",
+      "props": {
+        "label": "Net worth",
+        "price": "$1.2bn",
+        "lines": [
+          "Billionaire,",
+          "says Forbes"
+        ]
+      }
+    },
+    {
+      "type": "stamp",
+      "variant": "under",
+      "at": "And he says",
+      "beats": [
+        "his last"
+      ],
+      "source": "Forbes, 2026",
+      "props": {
+        "lines": [
+          "This season:",
+          "probably his last"
+        ],
+        "stamp": [
+          "Final",
+          "season?"
+        ]
+      }
+    },
+    {
+      "type": "words",
+      "variant": "ladder",
+      "at": "So, against",
+      "beats": [
+        "every expectation"
+      ],
+      "props": {
+        "lines": [
+          "So, against",
+          "every expectation,"
+        ],
+        "mark": "every expectation,"
+      }
+    }
+  ]
+}

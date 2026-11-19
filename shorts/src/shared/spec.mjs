@@ -35,7 +35,7 @@ export const TRANSITION_FRAMES = { tear: 11, whip: 7, fold: 9 };
 export const BREAKS = ['invert', 'zoom', 'freeze'];
 export const BREAK_FRAMES = { invert: 8, zoom: 14, freeze: 10 };
 /** Cut-paper products a storyboard can put on the desk (all original, no logos). */
-export const PRODUCTS = ['card', 'trolley', 'box', 'store', 'fries', 'burger', 'plot', 'phone', 'controller', 'bar', 'ticket', 'record'];
+export const PRODUCTS = ['card', 'trolley', 'box', 'store', 'fries', 'burger', 'plot', 'phone', 'controller', 'bar', 'ticket', 'record', 'tradingcard'];
 /** What lies in the lower part of the desk, under the captions. */
 export const DECKS = ['pencil', 'coins', 'inkpad', 'scissors', 'clips'];
 

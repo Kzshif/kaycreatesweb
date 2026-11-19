@@ -1,0 +1,222 @@
+{
+  "id": "009",
+  "break": {
+    "at": "worth a fortune"
+  },
+  "scenes": [
+    {
+      "type": "slam",
+      "variant": "stamp",
+      "beats": [
+        "every second"
+      ],
+      "source": "The Pok\u00e9mon Company, via GamesRadar, 2026",
+      "props": {
+        "lines": [
+          "Pok\u00e9mon prints",
+          "over 300 cards",
+          "every second"
+        ],
+        "stamp": [
+          "On",
+          "average"
+        ]
+      }
+    },
+    {
+      "type": "stamp",
+      "variant": "under",
+      "at": "That is about",
+      "beats": [
+        "in one year"
+      ],
+      "source": "GamesRadar, 2026",
+      "props": {
+        "figure": "10bn",
+        "lines": [
+          "cards in one year"
+        ],
+        "stamp": [
+          "Printed"
+        ]
+      }
+    },
+    {
+      "type": "tag",
+      "variant": "pin",
+      "at": "More than 85",
+      "beats": [
+        "since 1996"
+      ],
+      "source": "Kotaku, 2026",
+      "props": {
+        "label": "All time",
+        "price": "85bn+",
+        "lines": [
+          "cards since 1996"
+        ]
+      }
+    },
+    {
+      "type": "split",
+      "variant": "cards",
+      "at": "In 2021",
+      "beats": [
+        "the total was",
+        "more than doubled"
+      ],
+      "source": "Kotaku, 2026",
+      "props": {
+        "a": {
+          "tag": "All time, 2021",
+          "figure": "34bn",
+          "line": "cards"
+        },
+        "b": {
+          "tag": "All time, now",
+          "figure": "85bn+",
+          "line": "cards"
+        },
+        "verdict": "More than doubled in 5 years"
+      }
+    },
+    {
+      "type": "stamp",
+      "variant": "over",
+      "at": "And still, shelves",
+      "beats": [
+        "run empty"
+      ],
+      "source": "Kotaku, 2026",
+      "props": {
+        "lines": [
+          "Shelves:",
+          "still empty"
+        ],
+        "stamp": [
+          "Not",
+          "enough"
+        ]
+      }
+    },
+    {
+      "type": "words",
+      "variant": "stack",
+      "at": "Nintendo's president",
+      "beats": [
+        "promised to tackle",
+        "the scalpers"
+      ],
+      "source": "Kotaku, 2026",
+      "props": {
+        "lines": [
+          "Nintendo's president",
+          "promises action",
+          "on scalpers"
+        ],
+        "mark": "on scalpers"
+      }
+    },
+    {
+      "type": "product",
+      "variant": "hero",
+      "at": "Because a few",
+      "beats": [
+        "a few cards",
+        "a fortune",
+        "In February"
+      ],
+      "props": {
+        "product": "tradingcard",
+        "text": "Rare",
+        "callouts": [
+          "A few cards",
+          "worth a fortune",
+          "Feb 2026: one sale"
+        ]
+      }
+    },
+    {
+      "type": "receipt",
+      "variant": "roll",
+      "at": "Logan Paul sold",
+      "beats": [
+        "$16.5 million",
+        "He had paid",
+        "in 2021",
+        "three times"
+      ],
+      "source": "Guinness World Records, 2026",
+      "props": {
+        "title": "One Pikachu card",
+        "rows": [
+          {
+            "label": "Sold, Feb 2026",
+            "value": "$16.5M",
+            "mark": true
+          },
+          {
+            "label": "Bought, 2021",
+            "value": "$5.3M"
+          },
+          {
+            "label": "Return",
+            "value": "3.1x"
+          }
+        ]
+      }
+    },
+    {
+      "type": "stamp",
+      "variant": "under",
+      "at": "No trading card",
+      "beats": [
+        "at auction"
+      ],
+      "source": "Guinness World Records, 2026",
+      "props": {
+        "lines": [
+          "Most expensive",
+          "trading card ever"
+        ],
+        "stamp": [
+          "Record"
+        ]
+      }
+    },
+    {
+      "type": "words",
+      "variant": "ladder",
+      "at": "Pok\u00e9mon turned 30",
+      "beats": [
+        "It is now",
+        "media franchise"
+      ],
+      "source": "Guinness World Records, 2026",
+      "props": {
+        "lines": [
+          "30 years old,",
+          "best-selling",
+          "media franchise"
+        ],
+        "mark": "media franchise"
+      }
+    },
+    {
+      "type": "tag",
+      "variant": "tape",
+      "at": "And the printers",
+      "beats": [
+        "keep going"
+      ],
+      "source": "The Pok\u00e9mon Company, via GamesRadar, 2026",
+      "props": {
+        "label": "Every second",
+        "price": "317",
+        "lines": [
+          "cards printed"
+        ]
+      }
+    }
+  ]
+}

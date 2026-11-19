@@ -1,7 +1,7 @@
 // The text probe. When a render is started with probe=true, every frame reports where all visible
 // text is, so QA can fail a video with text under YouTube's buttons (top 11.5%, bottom 20%,
-// right 15%), text spilling out of the paper it is printed on, or captions that are too small,
-// too faint or outside the centre third.
+// right 15%), text hidden under the subtitle strip, text spilling out of the paper it is printed
+// on, or captions that are too small, too faint or outside the centre third.
 import React, { useLayoutEffect } from 'react';
 import { continueRender, delayRender, useCurrentFrame } from 'remotion';
 import { FRAME, SAFE } from '../shared/paper.mjs';
@@ -14,6 +14,10 @@ const report = (frame: number) => {
   const rr = root.getBoundingClientRect();
   const k = rr.width / FRAME.width;
   const toFrame = (b: Box): number[] => [(b.left - rr.left) / k, (b.top - rr.top) / k, (b.right - rr.left) / k, (b.bottom - rr.top) / k];
+  const strips = Array.from(root.querySelectorAll('[data-caption]'));
+  // the subtitle strip is opaque paper drawn over the scene: scene text under it cannot be read
+  const under = strips.map((el) => toFrame(el.getBoundingClientRect()));
+  const COVER = 6; // a touch along the torn edge is not a cover-up
   const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
   const hits: { t: string; zone: string; box: number[] }[] = [];
   const overflow: { t: string; by: number }[] = [];
@@ -49,7 +53,12 @@ const report = (frame: number) => {
       if (x2 < 0 || y2 < 0 || x1 > FRAME.width || y1 > FRAME.height) continue; // off-frame: invisible
       n++;
       area += (x2 - x1) * (y2 - y1);
-      const zone = x2 > SAFE.right + 1 ? 'right' : y2 > SAFE.bottom + 1 ? 'bottom' : y1 < SAFE.top - 1 ? 'top' : x1 < -1 ? 'cut' : null;
+      // a text box is the font's whole line box; the letters themselves fill about its middle
+      // two thirds, so the cover test trims it to the ink before comparing
+      const inkTop = y1 + 0.18 * (y2 - y1);
+      const inkBottom = y2 - 0.18 * (y2 - y1);
+      const covered = !node.parentElement?.closest('[data-caption]') && under.some(([a, b, c, d]) => x1 < c - COVER && x2 > a + COVER && inkTop < d - COVER && inkBottom > b + COVER);
+      const zone = x2 > SAFE.right + 1 ? 'right' : y2 > SAFE.bottom + 1 ? 'bottom' : y1 < SAFE.top - 1 ? 'top' : x1 < -1 ? 'cut' : covered ? 'caption' : null;
       if (zone) hits.push({ t: text.slice(0, 40), zone, box: [x1, y1, x2, y2].map(Math.round) });
       if (box) {
         const b = box.getBoundingClientRect();
@@ -58,7 +67,7 @@ const report = (frame: number) => {
       }
     }
   }
-  const captions = Array.from(root.querySelectorAll('[data-caption]')).map((el) => {
+  const captions = strips.map((el) => {
     const [left, top, right, bottom] = toFrame(el.getBoundingClientRect());
     let meta = {};
     try {

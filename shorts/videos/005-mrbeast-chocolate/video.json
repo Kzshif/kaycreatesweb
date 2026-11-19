@@ -1,0 +1,212 @@
+{
+  "id": "005",
+  "break": {
+    "at": "its third loss"
+  },
+  "scenes": [
+    {
+      "type": "slam",
+      "variant": "stamp",
+      "beats": [
+        "a chocolate company"
+      ],
+      "props": {
+        "lines": [
+          "MrBeast is really",
+          "a chocolate company"
+        ],
+        "stamp": [
+          "Not just",
+          "YouTube"
+        ]
+      }
+    },
+    {
+      "type": "product",
+      "variant": "hero",
+      "at": "His channel has",
+      "beats": [
+        "500 million",
+        "No channel on Earth"
+      ],
+      "source": "Tubefilter, 2026",
+      "props": {
+        "product": "phone",
+        "text": "MrBeast",
+        "kicker": "His channel",
+        "callouts": [
+          "500M+ subscribers",
+          "Most on YouTube"
+        ]
+      }
+    },
+    {
+      "type": "stamp",
+      "variant": "under",
+      "at": "But in 2024",
+      "beats": [
+        "behind his videos",
+        "almost $80"
+      ],
+      "source": "Fortune, from Bloomberg, 2025",
+      "props": {
+        "figure": "$80M",
+        "lines": [
+          "lost on his",
+          "videos in 2024"
+        ],
+        "sub": "The video business",
+        "stamp": [
+          "Loss"
+        ]
+      }
+    },
+    {
+      "type": "receipt",
+      "variant": "roll",
+      "at": "His chocolate bars",
+      "beats": [
+        "Feastables",
+        "sold about $250",
+        "And made",
+        "in profit"
+      ],
+      "source": "Fortune, from Bloomberg, 2025",
+      "props": {
+        "title": "Chocolate, 2024",
+        "rows": [
+          {
+            "label": "Brand",
+            "value": "Feastables"
+          },
+          {
+            "label": "Sales",
+            "value": "$250M"
+          },
+          {
+            "label": "Profit",
+            "value": "+$20M",
+            "mark": true
+          }
+        ]
+      }
+    },
+    {
+      "type": "words",
+      "variant": "stack",
+      "at": "Same sales",
+      "beats": [
+        "Opposite ending"
+      ],
+      "props": {
+        "lines": [
+          "Same sales.",
+          "Opposite ending."
+        ],
+        "mark": "Opposite ending"
+      }
+    },
+    {
+      "type": "tag",
+      "variant": "pin",
+      "at": "His company has",
+      "beats": [
+        "$5 billion"
+      ],
+      "source": "Fortune, 2025",
+      "props": {
+        "label": "Valued at",
+        "price": "$5bn",
+        "lines": [
+          "His company"
+        ]
+      }
+    },
+    {
+      "type": "stamp",
+      "variant": "under",
+      "at": "Overall it lost",
+      "beats": [
+        "in 2024",
+        "third loss"
+      ],
+      "source": "Fortune, 2025",
+      "props": {
+        "figure": "$60M",
+        "lines": [
+          "lost in 2024"
+        ],
+        "stamp": [
+          "Third loss",
+          "in a row"
+        ],
+        "sub": "Beast Industries, all of it"
+      }
+    },
+    {
+      "type": "grid",
+      "variant": "rows",
+      "at": "The plan is",
+      "beats": [
+        "a fifth",
+        "by 2026"
+      ],
+      "source": "Fortune, 2025",
+      "props": {
+        "of": 10,
+        "filled": 2,
+        "figure": "20%",
+        "label": "of sales from videos, the 2026 plan"
+      }
+    },
+    {
+      "type": "count",
+      "variant": "pile",
+      "at": "And a profit",
+      "beats": [
+        "that year"
+      ],
+      "source": "Fortune, 2025",
+      "props": {
+        "amount": "$300 million",
+        "kicker": "The 2026 plan",
+        "line": "profit"
+      }
+    },
+    {
+      "type": "flow",
+      "variant": "arc",
+      "at": "The videos bring",
+      "beats": [
+        "The fans buy",
+        "the chocolate"
+      ],
+      "props": {
+        "from": {
+          "name": "Fans",
+          "product": "phone"
+        },
+        "to": {
+          "name": "Chocolate",
+          "product": "bar"
+        },
+        "note": "The videos bring the fans"
+      }
+    },
+    {
+      "type": "product",
+      "variant": "hero",
+      "at": "Which is why",
+      "beats": [
+        "on paper"
+      ],
+      "props": {
+        "product": "bar",
+        "text": "Chocolate",
+        "callouts": [
+          "On paper..."
+        ]
+      }
+    }
+  ]
+}
