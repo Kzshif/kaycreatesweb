@@ -49,7 +49,7 @@ const HL_MIN = 7.5; // ink on the highlighter tint must stay this readable
  * Every colour a video needs, from its accent and whether it is the inverted version.
  * ground / type are the desk and what is written on it; papers stay light in both versions.
  */
-export function tokens(accent = 'green', inverted = false) {
+export function tokens(accent = 'green', inverted = false, pattern = '', motion = '') {
   const a = ACCENTS[accent];
   if (!a) throw new Error(`unknown accent "${accent}" (${ACCENT_ORDER.join(', ')})`);
   const ground = inverted ? INK_DESK : CREAM;
@@ -85,6 +85,10 @@ export function tokens(accent = 'green', inverted = false) {
     /** stamp ink: the accent where it reads, otherwise the type colour */
     stamp: contrast(a.hex, ground) >= 3 ? a.hex : type,
     shadow: SHADOW,
+    /** what is printed faintly on the desk: grid, ledger, blueprint, grooves, snow, studs, stripes, rings, pitch, pixels */
+    pattern: String(pattern || ''),
+    /** how lines of type arrive: rise, slide, pop, drop, wipe */
+    motion: String(motion || ''),
   };
 }
 

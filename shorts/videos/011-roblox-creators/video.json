@@ -1,5 +1,14 @@
 {
   "id": "011",
+  "brand": {
+    "name": "Roblox",
+    "bg": "#1F2124",
+    "fg": "#FFFFFF"
+  },
+  "look": {
+    "pattern": "grid",
+    "motion": "pop"
+  },
   "break": {
     "at": "shared evenly"
   },

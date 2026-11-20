@@ -1,5 +1,14 @@
 {
   "id": "019",
+  "brand": {
+    "name": "Apple TV",
+    "bg": "#0B0B0C",
+    "fg": "#FFFFFF"
+  },
+  "look": {
+    "pattern": "pitch",
+    "motion": "slide"
+  },
   "break": {
     "at": "a cut of the money"
   },

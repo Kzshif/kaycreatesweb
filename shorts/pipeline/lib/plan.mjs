@@ -160,7 +160,7 @@ export const screenFigures = (plan, ignore = []) => screenStrings(plan).flatMap(
 /** The look of video n: its accent and whether it is the inverted version, unless the storyboard says otherwise. */
 export function resolveLook(id, plan = {}) {
   const auto = lookFor(num(id));
-  return { accent: plan.look?.accent || auto.accent, inverted: plan.look?.inverted ?? auto.inverted };
+  return { accent: plan.look?.accent || auto.accent, inverted: plan.look?.inverted ?? auto.inverted, pattern: plan.look?.pattern || '', motion: plan.look?.motion || '' };
 }
 /** Scene changes, in order: what the storyboard asks for, otherwise a rotation that starts differently for every video. */
 export function resolveTransitions(id, plan) {

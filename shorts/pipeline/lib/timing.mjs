@@ -116,6 +116,8 @@ export function buildProps({ plan, script, words, channel = {}, audio = null, id
     patternBreak,
     // the channel's name sits in the corner of every video; nothing is shown while it is a placeholder
     handle: filled(channel.handle) ? channel.handle.trim() : null,
+    // the brand the video is about, on a plate in its own colours (type only)
+    brand: plan.brand && plan.brand.name ? { name: String(plan.brand.name), bg: String(plan.brand.bg || '#15130F'), fg: String(plan.brand.fg || '#FFFFFF') } : null,
     cta: filled(channel.cta) && channel.ctaOnScreen !== false ? channel.cta.trim() : null,
     // the desk, drawn once per video and reused on every frame (set by the render step)
     backdrop: null,

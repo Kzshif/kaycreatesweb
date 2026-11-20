@@ -1,0 +1,214 @@
+{
+  "id": "021",
+  "break": {
+    "at": "kept growing"
+  },
+  "scenes": [
+    {
+      "type": "slam",
+      "variant": "object",
+      "beats": [
+        "to this",
+        "$70 million"
+      ],
+      "source": "Bloomberg, 2014",
+      "props": {
+        "product": "mansion",
+        "lines": [
+          "Minecraft beat Beyoncé",
+          "to this house"
+        ],
+        "tag": {
+          "label": "Beverly Hills",
+          "price": "$70M"
+        }
+      }
+    },
+    {
+      "type": "flow",
+      "variant": "arc",
+      "at": "Microsoft bought",
+      "beats": [
+        "$2.5",
+        "billion"
+      ],
+      "source": "PC Gamer, NPR, 2014",
+      "props": {
+        "from": {
+          "name": "Microsoft"
+        },
+        "to": {
+          "name": "Mojang"
+        },
+        "amount": "$2.5 billion",
+        "note": "in 2014"
+      }
+    },
+    {
+      "type": "cut",
+      "variant": "right",
+      "at": "Its creator",
+      "beats": [
+        "70% of it"
+      ],
+      "source": "GameSpot, 2014",
+      "props": {
+        "title": "Who owned Mojang",
+        "share": "70%",
+        "label": "Markus Persson"
+      }
+    },
+    {
+      "type": "count",
+      "variant": "pile",
+      "at": "His share",
+      "beats": [
+        "billion."
+      ],
+      "source": "GameSpot, 2014",
+      "props": {
+        "amount": "$1.75 billion",
+        "kicker": "His 70% share",
+        "line": "an estimate, before tax"
+      }
+    },
+    {
+      "type": "receipt",
+      "variant": "roll",
+      "at": "That December",
+      "beats": [
+        "outbid Beyoncé",
+        "Beverly Hills mansion",
+        "$70 million",
+        "record"
+      ],
+      "source": "Bloomberg, Fortune",
+      "props": {
+        "title": "The house, Dec 2014",
+        "rows": [
+          {
+            "label": "Outbid",
+            "value": "Beyoncé & Jay-Z"
+          },
+          {
+            "label": "Where",
+            "value": "Beverly Hills"
+          },
+          {
+            "label": "Price",
+            "value": "$70M",
+            "mark": true
+          }
+        ]
+      }
+    },
+    {
+      "type": "words",
+      "variant": "stack",
+      "at": "And Microsoft",
+      "beats": [
+        "kept growing"
+      ],
+      "source": "NPR, GamesRadar",
+      "props": {
+        "lines": [
+          "And Microsoft?",
+          "Minecraft kept growing."
+        ],
+        "mark": "kept growing."
+      }
+    },
+    {
+      "type": "split",
+      "variant": "cards",
+      "at": "54 million copies",
+      "beats": [
+        "Today it has",
+        "425 million"
+      ],
+      "source": "NPR, GamesRadar",
+      "props": {
+        "a": {
+          "tag": "2014",
+          "figure": "54M",
+          "line": "copies sold"
+        },
+        "b": {
+          "tag": "2026",
+          "figure": "425M+",
+          "line": "copies sold"
+        },
+        "verdict": "Nearly 8x as many"
+      }
+    },
+    {
+      "type": "product",
+      "variant": "hero",
+      "at": "By 2021",
+      "beats": [
+        "outside creators",
+        "$350 million"
+      ],
+      "source": "PC Gamer, 2021",
+      "props": {
+        "product": "box",
+        "text": "Add-ons",
+        "callouts": [
+          "Made by outside creators",
+          "$350M+ by 2021"
+        ]
+      }
+    },
+    {
+      "type": "count",
+      "variant": "rain",
+      "at": "And the Minecraft movie",
+      "beats": [
+        "worldwide"
+      ],
+      "source": "The Numbers, 2025",
+      "props": {
+        "amount": "$958 million",
+        "kicker": "The Minecraft movie",
+        "line": "worldwide box office"
+      }
+    },
+    {
+      "type": "product",
+      "variant": "hero",
+      "at": "Now Persson",
+      "beats": [
+        "selling the mansion",
+        "asking price",
+        "same $70 million"
+      ],
+      "source": "Fortune, 2026",
+      "props": {
+        "product": "mansion",
+        "callouts": [
+          "For sale",
+          "Asking price",
+          "The same $70M"
+        ]
+      }
+    },
+    {
+      "type": "stamp",
+      "variant": "under",
+      "at": "Twelve years ago",
+      "beats": [
+        "years ago"
+      ],
+      "source": "Bloomberg, Fortune",
+      "props": {
+        "lines": [
+          "Bought for $70M",
+          "in 2014"
+        ],
+        "stamp": [
+          "Same price"
+        ]
+      }
+    }
+  ]
+}

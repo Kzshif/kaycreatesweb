@@ -1,4 +1,4 @@
-export type LookSpec = { accent: string; inverted: boolean };
+export type LookSpec = { accent: string; inverted: boolean; pattern?: string; motion?: string };
 
 export type SceneData = {
   type: string;
@@ -37,6 +37,8 @@ export type ShortProps = {
   /** the mid-video pattern break */
   patternBreak: { frame: number; kind: string; frames: number } | null;
   handle: string | null;
+  /** the brand the video is about: its name on a plate in its own colours (type only, no artwork) */
+  brand?: { name: string; bg: string; fg: string } | null;
   cta: string | null;
   /** the desk, drawn once per video (paths inside public/); null draws it live */
   backdrop: string | null;

@@ -1,5 +1,14 @@
 {
   "id": "017",
+  "brand": {
+    "name": "Fortnite",
+    "bg": "#4B2A8C",
+    "fg": "#FFE34F"
+  },
+  "look": {
+    "pattern": "stripes",
+    "motion": "wipe"
+  },
   "break": {
     "at": "cut more than 1,000"
   },

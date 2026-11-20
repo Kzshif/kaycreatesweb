@@ -1,5 +1,14 @@
 {
   "id": "012",
+  "brand": {
+    "name": "AriZona",
+    "bg": "#17A39B",
+    "fg": "#FFFFFF"
+  },
+  "look": {
+    "pattern": "ledger",
+    "motion": "slide"
+  },
   "break": {
     "at": "nothing solves problems"
   },

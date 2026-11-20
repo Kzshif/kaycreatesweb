@@ -5,7 +5,7 @@ import { Audio } from '@remotion/media';
 import React, { useMemo } from 'react';
 import { AbsoluteFill, Img, staticFile, useCurrentFrame } from 'remotion';
 import { Captions } from './paper/Captions';
-import { Camera, Clip, Desk, Label, Layer, LookProvider, Materials, Scraps, Slip, Tape, clamp, drift, glide, jit, lerp, onTwos, ramp, settle, useLook } from './paper/kit';
+import { Camera, Clip, Desk, Label, Layer, LookProvider, Materials, Scraps, Slip, Tape, clamp, drift, fit, glide, headStyle, jit, lerp, onTwos, ramp, settle, useLook } from './paper/kit';
 import { Coin, Scissors } from './paper/money';
 import { Probe } from './paper/Probe';
 import { InkPad, Offcuts, Pencil } from './paper/things';
@@ -121,6 +121,22 @@ const Series: React.FC<{ handle: string | null; id: string }> = ({ handle, id })
   );
 };
 
+/**
+ * The brand the video is about, as a plate in its own colours, top right, level with the series
+ * label: type only, no logo artwork. It is slapped on in the first frames and then stays put.
+ */
+const BrandPlate: React.FC<{ brand: { name: string; bg: string; fg: string }; frame: number }> = ({ brand, frame }) => {
+  const k = settle(ramp(frame, 3, 9));
+  const size = Math.min(46, fit([brand.name], 'headline', 270, 46));
+  return (
+    <div style={{ position: 'absolute', right: 176, top: 232, transform: `rotate(${(2.5 - 6 * (1 - k)).toFixed(2)}deg) scale(${(1.35 - 0.35 * k).toFixed(3)})`, transformOrigin: '100% 50%', opacity: Math.min(1, k * 2) }}>
+      <div style={{ background: brand.bg, padding: '8px 20px 10px', borderRadius: 12, boxShadow: '0 3px 0 rgba(0,0,0,0.18), 0 8px 18px rgba(0,0,0,0.16)' }}>
+        <div data-box style={{ ...headStyle(size, brand.fg), whiteSpace: 'nowrap', lineHeight: 1 }}>{brand.name}</div>
+      </div>
+    </div>
+  );
+};
+
 export const Short: React.FC<ShortProps> = (props) => {
   const real = useCurrentFrame();
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -132,7 +148,7 @@ export const Short: React.FC<ShortProps> = (props) => {
   if (props.only === 'backdrop') {
     return (
       <Materials>
-        <LookProvider value={tokens(props.look.accent, props.look.inverted)}>
+        <LookProvider value={tokens(props.look.accent, props.look.inverted, props.look.pattern, props.look.motion)}>
           <AbsoluteFill>
             <Desk />
             <Scraps seed={seed} />
@@ -148,7 +164,7 @@ export const Short: React.FC<ShortProps> = (props) => {
   // freeze: the picture holds on the break, then catches up with the sound
   const frame = inBreak && pb.kind === 'freeze' ? pb.frame : real;
   const flipped = inBreak && pb.kind === 'invert';
-  const look = tokens(props.look.accent, props.look.inverted !== flipped);
+  const look = tokens(props.look.accent, props.look.inverted !== flipped, props.look.pattern, props.look.motion);
   const backdrop = flipped ? props.backdropAlt : props.backdrop;
 
   const d = drift(frame, seed);
@@ -261,6 +277,7 @@ export const Short: React.FC<ShortProps> = (props) => {
           {inBreak && pb.kind === 'freeze' ? <AbsoluteFill style={{ border: `16px solid ${look.type}`, pointerEvents: 'none' }} /> : null}
           {inBreak && pb.kind !== 'invert' && real - pb.frame < 3 ? <AbsoluteFill style={{ background: BRIGHT, opacity: 0.5 * (1 - (real - pb.frame) / 3), pointerEvents: 'none' }} /> : null}
           <Series handle={props.handle} id={props.id} />
+          {props.brand ? <BrandPlate brand={props.brand} frame={real} /> : null}
           {perf.noCaptions ? null : <Captions pages={props.captions} />}
           {props.audio ? <Audio src={staticFile(props.audio)} /> : null}
           {props.probe ? <Probe /> : null}

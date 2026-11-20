@@ -1,5 +1,14 @@
 {
   "id": "020",
+  "brand": {
+    "name": "Nintendo",
+    "bg": "#E60012",
+    "fg": "#FFFFFF"
+  },
+  "look": {
+    "pattern": "pixels",
+    "motion": "pop"
+  },
   "break": {
     "at": "2.67 million"
   },

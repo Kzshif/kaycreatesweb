@@ -1,5 +1,14 @@
 {
   "id": "014",
+  "brand": {
+    "name": "Spotify",
+    "bg": "#1DB954",
+    "fg": "#0B0B0B"
+  },
+  "look": {
+    "pattern": "grooves",
+    "motion": "drop"
+  },
   "break": {
     "at": "comes Wrapped"
   },

@@ -1,5 +1,14 @@
 {
   "id": "016",
+  "brand": {
+    "name": "LEGO",
+    "bg": "#E3000B",
+    "fg": "#FFD500"
+  },
+  "look": {
+    "pattern": "studs",
+    "motion": "slide"
+  },
   "break": {
     "at": "isn't even on"
   },

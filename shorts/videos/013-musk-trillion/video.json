@@ -1,5 +1,14 @@
 {
   "id": "013",
+  "brand": {
+    "name": "SpaceX",
+    "bg": "#0B0B0C",
+    "fg": "#FFFFFF"
+  },
+  "look": {
+    "pattern": "blueprint",
+    "motion": "wipe"
+  },
   "break": {
     "at": "dropped below a trillion"
   },

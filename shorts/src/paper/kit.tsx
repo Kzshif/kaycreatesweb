@@ -8,7 +8,7 @@ import bricolage from '@fontsource-variable/bricolage-grotesque/files/bricolage-
 import fraunces from '@fontsource-variable/fraunces/files/fraunces-latin-full-normal.woff2';
 import dmMono400 from '@fontsource/dm-mono/files/dm-mono-latin-400-normal.woff2';
 import dmMono500 from '@fontsource/dm-mono/files/dm-mono-latin-500-normal.woff2';
-import { BRIGHT, CARD, CREAM, FRAME, INK_DESK, MANILA, MOTION, SHADOW, TYPE, mix, rgba, tokens } from '../shared/paper.mjs';
+import { BRIGHT, CARD, CREAM, FRAME, INK, INK_DESK, KRAFT, MANILA, MOTION, SHADOW, TYPE, mix, rgba, tokens } from '../shared/paper.mjs';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type Tokens = Record<string, any>;
@@ -298,11 +298,150 @@ export const Desk: React.FC = () => {
   return (
     <AbsoluteFill style={{ background: t.ground }}>
       <AbsoluteFill style={{ backgroundImage: `url(${staticFile(dark ? GRAIN_DARK : GRAIN)})`, backgroundSize: '512px 512px', mixBlendMode: dark ? 'screen' : 'multiply', opacity: dark ? 0.9 : 1 }} />
+      {t.pattern ? <DeskPattern kind={t.pattern} /> : null}
       <AbsoluteFill style={{ background: `radial-gradient(ellipse 95% 62% at 22% 13%, ${dark ? 'rgba(255, 236, 200, 0.13)' : 'rgba(255, 252, 240, 0.62)'} 0%, rgba(255, 252, 240, 0) 72%)` }} />
       <AbsoluteFill style={{ background: `radial-gradient(ellipse 118% 96% at 34% 30%, rgba(0, 0, 0, 0) 48%, ${dark ? 'rgba(0, 0, 0, 0.5)' : rgba(SHADOW, 0.2)} 100%)`, mixBlendMode: 'multiply' }} />
     </AbsoluteFill>
   );
 };
+/**
+ * Something printed faintly on the desk paper, chosen per video to suit the story: graph paper for
+ * a block game, a ledger for prices, a blueprint for rockets, record grooves for music, snow for
+ * Christmas, studs for bricks, stripes, coffee rings, pitch lines, pixels. Shapes only, no text.
+ */
+const DeskPattern: React.FC<{ kind: string }> = ({ kind }) => {
+  const t = useLook();
+  const ink = t.inverted ? CREAM : INK;
+  const W = FRAME.width;
+  const H = FRAME.height;
+  const r = (i: number, k: number) => hash(i * 31 + 7, k);
+  const body = (() => {
+    switch (kind) {
+      case 'grid':
+        return (
+          <>
+            <defs>
+              <pattern id="pg" width={54} height={54} patternUnits="userSpaceOnUse">
+                <path d="M54 0 H0 V54" fill="none" stroke={ink} strokeWidth={2} />
+              </pattern>
+              <pattern id="pg5" width={270} height={270} patternUnits="userSpaceOnUse">
+                <path d="M270 0 H0 V270" fill="none" stroke={ink} strokeWidth={3.5} />
+              </pattern>
+            </defs>
+            <rect width={W} height={H} fill="url(#pg)" opacity={0.07} />
+            <rect width={W} height={H} fill="url(#pg5)" opacity={0.08} />
+          </>
+        );
+      case 'ledger':
+        return (
+          <>
+            <defs>
+              <pattern id="pl" width={W} height={48} patternUnits="userSpaceOnUse">
+                <path d={`M0 47 H${W}`} stroke={ink} strokeWidth={2} />
+              </pattern>
+            </defs>
+            <rect width={W} height={H} fill="url(#pl)" opacity={0.08} />
+            <path d={`M64 0 V${H} M70 0 V${H}`} stroke={t.accent} strokeWidth={2.5} opacity={0.35} />
+          </>
+        );
+      case 'blueprint':
+        return (
+          <>
+            <defs>
+              <pattern id="pb" width={40} height={40} patternUnits="userSpaceOnUse">
+                <circle cx={20} cy={20} r={2.4} fill={ink} />
+              </pattern>
+            </defs>
+            <rect width={W} height={H} fill="url(#pb)" opacity={0.12} />
+            {[[160, 180], [920, 520], [140, 1180], [940, 1640]].map(([x, y], i) => (
+              <path key={i} d={`M${x - 26} ${y} H${x + 26} M${x} ${y - 26} V${y + 26}`} stroke={ink} strokeWidth={3} opacity={0.18} />
+            ))}
+          </>
+        );
+      case 'grooves':
+        return (
+          <g opacity={0.07}>
+            {Array.from({ length: 34 }, (_, i) => (
+              <circle key={i} cx={W * 0.5} cy={H * 0.48} r={90 + i * 34} fill="none" stroke={ink} strokeWidth={i % 4 === 0 ? 3 : 1.6} />
+            ))}
+          </g>
+        );
+      case 'snow':
+        return (
+          <g opacity={0.14}>
+            {Array.from({ length: 64 }, (_, i) => {
+              const x = r(i, 1) * W;
+              const y = r(i, 2) * H;
+              const s = 7 + r(i, 3) * 12;
+              return <path key={i} d={`M${x - s} ${y} H${x + s} M${x} ${y - s} V${y + s} M${x - s * 0.7} ${y - s * 0.7} L${x + s * 0.7} ${y + s * 0.7} M${x - s * 0.7} ${y + s * 0.7} L${x + s * 0.7} ${y - s * 0.7}`} stroke={i % 5 === 0 ? t.accent : ink} strokeWidth={2.4} strokeLinecap="round" />;
+            })}
+          </g>
+        );
+      case 'studs':
+        return (
+          <>
+            <defs>
+              <pattern id="ps" width={72} height={72} patternUnits="userSpaceOnUse">
+                <circle cx={36} cy={36} r={17} fill="none" stroke={ink} strokeWidth={3} />
+                <circle cx={33} cy={33} r={9} fill="none" stroke={ink} strokeWidth={1.5} />
+              </pattern>
+            </defs>
+            <rect width={W} height={H} fill="url(#ps)" opacity={0.07} />
+          </>
+        );
+      case 'stripes':
+        return (
+          <>
+            <defs>
+              <pattern id="pt" width={56} height={56} patternUnits="userSpaceOnUse" patternTransform="rotate(-30)">
+                <rect width={18} height={56} fill={t.accent} />
+              </pattern>
+            </defs>
+            <rect width={W} height={H} fill="url(#pt)" opacity={0.07} />
+          </>
+        );
+      case 'rings':
+        return (
+          <g fill="none" stroke={KRAFT} strokeLinecap="round">
+            {[[860, 330, 118], [190, 1240, 104], [930, 1560, 126]].map(([x, y, rr], i) => (
+              <g key={i} opacity={0.32}>
+                <circle cx={x} cy={y} r={rr} strokeWidth={9} strokeDasharray={`${rr * 4.6} ${rr * 0.6} ${rr * 0.8} ${rr * 0.3}`} />
+                <circle cx={x + 3} cy={y + 2} r={rr - 9} strokeWidth={3} opacity={0.6} />
+              </g>
+            ))}
+          </g>
+        );
+      case 'pitch':
+        return (
+          <g fill="none" stroke={ink} strokeWidth={4} opacity={0.08}>
+            <path d={`M0 ${H * 0.5} H${W}`} />
+            <circle cx={W / 2} cy={H * 0.5} r={210} />
+            <circle cx={W / 2} cy={H * 0.5} r={8} fill={ink} />
+            <path d={`M${W / 2 - 330} 0 V250 H${W / 2 + 330} V0 M${W / 2 - 150} 0 V96 H${W / 2 + 150} V0`} />
+            <path d={`M${W / 2 - 330} ${H} V${H - 250} H${W / 2 + 330} V${H} M${W / 2 - 150} ${H} V${H - 96} H${W / 2 + 150} V${H}`} />
+          </g>
+        );
+      case 'pixels':
+        return (
+          <g>
+            {Array.from({ length: 46 }, (_, i) => {
+              const cx = Math.floor((r(i, 1) * W) / 24) * 24;
+              const cy = Math.floor((r(i, 2) * H) / 24) * 24;
+              return <rect key={i} x={cx} y={cy} width={24} height={24} fill={i % 3 === 0 ? t.accent : ink} opacity={i % 3 === 0 ? 0.16 : 0.07} />;
+            })}
+          </g>
+        );
+      default:
+        return null;
+    }
+  })();
+  return body ? (
+    <svg width={W} height={H} style={{ position: 'absolute', inset: 0, mixBlendMode: t.inverted ? 'screen' : 'multiply' }}>
+      {body}
+    </svg>
+  ) : null;
+};
+
 /** The same light falling on whatever lies on the desk. Goes above the objects, below the captions. */
 export const Light: React.FC = () => {
   const t = useLook();

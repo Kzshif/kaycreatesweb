@@ -1,5 +1,14 @@
 {
   "id": "015",
+  "brand": {
+    "name": "Sony Music",
+    "bg": "#111111",
+    "fg": "#FFFFFF"
+  },
+  "look": {
+    "pattern": "snow",
+    "motion": "pop"
+  },
   "break": {
     "at": "kept about"
   },

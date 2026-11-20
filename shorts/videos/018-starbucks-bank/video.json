@@ -1,5 +1,14 @@
 {
   "id": "018",
+  "brand": {
+    "name": "Starbucks",
+    "bg": "#00704A",
+    "fg": "#FFFFFF"
+  },
+  "look": {
+    "pattern": "rings",
+    "motion": "drop"
+  },
   "break": {
     "at": "never spent at all"
   },

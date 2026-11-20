@@ -114,6 +114,66 @@ const Plot: React.FC<P> = ({ seed = 1 }) => {
   );
 };
 
+/**
+ * A modern hillside mansion: a long glass ground floor, a cantilevered upper floor with a ribbon
+ * window, flat roof slabs, a pool on the terrace and a palm behind. No signs, no real house.
+ */
+const Mansion: React.FC<P> = ({ seed = 1 }) => {
+  const t = useLook();
+  const wall = mix(BRIGHT, MANILA, 0.18);
+  const fronds = [-150, -112, -70, -30, 8, 44].map((deg, k) => {
+    const a = (deg * Math.PI) / 180;
+    const len = k === 0 || k === 5 ? 92 : 112;
+    const ex = 512 + Math.cos(a) * len;
+    const ey = 78 + Math.sin(a) * len + 26;
+    const mx = 512 + Math.cos(a) * len * 0.55;
+    const my = 78 + Math.sin(a) * len * 0.55 - 16;
+    return `M512 78 Q${(mx - 10).toFixed(1)} ${(my - 14).toFixed(1)} ${ex.toFixed(1)} ${ey.toFixed(1)} Q${(mx + 8).toFixed(1)} ${(my + 18).toFixed(1)} 512 86 Z`;
+  });
+  const glass = (x: number, y: number, w: number, h: number, key: number) => (
+    <div key={key} style={{ position: 'absolute', left: x, top: y, width: w, height: h, background: t.accentWash, border: `4px solid ${t.ink}`, overflow: 'hidden' }}>
+      <div style={{ position: 'absolute', left: w * 0.18, top: -20, width: 7, height: h + 40, background: rgba(BRIGHT, 0.7), transform: 'rotate(28deg)' }} />
+      <div style={{ position: 'absolute', left: w * 0.32, top: -20, width: 3, height: h + 40, background: rgba(BRIGHT, 0.5), transform: 'rotate(28deg)' }} />
+    </div>
+  );
+  return (
+    <div style={{ position: 'absolute', width: 600, height: 440 }}>
+      <div style={{ position: 'absolute', inset: 0, filter: shadowOf(0.3) }}>
+        <svg width={600} height={440} style={{ position: 'absolute', inset: 0, overflow: 'visible' }}>
+          <path d="M498 372 C502 280 500 170 512 82" fill="none" stroke={mix(KRAFT, t.ink, 0.25)} strokeWidth={15} strokeLinecap="round" />
+          {[300, 250, 200, 150, 110].map((y) => (
+            <path key={y} d={`M${496 + (372 - y) * 0.05} ${y} l14 -6`} stroke={rgba(t.ink, 0.35)} strokeWidth={3} />
+          ))}
+          {fronds.map((d, k) => (
+            <path key={k} d={d} fill={k % 2 ? t.accentDeep : t.accent} stroke={rgba(t.ink, 0.35)} strokeWidth={2} />
+          ))}
+        </svg>
+      </div>
+      <Cut w={600} h={440} d={poly([[0, 364], [600, 364], [600, 440], [0, 440]] as Pt[], seed + 5)} color={MANILA} seed={seed + 5} lift={0.12}>
+        <div style={{ position: 'absolute', left: 64, top: 384, width: 330, height: 40, background: t.accentWash, border: `4px solid ${t.ink}`, borderRadius: 6 }}>
+          <svg width={330} height={40} style={{ position: 'absolute', inset: 0 }}>
+            <path d="M24 14 q18 -7 36 0 t36 0 M140 26 q18 -7 36 0 t36 0 M238 12 q14 -6 28 0 t28 0" fill="none" stroke={rgba(BRIGHT, 0.85)} strokeWidth={4} strokeLinecap="round" />
+          </svg>
+        </div>
+      </Cut>
+      <Cut w={600} h={440} d={poly([[32, 218], [568, 218], [568, 368], [32, 368]] as Pt[], seed)} color={wall} seed={seed} lift={0.4}>
+        {[0, 1, 2, 3].map((k) => glass(66 + k * 118, 244, 104, 124, k))}
+        <div style={{ position: 'absolute', left: 32, top: 218, width: 536, height: 10, background: rgba(t.ink, 0.12) }} />
+      </Cut>
+      <Cut w={600} h={440} d={poly([[148, 116], [506, 116], [506, 212], [148, 212]] as Pt[], seed + 1)} color={BRIGHT} seed={seed + 1} lift={0.44}>
+        <div style={{ position: 'absolute', left: 172, top: 140, width: 310, height: 50, background: t.accentWash, border: `4px solid ${t.ink}` }}>
+          {[1, 2, 3, 4].map((k) => (
+            <div key={k} style={{ position: 'absolute', left: k * 62 - 2, top: 0, width: 4, height: 42, background: t.ink }} />
+          ))}
+          <div style={{ position: 'absolute', left: 40, top: -10, width: 6, height: 70, background: rgba(BRIGHT, 0.65), transform: 'rotate(34deg)' }} />
+        </div>
+      </Cut>
+      <Cut w={600} h={440} d={poly([[130, 100], [526, 100], [526, 120], [130, 120]] as Pt[], seed + 2)} color={t.ink} dark seed={seed + 2} lift={0.5} />
+      <Cut w={600} h={440} d={poly([[14, 204], [586, 204], [586, 224], [14, 224]] as Pt[], seed + 3)} color={t.ink} dark seed={seed + 3} lift={0.5} />
+    </div>
+  );
+};
+
 /** A burger, one layer of paper at a time. */
 const Burger: React.FC<P> = ({ seed = 1 }) => {
   const t = useLook();
@@ -476,7 +536,7 @@ const Ball: React.FC<P> = ({ seed = 1 }) => {
   );
 };
 
-const BASE: Record<string, [number, number]> = { card: [420, 265], trolley: [480, 440], box: [440, 370], store: [560, 470], fries: [520, 640], burger: [440, 380], plot: [560, 420], phone: [350, 700], controller: [520, 340], bar: [520, 260], ticket: [540, 250], record: [520, 440], tradingcard: [300, 420], sprout: [360, 460], can: [300, 520], rocket: [300, 600], brick: [560, 380], cup: [340, 520], ball: [400, 400] };
+const BASE: Record<string, [number, number]> = { card: [420, 265], trolley: [480, 440], box: [440, 370], store: [560, 470], fries: [520, 640], burger: [440, 380], plot: [560, 420], phone: [350, 700], controller: [520, 340], bar: [520, 260], ticket: [540, 250], record: [520, 440], tradingcard: [300, 420], sprout: [360, 460], can: [300, 520], rocket: [300, 600], brick: [560, 380], cup: [340, 520], ball: [400, 400], mansion: [600, 440] };
 /** Natural height of a product drawn `w` wide. */
 export const productHeight = (name: string, w: number): number => {
   const [bw, bh] = BASE[name] || [400, 400];
@@ -524,6 +584,8 @@ export const Product: React.FC<{ name: string; w: number; seed?: number; text?: 
       <Cup seed={seed} text={text} />
     ) : name === 'ball' ? (
       <Ball seed={seed} />
+    ) : name === 'mansion' ? (
+      <Mansion seed={seed} />
     ) : (
       // for the phone, `price` is the badge on the top result ("DEFAULT"), shown only when given
       <Phone w={350} seed={seed} query={text || 'pizza near me'} badge={price || ''} />

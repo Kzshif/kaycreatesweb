@@ -47,11 +47,25 @@ export const Lines: React.FC<{ lines: string[]; frame: number; at: number; x: nu
     <>
       {lines.map((l, i) => {
         const r = rise(frame, at + i * stagger, 36, 8);
-        return r.on ? (
-          <div key={i} style={{ ...headStyle(size, color || t.type), position: 'absolute', left: x, width: align === 'center' ? width : undefined, textAlign: align, top: y + i * size * LEAD + r.y, opacity: r.opacity }}>
+        if (!r.on) return null;
+        // the video's own entrance for type: the resting place is the same whichever is used
+        const k = glide(ramp(frame, at + i * stagger, t.motion === 'pop' ? 7 : 9));
+        const m = t.motion;
+        const move: React.CSSProperties =
+          m === 'slide'
+            ? { transform: `translateX(${(-70 * (1 - k)).toFixed(1)}px)`, opacity: Math.min(1, k * 1.6) }
+            : m === 'pop'
+              ? { transform: `scale(${(0.55 + 0.45 * k + 0.08 * Math.sin(Math.PI * k)).toFixed(3)})`, transformOrigin: align === 'center' ? '50% 60%' : '0% 60%', opacity: Math.min(1, k * 2) }
+              : m === 'drop'
+                ? { transform: `translateY(${(-44 * (1 - k)).toFixed(1)}px)`, opacity: Math.min(1, k * 1.6) }
+                : m === 'wipe'
+                  ? { clipPath: `inset(-20% ${(100 * (1 - k)).toFixed(1)}% -20% 0)` }
+                  : { transform: `translateY(${r.y}px)`, opacity: r.opacity };
+        return (
+          <div key={i} style={{ ...headStyle(size, color || t.type), position: 'absolute', left: x, width: align === 'center' ? width : undefined, textAlign: align, top: y + i * size * LEAD, ...move }}>
             {l}
           </div>
-        ) : null;
+        );
       })}
     </>
   );
