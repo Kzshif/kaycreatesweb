@@ -131,7 +131,7 @@ const BrandPlate: React.FC<{ brand: { name: string; bg: string; fg: string }; fr
   return (
     <div style={{ position: 'absolute', right: 176, top: 232, transform: `rotate(${(2.5 - 6 * (1 - k)).toFixed(2)}deg) scale(${(1.35 - 0.35 * k).toFixed(3)})`, transformOrigin: '100% 50%', opacity: Math.min(1, k * 2) }}>
       <div style={{ background: brand.bg, padding: '8px 20px 10px', borderRadius: 12, boxShadow: '0 3px 0 rgba(0,0,0,0.18), 0 8px 18px rgba(0,0,0,0.16)' }}>
-        <div data-box style={{ ...headStyle(size, brand.fg), whiteSpace: 'nowrap', lineHeight: 1 }}>{brand.name}</div>
+        <div style={{ ...headStyle(size, brand.fg), whiteSpace: 'nowrap', lineHeight: 1.1 }}>{brand.name}</div>
       </div>
     </div>
   );
