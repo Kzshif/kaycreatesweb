@@ -326,7 +326,7 @@ test('timing: scenes follow the words, cadence is checked, the break lands on it
   const at = findPhrase(script.words.map(norm), 'Nobody has to');
   assert.ok(Math.abs(p.patternBreak.frame - Math.round(words[at].start * 30)) <= 3);
   assert.ok(['invert', 'zoom', 'freeze'].includes(p.patternBreak.kind));
-  assert.deepEqual(p.look, { accent: 'green', inverted: false });
+  assert.deepEqual(p.look, { accent: 'green', inverted: false, pattern: '', motion: '' });
   assert.ok(p.captions.every((c) => c.words.length >= 1 && c.words.length <= 4));
   assert.equal(p.handle, null); // placeholders in channel.json never reach the screen
   assert.equal(buildProps({ plan: PLAN, script, words, channel: { handle: '[channel name]', cta: '[e.g. follow]' } }).props.cta, null);
