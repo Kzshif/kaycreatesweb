@@ -122,7 +122,7 @@ const Captions: React.FC<{ pages: CaptionPage[]; frame: number; layout: 'band' |
         const pop = on ? interpolate(frame - w.from, [0, 3, 6], [1.18, 1.06, 1], { extrapolateRight: 'clamp' }) : 1;
         const shown = frame >= w.from;
         return (
-          <span key={i} style={{ ...headStyle(92, on ? '#FFE135' : '#FFFFFF'), ...stroke(11), display: 'inline-block', margin: '0 12px', textTransform: 'uppercase', transform: `scale(${pop})`, opacity: shown ? 1 : 0.55 }}>
+          <span key={i} style={{ ...headStyle(104, on ? '#FFE135' : '#FFFFFF'), ...stroke(14), textShadow: '0 6px 18px rgba(0,0,0,0.65)', display: 'inline-block', margin: '0 12px', textTransform: 'uppercase', lineHeight: 1.05, transform: `scale(${pop})`, opacity: shown ? 1 : 1 }}>
             {w.t}
           </span>
         );
@@ -203,7 +203,7 @@ export const Gameplay: React.FC<GameplayProps> = (p) => {
         <Captions pages={p.captions} frame={frame} layout={p.layout} />
         {p.watermark ? (
           <div style={{ position: 'absolute', left: 0, right: 0, top: 1458, display: 'flex', justifyContent: 'center', opacity: 0.92 }}>
-            <Watermark text={p.watermark} size={40} />
+            <Watermark text={p.watermark} size={46} />
           </div>
         ) : null}
         {flash > 0 ? <AbsoluteFill style={{ background: RED, opacity: flash, mixBlendMode: 'screen' }} /> : null}

@@ -12,7 +12,7 @@ import { execFileSync } from 'node:child_process';
 import fs from 'node:fs';
 import path from 'node:path';
 import { common, renderVideo, getBundle } from './lib/render.mjs';
-import { buildCaptions } from './lib/captions.mjs';
+import { buildCaptions, displayWord } from './lib/captions.mjs';
 import { parseScript } from './lib/script.mjs';
 import { spokenForm } from './lib/text.mjs';
 import { ASSETS, PYTHON, ROOT } from './lib/paths.mjs';
@@ -154,7 +154,7 @@ async function thumb(id) {
 }
 
 // ------------------------------------------------------------------- make
-async function make(id, { layoutOnly = false, voiceOnly = false } = {}) {
+async function make(id, { layoutOnly = false, voiceOnly = false, pagesOnly = false } = {}) {
   const v = findVideo(id);
   fs.mkdirSync(v.work, { recursive: true });
   fs.mkdirSync(v.out, { recursive: true });
@@ -194,8 +194,77 @@ async function make(id, { layoutOnly = false, voiceOnly = false } = {}) {
   // a beat of picture and music before the first word, so nobody swipes in on a half-heard line
   const lead = Math.round(+(m.lead ?? ch.lead ?? 1) * FPS);
   const total = f(secs + 0.6) + lead;
-  const pages = buildCaptions(t.words).map((p) => ({ from: lead + f(p.start), to: lead + Math.max(f(p.start) + 2, f(p.end)), words: p.words.map((w) => ({ t: w.t, from: lead + f(w.start), to: lead + Math.max(f(w.start) + 1, f(w.end)) })) }));
+  // Subtitle pages: at most three words (four when a pair must stay together), broken at full
+  // stops and commas, never straight after a word that leans on the next ("GTA | 6", "to | Vice")
+  // and never between a number and its unit ("90 | million").
+  const leans = (w) => /^(gta|a|an|the|of|to|and|for|in|on|out|my|your|is|its|it's|than|over|just)$/i.test(String(w).replace(/[^A-Za-z']/g, ''));
+  const unit = (w) => /^(million|billion|thousand|years?|dollars?|percent|of)$/i.test(String(w || '').replace(/[^A-Za-z]/g, ''));
+  // pairs that read as one thing and stay on the same page
+  const KEEP = /^(gta \d|download code|physical copy|vice city|ultimate edition|standard edition|driving simulator|marketing campaign|bad news|big games|bonus cars|extra shops|fake florida|first trailer|three reasons|most overhyped|game ever|ten dollars|change my|my mind|boxed copy|a disc|a box|a game|the map|a remix)$/i;
+  const norm = (w) => String(w || '').toLowerCase().replace(/[^a-z0-9$-]/g, '');
+  // best split of a clause into pages of 1-4 words: short pages, no break inside a pair, few singles
+  const chunk = (ws) => {
+    const n = ws.length;
+    const bad = (c) => leans(ws[c - 1].w) || (/\d/.test(ws[c - 1].w) && unit(ws[c].w)) || KEEP.test(`${norm(ws[c - 1].w)} ${norm(ws[c].w)}`);
+    const pageCost = (a, b) => {
+      const len = b - a;
+      const chars = ws.slice(a, b).map((x) => x.w).join(' ').length;
+      if (len === 1) return n === 1 ? 0 : 4;
+      if (len <= 3) return chars > 24 ? 1.5 : 0;
+      if (len === 4) return chars > 22 ? 2.5 : 0.8;
+      return Infinity;
+    };
+    const best = [0];
+    const from = [0];
+    for (let j = 1; j <= n; j++) {
+      best[j] = Infinity;
+      for (let L = 1; L <= 4 && L <= j; L++) {
+        const a = j - L;
+        const c = best[a] + pageCost(a, j) + (a > 0 && bad(a) ? 10 : 0) + 0.3;
+        if (c < best[j]) {
+          best[j] = c;
+          from[j] = a;
+        }
+      }
+    }
+    const out = [];
+    for (let j = n; j > 0; j = from[j]) out.unshift(ws.slice(from[j], j));
+    return out;
+  };
+  const pagesFor = (words) => {
+    const clauses = [];
+    let cur = [];
+    for (const w of words) {
+      cur.push(w);
+      if (/[.!?,;:]["')\]]*$/.test(w.w)) {
+        clauses.push(cur);
+        cur = [];
+      }
+    }
+    if (cur.length) clauses.push(cur);
+    // a one-word clause ("guns,") joins the next one so nothing flashes up alone
+    const merged = [];
+    for (let k = 0; k < clauses.length; k++) {
+      if (clauses[k].length === 1 && k + 1 < clauses.length && !/[.!?]$/.test(clauses[k][0].w)) clauses[k + 1] = [...clauses[k], ...clauses[k + 1]];
+      else merged.push(clauses[k]);
+    }
+    const out = merged.flatMap(chunk).map((ws) => ({ start: ws[0].start, end: ws[ws.length - 1].end, words: ws.map((x) => ({ t: displayWord(x.w), start: x.start, end: x.end })).filter((x) => x.t) }));
+    // hold each page until the next begins when the gap is short, so captions never flicker
+    for (let k = 0; k < out.length; k++) {
+      const nx = out[k + 1];
+      if (nx) {
+        const gap = nx.start - out[k].end;
+        out[k].end = gap < 0.45 ? nx.start : out[k].end + 0.22;
+      } else out[k].end += 0.3;
+    }
+    return out.filter((p) => p.words.length);
+  };
+  const pages = pagesFor(t.words).map((p) => ({ from: lead + f(p.start), to: lead + Math.max(f(p.start) + 2, f(p.end)), words: p.words.map((w) => ({ t: w.t, from: lead + f(w.start), to: lead + Math.max(f(w.start) + 1, f(w.end)) })) }));
 
+  if (pagesOnly) {
+    log(`  pages    ${pages.map((p) => p.words.map((w) => w.t).join(' ')).join(' / ')}`);
+    return;
+  }
   // the stamp lands on a word: "Overrated @ overrated"
   let stamp = null;
   if (m.stamp) {
@@ -289,6 +358,7 @@ try {
   else if (cmd === 'make') await make(arg);
   else if (cmd === 'voice') await make(arg, { voiceOnly: true });
   else if (cmd === 'thumb') await thumb(arg);
+  else if (cmd === 'pages') await make(arg, { pagesOnly: true });
   else if (cmd === 'layout') await make(arg, { layoutOnly: true });
   else log(fs.readFileSync(new URL(import.meta.url), 'utf8').split('\n').slice(1, 11).join('\n'));
 } catch (e) {

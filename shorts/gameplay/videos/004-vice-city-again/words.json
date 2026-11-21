@@ -1,300 +1,342 @@
 {
  "engine": "faster-whisper small.en (word_timestamps)",
- "pass_used": "glossary prompt",
+ "pass_used": "no prompt",
  "unheard_words": 0,
- "duration": 22.913,
- "match": 0.9318,
- "heard": "GTA 6 is a 24-year-old idea. Rockstar already took us to Vai City. In 2002. Now it's back. Same city. Better graphics. We waited 13 years for a remix. And you still spend ages just driving. next gen or nostalgia honestly overrated change my mind",
+ "duration": 26.409,
+ "match": 0.9815,
+ "heard": "GTA 6 is a 24-year-old idea, and nobody wants to say it. Rockstar already took us to Vai City. In 2002. Now it's back. Same city. Better graphics. Eighty dollars. We waited 13 years for a remix. And you still spend ages just driving. That's not next-gen. That's nostalgia. Honestly. Overrated. Change my mind.",
  "mismatches": [
-  {
-   "script": "twenty-four-year-old",
-   "heard": "24-year-old",
-   "at": 1.1
-  },
   {
    "script": "Vice",
    "heard": "Vai",
-   "at": 4.42
-  },
-  {
-   "script": "Next-gen?",
-   "heard": "next gen",
-   "at": 15.86
+   "at": 5.68
   }
  ],
- "figure_mismatches": [
-  {
-   "script": "twenty-four-year-old",
-   "heard": "24-year-old",
-   "at": 1.1
-  }
- ],
- "low_confidence": [
-  "next"
- ],
+ "figure_mismatches": [],
+ "low_confidence": [],
  "words": [
   {
    "w": "GTA",
    "start": 0.0,
-   "end": 0.36,
+   "end": 0.34,
    "matched": true
   },
   {
    "w": "6",
-   "start": 0.36,
-   "end": 0.72,
+   "start": 0.34,
+   "end": 0.7,
    "matched": true
   },
   {
    "w": "is",
-   "start": 0.72,
-   "end": 0.98,
+   "start": 0.7,
+   "end": 0.9,
    "matched": true
   },
   {
    "w": "a",
-   "start": 0.98,
-   "end": 1.1,
+   "start": 0.9,
+   "end": 1.02,
    "matched": true
   },
   {
-   "w": "twenty-four-year-old",
-   "start": 1.1,
-   "end": 1.96,
-   "matched": false
-  },
-  {
-   "w": "idea.",
-   "start": 1.96,
-   "end": 2.32,
+   "w": "24-year-old",
+   "start": 1.02,
+   "end": 1.9,
    "matched": true
   },
   {
-   "w": "Rockstar",
-   "start": 3.32,
-   "end": 3.56,
+   "w": "idea,",
+   "start": 1.9,
+   "end": 2.2,
    "matched": true
   },
   {
-   "w": "already",
-   "start": 3.56,
-   "end": 3.82,
+   "w": "and",
+   "start": 2.42,
+   "end": 2.62,
    "matched": true
   },
   {
-   "w": "took",
-   "start": 3.82,
-   "end": 4.08,
+   "w": "nobody",
+   "start": 2.62,
+   "end": 2.8,
    "matched": true
   },
   {
-   "w": "us",
-   "start": 4.08,
-   "end": 4.26,
+   "w": "wants",
+   "start": 2.8,
+   "end": 3.1,
    "matched": true
   },
   {
    "w": "to",
-   "start": 4.26,
-   "end": 4.42,
+   "start": 3.1,
+   "end": 3.28,
+   "matched": true
+  },
+  {
+   "w": "say",
+   "start": 3.28,
+   "end": 3.46,
+   "matched": true
+  },
+  {
+   "w": "it.",
+   "start": 3.46,
+   "end": 3.94,
+   "matched": true
+  },
+  {
+   "w": "Rockstar",
+   "start": 4.58,
+   "end": 4.82,
+   "matched": true
+  },
+  {
+   "w": "already",
+   "start": 4.82,
+   "end": 5.08,
+   "matched": true
+  },
+  {
+   "w": "took",
+   "start": 5.08,
+   "end": 5.34,
+   "matched": true
+  },
+  {
+   "w": "us",
+   "start": 5.34,
+   "end": 5.52,
+   "matched": true
+  },
+  {
+   "w": "to",
+   "start": 5.52,
+   "end": 5.68,
    "matched": true
   },
   {
    "w": "Vice",
-   "start": 4.42,
-   "end": 4.6,
+   "start": 5.68,
+   "end": 5.84,
    "matched": false
   },
   {
    "w": "City.",
-   "start": 4.6,
-   "end": 4.84,
+   "start": 5.84,
+   "end": 6.1,
    "matched": true
   },
   {
    "w": "In",
-   "start": 5.78,
-   "end": 5.86,
+   "start": 7.0,
+   "end": 7.12,
    "matched": true
   },
   {
    "w": "2002.",
-   "start": 5.86,
-   "end": 6.66,
+   "start": 7.12,
+   "end": 7.74,
    "matched": true
   },
   {
    "w": "Now",
-   "start": 7.78,
-   "end": 7.92,
+   "start": 9.04,
+   "end": 9.18,
    "matched": true
   },
   {
    "w": "it's",
-   "start": 7.92,
-   "end": 8.1,
+   "start": 9.18,
+   "end": 9.36,
    "matched": true
   },
   {
    "w": "back.",
-   "start": 8.1,
-   "end": 8.34,
+   "start": 9.36,
+   "end": 9.6,
    "matched": true
   },
   {
    "w": "Same",
-   "start": 9.14,
-   "end": 9.32,
+   "start": 10.44,
+   "end": 10.58,
    "matched": true
   },
   {
    "w": "city.",
-   "start": 9.32,
-   "end": 9.68,
+   "start": 10.58,
+   "end": 10.94,
    "matched": true
   },
   {
    "w": "Better",
-   "start": 10.46,
-   "end": 10.62,
+   "start": 11.72,
+   "end": 11.88,
    "matched": true
   },
   {
    "w": "graphics.",
-   "start": 10.62,
-   "end": 11.0,
+   "start": 11.88,
+   "end": 12.26,
+   "matched": true
+  },
+  {
+   "w": "Eighty",
+   "start": 12.96,
+   "end": 13.28,
+   "matched": true
+  },
+  {
+   "w": "dollars.",
+   "start": 13.28,
+   "end": 13.52,
    "matched": true
   },
   {
    "w": "We",
-   "start": 11.76,
-   "end": 11.8,
+   "start": 14.32,
+   "end": 14.42,
    "matched": true
   },
   {
    "w": "waited",
-   "start": 11.78,
-   "end": 12.02,
+   "start": 14.42,
+   "end": 14.64,
    "matched": true
   },
   {
    "w": "thirteen",
-   "start": 12.02,
-   "end": 12.36,
+   "start": 14.64,
+   "end": 14.98,
    "matched": true
   },
   {
    "w": "years",
-   "start": 12.36,
-   "end": 12.6,
+   "start": 14.98,
+   "end": 15.24,
    "matched": true
   },
   {
    "w": "for",
-   "start": 12.6,
-   "end": 12.82,
+   "start": 15.24,
+   "end": 15.46,
    "matched": true
   },
   {
    "w": "a",
-   "start": 12.82,
-   "end": 12.9,
+   "start": 15.46,
+   "end": 15.54,
    "matched": true
   },
   {
    "w": "remix.",
-   "start": 12.9,
-   "end": 13.16,
+   "start": 15.54,
+   "end": 15.8,
    "matched": true
   },
   {
    "w": "And",
-   "start": 14.14,
-   "end": 14.26,
+   "start": 16.78,
+   "end": 16.88,
    "matched": true
   },
   {
    "w": "you",
-   "start": 14.26,
-   "end": 14.36,
+   "start": 16.88,
+   "end": 16.98,
    "matched": true
   },
   {
    "w": "still",
-   "start": 14.36,
-   "end": 14.56,
+   "start": 16.98,
+   "end": 17.18,
    "matched": true
   },
   {
    "w": "spend",
-   "start": 14.56,
-   "end": 14.8,
+   "start": 17.18,
+   "end": 17.44,
    "matched": true
   },
   {
    "w": "ages",
-   "start": 14.8,
-   "end": 15.1,
+   "start": 17.44,
+   "end": 17.76,
    "matched": true
   },
   {
    "w": "just",
-   "start": 15.1,
-   "end": 15.44,
-   "matched": true
-  },
-  {
-   "w": "driving.",
-   "start": 15.44,
-   "end": 15.86,
-   "matched": true
-  },
-  {
-   "w": "Next-gen?",
-   "start": 15.86,
-   "end": 17.38,
-   "matched": false
-  },
-  {
-   "w": "Or",
-   "start": 17.38,
+   "start": 17.76,
    "end": 18.06,
    "matched": true
   },
   {
-   "w": "nostalgia?",
+   "w": "driving.",
    "start": 18.06,
-   "end": 18.64,
+   "end": 18.46,
+   "matched": true
+  },
+  {
+   "w": "That's",
+   "start": 19.36,
+   "end": 19.6,
+   "matched": true
+  },
+  {
+   "w": "not",
+   "start": 19.6,
+   "end": 19.76,
+   "matched": true
+  },
+  {
+   "w": "next-gen.",
+   "start": 19.76,
+   "end": 20.3,
+   "matched": true
+  },
+  {
+   "w": "That's",
+   "start": 21.24,
+   "end": 21.56,
+   "matched": true
+  },
+  {
+   "w": "nostalgia.",
+   "start": 21.56,
+   "end": 21.92,
    "matched": true
   },
   {
    "w": "Honestly?",
-   "start": 18.64,
-   "end": 19.74,
+   "start": 22.86,
+   "end": 23.22,
    "matched": true
   },
   {
    "w": "Overrated.",
-   "start": 19.74,
-   "end": 21.0,
+   "start": 23.86,
+   "end": 24.38,
    "matched": true
   },
   {
    "w": "Change",
-   "start": 21.0,
-   "end": 21.8,
+   "start": 25.06,
+   "end": 25.34,
    "matched": true
   },
   {
    "w": "my",
-   "start": 21.8,
-   "end": 22.08,
+   "start": 25.34,
+   "end": 25.56,
    "matched": true
   },
   {
    "w": "mind.",
-   "start": 22.08,
-   "end": 22.42,
+   "start": 25.56,
+   "end": 25.84,
    "matched": true
   }
  ]
