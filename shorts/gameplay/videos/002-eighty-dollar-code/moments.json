@@ -1,0 +1,47 @@
+{
+  "source": "gta6-playthrough.mp4",
+  "zoom": 1.1,
+  "fy": 0.45,
+  "shots": [
+    {
+      "at": 4070,
+      "len": 1.82,
+      "note": "weapon menu"
+    },
+    {
+      "at": 4124,
+      "len": 2.86,
+      "note": "clothing store"
+    },
+    {
+      "at": 4016,
+      "len": 1.48,
+      "note": "shop counter"
+    },
+    {
+      "at": 2288,
+      "len": 2.0,
+      "note": "plane in storm"
+    },
+    {
+      "at": 3530,
+      "len": 2.54,
+      "note": "game box"
+    },
+    {
+      "at": 3692,
+      "len": 1.84,
+      "note": "phone"
+    },
+    {
+      "at": 4772,
+      "len": 1.44,
+      "note": "phone"
+    },
+    {
+      "at": 3584,
+      "len": 1.88,
+      "note": "living room tv"
+    }
+  ]
+}

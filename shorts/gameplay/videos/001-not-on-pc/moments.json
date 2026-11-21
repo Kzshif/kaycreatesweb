@@ -1,0 +1,53 @@
+{
+  "source": "gta6-playthrough.mp4",
+  "zoom": 1.1,
+  "fy": 0.45,
+  "shots": [
+    {
+      "at": 614,
+      "len": 2.1,
+      "note": "prison corridor"
+    },
+    {
+      "at": 668,
+      "len": 1.92,
+      "note": "prison yard, from behind"
+    },
+    {
+      "at": 1802,
+      "len": 2.5,
+      "note": "away from keyboard"
+    },
+    {
+      "at": 3044,
+      "len": 2.54,
+      "note": "empty night road"
+    },
+    {
+      "at": 1478,
+      "len": 2.96,
+      "note": "boat",
+      "lead": 0
+    },
+    {
+      "at": 1910,
+      "len": 1.54,
+      "note": "swamp walk"
+    },
+    {
+      "at": 1640,
+      "len": 1.54,
+      "note": "binoculars"
+    },
+    {
+      "at": 4502,
+      "len": 2.36,
+      "note": "weights"
+    },
+    {
+      "at": 2450,
+      "len": 2.3,
+      "note": "mission failed"
+    }
+  ]
+}

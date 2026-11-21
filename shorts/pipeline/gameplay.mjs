@@ -83,6 +83,49 @@ function footage(file) {
   return info;
 }
 
+
+// ------------------------------------------------------------------- cut
+// moments.json: { "source": "<file in gameplay/footage>", "shots": [{ "at": 614, "len": 2.1, "note": "...", "zoom": 1.1 }] }
+// Cuts each moment out of the long recording (starting a beat before `at`), joins them into one
+// small file for this video and writes clips.json to match, so the render never touches the
+// full recording.
+function cut(id) {
+  const v = findVideo(id);
+  const spec = readJson(path.join(v.dir, 'moments.json'));
+  const src = path.join(FOOTAGE, spec.source);
+  if (!fs.existsSync(src)) throw new Error(`footage ${spec.source} is not in gameplay/footage/`);
+  const tmp = path.join(v.work, 'shots');
+  fs.rmSync(tmp, { recursive: true, force: true });
+  fs.mkdirSync(tmp, { recursive: true });
+  const clips = [];
+  const list = [];
+  let frames = 0;
+  spec.shots.forEach((s, i) => {
+    const out = path.join(tmp, `s${String(i).padStart(2, '0')}.mp4`);
+    const start = Math.max(0, s.at - (s.lead ?? 0.4));
+    const n = Math.round((s.len + 0.2) * FPS);
+    execFileSync('ffmpeg', ['-y', '-v', 'error', '-ss', start.toFixed(3), '-i', src, '-frames:v', String(n), '-t', (n / FPS).toFixed(3), '-vf', `scale=1920:1080,fps=${FPS},format=yuv420p`, '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '18', '-c:a', 'aac', '-ar', '48000', '-ac', '2', '-af', 'apad', '-shortest', out]);
+    list.push(`file '${out}'`);
+    const at = frames / FPS;
+    clips.push({ start: +at.toFixed(3), end: +(at + s.len).toFixed(3), zoom: s.zoom ?? spec.zoom ?? 1, fx: s.fx ?? 0.5, fy: s.fy ?? spec.fy ?? 0.5 });
+    frames += n;
+  });
+  fs.writeFileSync(path.join(tmp, 'list.txt'), `${list.join('\n')}\n`);
+  const name = `${v.id}-selects.mp4`;
+  execFileSync('ffmpeg', ['-y', '-v', 'error', '-f', 'concat', '-safe', '0', '-i', path.join(tmp, 'list.txt'), '-c', 'copy', path.join(FOOTAGE, name)]);
+  writeJson(path.join(v.dir, 'clips.json'), clips);
+  const sf = path.join(v.dir, 'script.md');
+  fs.writeFileSync(sf, fs.readFileSync(sf, 'utf8').replace(/^footage:.*$/m, `footage: ${name}`));
+  // a strip of the first, middle and last frame of every shot, to check the picks by eye
+  const sheet = path.join(v.work, 'shots.jpg');
+  try {
+    execFileSync('bash', ['-c', `cd "${tmp}" && rm -f t_*.jpg && i=0; for c in $(seq 0 ${clips.length - 1}); do for k in 0.15 0.5 0.85; do t=$(python3 -c "print(${JSON.stringify(clips)}[$c]['start'] + (${JSON.stringify(clips)}[$c]['end']-${JSON.stringify(clips)}[$c]['start'])*$k)"); ffmpeg -v error -y -ss $t -i "${path.join(FOOTAGE, name)}" -frames:v 1 -vf scale=320:-1 t_$(printf %03d $i).jpg; i=$((i+1)); done; done; ffmpeg -v error -y -pattern_type glob -i 't_*.jpg' -vf tile=3x${clips.length}:padding=4 -frames:v 1 "${sheet}"`]);
+  } catch {
+    /* the check sheet is a convenience; the cut itself is done */
+  }
+  log(`  cut      ${clips.length} shots -> gameplay/footage/${name}, sheet -> ${path.relative(ROOT, sheet)}`);
+}
+
 // ------------------------------------------------------------------- make
 async function make(id, { layoutOnly = false } = {}) {
   const v = findVideo(id);
@@ -205,6 +248,7 @@ async function renderStillsFor(props, frames, dir) {
 const [cmd, arg] = process.argv.slice(2);
 try {
   if (cmd === 'footage') footage(arg);
+  else if (cmd === 'cut') cut(arg);
   else if (cmd === 'make') await make(arg);
   else if (cmd === 'layout') await make(arg, { layoutOnly: true });
   else log(fs.readFileSync(new URL(import.meta.url), 'utf8').split('\n').slice(1, 11).join('\n'));

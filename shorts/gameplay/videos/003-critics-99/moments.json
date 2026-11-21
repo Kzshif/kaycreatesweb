@@ -1,0 +1,47 @@
+{
+  "source": "gta6-playthrough.mp4",
+  "zoom": 1.1,
+  "fy": 0.45,
+  "shots": [
+    {
+      "at": 1424,
+      "len": 2.68,
+      "note": "boat, blue water"
+    },
+    {
+      "at": 2288,
+      "len": 1.78,
+      "note": "plane in storm"
+    },
+    {
+      "at": 2990,
+      "len": 1.02,
+      "note": "night drive"
+    },
+    {
+      "at": 1640,
+      "len": 1.46,
+      "note": "binoculars, dialogue"
+    },
+    {
+      "at": 4448,
+      "len": 0.76,
+      "note": "weights"
+    },
+    {
+      "at": 938,
+      "len": 2.12,
+      "note": "walk on grass"
+    },
+    {
+      "at": 3908,
+      "len": 2.6,
+      "note": "map"
+    },
+    {
+      "at": 1964,
+      "len": 3.04,
+      "note": "swamp walk"
+    }
+  ]
+}

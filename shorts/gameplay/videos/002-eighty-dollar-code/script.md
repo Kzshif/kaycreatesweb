@@ -3,7 +3,7 @@ id: 002
 title: $80 for a | download code
 hl: $80
 stamp: Not worth it @ code.
-footage:
+footage: 002-selects.mp4
 facts: Standard Edition $79.99, Ultimate $99.99 with in-game shops the standard edition does not get; the boxed copy holds a download code, not a disc (TechRadar, Windows Central, Shacknews). Most big new games are $69.99.
 ---
 GTA 6 costs $80.
