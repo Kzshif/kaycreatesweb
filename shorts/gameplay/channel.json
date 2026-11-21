@@ -2,6 +2,19 @@
   "name": "",
   "handle": "",
   "about": "Opinion shorts: GTA 6 is overrated. Cut from our own gameplay. Facts checked, opinions ours.",
-  "voice": { "id": "am_fenrir", "lang": "en-us", "speed": 1.08 },
-  "gameVolume": 0.14
+  "voice": {
+    "id": "am_fenrir",
+    "lang": "en-us",
+    "speed": 1.08
+  },
+  "gameVolume": 0,
+  "series": "Overhyped",
+  "music": [
+    "stoop",
+    "market",
+    "caper",
+    "vault",
+    "stoop"
+  ],
+  "musicVolume": 0.16
 }

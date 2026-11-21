@@ -25,6 +25,7 @@ const log = (...a) => console.log(...a);
 const py = (script, args) => execFileSync(PYTHON, [path.join(ROOT, 'pipeline', script), ...args], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'], maxBuffer: 64 * 1024 * 1024 });
 const readJson = (f) => JSON.parse(fs.readFileSync(f, 'utf8'));
 const writeJson = (f, x) => fs.writeFileSync(f, `${JSON.stringify(x, null, 2)}\n`);
+const pickMusic = (list, id) => (Array.isArray(list) ? list[(Number(id) - 1) % list.length] : list);
 const channel = () => (fs.existsSync(path.join(G, 'channel.json')) ? readJson(path.join(G, 'channel.json')) : {});
 
 function findVideo(id) {
@@ -209,6 +210,9 @@ async function make(id, { layoutOnly = false } = {}) {
     sfx,
     handle: ch.handle || null,
     accent: '#E8202A',
+    tag: m.tag || (ch.series ? `${ch.series} #${Number(v.id)}` : null),
+    music: !layoutOnly && (m.music || ch.music) && (m.music || ch.music) !== 'none' ? await stage(path.join(ASSETS, 'music', `${m.music || pickMusic(ch.music, v.id)}.ogg`), 'music') : null,
+    musicVolume: +(m.musicVolume ?? ch.musicVolume ?? 0.16),
   };
   writeJson(path.join(v.work, 'props.json'), props);
 
@@ -221,7 +225,7 @@ async function make(id, { layoutOnly = false } = {}) {
   const raw = path.join(v.work, 'render.mp4');
   await renderVideo(props, raw, { id: 'Gameplay' });
   const final = path.join(v.out, `${v.name}.mp4`);
-  execFileSync('ffmpeg', ['-y', '-hide_banner', '-loglevel', 'error', '-i', raw, '-af', 'loudnorm=I=-14:TP=-1.5:LRA=11', '-c:v', 'copy', '-c:a', 'aac', '-b:a', '192k', '-ar', '48000', final]);
+  execFileSync('ffmpeg', ['-y', '-hide_banner', '-loglevel', 'error', '-i', raw, '-af', 'loudnorm=I=-14:TP=-1.5:LRA=11,alimiter=limit=0.82:level=disabled', '-c:v', 'copy', '-c:a', 'aac', '-b:a', '192k', '-ar', '48000', final]);
   // subtitles file for upload
   const srt = pages.map((p, i) => `${i + 1}\n${ts(p.from / FPS)} --> ${ts(p.to / FPS)}\n${p.words.map((w) => w.t).join(' ')}\n`).join('\n');
   fs.writeFileSync(path.join(v.out, 'captions.srt'), srt);

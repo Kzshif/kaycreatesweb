@@ -3,6 +3,7 @@ id: 004
 title: GTA 6 is just | Vice City again
 hl: again
 stamp: Overrated @ overrated
+layout: full
 footage: 004-selects.mp4
 facts: GTA 6 is set in the state of Leonida, including Vice City (Rockstar trailers). GTA: Vice City came out in 2002.
 ---

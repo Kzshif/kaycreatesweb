@@ -33,6 +33,11 @@ export type GameplayProps = {
   sfx: { src: string; frame: number; volume?: number }[];
   handle: string | null;
   accent: string;
+  /** a small series label above the title, e.g. "OVERHYPED #1" */
+  tag?: string | null;
+  /** a licensed music bed under the voice (path inside public/) */
+  music?: string | null;
+  musicVolume?: number;
 };
 
 const W = 1080;
@@ -58,28 +63,34 @@ const Footage: React.FC<{ src: string | null; clip: Clip; fps: number; volume: n
   // a slow push in across the clip, plus the clip's own punch-in
   const push = 1 + 0.06 * (local / Math.max(1, len));
   const z = (clip.zoom || 1) * push;
-  const ox = ((clip.fx ?? 0.5) - 0.5) * 100;
-  const oy = ((clip.fy ?? 0.5) - 0.5) * 100;
+  const at = `${((clip.fx ?? 0.5) * 100).toFixed(1)}% ${((clip.fy ?? 0.5) * 100).toFixed(1)}%`;
   const style: React.CSSProperties = {
     width: '100%',
     height: '100%',
     objectFit: 'cover',
-    transform: `scale(${z.toFixed(4)}) translate(${(-ox * (z - 1)) / z}%, ${(-oy * (z - 1)) / z}%)`,
-    filter: blur ? 'blur(36px) brightness(0.5) saturate(1.2)' : undefined,
+    objectPosition: at,
+    transform: `scale(${z.toFixed(4)})`,
+    transformOrigin: at,
+    filter: blur ? 'blur(36px) brightness(0.5) saturate(1.2)' : 'brightness(0.78) saturate(1.1)',
   };
   if (!src) {
     // placeholder for layout checks: a moving gradient with a grid
     const hue = (local * 2) % 360;
     return <div style={{ ...style, background: `linear-gradient(${local}deg, hsl(${hue} 60% 35%), hsl(${(hue + 80) % 360} 60% 20%))` }} />;
   }
-  return <OffthreadVideo src={staticFile(src)} trimBefore={Math.round(clip.start * fps)} volume={blur ? 0 : volume} muted={blur} style={style} />;
+  return <OffthreadVideo src={staticFile(src)} trimBefore={Math.round(clip.start * fps)} volume={blur ? 0 : volume} muted={blur || volume <= 0} style={style} />;
 };
 
-const Title: React.FC<{ lines: string[]; hl: string | null; frame: number }> = ({ lines, hl, frame }) => {
+const Title: React.FC<{ lines: string[]; hl: string | null; frame: number; tag?: string | null }> = ({ lines, hl, frame, tag }) => {
   const k = interpolate(frame, [0, 6], [0, 1], { extrapolateRight: 'clamp' });
   const size = lines.some((l) => l.length > 16) ? 74 : 88;
   return (
-    <div style={{ position: 'absolute', left: 60, right: 60, top: 250, textAlign: 'center', transform: `scale(${1.25 - 0.25 * k})`, opacity: k }}>
+    <div style={{ position: 'absolute', left: 60, right: 60, top: tag ? 236 : 250, textAlign: 'center', transform: `scale(${1.25 - 0.25 * k})`, opacity: k }}>
+      {tag ? (
+        <div style={{ display: 'inline-block', background: RED, borderRadius: 8, padding: '4px 16px 6px', marginBottom: 14, transform: 'rotate(-2deg)', boxShadow: '0 4px 0 #0A0A0A' }}>
+          <span style={{ ...headStyle(40, '#FFFFFF'), letterSpacing: '0.06em', textTransform: 'uppercase' }}>{tag}</span>
+        </div>
+      ) : null}
       {lines.map((l, i) => (
         <div key={i} style={{ ...headStyle(size, '#FFFFFF'), ...stroke(12), textTransform: 'uppercase', lineHeight: 1.04, letterSpacing: '-0.01em' }}>
           {l.split(' ').map((w, j) => {
@@ -163,16 +174,17 @@ export const Gameplay: React.FC<GameplayProps> = (p) => {
             </Sequence>
             {cut > 0 ? <AbsoluteFill style={{ background: '#FFFFFF', opacity: cut * 0.35 }} /> : null}
           </div>
-          {!band ? <AbsoluteFill style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0) 28%, rgba(0,0,0,0) 55%, rgba(0,0,0,0.5) 80%)' }} /> : null}
+          {!band ? <AbsoluteFill style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.25) 26%, rgba(0,0,0,0.2) 48%, rgba(0,0,0,0.55) 72%, rgba(0,0,0,0.75) 100%)' }} /> : null}
           <Stamp text={p.stamp?.text || ''} local={p.stamp ? sl : -1} />
         </AbsoluteFill>
-        <Title lines={p.title} hl={p.hl} frame={frame} />
+        <Title lines={p.title} hl={p.hl} frame={frame} tag={p.tag} />
         <Captions pages={p.captions} frame={frame} layout={p.layout} />
         {p.handle ? (
           <div style={{ position: 'absolute', left: 0, right: 0, top: band ? BAND_TOP - 64 : 470, textAlign: 'center', ...headStyle(30, 'rgba(255,255,255,0.85)'), letterSpacing: '0.04em' }}>{p.handle}</div>
         ) : null}
         {flash > 0 ? <AbsoluteFill style={{ background: RED, opacity: flash, mixBlendMode: 'screen' }} /> : null}
         {p.audio ? <Audio src={staticFile(p.audio)} /> : null}
+        {p.music ? <Audio src={staticFile(p.music)} volume={p.musicVolume ?? 0.16} loop /> : null}
         {p.sfx.map((s, i) => (
           <Sequence key={i} from={s.frame} layout="none">
             <Audio src={staticFile(s.src)} volume={s.volume ?? 0.8} />
