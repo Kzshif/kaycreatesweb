@@ -94,7 +94,7 @@ const Title: React.FC<{ lines: string[]; hl: string | null; frame: number; tag?:
       {lines.map((l, i) => (
         <div key={i} style={{ ...headStyle(size, '#FFFFFF'), ...stroke(12), textTransform: 'uppercase', lineHeight: 1.04, letterSpacing: '-0.01em' }}>
           {l.split(' ').map((w, j) => {
-            const on = hl && w.replace(/[^A-Za-z0-9$]/g, '').toLowerCase() === hl.toLowerCase();
+            const on = hl && w.replace(/[^A-Za-z0-9$]/g, '').toLowerCase() === hl.replace(/[^A-Za-z0-9$]/g, '').toLowerCase();
             return (
               <span key={j} style={on ? { background: RED, padding: '0 14px', margin: '0 4px', borderRadius: 8, WebkitTextStroke: '0px', display: 'inline-block', transform: 'rotate(-2deg)' } : undefined}>
                 {w}{' '}

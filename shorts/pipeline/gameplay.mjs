@@ -108,7 +108,7 @@ function cut(id) {
     execFileSync('ffmpeg', ['-y', '-v', 'error', '-ss', start.toFixed(3), '-i', src, '-frames:v', String(n), '-t', (n / FPS).toFixed(3), '-vf', `scale=1920:1080,fps=${FPS},format=yuv420p`, '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '18', '-c:a', 'aac', '-ar', '48000', '-ac', '2', '-af', 'apad', '-shortest', out]);
     list.push(`file '${out}'`);
     const at = frames / FPS;
-    clips.push({ start: +at.toFixed(3), end: +(at + s.len).toFixed(3), zoom: s.zoom ?? spec.zoom ?? 1, fx: s.fx ?? 0.5, fy: s.fy ?? spec.fy ?? 0.5 });
+    clips.push({ start: +at.toFixed(3), end: +(at + s.len).toFixed(3), zoom: s.zoom ?? spec.zoom ?? 1, fx: s.fx ?? spec.fx ?? 0.5, fy: s.fy ?? spec.fy ?? 0.5 });
     frames += n;
   });
   fs.writeFileSync(path.join(tmp, 'list.txt'), `${list.join('\n')}\n`);
@@ -128,7 +128,7 @@ function cut(id) {
 }
 
 // ------------------------------------------------------------------- make
-async function make(id, { layoutOnly = false } = {}) {
+async function make(id, { layoutOnly = false, voiceOnly = false } = {}) {
   const v = findVideo(id);
   fs.mkdirSync(v.work, { recursive: true });
   fs.mkdirSync(v.out, { recursive: true });
@@ -136,7 +136,9 @@ async function make(id, { layoutOnly = false } = {}) {
   const script = parseScript(scriptFile);
   const m = script.meta;
   const ch = channel();
-  const voice = { id: m.voice || ch.voice?.id || 'am_fenrir', lang: ch.voice?.lang || 'en-us', speed: +(m.speed || ch.voice?.speed || 1.05) };
+  const vid = m.voice || ch.voice?.id || 'am_fenrir';
+  // British voices (b...) read in en-gb, American ones (a...) in en-us
+  const voice = { id: vid, lang: m.lang || (vid.startsWith('b') ? 'en-gb' : 'en-us'), speed: +(m.speed || ch.voice?.speed || 1.05) };
 
   // voice-over
   const wav = path.join(v.work, 'voice.wav');
@@ -161,6 +163,7 @@ async function make(id, { layoutOnly = false } = {}) {
   }
   const t = readJson(words);
   log(`  timing   ${(t.match * 100).toFixed(0)}% of words matched`);
+  if (voiceOnly) return;
   const f = (s) => Math.round(s * FPS);
   const total = f(secs + 0.6);
   const pages = buildCaptions(t.words).map((p) => ({ from: f(p.start), to: Math.max(f(p.start) + 2, f(p.end)), words: p.words.map((w) => ({ t: w.t, from: f(w.start), to: Math.max(f(w.start) + 1, f(w.end)) })) }));
@@ -254,6 +257,7 @@ try {
   if (cmd === 'footage') footage(arg);
   else if (cmd === 'cut') cut(arg);
   else if (cmd === 'make') await make(arg);
+  else if (cmd === 'voice') await make(arg, { voiceOnly: true });
   else if (cmd === 'layout') await make(arg, { layoutOnly: true });
   else log(fs.readFileSync(new URL(import.meta.url), 'utf8').split('\n').slice(1, 11).join('\n'));
 } catch (e) {

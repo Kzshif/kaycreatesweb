@@ -1,42 +1,60 @@
 {
   "source": "gta6-playthrough.mp4",
-  "zoom": 1.1,
-  "fy": 0.45,
+  "zoom": 1.22,
+  "fx": 0.45,
+  "fy": 0.12,
   "shots": [
     {
       "at": 1424,
-      "len": 2.2,
-      "note": "boat, blue water"
+      "len": 2.19
     },
     {
       "at": 2396,
-      "len": 2.2,
-      "note": "plane in storm"
+      "len": 2.19
+    },
+    {
+      "at": 614,
+      "len": 1.17
+    },
+    {
+      "at": 668,
+      "len": 1.17
     },
     {
       "at": 1532,
-      "len": 1.02,
-      "note": "boat in swamp"
+      "len": 1.36
     },
     {
       "at": 4016,
-      "len": 1.16,
-      "note": "shop counter"
-    },
-    {
-      "at": 2828,
-      "len": 1.74,
-      "note": "away from keyboard"
+      "len": 1.48
     },
     {
       "at": 4556,
-      "len": 0.86,
-      "note": "weights"
+      "len": 1.27
     },
     {
       "at": 3098,
-      "len": 2.46,
-      "note": "night drive"
+      "len": 1.27
+    },
+    {
+      "at": 2990,
+      "len": 2.0
+    },
+    {
+      "at": 1910,
+      "len": 2.0
+    },
+    {
+      "at": 1640,
+      "len": 2.44
+    },
+    {
+      "at": 2450,
+      "len": 1.81
+    },
+    {
+      "at": 3152,
+      "len": 1.81
     }
   ]
 }
