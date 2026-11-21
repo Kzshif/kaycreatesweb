@@ -81,6 +81,12 @@ These are built to be shared: each one ends by telling viewers to send it to a f
 - Description: One trailer, 90 million views in a day, two delays, $80, no disc. And people still paid it. #GTA6 #GTAVI #gaming
 - Pinned comment: Did the trailer get you? Be honest.
 
+### 11. GTA 6 runs at 30 FPS. In 2026. (US male voice) - post this one early, it's the hottest topic
+
+- Title: GTA 6 runs at 30 FPS. In 2026.
+- Description: PS5: 30. Xbox: 30. PS5 Pro: still 30. No 60 FPS mode, not even an option. Starfield got roasted for this. #GTA6 #GTAVI #30fps
+- Pinned comment: Is 30 FPS acceptable in 2026? Yes or no.
+
 ## Facts used (keep them accurate if you edit)
 
 - GTA 5 launched in September 2013; GTA 6 launched on 19 November 2026 on PS5 and Xbox Series X|S only, with no PC date.
@@ -90,6 +96,7 @@ These are built to be shared: each one ends by telling viewers to send it to a f
 - GTA: Vice City came out in 2002. Leonida, GTA 6's state, is based on Florida.
 - The first GTA 6 trailer passed 90 million YouTube views in 24 hours (December 2023).
 - GTA 5 launched at $59.99 in September 2013 and reached PC in April 2015.
+- GTA 6 runs at 30 fps on PS5, PS5 Pro and Xbox Series X|S at launch, with no 60 fps performance mode (Rockstar: 30 fps "for now"; Digital Foundry's review). Starfield was criticised for its 30 fps lock. Our videos render at 60 fps, so "this video runs at 60" is true.
 
 The opinions ("overrated", "mid", "all hype", "a remix", "a marketing campaign", "a very expensive
 driving simulator", "next-gen gaming", "the best marketing in history", "GTA 5 wins") are the channel's take, said as opinions. Keep the criticism on the game, not on

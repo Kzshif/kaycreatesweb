@@ -207,7 +207,7 @@ async function make(id, { layoutOnly = false, voiceOnly = false, pagesOnly = fal
   const leans = (w) => /^(gta|a|an|the|of|to|and|for|in|on|my|your|is|its|it's|than|over|just)$/i.test(String(w).replace(/[^A-Za-z']/g, ''));
   const unit = (w) => /^(million|billion|thousand|years?|dollars?|percent|of)$/i.test(String(w || '').replace(/[^A-Za-z]/g, ''));
   // pairs that read as one thing and stay on the same page
-  const KEEP = /^(gta \d|download code|physical copy|vice city|ultimate edition|standard edition|driving simulator|marketing campaign|bad news|big games|bonus cars|extra shops|fake florida|first trailer|three reasons|most overhyped|game ever|ten dollars|change my|my mind|boxed copy|a disc|a box|a game|the map|a remix|thirteen years|came out|it came|out of|a lot|lot of|of it|all of|6 fan|their life|life story)$/i;
+  const KEEP = /^(gta \d|download code|physical copy|vice city|ultimate edition|standard edition|driving simulator|marketing campaign|bad news|big games|bonus cars|extra shops|fake florida|first trailer|three reasons|most overhyped|game ever|ten dollars|change my|my mind|boxed copy|a disc|a box|a game|the map|a remix|thirteen years|came out|it came|out of|a lot|lot of|of it|all of|6 fan|their life|life story|60 fps|30 fps|frame rate|same frame|30 frames|frames per|per second)$/i;
   const norm = (w) => String(w || '').toLowerCase().replace(/[^a-z0-9$-]/g, '');
   // best split of a clause into pages of 1-4 words: short pages, no break inside a pair, few singles
   const chunk = (ws) => {
@@ -277,8 +277,11 @@ async function make(id, { layoutOnly = false, voiceOnly = false, pagesOnly = fal
   let stamp = null;
   if (m.stamp) {
     const [label, at] = String(m.stamp).split('@').map((s) => s.trim());
-    const key = (at || label).toLowerCase().replace(/[^a-z0-9$]/g, '');
-    const hit = t.words.find((w) => String(w.w ?? w.t).toLowerCase().replace(/[^a-z0-9$]/g, '') === key);
+    // "30 #4" lands on the fourth "30"
+    const [word, nth] = String(at || label).split('#').map((s) => s.trim());
+    const key = word.toLowerCase().replace(/[^a-z0-9$]/g, '');
+    const hits = t.words.filter((w) => String(w.w ?? w.t).toLowerCase().replace(/[^a-z0-9$]/g, '') === key);
+    const hit = hits[Math.max(0, (Number(nth) || 1) - 1)];
     if (hit) stamp = { frame: lead + f(hit.start), text: label };
   }
 

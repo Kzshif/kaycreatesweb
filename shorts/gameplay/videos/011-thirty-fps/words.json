@@ -1,0 +1,505 @@
+{
+ "engine": "faster-whisper small.en (word_timestamps)",
+ "pass_used": "glossary prompt",
+ "unheard_words": 0,
+ "duration": 31.749,
+ "match": 1.0,
+ "heard": "GTA 6 runs at 30 frames per second. In 2026, 13 years of waiting and it can't even hit 60. PS5 30, Xbox 30, even the PS5 Pro 30. People bought a pro console for this game and got the same frame rate. There's no 60 FPS mode, not even an option. Starfield got roasted for this. GTA 6 gets a 99. Fun fact, this video runs at 60. GTA 6 doesn't. Send this to someone who still thinks 30 is fine.",
+ "mismatches": [],
+ "figure_mismatches": [],
+ "low_confidence": [],
+ "words": [
+  {
+   "w": "GTA",
+   "start": 0.0,
+   "end": 0.36,
+   "matched": true
+  },
+  {
+   "w": "6",
+   "start": 0.36,
+   "end": 0.78,
+   "matched": true
+  },
+  {
+   "w": "runs",
+   "start": 0.78,
+   "end": 1.18,
+   "matched": true
+  },
+  {
+   "w": "at",
+   "start": 1.18,
+   "end": 1.36,
+   "matched": true
+  },
+  {
+   "w": "30",
+   "start": 1.36,
+   "end": 1.66,
+   "matched": true
+  },
+  {
+   "w": "frames",
+   "start": 1.66,
+   "end": 1.9,
+   "matched": true
+  },
+  {
+   "w": "per",
+   "start": 1.9,
+   "end": 2.22,
+   "matched": true
+  },
+  {
+   "w": "second.",
+   "start": 2.22,
+   "end": 2.54,
+   "matched": true
+  },
+  {
+   "w": "In",
+   "start": 3.04,
+   "end": 3.08,
+   "matched": true
+  },
+  {
+   "w": "2026.",
+   "start": 3.08,
+   "end": 3.96,
+   "matched": true
+  },
+  {
+   "w": "Thirteen",
+   "start": 4.5,
+   "end": 4.74,
+   "matched": true
+  },
+  {
+   "w": "years",
+   "start": 4.74,
+   "end": 4.98,
+   "matched": true
+  },
+  {
+   "w": "of",
+   "start": 4.98,
+   "end": 5.16,
+   "matched": true
+  },
+  {
+   "w": "waiting,",
+   "start": 5.16,
+   "end": 5.4,
+   "matched": true
+  },
+  {
+   "w": "and",
+   "start": 5.4,
+   "end": 5.92,
+   "matched": true
+  },
+  {
+   "w": "it",
+   "start": 5.92,
+   "end": 6.06,
+   "matched": true
+  },
+  {
+   "w": "can't",
+   "start": 6.06,
+   "end": 6.3,
+   "matched": true
+  },
+  {
+   "w": "even",
+   "start": 6.3,
+   "end": 6.46,
+   "matched": true
+  },
+  {
+   "w": "hit",
+   "start": 6.46,
+   "end": 6.66,
+   "matched": true
+  },
+  {
+   "w": "60.",
+   "start": 6.66,
+   "end": 7.12,
+   "matched": true
+  },
+  {
+   "w": "PS5,",
+   "start": 7.7,
+   "end": 8.26,
+   "matched": true
+  },
+  {
+   "w": "30.",
+   "start": 8.26,
+   "end": 8.66,
+   "matched": true
+  },
+  {
+   "w": "Xbox,",
+   "start": 9.38,
+   "end": 9.52,
+   "matched": true
+  },
+  {
+   "w": "30.",
+   "start": 9.52,
+   "end": 10.18,
+   "matched": true
+  },
+  {
+   "w": "Even",
+   "start": 10.84,
+   "end": 10.9,
+   "matched": true
+  },
+  {
+   "w": "the",
+   "start": 10.9,
+   "end": 11.02,
+   "matched": true
+  },
+  {
+   "w": "PS5",
+   "start": 11.02,
+   "end": 11.64,
+   "matched": true
+  },
+  {
+   "w": "Pro,",
+   "start": 11.64,
+   "end": 11.9,
+   "matched": true
+  },
+  {
+   "w": "30.",
+   "start": 11.9,
+   "end": 12.46,
+   "matched": true
+  },
+  {
+   "w": "People",
+   "start": 13.0,
+   "end": 13.28,
+   "matched": true
+  },
+  {
+   "w": "bought",
+   "start": 13.28,
+   "end": 13.52,
+   "matched": true
+  },
+  {
+   "w": "a",
+   "start": 13.52,
+   "end": 13.66,
+   "matched": true
+  },
+  {
+   "w": "Pro",
+   "start": 13.66,
+   "end": 13.82,
+   "matched": true
+  },
+  {
+   "w": "console",
+   "start": 13.82,
+   "end": 14.2,
+   "matched": true
+  },
+  {
+   "w": "for",
+   "start": 14.2,
+   "end": 14.48,
+   "matched": true
+  },
+  {
+   "w": "this",
+   "start": 14.48,
+   "end": 14.66,
+   "matched": true
+  },
+  {
+   "w": "game,",
+   "start": 14.66,
+   "end": 14.9,
+   "matched": true
+  },
+  {
+   "w": "and",
+   "start": 14.9,
+   "end": 15.36,
+   "matched": true
+  },
+  {
+   "w": "got",
+   "start": 15.36,
+   "end": 15.54,
+   "matched": true
+  },
+  {
+   "w": "the",
+   "start": 15.54,
+   "end": 15.7,
+   "matched": true
+  },
+  {
+   "w": "same",
+   "start": 15.7,
+   "end": 15.92,
+   "matched": true
+  },
+  {
+   "w": "frame",
+   "start": 15.92,
+   "end": 16.24,
+   "matched": true
+  },
+  {
+   "w": "rate.",
+   "start": 16.24,
+   "end": 16.58,
+   "matched": true
+  },
+  {
+   "w": "There's",
+   "start": 16.92,
+   "end": 17.06,
+   "matched": true
+  },
+  {
+   "w": "no",
+   "start": 17.06,
+   "end": 17.26,
+   "matched": true
+  },
+  {
+   "w": "60",
+   "start": 17.26,
+   "end": 17.64,
+   "matched": true
+  },
+  {
+   "w": "FPS",
+   "start": 17.64,
+   "end": 17.88,
+   "matched": true
+  },
+  {
+   "w": "mode.",
+   "start": 17.88,
+   "end": 18.54,
+   "matched": true
+  },
+  {
+   "w": "Not",
+   "start": 19.08,
+   "end": 19.34,
+   "matched": true
+  },
+  {
+   "w": "even",
+   "start": 19.34,
+   "end": 19.56,
+   "matched": true
+  },
+  {
+   "w": "an",
+   "start": 19.56,
+   "end": 19.72,
+   "matched": true
+  },
+  {
+   "w": "option.",
+   "start": 19.72,
+   "end": 20.1,
+   "matched": true
+  },
+  {
+   "w": "Starfield",
+   "start": 20.92,
+   "end": 21.12,
+   "matched": true
+  },
+  {
+   "w": "got",
+   "start": 21.12,
+   "end": 21.38,
+   "matched": true
+  },
+  {
+   "w": "roasted",
+   "start": 21.38,
+   "end": 21.7,
+   "matched": true
+  },
+  {
+   "w": "for",
+   "start": 21.7,
+   "end": 21.98,
+   "matched": true
+  },
+  {
+   "w": "this.",
+   "start": 21.98,
+   "end": 22.22,
+   "matched": true
+  },
+  {
+   "w": "GTA",
+   "start": 22.86,
+   "end": 23.12,
+   "matched": true
+  },
+  {
+   "w": "6",
+   "start": 23.12,
+   "end": 23.54,
+   "matched": true
+  },
+  {
+   "w": "gets",
+   "start": 23.54,
+   "end": 23.78,
+   "matched": true
+  },
+  {
+   "w": "a",
+   "start": 23.78,
+   "end": 23.94,
+   "matched": true
+  },
+  {
+   "w": "99.",
+   "start": 23.94,
+   "end": 24.34,
+   "matched": true
+  },
+  {
+   "w": "Fun",
+   "start": 25.04,
+   "end": 25.26,
+   "matched": true
+  },
+  {
+   "w": "fact:",
+   "start": 25.26,
+   "end": 25.56,
+   "matched": true
+  },
+  {
+   "w": "this",
+   "start": 25.78,
+   "end": 25.92,
+   "matched": true
+  },
+  {
+   "w": "video",
+   "start": 25.92,
+   "end": 26.14,
+   "matched": true
+  },
+  {
+   "w": "runs",
+   "start": 26.14,
+   "end": 26.4,
+   "matched": true
+  },
+  {
+   "w": "at",
+   "start": 26.4,
+   "end": 26.58,
+   "matched": true
+  },
+  {
+   "w": "60.",
+   "start": 26.58,
+   "end": 26.98,
+   "matched": true
+  },
+  {
+   "w": "GTA",
+   "start": 27.56,
+   "end": 27.78,
+   "matched": true
+  },
+  {
+   "w": "6",
+   "start": 27.78,
+   "end": 28.24,
+   "matched": true
+  },
+  {
+   "w": "doesn't.",
+   "start": 28.24,
+   "end": 28.78,
+   "matched": true
+  },
+  {
+   "w": "Send",
+   "start": 28.78,
+   "end": 29.32,
+   "matched": true
+  },
+  {
+   "w": "this",
+   "start": 29.32,
+   "end": 29.48,
+   "matched": true
+  },
+  {
+   "w": "to",
+   "start": 29.48,
+   "end": 29.66,
+   "matched": true
+  },
+  {
+   "w": "someone",
+   "start": 29.66,
+   "end": 29.94,
+   "matched": true
+  },
+  {
+   "w": "who",
+   "start": 29.94,
+   "end": 30.1,
+   "matched": true
+  },
+  {
+   "w": "still",
+   "start": 30.1,
+   "end": 30.28,
+   "matched": true
+  },
+  {
+   "w": "thinks",
+   "start": 30.28,
+   "end": 30.56,
+   "matched": true
+  },
+  {
+   "w": "30",
+   "start": 30.56,
+   "end": 30.86,
+   "matched": true
+  },
+  {
+   "w": "is",
+   "start": 30.86,
+   "end": 31.1,
+   "matched": true
+  },
+  {
+   "w": "fine.",
+   "start": 31.1,
+   "end": 31.38,
+   "matched": true
+  }
+ ]
+}
