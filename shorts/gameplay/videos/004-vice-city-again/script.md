@@ -7,6 +7,9 @@ voice: bm_fable
 say: remix=ree-mix | Vice=Vyce
 speed: 1.3
 layout: full
+thumb: 1533
+thumbTitle: Vice City | again?
+thumbHl: again?
 footage: 004-selects.mp4
 facts: GTA 6 is set in Leonida, including Vice City (Rockstar trailers). GTA: Vice City came out in 2002. GTA 5 came out in 2013.
 ---

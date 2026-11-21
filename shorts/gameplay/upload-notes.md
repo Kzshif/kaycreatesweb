@@ -1,8 +1,13 @@
 # GTA 6 hot takes: upload notes
 
-Five shorts (22-27 seconds), cut from your playthrough recording, each read by a different voice.
-Post one a day, in order. Each folder's `out/` has the video and a `captions.srt` to upload as
-English subtitles.
+Five shorts (23-28 seconds), cut from your playthrough recording, each read by a different voice.
+Each opens with one second of picture and music before the voice and subtitles start, and carries
+the GTA6ISOVERRATED watermark. Post one a day, in order. Each folder's `out/` has the video, a
+`captions.srt` to upload as English subtitles and a `thumbnail.png` (1080x1920).
+
+Thumbnails: if YouTube offers a custom thumbnail when you upload the Short, use `thumbnail.png`.
+If it only lets you pick a frame, pick one from the first seconds (the hook is on screen). The same
+image works as the cover on TikTok and Instagram Reels.
 
 At upload, every video:
 

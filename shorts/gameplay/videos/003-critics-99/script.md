@@ -6,6 +6,9 @@ stamp: Mid @ mid
 voice: am_michael
 speed: 1.2
 layout: full
+thumb: 1425
+thumbTitle: A 99? | Really?
+thumbHl: 99?
 footage: 003-selects.mp4
 facts: Metascore 99 at launch (Metacritic, via Latin Times). Launch-week player complaints: long stretches of driving, listening to conversations, mundane tasks, toned-down chaos; some players fell through the map (PC Guide, IBTimes).
 ---

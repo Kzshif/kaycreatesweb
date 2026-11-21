@@ -1,5 +1,5 @@
 {
-  "name": "",
+  "name": "GTA6ISOVERRATED",
   "handle": "",
   "about": "Opinion shorts: GTA 6 is overrated. Cut from our own gameplay. Facts checked, opinions ours.",
   "voice": {
@@ -15,5 +15,7 @@
     "vault",
     "stoop"
   ],
-  "musicVolume": 0.16
+  "musicVolume": 0.16,
+  "watermark": "GTA6ISOVERRATED",
+  "lead": 1.0
 }

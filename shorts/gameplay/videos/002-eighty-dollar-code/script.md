@@ -6,6 +6,9 @@ stamp: Not worth it @ less.
 voice: bm_george
 speed: 1.3
 layout: full
+thumb: 4126
+thumbTitle: $80 | for this?
+thumbHl: $80
 footage: 002-selects.mp4
 facts: Standard Edition $79.99; Ultimate Edition $99.99 adds in-game shops the standard edition does not get; the boxed copy is a download code, no disc (TechRadar, Windows Central, Shacknews). Most big new games are $69.99.
 ---

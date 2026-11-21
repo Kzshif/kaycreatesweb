@@ -3,7 +3,7 @@ import { Composition } from 'remotion';
 import { Board } from './board/Board';
 import { Motion, type MotionProps } from './board/Motion';
 import { Short } from './Short';
-import { Gameplay, type GameplayProps } from './gameplay/Gameplay';
+import { Gameplay, GameplayThumb, type GameplayProps, type ThumbProps } from './gameplay/Gameplay';
 import { FRAME } from './shared/spec.mjs';
 import type { ShortProps } from './types';
 
@@ -47,6 +47,15 @@ export const Root: React.FC = () => (
     durationInFrames={150}
     defaultProps={{ id: '000', durationInFrames: 150, fps: 30, footage: null, clips: [{ start: 0, end: 2 }, { start: 5, end: 7, zoom: 1.3 }, { start: 9, end: 11 }], layout: 'band', title: ['GTA 6 is', 'overrated'], hl: 'overrated', captions: [], stamp: { frame: 60, text: 'Overrated' }, audio: null, gameVolume: 0.12, sfx: [], handle: '@handle', accent: '#E8202A' } as GameplayProps}
     calculateMetadata={({ props }) => ({ durationInFrames: props.durationInFrames })}
+  />
+  <Composition
+    id="GameplayThumb"
+    component={GameplayThumb}
+    width={1080}
+    height={1920}
+    fps={30}
+    durationInFrames={1}
+    defaultProps={{ image: null, lines: ['13 years', 'for this?'], hl: 'this', stamp: 'Overrated', watermark: 'GTA6ISOVERRATED' } as ThumbProps}
   />
   <Composition id="Board" component={Board} width={FRAME.width} height={FRAME.height} fps={FRAME.fps} durationInFrames={90} defaultProps={{ page: 1, probe: false }} />
   <Composition

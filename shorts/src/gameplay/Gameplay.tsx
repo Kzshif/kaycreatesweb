@@ -3,7 +3,7 @@
 // title that stays up for the whole video, big word-by-word captions, and one stamp moment.
 // Everything on top of the footage is drawn in code: no logos, no faces.
 import React from 'react';
-import { AbsoluteFill, Audio, OffthreadVideo, Sequence, interpolate, staticFile, useCurrentFrame } from 'remotion';
+import { AbsoluteFill, Audio, Img, OffthreadVideo, Sequence, interpolate, staticFile, useCurrentFrame } from 'remotion';
 import { Materials, headStyle } from '../paper/kit';
 import type { CaptionPage } from '../types';
 
@@ -33,6 +33,10 @@ export type GameplayProps = {
   sfx: { src: string; frame: number; volume?: number }[];
   handle: string | null;
   accent: string;
+  /** frames of picture and music before the voice and subtitles begin */
+  lead?: number;
+  /** the channel's mark, e.g. GTA6ISOVERRATED: white type, the last word on a red block */
+  watermark?: string | null;
   /** a small series label above the title, e.g. "OVERHYPED #1" */
   tag?: string | null;
   /** a licensed music bed under the voice (path inside public/) */
@@ -127,6 +131,24 @@ const Captions: React.FC<{ pages: CaptionPage[]; frame: number; layout: 'band' |
   );
 };
 
+/** The channel's mark: GTA6IS in white, OVERRATED on a red block. Type only, drawn in code. */
+export const Watermark: React.FC<{ text: string; size?: number; style?: React.CSSProperties }> = ({ text, size = 40, style }) => {
+  const m = /^(.*?)(OVERRATED|OVERHYPED|MID)$/i.exec(text.replace(/\s+/g, ''));
+  const head = m ? m[1] : text;
+  const tail = m ? m[2] : '';
+  return (
+    <div style={{ display: 'inline-flex', alignItems: 'center', ...style }}>
+      <span style={{ ...headStyle(size, '#FFFFFF'), ...stroke(Math.max(4, size / 7)), textTransform: 'uppercase', letterSpacing: '0.01em', lineHeight: 1 }}>
+        {/* digits in yellow, so GTA6 never reads as GTAG at phone size */}
+        {head.split(/(\d+)/).map((part, i) => (/^\d+$/.test(part) ? <span key={i} style={{ color: '#FFE135' }}>{part}</span> : <span key={i}>{part}</span>))}
+      </span>
+      {tail ? (
+        <span style={{ ...headStyle(size, '#FFFFFF'), textTransform: 'uppercase', lineHeight: 1, background: RED, borderRadius: size / 6, padding: `${size * 0.1}px ${size * 0.22}px ${size * 0.14}px`, marginLeft: size * 0.08, boxShadow: `0 ${size / 10}px 0 #0A0A0A`, transform: 'rotate(-2deg)', display: 'inline-block' }}>{tail}</span>
+      ) : null}
+    </div>
+  );
+};
+
 const Stamp: React.FC<{ text: string; local: number }> = ({ text, local }) => {
   if (local < 0) return null;
   const s = interpolate(local, [0, 5, 8], [2.6, 0.94, 1], { extrapolateRight: 'clamp' });
@@ -179,17 +201,65 @@ export const Gameplay: React.FC<GameplayProps> = (p) => {
         </AbsoluteFill>
         <Title lines={p.title} hl={p.hl} frame={frame} tag={p.tag} />
         <Captions pages={p.captions} frame={frame} layout={p.layout} />
-        {p.handle ? (
-          <div style={{ position: 'absolute', left: 0, right: 0, top: band ? BAND_TOP - 64 : 470, textAlign: 'center', ...headStyle(30, 'rgba(255,255,255,0.85)'), letterSpacing: '0.04em' }}>{p.handle}</div>
+        {p.watermark ? (
+          <div style={{ position: 'absolute', left: 0, right: 0, top: 1458, display: 'flex', justifyContent: 'center', opacity: 0.92 }}>
+            <Watermark text={p.watermark} size={40} />
+          </div>
         ) : null}
         {flash > 0 ? <AbsoluteFill style={{ background: RED, opacity: flash, mixBlendMode: 'screen' }} /> : null}
-        {p.audio ? <Audio src={staticFile(p.audio)} /> : null}
-        {p.music ? <Audio src={staticFile(p.music)} volume={p.musicVolume ?? 0.16} loop /> : null}
+        {p.audio ? (
+          <Sequence from={p.lead ?? 0} layout="none">
+            <Audio src={staticFile(p.audio)} />
+          </Sequence>
+        ) : null}
+        {p.music ? <Audio src={staticFile(p.music)} volume={(f) => interpolate(f, [0, 24], [0, p.musicVolume ?? 0.16], { extrapolateRight: 'clamp' })} loop /> : null}
         {p.sfx.map((s, i) => (
           <Sequence key={i} from={s.frame} layout="none">
             <Audio src={staticFile(s.src)} volume={s.volume ?? 0.8} />
           </Sequence>
         ))}
+      </AbsoluteFill>
+    </Materials>
+  );
+};
+
+export type ThumbProps = { image: string | null; lines: string[]; hl: string | null; stamp: string | null; watermark: string | null; fx?: number; fy?: number; zoom?: number };
+
+/** A vertical thumbnail: one bright frame of the gameplay, the hook huge, the verdict stamped across it. */
+export const GameplayThumb: React.FC<ThumbProps> = (p) => {
+  const at = `${((p.fx ?? 0.45) * 100).toFixed(1)}% ${((p.fy ?? 0.3) * 100).toFixed(1)}%`;
+  const size = p.lines.some((l) => l.length > 14) ? 112 : 136;
+  return (
+    <Materials>
+      <AbsoluteFill style={{ background: '#0A0A0A', overflow: 'hidden' }}>
+        {p.image ? <Img src={staticFile(p.image)} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: at, transform: `scale(${p.zoom ?? 1.25})`, transformOrigin: at, filter: 'brightness(0.95) saturate(1.35) contrast(1.08)' }} /> : null}
+        <AbsoluteFill style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.1) 34%, rgba(0,0,0,0.05) 55%, rgba(0,0,0,0.7) 100%)' }} />
+        <div style={{ position: 'absolute', left: 50, right: 50, top: 300, textAlign: 'center' }}>
+          {p.lines.map((l, i) => (
+            <div key={i} style={{ ...headStyle(size, '#FFFFFF'), ...stroke(16), textTransform: 'uppercase', lineHeight: 1.02, letterSpacing: '-0.015em' }}>
+              {l.split(' ').map((w, j) => {
+                const on = p.hl && w.replace(/[^A-Za-z0-9$]/g, '').toLowerCase() === p.hl.replace(/[^A-Za-z0-9$]/g, '').toLowerCase();
+                return (
+                  <span key={j} style={on ? { background: RED, padding: '0 18px', margin: '0 6px', borderRadius: 12, WebkitTextStroke: '0px', display: 'inline-block', transform: 'rotate(-2deg)', boxShadow: '0 8px 0 #0A0A0A' } : undefined}>
+                    {w}{' '}
+                  </span>
+                );
+              })}
+            </div>
+          ))}
+        </div>
+        {p.stamp ? (
+          <div style={{ position: 'absolute', left: 0, right: 0, top: 1060, display: 'flex', justifyContent: 'center', transform: 'rotate(-10deg)' }}>
+            <div style={{ border: `16px solid ${RED}`, borderRadius: 20, padding: '8px 36px 14px', background: 'rgba(10,10,10,0.45)' }}>
+              <div style={{ ...headStyle(150, RED), textTransform: 'uppercase', letterSpacing: '0.02em', lineHeight: 1 }}>{p.stamp}</div>
+            </div>
+          </div>
+        ) : null}
+        {p.watermark ? (
+          <div style={{ position: 'absolute', left: 0, right: 0, top: 1440, display: 'flex', justifyContent: 'center' }}>
+            <Watermark text={p.watermark} size={54} />
+          </div>
+        ) : null}
       </AbsoluteFill>
     </Materials>
   );

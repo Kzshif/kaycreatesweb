@@ -101,7 +101,9 @@ function cut(id) {
   const clips = [];
   const list = [];
   let frames = 0;
-  spec.shots.forEach((s, i) => {
+  const L = +(channel().lead ?? 1);
+  const shots = spec.shots.map((s, i) => (i === 0 && L ? { ...s, len: s.len + L, lead: (s.lead ?? 0.4) + L } : s));
+  shots.forEach((s, i) => {
     const out = path.join(tmp, `s${String(i).padStart(2, '0')}.mp4`);
     const start = Math.max(0, s.at - (s.lead ?? 0.4));
     const n = Math.round((s.len + 0.2) * FPS);
@@ -125,6 +127,30 @@ function cut(id) {
     /* the check sheet is a convenience; the cut itself is done */
   }
   log(`  cut      ${clips.length} shots -> gameplay/footage/${name}, sheet -> ${path.relative(ROOT, sheet)}`);
+}
+
+// ------------------------------------------------------------------ thumb
+// One vertical thumbnail per video: a bright frame from the recording (front matter `thumb:`
+// gives its time in the recording, otherwise the first shot), the hook huge, the verdict stamped.
+async function thumb(id) {
+  const v = findVideo(id);
+  const script = parseScript(path.join(v.dir, 'script.md'));
+  const m = script.meta;
+  const spec = readJson(path.join(v.dir, 'moments.json'));
+  const at = +(m.thumb || spec.shots[0].at + 0.5);
+  fs.mkdirSync(v.work, { recursive: true });
+  fs.mkdirSync(v.out, { recursive: true });
+  const still = path.join(v.work, `thumb-${v.id}.png`);
+  execFileSync('ffmpeg', ['-y', '-v', 'error', '-ss', String(at), '-i', path.join(FOOTAGE, spec.source), '-frames:v', '1', still]);
+  const ch = channel();
+  const lines = String(m.thumbTitle || m.title || '').split('|').map((x) => x.trim()).filter(Boolean);
+  const props = { image: await stage(still, 'thumbs'), lines, hl: m.thumbHl || m.hl || null, stamp: m.stamp ? String(m.stamp).split('@')[0].trim() : null, watermark: ch.watermark || null, fx: spec.fx ?? 0.45, fy: 0.3, zoom: 1.2 };
+  const { renderStill, selectComposition } = await import('@remotion/renderer');
+  const serveUrl = await getBundle({ log });
+  const composition = await selectComposition({ serveUrl, id: 'GameplayThumb', inputProps: props, ...common() });
+  const out = path.join(v.out, 'thumbnail.png');
+  await renderStill({ composition, serveUrl, output: out, frame: 0, inputProps: props, imageFormat: 'png', ...common() });
+  log(`  thumb    ${path.relative(ROOT, out)}`);
 }
 
 // ------------------------------------------------------------------- make
@@ -165,8 +191,10 @@ async function make(id, { layoutOnly = false, voiceOnly = false } = {}) {
   log(`  timing   ${(t.match * 100).toFixed(0)}% of words matched`);
   if (voiceOnly) return;
   const f = (s) => Math.round(s * FPS);
-  const total = f(secs + 0.6);
-  const pages = buildCaptions(t.words).map((p) => ({ from: f(p.start), to: Math.max(f(p.start) + 2, f(p.end)), words: p.words.map((w) => ({ t: w.t, from: f(w.start), to: Math.max(f(w.start) + 1, f(w.end)) })) }));
+  // a beat of picture and music before the first word, so nobody swipes in on a half-heard line
+  const lead = Math.round(+(m.lead ?? ch.lead ?? 1) * FPS);
+  const total = f(secs + 0.6) + lead;
+  const pages = buildCaptions(t.words).map((p) => ({ from: lead + f(p.start), to: lead + Math.max(f(p.start) + 2, f(p.end)), words: p.words.map((w) => ({ t: w.t, from: lead + f(w.start), to: lead + Math.max(f(w.start) + 1, f(w.end)) })) }));
 
   // the stamp lands on a word: "Overrated @ overrated"
   let stamp = null;
@@ -174,7 +202,7 @@ async function make(id, { layoutOnly = false, voiceOnly = false } = {}) {
     const [label, at] = String(m.stamp).split('@').map((s) => s.trim());
     const key = (at || label).toLowerCase().replace(/[^a-z0-9$]/g, '');
     const hit = t.words.find((w) => String(w.w ?? w.t).toLowerCase().replace(/[^a-z0-9$]/g, '') === key);
-    if (hit) stamp = { frame: f(hit.start), text: label };
+    if (hit) stamp = { frame: lead + f(hit.start), text: label };
   }
 
   // the moments of the recording to use
@@ -213,6 +241,8 @@ async function make(id, { layoutOnly = false, voiceOnly = false } = {}) {
     sfx,
     handle: ch.handle || null,
     accent: '#E8202A',
+    lead,
+    watermark: ch.watermark || null,
     tag: m.tag || (ch.series ? `${ch.series} #${Number(v.id)}` : null),
     music: !layoutOnly && (m.music || ch.music) && (m.music || ch.music) !== 'none' ? await stage(path.join(ASSETS, 'music', `${m.music || pickMusic(ch.music, v.id)}.ogg`), 'music') : null,
     musicVolume: +(m.musicVolume ?? ch.musicVolume ?? 0.16),
@@ -258,6 +288,7 @@ try {
   else if (cmd === 'cut') cut(arg);
   else if (cmd === 'make') await make(arg);
   else if (cmd === 'voice') await make(arg, { voiceOnly: true });
+  else if (cmd === 'thumb') await thumb(arg);
   else if (cmd === 'layout') await make(arg, { layoutOnly: true });
   else log(fs.readFileSync(new URL(import.meta.url), 'utf8').split('\n').slice(1, 11).join('\n'));
 } catch (e) {
