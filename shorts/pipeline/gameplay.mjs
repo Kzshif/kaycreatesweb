@@ -204,10 +204,10 @@ async function make(id, { layoutOnly = false, voiceOnly = false, pagesOnly = fal
   // Subtitle pages: at most three words (four when a pair must stay together), broken at full
   // stops and commas, never straight after a word that leans on the next ("GTA | 6", "to | Vice")
   // and never between a number and its unit ("90 | million").
-  const leans = (w) => /^(gta|a|an|the|of|to|and|for|in|on|out|my|your|is|its|it's|than|over|just)$/i.test(String(w).replace(/[^A-Za-z']/g, ''));
+  const leans = (w) => /^(gta|a|an|the|of|to|and|for|in|on|my|your|is|its|it's|than|over|just)$/i.test(String(w).replace(/[^A-Za-z']/g, ''));
   const unit = (w) => /^(million|billion|thousand|years?|dollars?|percent|of)$/i.test(String(w || '').replace(/[^A-Za-z]/g, ''));
   // pairs that read as one thing and stay on the same page
-  const KEEP = /^(gta \d|download code|physical copy|vice city|ultimate edition|standard edition|driving simulator|marketing campaign|bad news|big games|bonus cars|extra shops|fake florida|first trailer|three reasons|most overhyped|game ever|ten dollars|change my|my mind|boxed copy|a disc|a box|a game|the map|a remix|thirteen years|came out|a lot|lot of|of it|all of|6 fan|their life|life story)$/i;
+  const KEEP = /^(gta \d|download code|physical copy|vice city|ultimate edition|standard edition|driving simulator|marketing campaign|bad news|big games|bonus cars|extra shops|fake florida|first trailer|three reasons|most overhyped|game ever|ten dollars|change my|my mind|boxed copy|a disc|a box|a game|the map|a remix|thirteen years|came out|it came|out of|a lot|lot of|of it|all of|6 fan|their life|life story)$/i;
   const norm = (w) => String(w || '').toLowerCase().replace(/[^a-z0-9$-]/g, '');
   // best split of a clause into pages of 1-4 words: short pages, no break inside a pair, few singles
   const chunk = (ws) => {
@@ -219,13 +219,14 @@ async function make(id, { layoutOnly = false, voiceOnly = false, pagesOnly = fal
       if (len === 1) return n === 1 ? 0 : 4;
       if (len <= 3) return chars > 24 ? 1.5 : 0;
       if (len === 4) return chars > 22 ? 2.5 : 0.8;
+      if (len === 5 && chars <= 16) return 1.5;
       return Infinity;
     };
     const best = [0];
     const from = [0];
     for (let j = 1; j <= n; j++) {
       best[j] = Infinity;
-      for (let L = 1; L <= 4 && L <= j; L++) {
+      for (let L = 1; L <= 5 && L <= j; L++) {
         const a = j - L;
         const c = best[a] + pageCost(a, j) + (a > 0 && bad(a) ? 10 : 0) + 0.3;
         if (c < best[j]) {
