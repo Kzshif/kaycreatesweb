@@ -95,7 +95,7 @@ export async function bakeBackdrop(props, workDir) {
 
 // 'angle' renders the same pictures as 'swangle' (only edge anti-aliasing differs) but runs the
 // workers in parallel: measured 175 ms against 2,160 ms a frame on four cores.
-const common = () => ({ browserExecutable: findBrowser(), chromiumOptions: { gl: process.env.SHORTS_GL || 'angle' }, logLevel: 'error' });
+export const common = () => ({ browserExecutable: findBrowser(), chromiumOptions: { gl: process.env.SHORTS_GL || 'angle' }, logLevel: 'error' });
 const cores = () => Math.max(1, Math.min(os.cpus().length, 8));
 
 /** Render single frames as PNG. With `onProbe`, each frame also reports its safe-zone check. */

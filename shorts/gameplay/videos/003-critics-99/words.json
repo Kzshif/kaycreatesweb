@@ -1,0 +1,253 @@
+{
+ "engine": "faster-whisper small.en (word_timestamps)",
+ "pass_used": "glossary prompt",
+ "unheard_words": 0,
+ "duration": 15.088,
+ "match": 1.0,
+ "heard": "Critics gave GTA 6 a 99. Players are saying something else. Long drives. Long conversations. Chores. Some say the chaos has been toned down. Some players even fell through the map at launch. A 99. Be honest. Is it mid?",
+ "mismatches": [],
+ "figure_mismatches": [],
+ "low_confidence": [],
+ "words": [
+  {
+   "w": "Critics",
+   "start": 0.0,
+   "end": 0.28,
+   "matched": true
+  },
+  {
+   "w": "gave",
+   "start": 0.28,
+   "end": 0.54,
+   "matched": true
+  },
+  {
+   "w": "GTA",
+   "start": 0.54,
+   "end": 1.02,
+   "matched": true
+  },
+  {
+   "w": "6",
+   "start": 1.02,
+   "end": 1.44,
+   "matched": true
+  },
+  {
+   "w": "a",
+   "start": 1.44,
+   "end": 1.62,
+   "matched": true
+  },
+  {
+   "w": "99.",
+   "start": 1.62,
+   "end": 2.1,
+   "matched": true
+  },
+  {
+   "w": "Players",
+   "start": 2.68,
+   "end": 2.86,
+   "matched": true
+  },
+  {
+   "w": "are",
+   "start": 2.86,
+   "end": 3.04,
+   "matched": true
+  },
+  {
+   "w": "saying",
+   "start": 3.04,
+   "end": 3.3,
+   "matched": true
+  },
+  {
+   "w": "something",
+   "start": 3.3,
+   "end": 3.62,
+   "matched": true
+  },
+  {
+   "w": "else.",
+   "start": 3.62,
+   "end": 3.94,
+   "matched": true
+  },
+  {
+   "w": "Long",
+   "start": 4.46,
+   "end": 4.56,
+   "matched": true
+  },
+  {
+   "w": "drives.",
+   "start": 4.56,
+   "end": 4.98,
+   "matched": true
+  },
+  {
+   "w": "Long",
+   "start": 5.48,
+   "end": 5.62,
+   "matched": true
+  },
+  {
+   "w": "conversations.",
+   "start": 5.62,
+   "end": 6.18,
+   "matched": true
+  },
+  {
+   "w": "Chores.",
+   "start": 6.94,
+   "end": 7.12,
+   "matched": true
+  },
+  {
+   "w": "Some",
+   "start": 7.7,
+   "end": 7.8,
+   "matched": true
+  },
+  {
+   "w": "say",
+   "start": 7.8,
+   "end": 7.98,
+   "matched": true
+  },
+  {
+   "w": "the",
+   "start": 7.98,
+   "end": 8.1,
+   "matched": true
+  },
+  {
+   "w": "chaos",
+   "start": 8.1,
+   "end": 8.4,
+   "matched": true
+  },
+  {
+   "w": "has",
+   "start": 8.4,
+   "end": 8.6,
+   "matched": true
+  },
+  {
+   "w": "been",
+   "start": 8.6,
+   "end": 8.8,
+   "matched": true
+  },
+  {
+   "w": "toned",
+   "start": 8.8,
+   "end": 9.12,
+   "matched": true
+  },
+  {
+   "w": "down.",
+   "start": 9.12,
+   "end": 9.38,
+   "matched": true
+  },
+  {
+   "w": "Some",
+   "start": 9.82,
+   "end": 9.98,
+   "matched": true
+  },
+  {
+   "w": "players",
+   "start": 9.98,
+   "end": 10.34,
+   "matched": true
+  },
+  {
+   "w": "even",
+   "start": 10.34,
+   "end": 10.66,
+   "matched": true
+  },
+  {
+   "w": "fell",
+   "start": 10.66,
+   "end": 10.92,
+   "matched": true
+  },
+  {
+   "w": "through",
+   "start": 10.92,
+   "end": 11.14,
+   "matched": true
+  },
+  {
+   "w": "the",
+   "start": 11.14,
+   "end": 11.28,
+   "matched": true
+  },
+  {
+   "w": "map",
+   "start": 11.28,
+   "end": 11.46,
+   "matched": true
+  },
+  {
+   "w": "at",
+   "start": 11.46,
+   "end": 11.62,
+   "matched": true
+  },
+  {
+   "w": "launch.",
+   "start": 11.62,
+   "end": 11.94,
+   "matched": true
+  },
+  {
+   "w": "A",
+   "start": 12.42,
+   "end": 12.5,
+   "matched": true
+  },
+  {
+   "w": "99?",
+   "start": 12.5,
+   "end": 12.94,
+   "matched": true
+  },
+  {
+   "w": "Be",
+   "start": 13.48,
+   "end": 13.6,
+   "matched": true
+  },
+  {
+   "w": "honest.",
+   "start": 13.6,
+   "end": 13.88,
+   "matched": true
+  },
+  {
+   "w": "Is",
+   "start": 14.4,
+   "end": 14.52,
+   "matched": true
+  },
+  {
+   "w": "it",
+   "start": 14.52,
+   "end": 14.64,
+   "matched": true
+  },
+  {
+   "w": "mid?",
+   "start": 14.64,
+   "end": 14.86,
+   "matched": true
+  }
+ ]
+}

@@ -3,6 +3,7 @@ import { Composition } from 'remotion';
 import { Board } from './board/Board';
 import { Motion, type MotionProps } from './board/Motion';
 import { Short } from './Short';
+import { Gameplay, type GameplayProps } from './gameplay/Gameplay';
 import { FRAME } from './shared/spec.mjs';
 import type { ShortProps } from './types';
 
@@ -35,6 +36,16 @@ export const Root: React.FC = () => (
     fps={FRAME.fps}
     durationInFrames={300}
     defaultProps={{ durationInFrames: 300, captions: [], cues: { billion: 30, just: 50, walk: 62, s2: 95, earned: 110, earnedEnd: 150, s3: 205, half: 250 }, audio: null, probe: false } as MotionProps}
+    calculateMetadata={({ props }) => ({ durationInFrames: props.durationInFrames })}
+  />
+  <Composition
+    id="Gameplay"
+    component={Gameplay}
+    width={1080}
+    height={1920}
+    fps={30}
+    durationInFrames={150}
+    defaultProps={{ id: '000', durationInFrames: 150, fps: 30, footage: null, clips: [{ start: 0, end: 2 }, { start: 5, end: 7, zoom: 1.3 }, { start: 9, end: 11 }], layout: 'band', title: ['GTA 6 is', 'overrated'], hl: 'overrated', captions: [], stamp: { frame: 60, text: 'Overrated' }, audio: null, gameVolume: 0.12, sfx: [], handle: '@handle', accent: '#E8202A' } as GameplayProps}
     calculateMetadata={({ props }) => ({ durationInFrames: props.durationInFrames })}
   />
   <Composition id="Board" component={Board} width={FRAME.width} height={FRAME.height} fps={FRAME.fps} durationInFrames={90} defaultProps={{ page: 1, probe: false }} />

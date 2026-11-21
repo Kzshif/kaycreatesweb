@@ -22,3 +22,8 @@ output/
 # style-board stills are sent in chat; only the contact sheet is kept
 identity/board/*.png
 identity/*.mp4
+
+# gameplay shorts: recordings and renders never go into git
+gameplay/footage/
+gameplay/videos/*/work/
+gameplay/videos/*/out/

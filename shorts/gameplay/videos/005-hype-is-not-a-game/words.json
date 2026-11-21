@@ -1,0 +1,205 @@
+{
+ "engine": "faster-whisper small.en (word_timestamps)",
+ "pass_used": "glossary prompt",
+ "unheard_words": 0,
+ "duration": 11.296,
+ "match": 1.0,
+ "heard": "GTA 6's first trailer got over 90 million views in a day. That's hype. Hype sells games, but hype doesn't play the game. You do. So be honest. Is it actually fun?",
+ "mismatches": [],
+ "figure_mismatches": [],
+ "low_confidence": [],
+ "words": [
+  {
+   "w": "GTA",
+   "start": 0.0,
+   "end": 0.42,
+   "matched": true
+  },
+  {
+   "w": "6's",
+   "start": 0.42,
+   "end": 1.14,
+   "matched": true
+  },
+  {
+   "w": "first",
+   "start": 1.14,
+   "end": 1.4,
+   "matched": true
+  },
+  {
+   "w": "trailer",
+   "start": 1.4,
+   "end": 1.86,
+   "matched": true
+  },
+  {
+   "w": "got",
+   "start": 1.86,
+   "end": 2.12,
+   "matched": true
+  },
+  {
+   "w": "over",
+   "start": 2.12,
+   "end": 2.36,
+   "matched": true
+  },
+  {
+   "w": "90",
+   "start": 2.36,
+   "end": 2.72,
+   "matched": true
+  },
+  {
+   "w": "million",
+   "start": 2.72,
+   "end": 3.0,
+   "matched": true
+  },
+  {
+   "w": "views",
+   "start": 3.0,
+   "end": 3.44,
+   "matched": true
+  },
+  {
+   "w": "in",
+   "start": 3.44,
+   "end": 3.66,
+   "matched": true
+  },
+  {
+   "w": "a",
+   "start": 3.66,
+   "end": 3.78,
+   "matched": true
+  },
+  {
+   "w": "day.",
+   "start": 3.78,
+   "end": 4.06,
+   "matched": true
+  },
+  {
+   "w": "That's",
+   "start": 4.4,
+   "end": 4.64,
+   "matched": true
+  },
+  {
+   "w": "hype.",
+   "start": 4.64,
+   "end": 4.8,
+   "matched": true
+  },
+  {
+   "w": "Hype",
+   "start": 5.42,
+   "end": 5.5,
+   "matched": true
+  },
+  {
+   "w": "sells",
+   "start": 5.5,
+   "end": 5.74,
+   "matched": true
+  },
+  {
+   "w": "games.",
+   "start": 5.74,
+   "end": 6.12,
+   "matched": true
+  },
+  {
+   "w": "But",
+   "start": 6.58,
+   "end": 6.7,
+   "matched": true
+  },
+  {
+   "w": "hype",
+   "start": 6.7,
+   "end": 6.9,
+   "matched": true
+  },
+  {
+   "w": "doesn't",
+   "start": 6.9,
+   "end": 7.28,
+   "matched": true
+  },
+  {
+   "w": "play",
+   "start": 7.28,
+   "end": 7.44,
+   "matched": true
+  },
+  {
+   "w": "the",
+   "start": 7.44,
+   "end": 7.58,
+   "matched": true
+  },
+  {
+   "w": "game.",
+   "start": 7.58,
+   "end": 7.86,
+   "matched": true
+  },
+  {
+   "w": "You",
+   "start": 8.32,
+   "end": 8.42,
+   "matched": true
+  },
+  {
+   "w": "do.",
+   "start": 8.42,
+   "end": 8.68,
+   "matched": true
+  },
+  {
+   "w": "So",
+   "start": 9.18,
+   "end": 9.28,
+   "matched": true
+  },
+  {
+   "w": "be",
+   "start": 9.28,
+   "end": 9.42,
+   "matched": true
+  },
+  {
+   "w": "honest.",
+   "start": 9.42,
+   "end": 9.72,
+   "matched": true
+  },
+  {
+   "w": "Is",
+   "start": 10.24,
+   "end": 10.34,
+   "matched": true
+  },
+  {
+   "w": "it",
+   "start": 10.34,
+   "end": 10.42,
+   "matched": true
+  },
+  {
+   "w": "actually",
+   "start": 10.42,
+   "end": 10.74,
+   "matched": true
+  },
+  {
+   "w": "fun?",
+   "start": 10.74,
+   "end": 11.04,
+   "matched": true
+  }
+ ]
+}

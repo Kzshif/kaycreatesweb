@@ -1,0 +1,319 @@
+{
+ "engine": "faster-whisper small.en (word_timestamps)",
+ "pass_used": "glossary prompt",
+ "unheard_words": 0,
+ "duration": 19.403,
+ "match": 1.0,
+ "heard": "13 years. That's how long we waited after GTA 5. And GTA 6 isn't even on PC. No PC release date. Nothing. Rockstar says most of its players are on consoles. GTA 5 took a year and a half to reach PC. So PC players wait. Again, overrated. Change my mind.",
+ "mismatches": [],
+ "figure_mismatches": [],
+ "low_confidence": [],
+ "words": [
+  {
+   "w": "Thirteen",
+   "start": 0.0,
+   "end": 0.32,
+   "matched": true
+  },
+  {
+   "w": "years.",
+   "start": 0.32,
+   "end": 0.58,
+   "matched": true
+  },
+  {
+   "w": "That's",
+   "start": 1.08,
+   "end": 1.28,
+   "matched": true
+  },
+  {
+   "w": "how",
+   "start": 1.28,
+   "end": 1.46,
+   "matched": true
+  },
+  {
+   "w": "long",
+   "start": 1.46,
+   "end": 1.68,
+   "matched": true
+  },
+  {
+   "w": "we",
+   "start": 1.68,
+   "end": 1.84,
+   "matched": true
+  },
+  {
+   "w": "waited",
+   "start": 1.84,
+   "end": 2.12,
+   "matched": true
+  },
+  {
+   "w": "after",
+   "start": 2.12,
+   "end": 2.56,
+   "matched": true
+  },
+  {
+   "w": "GTA",
+   "start": 2.56,
+   "end": 2.98,
+   "matched": true
+  },
+  {
+   "w": "5.",
+   "start": 2.98,
+   "end": 3.5,
+   "matched": true
+  },
+  {
+   "w": "And",
+   "start": 4.02,
+   "end": 4.08,
+   "matched": true
+  },
+  {
+   "w": "GTA",
+   "start": 4.08,
+   "end": 4.46,
+   "matched": true
+  },
+  {
+   "w": "6",
+   "start": 4.46,
+   "end": 4.82,
+   "matched": true
+  },
+  {
+   "w": "isn't",
+   "start": 4.82,
+   "end": 5.16,
+   "matched": true
+  },
+  {
+   "w": "even",
+   "start": 5.16,
+   "end": 5.38,
+   "matched": true
+  },
+  {
+   "w": "on",
+   "start": 5.38,
+   "end": 5.58,
+   "matched": true
+  },
+  {
+   "w": "PC.",
+   "start": 5.58,
+   "end": 5.96,
+   "matched": true
+  },
+  {
+   "w": "No",
+   "start": 6.52,
+   "end": 6.68,
+   "matched": true
+  },
+  {
+   "w": "PC",
+   "start": 6.68,
+   "end": 7.04,
+   "matched": true
+  },
+  {
+   "w": "release",
+   "start": 7.04,
+   "end": 7.3,
+   "matched": true
+  },
+  {
+   "w": "date.",
+   "start": 7.3,
+   "end": 7.66,
+   "matched": true
+  },
+  {
+   "w": "Nothing.",
+   "start": 8.16,
+   "end": 8.38,
+   "matched": true
+  },
+  {
+   "w": "Rockstar",
+   "start": 9.06,
+   "end": 9.36,
+   "matched": true
+  },
+  {
+   "w": "says",
+   "start": 9.36,
+   "end": 9.62,
+   "matched": true
+  },
+  {
+   "w": "most",
+   "start": 9.62,
+   "end": 9.88,
+   "matched": true
+  },
+  {
+   "w": "of",
+   "start": 9.88,
+   "end": 10.08,
+   "matched": true
+  },
+  {
+   "w": "its",
+   "start": 10.08,
+   "end": 10.18,
+   "matched": true
+  },
+  {
+   "w": "players",
+   "start": 10.18,
+   "end": 10.46,
+   "matched": true
+  },
+  {
+   "w": "are",
+   "start": 10.46,
+   "end": 10.74,
+   "matched": true
+  },
+  {
+   "w": "on",
+   "start": 10.74,
+   "end": 10.96,
+   "matched": true
+  },
+  {
+   "w": "consoles.",
+   "start": 10.96,
+   "end": 11.36,
+   "matched": true
+  },
+  {
+   "w": "GTA",
+   "start": 12.02,
+   "end": 12.34,
+   "matched": true
+  },
+  {
+   "w": "5",
+   "start": 12.34,
+   "end": 12.84,
+   "matched": true
+  },
+  {
+   "w": "took",
+   "start": 12.84,
+   "end": 13.06,
+   "matched": true
+  },
+  {
+   "w": "a",
+   "start": 13.06,
+   "end": 13.22,
+   "matched": true
+  },
+  {
+   "w": "year",
+   "start": 13.22,
+   "end": 13.4,
+   "matched": true
+  },
+  {
+   "w": "and",
+   "start": 13.4,
+   "end": 13.54,
+   "matched": true
+  },
+  {
+   "w": "a",
+   "start": 13.54,
+   "end": 13.64,
+   "matched": true
+  },
+  {
+   "w": "half",
+   "start": 13.64,
+   "end": 13.8,
+   "matched": true
+  },
+  {
+   "w": "to",
+   "start": 13.8,
+   "end": 14.0,
+   "matched": true
+  },
+  {
+   "w": "reach",
+   "start": 14.0,
+   "end": 14.18,
+   "matched": true
+  },
+  {
+   "w": "PC.",
+   "start": 14.18,
+   "end": 14.64,
+   "matched": true
+  },
+  {
+   "w": "So",
+   "start": 15.1,
+   "end": 15.2,
+   "matched": true
+  },
+  {
+   "w": "PC",
+   "start": 15.2,
+   "end": 15.52,
+   "matched": true
+  },
+  {
+   "w": "players",
+   "start": 15.52,
+   "end": 15.88,
+   "matched": true
+  },
+  {
+   "w": "wait.",
+   "start": 15.88,
+   "end": 16.18,
+   "matched": true
+  },
+  {
+   "w": "Again.",
+   "start": 16.64,
+   "end": 16.94,
+   "matched": true
+  },
+  {
+   "w": "Overrated?",
+   "start": 17.46,
+   "end": 17.9,
+   "matched": true
+  },
+  {
+   "w": "Change",
+   "start": 18.44,
+   "end": 18.68,
+   "matched": true
+  },
+  {
+   "w": "my",
+   "start": 18.68,
+   "end": 18.88,
+   "matched": true
+  },
+  {
+   "w": "mind.",
+   "start": 18.88,
+   "end": 19.16,
+   "matched": true
+  }
+ ]
+}
