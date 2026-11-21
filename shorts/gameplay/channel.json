@@ -17,5 +17,6 @@
   ],
   "musicVolume": 0.16,
   "watermark": "GTA6ISOVERRATED",
-  "lead": 1.0
+  "lead": 1.0,
+  "fps": 60
 }

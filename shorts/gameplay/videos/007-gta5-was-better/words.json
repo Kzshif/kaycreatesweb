@@ -1,0 +1,439 @@
+{
+ "engine": "faster-whisper small.en (word_timestamps)",
+ "pass_used": "glossary prompt",
+ "unheard_words": 0,
+ "duration": 26.501,
+ "match": 0.9857,
+ "heard": "Hot take, GTA 5 is still better than GTA 6. It came out in 2013, it costs $60 and it's on PC. GTA 6. 13 years later, it's $80, and it's not even on PC. Critics gave it 99 out of 100. Players are complaining about long drives and chores. If GTA 6 is a 99, what was GTA 5? A 150. Comment which one you'd rather play. I'll wait.",
+ "mismatches": [
+  {
+   "script": "cost",
+   "heard": "costs",
+   "at": 5.32
+  }
+ ],
+ "figure_mismatches": [],
+ "low_confidence": [],
+ "words": [
+  {
+   "w": "Hot",
+   "start": 0.0,
+   "end": 0.18,
+   "matched": true
+  },
+  {
+   "w": "take:",
+   "start": 0.18,
+   "end": 0.44,
+   "matched": true
+  },
+  {
+   "w": "GTA",
+   "start": 0.96,
+   "end": 1.0,
+   "matched": true
+  },
+  {
+   "w": "5",
+   "start": 0.96,
+   "end": 1.36,
+   "matched": true
+  },
+  {
+   "w": "is",
+   "start": 1.36,
+   "end": 1.58,
+   "matched": true
+  },
+  {
+   "w": "still",
+   "start": 1.58,
+   "end": 1.76,
+   "matched": true
+  },
+  {
+   "w": "better",
+   "start": 1.76,
+   "end": 1.98,
+   "matched": true
+  },
+  {
+   "w": "than",
+   "start": 1.98,
+   "end": 2.2,
+   "matched": true
+  },
+  {
+   "w": "GTA",
+   "start": 2.2,
+   "end": 2.54,
+   "matched": true
+  },
+  {
+   "w": "6.",
+   "start": 2.54,
+   "end": 3.08,
+   "matched": true
+  },
+  {
+   "w": "It",
+   "start": 3.5,
+   "end": 3.6,
+   "matched": true
+  },
+  {
+   "w": "came",
+   "start": 3.6,
+   "end": 3.76,
+   "matched": true
+  },
+  {
+   "w": "out",
+   "start": 3.76,
+   "end": 3.98,
+   "matched": true
+  },
+  {
+   "w": "in",
+   "start": 3.98,
+   "end": 4.12,
+   "matched": true
+  },
+  {
+   "w": "2013,",
+   "start": 4.12,
+   "end": 4.64,
+   "matched": true
+  },
+  {
+   "w": "it",
+   "start": 5.24,
+   "end": 5.32,
+   "matched": true
+  },
+  {
+   "w": "cost",
+   "start": 5.32,
+   "end": 5.48,
+   "matched": false
+  },
+  {
+   "w": "$60,",
+   "start": 5.48,
+   "end": 5.96,
+   "matched": true
+  },
+  {
+   "w": "and",
+   "start": 5.96,
+   "end": 6.44,
+   "matched": true
+  },
+  {
+   "w": "it's",
+   "start": 6.44,
+   "end": 6.6,
+   "matched": true
+  },
+  {
+   "w": "on",
+   "start": 6.6,
+   "end": 6.74,
+   "matched": true
+  },
+  {
+   "w": "PC.",
+   "start": 6.74,
+   "end": 7.02,
+   "matched": true
+  },
+  {
+   "w": "GTA",
+   "start": 7.68,
+   "end": 8.0,
+   "matched": true
+  },
+  {
+   "w": "6?",
+   "start": 8.0,
+   "end": 8.56,
+   "matched": true
+  },
+  {
+   "w": "Thirteen",
+   "start": 9.14,
+   "end": 9.42,
+   "matched": true
+  },
+  {
+   "w": "years",
+   "start": 9.42,
+   "end": 9.64,
+   "matched": true
+  },
+  {
+   "w": "later,",
+   "start": 9.64,
+   "end": 10.08,
+   "matched": true
+  },
+  {
+   "w": "it's",
+   "start": 10.24,
+   "end": 10.4,
+   "matched": true
+  },
+  {
+   "w": "$80,",
+   "start": 10.4,
+   "end": 10.76,
+   "matched": true
+  },
+  {
+   "w": "and",
+   "start": 11.36,
+   "end": 11.48,
+   "matched": true
+  },
+  {
+   "w": "it's",
+   "start": 11.48,
+   "end": 11.62,
+   "matched": true
+  },
+  {
+   "w": "not",
+   "start": 11.62,
+   "end": 11.76,
+   "matched": true
+  },
+  {
+   "w": "even",
+   "start": 11.76,
+   "end": 11.96,
+   "matched": true
+  },
+  {
+   "w": "on",
+   "start": 11.96,
+   "end": 12.1,
+   "matched": true
+  },
+  {
+   "w": "PC.",
+   "start": 12.1,
+   "end": 12.48,
+   "matched": true
+  },
+  {
+   "w": "Critics",
+   "start": 12.98,
+   "end": 13.14,
+   "matched": true
+  },
+  {
+   "w": "gave",
+   "start": 13.14,
+   "end": 13.46,
+   "matched": true
+  },
+  {
+   "w": "it",
+   "start": 13.46,
+   "end": 13.58,
+   "matched": true
+  },
+  {
+   "w": "99",
+   "start": 13.58,
+   "end": 14.08,
+   "matched": true
+  },
+  {
+   "w": "out",
+   "start": 14.08,
+   "end": 14.42,
+   "matched": true
+  },
+  {
+   "w": "of",
+   "start": 14.42,
+   "end": 14.58,
+   "matched": true
+  },
+  {
+   "w": "100.",
+   "start": 14.58,
+   "end": 15.08,
+   "matched": true
+  },
+  {
+   "w": "Players",
+   "start": 15.54,
+   "end": 15.78,
+   "matched": true
+  },
+  {
+   "w": "are",
+   "start": 15.78,
+   "end": 15.96,
+   "matched": true
+  },
+  {
+   "w": "complaining",
+   "start": 15.96,
+   "end": 16.32,
+   "matched": true
+  },
+  {
+   "w": "about",
+   "start": 16.32,
+   "end": 16.66,
+   "matched": true
+  },
+  {
+   "w": "long",
+   "start": 16.66,
+   "end": 16.9,
+   "matched": true
+  },
+  {
+   "w": "drives",
+   "start": 16.9,
+   "end": 17.32,
+   "matched": true
+  },
+  {
+   "w": "and",
+   "start": 17.32,
+   "end": 17.54,
+   "matched": true
+  },
+  {
+   "w": "chores.",
+   "start": 17.54,
+   "end": 17.82,
+   "matched": true
+  },
+  {
+   "w": "If",
+   "start": 18.32,
+   "end": 18.42,
+   "matched": true
+  },
+  {
+   "w": "GTA",
+   "start": 18.42,
+   "end": 18.8,
+   "matched": true
+  },
+  {
+   "w": "6",
+   "start": 18.8,
+   "end": 19.18,
+   "matched": true
+  },
+  {
+   "w": "is",
+   "start": 19.18,
+   "end": 19.36,
+   "matched": true
+  },
+  {
+   "w": "a",
+   "start": 19.36,
+   "end": 19.46,
+   "matched": true
+  },
+  {
+   "w": "99,",
+   "start": 19.46,
+   "end": 19.94,
+   "matched": true
+  },
+  {
+   "w": "what",
+   "start": 20.4,
+   "end": 20.52,
+   "matched": true
+  },
+  {
+   "w": "was",
+   "start": 20.52,
+   "end": 20.66,
+   "matched": true
+  },
+  {
+   "w": "GTA",
+   "start": 20.66,
+   "end": 21.04,
+   "matched": true
+  },
+  {
+   "w": "5?",
+   "start": 21.04,
+   "end": 21.48,
+   "matched": true
+  },
+  {
+   "w": "A",
+   "start": 21.94,
+   "end": 22.04,
+   "matched": true
+  },
+  {
+   "w": "150?",
+   "start": 22.04,
+   "end": 22.64,
+   "matched": true
+  },
+  {
+   "w": "Comment",
+   "start": 23.58,
+   "end": 23.84,
+   "matched": true
+  },
+  {
+   "w": "which",
+   "start": 23.84,
+   "end": 24.12,
+   "matched": true
+  },
+  {
+   "w": "one",
+   "start": 24.12,
+   "end": 24.36,
+   "matched": true
+  },
+  {
+   "w": "you'd",
+   "start": 24.36,
+   "end": 24.6,
+   "matched": true
+  },
+  {
+   "w": "rather",
+   "start": 24.6,
+   "end": 24.76,
+   "matched": true
+  },
+  {
+   "w": "play.",
+   "start": 24.76,
+   "end": 25.14,
+   "matched": true
+  },
+  {
+   "w": "I'll",
+   "start": 25.14,
+   "end": 25.86,
+   "matched": true
+  },
+  {
+   "w": "wait.",
+   "start": 25.86,
+   "end": 26.1,
+   "matched": true
+  }
+ ]
+}

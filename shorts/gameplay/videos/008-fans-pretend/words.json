@@ -1,0 +1,391 @@
+{
+ "engine": "faster-whisper small.en (word_timestamps)",
+ "pass_used": "glossary prompt",
+ "unheard_words": 0,
+ "duration": 23.984,
+ "match": 0.9839,
+ "heard": "Five things GTA 6 fans pretend not to notice. One, it's $80 and there's no disc in the box. Two, some shops are locked behind a $100 addition. Three, PC players still don't have a release date. Four, it's Vice City. Again, and five, you waited 13 years for all of it. Tag a GTA 6 fan. Let's see them defend this.",
+ "mismatches": [
+  {
+   "script": "edition.",
+   "heard": "addition.",
+   "at": 10.0
+  }
+ ],
+ "figure_mismatches": [],
+ "low_confidence": [],
+ "words": [
+  {
+   "w": "Five",
+   "start": 0.0,
+   "end": 0.3,
+   "matched": true
+  },
+  {
+   "w": "things",
+   "start": 0.3,
+   "end": 0.6,
+   "matched": true
+  },
+  {
+   "w": "GTA",
+   "start": 0.6,
+   "end": 1.06,
+   "matched": true
+  },
+  {
+   "w": "6",
+   "start": 1.06,
+   "end": 1.42,
+   "matched": true
+  },
+  {
+   "w": "fans",
+   "start": 1.42,
+   "end": 1.86,
+   "matched": true
+  },
+  {
+   "w": "pretend",
+   "start": 1.86,
+   "end": 2.38,
+   "matched": true
+  },
+  {
+   "w": "not",
+   "start": 2.38,
+   "end": 2.66,
+   "matched": true
+  },
+  {
+   "w": "to",
+   "start": 2.66,
+   "end": 2.8,
+   "matched": true
+  },
+  {
+   "w": "notice.",
+   "start": 2.8,
+   "end": 3.22,
+   "matched": true
+  },
+  {
+   "w": "One.",
+   "start": 3.68,
+   "end": 3.76,
+   "matched": true
+  },
+  {
+   "w": "It's",
+   "start": 4.24,
+   "end": 4.48,
+   "matched": true
+  },
+  {
+   "w": "$80,",
+   "start": 4.48,
+   "end": 4.72,
+   "matched": true
+  },
+  {
+   "w": "and",
+   "start": 4.72,
+   "end": 5.44,
+   "matched": true
+  },
+  {
+   "w": "there's",
+   "start": 5.44,
+   "end": 5.64,
+   "matched": true
+  },
+  {
+   "w": "no",
+   "start": 5.64,
+   "end": 5.84,
+   "matched": true
+  },
+  {
+   "w": "disc",
+   "start": 5.84,
+   "end": 6.1,
+   "matched": true
+  },
+  {
+   "w": "in",
+   "start": 6.1,
+   "end": 6.26,
+   "matched": true
+  },
+  {
+   "w": "the",
+   "start": 6.26,
+   "end": 6.36,
+   "matched": true
+  },
+  {
+   "w": "box.",
+   "start": 6.36,
+   "end": 6.7,
+   "matched": true
+  },
+  {
+   "w": "Two.",
+   "start": 7.02,
+   "end": 7.36,
+   "matched": true
+  },
+  {
+   "w": "Some",
+   "start": 7.92,
+   "end": 8.16,
+   "matched": true
+  },
+  {
+   "w": "shops",
+   "start": 8.16,
+   "end": 8.5,
+   "matched": true
+  },
+  {
+   "w": "are",
+   "start": 8.5,
+   "end": 8.72,
+   "matched": true
+  },
+  {
+   "w": "locked",
+   "start": 8.72,
+   "end": 9.04,
+   "matched": true
+  },
+  {
+   "w": "behind",
+   "start": 9.04,
+   "end": 9.42,
+   "matched": true
+  },
+  {
+   "w": "a",
+   "start": 9.42,
+   "end": 9.54,
+   "matched": true
+  },
+  {
+   "w": "$100",
+   "start": 9.54,
+   "end": 10.0,
+   "matched": true
+  },
+  {
+   "w": "edition.",
+   "start": 10.0,
+   "end": 10.64,
+   "matched": false
+  },
+  {
+   "w": "Three.",
+   "start": 11.1,
+   "end": 11.46,
+   "matched": true
+  },
+  {
+   "w": "PC",
+   "start": 12.02,
+   "end": 12.28,
+   "matched": true
+  },
+  {
+   "w": "players",
+   "start": 12.28,
+   "end": 12.74,
+   "matched": true
+  },
+  {
+   "w": "still",
+   "start": 12.74,
+   "end": 13.08,
+   "matched": true
+  },
+  {
+   "w": "don't",
+   "start": 13.08,
+   "end": 13.38,
+   "matched": true
+  },
+  {
+   "w": "have",
+   "start": 13.38,
+   "end": 13.56,
+   "matched": true
+  },
+  {
+   "w": "a",
+   "start": 13.56,
+   "end": 13.66,
+   "matched": true
+  },
+  {
+   "w": "release",
+   "start": 13.66,
+   "end": 13.88,
+   "matched": true
+  },
+  {
+   "w": "date.",
+   "start": 13.88,
+   "end": 14.24,
+   "matched": true
+  },
+  {
+   "w": "Four.",
+   "start": 14.6,
+   "end": 14.94,
+   "matched": true
+  },
+  {
+   "w": "It's",
+   "start": 15.52,
+   "end": 15.78,
+   "matched": true
+  },
+  {
+   "w": "Vice",
+   "start": 15.78,
+   "end": 15.94,
+   "matched": true
+  },
+  {
+   "w": "City.",
+   "start": 15.94,
+   "end": 16.28,
+   "matched": true
+  },
+  {
+   "w": "Again.",
+   "start": 16.8,
+   "end": 17.1,
+   "matched": true
+  },
+  {
+   "w": "And",
+   "start": 17.72,
+   "end": 17.88,
+   "matched": true
+  },
+  {
+   "w": "five.",
+   "start": 17.88,
+   "end": 18.2,
+   "matched": true
+  },
+  {
+   "w": "You",
+   "start": 18.76,
+   "end": 18.88,
+   "matched": true
+  },
+  {
+   "w": "waited",
+   "start": 18.88,
+   "end": 19.12,
+   "matched": true
+  },
+  {
+   "w": "thirteen",
+   "start": 19.12,
+   "end": 19.58,
+   "matched": true
+  },
+  {
+   "w": "years",
+   "start": 19.58,
+   "end": 19.84,
+   "matched": true
+  },
+  {
+   "w": "for",
+   "start": 19.84,
+   "end": 20.1,
+   "matched": true
+  },
+  {
+   "w": "all",
+   "start": 20.1,
+   "end": 20.28,
+   "matched": true
+  },
+  {
+   "w": "of",
+   "start": 20.28,
+   "end": 20.4,
+   "matched": true
+  },
+  {
+   "w": "it.",
+   "start": 20.4,
+   "end": 20.58,
+   "matched": true
+  },
+  {
+   "w": "Tag",
+   "start": 21.08,
+   "end": 21.14,
+   "matched": true
+  },
+  {
+   "w": "a",
+   "start": 21.14,
+   "end": 21.28,
+   "matched": true
+  },
+  {
+   "w": "GTA",
+   "start": 21.28,
+   "end": 21.6,
+   "matched": true
+  },
+  {
+   "w": "6",
+   "start": 21.6,
+   "end": 21.92,
+   "matched": true
+  },
+  {
+   "w": "fan.",
+   "start": 21.92,
+   "end": 22.28,
+   "matched": true
+  },
+  {
+   "w": "Let's",
+   "start": 22.72,
+   "end": 22.94,
+   "matched": true
+  },
+  {
+   "w": "see",
+   "start": 22.94,
+   "end": 23.06,
+   "matched": true
+  },
+  {
+   "w": "them",
+   "start": 23.06,
+   "end": 23.24,
+   "matched": true
+  },
+  {
+   "w": "defend",
+   "start": 23.24,
+   "end": 23.5,
+   "matched": true
+  },
+  {
+   "w": "this.",
+   "start": 23.5,
+   "end": 23.8,
+   "matched": true
+  }
+ ]
+}

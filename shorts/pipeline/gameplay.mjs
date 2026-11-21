@@ -20,7 +20,14 @@ import { ASSETS, PYTHON, ROOT } from './lib/paths.mjs';
 const G = path.join(ROOT, 'gameplay');
 const FOOTAGE = path.join(G, 'footage');
 const VIDEOS = path.join(G, 'videos');
-const FPS = 30;
+// frame rate from gameplay/channel.json (60 keeps gameplay as smooth as it was recorded)
+const FPS = (() => {
+  try {
+    return +JSON.parse(fs.readFileSync(path.join(G, 'channel.json'), 'utf8')).fps || 30;
+  } catch {
+    return 30;
+  }
+})();
 const log = (...a) => console.log(...a);
 const py = (script, args) => execFileSync(PYTHON, [path.join(ROOT, 'pipeline', script), ...args], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'], maxBuffer: 64 * 1024 * 1024 });
 const readJson = (f) => JSON.parse(fs.readFileSync(f, 'utf8'));
@@ -200,7 +207,7 @@ async function make(id, { layoutOnly = false, voiceOnly = false, pagesOnly = fal
   const leans = (w) => /^(gta|a|an|the|of|to|and|for|in|on|out|my|your|is|its|it's|than|over|just)$/i.test(String(w).replace(/[^A-Za-z']/g, ''));
   const unit = (w) => /^(million|billion|thousand|years?|dollars?|percent|of)$/i.test(String(w || '').replace(/[^A-Za-z]/g, ''));
   // pairs that read as one thing and stay on the same page
-  const KEEP = /^(gta \d|download code|physical copy|vice city|ultimate edition|standard edition|driving simulator|marketing campaign|bad news|big games|bonus cars|extra shops|fake florida|first trailer|three reasons|most overhyped|game ever|ten dollars|change my|my mind|boxed copy|a disc|a box|a game|the map|a remix)$/i;
+  const KEEP = /^(gta \d|download code|physical copy|vice city|ultimate edition|standard edition|driving simulator|marketing campaign|bad news|big games|bonus cars|extra shops|fake florida|first trailer|three reasons|most overhyped|game ever|ten dollars|change my|my mind|boxed copy|a disc|a box|a game|the map|a remix|thirteen years|came out|a lot|lot of|of it|all of|6 fan|their life|life story)$/i;
   const norm = (w) => String(w || '').toLowerCase().replace(/[^a-z0-9$-]/g, '');
   // best split of a clause into pages of 1-4 words: short pages, no break inside a pair, few singles
   const chunk = (ws) => {

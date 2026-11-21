@@ -1,0 +1,403 @@
+{
+ "engine": "faster-whisper small.en (word_timestamps)",
+ "pass_used": "glossary prompt",
+ "unheard_words": 0,
+ "duration": 24.427,
+ "match": 0.9844,
+ "heard": "Name one thing GTA 6 does that was worth 13 years. The graphics. Every new game has better graphics. The maps. It's Florida. Again. The story. You spend a lot of it driving. The price. $80. And the box doesn't even have a disc. Critics gave it 99 out of 100. Players are doing chores. I'll wait. Name one. Comment below. Bet you can't.",
+ "mismatches": [
+  {
+   "script": "map?",
+   "heard": "maps.",
+   "at": 6.78
+  }
+ ],
+ "figure_mismatches": [],
+ "low_confidence": [],
+ "words": [
+  {
+   "w": "Name",
+   "start": 0.0,
+   "end": 0.18,
+   "matched": true
+  },
+  {
+   "w": "one",
+   "start": 0.18,
+   "end": 0.44,
+   "matched": true
+  },
+  {
+   "w": "thing",
+   "start": 0.44,
+   "end": 0.68,
+   "matched": true
+  },
+  {
+   "w": "GTA",
+   "start": 0.68,
+   "end": 1.14,
+   "matched": true
+  },
+  {
+   "w": "6",
+   "start": 1.14,
+   "end": 1.52,
+   "matched": true
+  },
+  {
+   "w": "does",
+   "start": 1.52,
+   "end": 1.88,
+   "matched": true
+  },
+  {
+   "w": "that",
+   "start": 1.88,
+   "end": 2.02,
+   "matched": true
+  },
+  {
+   "w": "was",
+   "start": 2.02,
+   "end": 2.16,
+   "matched": true
+  },
+  {
+   "w": "worth",
+   "start": 2.16,
+   "end": 2.36,
+   "matched": true
+  },
+  {
+   "w": "thirteen",
+   "start": 2.36,
+   "end": 2.78,
+   "matched": true
+  },
+  {
+   "w": "years.",
+   "start": 2.78,
+   "end": 3.06,
+   "matched": true
+  },
+  {
+   "w": "The",
+   "start": 3.62,
+   "end": 3.66,
+   "matched": true
+  },
+  {
+   "w": "graphics?",
+   "start": 3.62,
+   "end": 3.98,
+   "matched": true
+  },
+  {
+   "w": "Every",
+   "start": 4.58,
+   "end": 4.78,
+   "matched": true
+  },
+  {
+   "w": "new",
+   "start": 4.78,
+   "end": 5.0,
+   "matched": true
+  },
+  {
+   "w": "game",
+   "start": 5.0,
+   "end": 5.2,
+   "matched": true
+  },
+  {
+   "w": "has",
+   "start": 5.2,
+   "end": 5.46,
+   "matched": true
+  },
+  {
+   "w": "better",
+   "start": 5.46,
+   "end": 5.74,
+   "matched": true
+  },
+  {
+   "w": "graphics.",
+   "start": 5.74,
+   "end": 6.16,
+   "matched": true
+  },
+  {
+   "w": "The",
+   "start": 6.74,
+   "end": 6.78,
+   "matched": true
+  },
+  {
+   "w": "map?",
+   "start": 6.78,
+   "end": 7.06,
+   "matched": false
+  },
+  {
+   "w": "It's",
+   "start": 7.58,
+   "end": 7.74,
+   "matched": true
+  },
+  {
+   "w": "Florida.",
+   "start": 7.74,
+   "end": 8.04,
+   "matched": true
+  },
+  {
+   "w": "Again.",
+   "start": 8.64,
+   "end": 8.94,
+   "matched": true
+  },
+  {
+   "w": "The",
+   "start": 9.42,
+   "end": 9.58,
+   "matched": true
+  },
+  {
+   "w": "story?",
+   "start": 9.58,
+   "end": 9.9,
+   "matched": true
+  },
+  {
+   "w": "You",
+   "start": 10.48,
+   "end": 10.56,
+   "matched": true
+  },
+  {
+   "w": "spend",
+   "start": 10.56,
+   "end": 10.8,
+   "matched": true
+  },
+  {
+   "w": "a",
+   "start": 10.8,
+   "end": 10.92,
+   "matched": true
+  },
+  {
+   "w": "lot",
+   "start": 10.92,
+   "end": 11.1,
+   "matched": true
+  },
+  {
+   "w": "of",
+   "start": 11.1,
+   "end": 11.2,
+   "matched": true
+  },
+  {
+   "w": "it",
+   "start": 11.2,
+   "end": 11.32,
+   "matched": true
+  },
+  {
+   "w": "driving.",
+   "start": 11.32,
+   "end": 11.6,
+   "matched": true
+  },
+  {
+   "w": "The",
+   "start": 12.14,
+   "end": 12.26,
+   "matched": true
+  },
+  {
+   "w": "price?",
+   "start": 12.26,
+   "end": 12.64,
+   "matched": true
+  },
+  {
+   "w": "$80.",
+   "start": 13.14,
+   "end": 13.46,
+   "matched": true
+  },
+  {
+   "w": "And",
+   "start": 13.86,
+   "end": 14.4,
+   "matched": true
+  },
+  {
+   "w": "the",
+   "start": 14.4,
+   "end": 14.5,
+   "matched": true
+  },
+  {
+   "w": "box",
+   "start": 14.5,
+   "end": 14.76,
+   "matched": true
+  },
+  {
+   "w": "doesn't",
+   "start": 14.76,
+   "end": 15.1,
+   "matched": true
+  },
+  {
+   "w": "even",
+   "start": 15.1,
+   "end": 15.28,
+   "matched": true
+  },
+  {
+   "w": "have",
+   "start": 15.28,
+   "end": 15.46,
+   "matched": true
+  },
+  {
+   "w": "a",
+   "start": 15.46,
+   "end": 15.6,
+   "matched": true
+  },
+  {
+   "w": "disc.",
+   "start": 15.6,
+   "end": 15.84,
+   "matched": true
+  },
+  {
+   "w": "Critics",
+   "start": 16.4,
+   "end": 16.52,
+   "matched": true
+  },
+  {
+   "w": "gave",
+   "start": 16.52,
+   "end": 16.8,
+   "matched": true
+  },
+  {
+   "w": "it",
+   "start": 16.8,
+   "end": 16.94,
+   "matched": true
+  },
+  {
+   "w": "99",
+   "start": 16.94,
+   "end": 17.36,
+   "matched": true
+  },
+  {
+   "w": "out",
+   "start": 17.36,
+   "end": 17.82,
+   "matched": true
+  },
+  {
+   "w": "of",
+   "start": 17.82,
+   "end": 17.94,
+   "matched": true
+  },
+  {
+   "w": "100.",
+   "start": 17.94,
+   "end": 18.38,
+   "matched": true
+  },
+  {
+   "w": "Players",
+   "start": 18.84,
+   "end": 19.08,
+   "matched": true
+  },
+  {
+   "w": "are",
+   "start": 19.08,
+   "end": 19.32,
+   "matched": true
+  },
+  {
+   "w": "doing",
+   "start": 19.32,
+   "end": 19.54,
+   "matched": true
+  },
+  {
+   "w": "chores.",
+   "start": 19.54,
+   "end": 19.9,
+   "matched": true
+  },
+  {
+   "w": "I'll",
+   "start": 20.48,
+   "end": 20.66,
+   "matched": true
+  },
+  {
+   "w": "wait.",
+   "start": 20.66,
+   "end": 20.92,
+   "matched": true
+  },
+  {
+   "w": "Name",
+   "start": 21.48,
+   "end": 21.64,
+   "matched": true
+  },
+  {
+   "w": "one.",
+   "start": 21.64,
+   "end": 21.96,
+   "matched": true
+  },
+  {
+   "w": "Comment",
+   "start": 22.48,
+   "end": 22.68,
+   "matched": true
+  },
+  {
+   "w": "below.",
+   "start": 22.68,
+   "end": 23.08,
+   "matched": true
+  },
+  {
+   "w": "Bet",
+   "start": 23.64,
+   "end": 23.72,
+   "matched": true
+  },
+  {
+   "w": "you",
+   "start": 23.72,
+   "end": 23.92,
+   "matched": true
+  },
+  {
+   "w": "can't.",
+   "start": 23.92,
+   "end": 24.32,
+   "matched": true
+  }
+ ]
+}

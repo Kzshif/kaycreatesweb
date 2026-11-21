@@ -46,7 +46,7 @@ export const Root: React.FC = () => (
     fps={30}
     durationInFrames={150}
     defaultProps={{ id: '000', durationInFrames: 150, fps: 30, footage: null, clips: [{ start: 0, end: 2 }, { start: 5, end: 7, zoom: 1.3 }, { start: 9, end: 11 }], layout: 'band', title: ['GTA 6 is', 'overrated'], hl: 'overrated', captions: [], stamp: { frame: 60, text: 'Overrated' }, audio: null, gameVolume: 0.12, sfx: [], handle: '@handle', accent: '#E8202A' } as GameplayProps}
-    calculateMetadata={({ props }) => ({ durationInFrames: props.durationInFrames })}
+    calculateMetadata={({ props }) => ({ durationInFrames: props.durationInFrames, fps: props.fps || 30 })}
   />
   <Composition
     id="GameplayThumb"

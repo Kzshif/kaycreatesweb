@@ -85,8 +85,8 @@ const Footage: React.FC<{ src: string | null; clip: Clip; fps: number; volume: n
   return <OffthreadVideo src={staticFile(src)} trimBefore={Math.round(clip.start * fps)} volume={blur ? 0 : volume} muted={blur || volume <= 0} style={style} />;
 };
 
-const Title: React.FC<{ lines: string[]; hl: string | null; frame: number; tag?: string | null }> = ({ lines, hl, frame, tag }) => {
-  const k = interpolate(frame, [0, 6], [0, 1], { extrapolateRight: 'clamp' });
+const Title: React.FC<{ lines: string[]; hl: string | null; frame: number; tag?: string | null; r?: number }> = ({ lines, hl, frame, tag, r = 1 }) => {
+  const k = interpolate(frame * r, [0, 6], [0, 1], { extrapolateRight: 'clamp' });
   const size = lines.some((l) => l.length > 16) ? 74 : 88;
   return (
     <div style={{ position: 'absolute', left: 60, right: 60, top: tag ? 236 : 250, textAlign: 'center', transform: `scale(${1.25 - 0.25 * k})`, opacity: k }}>
@@ -111,7 +111,7 @@ const Title: React.FC<{ lines: string[]; hl: string | null; frame: number; tag?:
   );
 };
 
-const Captions: React.FC<{ pages: CaptionPage[]; frame: number; layout: 'band' | 'full' }> = ({ pages, frame, layout }) => {
+const Captions: React.FC<{ pages: CaptionPage[]; frame: number; layout: 'band' | 'full'; r?: number }> = ({ pages, frame, layout, r = 1 }) => {
   const page = pages.find((p) => frame >= p.from && frame < p.to);
   if (!page) return null;
   const top = layout === 'band' ? BAND_TOP + BAND_H + 70 : 1180;
@@ -119,7 +119,7 @@ const Captions: React.FC<{ pages: CaptionPage[]; frame: number; layout: 'band' |
     <div style={{ position: 'absolute', left: 70, right: 70, top, textAlign: 'center' }}>
       {page.words.map((w, i) => {
         const on = frame >= w.from && frame < (page.words[i + 1]?.from ?? page.to);
-        const pop = on ? interpolate(frame - w.from, [0, 3, 6], [1.18, 1.06, 1], { extrapolateRight: 'clamp' }) : 1;
+        const pop = on ? interpolate((frame - w.from) * r, [0, 3, 6], [1.18, 1.06, 1], { extrapolateRight: 'clamp' }) : 1;
         const shown = frame >= w.from;
         return (
           <span key={i} style={{ ...headStyle(104, on ? '#FFE135' : '#FFFFFF'), ...stroke(14), textShadow: '0 6px 18px rgba(0,0,0,0.65)', display: 'inline-block', margin: '0 12px', textTransform: 'uppercase', lineHeight: 1.05, transform: `scale(${pop})`, opacity: shown ? 1 : 1 }}>
@@ -149,10 +149,10 @@ export const Watermark: React.FC<{ text: string; size?: number; style?: React.CS
   );
 };
 
-const Stamp: React.FC<{ text: string; local: number }> = ({ text, local }) => {
+const Stamp: React.FC<{ text: string; local: number; r?: number }> = ({ text, local, r = 1 }) => {
   if (local < 0) return null;
-  const s = interpolate(local, [0, 5, 8], [2.6, 0.94, 1], { extrapolateRight: 'clamp' });
-  const o = interpolate(local, [0, 2], [0, 1], { extrapolateRight: 'clamp' });
+  const s = interpolate(local * r, [0, 5, 8], [2.6, 0.94, 1], { extrapolateRight: 'clamp' });
+  const o = interpolate(local * r, [0, 2], [0, 1], { extrapolateRight: 'clamp' });
   return (
     <div style={{ position: 'absolute', left: 0, right: 0, top: BAND_TOP + BAND_H / 2 - 110, display: 'flex', justifyContent: 'center', opacity: o, transform: `rotate(-11deg) scale(${s})` }}>
       <div style={{ border: `14px solid ${RED}`, borderRadius: 18, padding: '6px 34px 12px', background: 'rgba(10,10,10,0.35)' }}>
@@ -172,10 +172,12 @@ export const Gameplay: React.FC<GameplayProps> = (p) => {
   const clip = p.clips[ci] || { start: 0, end: 1 };
   const local = t - (out[ci] || 0);
   const len = Math.max(1, Math.round((clip.end - clip.start) * p.fps));
-  const cut = local < 3 ? 1 - local / 3 : 0;
+  const r = 30 / (p.fps || 30);
+  const cut = local * r < 3 ? 1 - (local * r) / 3 : 0;
   const sl = p.stamp ? frame - p.stamp.frame : -1;
-  const shake = sl >= 0 && sl < 10 ? Math.sin(sl * 2.7) * (10 - sl) * 2.2 : 0;
-  const flash = sl >= 0 && sl < 4 ? 0.55 * (1 - sl / 4) : 0;
+  const st = sl * r;
+  const shake = sl >= 0 && st < 10 ? Math.sin(st * 2.7) * (10 - st) * 2.2 : 0;
+  const flash = sl >= 0 && st < 4 ? 0.55 * (1 - st / 4) : 0;
   const band = p.layout === 'band';
   return (
     <Materials>
@@ -197,10 +199,10 @@ export const Gameplay: React.FC<GameplayProps> = (p) => {
             {cut > 0 ? <AbsoluteFill style={{ background: '#FFFFFF', opacity: cut * 0.35 }} /> : null}
           </div>
           {!band ? <AbsoluteFill style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.25) 26%, rgba(0,0,0,0.2) 48%, rgba(0,0,0,0.55) 72%, rgba(0,0,0,0.75) 100%)' }} /> : null}
-          <Stamp text={p.stamp?.text || ''} local={p.stamp ? sl : -1} />
+          <Stamp text={p.stamp?.text || ''} local={p.stamp ? sl : -1} r={r} />
         </AbsoluteFill>
-        <Title lines={p.title} hl={p.hl} frame={frame} tag={p.tag} />
-        <Captions pages={p.captions} frame={frame} layout={p.layout} />
+        <Title lines={p.title} hl={p.hl} frame={frame} tag={p.tag} r={r} />
+        <Captions pages={p.captions} frame={frame} layout={p.layout} r={r} />
         {p.watermark ? (
           <div style={{ position: 'absolute', left: 0, right: 0, top: 1458, display: 'flex', justifyContent: 'center', opacity: 0.92 }}>
             <Watermark text={p.watermark} size={46} />
@@ -212,7 +214,7 @@ export const Gameplay: React.FC<GameplayProps> = (p) => {
             <Audio src={staticFile(p.audio)} />
           </Sequence>
         ) : null}
-        {p.music ? <Audio src={staticFile(p.music)} volume={(f) => interpolate(f, [0, 24], [0, p.musicVolume ?? 0.16], { extrapolateRight: 'clamp' })} loop /> : null}
+        {p.music ? <Audio src={staticFile(p.music)} volume={(f) => interpolate(f, [0, 0.8 * (p.fps || 30)], [0, p.musicVolume ?? 0.16], { extrapolateRight: 'clamp' })} loop /> : null}
         {p.sfx.map((s, i) => (
           <Sequence key={i} from={s.frame} layout="none">
             <Audio src={staticFile(s.src)} volume={s.volume ?? 0.8} />

@@ -1,0 +1,463 @@
+{
+ "engine": "faster-whisper small.en (word_timestamps)",
+ "pass_used": "glossary prompt",
+ "unheard_words": 0,
+ "duration": 24.624,
+ "match": 0.9865,
+ "heard": "Pov you waited 13 years for GTA 6. You finally load in and the first thing you do is drive. Then you drive some more. Then a character calls to tell you their life story. Then you lift weights. In a game that cost $80. Then you scroll a fake social media feed. On a fake phone, 13 years, 2 delays, for chores, next gen gaming everybody. Send this to the friend who pre-ordered it.",
+ "mismatches": [
+  {
+   "script": "Next-gen",
+   "heard": "next gen",
+   "at": 20.9
+  }
+ ],
+ "figure_mismatches": [],
+ "low_confidence": [],
+ "words": [
+  {
+   "w": "POV:",
+   "start": 0.0,
+   "end": 0.26,
+   "matched": true
+  },
+  {
+   "w": "you",
+   "start": 0.26,
+   "end": 0.5,
+   "matched": true
+  },
+  {
+   "w": "waited",
+   "start": 0.5,
+   "end": 0.72,
+   "matched": true
+  },
+  {
+   "w": "thirteen",
+   "start": 0.72,
+   "end": 1.12,
+   "matched": true
+  },
+  {
+   "w": "years",
+   "start": 1.12,
+   "end": 1.38,
+   "matched": true
+  },
+  {
+   "w": "for",
+   "start": 1.38,
+   "end": 1.64,
+   "matched": true
+  },
+  {
+   "w": "GTA",
+   "start": 1.64,
+   "end": 1.98,
+   "matched": true
+  },
+  {
+   "w": "6.",
+   "start": 1.98,
+   "end": 2.42,
+   "matched": true
+  },
+  {
+   "w": "You",
+   "start": 3.06,
+   "end": 3.18,
+   "matched": true
+  },
+  {
+   "w": "finally",
+   "start": 3.18,
+   "end": 3.46,
+   "matched": true
+  },
+  {
+   "w": "load",
+   "start": 3.46,
+   "end": 3.78,
+   "matched": true
+  },
+  {
+   "w": "in,",
+   "start": 3.78,
+   "end": 4.0,
+   "matched": true
+  },
+  {
+   "w": "and",
+   "start": 4.0,
+   "end": 4.26,
+   "matched": true
+  },
+  {
+   "w": "the",
+   "start": 4.26,
+   "end": 4.36,
+   "matched": true
+  },
+  {
+   "w": "first",
+   "start": 4.36,
+   "end": 4.56,
+   "matched": true
+  },
+  {
+   "w": "thing",
+   "start": 4.56,
+   "end": 4.76,
+   "matched": true
+  },
+  {
+   "w": "you",
+   "start": 4.76,
+   "end": 4.9,
+   "matched": true
+  },
+  {
+   "w": "do",
+   "start": 4.9,
+   "end": 5.08,
+   "matched": true
+  },
+  {
+   "w": "is",
+   "start": 5.08,
+   "end": 5.24,
+   "matched": true
+  },
+  {
+   "w": "drive.",
+   "start": 5.24,
+   "end": 5.54,
+   "matched": true
+  },
+  {
+   "w": "Then",
+   "start": 6.24,
+   "end": 6.36,
+   "matched": true
+  },
+  {
+   "w": "you",
+   "start": 6.36,
+   "end": 6.44,
+   "matched": true
+  },
+  {
+   "w": "drive",
+   "start": 6.44,
+   "end": 6.68,
+   "matched": true
+  },
+  {
+   "w": "some",
+   "start": 6.68,
+   "end": 6.9,
+   "matched": true
+  },
+  {
+   "w": "more.",
+   "start": 6.9,
+   "end": 7.2,
+   "matched": true
+  },
+  {
+   "w": "Then",
+   "start": 7.64,
+   "end": 7.8,
+   "matched": true
+  },
+  {
+   "w": "a",
+   "start": 7.8,
+   "end": 7.9,
+   "matched": true
+  },
+  {
+   "w": "character",
+   "start": 7.9,
+   "end": 8.16,
+   "matched": true
+  },
+  {
+   "w": "calls",
+   "start": 8.16,
+   "end": 8.48,
+   "matched": true
+  },
+  {
+   "w": "to",
+   "start": 8.48,
+   "end": 8.74,
+   "matched": true
+  },
+  {
+   "w": "tell",
+   "start": 8.74,
+   "end": 8.9,
+   "matched": true
+  },
+  {
+   "w": "you",
+   "start": 8.9,
+   "end": 9.02,
+   "matched": true
+  },
+  {
+   "w": "their",
+   "start": 9.02,
+   "end": 9.16,
+   "matched": true
+  },
+  {
+   "w": "life",
+   "start": 9.16,
+   "end": 9.36,
+   "matched": true
+  },
+  {
+   "w": "story.",
+   "start": 9.36,
+   "end": 9.72,
+   "matched": true
+  },
+  {
+   "w": "Then",
+   "start": 10.38,
+   "end": 10.5,
+   "matched": true
+  },
+  {
+   "w": "you",
+   "start": 10.5,
+   "end": 10.6,
+   "matched": true
+  },
+  {
+   "w": "lift",
+   "start": 10.6,
+   "end": 10.8,
+   "matched": true
+  },
+  {
+   "w": "weights.",
+   "start": 10.8,
+   "end": 11.16,
+   "matched": true
+  },
+  {
+   "w": "In",
+   "start": 11.64,
+   "end": 11.76,
+   "matched": true
+  },
+  {
+   "w": "a",
+   "start": 11.76,
+   "end": 11.86,
+   "matched": true
+  },
+  {
+   "w": "game.",
+   "start": 11.86,
+   "end": 12.08,
+   "matched": true
+  },
+  {
+   "w": "That",
+   "start": 12.08,
+   "end": 12.74,
+   "matched": true
+  },
+  {
+   "w": "cost",
+   "start": 12.74,
+   "end": 12.94,
+   "matched": true
+  },
+  {
+   "w": "$80.",
+   "start": 12.94,
+   "end": 13.26,
+   "matched": true
+  },
+  {
+   "w": "Then",
+   "start": 13.9,
+   "end": 14.18,
+   "matched": true
+  },
+  {
+   "w": "you",
+   "start": 14.18,
+   "end": 14.3,
+   "matched": true
+  },
+  {
+   "w": "scroll",
+   "start": 14.3,
+   "end": 14.52,
+   "matched": true
+  },
+  {
+   "w": "a",
+   "start": 14.52,
+   "end": 14.68,
+   "matched": true
+  },
+  {
+   "w": "fake",
+   "start": 14.68,
+   "end": 14.88,
+   "matched": true
+  },
+  {
+   "w": "social",
+   "start": 14.88,
+   "end": 15.14,
+   "matched": true
+  },
+  {
+   "w": "media",
+   "start": 15.14,
+   "end": 15.46,
+   "matched": true
+  },
+  {
+   "w": "feed.",
+   "start": 15.46,
+   "end": 15.78,
+   "matched": true
+  },
+  {
+   "w": "On",
+   "start": 16.4,
+   "end": 16.52,
+   "matched": true
+  },
+  {
+   "w": "a",
+   "start": 16.52,
+   "end": 16.62,
+   "matched": true
+  },
+  {
+   "w": "fake",
+   "start": 16.62,
+   "end": 16.8,
+   "matched": true
+  },
+  {
+   "w": "phone.",
+   "start": 16.8,
+   "end": 17.12,
+   "matched": true
+  },
+  {
+   "w": "Thirteen",
+   "start": 17.68,
+   "end": 17.88,
+   "matched": true
+  },
+  {
+   "w": "years.",
+   "start": 17.88,
+   "end": 18.22,
+   "matched": true
+  },
+  {
+   "w": "Two",
+   "start": 18.72,
+   "end": 18.86,
+   "matched": true
+  },
+  {
+   "w": "delays.",
+   "start": 18.86,
+   "end": 19.22,
+   "matched": true
+  },
+  {
+   "w": "For",
+   "start": 19.86,
+   "end": 19.9,
+   "matched": true
+  },
+  {
+   "w": "chores.",
+   "start": 19.9,
+   "end": 20.34,
+   "matched": true
+  },
+  {
+   "w": "Next-gen",
+   "start": 20.9,
+   "end": 21.22,
+   "matched": false
+  },
+  {
+   "w": "gaming,",
+   "start": 21.22,
+   "end": 21.56,
+   "matched": true
+  },
+  {
+   "w": "everybody.",
+   "start": 21.56,
+   "end": 22.0,
+   "matched": true
+  },
+  {
+   "w": "Send",
+   "start": 22.68,
+   "end": 22.8,
+   "matched": true
+  },
+  {
+   "w": "this",
+   "start": 22.8,
+   "end": 23.0,
+   "matched": true
+  },
+  {
+   "w": "to",
+   "start": 23.0,
+   "end": 23.14,
+   "matched": true
+  },
+  {
+   "w": "the",
+   "start": 23.14,
+   "end": 23.26,
+   "matched": true
+  },
+  {
+   "w": "friend",
+   "start": 23.26,
+   "end": 23.46,
+   "matched": true
+  },
+  {
+   "w": "who",
+   "start": 23.46,
+   "end": 23.7,
+   "matched": true
+  },
+  {
+   "w": "pre-ordered",
+   "start": 23.7,
+   "end": 24.1,
+   "matched": true
+  },
+  {
+   "w": "it.",
+   "start": 24.1,
+   "end": 24.34,
+   "matched": true
+  }
+ ]
+}
